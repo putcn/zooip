@@ -1,0 +1,86 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* zoo */ = {
+		activeExec = 0;
+		executables = (
+			BF00743D1159C5AB0003B411 /* zoo */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = BF00743D1159C5AB0003B411 /* zoo */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* zoo */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* zoo */,
+		);
+		codeSenseManager = BF0074621159C5CA0003B411 /* Code sense */;
+		executables = (
+			BF00743D1159C5AB0003B411 /* zoo */,
+		);
+		perUserDictionary = {
+			PBXPerProjectTemplateStateSaveDate = 291095979;
+			PBXWorkspaceStateSaveDate = 291095979;
+		};
+		sourceControlManager = BF0074611159C5CA0003B411 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	506EE05D10304ED200A389B3 /* cocos2d libraries */ = {
+		activeExec = 0;
+	};
+	BF00743D1159C5AB0003B411 /* zoo */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		dataTipCustomDataFormattersEnabled = 1;
+		dataTipShowTypeColumn = 1;
+		dataTipSortType = 0;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = zoo;
+		showTypeColumn = 0;
+		sourceDirectories = (
+		);
+	};
+	BF0074611159C5CA0003B411 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+			repositoryNamesForRoots = {
+				"" = "";
+			};
+		};
+	};
+	BF0074621159C5CA0003B411 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	BF0074891159E9B90003B411 /* GameMainScene.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {934, 564}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 209}";
+		};
+	};
+	BF00748A1159E9B90003B411 /* GameMainScene.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1108, 564}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 190}";
+		};
+	};
+}
