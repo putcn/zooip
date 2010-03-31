@@ -298,7 +298,7 @@
 							<real>246</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>74 188 1337 656 0 0 1440 878 </string>
+						<string>74 185 1337 656 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -328,7 +328,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C73A795D1163318500A820DC</string>
+										<string>C73A79B611633EBA00A820DC</string>
 										<key>history</key>
 										<array>
 											<string>C70A06B01161FAD000AA36D0</string>
@@ -340,11 +340,12 @@
 											<string>C73A790E1163224700A820DC</string>
 											<string>C73A790F1163224700A820DC</string>
 											<string>C73A79101163224700A820DC</string>
-											<string>C73A7924116326A700A820DC</string>
-											<string>C73A7925116326A700A820DC</string>
-											<string>C73A79581163314F00A820DC</string>
-											<string>C73A79591163314F00A820DC</string>
-											<string>C73A794F116330F300A820DC</string>
+											<string>C73A797E1163372100A820DC</string>
+											<string>C73A797F1163372100A820DC</string>
+											<string>C73A79801163372100A820DC</string>
+											<string>C73A79AB11633E1600A820DC</string>
+											<string>C73A79AC11633E1600A820DC</string>
+											<string>C73A79B511633EBA00A820DC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -358,7 +359,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1069, 610}}</string>
 								<key>RubberWindowFrame</key>
-								<string>74 188 1337 656 0 0 1440 878 </string>
+								<string>74 185 1337 656 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -378,7 +379,7 @@
 								<key>Frame</key>
 								<string>{{0, 615}, {1069, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>74 188 1337 656 0 0 1440 878 </string>
+								<string>74 185 1337 656 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -542,13 +543,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>C7CFBA911161F75E007BFD75</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/Darcy/Documents/iphone_prjs/zoo/src/zoo/zoo.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>74 188 1337 656 0 0 1440 878 </string>
+	<string>74 185 1337 656 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -564,12 +565,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Reachability.h</string>
+								<string>serviceHelper.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -586,8 +589,6 @@
 							<string>216pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -929,7 +930,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
