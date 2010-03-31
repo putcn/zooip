@@ -5,6 +5,7 @@
 
 // Import the interfaces
 #import "HelloWorldScene.h"
+#import "serviceHelper.h"
 
 // HelloWorld implementation
 @implementation HelloWorld
@@ -43,6 +44,9 @@
 		// add the label as a child to this Layer
 		[self addChild: label];
 	}
+	
+	[[serviceHelper sharedService] connectivityTest];
+	
 	return self;
 }
 
