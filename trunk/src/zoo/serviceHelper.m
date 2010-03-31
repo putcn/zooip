@@ -94,6 +94,9 @@ static serviceHelper *sharedInst = nil;
 	[CallBacks setObject:tempDic forKey:requestFlag];
 	
 	NSURL *url = [NSURL URLWithString:URLString];
+	
+	NSLog(@"%@",url);
+	
 	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
 	request.requestFlagMark = requestFlag;
 	[request setDelegate:self];
@@ -105,12 +108,13 @@ static serviceHelper *sharedInst = nil;
 -(void)connectivityTestWithScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector{
 	//save selector and delegate
 	NSString *flagMark = @"connectivityTest";
-	NSString *urlString = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/php/remoteService.php?method=getFarmerInfo&uid=111&pid=11";
-	
+	NSString *urlString = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/php/remoteService.php";
 	ASIFormDataRequest *request = [self BuildRequestWithURL:urlString AndRequestFlag:flagMark AndCallBackScope:CallBackDelegate AndSuccessSel:SuccessSelector AndFailedSel:FailedSelector];
-	
+	[request setPostValue:@"getFarmerInfo" forKey:@"method"];
+	[request setPostValue:@"25313321" forKey:@"uid"];
+	[request setPostValue:@"11" forKey:@"pid"];
+	[request setRequestMethod:@"POST"]; 
 	[request startAsynchronous];
-	
 }
 
 
