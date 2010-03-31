@@ -272,7 +272,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>12</integer>
+									<integer>13</integer>
 									<integer>11</integer>
 									<integer>10</integer>
 									<integer>0</integer>
@@ -298,7 +298,7 @@
 							<real>246</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>103 131 1337 656 0 0 1440 878 </string>
+						<string>74 188 1337 656 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -316,7 +316,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>serviceHelper.h</string>
+								<string>serviceHelper.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -324,11 +324,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>serviceHelper.h</string>
+										<string>serviceHelper.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>C73A7934116328D800A820DC</string>
+										<string>C73A795D1163318500A820DC</string>
 										<key>history</key>
 										<array>
 											<string>C70A06B01161FAD000AA36D0</string>
@@ -342,9 +342,9 @@
 											<string>C73A79101163224700A820DC</string>
 											<string>C73A7924116326A700A820DC</string>
 											<string>C73A7925116326A700A820DC</string>
-											<string>C73A7930116328BE00A820DC</string>
-											<string>C73A7931116328BE00A820DC</string>
-											<string>C73A7932116328BE00A820DC</string>
+											<string>C73A79581163314F00A820DC</string>
+											<string>C73A79591163314F00A820DC</string>
+											<string>C73A794F116330F300A820DC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -358,7 +358,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {1069, 610}}</string>
 								<key>RubberWindowFrame</key>
-								<string>103 131 1337 656 0 0 1440 878 </string>
+								<string>74 188 1337 656 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -378,7 +378,7 @@
 								<key>Frame</key>
 								<string>{{0, 615}, {1069, 0}}</string>
 								<key>RubberWindowFrame</key>
-								<string>103 131 1337 656 0 0 1440 878 </string>
+								<string>74 188 1337 656 0 0 1440 878 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -548,7 +548,7 @@
 		<string>/Users/Darcy/Documents/iphone_prjs/zoo/src/zoo/zoo.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>103 131 1337 656 0 0 1440 878 </string>
+	<string>74 188 1337 656 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
