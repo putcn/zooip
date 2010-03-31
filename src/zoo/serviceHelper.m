@@ -8,6 +8,7 @@
 
 #import "serviceHelper.h"
 #import "ASIFormDataRequest.h"
+#import "CJSONDeserializer.h"
 
 
 @implementation serviceHelper
@@ -58,10 +59,32 @@ static serviceHelper *sharedInst = nil;
 
 -(void)requestDone:(ASIFormDataRequest *)request{
 	NSLog(@"feed back for action : %@, is : %@",request.requestFlagMark,[request responseString]);
+	
+	NSData *jsonData = [[request responseString] dataUsingEncoding:NSUTF8StringEncoding];
+	NSDictionary *result = [[CJSONDeserializer deserializer] deserializeAsDictionary:jsonData error:nil];
+	NSDictionary *targetCallBack = [CallBacks objectForKey:request.requestFlagMark];
+	
+	BOOL shouldTriggerErrorHandler = NO;
+	
+	if ([[result objectForKey:@"error_code"] intValue] == 100) {
+		shouldTriggerErrorHandler = YES;
+	}
+	
+	if(shouldTriggerErrorHandler){
+		[[targetCallBack objectForKey:@"delegate"] performSelector:NSSelectorFromString([targetCallBack objectForKey:@"onfailed"]) withObject:[result objectForKey:@"error_code"]];
+	}else {
+		[[targetCallBack objectForKey:@"delegate"] performSelector:NSSelectorFromString([targetCallBack objectForKey:@"onsuccess"]) withObject:result];
+	}
+	
+	//clean up
+	[targetCallBack release];
+
 }
 
 -(void)requestWentWrong:(ASIFormDataRequest *)request{
 	NSLog(@"request %@ went wrong with status code %d, and feedback body %@",request.requestFlagMark, [request responseStatusCode], [request responseString]);
+	NSDictionary *targetCallBack = [CallBacks objectForKey:request.requestFlagMark];
+	[[targetCallBack objectForKey:@"delegate"] performSelector:NSSelectorFromString([targetCallBack objectForKey:@"onfailed"]) withObject:[request responseString]];
 }
 
 -(ASIFormDataRequest *)BuildRequestWithURL:(NSString *)URLString AndRequestFlag:(NSString *)requestFlag AndCallBackScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector{
@@ -79,12 +102,12 @@ static serviceHelper *sharedInst = nil;
 	return request;
 }
 
--(void)connectivityTest{
+-(void)connectivityTestWithScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector{
 	//save selector and delegate
 	NSString *flagMark = @"connectivityTest";
-	NSString *urlString = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/php/remoteService.php?method=addNewUserInfo&uid=111&pid=11&name=test&pic=http://img.user.head.jpg";
+	NSString *urlString = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/php/remoteService.php?method=getFarmerInfo&uid=111&pid=11";
 	
-	ASIFormDataRequest *request = [self BuildRequestWithURL:urlString AndRequestFlag:flagMark AndCallBackScope:self AndSuccessSel:@"" AndFailedSel:@""];
+	ASIFormDataRequest *request = [self BuildRequestWithURL:urlString AndRequestFlag:flagMark AndCallBackScope:CallBackDelegate AndSuccessSel:SuccessSelector AndFailedSel:FailedSelector];
 	
 	[request startAsynchronous];
 	

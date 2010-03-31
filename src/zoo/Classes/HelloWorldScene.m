@@ -45,9 +45,17 @@
 		[self addChild: label];
 	}
 	
-	[[serviceHelper sharedService] connectivityTest];
+	[[serviceHelper sharedService] connectivityTestWithScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFailedWithReason:"];
 	
 	return self;
+}
+
+-(void)requestDoneWith:(NSDictionary *)result{
+	NSLog(@"job done with result : %@",result);
+}
+
+-(void)requestFailedWithReason:(NSString *)reasone{
+	NSLog(@"job failed with reasone : %@",reasone);
 }
 
 // on "dealloc" you need to release all your retained objects
