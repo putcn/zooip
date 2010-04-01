@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1F3B9A2D0EF2145700286867 /* ZooDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B9A2B0EF2145700286867 /* ZooDemoAppDelegate.m */; };
+		3EC91CCE11647D0000697943 /* bgimg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3EC91CCA11647D0000697943 /* bgimg.jpg */; };
+		3EC91CCF11647D0000697943 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC91CCB11647D0000697943 /* house.png */; };
+		3EC91CD011647D0000697943 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC91CCC11647D0000697943 /* tree.png */; };
+		3EC91CD111647D0000697943 /* waterbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC91CCD11647D0000697943 /* waterbox.png */; };
 		502BC35D1120837500A0B92A /* CDAudioManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 502BC3551120837500A0B92A /* CDAudioManager.h */; };
 		502BC35E1120837500A0B92A /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 502BC3561120837500A0B92A /* CDAudioManager.m */; };
 		502BC35F1120837500A0B92A /* CDConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 502BC3571120837500A0B92A /* CDConfig.h */; };
@@ -221,6 +225,10 @@
 		1F3B9A2C0EF2145700286867 /* ZooDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZooDemoAppDelegate.h; path = Classes/ZooDemoAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		1F3B9A820EF2151B00286867 /* ZooDemo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZooDemo_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3EC91CCA11647D0000697943 /* bgimg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgimg.jpg; sourceTree = "<group>"; };
+		3EC91CCB11647D0000697943 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
+		3EC91CCC11647D0000697943 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
+		3EC91CCD11647D0000697943 /* waterbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterbox.png; sourceTree = "<group>"; };
 		502BC3551120837500A0B92A /* CDAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAudioManager.h; sourceTree = "<group>"; };
 		502BC3561120837500A0B92A /* CDAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAudioManager.m; sourceTree = "<group>"; };
 		502BC3571120837500A0B92A /* CDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConfig.h; sourceTree = "<group>"; };
@@ -509,6 +517,17 @@
 			path = Classes;
 			sourceTree = "<group>";
 		};
+		3EC91CC911647D0000697943 /* background */ = {
+			isa = PBXGroup;
+			children = (
+				3EC91CCA11647D0000697943 /* bgimg.jpg */,
+				3EC91CCB11647D0000697943 /* house.png */,
+				3EC91CCC11647D0000697943 /* tree.png */,
+				3EC91CCD11647D0000697943 /* waterbox.png */,
+			);
+			path = background;
+			sourceTree = "<group>";
+		};
 		502BC3541120837500A0B92A /* CocosDenshion */ = {
 			isa = PBXGroup;
 			children = (
@@ -761,6 +780,7 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3EC91CC911647D0000697943 /* background */,
 				50F414EC1069373D002A0D5E /* Default.png */,
 				50F414ED1069373D002A0D5E /* fps_images.png */,
 				50F414EE1069373D002A0D5E /* Icon.png */,
@@ -935,6 +955,10 @@
 				50F414F01069373D002A0D5E /* Default.png in Resources */,
 				50F414F11069373D002A0D5E /* fps_images.png in Resources */,
 				50F414F21069373D002A0D5E /* Icon.png in Resources */,
+				3EC91CCE11647D0000697943 /* bgimg.jpg in Resources */,
+				3EC91CCF11647D0000697943 /* house.png in Resources */,
+				3EC91CD011647D0000697943 /* tree.png in Resources */,
+				3EC91CD111647D0000697943 /* waterbox.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
