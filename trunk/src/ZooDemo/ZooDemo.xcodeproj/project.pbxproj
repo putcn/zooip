@@ -9,6 +9,44 @@
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1F3B9A2D0EF2145700286867 /* ZooDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B9A2B0EF2145700286867 /* ZooDemoAppDelegate.m */; };
+		3E53773B1164EADC00782EC2 /* snake_eat_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377281164EADC00782EC2 /* snake_eat_1.png */; };
+		3E53773C1164EADC00782EC2 /* snake_eat_11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377291164EADC00782EC2 /* snake_eat_11.png */; };
+		3E53773D1164EADC00782EC2 /* snake_eat_13.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53772A1164EADC00782EC2 /* snake_eat_13.png */; };
+		3E53773E1164EADC00782EC2 /* snake_eat_15.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53772B1164EADC00782EC2 /* snake_eat_15.png */; };
+		3E53773F1164EADC00782EC2 /* snake_eat_17.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53772C1164EADC00782EC2 /* snake_eat_17.png */; };
+		3E5377401164EADC00782EC2 /* snake_eat_19.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53772D1164EADC00782EC2 /* snake_eat_19.png */; };
+		3E5377411164EADC00782EC2 /* snake_eat_21.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53772E1164EADC00782EC2 /* snake_eat_21.png */; };
+		3E5377421164EADC00782EC2 /* snake_eat_23.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53772F1164EADC00782EC2 /* snake_eat_23.png */; };
+		3E5377431164EADC00782EC2 /* snake_eat_25.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377301164EADC00782EC2 /* snake_eat_25.png */; };
+		3E5377441164EADC00782EC2 /* snake_eat_27.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377311164EADC00782EC2 /* snake_eat_27.png */; };
+		3E5377451164EADC00782EC2 /* snake_eat_28.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377321164EADC00782EC2 /* snake_eat_28.png */; };
+		3E5377461164EADC00782EC2 /* snake_eat_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377331164EADC00782EC2 /* snake_eat_3.png */; };
+		3E5377471164EADC00782EC2 /* snake_eat_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377341164EADC00782EC2 /* snake_eat_5.png */; };
+		3E5377481164EADC00782EC2 /* snake_eat_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377351164EADC00782EC2 /* snake_eat_7.png */; };
+		3E5377491164EADC00782EC2 /* snake_eat_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377361164EADC00782EC2 /* snake_eat_9.png */; };
+		3E53774A1164EADC00782EC2 /* snake_sleep_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377371164EADC00782EC2 /* snake_sleep_2.png */; };
+		3E53774B1164EADC00782EC2 /* snake_sleep_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377381164EADC00782EC2 /* snake_sleep_3.png */; };
+		3E53774C1164EADC00782EC2 /* snake_sleep_4.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377391164EADC00782EC2 /* snake_sleep_4.png */; };
+		3E53774D1164EADC00782EC2 /* snake_sleep_5.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53773A1164EADC00782EC2 /* snake_sleep_5.png */; };
+		3E53776C1164EB1C00782EC2 /* 丹顶鹤蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377581164EB1C00782EC2 /* 丹顶鹤蛋.png */; };
+		3E53776D1164EB1C00782EC2 /* 喜鹊蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377591164EB1C00782EC2 /* 喜鹊蛋.png */; };
+		3E53776E1164EB1C00782EC2 /* 大雁蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53775A1164EB1C00782EC2 /* 大雁蛋.png */; };
+		3E53776F1164EB1C00782EC2 /* 天鹅蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53775B1164EB1C00782EC2 /* 天鹅蛋.png */; };
+		3E5377701164EB1C00782EC2 /* 孔雀蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53775C1164EB1C00782EC2 /* 孔雀蛋.png */; };
+		3E5377711164EB1C00782EC2 /* 朱鹮蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53775D1164EB1C00782EC2 /* 朱鹮蛋.png */; };
+		3E5377721164EB1C00782EC2 /* 火鸡蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53775E1164EB1C00782EC2 /* 火鸡蛋.png */; };
+		3E5377731164EB1C00782EC2 /* 空喂食盆.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53775F1164EB1C00782EC2 /* 空喂食盆.png */; };
+		3E5377741164EB1C00782EC2 /* 野鸡蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377601164EB1C00782EC2 /* 野鸡蛋.png */; };
+		3E5377751164EB1C00782EC2 /* 野鸭蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377611164EB1C00782EC2 /* 野鸭蛋.png */; };
+		3E5377761164EB1C00782EC2 /* 鸡蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377621164EB1C00782EC2 /* 鸡蛋.png */; };
+		3E5377771164EB1C00782EC2 /* 鸭蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377631164EB1C00782EC2 /* 鸭蛋.png */; };
+		3E5377781164EB1C00782EC2 /* 鸳鸯蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377641164EB1C00782EC2 /* 鸳鸯蛋.png */; };
+		3E5377791164EB1C00782EC2 /* 鸽子蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377651164EB1C00782EC2 /* 鸽子蛋.png */; };
+		3E53777A1164EB1C00782EC2 /* 鹅蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377661164EB1C00782EC2 /* 鹅蛋.png */; };
+		3E53777B1164EB1C00782EC2 /* 鹦鹉蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377671164EB1C00782EC2 /* 鹦鹉蛋.png */; };
+		3E53777C1164EB1C00782EC2 /* 喂食1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377691164EB1C00782EC2 /* 喂食1.png */; };
+		3E53777D1164EB1C00782EC2 /* 喂食2.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53776A1164EB1C00782EC2 /* 喂食2.png */; };
+		3E53777E1164EB1C00782EC2 /* 喂食3.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53776B1164EB1C00782EC2 /* 喂食3.png */; };
 		3EC91CCE11647D0000697943 /* bgimg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3EC91CCA11647D0000697943 /* bgimg.jpg */; };
 		3EC91CCF11647D0000697943 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC91CCB11647D0000697943 /* house.png */; };
 		3EC91CD011647D0000697943 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC91CCC11647D0000697943 /* tree.png */; };
@@ -225,6 +263,44 @@
 		1F3B9A2C0EF2145700286867 /* ZooDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZooDemoAppDelegate.h; path = Classes/ZooDemoAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		1F3B9A820EF2151B00286867 /* ZooDemo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZooDemo_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3E5377281164EADC00782EC2 /* snake_eat_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_1.png; sourceTree = "<group>"; };
+		3E5377291164EADC00782EC2 /* snake_eat_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_11.png; sourceTree = "<group>"; };
+		3E53772A1164EADC00782EC2 /* snake_eat_13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_13.png; sourceTree = "<group>"; };
+		3E53772B1164EADC00782EC2 /* snake_eat_15.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_15.png; sourceTree = "<group>"; };
+		3E53772C1164EADC00782EC2 /* snake_eat_17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_17.png; sourceTree = "<group>"; };
+		3E53772D1164EADC00782EC2 /* snake_eat_19.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_19.png; sourceTree = "<group>"; };
+		3E53772E1164EADC00782EC2 /* snake_eat_21.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_21.png; sourceTree = "<group>"; };
+		3E53772F1164EADC00782EC2 /* snake_eat_23.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_23.png; sourceTree = "<group>"; };
+		3E5377301164EADC00782EC2 /* snake_eat_25.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_25.png; sourceTree = "<group>"; };
+		3E5377311164EADC00782EC2 /* snake_eat_27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_27.png; sourceTree = "<group>"; };
+		3E5377321164EADC00782EC2 /* snake_eat_28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_28.png; sourceTree = "<group>"; };
+		3E5377331164EADC00782EC2 /* snake_eat_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_3.png; sourceTree = "<group>"; };
+		3E5377341164EADC00782EC2 /* snake_eat_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_5.png; sourceTree = "<group>"; };
+		3E5377351164EADC00782EC2 /* snake_eat_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_7.png; sourceTree = "<group>"; };
+		3E5377361164EADC00782EC2 /* snake_eat_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_9.png; sourceTree = "<group>"; };
+		3E5377371164EADC00782EC2 /* snake_sleep_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_sleep_2.png; sourceTree = "<group>"; };
+		3E5377381164EADC00782EC2 /* snake_sleep_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_sleep_3.png; sourceTree = "<group>"; };
+		3E5377391164EADC00782EC2 /* snake_sleep_4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_sleep_4.png; sourceTree = "<group>"; };
+		3E53773A1164EADC00782EC2 /* snake_sleep_5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_sleep_5.png; sourceTree = "<group>"; };
+		3E5377581164EB1C00782EC2 /* 丹顶鹤蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "丹顶鹤蛋.png"; sourceTree = "<group>"; };
+		3E5377591164EB1C00782EC2 /* 喜鹊蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "喜鹊蛋.png"; sourceTree = "<group>"; };
+		3E53775A1164EB1C00782EC2 /* 大雁蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "大雁蛋.png"; sourceTree = "<group>"; };
+		3E53775B1164EB1C00782EC2 /* 天鹅蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "天鹅蛋.png"; sourceTree = "<group>"; };
+		3E53775C1164EB1C00782EC2 /* 孔雀蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "孔雀蛋.png"; sourceTree = "<group>"; };
+		3E53775D1164EB1C00782EC2 /* 朱鹮蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "朱鹮蛋.png"; sourceTree = "<group>"; };
+		3E53775E1164EB1C00782EC2 /* 火鸡蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "火鸡蛋.png"; sourceTree = "<group>"; };
+		3E53775F1164EB1C00782EC2 /* 空喂食盆.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "空喂食盆.png"; sourceTree = "<group>"; };
+		3E5377601164EB1C00782EC2 /* 野鸡蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "野鸡蛋.png"; sourceTree = "<group>"; };
+		3E5377611164EB1C00782EC2 /* 野鸭蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "野鸭蛋.png"; sourceTree = "<group>"; };
+		3E5377621164EB1C00782EC2 /* 鸡蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鸡蛋.png"; sourceTree = "<group>"; };
+		3E5377631164EB1C00782EC2 /* 鸭蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鸭蛋.png"; sourceTree = "<group>"; };
+		3E5377641164EB1C00782EC2 /* 鸳鸯蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鸳鸯蛋.png"; sourceTree = "<group>"; };
+		3E5377651164EB1C00782EC2 /* 鸽子蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鸽子蛋.png"; sourceTree = "<group>"; };
+		3E5377661164EB1C00782EC2 /* 鹅蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鹅蛋.png"; sourceTree = "<group>"; };
+		3E5377671164EB1C00782EC2 /* 鹦鹉蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鹦鹉蛋.png"; sourceTree = "<group>"; };
+		3E5377691164EB1C00782EC2 /* 喂食1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "喂食1.png"; sourceTree = "<group>"; };
+		3E53776A1164EB1C00782EC2 /* 喂食2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "喂食2.png"; sourceTree = "<group>"; };
+		3E53776B1164EB1C00782EC2 /* 喂食3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "喂食3.png"; sourceTree = "<group>"; };
 		3EC91CCA11647D0000697943 /* bgimg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgimg.jpg; sourceTree = "<group>"; };
 		3EC91CCB11647D0000697943 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		3EC91CCC11647D0000697943 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
@@ -469,12 +545,12 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				50F414EB1069373D002A0D5E /* Resources */,
 				504DFC6810AF1739006D82FE /* LICENSE.cocos2d */,
 				504DFC6910AF1739006D82FE /* LICENSE.cocosdenshion */,
 				506EDAA3102F461B00A389B3 /* cocos2d Sources */,
 				2D500B1D0D5A766B00DBA0E3 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				50F414EB1069373D002A0D5E /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -515,6 +591,73 @@
 				1F3B9A2B0EF2145700286867 /* ZooDemoAppDelegate.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		3E5377261164EADC00782EC2 /* animate */ = {
+			isa = PBXGroup;
+			children = (
+				3E5377271164EADC00782EC2 /* snake_eat */,
+			);
+			path = animate;
+			sourceTree = "<group>";
+		};
+		3E5377271164EADC00782EC2 /* snake_eat */ = {
+			isa = PBXGroup;
+			children = (
+				3E5377281164EADC00782EC2 /* snake_eat_1.png */,
+				3E5377291164EADC00782EC2 /* snake_eat_11.png */,
+				3E53772A1164EADC00782EC2 /* snake_eat_13.png */,
+				3E53772B1164EADC00782EC2 /* snake_eat_15.png */,
+				3E53772C1164EADC00782EC2 /* snake_eat_17.png */,
+				3E53772D1164EADC00782EC2 /* snake_eat_19.png */,
+				3E53772E1164EADC00782EC2 /* snake_eat_21.png */,
+				3E53772F1164EADC00782EC2 /* snake_eat_23.png */,
+				3E5377301164EADC00782EC2 /* snake_eat_25.png */,
+				3E5377311164EADC00782EC2 /* snake_eat_27.png */,
+				3E5377321164EADC00782EC2 /* snake_eat_28.png */,
+				3E5377331164EADC00782EC2 /* snake_eat_3.png */,
+				3E5377341164EADC00782EC2 /* snake_eat_5.png */,
+				3E5377351164EADC00782EC2 /* snake_eat_7.png */,
+				3E5377361164EADC00782EC2 /* snake_eat_9.png */,
+				3E5377371164EADC00782EC2 /* snake_sleep_2.png */,
+				3E5377381164EADC00782EC2 /* snake_sleep_3.png */,
+				3E5377391164EADC00782EC2 /* snake_sleep_4.png */,
+				3E53773A1164EADC00782EC2 /* snake_sleep_5.png */,
+			);
+			path = snake_eat;
+			sourceTree = "<group>";
+		};
+		3E5377571164EB1C00782EC2 /* eggs */ = {
+			isa = PBXGroup;
+			children = (
+				3E5377581164EB1C00782EC2 /* 丹顶鹤蛋.png */,
+				3E5377591164EB1C00782EC2 /* 喜鹊蛋.png */,
+				3E53775A1164EB1C00782EC2 /* 大雁蛋.png */,
+				3E53775B1164EB1C00782EC2 /* 天鹅蛋.png */,
+				3E53775C1164EB1C00782EC2 /* 孔雀蛋.png */,
+				3E53775D1164EB1C00782EC2 /* 朱鹮蛋.png */,
+				3E53775E1164EB1C00782EC2 /* 火鸡蛋.png */,
+				3E53775F1164EB1C00782EC2 /* 空喂食盆.png */,
+				3E5377601164EB1C00782EC2 /* 野鸡蛋.png */,
+				3E5377611164EB1C00782EC2 /* 野鸭蛋.png */,
+				3E5377621164EB1C00782EC2 /* 鸡蛋.png */,
+				3E5377631164EB1C00782EC2 /* 鸭蛋.png */,
+				3E5377641164EB1C00782EC2 /* 鸳鸯蛋.png */,
+				3E5377651164EB1C00782EC2 /* 鸽子蛋.png */,
+				3E5377661164EB1C00782EC2 /* 鹅蛋.png */,
+				3E5377671164EB1C00782EC2 /* 鹦鹉蛋.png */,
+			);
+			path = eggs;
+			sourceTree = "<group>";
+		};
+		3E5377681164EB1C00782EC2 /* foods */ = {
+			isa = PBXGroup;
+			children = (
+				3E5377691164EB1C00782EC2 /* 喂食1.png */,
+				3E53776A1164EB1C00782EC2 /* 喂食2.png */,
+				3E53776B1164EB1C00782EC2 /* 喂食3.png */,
+			);
+			path = foods;
 			sourceTree = "<group>";
 		};
 		3EC91CC911647D0000697943 /* background */ = {
@@ -780,6 +923,9 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3E5377571164EB1C00782EC2 /* eggs */,
+				3E5377681164EB1C00782EC2 /* foods */,
+				3E5377261164EADC00782EC2 /* animate */,
 				3EC91CC911647D0000697943 /* background */,
 				50F414EC1069373D002A0D5E /* Default.png */,
 				50F414ED1069373D002A0D5E /* fps_images.png */,
@@ -959,6 +1105,44 @@
 				3EC91CCF11647D0000697943 /* house.png in Resources */,
 				3EC91CD011647D0000697943 /* tree.png in Resources */,
 				3EC91CD111647D0000697943 /* waterbox.png in Resources */,
+				3E53773B1164EADC00782EC2 /* snake_eat_1.png in Resources */,
+				3E53773C1164EADC00782EC2 /* snake_eat_11.png in Resources */,
+				3E53773D1164EADC00782EC2 /* snake_eat_13.png in Resources */,
+				3E53773E1164EADC00782EC2 /* snake_eat_15.png in Resources */,
+				3E53773F1164EADC00782EC2 /* snake_eat_17.png in Resources */,
+				3E5377401164EADC00782EC2 /* snake_eat_19.png in Resources */,
+				3E5377411164EADC00782EC2 /* snake_eat_21.png in Resources */,
+				3E5377421164EADC00782EC2 /* snake_eat_23.png in Resources */,
+				3E5377431164EADC00782EC2 /* snake_eat_25.png in Resources */,
+				3E5377441164EADC00782EC2 /* snake_eat_27.png in Resources */,
+				3E5377451164EADC00782EC2 /* snake_eat_28.png in Resources */,
+				3E5377461164EADC00782EC2 /* snake_eat_3.png in Resources */,
+				3E5377471164EADC00782EC2 /* snake_eat_5.png in Resources */,
+				3E5377481164EADC00782EC2 /* snake_eat_7.png in Resources */,
+				3E5377491164EADC00782EC2 /* snake_eat_9.png in Resources */,
+				3E53774A1164EADC00782EC2 /* snake_sleep_2.png in Resources */,
+				3E53774B1164EADC00782EC2 /* snake_sleep_3.png in Resources */,
+				3E53774C1164EADC00782EC2 /* snake_sleep_4.png in Resources */,
+				3E53774D1164EADC00782EC2 /* snake_sleep_5.png in Resources */,
+				3E53776C1164EB1C00782EC2 /* 丹顶鹤蛋.png in Resources */,
+				3E53776D1164EB1C00782EC2 /* 喜鹊蛋.png in Resources */,
+				3E53776E1164EB1C00782EC2 /* 大雁蛋.png in Resources */,
+				3E53776F1164EB1C00782EC2 /* 天鹅蛋.png in Resources */,
+				3E5377701164EB1C00782EC2 /* 孔雀蛋.png in Resources */,
+				3E5377711164EB1C00782EC2 /* 朱鹮蛋.png in Resources */,
+				3E5377721164EB1C00782EC2 /* 火鸡蛋.png in Resources */,
+				3E5377731164EB1C00782EC2 /* 空喂食盆.png in Resources */,
+				3E5377741164EB1C00782EC2 /* 野鸡蛋.png in Resources */,
+				3E5377751164EB1C00782EC2 /* 野鸭蛋.png in Resources */,
+				3E5377761164EB1C00782EC2 /* 鸡蛋.png in Resources */,
+				3E5377771164EB1C00782EC2 /* 鸭蛋.png in Resources */,
+				3E5377781164EB1C00782EC2 /* 鸳鸯蛋.png in Resources */,
+				3E5377791164EB1C00782EC2 /* 鸽子蛋.png in Resources */,
+				3E53777A1164EB1C00782EC2 /* 鹅蛋.png in Resources */,
+				3E53777B1164EB1C00782EC2 /* 鹦鹉蛋.png in Resources */,
+				3E53777C1164EB1C00782EC2 /* 喂食1.png in Resources */,
+				3E53777D1164EB1C00782EC2 /* 喂食2.png in Resources */,
+				3E53777E1164EB1C00782EC2 /* 喂食3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
