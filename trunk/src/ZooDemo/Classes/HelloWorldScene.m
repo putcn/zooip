@@ -6,6 +6,11 @@
 // Import the interfaces
 #import "HelloWorldScene.h"
 
+CCSprite *background;
+CCSprite *tree;
+CCSprite *house;
+CCSprite *waterbox;
+
 // HelloWorld implementation
 @implementation HelloWorld
 
@@ -31,17 +36,25 @@
 	// Apple recommends to re-assign "self" with the "super" return value
 	if( (self=[super init] )) {
 		
-		// create and initialize a Label
-		CCLabel* label = [CCLabel labelWithString:@"Hello World" fontName:@"Marker Felt" fontSize:64];
-
-		// ask director the the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
-	
-		// position the label on the center of the screen
-		label.position =  ccp( size.width /2 , size.height/2 );
+		//set the backgroud and the size set 50%
+		background = [CCSprite spriteWithFile:@"bgimg.jpg"];
+		background.scale = 0.5f;
+		background.position = ccp(240,160);
 		
-		// add the label as a child to this Layer
-		[self addChild: label];
+		tree = [CCSprite spriteWithFile:@"tree.png"];
+		tree.position = ccp(800,450);
+		[background addChild:tree];
+		
+		house = [CCSprite spriteWithFile:@"house.png"];
+		house.position = ccp(470,480);
+		[background addChild:house];
+		
+		waterbox = [CCSprite spriteWithFile:@"waterbox.png"];
+		waterbox.position = ccp(360,480);
+		[background addChild:waterbox];
+		
+		[self addChild: background z:0];
+		
 	}
 	return self;
 }
