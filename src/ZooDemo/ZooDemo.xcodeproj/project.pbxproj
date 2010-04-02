@@ -1262,6 +1262,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CODE_SIGN_IDENTITY = "Don't Code Sign";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1279,6 +1281,8 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = ZooDemo;
+				PROVISIONING_PROFILE = "";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "30DF8BD4-7F29-4BF2-871E-F8A117564162";
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
