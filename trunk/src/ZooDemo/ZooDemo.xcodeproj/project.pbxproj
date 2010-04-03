@@ -238,6 +238,12 @@
 		50F414F01069373D002A0D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EC1069373D002A0D5E /* Default.png */; };
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
+		BF10818C1165DA0D0000BE1C /* GameMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10818B1165DA0D0000BE1C /* GameMainScene.m */; };
+		BF10818F1165DA350000BE1C /* RandomHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10818E1165DA350000BE1C /* RandomHelper.m */; };
+		BF1081921165DA440000BE1C /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1081911165DA440000BE1C /* Animal.m */; };
+		BF1081951165DADB0000BE1C /* Egg.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1081941165DADB0000BE1C /* Egg.m */; };
+		BF1081981165DB010000BE1C /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1081971165DB010000BE1C /* ModelLocator.m */; };
+		BF10819D1165DCB00000BE1C /* AnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10819C1165DCB00000BE1C /* AnimalView.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -489,6 +495,19 @@
 		50F414ED1069373D002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F414EE1069373D002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BF10818A1165DA0D0000BE1C /* GameMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMainScene.h; sourceTree = "<group>"; };
+		BF10818B1165DA0D0000BE1C /* GameMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMainScene.m; sourceTree = "<group>"; };
+		BF10818D1165DA350000BE1C /* RandomHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomHelper.h; sourceTree = "<group>"; };
+		BF10818E1165DA350000BE1C /* RandomHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomHelper.m; sourceTree = "<group>"; };
+		BF1081901165DA440000BE1C /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
+		BF1081911165DA440000BE1C /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
+		BF1081931165DADB0000BE1C /* Egg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Egg.h; sourceTree = "<group>"; };
+		BF1081941165DADB0000BE1C /* Egg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Egg.m; sourceTree = "<group>"; };
+		BF1081961165DB010000BE1C /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
+		BF1081971165DB010000BE1C /* ModelLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLocator.m; sourceTree = "<group>"; };
+		BF10819B1165DCB00000BE1C /* AnimalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalView.h; sourceTree = "<group>"; };
+		BF10819C1165DCB00000BE1C /* AnimalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalView.m; sourceTree = "<group>"; };
+		BF1083F21166ED620000BE1C /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -585,10 +604,14 @@
 		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BF1081871165D98D0000BE1C /* Helpers */,
+				BF1081851165D9710000BE1C /* Models */,
+				BF1081861165D97C0000BE1C /* Views */,
 				506EDC2F102F528A00A389B3 /* HelloWorldScene.h */,
 				506EDC30102F528A00A389B3 /* HelloWorldScene.m */,
 				1F3B9A2C0EF2145700286867 /* ZooDemoAppDelegate.h */,
 				1F3B9A2B0EF2145700286867 /* ZooDemoAppDelegate.m */,
+				BF1083F21166ED620000BE1C /* Consts.h */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -935,6 +958,71 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		BF1081851165D9710000BE1C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF1081881165D9990000BE1C /* Entities */,
+				BF1081961165DB010000BE1C /* ModelLocator.h */,
+				BF1081971165DB010000BE1C /* ModelLocator.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		BF1081861165D97C0000BE1C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BF10819A1165DC270000BE1C /* Scenes */,
+				BF1081991165DBD90000BE1C /* UIControlers */,
+				BF1081891165D9A60000BE1C /* Components */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		BF1081871165D98D0000BE1C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BF10818D1165DA350000BE1C /* RandomHelper.h */,
+				BF10818E1165DA350000BE1C /* RandomHelper.m */,
+			);
+			name = Helpers;
+			sourceTree = "<group>";
+		};
+		BF1081881165D9990000BE1C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				BF1081901165DA440000BE1C /* Animal.h */,
+				BF1081911165DA440000BE1C /* Animal.m */,
+				BF1081931165DADB0000BE1C /* Egg.h */,
+				BF1081941165DADB0000BE1C /* Egg.m */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
+		BF1081891165D9A60000BE1C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BF10819B1165DCB00000BE1C /* AnimalView.h */,
+				BF10819C1165DCB00000BE1C /* AnimalView.m */,
+			);
+			name = Components;
+			sourceTree = "<group>";
+		};
+		BF1081991165DBD90000BE1C /* UIControlers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = UIControlers;
+			sourceTree = "<group>";
+		};
+		BF10819A1165DC270000BE1C /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				BF10818A1165DA0D0000BE1C /* GameMainScene.h */,
+				BF10818B1165DA0D0000BE1C /* GameMainScene.m */,
+			);
+			name = Scenes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -1156,6 +1244,12 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1F3B9A2D0EF2145700286867 /* ZooDemoAppDelegate.m in Sources */,
 				506EDC31102F528A00A389B3 /* HelloWorldScene.m in Sources */,
+				BF10818C1165DA0D0000BE1C /* GameMainScene.m in Sources */,
+				BF10818F1165DA350000BE1C /* RandomHelper.m in Sources */,
+				BF1081921165DA440000BE1C /* Animal.m in Sources */,
+				BF1081951165DADB0000BE1C /* Egg.m in Sources */,
+				BF1081981165DB010000BE1C /* ModelLocator.m in Sources */,
+				BF10819D1165DCB00000BE1C /* AnimalView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
