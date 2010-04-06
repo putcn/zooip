@@ -1,5 +1,5 @@
 #labels svn,version,fix
-#Clean version information before you svn commit
+Clean version information before you svn commit
 
 当你直接把图片从image目录拷贝到工作目录的时候会导致图片携带了原本的版本号,不能正常的上传图片;
 
