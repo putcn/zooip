@@ -15,7 +15,7 @@
 {
 	if ( (self=[super init]) )
 	{
-		animationTable = [[NSMutableDictionary alloc] init];
+		animationTable = [[[NSMutableDictionary alloc] init] retain];
 		
 		// 在子类中实现这个方法
 		// 根据传入的prefix初始化8个方向的动画，
@@ -50,3 +50,7 @@
 }
 
 @end
+
+
+
+

@@ -6,23 +6,7 @@
 // Import the interfaces
 #import "HelloWorldScene.h"
 
-CCSprite *background;
-CCSprite *tree;
-CCSprite *house;
-CCSprite *waterbox;
-CCSprite *egg1;
-CCSprite *egg2;
-CCSprite *egg3;
-CCSprite *egg4;
-CCSprite *egg5;
-CCSprite *egg6;
-CCSprite *egg7;
-CCSprite *egg8;
-CCSprite *egg9;
-CCSprite *egg10;
-CCSprite *pan;
-CCSprite *snake1;
-CCSprite *snake2;
+
 
 // HelloWorld implementation
 @implementation HelloWorld
@@ -50,76 +34,81 @@ CCSprite *snake2;
 	if( (self=[super init] )) {
 		
 		//set the backgroud and the size set 50%
+		baseContainer = [CCSprite spriteWithFile:@"Icon.png"];
+		baseContainer.position = ccp(14.25,14.25);
+		baseContainer.scale = 0.5f;
+		[self addChild:baseContainer];
+		
 		background = [CCSprite spriteWithFile:@"bgimg.jpg"];
-		background.scale = 0.47f;
-		background.position = ccp(240,160);
+		background.scale = 0.95f;
+		background.position = ccp(480,320);
 		
 		tree = [CCSprite spriteWithFile:@"tree.png"];
-		tree.position = ccp(810,440);
-		[background addChild:tree];
+		tree.position = ccp(750,400);
+		[baseContainer addChild:tree z:1];
 		
 		house = [CCSprite spriteWithFile:@"house.png"];
-		house.position = ccp(480,480);
-		[background addChild:house];
+		house.position = ccp(450,410);
+		[baseContainer addChild:house z:1];
 		
 		waterbox = [CCSprite spriteWithFile:@"waterbox.png"];
-		waterbox.position = ccp(350,480);
-		[background addChild:waterbox];
+		waterbox.position = ccp(330,420);
+		[baseContainer addChild:waterbox z:1];
 		
 		egg1 = [CCSprite spriteWithFile:@"丹顶鹤蛋.png"];
-		egg1.position = ccp(600,100);
-		[background addChild:egg1 z:1];
+		egg1.position = ccp(500,50);
+		[baseContainer addChild:egg1 z:2];
 		
 		egg2 = [CCSprite spriteWithFile:@"喜鹊蛋.png"];
-		egg2.position = ccp(710,180);
-		[background addChild:egg2 z:1];
+		egg2.position = ccp(610,130);
+		[baseContainer addChild:egg2 z:2];
 		
 		egg3 = [CCSprite spriteWithFile:@"大雁蛋.png"];
-		egg3.position = ccp(820,146);
-		[background addChild:egg3 z:1];
+		egg3.position = ccp(720,46);
+		[baseContainer addChild:egg3 z:2];
 		
 		egg4 = [CCSprite spriteWithFile:@"天鹅蛋.png"];
-		egg4.position = ccp(630,190);
-		[background addChild:egg4 z:1];
+		egg4.position = ccp(530,140);
+		[baseContainer addChild:egg4 z:2];
 		
 		egg5 = [CCSprite spriteWithFile:@"孔雀蛋.png"];
-		egg5.position = ccp(580,134);
-		[background addChild:egg5 z:1];
+		egg5.position = ccp(580,104);
+		[baseContainer addChild:egg5 z:2];
 		
 		egg6 = [CCSprite spriteWithFile:@"火鸡蛋.png"];
-		egg6.position = ccp(750,167);
-		[background addChild:egg6 z:1];
+		egg6.position = ccp(650,107);
+		[baseContainer addChild:egg6 z:2];
 		
 		egg7 = [CCSprite spriteWithFile:@"野鸡蛋.png"];
-		egg7.position = ccp(660,123);
-		[background addChild:egg7 z:1];
+		egg7.position = ccp(560,23);
+		[baseContainer addChild:egg7 z:2];
 		
 		egg8 = [CCSprite spriteWithFile:@"野鸭蛋.png"];
-		egg8.position = ccp(570,104);
-		[background addChild:egg8 z:1];
+		egg8.position = ccp(570,54);
+		[baseContainer addChild:egg8 z:2];
 		
 		egg9 = [CCSprite spriteWithFile:@"鸡蛋.png"];
-		egg9.position = ccp(780,200);
-		[background addChild:egg9 z:1];
+		egg9.position = ccp(680,100);
+		[baseContainer addChild:egg9 z:2];
 		
 		egg10 = [CCSprite spriteWithFile:@"鸳鸯蛋.png"];
-		egg10.position = ccp(790,178);
-		[background addChild:egg10 z:1];
+		egg10.position = ccp(590,178);
+		[baseContainer addChild:egg10 z:2];
 		
 		pan = [CCSprite spriteWithFile:@"喂食3.png"];
-		pan.position = ccp(300,150);
-		[background addChild:pan z:1];
+		pan.position = ccp(300,100);
+		[baseContainer addChild:pan z:2];
 		
 		snake1 = [CCSprite spriteWithFile:@"snake_sleep_2.png"];
-		snake1.position = ccp(800,100);
-		[background addChild:snake1 z:2];
+		snake1.position = ccp(700,100);
+		[baseContainer addChild:snake1 z:3];
 		
 		snake2 = [CCSprite spriteWithFile:@"snake_sleep_5.png"];
-		snake2.position = ccp(600,200);
-		[background addChild:snake2 z:2];
+		snake2.position = ccp(700,50);
+		[baseContainer addChild:snake2 z:3];
 		
 		
-		[self addChild: background z:0];
+		[baseContainer addChild: background z:0];
 		
 	}
 	return self;
