@@ -5,6 +5,7 @@
 // HelloWorld Layer
 @interface HelloWorld : CCLayer
 {
+
 }
 
 // returns a Scene that contains the HelloWorld as the only child
