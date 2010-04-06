@@ -8,6 +8,10 @@
 
 #import "GameMainScene.h"
 #import "MallardView.h"
+#import "DoveView.h"
+#import "ChickenView.h"
+#import "MaleMandarinDuckView.h"
+#import "PeacockView.h"
 #import "Animal.h"
 
 @implementation GameMainScene
@@ -109,9 +113,29 @@
 		
 		MallardView *mallardView = [[MallardView alloc] initWithPrefix:@"mallard"];
 		mallardView.position = ccp(400,200);
-		Animal *duck = [[Animal alloc] initWithView:mallardView setSpeed:1.0f];
+		Animal *mallard = [[Animal alloc] initWithView:mallardView setSpeed:1.0f];
+		
+		DoveView *doveView = [[DoveView alloc] initWithPrefix:@"dove"];
+		doveView.position = ccp(400,500);
+		Animal *dove = [[Animal alloc] initWithView:doveView setSpeed:1.0f];
+		
+		ChickenView *chickenView = [[ChickenView alloc] initWithPrefix:@"chicken"];
+		chickenView.position = ccp(600,500);
+		Animal *chicken = [[Animal alloc] initWithView:chickenView setSpeed:1.0f];	
+		
+		PeacockView *peacockView = [[PeacockView alloc] initWithPrefix:@"peacoke"];
+		peacockView.position = ccp(600,200);
+		Animal *peacock = [[Animal alloc] initWithView:peacockView setSpeed:0.5f];
+		
+		//MaleMandarinDuckView *maleMandarinDuckView = [[MaleMandarinDuckView alloc] initWithPrefix:@"maleMandarinDuck"];
+		//maleMandarinDuckView.position = ccp(350,620);
+		//Animal *maleMandarinDuck = [[Animal alloc] initWithView:maleMandarinDuckView setSpeed:1.0f];
 		
 		[baseContainer addChild:mallardView z:4];
+		[baseContainer addChild:doveView z:4];
+		[baseContainer addChild:chickenView z:4];
+		[baseContainer addChild:peacockView z:4];
+		//[baseContainer addChild:maleMandarinDuckView z:4];
 	}
 	return self;
 }
