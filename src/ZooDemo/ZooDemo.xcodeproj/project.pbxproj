@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1F3B9A2D0EF2145700286867 /* ZooDemoAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B9A2B0EF2145700286867 /* ZooDemoAppDelegate.m */; };
+		3E33B5A7116C447E00B72E46 /* ChinemyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E33B5A4116C447E00B72E46 /* ChinemyView.m */; };
+		3E33B5A8116C447E00B72E46 /* SnakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E33B5A6116C447E00B72E46 /* SnakeView.m */; };
 		3E53773B1164EADC00782EC2 /* snake_eat_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377281164EADC00782EC2 /* snake_eat_1.png */; };
 		3E53773C1164EADC00782EC2 /* snake_eat_11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E5377291164EADC00782EC2 /* snake_eat_11.png */; };
 		3E53773D1164EADC00782EC2 /* snake_eat_13.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E53772A1164EADC00782EC2 /* snake_eat_13.png */; };
@@ -1855,6 +1857,10 @@
 		1F3B9A2C0EF2145700286867 /* ZooDemoAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ZooDemoAppDelegate.h; path = Classes/ZooDemoAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		1F3B9A820EF2151B00286867 /* ZooDemo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZooDemo_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3E33B5A3116C447E00B72E46 /* ChinemyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinemyView.h; sourceTree = "<group>"; };
+		3E33B5A4116C447E00B72E46 /* ChinemyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinemyView.m; sourceTree = "<group>"; };
+		3E33B5A5116C447E00B72E46 /* SnakeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeView.h; sourceTree = "<group>"; };
+		3E33B5A6116C447E00B72E46 /* SnakeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnakeView.m; sourceTree = "<group>"; };
 		3E5377281164EADC00782EC2 /* snake_eat_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_1.png; sourceTree = "<group>"; };
 		3E5377291164EADC00782EC2 /* snake_eat_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_11.png; sourceTree = "<group>"; };
 		3E53772A1164EADC00782EC2 /* snake_eat_13.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_eat_13.png; sourceTree = "<group>"; };
@@ -6773,6 +6779,10 @@
 		BF1081891165D9A60000BE1C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3E33B5A3116C447E00B72E46 /* ChinemyView.h */,
+				3E33B5A4116C447E00B72E46 /* ChinemyView.m */,
+				3E33B5A5116C447E00B72E46 /* SnakeView.h */,
+				3E33B5A6116C447E00B72E46 /* SnakeView.m */,
 				BF10819B1165DCB00000BE1C /* AnimalView.h */,
 				BF10819C1165DCB00000BE1C /* AnimalView.m */,
 				3EE11CEB116B1BC500CB095E /* MallardView.h */,
@@ -8618,6 +8628,8 @@
 				3EE12D5A116B531300CB095E /* ChickenView.m in Sources */,
 				3EE12DB2116B5A2F00CB095E /* MaleMandarinDuckView.m in Sources */,
 				3EE12E0C116B5EE500CB095E /* PeacockView.m in Sources */,
+				3E33B5A7116C447E00B72E46 /* ChinemyView.m in Sources */,
+				3E33B5A8116C447E00B72E46 /* SnakeView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
