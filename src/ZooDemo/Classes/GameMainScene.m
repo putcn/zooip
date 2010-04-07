@@ -119,11 +119,11 @@
 		
 		DoveView *doveView = [[DoveView alloc] initWithPrefix:@"dove"];
 		doveView.position = ccp(400,500);
-		Animal *dove = [[Animal alloc] initWithView:doveView setSpeed:0.2f];
+		Animal *dove = [[Animal alloc] initWithView:doveView setSpeed:0.5f];
 		
 		DoveView *doveView1 = [[DoveView alloc] initWithPrefix:@"dove1"];
 		doveView1.position = ccp(600,450);
-		Animal *dove1 = [[Animal alloc] initWithView:doveView1 setSpeed:0.2f];
+		Animal *dove1 = [[Animal alloc] initWithView:doveView1 setSpeed:0.5f];
 		
 		ChickenView *chickenView = [[ChickenView alloc] initWithPrefix:@"chicken"];
 		chickenView.position = ccp(700,300);
