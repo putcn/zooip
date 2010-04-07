@@ -684,7 +684,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 55;
-		modificationTime = 292249848.054762;
+		modificationTime = 292309913.355183;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -701,7 +701,7 @@
 		hitCount = 0;
 		ignoreCount = 0;
 		lineNumber = 52;
-		modificationTime = 292249848.054821;
+		modificationTime = 292309913.355213;
 		originalNumberOfMultipleMatches = 1;
 		state = 0;
 	};
@@ -1324,6 +1324,27 @@
 		rType = 0;
 		vrLen = 760;
 		vrLoc = 150;
+	};
+	3EE11EFB116B485400CB095E /* chinemy_fl_11.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = chinemy_fl_11.png;
+		path = /Users/Rainbow/Development/zooip/src/ZooDemo/Resources/animate/chinemy/fl/chinemy_fl_11.png;
+		sourceTree = "<absolute>";
+	};
+	3EE11EFC116B485400CB095E /* chinemy_fl_12.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = chinemy_fl_12.png;
+		path = /Users/Rainbow/Development/zooip/src/ZooDemo/Resources/animate/chinemy/fl/chinemy_fl_12.png;
+		sourceTree = "<absolute>";
+	};
+	3EE11EFF116B485400CB095E /* chinemy_fl_15.png */ = {
+		isa = PBXFileReference;
+		lastKnownFileType = image.png;
+		name = chinemy_fl_15.png;
+		path = /Users/Rainbow/Development/zooip/src/ZooDemo/Resources/animate/chinemy/fl/chinemy_fl_15.png;
+		sourceTree = "<absolute>";
 	};
 	3EE11F5F116B485500CB095E /* pigeon_fly_down.0.png */ = {
 		isa = PBXFileReference;
@@ -3565,9 +3586,9 @@
 	};
 	BF10818B1165DA0D0000BE1C /* GameMainScene.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {679, 2201}}";
-			sepNavSelRange = "{253, 0}";
-			sepNavVisRange = "{0, 1151}";
+			sepNavIntBoundsRect = "{{0, 0}, {983, 2198}}";
+			sepNavSelRange = "{3803, 0}";
+			sepNavVisRange = "{2466, 1176}";
 			sepNavWindowFrame = "{{443, 78}, {738, 797}}";
 		};
 	};
