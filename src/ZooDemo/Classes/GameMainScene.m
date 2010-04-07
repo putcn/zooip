@@ -15,6 +15,7 @@
 #import "ChinemyView.h"
 #import "SnakeView.h"
 #import "Animal.h"
+#import "ScaleControlLayer.h"
 
 @implementation GameMainScene
 
@@ -31,11 +32,18 @@
 {
 	if( (self=[super init]) ) 
 	{
+		CGSize size = [[CCDirector sharedDirector] winSize];
+		
 		//set the backgroud and the size set 50%
-		baseContainer = [CCSprite spriteWithFile:@"Icon.png"];
-		baseContainer.position = ccp(14.25,14.25);
+		baseContainer = [CCSprite node];
+		baseContainer.position = ccp(-size.width / 2, -size.height / 2);
 		baseContainer.scale = 0.5f;
-		[self addChild:baseContainer];
+		
+		CCSprite *scaleContainer = [CCSprite node];
+		scaleContainer.position = ccp( size.width / 2, size.height / 2);
+		[scaleContainer addChild:baseContainer];
+		[self addChild:scaleContainer];
+		//baseContainer.anchorPoint = ccp( size.width / 2, size.height / 2);
 		
 		background = [CCSprite spriteWithFile:@"bgimg.jpg"];
 		background.scale = 0.95f;
@@ -154,7 +162,8 @@
 	//	[baseContainer addChild:chinemyView z:4];
 	//	[baseContainer addChild:maleMandarinDuckView z:4];
 	
-		
+		ScaleControlLayer *scaler = [[ScaleControlLayer alloc] initWithTarget:scaleContainer];
+		[self addChild:scaler];
 	}
 	return self;
 }
