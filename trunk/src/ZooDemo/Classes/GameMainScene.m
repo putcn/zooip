@@ -12,6 +12,8 @@
 #import "ChickenView.h"
 #import "MaleMandarinDuckView.h"
 #import "PeacockView.h"
+#import "ChinemyView.h"
+#import "SnakeView.h"
 #import "Animal.h"
 
 @implementation GameMainScene
@@ -113,29 +115,46 @@
 		
 		MallardView *mallardView = [[MallardView alloc] initWithPrefix:@"mallard"];
 		mallardView.position = ccp(400,200);
-		Animal *mallard = [[Animal alloc] initWithView:mallardView setSpeed:1.0f];
+		Animal *mallard = [[Animal alloc] initWithView:mallardView setSpeed:0.2f];
 		
 		DoveView *doveView = [[DoveView alloc] initWithPrefix:@"dove"];
 		doveView.position = ccp(400,500);
-		Animal *dove = [[Animal alloc] initWithView:doveView setSpeed:1.0f];
+		Animal *dove = [[Animal alloc] initWithView:doveView setSpeed:0.2f];
+		
+		DoveView *doveView1 = [[DoveView alloc] initWithPrefix:@"dove1"];
+		doveView1.position = ccp(600,450);
+		Animal *dove1 = [[Animal alloc] initWithView:doveView1 setSpeed:0.2f];
 		
 		ChickenView *chickenView = [[ChickenView alloc] initWithPrefix:@"chicken"];
-		chickenView.position = ccp(600,500);
-		Animal *chicken = [[Animal alloc] initWithView:chickenView setSpeed:1.0f];	
+		chickenView.position = ccp(700,300);
+		Animal *chicken = [[Animal alloc] initWithView:chickenView setSpeed:0.2f];	
 		
 		PeacockView *peacockView = [[PeacockView alloc] initWithPrefix:@"peacoke"];
 		peacockView.position = ccp(600,200);
-		Animal *peacock = [[Animal alloc] initWithView:peacockView setSpeed:0.5f];
+		Animal *peacock = [[Animal alloc] initWithView:peacockView setSpeed:0.2f];
 		
-		//MaleMandarinDuckView *maleMandarinDuckView = [[MaleMandarinDuckView alloc] initWithPrefix:@"maleMandarinDuck"];
-		//maleMandarinDuckView.position = ccp(350,620);
-		//Animal *maleMandarinDuck = [[Animal alloc] initWithView:maleMandarinDuckView setSpeed:1.0f];
+		SnakeView *snakeView = [[SnakeView alloc] initWithPrefix:@"snake"];
+		snakeView.position = ccp(700,200);
+		Animal *snake = [[Animal alloc] initWithView:snakeView setSpeed:0.05f];
+		
+//		ChinemyView *chinemyView = [[ChinemyView alloc] initWithPrefix:@"chinemy"];
+//		chinemyView.position = ccp(600,500);
+//		Animal *chinemy = [[Animal alloc] initWithView:chinemyView setSpeed:0.1f];
+//		
+//		MaleMandarinDuckView *maleMandarinDuckView = [[MaleMandarinDuckView alloc] initWithPrefix:@"maleMandarinDuck"];
+//		maleMandarinDuckView.position = ccp(350,620);
+//		Animal *maleMandarinDuck = [[Animal alloc] initWithView:maleMandarinDuckView setSpeed:1.0f];
 		
 		[baseContainer addChild:mallardView z:4];
 		[baseContainer addChild:doveView z:4];
+		[baseContainer addChild:doveView1 z:4];
 		[baseContainer addChild:chickenView z:4];
 		[baseContainer addChild:peacockView z:4];
-		//[baseContainer addChild:maleMandarinDuckView z:4];
+		[baseContainer addChild:snakeView z:4];
+	//	[baseContainer addChild:chinemyView z:4];
+	//	[baseContainer addChild:maleMandarinDuckView z:4];
+	
+		
 	}
 	return self;
 }
