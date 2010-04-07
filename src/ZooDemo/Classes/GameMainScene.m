@@ -123,27 +123,27 @@
 		
 		MallardView *mallardView = [[MallardView alloc] initWithPrefix:@"mallard"];
 		mallardView.position = ccp(400,200);
-		Animal *mallard = [[Animal alloc] initWithView:mallardView setSpeed:0.2f];
+		Animal *mallard = [[Animal alloc] initWithView:mallardView setSpeed:0.2f setLimitRect:CGRectMake(200,200,400,200)];
 		
 		DoveView *doveView = [[DoveView alloc] initWithPrefix:@"dove"];
 		doveView.position = ccp(400,500);
-		Animal *dove = [[Animal alloc] initWithView:doveView setSpeed:0.5f];
+		Animal *dove = [[Animal alloc] initWithView:doveView setSpeed:0.5f setLimitRect:CGRectMake(0,400,960,320)];
 		
 		DoveView *doveView1 = [[DoveView alloc] initWithPrefix:@"dove1"];
 		doveView1.position = ccp(600,450);
-		Animal *dove1 = [[Animal alloc] initWithView:doveView1 setSpeed:0.5f];
+		Animal *dove1 = [[Animal alloc] initWithView:doveView1 setSpeed:0.5f setLimitRect:CGRectMake(0,400,960,320)];
 		
 		ChickenView *chickenView = [[ChickenView alloc] initWithPrefix:@"chicken"];
 		chickenView.position = ccp(700,300);
-		Animal *chicken = [[Animal alloc] initWithView:chickenView setSpeed:0.2f];	
+		Animal *chicken = [[Animal alloc] initWithView:chickenView setSpeed:0.2f setLimitRect:CGRectMake(200,200,400,200)];	
 		
 		PeacockView *peacockView = [[PeacockView alloc] initWithPrefix:@"peacoke"];
 		peacockView.position = ccp(600,200);
-		Animal *peacock = [[Animal alloc] initWithView:peacockView setSpeed:0.2f];
+		Animal *peacock = [[Animal alloc] initWithView:peacockView setSpeed:0.2f setLimitRect:CGRectMake(200,200,400,200)];
 		
 		SnakeView *snakeView = [[SnakeView alloc] initWithPrefix:@"snake"];
 		snakeView.position = ccp(700,200);
-		Animal *snake = [[Animal alloc] initWithView:snakeView setSpeed:0.05f];
+		Animal *snake = [[Animal alloc] initWithView:snakeView setSpeed:0.05f setLimitRect:CGRectMake(200,200,400,200)];
 		
 //		ChinemyView *chinemyView = [[ChinemyView alloc] initWithPrefix:@"chinemy"];
 //		chinemyView.position = ccp(600,500);

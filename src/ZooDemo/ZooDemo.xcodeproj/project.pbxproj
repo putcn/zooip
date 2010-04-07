@@ -409,11 +409,6 @@
 		3EE125C4116B485500CB095E /* magpie_eat_l_7.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE12049116B485500CB095E /* magpie_eat_l_7.png */; };
 		3EE125C5116B485500CB095E /* magpie_eat_l_8.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1204A116B485500CB095E /* magpie_eat_l_8.png */; };
 		3EE125C6116B485500CB095E /* magpie_eat_l_9.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1204B116B485500CB095E /* magpie_eat_l_9.png */; };
-		3EE125C7116B485500CB095E /* b.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1204D116B485500CB095E /* b.png */; };
-		3EE125C8116B485500CB095E /* bl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1204E116B485500CB095E /* bl.png */; };
-		3EE125C9116B485500CB095E /* f.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE1204F116B485500CB095E /* f.png */; };
-		3EE125CA116B485500CB095E /* fl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE12050116B485500CB095E /* fl.png */; };
-		3EE125CB116B485500CB095E /* l.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE12051116B485500CB095E /* l.png */; };
 		3EE125CC116B485500CB095E /* b.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE12053116B485500CB095E /* b.png */; };
 		3EE125CD116B485500CB095E /* bl.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE12054116B485500CB095E /* bl.png */; };
 		3EE125CE116B485500CB095E /* f.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE12055116B485500CB095E /* f.png */; };
@@ -2198,11 +2193,6 @@
 		3EE12049116B485500CB095E /* magpie_eat_l_7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magpie_eat_l_7.png; sourceTree = "<group>"; };
 		3EE1204A116B485500CB095E /* magpie_eat_l_8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magpie_eat_l_8.png; sourceTree = "<group>"; };
 		3EE1204B116B485500CB095E /* magpie_eat_l_9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magpie_eat_l_9.png; sourceTree = "<group>"; };
-		3EE1204D116B485500CB095E /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b.png; sourceTree = "<group>"; };
-		3EE1204E116B485500CB095E /* bl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bl.png; sourceTree = "<group>"; };
-		3EE1204F116B485500CB095E /* f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f.png; sourceTree = "<group>"; };
-		3EE12050116B485500CB095E /* fl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fl.png; sourceTree = "<group>"; };
-		3EE12051116B485500CB095E /* l.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = l.png; sourceTree = "<group>"; };
 		3EE12053116B485500CB095E /* b.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = b.png; sourceTree = "<group>"; };
 		3EE12054116B485500CB095E /* bl.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bl.png; sourceTree = "<group>"; };
 		3EE12055116B485500CB095E /* f.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = f.png; sourceTree = "<group>"; };
@@ -4248,7 +4238,6 @@
 			isa = PBXGroup;
 			children = (
 				3EE1202D116B485500CB095E /* magpie_eat */,
-				3EE1204C116B485500CB095E /* magpie_sick */,
 				3EE12052116B485500CB095E /* magpie_sleep */,
 				3EE12058116B485500CB095E /* magpie_walk */,
 				3EE120C7116B485500CB095E /* stand */,
@@ -4298,18 +4287,6 @@
 				3EE1204B116B485500CB095E /* magpie_eat_l_9.png */,
 			);
 			path = l;
-			sourceTree = "<group>";
-		};
-		3EE1204C116B485500CB095E /* magpie_sick */ = {
-			isa = PBXGroup;
-			children = (
-				3EE1204D116B485500CB095E /* b.png */,
-				3EE1204E116B485500CB095E /* bl.png */,
-				3EE1204F116B485500CB095E /* f.png */,
-				3EE12050116B485500CB095E /* fl.png */,
-				3EE12051116B485500CB095E /* l.png */,
-			);
-			path = magpie_sick;
 			sourceTree = "<group>";
 		};
 		3EE12052116B485500CB095E /* magpie_sleep */ = {
@@ -7170,11 +7147,6 @@
 				3EE125C4116B485500CB095E /* magpie_eat_l_7.png in Resources */,
 				3EE125C5116B485500CB095E /* magpie_eat_l_8.png in Resources */,
 				3EE125C6116B485500CB095E /* magpie_eat_l_9.png in Resources */,
-				3EE125C7116B485500CB095E /* b.png in Resources */,
-				3EE125C8116B485500CB095E /* bl.png in Resources */,
-				3EE125C9116B485500CB095E /* f.png in Resources */,
-				3EE125CA116B485500CB095E /* fl.png in Resources */,
-				3EE125CB116B485500CB095E /* l.png in Resources */,
 				3EE125CC116B485500CB095E /* b.png in Resources */,
 				3EE125CD116B485500CB095E /* bl.png in Resources */,
 				3EE125CE116B485500CB095E /* f.png in Resources */,
