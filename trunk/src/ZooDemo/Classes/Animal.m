@@ -40,7 +40,7 @@
 	{
 		[self findTarget];
 		[view update:currDirection status:currStatus];
-		NSLog(@"当前方向: %d", currDirection);
+		//NSLog(@"当前方向: %d", currDirection);
 	}
 	else
 	{

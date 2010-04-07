@@ -9,9 +9,14 @@
 #import "cocos2d.h"
 
 
-@interface ScaleControlLayer : CCLayer
+@interface ScaleControlLayer : CCLayer <CCTargetedTouchDelegate>
 {
+	CGFloat dX;
+	CGFloat dY;
 	
+	CCSprite *target;
 }
+
+-(id)initWithTarget:(CCSprite*) targetValue;
 
 @end
