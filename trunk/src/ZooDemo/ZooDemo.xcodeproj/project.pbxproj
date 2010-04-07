@@ -1769,6 +1769,7 @@
 		BF1081951165DADB0000BE1C /* Egg.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1081941165DADB0000BE1C /* Egg.m */; };
 		BF1081981165DB010000BE1C /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1081971165DB010000BE1C /* ModelLocator.m */; };
 		BF10819D1165DCB00000BE1C /* AnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10819C1165DCB00000BE1C /* AnimalView.m */; };
+		BF942058116C5A33003A15F0 /* ScaleControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF942057116C5A33003A15F0 /* ScaleControlLayer.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -3564,6 +3565,8 @@
 		BF10819B1165DCB00000BE1C /* AnimalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalView.h; sourceTree = "<group>"; };
 		BF10819C1165DCB00000BE1C /* AnimalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalView.m; sourceTree = "<group>"; };
 		BF1083F21166ED620000BE1C /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
+		BF942056116C5A33003A15F0 /* ScaleControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleControlLayer.h; sourceTree = "<group>"; };
+		BF942057116C5A33003A15F0 /* ScaleControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleControlLayer.m; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -6589,6 +6592,8 @@
 		BF1081991165DBD90000BE1C /* UIControlers */ = {
 			isa = PBXGroup;
 			children = (
+				BF942056116C5A33003A15F0 /* ScaleControlLayer.h */,
+				BF942057116C5A33003A15F0 /* ScaleControlLayer.m */,
 			);
 			name = UIControlers;
 			sourceTree = "<group>";
@@ -8354,6 +8359,7 @@
 				3EE12E0C116B5EE500CB095E /* PeacockView.m in Sources */,
 				3E33B5A7116C447E00B72E46 /* ChinemyView.m in Sources */,
 				3E33B5A8116C447E00B72E46 /* SnakeView.m in Sources */,
+				BF942058116C5A33003A15F0 /* ScaleControlLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
