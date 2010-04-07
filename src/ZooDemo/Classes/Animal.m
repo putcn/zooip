@@ -12,7 +12,7 @@
 
 @implementation Animal
 
--(id) initWithView:(AnimalView*) viewValue setSpeed:(CGFloat) speedValue
+-(id) initWithView:(AnimalView*) viewValue setSpeed:(CGFloat) speedValue setLimitRect:(CGRect) limitRectValue
 {
 	if ( (self=[super init]) )
 	{
@@ -21,6 +21,8 @@
 		targetPosition = ccp(view.position.x, view.position.y);
 		currSpeed = ccp(0 ,0);
 		currStatus = 0;
+		
+		limitRect = limitRectValue;
 		
 		[[CCScheduler sharedScheduler] scheduleTimer: [CCTimer timerWithTarget:self selector:@selector(tick:)]];
 	}

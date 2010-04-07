@@ -23,9 +23,11 @@
 	
 	CGPoint targetPosition;
 	CGPoint currSpeed;
+	
+	CGRect limitRect;
 }
 
--(id) initWithView:(AnimalView*) viewValue setSpeed:(CGFloat) speedValue;
+-(id) initWithView:(AnimalView*) viewValue setSpeed:(CGFloat) speedValue setLimitRect:(CGRect) limitRectValue;
 
 @end
 
