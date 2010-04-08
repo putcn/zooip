@@ -16,15 +16,33 @@
 #import "SnakeView.h"
 #import "Animal.h"
 #import "ScaleControlLayer.h"
+#import "UILayer.h"
 
 @implementation GameMainScene
+
+static GameMainScene *_sharedGameMainScene = nil;
+
++ (GameMainScene *)sharedGameMainScene
+{
+	@synchronized([GameMainScene class])
+	{
+		if (!_sharedGameMainScene)
+		{
+			_sharedGameMainScene = [GameMainScene node];
+		}
+		
+		return _sharedGameMainScene;
+	}
+	
+	return nil;
+}
 
 +(id) scene
 {
 	CCScene *scene = [CCScene node];
-	GameMainScene *layer = [GameMainScene node];
-	
+	GameMainScene *layer = [GameMainScene sharedGameMainScene];
 	[scene addChild: layer];
+	
 	return scene;
 }
 
@@ -244,7 +262,10 @@
 //		[baseContainer addChild:snakeView z:4];
 //	//	[baseContainer addChild:chinemyView z:4];
 //		[baseContainer addChild:maleMandarinDuckView z:4];
-	
+		
+		UILayer *uiLayer = [UILayer node];
+		[self addChild:uiLayer];
+		
 		
 		ScaleControlLayer *scaler = [[ScaleControlLayer alloc] initWithTarget:scaleContainer];
 		[self addChild:scaler];

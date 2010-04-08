@@ -8,6 +8,7 @@
 
 #import "cocos2d.h"
 
+
 @interface GameMainScene : CCLayer
 {
 	CCSprite *baseContainer;
@@ -39,6 +40,7 @@
 	CCSprite *pan1;
 }
 
++(GameMainScene *) sharedGameMainScene;
 +(id) scene;
 
 @end
