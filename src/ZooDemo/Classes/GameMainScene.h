@@ -11,6 +11,10 @@
 
 @interface GameMainScene : CCLayer
 {
+	NSMutableArray *mySceneArray;
+	NSMutableArray *friendSceneArray;
+	NSMutableArray *myAnimalArray;
+	NSMutableArray *friendAnimalArray;
 	CCSprite *baseContainer;
 	CCSprite *background;
 	CCSprite *tree;
