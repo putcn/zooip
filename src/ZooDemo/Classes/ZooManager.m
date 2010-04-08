@@ -29,7 +29,7 @@
 	
 	//我的动物园
 	button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"我的动物园.png" setTarget:self
-							   setSelector:nil setPriority:0 offsetX:-1 offsetY:2];
+							   setSelector:@selector(switchPlayerZoo) setPriority:0 offsetX:-1 offsetY:2];
 	button.position = ccp(20, 20);
 	[self addChild: button];
 	
@@ -49,6 +49,11 @@
 -(void) btnButtonHandler
 {
 	[self.parent popupShopList];
+}
+
+-(void) switchPlayerZoo
+{
+	[self.parent switchPlayerZoo];
 }
 
 @end

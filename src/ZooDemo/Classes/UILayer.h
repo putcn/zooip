@@ -7,6 +7,7 @@
 //
 
 #import "cocos2d.h"
+#import "GameMainScene.h"
 #import "PlayerInfo.h"
 #import "PlayerManager.h"
 #import "ZooManager.h"
@@ -16,6 +17,9 @@
 {
 	MessageDialog *friendsPopupList;
 	MessageDialog *shopPopupList;
+	PlayerManager *playerManager;
+	
+	Boolean isSelf;
 }
 
 @end

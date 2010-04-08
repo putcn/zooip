@@ -213,15 +213,15 @@ static GameMainScene *_sharedGameMainScene = nil;
 		
 		friendSceneArray = [[NSMutableArray alloc] init];
 		[friendSceneArray addObject:egg11];
-		[friendSceneArray addObject:egg12];
-		[friendSceneArray addObject:egg13];
-		[friendSceneArray addObject:egg14];
-		[friendSceneArray addObject:egg15];
-		[friendSceneArray addObject:egg16];
-		[friendSceneArray addObject:egg17];
-		[friendSceneArray addObject:egg18];
-		[friendSceneArray addObject:egg19];
-		[friendSceneArray addObject:egg20];
+//		[friendSceneArray addObject:egg12];
+//		[friendSceneArray addObject:egg13];
+//		[friendSceneArray addObject:egg14];
+//		[friendSceneArray addObject:egg15];
+//		[friendSceneArray addObject:egg16];
+//		[friendSceneArray addObject:egg17];
+//		[friendSceneArray addObject:egg18];
+//		[friendSceneArray addObject:egg19];
+//		[friendSceneArray addObject:egg20];
 		[friendSceneArray addObject:pan1];
 	
 		
@@ -321,6 +321,8 @@ static GameMainScene *_sharedGameMainScene = nil;
 		
 		ScaleControlLayer *scaler = [[ScaleControlLayer alloc] initWithTarget:scaleContainer];
 		[self addChild:scaler];
+		
+		[self swithZoo:NO];
 	}
 	return self;
 }
