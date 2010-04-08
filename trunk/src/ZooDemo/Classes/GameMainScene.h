@@ -21,6 +21,10 @@
 	CCSprite *tree;
 	CCSprite *house;
 	CCSprite *waterbox;
+	CCSprite *background1;
+	CCSprite *tree1;
+	CCSprite *house1;
+	CCSprite *waterbox1;
 	CCSprite *egg1;
 	CCSprite *egg2;
 	CCSprite *egg3;
