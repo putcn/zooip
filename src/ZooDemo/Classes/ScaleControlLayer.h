@@ -15,6 +15,9 @@
 	CGFloat dY;
 	
 	CCSprite *target;
+	
+	BOOL isReset;
+	BOOL isWidth;
 }
 
 -(id)initWithTarget:(CCSprite*) targetValue;
