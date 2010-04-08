@@ -11,13 +11,17 @@
 
 @interface PlayerManager : CCSprite
 {
-	NSMutableArray *statusIconTextures;
-	CCSprite *buttonContainer;
+	NSMutableArray *playerStatusIconTextures;
+	NSMutableArray *friendStatusIconTextures;
+	CCSprite *playerButtonContainer;
+	CCSprite *friendButtonContainer;
 	CCSprite *statusIcon;
 	int selectIndex;
 }
 
 -(void) addButton;
 -(void) addStatusIconTexture;
+
+-(void) switchZoo:(Boolean) isSelf;
 
 @end

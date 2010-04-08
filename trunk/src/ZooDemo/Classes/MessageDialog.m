@@ -114,7 +114,9 @@
 {
 	if (selector != nil && [self containsTouchLocation:touch])
 	{
-		[targetCallBack performSelector:selector withObject:self];
+		isOpen = NO;
+		self.position = ccp( -500 , -500 );
+		[targetCallBack performSelector:selector];
 	}
 }
 

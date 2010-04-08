@@ -12,13 +12,15 @@
 
 -(id) init
 {
+	isSelf = YES;
+	
 	if ((self = [super init]))
 	{
 		PlayerInfo *playerInfo = [[PlayerInfo alloc] init];
 		playerInfo.position = ccp(140, 302);
 		[self addChild:playerInfo];
 		
-		PlayerManager *playerManager = [[PlayerManager alloc] init];
+		playerManager = [[PlayerManager alloc] init];
 		playerManager.position = ccp(10, 10);
 		[self addChild:playerManager];
 		
@@ -30,7 +32,7 @@
 		friendList.position = ccp(436, 6);
 		[self addChild:friendList];
 		
-		friendsPopupList = [[MessageDialog alloc] initDialog:@"FriendList.png" setTarget:self setSelector:@selector(switchZoo)];
+		friendsPopupList = [[MessageDialog alloc] initDialog:@"FriendList.png" setTarget:self setSelector:@selector(switchFriendZoo)];
 		[self addChild:friendsPopupList];
 		
 		shopPopupList = [[MessageDialog alloc] initDialog:@"store_info.png" setTarget:nil setSelector:nil];
@@ -45,9 +47,21 @@
 	[friendsPopupList popUp:@""];
 }
 
--(void) switchZoo
+-(void) switchPlayerZoo
 {
-	
+	[[GameMainScene sharedGameMainScene] swithZoo:NO];
+	isSelf = YES;
+	[playerManager switchZoo:YES];
+}
+-(void) switchFriendZoo
+{
+	[[GameMainScene sharedGameMainScene] swithZoo:YES];
+	isSelf = NO;
+	[playerManager switchZoo:NO];
+}
+-(Boolean) getIsSelf
+{
+	return isSelf;
 }
 
 -(void) popupShopList
