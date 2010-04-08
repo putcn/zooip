@@ -68,6 +68,7 @@ static GameMainScene *_sharedGameMainScene = nil;
 		CCSprite *scaleContainer = [CCSprite node];
 		scaleContainer.position = ccp( size.width / 2, size.height / 2);
 		[scaleContainer addChild:baseContainer];
+		[scaleContainer addChild:baseContainer1];
 		[self addChild:scaleContainer];
 		//baseContainer.anchorPoint = ccp( size.width / 2, size.height / 2);
 		
@@ -75,20 +76,36 @@ static GameMainScene *_sharedGameMainScene = nil;
 		background.scale = 0.95f;
 		background.position = ccp(480,320);
 		
+		background1 = [CCSprite spriteWithFile:@"bgimg.jpg"];
+		background1.scale = 0.95f;
+		background1.position = ccp(480,320);
+		
+		[baseContainer addChild: background z:0];
+		[baseContainer1 addChild: background1 z:0];
+		
 		tree = [CCSprite spriteWithFile:@"tree.png"];
 		tree.position = ccp(750,400);
+		
+		tree1 = [CCSprite spriteWithFile:@"tree.png"];
+		tree1.position = ccp(750,400);
 		[baseContainer addChild:tree z:1];
-		[baseContainer1 addChild:tree z:1];
+		[baseContainer1 addChild:tree1 z:1];
 		
 		house = [CCSprite spriteWithFile:@"house.png"];
 		house.position = ccp(450,410);
+		
+		house1 = [CCSprite spriteWithFile:@"house.png"];
+		house1.position = ccp(450,410);
 		[baseContainer addChild:house z:1];
-		[baseContainer1 addChild:house z:1];
+		[baseContainer1 addChild:house1 z:1];
 		
 		waterbox = [CCSprite spriteWithFile:@"waterbox.png"];
 		waterbox.position = ccp(330,420);
+		
+		waterbox1 = [CCSprite spriteWithFile:@"waterbox.png"];
+		waterbox1.position = ccp(330,420);
 		[baseContainer addChild:waterbox z:1];
-		[baseContainer1 addChild:waterbox z:1];
+		[baseContainer1 addChild:waterbox1 z:1];
 		
 		egg1 = [CCSprite spriteWithFile:@"丹顶鹤蛋.png"];
 		egg1.position = ccp(500,50);
@@ -179,9 +196,6 @@ static GameMainScene *_sharedGameMainScene = nil;
 		//	[baseContainer addChild:pan z:2];	
 
 		
-		[baseContainer addChild: background z:0];
-		[baseContainer1 addChild: background z:0];
-		
 		mySceneArray = [[NSMutableArray alloc] init];
 		[mySceneArray addObject:egg1];
 		[mySceneArray addObject:egg2];
@@ -230,6 +244,14 @@ static GameMainScene *_sharedGameMainScene = nil;
 		DoveView *doveView1 = [[DoveView alloc] initWithPrefix:@"dove1"];
 		doveView1.position = ccp(600,450);
 		Animal *dove1 = [[Animal alloc] initWithView:doveView1 setSpeed:0.5f setLimitRect:CGRectMake(0,360,960,360)];
+		
+		DoveView *doveView2 = [[DoveView alloc] initWithPrefix:@"dove2"];
+		doveView2.position = ccp(400,500);
+		Animal *dove2 = [[Animal alloc] initWithView:doveView2 setSpeed:0.5f setLimitRect:CGRectMake(0,360,960,360)];
+		
+		DoveView *doveView3 = [[DoveView alloc] initWithPrefix:@"dove3"];
+		doveView3.position = ccp(600,450);
+		Animal *dove3 = [[Animal alloc] initWithView:doveView3 setSpeed:0.5f setLimitRect:CGRectMake(0,360,960,360)];
 		
 		ChickenView *chickenView = [[ChickenView alloc] initWithPrefix:@"chicken"];
 		chickenView.position = ccp(300,300);
@@ -281,15 +303,15 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[friendAnimalArray addObject:malePhasianusColchicusView];
 		[friendAnimalArray addObject:gooseView];
 		[friendAnimalArray addObject:peahenView];
-		[friendAnimalArray addObject:doveView];
-		[friendAnimalArray addObject:doveView1];
+		[friendAnimalArray addObject:doveView2];
+		[friendAnimalArray addObject:doveView3];
 		[friendAnimalArray addObject:duckView];
 		
 		for (AnimalView *animalView in myAnimalArray) {
 			[baseContainer addChild:animalView z:4];
 		}
 		
-		for (AnimalView *animalView in friendSceneArray)) {
+		for (AnimalView *animalView in friendAnimalArray) {
 			[baseContainer1 addChild:animalView z:4];
 		}
 		
