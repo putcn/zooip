@@ -5,7 +5,8 @@
 
 // Import the interfaces
 #import "HelloWorldScene.h"
-
+#import "ScaleControlLayer.h"
+#import "DragControlLayer.h"
 
 
 // HelloWorld implementation
@@ -109,6 +110,13 @@
 		
 		
 		[baseContainer addChild: background z:0];
+		
+		
+		ScaleControlLayer *scaler = [[ScaleControlLayer alloc] initWithTarget:baseContainer];
+		[self addChild:scaler];
+		
+		DragControlLayer *Drager = [[DragControlLayer alloc] initWithTarget:baseContainer];
+		[self addChild:Drager];
 		
 	}
 	return self;
