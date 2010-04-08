@@ -14,55 +14,6 @@
 -(id) initWithPrefix:(NSString *)prefix
 {		
 	if ((self = [super initWithPrefix:prefix])) {
-		
-		CCAnimation* animation0 = [CCAnimation animationWithName:@"Up" delay:0.02f];
-		CCAnimation* animation1 = [CCAnimation animationWithName:@"RightUp" delay:0.02f];
-		CCAnimation* animation2 = [CCAnimation animationWithName:@"Right" delay:0.02f];
-		CCAnimation* animation3 = [CCAnimation animationWithName:@"RightDown" delay:0.02f];
-		CCAnimation* animation4 = [CCAnimation animationWithName:@"Down" delay:0.02f];
-		CCAnimation* animation5 = [CCAnimation animationWithName:@"LeftDown" delay:0.02f];
-		CCAnimation* animation6 = [CCAnimation animationWithName:@"Left" delay:0.02f];
-		CCAnimation* animation7 = [CCAnimation animationWithName:@"LeftUp" delay:0.02f];
-		
-		for (int i = 0; i<=1; i++) {
-			[animation0 addFrameWithFilename:@"maleMandarinDuck_swimming_Back.png"];
-		}
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation0]] forKey:@"up"];
-		
-		for (int i = 0; i<=1; i++) {
-			[animation0 addFrameWithFilename:@"maleMandarinDuck_swimming_leftBack.png"];
-		}
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation1]] forKey:@"rightUp"];
-		
-		for (int i = 0; i<=1; i++) {
-			[animation0 addFrameWithFilename:@"maleMandarinDuck_swimming_left.png"];
-		}
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation2]] forKey:@"right"];
-		
-		for (int i = 0; i<=1; i++) {
-			[animation0 addFrameWithFilename:@"maleMandarinDuck_swimming_leftFront.png"];
-		}
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation3]] forKey:@"rightDown"];
-		
-		for (int i = 0; i<=1; i++) {
-			[animation0 addFrameWithFilename:@"maleMandarinDuck_swimming_Front.png"];
-		}
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation4]] forKey:@"down"];
-		
-		for (int i = 0; i<=1; i++) {
-			[animation0 addFrameWithFilename:@"maleMandarinDuck_swimming_leftFront.png"];
-		}
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation5]] forKey:@"leftDown"];
-		
-		for (int i = 0; i<=1; i++) {
-			[animation0 addFrameWithFilename:@"maleMandarinDuck_swimming_left.png"];
-		}
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation6]] forKey:@"left"];
-		
-		for (int i = 0; i<=1; i++) {
-			[animation0 addFrameWithFilename:@"maleMandarinDuck_swimming_leftBack.png"];
-		}
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation7]] forKey:@"leftUp"];
 	}
 	return self;
 }
@@ -70,47 +21,74 @@
 
 -(void) update:(int)currDirectionValue status:(int)currStatusValue
 {
+	CCTexture2D *bg;
+	CGRect rect;
+	
 	switch (currDirectionValue) {
 		case 0:
-			[self stopAllActions];
 			self.flipX = NO;
-			[self runAction:[animationTable objectForKey:@"up"]]; 
+			bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_swimming_Back.png" ofType:nil] ] ];
+			rect = CGRectZero;
+			rect.size = bg.contentSize;
+			[self setTexture: bg];
+			[self setTextureRect: rect];
 			break;
 		case 1:
-			[self stopAllActions];
 			self.flipX = YES;
-			[self runAction:[animationTable objectForKey:@"rightUp"]]; 
+			bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_swimming_leftBack.png" ofType:nil] ] ];
+			rect = CGRectZero;
+			rect.size = bg.contentSize;
+			[self setTexture: bg];
+			[self setTextureRect: rect];
 			break;
 		case 2:
-			[self stopAllActions];
 			self.flipX = YES;
-			[self runAction:[animationTable objectForKey:@"right"]]; 
+			bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_swimming_left.png" ofType:nil] ] ];
+			rect = CGRectZero;
+			rect.size = bg.contentSize;
+			[self setTexture: bg];
+			[self setTextureRect: rect];
 			break;
 		case 3:
-			[self stopAllActions];
 			self.flipX = YES;
-			[self runAction:[animationTable objectForKey:@"rightDown"]]; 
+			bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_swimming_leftFront.png" ofType:nil] ] ];
+			rect = CGRectZero;
+			rect.size = bg.contentSize;
+			[self setTexture: bg];
+			[self setTextureRect: rect];
 			break;
 		case 4:
-			[self stopAllActions];
 			self.flipX = NO;
-			[self runAction:[animationTable objectForKey:@"down"]];
+			bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_swimming_Front.png" ofType:nil] ] ];
+			rect = CGRectZero;
+			rect.size = bg.contentSize;
+			[self setTexture: bg];
+			[self setTextureRect: rect];
 			break;
 		case 5:
-			[self stopAllActions];
 			self.flipX = NO;
-			[self runAction:[animationTable objectForKey:@"leftDown"]]; 
+			bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_swimming_leftFront.png" ofType:nil] ] ];
+			rect = CGRectZero;
+			rect.size = bg.contentSize;
+			[self setTexture: bg];
+			[self setTextureRect: rect];
 			break;
 		case 6:
-			[self stopAllActions];
 			self.flipX = NO;
-			[self runAction:[animationTable objectForKey:@"left"]]; 
+			bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_swimming_left.png" ofType:nil] ] ];
+			rect = CGRectZero;
+			rect.size = bg.contentSize;
+			[self setTexture: bg];
+			[self setTextureRect: rect];
 			break;
 		case 7:
-			[self stopAllActions];
 			self.flipX = NO;
-			[self runAction:[animationTable objectForKey:@"leftUp"]]; 
-			break;
+			bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_swimming_leftBack.png" ofType:nil] ] ];
+			rect = CGRectZero;
+			rect.size = bg.contentSize;
+			[self setTexture: bg];
+			[self setTextureRect: rect];
+			break; 
 		default:
 			break;
 			

@@ -26,8 +26,17 @@
 	CCSprite *egg9;
 	CCSprite *egg10;
 	CCSprite *pan;
-	CCSprite *snake1;
-	CCSprite *snake2;
+	CCSprite *egg11;
+	CCSprite *egg12;
+	CCSprite *egg13;
+	CCSprite *egg14;
+	CCSprite *egg15;
+	CCSprite *egg16;
+	CCSprite *egg17;
+	CCSprite *egg18;
+	CCSprite *egg19;
+	CCSprite *egg20;
+	CCSprite *pan1;
 }
 
 +(id) scene;
