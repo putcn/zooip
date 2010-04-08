@@ -1876,7 +1876,14 @@
 		BF1081951165DADB0000BE1C /* Egg.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1081941165DADB0000BE1C /* Egg.m */; };
 		BF1081981165DB010000BE1C /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1081971165DB010000BE1C /* ModelLocator.m */; };
 		BF10819D1165DCB00000BE1C /* AnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10819C1165DCB00000BE1C /* AnimalView.m */; };
-		BF942058116C5A33003A15F0 /* ScaleControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF942057116C5A33003A15F0 /* ScaleControlLayer.m */; };
+		C3DDA813116DEA3500F919EA /* UILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDA812116DEA3500F919EA /* UILayer.m */; };
+		C3DDA829116DEA7500F919EA /* FriendsList.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDA820116DEA7500F919EA /* FriendsList.m */; };
+		C3DDA82A116DEA7500F919EA /* PlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDA822116DEA7500F919EA /* PlayerInfo.m */; };
+		C3DDA82B116DEA7500F919EA /* PlayerManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDA824116DEA7500F919EA /* PlayerManager.m */; };
+		C3DDA82C116DEA7500F919EA /* ScaleControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDA826116DEA7500F919EA /* ScaleControlLayer.m */; };
+		C3DDA82D116DEA7500F919EA /* ZooManager.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDA828116DEA7500F919EA /* ZooManager.m */; };
+		C3DDA832116DEA9500F919EA /* MessageDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDA831116DEA9500F919EA /* MessageDialog.m */; };
+		C3DDA837116DEABD00F919EA /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDA836116DEABD00F919EA /* Button.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -3789,8 +3796,22 @@
 		BF10819B1165DCB00000BE1C /* AnimalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalView.h; sourceTree = "<group>"; };
 		BF10819C1165DCB00000BE1C /* AnimalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalView.m; sourceTree = "<group>"; };
 		BF1083F21166ED620000BE1C /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
-		BF942056116C5A33003A15F0 /* ScaleControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleControlLayer.h; sourceTree = "<group>"; };
-		BF942057116C5A33003A15F0 /* ScaleControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleControlLayer.m; sourceTree = "<group>"; };
+		C3DDA811116DEA3500F919EA /* UILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILayer.h; sourceTree = "<group>"; };
+		C3DDA812116DEA3500F919EA /* UILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILayer.m; sourceTree = "<group>"; };
+		C3DDA81F116DEA7500F919EA /* FriendsList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsList.h; sourceTree = "<group>"; };
+		C3DDA820116DEA7500F919EA /* FriendsList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsList.m; sourceTree = "<group>"; };
+		C3DDA821116DEA7500F919EA /* PlayerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerInfo.h; sourceTree = "<group>"; };
+		C3DDA822116DEA7500F919EA /* PlayerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerInfo.m; sourceTree = "<group>"; };
+		C3DDA823116DEA7500F919EA /* PlayerManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerManager.h; sourceTree = "<group>"; };
+		C3DDA824116DEA7500F919EA /* PlayerManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerManager.m; sourceTree = "<group>"; };
+		C3DDA825116DEA7500F919EA /* ScaleControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleControlLayer.h; sourceTree = "<group>"; };
+		C3DDA826116DEA7500F919EA /* ScaleControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleControlLayer.m; sourceTree = "<group>"; };
+		C3DDA827116DEA7500F919EA /* ZooManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZooManager.h; sourceTree = "<group>"; };
+		C3DDA828116DEA7500F919EA /* ZooManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZooManager.m; sourceTree = "<group>"; };
+		C3DDA830116DEA9500F919EA /* MessageDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDialog.h; sourceTree = "<group>"; };
+		C3DDA831116DEA9500F919EA /* MessageDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDialog.m; sourceTree = "<group>"; };
+		C3DDA835116DEABD00F919EA /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		C3DDA836116DEABD00F919EA /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -6991,8 +7012,22 @@
 		BF1081991165DBD90000BE1C /* UIControlers */ = {
 			isa = PBXGroup;
 			children = (
-				BF942056116C5A33003A15F0 /* ScaleControlLayer.h */,
-				BF942057116C5A33003A15F0 /* ScaleControlLayer.m */,
+				C3DDA835116DEABD00F919EA /* Button.h */,
+				C3DDA836116DEABD00F919EA /* Button.m */,
+				C3DDA830116DEA9500F919EA /* MessageDialog.h */,
+				C3DDA831116DEA9500F919EA /* MessageDialog.m */,
+				C3DDA81F116DEA7500F919EA /* FriendsList.h */,
+				C3DDA820116DEA7500F919EA /* FriendsList.m */,
+				C3DDA821116DEA7500F919EA /* PlayerInfo.h */,
+				C3DDA822116DEA7500F919EA /* PlayerInfo.m */,
+				C3DDA823116DEA7500F919EA /* PlayerManager.h */,
+				C3DDA824116DEA7500F919EA /* PlayerManager.m */,
+				C3DDA825116DEA7500F919EA /* ScaleControlLayer.h */,
+				C3DDA826116DEA7500F919EA /* ScaleControlLayer.m */,
+				C3DDA827116DEA7500F919EA /* ZooManager.h */,
+				C3DDA828116DEA7500F919EA /* ZooManager.m */,
+				C3DDA811116DEA3500F919EA /* UILayer.h */,
+				C3DDA812116DEA3500F919EA /* UILayer.m */,
 			);
 			name = UIControlers;
 			sourceTree = "<group>";
@@ -8856,7 +8891,6 @@
 				3EE12E0C116B5EE500CB095E /* PeacockView.m in Sources */,
 				3E33B5A7116C447E00B72E46 /* ChinemyView.m in Sources */,
 				3E33B5A8116C447E00B72E46 /* SnakeView.m in Sources */,
-				BF942058116C5A33003A15F0 /* ScaleControlLayer.m in Sources */,
 				3E96DEDF116CEAFA0026C54D /* BarLayer.m in Sources */,
 				3E96DEE0116CEAFA0026C54D /* FriendsListSprite.m in Sources */,
 				3E96DEE1116CEAFA0026C54D /* FriendToolBarLayer.m in Sources */,
@@ -8866,6 +8900,14 @@
 				3E96DEE6116CEAFA0026C54D /* ToolSprite.m in Sources */,
 				3E96DEE7116CEAFA0026C54D /* TouchableSprite.m in Sources */,
 				3E96DEE8116CEAFA0026C54D /* UserInfoSprite.m in Sources */,
+				C3DDA813116DEA3500F919EA /* UILayer.m in Sources */,
+				C3DDA829116DEA7500F919EA /* FriendsList.m in Sources */,
+				C3DDA82A116DEA7500F919EA /* PlayerInfo.m in Sources */,
+				C3DDA82B116DEA7500F919EA /* PlayerManager.m in Sources */,
+				C3DDA82C116DEA7500F919EA /* ScaleControlLayer.m in Sources */,
+				C3DDA82D116DEA7500F919EA /* ZooManager.m in Sources */,
+				C3DDA832116DEA9500F919EA /* MessageDialog.m in Sources */,
+				C3DDA837116DEABD00F919EA /* Button.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
