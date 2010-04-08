@@ -221,6 +221,7 @@
 		BF1081951165DADB0000BE1C /* Egg.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1081941165DADB0000BE1C /* Egg.m */; };
 		BF1081981165DB010000BE1C /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF1081971165DB010000BE1C /* ModelLocator.m */; };
 		BF10819D1165DCB00000BE1C /* AnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = BF10819C1165DCB00000BE1C /* AnimalView.m */; };
+		BF942298116E2EB8003A15F0 /* DragControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = BF942297116E2EB8003A15F0 /* DragControlLayer.m */; };
 		C3DC8376116E2B2600816984 /* baby dove_1.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DC7A35116E2B2400816984 /* baby dove_1.png */; };
 		C3DC8377116E2B2600816984 /* baby dove_10.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DC7A36116E2B2400816984 /* baby dove_10.png */; };
 		C3DC8378116E2B2600816984 /* baby dove_11.png in Resources */ = {isa = PBXBuildFile; fileRef = C3DC7A37116E2B2400816984 /* baby dove_11.png */; };
@@ -2691,6 +2692,8 @@
 		BF10819B1165DCB00000BE1C /* AnimalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalView.h; sourceTree = "<group>"; };
 		BF10819C1165DCB00000BE1C /* AnimalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalView.m; sourceTree = "<group>"; };
 		BF1083F21166ED620000BE1C /* Consts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Consts.h; sourceTree = "<group>"; };
+		BF942296116E2EB8003A15F0 /* DragControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragControlLayer.h; sourceTree = "<group>"; };
+		BF942297116E2EB8003A15F0 /* DragControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragControlLayer.m; sourceTree = "<group>"; };
 		C3DC7A35116E2B2400816984 /* baby dove_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baby dove_1.png"; sourceTree = "<group>"; };
 		C3DC7A36116E2B2400816984 /* baby dove_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baby dove_10.png"; sourceTree = "<group>"; };
 		C3DC7A37116E2B2400816984 /* baby dove_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "baby dove_11.png"; sourceTree = "<group>"; };
@@ -5394,6 +5397,8 @@
 		BF1081991165DBD90000BE1C /* UIControlers */ = {
 			isa = PBXGroup;
 			children = (
+				BF942296116E2EB8003A15F0 /* DragControlLayer.h */,
+				BF942297116E2EB8003A15F0 /* DragControlLayer.m */,
 				C3DDA835116DEABD00F919EA /* Button.h */,
 				C3DDA836116DEABD00F919EA /* Button.m */,
 				C3DDA830116DEA9500F919EA /* MessageDialog.h */,
@@ -11370,6 +11375,7 @@
 				3E6FA64F116E0F530001FBAE /* GooseView.m in Sources */,
 				3E6FA652116E11CD0001FBAE /* PeahenView.m in Sources */,
 				3E6FA7A0116E14B20001FBAE /* DuckView.m in Sources */,
+				BF942298116E2EB8003A15F0 /* DragControlLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -21,6 +21,7 @@
 #import "PeahenView.h"
 #import "DuckView.h"
 #import "UILayer.h"
+#import "DragControlLayer.h"
 
 @implementation GameMainScene
 
@@ -66,6 +67,8 @@ static GameMainScene *_sharedGameMainScene = nil;
 		baseContainer1.scale = 0.5f;
 		
 		CCSprite *scaleContainer = [CCSprite node];
+		[scaleContainer setContentSize:CGSizeMake(486.4f, 364.8f)];
+		[scaleContainer setAnchorPoint:ccp(0, 0)];
 		scaleContainer.position = ccp( size.width / 2, size.height / 2);
 		[scaleContainer addChild:baseContainer];
 		[scaleContainer addChild:baseContainer1];
@@ -321,6 +324,8 @@ static GameMainScene *_sharedGameMainScene = nil;
 		
 		ScaleControlLayer *scaler = [[ScaleControlLayer alloc] initWithTarget:scaleContainer];
 		[self addChild:scaler];
+		DragControlLayer *drager = [[DragControlLayer alloc] initWithTarget:scaleContainer];
+		[self addChild:drager];
 		
 		[self swithZoo:NO];
 	}
