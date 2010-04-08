@@ -16,6 +16,7 @@
 	NSMutableArray *myAnimalArray;
 	NSMutableArray *friendAnimalArray;
 	CCSprite *baseContainer;
+	CCSprite *baseContainer1;
 	CCSprite *background;
 	CCSprite *tree;
 	CCSprite *house;
