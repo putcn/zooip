@@ -88,35 +88,35 @@
 
 -(void) findDirection
 {
-	if (currSpeed.x == 0 && currSpeed.y > 0)
+	if ((currSpeed.x >= -0.09 && currSpeed.x <= 0.09) && currSpeed.y > 0)
 	{
 		currDirection = 0; // up
 	}
-	else if (currSpeed.x > 0 && currSpeed.y > 0)
+	else if (currSpeed.x >= 0.09 && currSpeed.y >= 0.09)
 	{
 		currDirection = 1; // up right
 	}
-	else if (currSpeed.x > 0 && currSpeed.y == 0)
+	else if (currSpeed.x > 0 && (currSpeed.y <= 0.09 && currSpeed.y >= -0.09))
 	{
 		currDirection = 2; // right
 	}
-	else if (currSpeed.x > 0 && currSpeed.y < 0)
+	else if (currSpeed.x > 0.09 && currSpeed.y < -0.09)
 	{
 		currDirection = 3; // down right
 	}
-	else if (currSpeed.x == 0 && currSpeed.y < 0)
+	else if ((currSpeed.x >= -0.09 && currSpeed.x <= 0.09) && currSpeed.y < 0)
 	{
 		currDirection = 4; // down
 	}
-	else if (currSpeed.x < 0 && currSpeed.y < 0)
+	else if (currSpeed.x < -0.09 && currSpeed.y < -0.09)
 	{
 		currDirection = 5; // down left
 	}
-	else if (currSpeed.x < 0 && currSpeed.y == 0)
+	else if (currSpeed.x < 0 && (currSpeed.y <= 0.09 && currSpeed.y >= -0.09))
 	{
 		currDirection = 6; // left
 	}
-	else if (currSpeed.x < 0 && currSpeed.y > 0)
+	else if (currSpeed.x < -0.09 && currSpeed.y > 0.09)
 	{
 		currDirection = 7; // up left
 	}
