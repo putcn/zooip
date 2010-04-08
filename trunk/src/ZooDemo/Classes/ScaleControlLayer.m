@@ -19,6 +19,11 @@
 		dX = 0;
 		dY = 0;
 		target = targetValue;
+		
+		isReset = YES;
+		
+		if (target.contentSize.width >= target.contentSize.height) isWidth = YES;
+		else isWidth = NO;
 	}
 	return self;
 }
@@ -31,8 +36,7 @@
 
 -(void)ccTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	NSLog(@"touches began");
-	NSArray *arrToucher = [touches allObjects];
+	/*NSArray *arrToucher = [touches allObjects];
 	if ([arrToucher count] == 2)
 	{
 		CGPoint point0 = [self convertTouchToNodeSpaceAR:[arrToucher objectAtIndex:0]];
@@ -45,7 +49,9 @@
 		
 		dX = fabs(x0 - x1);
 		dY = fabs(y0 - y1);
-	}
+		
+		NSLog(@"touches began ===== %f, %f", dX, dY);
+	}*/
 }
 -(void)ccTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 {
@@ -63,10 +69,31 @@
 		CGFloat dyTemp = fabs(y0 - y1);
 		
 		CGFloat scaleIncreament = ((dxTemp - dX) + (dyTemp - dY)) / 300.0f;
+		
+		if (isReset) 
+		{
+			scaleIncreament = 0;
+			isReset = NO;
+		}
 			
 		target.scale += scaleIncreament;
 		
 		if (target.scale < 1) target.scale = 1;
+		
+		CGSize size = [[CCDirector sharedDirector] winSize];
+		
+		CGFloat limitX = target.position.x;
+		CGFloat limitY = target.position.y;
+		CGFloat targetWidth = target.contentSize.width * target.scale;
+		CGFloat targetHeight = target.contentSize.height * target.scale;
+		
+		if (limitX > targetWidth / 2) limitX = targetWidth / 2;
+		if (limitX < size.width - targetWidth / 2) limitX = size.width - targetWidth / 2;
+		
+		if (limitY > targetHeight / 2) limitY = targetHeight / 2;
+		if (limitY < size.height - targetHeight / 2) limitY = size.height - targetHeight / 2;
+		
+		target.position = ccp(limitX, limitY);
 		
 		NSLog(@"===差值X: %f ===差值Y: %f", dxTemp - dX, dyTemp - dY);
 		
@@ -77,7 +104,7 @@
 
 -(void)ccTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	
+	isReset = YES;
 }
 
 - (void)onExit
