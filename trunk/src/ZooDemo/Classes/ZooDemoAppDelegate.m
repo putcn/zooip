@@ -8,7 +8,6 @@
 
 #import "ZooDemoAppDelegate.h"
 #import "cocos2d.h"
-#import "HelloWorldScene.h"
 #import "GameMainScene.h"
 
 @implementation ZooDemoAppDelegate
