@@ -57,8 +57,16 @@
 	int currX = (int)point.x;
 	int currY = (int)point.y;
 	
-	targetPosition.x = [RandomHelper getRandomNum:currX - 30 to:currX + 30];
-	targetPosition.y = [RandomHelper getRandomNum:currY - 30 to:currY + 30];
+	BOOL isFound = NO;
+	
+	while (!isFound)
+	{
+		targetPosition.x = [RandomHelper getRandomNum:currX - 50 to:currX + 50];
+		targetPosition.y = [RandomHelper getRandomNum:currY - 50 to:currY + 50];
+		
+		if (CGRectContainsPoint(limitRect, targetPosition)) isFound = YES;
+		NSLog(@"===Loop Find===");
+	}
 	
 	[self calculateSpeed];
 	[self findDirection];
