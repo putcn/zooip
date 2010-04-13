@@ -13,6 +13,9 @@
 
 @implementation serviceHelper
 static serviceHelper *sharedInst = nil;
+static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/php/remoteService.php";
+static NSString *testingFarmerId = @"A6215BF61A3AF50A8F72F043A1A6A85C";
+static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 
 + (id)sharedService{
     @synchronized( self ) {
@@ -71,7 +74,7 @@ static serviceHelper *sharedInst = nil;
 	}
 	
 	if(shouldTriggerErrorHandler){
-		[[targetCallBack objectForKey:@"delegate"] performSelector:NSSelectorFromString([targetCallBack objectForKey:@"onfailed"]) withObject:[result objectForKey:@"error_code"]];
+		[[targetCallBack objectForKey:@"delegate"] performSelector:NSSelectorFromString([targetCallBack objectForKey:@"onfailed"]) withObject:result];
 	}else {
 		[[targetCallBack objectForKey:@"delegate"] performSelector:NSSelectorFromString([targetCallBack objectForKey:@"onsuccess"]) withObject:result];
 	}
@@ -81,10 +84,8 @@ static serviceHelper *sharedInst = nil;
 
 }
 
--(void)requestWentWrong:(ASIFormDataRequest *)request{
+-(void)requestWentWrong:(ASIFormDataRequest *)request{ //http error, TBD
 	NSLog(@"request %@ went wrong with status code %d, and feedback body %@",request.requestFlagMark, [request responseStatusCode], [request responseString]);
-	NSDictionary *targetCallBack = [CallBacks objectForKey:request.requestFlagMark];
-	[[targetCallBack objectForKey:@"delegate"] performSelector:NSSelectorFromString([targetCallBack objectForKey:@"onfailed"]) withObject:[request responseString]];
 }
 
 -(ASIFormDataRequest *)BuildRequestWithURL:(NSString *)URLString AndRequestFlag:(NSString *)requestFlag AndCallBackScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector{
@@ -102,18 +103,49 @@ static serviceHelper *sharedInst = nil;
 	[request setDelegate:self];
 	[request setDidFinishSelector:@selector(requestDone:)];
 	[request setDidFailSelector:@selector(requestWentWrong:)];
+	[request setRequestMethod:@"POST"];
+	//set testing uid and pid
+	[request setPostValue:@"25313321" forKey:@"uid"];
+	[request setPostValue:@"11" forKey:@"pid"];
 	return request;
 }
 
 -(void)connectivityTestWithScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector{
 	//save selector and delegate
 	NSString *flagMark = @"connectivityTest";
-	NSString *urlString = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/php/remoteService.php";
-	ASIFormDataRequest *request = [self BuildRequestWithURL:urlString AndRequestFlag:flagMark AndCallBackScope:CallBackDelegate AndSuccessSel:SuccessSelector AndFailedSel:FailedSelector];
+	ASIFormDataRequest *request = [self BuildRequestWithURL:ServiceBaseURL AndRequestFlag:flagMark AndCallBackScope:CallBackDelegate AndSuccessSel:SuccessSelector AndFailedSel:FailedSelector];
 	[request setPostValue:@"getFarmerInfo" forKey:@"method"];
-	[request setPostValue:@"25313321" forKey:@"uid"];
-	[request setPostValue:@"11" forKey:@"pid"];
-	[request setRequestMethod:@"POST"]; 
+	[request startAsynchronous];
+}
+
+-(void)getFarmInfoWithFarmerId:(NSString *)farmerId AndIsbodyGarded:(BOOL)IsbodyGarded AndScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector{
+	NSString *flagMark = @"getFarmInfoWithFarmerId";
+	ASIFormDataRequest *request = [self BuildRequestWithURL:ServiceBaseURL AndRequestFlag:flagMark AndCallBackScope:CallBackDelegate AndSuccessSel:SuccessSelector AndFailedSel:FailedSelector];
+	[request setPostValue:@"getFarmInfo" forKey:@"method"];
+	if (!farmerId) {
+		farmerId = testingFarmerId;
+	}
+	[request setPostValue:farmerId forKey:@"farmerId"];
+	NSInteger bodyGarded = 0;
+	if (IsbodyGarded) {
+		bodyGarded = 1;
+	}
+	[request setPostValue:[NSString stringWithFormat:@"%d",bodyGarded] forKey:@"bodyguard"];
+	[request startAsynchronous];
+}
+
+-(void)getAllBirdFarmAnimalInfoWithFarmId:(NSString *)farmId AndFarmerId:(NSString *)farmerId AndScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector{
+	NSString *flagMark = @"getAllBirdFarmAnimalInfoWithFarmId";
+	ASIFormDataRequest *request = [self BuildRequestWithURL:ServiceBaseURL AndRequestFlag:flagMark AndCallBackScope:CallBackDelegate AndSuccessSel:SuccessSelector AndFailedSel:FailedSelector];
+	[request setPostValue:@"getAllBirdFarmAnimalInfo" forKey:@"method"];
+	if (!farmId) {
+		farmId = testingFarmId;
+	}
+	[request setPostValue:farmId forKey:@"farmId"];
+	if (!farmerId) {
+		farmerId = testingFarmerId;
+	}
+	[request setPostValue:farmerId forKey:@"farmerId"];
 	[request startAsynchronous];
 }
 
