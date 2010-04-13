@@ -1,5 +1,5 @@
 //
-//  serviceHelper.h
+//  ServiceHelper.h
 //  zoo
 //
 //  Created by Darcy on 3/30/10.
@@ -14,13 +14,13 @@
 #import <Foundation/Foundation.h>
 #import "ASIFormDataRequest.h"
 
-@interface serviceHelper : NSObject {
-	NSMutableDictionary *CallBacks;
+@interface ServiceHelper : NSObject {
+	NSMutableDictionary *callBacks;
 }
 
-+ (serviceHelper *)sharedService;
++ (ServiceHelper *)sharedService;
 - (void) restore;
--(ASIFormDataRequest *)BuildRequestWithURL:(NSString *)URLString AndRequestFlag:(NSString *)requestFlag AndCallBackScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
+-(ASIFormDataRequest *)buildRequestWithURL:(NSString *)URLString AndRequestFlag:(NSString *)requestFlag AndCallBackScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
 -(void)connectivityTestWithScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
 -(void)getFarmInfoWithFarmerId:(NSString *)farmerId AndIsbodyGarded:(BOOL)IsbodyGarded AndScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
 -(void)getAllBirdFarmAnimalInfoWithFarmId:(NSString *)farmerId AndFarmerId:(NSString *)farmerId AndScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
