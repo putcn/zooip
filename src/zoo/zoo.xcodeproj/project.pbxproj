@@ -215,8 +215,8 @@
 		C73A78C511631EA700A820DC /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C73A78BE11631EA700A820DC /* Reachability.m */; };
 		C73A78F81163219600A820DC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A78F71163219600A820DC /* CFNetwork.framework */; };
 		C73A7900116321FA00A820DC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A78FF116321FA00A820DC /* SystemConfiguration.framework */; };
-		C7CFBA6A1161E749007BFD75 /* ServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C7CFBA691161E749007BFD75 /* ServiceHelper.m */; };
 		CC01757A117475AF00CD437F /* DataEnvironment.m in Sources */ = {isa = PBXBuildFile; fileRef = CC017579117475AF00CD437F /* DataEnvironment.m */; };
+		CC01757D1174780500CD437F /* ServiceHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = CC01757C1174780500CD437F /* ServiceHelper.m */; };
 		DC6640030F83B3EA000B3E49 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */; };
 		DC6640050F83B3EA000B3E49 /* OpenAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC6640040F83B3EA000B3E49 /* OpenAL.framework */; };
 		DCCBF1B70F6022AE0040855A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */; };
@@ -454,10 +454,10 @@
 		C73A78BE11631EA700A820DC /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		C73A78F71163219600A820DC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C73A78FF116321FA00A820DC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		C7CFBA681161E749007BFD75 /* ServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ServiceHelper.h; path = ../ServiceHelper.h; sourceTree = "<group>"; };
-		C7CFBA691161E749007BFD75 /* ServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ServiceHelper.m; path = ../ServiceHelper.m; sourceTree = "<group>"; };
 		CC017578117475AF00CD437F /* DataEnvironment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataEnvironment.h; sourceTree = "<group>"; };
 		CC017579117475AF00CD437F /* DataEnvironment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataEnvironment.m; sourceTree = "<group>"; };
+		CC01757B1174780500CD437F /* ServiceHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServiceHelper.h; sourceTree = "<group>"; };
+		CC01757C1174780500CD437F /* ServiceHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServiceHelper.m; sourceTree = "<group>"; };
 		DC6640020F83B3EA000B3E49 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		DC6640040F83B3EA000B3E49 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
 		DCCBF1B60F6022AE0040855A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -865,8 +865,8 @@
 		BF0074831159E87D0003B411 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				C7CFBA681161E749007BFD75 /* ServiceHelper.h */,
-				C7CFBA691161E749007BFD75 /* ServiceHelper.m */,
+				CC01757B1174780500CD437F /* ServiceHelper.h */,
+				CC01757C1174780500CD437F /* ServiceHelper.m */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
@@ -1122,7 +1122,6 @@
 				506EDC31102F528A00A389B3 /* HelloWorldScene.m in Sources */,
 				BF00748B1159E9B90003B411 /* GameMainScene.m in Sources */,
 				BF00748E1159EA530003B411 /* ModelLocator.m in Sources */,
-				C7CFBA6A1161E749007BFD75 /* ServiceHelper.m in Sources */,
 				C73A78BF11631EA700A820DC /* ASIAuthenticationDialog.m in Sources */,
 				C73A78C011631EA700A820DC /* ASIFormDataRequest.m in Sources */,
 				C73A78C111631EA700A820DC /* ASIHTTPRequest.m in Sources */,
@@ -1131,6 +1130,7 @@
 				C73A78C411631EA700A820DC /* ASINSStringAdditions.m in Sources */,
 				C73A78C511631EA700A820DC /* Reachability.m in Sources */,
 				CC01757A117475AF00CD437F /* DataEnvironment.m in Sources */,
+				CC01757D1174780500CD437F /* ServiceHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
