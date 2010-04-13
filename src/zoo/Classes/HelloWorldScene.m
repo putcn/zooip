@@ -49,7 +49,7 @@
 	
 	//[[serviceHelper sharedService] connectivityTestWithScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFailedWithReason:"];
 	//[[serviceHelper sharedService] getFarmInfoWithFarmerId:NULL AndIsbodyGarded:NO AndScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFailedWithReason:"];
-	[[serviceHelper sharedService] getAllBirdFarmAnimalInfoWithFarmId:NULL AndFarmerId:NULL AndScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFailedWithReason:"];
+	[[ServiceHelper sharedService] getAllBirdFarmAnimalInfoWithFarmId:NULL AndFarmerId:NULL AndScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFailedWithReason:"];
 
 	
 	return self;
