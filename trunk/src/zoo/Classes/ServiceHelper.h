@@ -13,15 +13,47 @@
 
 #import <Foundation/Foundation.h>
 #import "ASIFormDataRequest.h"
+#import "DataEnvironment.h"
+@class ASIFormDataRequest;
+
+typedef enum {
+	ZooNetworkRequestNone = 0,
+	ZooNetworkRequestgetFarmerInfo,
+	ZooNetworkRequestgetFarmInfo,
+	ZooNetworkRequestgetAllBirdFarmAnimalInfo,
+	ZooNetworkRequestgetSnakesOfFarm,
+	ZooNetworkRequestgetAllEggsInfo,
+	ZooNetworkRequestgetAntsOfFarm,
+	ZooNetworkRequestgetDejectaOfFarm,
+	ZooNetworkRequestgetLayEggsRemain,
+	ZooNetworkRequestgetFarmerDog,
+	ZooNetworkRequestgetFriendsInfo,
+	ZooNetworkRequestgetUserTips,
+	ZooNetworkRequestgetAllStorageAnimal,
+	ZooNetworkRequestgetAllStorageAuctionAnimal,
+	ZooNetworkRequestgetAllStorageProducts,
+	ZooNetworkRequestgetStoreZygoteEgg,
+	ZooNetworkRequestgetAllStorageFoods,
+	ZooNetworkRequestgetAllOriginalAnimal,
+	ZooNetworkRequestgetAllFoods,
+	ZooNetworkRequestgetAllGoods,
+} ZooNetworkRequestType;
 
 @interface ServiceHelper : NSObject {
-	NSMutableDictionary *callBacks;
+	
 }
 
 + (ServiceHelper *)sharedService;
-- (void) restore;
--(ASIFormDataRequest *)buildRequestWithURL:(NSString *)URLString AndRequestFlag:(NSString *)requestFlag AndCallBackScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
--(void)connectivityTestWithScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
--(void)getFarmInfoWithFarmerId:(NSString *)farmerId AndIsbodyGarded:(BOOL)IsbodyGarded AndScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
--(void)getAllBirdFarmAnimalInfoWithFarmId:(NSString *)farmerId AndFarmerId:(NSString *)farmerId AndScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
+- (void)restore;
+-(void)requestDone:(ASIFormDataRequest *)request;
+-(void)nativeNetworkError:(ASIFormDataRequest *)request;
+-(void)feedBackWithBadFormat:(NSString *)callBackString;
+-(void)operationError:(NSString *)reason;
+
+
+-(ASIFormDataRequest *)buildRequestWithType:(ZooNetworkRequestType)type;
+-(void)getFarmerInfo;
+-(void)getFarmInfoWithFarmerId:(NSString *)farmerId AndIsGuarded:(BOOL)isGuarded;
+-(void)getAllBirdFarmAnimalInfoWithFarmId:(NSString *)farmId AndFarmerId:(NSString *)farmerId;
+
 @end
