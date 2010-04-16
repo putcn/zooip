@@ -5,7 +5,7 @@
 
 // Import the interfaces
 #import "HelloWorldScene.h"
-#import "serviceHelper.h"
+#import "ServiceHelper.h"
 
 // HelloWorld implementation
 @implementation HelloWorld
@@ -49,18 +49,11 @@
 	
 	//[[serviceHelper sharedService] connectivityTestWithScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFailedWithReason:"];
 	//[[serviceHelper sharedService] getFarmInfoWithFarmerId:NULL AndIsbodyGarded:NO AndScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFailedWithReason:"];
-	[[ServiceHelper sharedService] getAllBirdFarmAnimalInfoWithFarmId:NULL AndFarmerId:NULL AndScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFailedWithReason:"];
-
+	//[[ServiceHelper sharedService] getFarmerInfo];
+	//[[ServiceHelper sharedService] getFarmInfoWithFarmerId:@"A6215BF61A3AF50A8F72F043A1A6A85C" AndIsGuarded:NO];
+	[[ServiceHelper sharedService] getAllBirdFarmAnimalInfoWithFarmId:@"163D7A78682082B36872659C7A9DA8F9" AndFarmerId:@"A6215BF61A3AF50A8F72F043A1A6A85C"];
 	
 	return self;
-}
-
--(void)requestDoneWith:(NSDictionary *)result{
-	NSLog(@"job done with result : %@",result);
-}
-
--(void)requestFailedWithReason:(NSString *)reasone{
-	NSLog(@"job failed with reasone : %@",reasone);
 }
 
 // on "dealloc" you need to release all your retained objects

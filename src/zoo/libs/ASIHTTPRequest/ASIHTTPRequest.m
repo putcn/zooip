@@ -20,7 +20,6 @@
 #endif
 #import "ASIInputStream.h"
 
-
 // We use our own custom run loop mode as CoreAnimation seems to want to hijack our threads otherwise
 static CFStringRef ASIHTTPRequestRunMode = CFSTR("ASIHTTPRequest");
 

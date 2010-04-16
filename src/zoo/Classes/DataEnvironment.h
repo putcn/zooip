@@ -10,48 +10,67 @@
 
 
 @interface DataEnvironment : NSObject {
-	NSString *departureCity;
-	NSString *arrivalCity;
-	NSDate *departureDate;
-	NSDate *arrivalDate;
-	NSString *keyword;
-	NSInteger price;
-	BOOL isUseMap;
-	BOOL isDoubleWay;
-	BOOL isMultiStop;
-	BOOL searchCondUpdated;
-	NSInteger searchCondOrder;
-	NSDictionary *searchCondFilterTakeoffTimeDict;
-	NSDictionary *searchCondFilterFlightCompanyDict;
-	NSDictionary *searchCondFilterTakeoffAirportDict;
-	NSDictionary *searchCondFilterStarDict;
-	NSDictionary *starValueDict;
-	NSString *flightCode;
-	//NSString *hotelName;
-	NSArray *priceAry;
-	NSDictionary *selectedHotel;
+	//getFarmerInfo
+	NSInteger antsCurrency;
+	NSString *farmerId;
+	NSInteger snsUserId;
+	NSInteger platformId;
+	NSString *userName;
+	NSString *userImg;
+	NSInteger farmPref;
+	NSInteger fighter;
+	BOOL isNewUser;
+	BOOL haveNewMessage;
+	NSInteger goldenEgg;
+	BOOL haveTurtle;
+	
+	//getFarmInfo
+	NSString *farmId;
+	NSInteger farm_level;
+	NSInteger farm_experience;
+	NSInteger farm_expGainPerDay;
+	NSInteger farm_expGainTime;
+	NSInteger farm_maxNumOfBirds;
+	NSInteger farm_foodEndTime;
+	NSInteger farm_remain;
+	NSInteger farm_nextLevelExp;
+	NSInteger farm_currentExp;
+	NSInteger farm_topMaxNumOfBirds;
+	
+	//getAllBirdFarmAnimalInfo
+	NSMutableArray *animals;
 }
 + (DataEnvironment *)sharedDataEnvironment;
 - (void)restore;
 
-@property(nonatomic,retain) NSString *departureCity;
-@property(nonatomic,retain) NSString *arrivalCity;
-@property(nonatomic,retain) NSDate *departureDate;
-@property(nonatomic,retain) NSDate *arrivalDate;
-@property(nonatomic,retain) NSString *keyword;
-@property(nonatomic,assign) NSInteger price;
-@property(nonatomic,assign) BOOL isDoubleWay;
-@property(nonatomic,assign) BOOL isMultiStop;
-@property(nonatomic,assign) BOOL isUseMap;
-@property(nonatomic,assign) BOOL searchCondUpdated;
-@property(nonatomic,assign) NSInteger searchCondOrder;
-@property(nonatomic,retain) NSDictionary *searchCondFilterTakeoffTimeDict;
-@property(nonatomic,retain) NSDictionary *searchCondFilterFlightCompanyDict;
-@property(nonatomic,retain) NSDictionary *searchCondFilterTakeoffAirportDict;
-@property(nonatomic,retain) NSDictionary *searchCondFilterStarDict;
-@property(nonatomic,retain) NSDictionary *starValueDict;
-@property(nonatomic,retain) NSString *flightCode;
-@property(nonatomic,retain) NSArray *priceAry;
-@property(nonatomic,retain) NSDictionary *selectedHotel;
+//getFarmerInfo
+@property(nonatomic,assign) NSInteger antsCurrency;
+@property(nonatomic,assign) NSInteger snsUserId;
+@property(nonatomic,assign) NSInteger platformId;
+@property(nonatomic,assign) NSInteger farmPref;
+@property(nonatomic,assign) NSInteger fighter;
+@property(nonatomic,assign) NSInteger goldenEgg;
+@property(nonatomic,assign) BOOL isNewUser;
+@property(nonatomic,assign) BOOL haveNewMessage;
+@property(nonatomic,assign) BOOL haveTurtle;
+@property(nonatomic,retain) NSString *farmerId;
+@property(nonatomic,retain) NSString *userName;
+@property(nonatomic,retain) NSString *userImg;
+
+//getFarmInfo
+@property(nonatomic,retain) NSString *farmId;
+@property(nonatomic,assign) NSInteger farm_level;
+@property(nonatomic,assign) NSInteger farm_experience;
+@property(nonatomic,assign) NSInteger farm_expGainPerDay;
+@property(nonatomic,assign) NSInteger farm_expGainTime;
+@property(nonatomic,assign) NSInteger farm_maxNumOfBirds;
+@property(nonatomic,assign) NSInteger farm_foodEndTime;
+@property(nonatomic,assign) NSInteger farm_remain;
+@property(nonatomic,assign) NSInteger farm_nextLevelExp;
+@property(nonatomic,assign) NSInteger farm_currentExp;
+@property(nonatomic,assign) NSInteger farm_topMaxNumOfBirds;
+
+//getAllBirdFarmAnimalInfo
+@property(nonatomic,retain) NSMutableArray *animals;
 
 @end

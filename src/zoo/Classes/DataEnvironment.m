@@ -13,31 +13,40 @@
 
 static DataEnvironment *sharedInst = nil;
 
-@synthesize departureCity,
-			arrivalCity,
-			departureDate,
-			arrivalDate,
-			isDoubleWay,
-			isMultiStop,
-			keyword,
-			price,
-			isUseMap,
-			searchCondUpdated,
-			searchCondOrder,
-			searchCondFilterTakeoffTimeDict,
-			searchCondFilterFlightCompanyDict,
-			searchCondFilterTakeoffAirportDict,
-			searchCondFilterStarDict,
-			starValueDict,
-			priceAry,
-		selectedHotel,
-            flightCode;
+@synthesize antsCurrency,
+			farmerId,
+			snsUserId,
+			platformId,
+			userName,
+			userImg,
+			farmPref,
+			fighter,
+			isNewUser,
+			haveNewMessage,
+			goldenEgg,
+		   haveTurtle;
+
+@synthesize farmId,
+farm_level,
+farm_experience,
+farm_expGainPerDay,
+farm_expGainTime,
+farm_maxNumOfBirds,
+farm_foodEndTime,
+farm_remain,
+farm_nextLevelExp,
+farm_currentExp,
+farm_topMaxNumOfBirds;
+
+@synthesize animals;
 
 + (id)sharedDataEnvironment{
     @synchronized( self ) {
         if ( sharedInst == nil ) {
             /* sharedInst set up in init */
+			
             [[self alloc] init];
+			
         }
     }
 	
@@ -50,7 +59,7 @@ static DataEnvironment *sharedInst = nil;
 	} else if ( self = [super init] ) {
 		sharedInst = self;
 		[self restore];
-		
+		self.platformId = 11;
 	}
 	return sharedInst;
 }
@@ -71,24 +80,32 @@ static DataEnvironment *sharedInst = nil;
 }
 
 - (void)restore{
-	departureCity = nil;
-	arrivalCity = nil;
-	departureDate = nil;
-	arrivalDate = nil;
-	keyword = nil;
-	price = 0;
-	isUseMap = NO;
-	isDoubleWay = NO;
-	isMultiStop = NO;
-	searchCondUpdated = NO;
-	searchCondOrder = 0;
-	searchCondFilterTakeoffTimeDict = nil;
-	searchCondFilterFlightCompanyDict = nil;
-	searchCondFilterTakeoffAirportDict = nil;
-	flightCode = nil;
-	priceAry = nil;
-	starValueDict = nil;
-	selectedHotel = nil;
+	antsCurrency = 0;
+	farmerId = nil;
+	snsUserId = 0;
+	platformId = 11;
+	userName = nil;
+	userImg = nil;
+	farmPref = 0;
+	fighter = 0;
+	isNewUser = NO;
+	haveNewMessage = NO;
+	goldenEgg = 0;
+	haveTurtle = NO;
+	
+	farmId = nil;
+	farm_level = 0;
+	farm_experience = 0;
+	farm_expGainPerDay = 0;
+	farm_expGainTime = 0;
+	farm_maxNumOfBirds = 0;
+	farm_foodEndTime = 0;
+	farm_remain = 0;
+	farm_nextLevelExp = 0;
+	farm_currentExp = 0;
+	farm_topMaxNumOfBirds = 0;
+	
+	animals = nil;
 }
 
 @end
