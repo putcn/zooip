@@ -206,6 +206,13 @@
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
 		BF00748B1159E9B90003B411 /* GameMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748A1159E9B90003B411 /* GameMainScene.m */; };
 		BF00748E1159EA530003B411 /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748D1159EA530003B411 /* ModelLocator.m */; };
+		C3C525E5117C321800343D7F /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525E4117C321800343D7F /* Button.m */; };
+		C3C525EF117C32C400343D7F /* StorageManageToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525EE117C32C400343D7F /* StorageManageToolbar.m */; };
+		C3C525F2117C333000343D7F /* PlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525F1117C333000343D7F /* PlayerInfo.m */; };
+		C3C525F7117C33C700343D7F /* ZooManageToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525F6117C33C700343D7F /* ZooManageToolbar.m */; };
+		C3C52605117C38F000343D7F /* MessageDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C52604117C38F000343D7F /* MessageDialog.m */; };
+		C3C52608117C3ACE00343D7F /* FriendsToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C52607117C3ACE00343D7F /* FriendsToolbar.m */; };
+		C3C5260D117C3CBF00343D7F /* UILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C5260C117C3CBF00343D7F /* UILayer.m */; };
 		C73A78F81163219600A820DC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A78F71163219600A820DC /* CFNetwork.framework */; };
 		C73A7900116321FA00A820DC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A78FF116321FA00A820DC /* SystemConfiguration.framework */; };
 		C7C8F58611784A500098E8FB /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C8F57911784A500098E8FB /* ASIAuthenticationDialog.m */; };
@@ -438,6 +445,20 @@
 		BF00748A1159E9B90003B411 /* GameMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMainScene.m; sourceTree = "<group>"; };
 		BF00748C1159EA530003B411 /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
 		BF00748D1159EA530003B411 /* ModelLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLocator.m; sourceTree = "<group>"; };
+		C3C525E3117C321800343D7F /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
+		C3C525E4117C321800343D7F /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
+		C3C525ED117C32C400343D7F /* StorageManageToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageManageToolbar.h; sourceTree = "<group>"; };
+		C3C525EE117C32C400343D7F /* StorageManageToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageManageToolbar.m; sourceTree = "<group>"; };
+		C3C525F0117C333000343D7F /* PlayerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerInfo.h; sourceTree = "<group>"; };
+		C3C525F1117C333000343D7F /* PlayerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerInfo.m; sourceTree = "<group>"; };
+		C3C525F5117C33C700343D7F /* ZooManageToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZooManageToolbar.h; sourceTree = "<group>"; };
+		C3C525F6117C33C700343D7F /* ZooManageToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZooManageToolbar.m; sourceTree = "<group>"; };
+		C3C52603117C38F000343D7F /* MessageDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDialog.h; sourceTree = "<group>"; };
+		C3C52604117C38F000343D7F /* MessageDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDialog.m; sourceTree = "<group>"; };
+		C3C52606117C3ACE00343D7F /* FriendsToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsToolbar.h; sourceTree = "<group>"; };
+		C3C52607117C3ACE00343D7F /* FriendsToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsToolbar.m; sourceTree = "<group>"; };
+		C3C5260B117C3CBF00343D7F /* UILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILayer.h; sourceTree = "<group>"; };
+		C3C5260C117C3CBF00343D7F /* UILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILayer.m; sourceTree = "<group>"; };
 		C73A78F71163219600A820DC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C73A78FF116321FA00A820DC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C7C8F57811784A500098E8FB /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -844,7 +865,7 @@
 			isa = PBXGroup;
 			children = (
 				BF0074861159E8D50003B411 /* Scenes */,
-				BF0074851159E89A0003B411 /* Dialogs */,
+				BF0074851159E89A0003B411 /* UIControls */,
 				BF0074841159E88E0003B411 /* Components */,
 			);
 			name = Views;
@@ -878,11 +899,25 @@
 			name = Components;
 			sourceTree = "<group>";
 		};
-		BF0074851159E89A0003B411 /* Dialogs */ = {
+		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				C3C5260B117C3CBF00343D7F /* UILayer.h */,
+				C3C5260C117C3CBF00343D7F /* UILayer.m */,
+				C3C52606117C3ACE00343D7F /* FriendsToolbar.h */,
+				C3C52607117C3ACE00343D7F /* FriendsToolbar.m */,
+				C3C52603117C38F000343D7F /* MessageDialog.h */,
+				C3C52604117C38F000343D7F /* MessageDialog.m */,
+				C3C525F5117C33C700343D7F /* ZooManageToolbar.h */,
+				C3C525F6117C33C700343D7F /* ZooManageToolbar.m */,
+				C3C525F0117C333000343D7F /* PlayerInfo.h */,
+				C3C525F1117C333000343D7F /* PlayerInfo.m */,
+				C3C525ED117C32C400343D7F /* StorageManageToolbar.h */,
+				C3C525EE117C32C400343D7F /* StorageManageToolbar.m */,
+				C3C525E3117C321800343D7F /* Button.h */,
+				C3C525E4117C321800343D7F /* Button.m */,
 			);
-			name = Dialogs;
+			name = UIControls;
 			sourceTree = "<group>";
 		};
 		BF0074861159E8D50003B411 /* Scenes */ = {
@@ -1131,6 +1166,13 @@
 				C7C8F58A11784A500098E8FB /* ASINetworkQueue.m in Sources */,
 				C7C8F58B11784A500098E8FB /* ASINSStringAdditions.m in Sources */,
 				C7C8F58C11784A500098E8FB /* Reachability.m in Sources */,
+				C3C525E5117C321800343D7F /* Button.m in Sources */,
+				C3C525EF117C32C400343D7F /* StorageManageToolbar.m in Sources */,
+				C3C525F2117C333000343D7F /* PlayerInfo.m in Sources */,
+				C3C525F7117C33C700343D7F /* ZooManageToolbar.m in Sources */,
+				C3C52605117C38F000343D7F /* MessageDialog.m in Sources */,
+				C3C52608117C3ACE00343D7F /* FriendsToolbar.m in Sources */,
+				C3C5260D117C3CBF00343D7F /* UILayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
