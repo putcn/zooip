@@ -213,6 +213,8 @@
 		C3C52605117C38F000343D7F /* MessageDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C52604117C38F000343D7F /* MessageDialog.m */; };
 		C3C52608117C3ACE00343D7F /* FriendsToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C52607117C3ACE00343D7F /* FriendsToolbar.m */; };
 		C3C5260D117C3CBF00343D7F /* UILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C5260C117C3CBF00343D7F /* UILayer.m */; };
+		C3C528C5117E951E00343D7F /* DragControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C528C4117E951E00343D7F /* DragControlLayer.m */; };
+		C3C528C8117E953000343D7F /* ScaleControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C528C7117E953000343D7F /* ScaleControlLayer.m */; };
 		C73A78F81163219600A820DC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A78F71163219600A820DC /* CFNetwork.framework */; };
 		C73A7900116321FA00A820DC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A78FF116321FA00A820DC /* SystemConfiguration.framework */; };
 		C7C8F58611784A500098E8FB /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C8F57911784A500098E8FB /* ASIAuthenticationDialog.m */; };
@@ -459,6 +461,10 @@
 		C3C52607117C3ACE00343D7F /* FriendsToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsToolbar.m; sourceTree = "<group>"; };
 		C3C5260B117C3CBF00343D7F /* UILayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILayer.h; sourceTree = "<group>"; };
 		C3C5260C117C3CBF00343D7F /* UILayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILayer.m; sourceTree = "<group>"; };
+		C3C528C3117E951E00343D7F /* DragControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DragControlLayer.h; sourceTree = "<group>"; };
+		C3C528C4117E951E00343D7F /* DragControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragControlLayer.m; sourceTree = "<group>"; };
+		C3C528C6117E953000343D7F /* ScaleControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleControlLayer.h; sourceTree = "<group>"; };
+		C3C528C7117E953000343D7F /* ScaleControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleControlLayer.m; sourceTree = "<group>"; };
 		C73A78F71163219600A820DC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C73A78FF116321FA00A820DC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C7C8F57811784A500098E8FB /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -902,6 +908,10 @@
 		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				C3C528C6117E953000343D7F /* ScaleControlLayer.h */,
+				C3C528C7117E953000343D7F /* ScaleControlLayer.m */,
+				C3C528C3117E951E00343D7F /* DragControlLayer.h */,
+				C3C528C4117E951E00343D7F /* DragControlLayer.m */,
 				C3C5260B117C3CBF00343D7F /* UILayer.h */,
 				C3C5260C117C3CBF00343D7F /* UILayer.m */,
 				C3C52606117C3ACE00343D7F /* FriendsToolbar.h */,
@@ -1173,6 +1183,8 @@
 				C3C52605117C38F000343D7F /* MessageDialog.m in Sources */,
 				C3C52608117C3ACE00343D7F /* FriendsToolbar.m in Sources */,
 				C3C5260D117C3CBF00343D7F /* UILayer.m in Sources */,
+				C3C528C5117E951E00343D7F /* DragControlLayer.m in Sources */,
+				C3C528C8117E953000343D7F /* ScaleControlLayer.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
