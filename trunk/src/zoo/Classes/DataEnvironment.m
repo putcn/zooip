@@ -56,7 +56,7 @@ farm_topMaxNumOfBirds;
 - (id)init{
     if ( sharedInst != nil ) {
 		
-	} else if ( self = [super init] ) {
+	} else if ( (self = [super init]) ) {
 		sharedInst = self;
 		[self restore];
 		self.platformId = 11;

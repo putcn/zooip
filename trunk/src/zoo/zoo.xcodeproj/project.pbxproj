@@ -215,6 +215,9 @@
 		C3C5260D117C3CBF00343D7F /* UILayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C5260C117C3CBF00343D7F /* UILayer.m */; };
 		C3C528C5117E951E00343D7F /* DragControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C528C4117E951E00343D7F /* DragControlLayer.m */; };
 		C3C528C8117E953000343D7F /* ScaleControlLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C528C7117E953000343D7F /* ScaleControlLayer.m */; };
+		C3C528CE117EA30100343D7F /* AnimalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C528CD117EA30100343D7F /* AnimalController.m */; };
+		C3C528D3117EA48600343D7F /* Animal.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C528D2117EA48600343D7F /* Animal.m */; };
+		C3C528D6117EA5F200343D7F /* AnimalViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C528D5117EA5F200343D7F /* AnimalViewFactory.m */; };
 		C73A78F81163219600A820DC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A78F71163219600A820DC /* CFNetwork.framework */; };
 		C73A7900116321FA00A820DC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A78FF116321FA00A820DC /* SystemConfiguration.framework */; };
 		C7C8F58611784A500098E8FB /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C8F57911784A500098E8FB /* ASIAuthenticationDialog.m */; };
@@ -465,6 +468,12 @@
 		C3C528C4117E951E00343D7F /* DragControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DragControlLayer.m; sourceTree = "<group>"; };
 		C3C528C6117E953000343D7F /* ScaleControlLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScaleControlLayer.h; sourceTree = "<group>"; };
 		C3C528C7117E953000343D7F /* ScaleControlLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScaleControlLayer.m; sourceTree = "<group>"; };
+		C3C528CC117EA30100343D7F /* AnimalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalController.h; sourceTree = "<group>"; };
+		C3C528CD117EA30100343D7F /* AnimalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalController.m; sourceTree = "<group>"; };
+		C3C528D1117EA48600343D7F /* Animal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Animal.h; sourceTree = "<group>"; };
+		C3C528D2117EA48600343D7F /* Animal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Animal.m; sourceTree = "<group>"; };
+		C3C528D4117EA5F200343D7F /* AnimalViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalViewFactory.h; sourceTree = "<group>"; };
+		C3C528D5117EA5F200343D7F /* AnimalViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalViewFactory.m; sourceTree = "<group>"; };
 		C73A78F71163219600A820DC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C73A78FF116321FA00A820DC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		C7C8F57811784A500098E8FB /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
@@ -585,6 +594,7 @@
 		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				C3C528CB117EA2D000343D7F /* Controllers */,
 				BF0074831159E87D0003B411 /* Helpers */,
 				BF0074881159E91E0003B411 /* Proxies */,
 				BF0074801159E8740003B411 /* Models */,
@@ -880,6 +890,7 @@
 		BF0074801159E8740003B411 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C3C528CA117EA2BD00343D7F /* DataStructure */,
 				CC017578117475AF00CD437F /* DataEnvironment.h */,
 				CC017579117475AF00CD437F /* DataEnvironment.m */,
 				BF0074871159E8FF0003B411 /* Entities */,
@@ -942,6 +953,8 @@
 		BF0074871159E8FF0003B411 /* Entities */ = {
 			isa = PBXGroup;
 			children = (
+				C3C528D1117EA48600343D7F /* Animal.h */,
+				C3C528D2117EA48600343D7F /* Animal.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -958,6 +971,24 @@
 			children = (
 			);
 			name = Animals;
+			sourceTree = "<group>";
+		};
+		C3C528CA117EA2BD00343D7F /* DataStructure */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DataStructure;
+			sourceTree = "<group>";
+		};
+		C3C528CB117EA2D000343D7F /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				C3C528CC117EA30100343D7F /* AnimalController.h */,
+				C3C528CD117EA30100343D7F /* AnimalController.m */,
+				C3C528D4117EA5F200343D7F /* AnimalViewFactory.h */,
+				C3C528D5117EA5F200343D7F /* AnimalViewFactory.m */,
+			);
+			name = Controllers;
 			sourceTree = "<group>";
 		};
 		C7C8F57711784A500098E8FB /* ASIHTTPRequest */ = {
@@ -1185,6 +1216,9 @@
 				C3C5260D117C3CBF00343D7F /* UILayer.m in Sources */,
 				C3C528C5117E951E00343D7F /* DragControlLayer.m in Sources */,
 				C3C528C8117E953000343D7F /* ScaleControlLayer.m in Sources */,
+				C3C528CE117EA30100343D7F /* AnimalController.m in Sources */,
+				C3C528D3117EA48600343D7F /* Animal.m in Sources */,
+				C3C528D6117EA5F200343D7F /* AnimalViewFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
