@@ -5,6 +5,7 @@
 // HelloWorld Layer
 @interface HelloWorld : CCLayer
 {
+	CCSprite *baseContainer;
 }
 
 // returns a Scene that contains the HelloWorld as the only child
