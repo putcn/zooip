@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "AnimalView.h"
 
 @interface AnimalViewFactory : NSObject
 {
-
+	
 }
+
++(AnimalView *) createAnimalView:(NSString *) type;
 
 @end

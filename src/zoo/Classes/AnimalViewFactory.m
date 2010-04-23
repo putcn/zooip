@@ -11,4 +11,23 @@
 
 @implementation AnimalViewFactory
 
+
++(AnimalView *) createAnimalView:(NSString *) type
+{
+	if ([type isEqualToString:@"1"])
+	{
+		
+	}
+	else if ([type isEqualToString:@"2"])
+	{
+		
+	}
+	else
+	{
+		
+	}
+	
+	return nil;
+}
+
 @end

@@ -14,4 +14,6 @@
 	
 }
 
++(AnimalController *) sharedAnimalController;
+
 @end
