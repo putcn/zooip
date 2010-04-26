@@ -29,9 +29,17 @@
 
 -(void) update:(int)currDirectionValue status:(int)currStatusValue
 {
+	NSArray *dirkeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",nil];
+	NSArray *dirvalues = [NSArray arrayWithObjects:@"up",@"rightUp",@"right",@"rightDown",@"down",@"leftDown",@"left",@"leftUp",nil];
+	NSDictionary *dirctions = [NSDictionary dictionaryWithObjects:dirvalues forKeys:dirkeys];
 	
-	NSString *status = [NSString stringWithString:@"ill"];
-	NSString *direction = [NSString stringWithString:@"right"];
+	NSArray *stakeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",nil];
+	NSArray *stavalues = [NSArray arrayWithObjects:@"stop",@"eat",@"ill",@"sleep",@"stand",@"walk",@"fly",@"swimming",@"trasition",@"landing",@"spread",@"crow",nil];
+	NSDictionary *statuses = [NSDictionary dictionaryWithObjects:stavalues forKeys:stakeys];
+	
+	NSString *direction= [dirctions objectForKey: [NSString stringWithFormat:@"%d",currDirectionValue]];
+	NSString *status = [statuses objectForKey: [NSString stringWithFormat:@"%d", currStatusValue]];
+	
 	CCTexture2D *bg;
 	CGRect rect;
 	if ([direction isEqualToString:@"right"]) 
@@ -78,7 +86,7 @@
 	//	landing 着陆
 	//	spread 开屏
 	//	crow 打鸣
-	NSLog(@"the string is %@", showKey);
+	NSLog(@"当前的动物状态为 ***** %@ *****", showKey);
 	if ([status isEqualToString:@"stop"]||[status isEqualToString:@"ill"] || [status isEqualToString:@"sleep"] || [status isEqualToString:@"stand"])
 	{
 		[self stopAllActions];
