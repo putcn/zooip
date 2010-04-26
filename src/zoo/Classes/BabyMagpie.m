@@ -21,7 +21,7 @@
 		for (int i = 1; i<=26; i++) {
 			[stopAnimation addFrameWithFilename:[NSString stringWithFormat:@"babyMagpie_stop_%02d.png",i]];
 		}
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:eatAnimation]] forKey:@"stop"];
+		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:stopAnimation]] forKey:@"stop"];
 		
 	}
 	return self;
