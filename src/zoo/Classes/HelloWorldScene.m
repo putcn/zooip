@@ -8,6 +8,7 @@
 #import "ServiceHelper.h"
 #import "DoveView.h"
 #import "Animal.h"
+#import "UILayer.h"
 
 // HelloWorld implementation
 @implementation HelloWorld
@@ -70,6 +71,9 @@
 		
 		// add the label as a child to this Layer
 		[scaleContainer addChild: baseContainer];
+		
+		UILayer *uiLayer = [UILayer node];
+		[self addChild:uiLayer];
 	}
 	
 	[AnimalViewFactory createAnimalView:@"1"];

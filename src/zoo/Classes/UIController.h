@@ -14,4 +14,6 @@
 
 }
 
++(UIController *) sharedUIController;
+
 @end

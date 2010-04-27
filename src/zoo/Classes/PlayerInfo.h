@@ -14,6 +14,12 @@
 	
 }
 
--(void) update;
+-(void) updatePlayerInfo;
+-(void) updateFriendInfo;
+-(void) setFriendInfoVisible:(bool) isShow;
+-(void) showPlayerInfo;
+-(void) hidePlayerInfo;
+-(void) showFriendInfo;
+-(void) hideFriendInfo;
 
 @end

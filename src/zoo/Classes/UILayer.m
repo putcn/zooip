@@ -49,7 +49,7 @@
 
 -(void) switchPlayerZoo
 {
-	[[GameMainScene sharedGameMainScene] swithZoo:NO];
+	[[UIController sharedUIController] swithZoo:NO];
 	isSelf = YES;
 	[zooManageToolbar switchZoo:YES];
 }
