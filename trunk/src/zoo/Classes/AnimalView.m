@@ -29,12 +29,14 @@
 
 -(void) update:(int)currDirectionValue status:(int)currStatusValue
 {
+	
+	//映射动物的方向和状态参数
 	NSArray *dirkeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",nil];
 	NSArray *dirvalues = [NSArray arrayWithObjects:@"up",@"rightUp",@"right",@"rightDown",@"down",@"leftDown",@"left",@"leftUp",nil];
 	NSDictionary *dirctions = [NSDictionary dictionaryWithObjects:dirvalues forKeys:dirkeys];
 	
 	NSArray *stakeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",nil];
-	NSArray *stavalues = [NSArray arrayWithObjects:@"stop",@"eat",@"ill",@"sleep",@"stand",@"walk",@"fly",@"swimming",@"trasition",@"landing",@"spread",@"crow",nil];
+	NSArray *stavalues = [NSArray arrayWithObjects:@"stop",@"eat",@"ill",@"sleep",@"stand",@"walk",@"fly",@"swimming",@"spread",@"crow",@"trasition",@"landing",nil];
 	NSDictionary *statuses = [NSDictionary dictionaryWithObjects:stavalues forKeys:stakeys];
 	
 	NSString *direction= [dirctions objectForKey: [NSString stringWithFormat:@"%d",currDirectionValue]];
@@ -62,32 +64,12 @@
 	
 	NSString *showKey = [[status stringByAppendingString:@"_"] stringByAppendingFormat:direction];
 
-	// 在状态改变时该函数会被调用，根据currDirectionValue找到相应的动画对象进行播放即可
-	// currDirection:
-	//	up 正上
-	//	rightUp 右上
-	//	right 右
-	//	rightDown 右下
-	//	down 下
-	//	leftDown 左下
-	//	left 左
-	//	leftRight 左上
+	//方向: 0-up, 1-rightUp, 2-right, 3-rightDown, 4-down, 5-leftDown, 6-left, 7-leftUp
+	//状态: 0-stop(静止动画), 1-eat(吃食), 2-ill(生病), 3-sleep(睡觉), 4-stand(站立图片), 5-walk(行走), 6-fly(飞), 7-swimming(游泳),
+	//     8-spread(孔雀开屏),9-crow(公鸡打鸣), 10-trasition(起飞), 11-landing(降落)
 	
-	// currStatusValue 表示当前状态，游泳、飞行、走路或者静止，目前先不实现，作为预留接口
-	//	stop 静止
-	//	eat 吃食
-	//	ill 生病
-	//	sleep 休息
-	//	stand 站立
-	//	walk 行走
-	//	fly 飞行
-	//	swimming 游泳
-	//	transition 起飞
-	//	landing 着陆
-	//	spread 开屏
-	//	crow 打鸣
 	NSLog(@"当前的动物状态为 ***** %@ *****", showKey);
-	if ([status isEqualToString:@"stop"]||[status isEqualToString:@"ill"] || [status isEqualToString:@"sleep"] || [status isEqualToString:@"stand"])
+	if ([status isEqualToString:@"ill"] || [status isEqualToString:@"sleep"] || [status isEqualToString:@"stand"])
 	{
 		[self stopAllActions];
 		bg = [animationTable objectForKey:showKey];
