@@ -3290,6 +3290,8 @@
 		C3C528D6117EA5F200343D7F /* AnimalViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C528D5117EA5F200343D7F /* AnimalViewFactory.m */; };
 		C73A78F81163219600A820DC /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A78F71163219600A820DC /* CFNetwork.framework */; };
 		C73A7900116321FA00A820DC /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C73A78FF116321FA00A820DC /* SystemConfiguration.framework */; };
+		C7A90E411185C231002F3799 /* DataModelCommon.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A90E401185C231002F3799 /* DataModelCommon.m */; };
+		C7A90E441185C321002F3799 /* DataModelAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A90E431185C321002F3799 /* DataModelAnimal.m */; };
 		C7C8F58611784A500098E8FB /* ASIAuthenticationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C8F57911784A500098E8FB /* ASIAuthenticationDialog.m */; };
 		C7C8F58711784A500098E8FB /* ASIFormDataRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C8F57B11784A500098E8FB /* ASIFormDataRequest.m */; };
 		C7C8F58811784A500098E8FB /* ASIHTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C8F57D11784A500098E8FB /* ASIHTTPRequest.m */; };
@@ -6642,6 +6644,10 @@
 		C3C528D5117EA5F200343D7F /* AnimalViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalViewFactory.m; sourceTree = "<group>"; };
 		C73A78F71163219600A820DC /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		C73A78FF116321FA00A820DC /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C7A90E3F1185C231002F3799 /* DataModelCommon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelCommon.h; sourceTree = "<group>"; };
+		C7A90E401185C231002F3799 /* DataModelCommon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelCommon.m; sourceTree = "<group>"; };
+		C7A90E421185C321002F3799 /* DataModelAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelAnimal.h; sourceTree = "<group>"; };
+		C7A90E431185C321002F3799 /* DataModelAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelAnimal.m; sourceTree = "<group>"; };
 		C7C8F57811784A500098E8FB /* ASIAuthenticationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIAuthenticationDialog.h; sourceTree = "<group>"; };
 		C7C8F57911784A500098E8FB /* ASIAuthenticationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ASIAuthenticationDialog.m; sourceTree = "<group>"; };
 		C7C8F57A11784A500098E8FB /* ASIFormDataRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ASIFormDataRequest.h; sourceTree = "<group>"; };
@@ -12041,6 +12047,10 @@
 		C3C528CA117EA2BD00343D7F /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				C7A90E3F1185C231002F3799 /* DataModelCommon.h */,
+				C7A90E401185C231002F3799 /* DataModelCommon.m */,
+				C7A90E421185C321002F3799 /* DataModelAnimal.h */,
+				C7A90E431185C321002F3799 /* DataModelAnimal.m */,
 			);
 			name = DataStructure;
 			sourceTree = "<group>";
@@ -15356,6 +15366,8 @@
 				3E8716B511802C4200EBA2E8 /* TibentanMastiff.m in Sources */,
 				3E8716B811802C4900EBA2E8 /* Mallard.m in Sources */,
 				C3A9E83C1181421400CEBDFC /* UIController.m in Sources */,
+				C7A90E411185C231002F3799 /* DataModelCommon.m in Sources */,
+				C7A90E441185C321002F3799 /* DataModelAnimal.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
