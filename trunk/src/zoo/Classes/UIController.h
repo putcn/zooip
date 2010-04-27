@@ -11,7 +11,7 @@
 
 @interface UIController : NSObject
 {
-
+	int action;
 }
 
 +(UIController *) sharedUIController;

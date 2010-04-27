@@ -8,7 +8,8 @@
 
 #import "cocos2d.h"
 #import "AnimalView.h"
-
+#import "AnimalViewFactory.h"
+#import "DataModelAnimal.h"
 
 @interface Animal : NSObject
 {
@@ -28,6 +29,7 @@
 }
 
 -(id) initWithView:(AnimalView*) viewValue setSpeed:(CGFloat) speedValue setLimitRect:(CGRect) limitRectValue;
+-(id) initWithType:(NSString *) animalType data:(DataModelAnimal *) animalData;
 
 @end
 

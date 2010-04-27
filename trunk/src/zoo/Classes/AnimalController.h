@@ -11,9 +11,11 @@
 
 @interface AnimalController : NSObject
 {
-	
+	NSMutableArray *animals;
 }
 
 +(AnimalController *) sharedAnimalController;
+
+-(void) updateAnimal:(NSMutableArray *)animalsData;
 
 @end

@@ -30,7 +30,7 @@
 
 -(void) btnButtonHandler
 {
-	[self.parent popupFriendList];
+	//[self.parent popupFriendList];
 }
 
 @end
