@@ -3276,6 +3276,30 @@
 		BF00748B1159E9B90003B411 /* GameMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748A1159E9B90003B411 /* GameMainScene.m */; };
 		BF00748E1159EA530003B411 /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748D1159EA530003B411 /* ModelLocator.m */; };
 		C3A9E83C1181421400CEBDFC /* UIController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E83B1181421400CEBDFC /* UIController.m */; };
+		C3A9E8D41186C78300CEBDFC /* FriendList.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BC1186C78300CEBDFC /* FriendList.png */; };
+		C3A9E8D51186C78300CEBDFC /* PlayerInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BD1186C78300CEBDFC /* PlayerInfo.png */; };
+		C3A9E8D61186C78300CEBDFC /* store_info.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BE1186C78300CEBDFC /* store_info.png */; };
+		C3A9E8D71186C78300CEBDFC /* 动物管理.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BF1186C78300CEBDFC /* 动物管理.png */; };
+		C3A9E8D81186C78300CEBDFC /* 医疗.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8C01186C78300CEBDFC /* 医疗.png */; };
+		C3A9E8D91186C78300CEBDFC /* 召唤.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8C11186C78300CEBDFC /* 召唤.png */; };
+		C3A9E8DA1186C78300CEBDFC /* 好友图标.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8C21186C78300CEBDFC /* 好友图标.png */; };
+		C3A9E8DB1186C78300CEBDFC /* 我的动物园.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8C31186C78300CEBDFC /* 我的动物园.png */; };
+		C3A9E8DC1186C78300CEBDFC /* 我的蛋窝.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8C41186C78300CEBDFC /* 我的蛋窝.png */; };
+		C3A9E8DD1186C78300CEBDFC /* 扩容.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8C51186C78300CEBDFC /* 扩容.png */; };
+		C3A9E8DE1186C78300CEBDFC /* 拾取.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8C61186C78300CEBDFC /* 拾取.png */; };
+		C3A9E8DF1186C78300CEBDFC /* 杀虫.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8C71186C78300CEBDFC /* 杀虫.png */; };
+		C3A9E8E01186C78300CEBDFC /* 杀虫剂.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8C81186C78300CEBDFC /* 杀虫剂.png */; };
+		C3A9E8E11186C78300CEBDFC /* 清扫.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8C91186C78300CEBDFC /* 清扫.png */; };
+		C3A9E8E21186C78300CEBDFC /* 炮竹.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8CA1186C78300CEBDFC /* 炮竹.png */; };
+		C3A9E8E31186C78300CEBDFC /* 箭头.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8CB1186C78300CEBDFC /* 箭头.png */; };
+		C3A9E8E41186C78300CEBDFC /* 网.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8CC1186C78300CEBDFC /* 网.png */; };
+		C3A9E8E51186C78300CEBDFC /* 蚂蚁.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8CD1186C78300CEBDFC /* 蚂蚁.png */; };
+		C3A9E8E61186C78300CEBDFC /* 蛇.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8CE1186C78300CEBDFC /* 蛇.png */; };
+		C3A9E8E71186C78300CEBDFC /* 购物车.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8CF1186C78300CEBDFC /* 购物车.png */; };
+		C3A9E8E81186C78300CEBDFC /* 金蚂蚁.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D01186C78300CEBDFC /* 金蚂蚁.png */; };
+		C3A9E8E91186C78300CEBDFC /* 金蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D11186C78300CEBDFC /* 金蛋.png */; };
+		C3A9E8EA1186C78300CEBDFC /* 饲料.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D21186C78300CEBDFC /* 饲料.png */; };
+		C3A9E8EB1186C78300CEBDFC /* 鸟窝.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D31186C78300CEBDFC /* 鸟窝.png */; };
 		C3C525E5117C321800343D7F /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525E4117C321800343D7F /* Button.m */; };
 		C3C525EF117C32C400343D7F /* StorageManageToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525EE117C32C400343D7F /* StorageManageToolbar.m */; };
 		C3C525F2117C333000343D7F /* PlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525F1117C333000343D7F /* PlayerInfo.m */; };
@@ -6618,6 +6642,30 @@
 		BF00748D1159EA530003B411 /* ModelLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLocator.m; sourceTree = "<group>"; };
 		C3A9E83A1181421400CEBDFC /* UIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIController.h; sourceTree = "<group>"; };
 		C3A9E83B1181421400CEBDFC /* UIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIController.m; sourceTree = "<group>"; };
+		C3A9E8BC1186C78300CEBDFC /* FriendList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FriendList.png; sourceTree = "<group>"; };
+		C3A9E8BD1186C78300CEBDFC /* PlayerInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = PlayerInfo.png; sourceTree = "<group>"; };
+		C3A9E8BE1186C78300CEBDFC /* store_info.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = store_info.png; sourceTree = "<group>"; };
+		C3A9E8BF1186C78300CEBDFC /* 动物管理.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "动物管理.png"; sourceTree = "<group>"; };
+		C3A9E8C01186C78300CEBDFC /* 医疗.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "医疗.png"; sourceTree = "<group>"; };
+		C3A9E8C11186C78300CEBDFC /* 召唤.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "召唤.png"; sourceTree = "<group>"; };
+		C3A9E8C21186C78300CEBDFC /* 好友图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "好友图标.png"; sourceTree = "<group>"; };
+		C3A9E8C31186C78300CEBDFC /* 我的动物园.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的动物园.png"; sourceTree = "<group>"; };
+		C3A9E8C41186C78300CEBDFC /* 我的蛋窝.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "我的蛋窝.png"; sourceTree = "<group>"; };
+		C3A9E8C51186C78300CEBDFC /* 扩容.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "扩容.png"; sourceTree = "<group>"; };
+		C3A9E8C61186C78300CEBDFC /* 拾取.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "拾取.png"; sourceTree = "<group>"; };
+		C3A9E8C71186C78300CEBDFC /* 杀虫.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "杀虫.png"; sourceTree = "<group>"; };
+		C3A9E8C81186C78300CEBDFC /* 杀虫剂.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "杀虫剂.png"; sourceTree = "<group>"; };
+		C3A9E8C91186C78300CEBDFC /* 清扫.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "清扫.png"; sourceTree = "<group>"; };
+		C3A9E8CA1186C78300CEBDFC /* 炮竹.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "炮竹.png"; sourceTree = "<group>"; };
+		C3A9E8CB1186C78300CEBDFC /* 箭头.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "箭头.png"; sourceTree = "<group>"; };
+		C3A9E8CC1186C78300CEBDFC /* 网.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "网.png"; sourceTree = "<group>"; };
+		C3A9E8CD1186C78300CEBDFC /* 蚂蚁.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "蚂蚁.png"; sourceTree = "<group>"; };
+		C3A9E8CE1186C78300CEBDFC /* 蛇.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "蛇.png"; sourceTree = "<group>"; };
+		C3A9E8CF1186C78300CEBDFC /* 购物车.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "购物车.png"; sourceTree = "<group>"; };
+		C3A9E8D01186C78300CEBDFC /* 金蚂蚁.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "金蚂蚁.png"; sourceTree = "<group>"; };
+		C3A9E8D11186C78300CEBDFC /* 金蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "金蛋.png"; sourceTree = "<group>"; };
+		C3A9E8D21186C78300CEBDFC /* 饲料.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "饲料.png"; sourceTree = "<group>"; };
+		C3A9E8D31186C78300CEBDFC /* 鸟窝.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鸟窝.png"; sourceTree = "<group>"; };
 		C3C525E3117C321800343D7F /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		C3C525E4117C321800343D7F /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		C3C525ED117C32C400343D7F /* StorageManageToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageManageToolbar.h; sourceTree = "<group>"; };
@@ -11865,6 +11913,7 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				C3A9E8BB1186C78300CEBDFC /* icons */,
 				3E87160511801F3300EBA2E8 /* background */,
 				BF00748F1159EA9B0003B411 /* Animals */,
 				50F414EC1069373D002A0D5E /* Default.png */,
@@ -12042,6 +12091,37 @@
 				3E871420117FD88700EBA2E8 /* dove */,
 			);
 			name = Animals;
+			sourceTree = "<group>";
+		};
+		C3A9E8BB1186C78300CEBDFC /* icons */ = {
+			isa = PBXGroup;
+			children = (
+				C3A9E8BC1186C78300CEBDFC /* FriendList.png */,
+				C3A9E8BD1186C78300CEBDFC /* PlayerInfo.png */,
+				C3A9E8BE1186C78300CEBDFC /* store_info.png */,
+				C3A9E8BF1186C78300CEBDFC /* 动物管理.png */,
+				C3A9E8C01186C78300CEBDFC /* 医疗.png */,
+				C3A9E8C11186C78300CEBDFC /* 召唤.png */,
+				C3A9E8C21186C78300CEBDFC /* 好友图标.png */,
+				C3A9E8C31186C78300CEBDFC /* 我的动物园.png */,
+				C3A9E8C41186C78300CEBDFC /* 我的蛋窝.png */,
+				C3A9E8C51186C78300CEBDFC /* 扩容.png */,
+				C3A9E8C61186C78300CEBDFC /* 拾取.png */,
+				C3A9E8C71186C78300CEBDFC /* 杀虫.png */,
+				C3A9E8C81186C78300CEBDFC /* 杀虫剂.png */,
+				C3A9E8C91186C78300CEBDFC /* 清扫.png */,
+				C3A9E8CA1186C78300CEBDFC /* 炮竹.png */,
+				C3A9E8CB1186C78300CEBDFC /* 箭头.png */,
+				C3A9E8CC1186C78300CEBDFC /* 网.png */,
+				C3A9E8CD1186C78300CEBDFC /* 蚂蚁.png */,
+				C3A9E8CE1186C78300CEBDFC /* 蛇.png */,
+				C3A9E8CF1186C78300CEBDFC /* 购物车.png */,
+				C3A9E8D01186C78300CEBDFC /* 金蚂蚁.png */,
+				C3A9E8D11186C78300CEBDFC /* 金蛋.png */,
+				C3A9E8D21186C78300CEBDFC /* 饲料.png */,
+				C3A9E8D31186C78300CEBDFC /* 鸟窝.png */,
+			);
+			path = icons;
 			sourceTree = "<group>";
 		};
 		C3C528CA117EA2BD00343D7F /* DataStructure */ = {
@@ -15304,6 +15384,30 @@
 				3E872F5311802DFD00EBA2E8 /* tibentanmastiff_walk_left_19.png in Resources */,
 				3E872F5411802DFD00EBA2E8 /* tibentanmastiff_walk_left_20.png in Resources */,
 				3E872F5511802DFD00EBA2E8 /* tibentanmastiff_walk_left_21.png in Resources */,
+				C3A9E8D41186C78300CEBDFC /* FriendList.png in Resources */,
+				C3A9E8D51186C78300CEBDFC /* PlayerInfo.png in Resources */,
+				C3A9E8D61186C78300CEBDFC /* store_info.png in Resources */,
+				C3A9E8D71186C78300CEBDFC /* 动物管理.png in Resources */,
+				C3A9E8D81186C78300CEBDFC /* 医疗.png in Resources */,
+				C3A9E8D91186C78300CEBDFC /* 召唤.png in Resources */,
+				C3A9E8DA1186C78300CEBDFC /* 好友图标.png in Resources */,
+				C3A9E8DB1186C78300CEBDFC /* 我的动物园.png in Resources */,
+				C3A9E8DC1186C78300CEBDFC /* 我的蛋窝.png in Resources */,
+				C3A9E8DD1186C78300CEBDFC /* 扩容.png in Resources */,
+				C3A9E8DE1186C78300CEBDFC /* 拾取.png in Resources */,
+				C3A9E8DF1186C78300CEBDFC /* 杀虫.png in Resources */,
+				C3A9E8E01186C78300CEBDFC /* 杀虫剂.png in Resources */,
+				C3A9E8E11186C78300CEBDFC /* 清扫.png in Resources */,
+				C3A9E8E21186C78300CEBDFC /* 炮竹.png in Resources */,
+				C3A9E8E31186C78300CEBDFC /* 箭头.png in Resources */,
+				C3A9E8E41186C78300CEBDFC /* 网.png in Resources */,
+				C3A9E8E51186C78300CEBDFC /* 蚂蚁.png in Resources */,
+				C3A9E8E61186C78300CEBDFC /* 蛇.png in Resources */,
+				C3A9E8E71186C78300CEBDFC /* 购物车.png in Resources */,
+				C3A9E8E81186C78300CEBDFC /* 金蚂蚁.png in Resources */,
+				C3A9E8E91186C78300CEBDFC /* 金蛋.png in Resources */,
+				C3A9E8EA1186C78300CEBDFC /* 饲料.png in Resources */,
+				C3A9E8EB1186C78300CEBDFC /* 鸟窝.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
