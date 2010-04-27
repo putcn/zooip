@@ -33,13 +33,20 @@ static AnimalController *_sharedAnimalController = nil;
 	NSLog(@"Value %@ changed in %@", keyPath, [object description]);
 	if ([keyPath isEqual:@""])
 	{
-		NSMutableArray *array = [change objectForKey:NSKeyValueChangeNewKey];
+		NSMutableArray *animalsArray = [change objectForKey:NSKeyValueChangeNewKey];
+		
+		[self updateAnimal:animalsArray];
 		
 //		for(NSNumber *number in array)
 //		{
 //			NSLog(@"%i", [number integerValue]);
 //		}
 	}
+}
+
+-(void) updateAnimal:(NSMutableArray *)animalsData
+{
+	//Update the animals array, and update the animal view...
 }
 
 @end

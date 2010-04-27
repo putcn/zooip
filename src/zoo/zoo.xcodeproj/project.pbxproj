@@ -3300,6 +3300,7 @@
 		C3A9E8E91186C78300CEBDFC /* 金蛋.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D11186C78300CEBDFC /* 金蛋.png */; };
 		C3A9E8EA1186C78300CEBDFC /* 饲料.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D21186C78300CEBDFC /* 饲料.png */; };
 		C3A9E8EB1186C78300CEBDFC /* 鸟窝.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D31186C78300CEBDFC /* 鸟窝.png */; };
+		C3A9E9421186F4F100CEBDFC /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E9411186F4F100CEBDFC /* GameController.m */; };
 		C3C525E5117C321800343D7F /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525E4117C321800343D7F /* Button.m */; };
 		C3C525EF117C32C400343D7F /* StorageManageToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525EE117C32C400343D7F /* StorageManageToolbar.m */; };
 		C3C525F2117C333000343D7F /* PlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525F1117C333000343D7F /* PlayerInfo.m */; };
@@ -6666,6 +6667,8 @@
 		C3A9E8D11186C78300CEBDFC /* 金蛋.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "金蛋.png"; sourceTree = "<group>"; };
 		C3A9E8D21186C78300CEBDFC /* 饲料.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "饲料.png"; sourceTree = "<group>"; };
 		C3A9E8D31186C78300CEBDFC /* 鸟窝.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鸟窝.png"; sourceTree = "<group>"; };
+		C3A9E9401186F4F100CEBDFC /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		C3A9E9411186F4F100CEBDFC /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 		C3C525E3117C321800343D7F /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		C3C525E4117C321800343D7F /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		C3C525ED117C32C400343D7F /* StorageManageToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageManageToolbar.h; sourceTree = "<group>"; };
@@ -12144,6 +12147,8 @@
 				C3C528D5117EA5F200343D7F /* AnimalViewFactory.m */,
 				C3A9E83A1181421400CEBDFC /* UIController.h */,
 				C3A9E83B1181421400CEBDFC /* UIController.m */,
+				C3A9E9401186F4F100CEBDFC /* GameController.h */,
+				C3A9E9411186F4F100CEBDFC /* GameController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -15472,6 +15477,7 @@
 				C3A9E83C1181421400CEBDFC /* UIController.m in Sources */,
 				C7A90E411185C231002F3799 /* DataModelCommon.m in Sources */,
 				C7A90E441185C321002F3799 /* DataModelAnimal.m in Sources */,
+				C3A9E9421186F4F100CEBDFC /* GameController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

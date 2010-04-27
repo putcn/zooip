@@ -29,6 +29,26 @@
 	return self;
 }
 
+-(id) initWithType:(NSString *) animalType data:(DataModelAnimal *) animalData
+{
+	if ( (self = [super init]) )
+	{
+		view = [AnimalViewFactory createAnimalView:animalType];
+		
+		//TODO: Need to set the animal data...
+		
+		//speed = speedValue;
+//		targetPosition = ccp(view.position.x, view.position.y);
+//		currSpeed = ccp(0 ,0);
+//		currStatus = 6;
+//		
+//		limitRect = limitRectValue;
+//		
+		[[CCScheduler sharedScheduler] scheduleTimer: [CCTimer timerWithTarget:self selector:@selector(tick:)]];
+	}
+	return self;
+}
+
 @end
 
 @implementation Animal (Private)
