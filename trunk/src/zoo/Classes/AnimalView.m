@@ -11,7 +11,7 @@
 
 @implementation AnimalView
 
--(id) initWithPrefix:(NSString*)prefix
+-(id) init
 {
 	if ( (self=[super init]) )
 	{

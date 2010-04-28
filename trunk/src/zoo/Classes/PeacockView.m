@@ -10,9 +10,9 @@
 
 
 @implementation PeacockView
--(id) initWithPrefix:(NSString *)prefix
+-(id) init
 {	
-	if ((self = [super initWithPrefix:prefix])) {
+	if ((self = [super init])) {
 		//walk animations
 		CCAnimation* walkUpAnimation = [CCAnimation animationWithName:@"walkUp" delay:0.04f];
 		CCAnimation* walkDownAnimation = [CCAnimation animationWithName:@"walkRightUp" delay:0.04f];

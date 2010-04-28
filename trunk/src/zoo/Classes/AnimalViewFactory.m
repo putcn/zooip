@@ -16,83 +16,83 @@
 {
 	if ([type isEqualToString:@"littleduck"])
 	{
-		return [[LittleDuckView alloc] initWithPrefix:@"ss"];
+		return [[LittleDuckView alloc] init];
 	}
 	else if ([type isEqualToString:@"duck"])
 	{
-		return [[DuckView alloc] initWithPrefix:@"ss"];
+		return [[DuckView alloc] init];
 	}
 	else if ([type isEqualToString:@"goose"])
 	{
-		return [[GooseView alloc] initWithPrefix:@"ss"];
+		return [[GooseView alloc] init];
 	}
 	else if ([type isEqualToString:@"chicken"])
 	{
-		return [[ChickenView alloc] initWithPrefix:@"ss"];
+		return [[ChickenView alloc] init];
 	}
 	else if ([type isEqualToString:@"cock"])
 	{
-		return [[CockView alloc] initWithPrefix:@"ss"];
+		return [[CockView alloc] init];
 	}
 	else if ([type isEqualToString:@"hen"])
 	{
-		return [[HenView alloc] initWithPrefix:@"ss"];
+		return [[HenView alloc] init];
 	}
 	else if ([type isEqualToString:@"maleTurkey"])
 	{
-		return [[MaleTurkeyView alloc] initWithPrefix:@"ss"];
+		return [[MaleTurkeyView alloc] init];
 	}
 	else if ([type isEqualToString:@"babyDove"])
 	{
-		return [[BabyDoveView alloc] initWithPrefix:@"ss"];
+		return [[BabyDoveView alloc] init];
 	}
 	else if ([type isEqualToString:@"dove"])
 	{
-		return [[DoveView alloc] initWithPrefix:@"ss"];
+		return [[DoveView alloc] init];
 	}
 	else if ([type isEqualToString:@"babyMagpie"])
 	{
-		return [[BabyMagpieView alloc] initWithPrefix:@"ss"];
+		return [[BabyMagpieView alloc] init];
 	}
 	else if ([type isEqualToString:@"magpie"])
 	{
-		return [[MagpieView alloc] initWithPrefix:@"ss"];
+		return [[MagpieView alloc] init];
 	}
 	else if ([type isEqualToString:@"babyPeacock"])
 	{
-		return [[BabyPeacockView alloc] initWithPrefix:@"ss"];
+		return [[BabyPeacockView alloc] init];
 	}
 	else if ([type isEqualToString:@"peacock"])
 	{
-		return [[PeacockView alloc] initWithPrefix:@"ss"];
+		return [[PeacockView alloc] init];
 	}
 	else if ([type isEqualToString:@"babyMallard"])
 	{
-		return [[LittleMallardView alloc] initWithPrefix:@"ss"];
+		return [[LittleMallardView alloc] init];
 	}
 	else if ([type isEqualToString:@"maleMandarinDuck"])
 	{
-		return [[MaleMandarinDuckView alloc] initWithPrefix:@"ss"];
+		return [[MaleMandarinDuckView alloc] init];
 	}
 	else if ([type isEqualToString:@"redCrowne"])
 	{
-		return [[RedCrowneView alloc] initWithPrefix:@"ss"];
+		return [[RedCrowneView alloc] init];
 	}
 	else if ([type isEqualToString:@"chinemy"])
 	{
-		return [[ChinemyView alloc] initWithPrefix:@"ss"];
+		return [[ChinemyView alloc] init];
 	}
 	else if ([type isEqualToString:@"snake"])
 	{
-		return [[SnakeView alloc] initWithPrefix:@"ss"];
+		return [[SnakeView alloc] init];
 	}
 	else if ([type isEqualToString:@"tibentanMastiff"])
 	{
-		return [[TibentanMastiffView alloc] initWithPrefix:@"ss"];
+		return [[TibentanMastiffView alloc] init];
 	}
 	else if ([type isEqualToString:@"mallard"])
 	{
-		return [[MallardView alloc] initWithPrefix:@"ss"];
+		return [[MallardView alloc] init];
 	}
 	return nil;
 }
