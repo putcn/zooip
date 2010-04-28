@@ -28,12 +28,15 @@
 #import "SnakeView.h"
 #import "TibentanMastiffView.h"
 #import "MallardView.h"
+#import "MalePhasianusColchicusView.h"
+#import "PhasianusColchicusView.h"
+#import "PeahenView.h"
 
 @interface AnimalViewFactory : NSObject
 {
 	
 }
 
-+(AnimalView *) createAnimalView:(NSString *) type;
++(AnimalView *) createAnimalView:(int) type birdStage:(int) stage;
 
 @end
