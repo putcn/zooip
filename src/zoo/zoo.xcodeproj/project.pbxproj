@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1F3B9A2D0EF2145700286867 /* zooAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B9A2B0EF2145700286867 /* zooAppDelegate.m */; };
-		3E8713F7117FD6E400EBA2E8 /* AnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8713F6117FD6E400EBA2E8 /* AnimalView.m */; };
 		3E8714FA117FD89E00EBA2E8 /* dove_eat_left_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E871422117FD89E00EBA2E8 /* dove_eat_left_01.png */; };
 		3E8714FB117FD89E00EBA2E8 /* dove_eat_left_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E871423117FD89E00EBA2E8 /* dove_eat_left_02.png */; };
 		3E8714FC117FD89E00EBA2E8 /* dove_eat_left_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E871424117FD89E00EBA2E8 /* dove_eat_left_03.png */; };
@@ -200,34 +199,11 @@
 		3E8715B5117FD89E00EBA2E8 /* dove_walk_leftDown_09.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8714F7117FD89E00EBA2E8 /* dove_walk_leftDown_09.png */; };
 		3E8715B6117FD89E00EBA2E8 /* dove_walk_leftDown_10.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8714F8117FD89E00EBA2E8 /* dove_walk_leftDown_10.png */; };
 		3E8715B7117FD89E00EBA2E8 /* dove_walk_leftDown_11.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8714F9117FD89E00EBA2E8 /* dove_walk_leftDown_11.png */; };
-		3E8715D0117FD91E00EBA2E8 /* DoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8715CF117FD91E00EBA2E8 /* DoveView.m */; };
 		3E87160411801BB200EBA2E8 /* RandomHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87160311801BB200EBA2E8 /* RandomHelper.m */; };
 		3E87160A11801F3300EBA2E8 /* bgimg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160611801F3300EBA2E8 /* bgimg.jpg */; };
 		3E87160B11801F3300EBA2E8 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160711801F3300EBA2E8 /* house.png */; };
 		3E87160C11801F3300EBA2E8 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160811801F3300EBA2E8 /* tree.png */; };
 		3E87160D11801F3300EBA2E8 /* waterbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160911801F3300EBA2E8 /* waterbox.png */; };
-		3E87167911802B1D00EBA2E8 /* LittleDuckView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87167811802B1D00EBA2E8 /* LittleDuckView.m */; };
-		3E87167C11802B2900EBA2E8 /* DuckView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87167B11802B2900EBA2E8 /* DuckView.m */; };
-		3E87167F11802B3800EBA2E8 /* GooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87167E11802B3800EBA2E8 /* GooseView.m */; };
-		3E87168211802B5000EBA2E8 /* ChickenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87168111802B5000EBA2E8 /* ChickenView.m */; };
-		3E87168511802B5C00EBA2E8 /* CockView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87168411802B5C00EBA2E8 /* CockView.m */; };
-		3E87168811802B6600EBA2E8 /* HenView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87168711802B6600EBA2E8 /* HenView.m */; };
-		3E87168B11802B7E00EBA2E8 /* MalePhasianusColchicus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87168A11802B7E00EBA2E8 /* MalePhasianusColchicus.m */; };
-		3E87168E11802B9400EBA2E8 /* PhasianusColchicus.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87168D11802B9400EBA2E8 /* PhasianusColchicus.m */; };
-		3E87169111802BA100EBA2E8 /* MaleTurkey.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87169011802BA100EBA2E8 /* MaleTurkey.m */; };
-		3E87169411802BAF00EBA2E8 /* BabyDove.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87169311802BAF00EBA2E8 /* BabyDove.m */; };
-		3E87169711802BBA00EBA2E8 /* BabyMagpie.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87169611802BBA00EBA2E8 /* BabyMagpie.m */; };
-		3E87169A11802BC300EBA2E8 /* Magpie.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87169911802BC300EBA2E8 /* Magpie.m */; };
-		3E87169D11802BD000EBA2E8 /* BabyPeacock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87169C11802BD000EBA2E8 /* BabyPeacock.m */; };
-		3E8716A011802BD900EBA2E8 /* Peacock.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87169F11802BD900EBA2E8 /* Peacock.m */; };
-		3E8716A311802BE700EBA2E8 /* Peahen.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8716A211802BE700EBA2E8 /* Peahen.m */; };
-		3E8716A611802BF500EBA2E8 /* LittleMallard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8716A511802BF500EBA2E8 /* LittleMallard.m */; };
-		3E8716A911802C0800EBA2E8 /* MaleMandarinDuck.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8716A811802C0800EBA2E8 /* MaleMandarinDuck.m */; };
-		3E8716AC11802C1600EBA2E8 /* RedCrowne.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8716AB11802C1600EBA2E8 /* RedCrowne.m */; };
-		3E8716AF11802C2A00EBA2E8 /* Chnemy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8716AE11802C2A00EBA2E8 /* Chnemy.m */; };
-		3E8716B211802C3100EBA2E8 /* Snake.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8716B111802C3100EBA2E8 /* Snake.m */; };
-		3E8716B511802C4200EBA2E8 /* TibentanMastiff.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8716B411802C4200EBA2E8 /* TibentanMastiff.m */; };
-		3E8716B811802C4900EBA2E8 /* Mallard.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8716B711802C4900EBA2E8 /* Mallard.m */; };
 		3E87237611802DFC00EBA2E8 /* babyDove_stop_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8716BA11802DFA00EBA2E8 /* babyDove_stop_01.png */; };
 		3E87237711802DFC00EBA2E8 /* babyDove_stop_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8716BB11802DFA00EBA2E8 /* babyDove_stop_02.png */; };
 		3E87237811802DFC00EBA2E8 /* babyDove_stop_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E8716BC11802DFA00EBA2E8 /* babyDove_stop_03.png */; };
@@ -3275,6 +3251,30 @@
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
 		BF00748B1159E9B90003B411 /* GameMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748A1159E9B90003B411 /* GameMainScene.m */; };
 		BF00748E1159EA530003B411 /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748D1159EA530003B411 /* ModelLocator.m */; };
+		C319371D1187D3CA00187CBC /* CockView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31936FA1187D3C900187CBC /* CockView.m */; };
+		C319371E1187D3CA00187CBC /* DoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31936FC1187D3C900187CBC /* DoveView.m */; };
+		C319371F1187D3CA00187CBC /* DuckView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31936FE1187D3C900187CBC /* DuckView.m */; };
+		C31937201187D3CA00187CBC /* GooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937001187D3C900187CBC /* GooseView.m */; };
+		C31937211187D3CA00187CBC /* HenView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937021187D3C900187CBC /* HenView.m */; };
+		C31937221187D3CA00187CBC /* LittleDuckView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937041187D3C900187CBC /* LittleDuckView.m */; };
+		C31937231187D3CA00187CBC /* LittleMallardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937061187D3C900187CBC /* LittleMallardView.m */; };
+		C31937241187D3CA00187CBC /* MagpieView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937081187D3C900187CBC /* MagpieView.m */; };
+		C31937251187D3CA00187CBC /* MaleMandarinDuckView.m in Sources */ = {isa = PBXBuildFile; fileRef = C319370A1187D3C900187CBC /* MaleMandarinDuckView.m */; };
+		C31937261187D3CA00187CBC /* MalePhasianusColchicusView.m in Sources */ = {isa = PBXBuildFile; fileRef = C319370C1187D3C900187CBC /* MalePhasianusColchicusView.m */; };
+		C31937271187D3CA00187CBC /* MaleTurkeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C319370E1187D3C900187CBC /* MaleTurkeyView.m */; };
+		C31937281187D3CA00187CBC /* MallardView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937101187D3C900187CBC /* MallardView.m */; };
+		C31937291187D3CA00187CBC /* PeacockView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937121187D3C900187CBC /* PeacockView.m */; };
+		C319372A1187D3CA00187CBC /* PeahenView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937141187D3C900187CBC /* PeahenView.m */; };
+		C319372B1187D3CA00187CBC /* PhasianusColchicusView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937161187D3C900187CBC /* PhasianusColchicusView.m */; };
+		C319372C1187D3CA00187CBC /* RedCrowneView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937181187D3C900187CBC /* RedCrowneView.m */; };
+		C319372D1187D3CA00187CBC /* SnakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = C319371A1187D3C900187CBC /* SnakeView.m */; };
+		C319372E1187D3CA00187CBC /* TibentanMastiffView.m in Sources */ = {isa = PBXBuildFile; fileRef = C319371C1187D3CA00187CBC /* TibentanMastiffView.m */; };
+		C319373B1187D3DB00187CBC /* AnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937301187D3DB00187CBC /* AnimalView.m */; };
+		C319373C1187D3DB00187CBC /* BabyDoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937321187D3DB00187CBC /* BabyDoveView.m */; };
+		C319373D1187D3DB00187CBC /* BabyMagpieView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937341187D3DB00187CBC /* BabyMagpieView.m */; };
+		C319373E1187D3DB00187CBC /* BabyPeacockView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937361187D3DB00187CBC /* BabyPeacockView.m */; };
+		C319373F1187D3DB00187CBC /* ChickenView.m in Sources */ = {isa = PBXBuildFile; fileRef = C31937381187D3DB00187CBC /* ChickenView.m */; };
+		C31937401187D3DB00187CBC /* ChinemyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C319373A1187D3DB00187CBC /* ChinemyView.m */; };
 		C3A9E83C1181421400CEBDFC /* UIController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E83B1181421400CEBDFC /* UIController.m */; };
 		C3A9E8D41186C78300CEBDFC /* FriendList.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BC1186C78300CEBDFC /* FriendList.png */; };
 		C3A9E8D51186C78300CEBDFC /* PlayerInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BD1186C78300CEBDFC /* PlayerInfo.png */; };
@@ -3351,8 +3351,6 @@
 		1F3B9A2C0EF2145700286867 /* zooAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zooAppDelegate.h; path = Classes/zooAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		1F3B9A820EF2151B00286867 /* zoo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zoo_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		3E8713F5117FD6E300EBA2E8 /* AnimalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalView.h; sourceTree = "<group>"; };
-		3E8713F6117FD6E400EBA2E8 /* AnimalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalView.m; sourceTree = "<group>"; };
 		3E871422117FD89E00EBA2E8 /* dove_eat_left_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dove_eat_left_01.png; sourceTree = "<group>"; };
 		3E871423117FD89E00EBA2E8 /* dove_eat_left_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dove_eat_left_02.png; sourceTree = "<group>"; };
 		3E871424117FD89E00EBA2E8 /* dove_eat_left_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dove_eat_left_03.png; sourceTree = "<group>"; };
@@ -3543,58 +3541,12 @@
 		3E8714F7117FD89E00EBA2E8 /* dove_walk_leftDown_09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dove_walk_leftDown_09.png; sourceTree = "<group>"; };
 		3E8714F8117FD89E00EBA2E8 /* dove_walk_leftDown_10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dove_walk_leftDown_10.png; sourceTree = "<group>"; };
 		3E8714F9117FD89E00EBA2E8 /* dove_walk_leftDown_11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dove_walk_leftDown_11.png; sourceTree = "<group>"; };
-		3E8715CE117FD91E00EBA2E8 /* DoveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoveView.h; sourceTree = "<group>"; };
-		3E8715CF117FD91E00EBA2E8 /* DoveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoveView.m; sourceTree = "<group>"; };
 		3E87160211801BB200EBA2E8 /* RandomHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomHelper.h; sourceTree = "<group>"; };
 		3E87160311801BB200EBA2E8 /* RandomHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomHelper.m; sourceTree = "<group>"; };
 		3E87160611801F3300EBA2E8 /* bgimg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgimg.jpg; sourceTree = "<group>"; };
 		3E87160711801F3300EBA2E8 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		3E87160811801F3300EBA2E8 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
 		3E87160911801F3300EBA2E8 /* waterbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterbox.png; sourceTree = "<group>"; };
-		3E87167711802B1D00EBA2E8 /* LittleDuckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LittleDuckView.h; sourceTree = "<group>"; };
-		3E87167811802B1D00EBA2E8 /* LittleDuckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LittleDuckView.m; sourceTree = "<group>"; };
-		3E87167A11802B2900EBA2E8 /* DuckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DuckView.h; sourceTree = "<group>"; };
-		3E87167B11802B2900EBA2E8 /* DuckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuckView.m; sourceTree = "<group>"; };
-		3E87167D11802B3800EBA2E8 /* GooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooseView.h; sourceTree = "<group>"; };
-		3E87167E11802B3800EBA2E8 /* GooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooseView.m; sourceTree = "<group>"; };
-		3E87168011802B5000EBA2E8 /* ChickenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChickenView.h; sourceTree = "<group>"; };
-		3E87168111802B5000EBA2E8 /* ChickenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChickenView.m; sourceTree = "<group>"; };
-		3E87168311802B5C00EBA2E8 /* CockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CockView.h; sourceTree = "<group>"; };
-		3E87168411802B5C00EBA2E8 /* CockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CockView.m; sourceTree = "<group>"; };
-		3E87168611802B6600EBA2E8 /* HenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HenView.h; sourceTree = "<group>"; };
-		3E87168711802B6600EBA2E8 /* HenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HenView.m; sourceTree = "<group>"; };
-		3E87168911802B7E00EBA2E8 /* MalePhasianusColchicus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MalePhasianusColchicus.h; sourceTree = "<group>"; };
-		3E87168A11802B7E00EBA2E8 /* MalePhasianusColchicus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MalePhasianusColchicus.m; sourceTree = "<group>"; };
-		3E87168C11802B9400EBA2E8 /* PhasianusColchicus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhasianusColchicus.h; sourceTree = "<group>"; };
-		3E87168D11802B9400EBA2E8 /* PhasianusColchicus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhasianusColchicus.m; sourceTree = "<group>"; };
-		3E87168F11802BA100EBA2E8 /* MaleTurkey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaleTurkey.h; sourceTree = "<group>"; };
-		3E87169011802BA100EBA2E8 /* MaleTurkey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaleTurkey.m; sourceTree = "<group>"; };
-		3E87169211802BAF00EBA2E8 /* BabyDove.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyDove.h; sourceTree = "<group>"; };
-		3E87169311802BAF00EBA2E8 /* BabyDove.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyDove.m; sourceTree = "<group>"; };
-		3E87169511802BBA00EBA2E8 /* BabyMagpie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyMagpie.h; sourceTree = "<group>"; };
-		3E87169611802BBA00EBA2E8 /* BabyMagpie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyMagpie.m; sourceTree = "<group>"; };
-		3E87169811802BC300EBA2E8 /* Magpie.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Magpie.h; sourceTree = "<group>"; };
-		3E87169911802BC300EBA2E8 /* Magpie.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Magpie.m; sourceTree = "<group>"; };
-		3E87169B11802BD000EBA2E8 /* BabyPeacock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyPeacock.h; sourceTree = "<group>"; };
-		3E87169C11802BD000EBA2E8 /* BabyPeacock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyPeacock.m; sourceTree = "<group>"; };
-		3E87169E11802BD900EBA2E8 /* Peacock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peacock.h; sourceTree = "<group>"; };
-		3E87169F11802BD900EBA2E8 /* Peacock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Peacock.m; sourceTree = "<group>"; };
-		3E8716A111802BE700EBA2E8 /* Peahen.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Peahen.h; sourceTree = "<group>"; };
-		3E8716A211802BE700EBA2E8 /* Peahen.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Peahen.m; sourceTree = "<group>"; };
-		3E8716A411802BF500EBA2E8 /* LittleMallard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LittleMallard.h; sourceTree = "<group>"; };
-		3E8716A511802BF500EBA2E8 /* LittleMallard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LittleMallard.m; sourceTree = "<group>"; };
-		3E8716A711802C0800EBA2E8 /* MaleMandarinDuck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaleMandarinDuck.h; sourceTree = "<group>"; };
-		3E8716A811802C0800EBA2E8 /* MaleMandarinDuck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaleMandarinDuck.m; sourceTree = "<group>"; };
-		3E8716AA11802C1600EBA2E8 /* RedCrowne.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedCrowne.h; sourceTree = "<group>"; };
-		3E8716AB11802C1600EBA2E8 /* RedCrowne.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedCrowne.m; sourceTree = "<group>"; };
-		3E8716AD11802C2A00EBA2E8 /* Chnemy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Chnemy.h; sourceTree = "<group>"; };
-		3E8716AE11802C2A00EBA2E8 /* Chnemy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Chnemy.m; sourceTree = "<group>"; };
-		3E8716B011802C3100EBA2E8 /* Snake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Snake.h; sourceTree = "<group>"; };
-		3E8716B111802C3100EBA2E8 /* Snake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Snake.m; sourceTree = "<group>"; };
-		3E8716B311802C4200EBA2E8 /* TibentanMastiff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TibentanMastiff.h; sourceTree = "<group>"; };
-		3E8716B411802C4200EBA2E8 /* TibentanMastiff.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TibentanMastiff.m; sourceTree = "<group>"; };
-		3E8716B611802C4900EBA2E8 /* Mallard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mallard.h; sourceTree = "<group>"; };
-		3E8716B711802C4900EBA2E8 /* Mallard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Mallard.m; sourceTree = "<group>"; };
 		3E8716BA11802DFA00EBA2E8 /* babyDove_stop_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyDove_stop_01.png; sourceTree = "<group>"; };
 		3E8716BB11802DFA00EBA2E8 /* babyDove_stop_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyDove_stop_02.png; sourceTree = "<group>"; };
 		3E8716BC11802DFA00EBA2E8 /* babyDove_stop_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyDove_stop_03.png; sourceTree = "<group>"; };
@@ -6641,6 +6593,54 @@
 		BF00748A1159E9B90003B411 /* GameMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMainScene.m; sourceTree = "<group>"; };
 		BF00748C1159EA530003B411 /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
 		BF00748D1159EA530003B411 /* ModelLocator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModelLocator.m; sourceTree = "<group>"; };
+		C31936F91187D3C900187CBC /* CockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CockView.h; sourceTree = "<group>"; };
+		C31936FA1187D3C900187CBC /* CockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CockView.m; sourceTree = "<group>"; };
+		C31936FB1187D3C900187CBC /* DoveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DoveView.h; sourceTree = "<group>"; };
+		C31936FC1187D3C900187CBC /* DoveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DoveView.m; sourceTree = "<group>"; };
+		C31936FD1187D3C900187CBC /* DuckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DuckView.h; sourceTree = "<group>"; };
+		C31936FE1187D3C900187CBC /* DuckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DuckView.m; sourceTree = "<group>"; };
+		C31936FF1187D3C900187CBC /* GooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GooseView.h; sourceTree = "<group>"; };
+		C31937001187D3C900187CBC /* GooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GooseView.m; sourceTree = "<group>"; };
+		C31937011187D3C900187CBC /* HenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HenView.h; sourceTree = "<group>"; };
+		C31937021187D3C900187CBC /* HenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HenView.m; sourceTree = "<group>"; };
+		C31937031187D3C900187CBC /* LittleDuckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LittleDuckView.h; sourceTree = "<group>"; };
+		C31937041187D3C900187CBC /* LittleDuckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LittleDuckView.m; sourceTree = "<group>"; };
+		C31937051187D3C900187CBC /* LittleMallardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LittleMallardView.h; sourceTree = "<group>"; };
+		C31937061187D3C900187CBC /* LittleMallardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LittleMallardView.m; sourceTree = "<group>"; };
+		C31937071187D3C900187CBC /* MagpieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MagpieView.h; sourceTree = "<group>"; };
+		C31937081187D3C900187CBC /* MagpieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MagpieView.m; sourceTree = "<group>"; };
+		C31937091187D3C900187CBC /* MaleMandarinDuckView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaleMandarinDuckView.h; sourceTree = "<group>"; };
+		C319370A1187D3C900187CBC /* MaleMandarinDuckView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaleMandarinDuckView.m; sourceTree = "<group>"; };
+		C319370B1187D3C900187CBC /* MalePhasianusColchicusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MalePhasianusColchicusView.h; sourceTree = "<group>"; };
+		C319370C1187D3C900187CBC /* MalePhasianusColchicusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MalePhasianusColchicusView.m; sourceTree = "<group>"; };
+		C319370D1187D3C900187CBC /* MaleTurkeyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MaleTurkeyView.h; sourceTree = "<group>"; };
+		C319370E1187D3C900187CBC /* MaleTurkeyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MaleTurkeyView.m; sourceTree = "<group>"; };
+		C319370F1187D3C900187CBC /* MallardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MallardView.h; sourceTree = "<group>"; };
+		C31937101187D3C900187CBC /* MallardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MallardView.m; sourceTree = "<group>"; };
+		C31937111187D3C900187CBC /* PeacockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeacockView.h; sourceTree = "<group>"; };
+		C31937121187D3C900187CBC /* PeacockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeacockView.m; sourceTree = "<group>"; };
+		C31937131187D3C900187CBC /* PeahenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PeahenView.h; sourceTree = "<group>"; };
+		C31937141187D3C900187CBC /* PeahenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PeahenView.m; sourceTree = "<group>"; };
+		C31937151187D3C900187CBC /* PhasianusColchicusView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhasianusColchicusView.h; sourceTree = "<group>"; };
+		C31937161187D3C900187CBC /* PhasianusColchicusView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhasianusColchicusView.m; sourceTree = "<group>"; };
+		C31937171187D3C900187CBC /* RedCrowneView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RedCrowneView.h; sourceTree = "<group>"; };
+		C31937181187D3C900187CBC /* RedCrowneView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RedCrowneView.m; sourceTree = "<group>"; };
+		C31937191187D3C900187CBC /* SnakeView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeView.h; sourceTree = "<group>"; };
+		C319371A1187D3C900187CBC /* SnakeView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnakeView.m; sourceTree = "<group>"; };
+		C319371B1187D3CA00187CBC /* TibentanMastiffView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TibentanMastiffView.h; sourceTree = "<group>"; };
+		C319371C1187D3CA00187CBC /* TibentanMastiffView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TibentanMastiffView.m; sourceTree = "<group>"; };
+		C319372F1187D3DB00187CBC /* AnimalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalView.h; sourceTree = "<group>"; };
+		C31937301187D3DB00187CBC /* AnimalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalView.m; sourceTree = "<group>"; };
+		C31937311187D3DB00187CBC /* BabyDoveView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyDoveView.h; sourceTree = "<group>"; };
+		C31937321187D3DB00187CBC /* BabyDoveView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyDoveView.m; sourceTree = "<group>"; };
+		C31937331187D3DB00187CBC /* BabyMagpieView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyMagpieView.h; sourceTree = "<group>"; };
+		C31937341187D3DB00187CBC /* BabyMagpieView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyMagpieView.m; sourceTree = "<group>"; };
+		C31937351187D3DB00187CBC /* BabyPeacockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BabyPeacockView.h; sourceTree = "<group>"; };
+		C31937361187D3DB00187CBC /* BabyPeacockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BabyPeacockView.m; sourceTree = "<group>"; };
+		C31937371187D3DB00187CBC /* ChickenView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChickenView.h; sourceTree = "<group>"; };
+		C31937381187D3DB00187CBC /* ChickenView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChickenView.m; sourceTree = "<group>"; };
+		C31937391187D3DB00187CBC /* ChinemyView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ChinemyView.h; sourceTree = "<group>"; };
+		C319373A1187D3DB00187CBC /* ChinemyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ChinemyView.m; sourceTree = "<group>"; };
 		C3A9E83A1181421400CEBDFC /* UIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIController.h; sourceTree = "<group>"; };
 		C3A9E83B1181421400CEBDFC /* UIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIController.m; sourceTree = "<group>"; };
 		C3A9E8BC1186C78300CEBDFC /* FriendList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FriendList.png; sourceTree = "<group>"; };
@@ -11964,54 +11964,54 @@
 		BF0074841159E88E0003B411 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3E8713F5117FD6E300EBA2E8 /* AnimalView.h */,
-				3E8713F6117FD6E400EBA2E8 /* AnimalView.m */,
-				3E8715CE117FD91E00EBA2E8 /* DoveView.h */,
-				3E8715CF117FD91E00EBA2E8 /* DoveView.m */,
-				3E87167711802B1D00EBA2E8 /* LittleDuckView.h */,
-				3E87167811802B1D00EBA2E8 /* LittleDuckView.m */,
-				3E87167A11802B2900EBA2E8 /* DuckView.h */,
-				3E87167B11802B2900EBA2E8 /* DuckView.m */,
-				3E87167D11802B3800EBA2E8 /* GooseView.h */,
-				3E87167E11802B3800EBA2E8 /* GooseView.m */,
-				3E87168011802B5000EBA2E8 /* ChickenView.h */,
-				3E87168111802B5000EBA2E8 /* ChickenView.m */,
-				3E87168311802B5C00EBA2E8 /* CockView.h */,
-				3E87168411802B5C00EBA2E8 /* CockView.m */,
-				3E87168611802B6600EBA2E8 /* HenView.h */,
-				3E87168711802B6600EBA2E8 /* HenView.m */,
-				3E87168911802B7E00EBA2E8 /* MalePhasianusColchicus.h */,
-				3E87168A11802B7E00EBA2E8 /* MalePhasianusColchicus.m */,
-				3E87168C11802B9400EBA2E8 /* PhasianusColchicus.h */,
-				3E87168D11802B9400EBA2E8 /* PhasianusColchicus.m */,
-				3E87168F11802BA100EBA2E8 /* MaleTurkey.h */,
-				3E87169011802BA100EBA2E8 /* MaleTurkey.m */,
-				3E87169211802BAF00EBA2E8 /* BabyDove.h */,
-				3E87169311802BAF00EBA2E8 /* BabyDove.m */,
-				3E87169511802BBA00EBA2E8 /* BabyMagpie.h */,
-				3E87169611802BBA00EBA2E8 /* BabyMagpie.m */,
-				3E87169811802BC300EBA2E8 /* Magpie.h */,
-				3E87169911802BC300EBA2E8 /* Magpie.m */,
-				3E87169B11802BD000EBA2E8 /* BabyPeacock.h */,
-				3E87169C11802BD000EBA2E8 /* BabyPeacock.m */,
-				3E87169E11802BD900EBA2E8 /* Peacock.h */,
-				3E87169F11802BD900EBA2E8 /* Peacock.m */,
-				3E8716A111802BE700EBA2E8 /* Peahen.h */,
-				3E8716A211802BE700EBA2E8 /* Peahen.m */,
-				3E8716A411802BF500EBA2E8 /* LittleMallard.h */,
-				3E8716A511802BF500EBA2E8 /* LittleMallard.m */,
-				3E8716A711802C0800EBA2E8 /* MaleMandarinDuck.h */,
-				3E8716A811802C0800EBA2E8 /* MaleMandarinDuck.m */,
-				3E8716AA11802C1600EBA2E8 /* RedCrowne.h */,
-				3E8716AB11802C1600EBA2E8 /* RedCrowne.m */,
-				3E8716AD11802C2A00EBA2E8 /* Chnemy.h */,
-				3E8716AE11802C2A00EBA2E8 /* Chnemy.m */,
-				3E8716B011802C3100EBA2E8 /* Snake.h */,
-				3E8716B111802C3100EBA2E8 /* Snake.m */,
-				3E8716B311802C4200EBA2E8 /* TibentanMastiff.h */,
-				3E8716B411802C4200EBA2E8 /* TibentanMastiff.m */,
-				3E8716B611802C4900EBA2E8 /* Mallard.h */,
-				3E8716B711802C4900EBA2E8 /* Mallard.m */,
+				C319372F1187D3DB00187CBC /* AnimalView.h */,
+				C31937301187D3DB00187CBC /* AnimalView.m */,
+				C31937311187D3DB00187CBC /* BabyDoveView.h */,
+				C31937321187D3DB00187CBC /* BabyDoveView.m */,
+				C31937331187D3DB00187CBC /* BabyMagpieView.h */,
+				C31937341187D3DB00187CBC /* BabyMagpieView.m */,
+				C31937351187D3DB00187CBC /* BabyPeacockView.h */,
+				C31937361187D3DB00187CBC /* BabyPeacockView.m */,
+				C31937371187D3DB00187CBC /* ChickenView.h */,
+				C31937381187D3DB00187CBC /* ChickenView.m */,
+				C31937391187D3DB00187CBC /* ChinemyView.h */,
+				C319373A1187D3DB00187CBC /* ChinemyView.m */,
+				C31936F91187D3C900187CBC /* CockView.h */,
+				C31936FA1187D3C900187CBC /* CockView.m */,
+				C31936FB1187D3C900187CBC /* DoveView.h */,
+				C31936FC1187D3C900187CBC /* DoveView.m */,
+				C31936FD1187D3C900187CBC /* DuckView.h */,
+				C31936FE1187D3C900187CBC /* DuckView.m */,
+				C31936FF1187D3C900187CBC /* GooseView.h */,
+				C31937001187D3C900187CBC /* GooseView.m */,
+				C31937011187D3C900187CBC /* HenView.h */,
+				C31937021187D3C900187CBC /* HenView.m */,
+				C31937031187D3C900187CBC /* LittleDuckView.h */,
+				C31937041187D3C900187CBC /* LittleDuckView.m */,
+				C31937051187D3C900187CBC /* LittleMallardView.h */,
+				C31937061187D3C900187CBC /* LittleMallardView.m */,
+				C31937071187D3C900187CBC /* MagpieView.h */,
+				C31937081187D3C900187CBC /* MagpieView.m */,
+				C31937091187D3C900187CBC /* MaleMandarinDuckView.h */,
+				C319370A1187D3C900187CBC /* MaleMandarinDuckView.m */,
+				C319370B1187D3C900187CBC /* MalePhasianusColchicusView.h */,
+				C319370C1187D3C900187CBC /* MalePhasianusColchicusView.m */,
+				C319370D1187D3C900187CBC /* MaleTurkeyView.h */,
+				C319370E1187D3C900187CBC /* MaleTurkeyView.m */,
+				C319370F1187D3C900187CBC /* MallardView.h */,
+				C31937101187D3C900187CBC /* MallardView.m */,
+				C31937111187D3C900187CBC /* PeacockView.h */,
+				C31937121187D3C900187CBC /* PeacockView.m */,
+				C31937131187D3C900187CBC /* PeahenView.h */,
+				C31937141187D3C900187CBC /* PeahenView.m */,
+				C31937151187D3C900187CBC /* PhasianusColchicusView.h */,
+				C31937161187D3C900187CBC /* PhasianusColchicusView.m */,
+				C31937171187D3C900187CBC /* RedCrowneView.h */,
+				C31937181187D3C900187CBC /* RedCrowneView.m */,
+				C31937191187D3C900187CBC /* SnakeView.h */,
+				C319371A1187D3C900187CBC /* SnakeView.m */,
+				C319371B1187D3CA00187CBC /* TibentanMastiffView.h */,
+				C319371C1187D3CA00187CBC /* TibentanMastiffView.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -15449,35 +15449,35 @@
 				C3C528CE117EA30100343D7F /* AnimalController.m in Sources */,
 				C3C528D3117EA48600343D7F /* Animal.m in Sources */,
 				C3C528D6117EA5F200343D7F /* AnimalViewFactory.m in Sources */,
-				3E8713F7117FD6E400EBA2E8 /* AnimalView.m in Sources */,
-				3E8715D0117FD91E00EBA2E8 /* DoveView.m in Sources */,
 				3E87160411801BB200EBA2E8 /* RandomHelper.m in Sources */,
-				3E87167911802B1D00EBA2E8 /* LittleDuckView.m in Sources */,
-				3E87167C11802B2900EBA2E8 /* DuckView.m in Sources */,
-				3E87167F11802B3800EBA2E8 /* GooseView.m in Sources */,
-				3E87168211802B5000EBA2E8 /* ChickenView.m in Sources */,
-				3E87168511802B5C00EBA2E8 /* CockView.m in Sources */,
-				3E87168811802B6600EBA2E8 /* HenView.m in Sources */,
-				3E87168B11802B7E00EBA2E8 /* MalePhasianusColchicus.m in Sources */,
-				3E87168E11802B9400EBA2E8 /* PhasianusColchicus.m in Sources */,
-				3E87169111802BA100EBA2E8 /* MaleTurkey.m in Sources */,
-				3E87169411802BAF00EBA2E8 /* BabyDove.m in Sources */,
-				3E87169711802BBA00EBA2E8 /* BabyMagpie.m in Sources */,
-				3E87169A11802BC300EBA2E8 /* Magpie.m in Sources */,
-				3E87169D11802BD000EBA2E8 /* BabyPeacock.m in Sources */,
-				3E8716A011802BD900EBA2E8 /* Peacock.m in Sources */,
-				3E8716A311802BE700EBA2E8 /* Peahen.m in Sources */,
-				3E8716A611802BF500EBA2E8 /* LittleMallard.m in Sources */,
-				3E8716A911802C0800EBA2E8 /* MaleMandarinDuck.m in Sources */,
-				3E8716AC11802C1600EBA2E8 /* RedCrowne.m in Sources */,
-				3E8716AF11802C2A00EBA2E8 /* Chnemy.m in Sources */,
-				3E8716B211802C3100EBA2E8 /* Snake.m in Sources */,
-				3E8716B511802C4200EBA2E8 /* TibentanMastiff.m in Sources */,
-				3E8716B811802C4900EBA2E8 /* Mallard.m in Sources */,
 				C3A9E83C1181421400CEBDFC /* UIController.m in Sources */,
 				C7A90E411185C231002F3799 /* DataModelCommon.m in Sources */,
 				C7A90E441185C321002F3799 /* DataModelAnimal.m in Sources */,
 				C3A9E9421186F4F100CEBDFC /* GameController.m in Sources */,
+				C319371D1187D3CA00187CBC /* CockView.m in Sources */,
+				C319371E1187D3CA00187CBC /* DoveView.m in Sources */,
+				C319371F1187D3CA00187CBC /* DuckView.m in Sources */,
+				C31937201187D3CA00187CBC /* GooseView.m in Sources */,
+				C31937211187D3CA00187CBC /* HenView.m in Sources */,
+				C31937221187D3CA00187CBC /* LittleDuckView.m in Sources */,
+				C31937231187D3CA00187CBC /* LittleMallardView.m in Sources */,
+				C31937241187D3CA00187CBC /* MagpieView.m in Sources */,
+				C31937251187D3CA00187CBC /* MaleMandarinDuckView.m in Sources */,
+				C31937261187D3CA00187CBC /* MalePhasianusColchicusView.m in Sources */,
+				C31937271187D3CA00187CBC /* MaleTurkeyView.m in Sources */,
+				C31937281187D3CA00187CBC /* MallardView.m in Sources */,
+				C31937291187D3CA00187CBC /* PeacockView.m in Sources */,
+				C319372A1187D3CA00187CBC /* PeahenView.m in Sources */,
+				C319372B1187D3CA00187CBC /* PhasianusColchicusView.m in Sources */,
+				C319372C1187D3CA00187CBC /* RedCrowneView.m in Sources */,
+				C319372D1187D3CA00187CBC /* SnakeView.m in Sources */,
+				C319372E1187D3CA00187CBC /* TibentanMastiffView.m in Sources */,
+				C319373B1187D3DB00187CBC /* AnimalView.m in Sources */,
+				C319373C1187D3DB00187CBC /* BabyDoveView.m in Sources */,
+				C319373D1187D3DB00187CBC /* BabyMagpieView.m in Sources */,
+				C319373E1187D3DB00187CBC /* BabyPeacockView.m in Sources */,
+				C319373F1187D3DB00187CBC /* ChickenView.m in Sources */,
+				C31937401187D3DB00187CBC /* ChinemyView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

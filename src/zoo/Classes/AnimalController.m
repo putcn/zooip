@@ -32,6 +32,7 @@ static AnimalController *_sharedAnimalController = nil;
 {
 	if ((self = [super init]))
 	{
+		animals = [[NSMutableArray alloc] initWithCapacity:0];
 		return self;
 	}
 	
@@ -56,11 +57,19 @@ static AnimalController *_sharedAnimalController = nil;
 
 -(void) updateAnimal:(NSMutableArray *)animalsData
 {
+	Boolean isNew = NO;
+	
 	//Update the animals array, and update the animal view...
-	//for (DataModelAnimal *animalData in animalsData)
-//	{
-//		for (DataModelAnimal *)
-//	}
+	for (DataModelAnimal *serverAnimalData in animalsData)
+	{
+		for (DataModelAnimal *localAnimalData in animals)
+		{
+			if ([localAnimalData.animalId isEqual:localAnimalData.animalId])
+			{
+				
+			}
+		}
+	}
 }
 
 @end
