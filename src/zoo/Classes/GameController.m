@@ -11,4 +11,21 @@
 
 @implementation GameController
 
+static GameController *_sharedGameController = nil;
+
++(GameController *)sharedGameController
+{
+	@synchronized([GameController class])
+	{
+		if (!_sharedGameController)
+		{
+			_sharedGameController = [[GameController alloc] init];
+		}
+		
+		return _sharedGameController;
+	}
+	
+	return nil;
+}
+
 @end

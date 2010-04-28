@@ -28,6 +28,16 @@ static AnimalController *_sharedAnimalController = nil;
 	return nil;
 }
 
+-(AnimalController *)init
+{
+	if ((self = [super init]))
+	{
+		return self;
+	}
+	
+	return nil;
+}
+
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
 	NSLog(@"Value %@ changed in %@", keyPath, [object description]);
@@ -47,6 +57,10 @@ static AnimalController *_sharedAnimalController = nil;
 -(void) updateAnimal:(NSMutableArray *)animalsData
 {
 	//Update the animals array, and update the animal view...
+	//for (DataModelAnimal *animalData in animalsData)
+//	{
+//		for (DataModelAnimal *)
+//	}
 }
 
 @end

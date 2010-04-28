@@ -11,7 +11,9 @@
 
 @interface GameController : NSObject
 {
-
+	
 }
+
++(GameController *) sharedGameController;
 
 @end
