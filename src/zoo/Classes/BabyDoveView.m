@@ -10,9 +10,9 @@
 
 
 @implementation BabyDoveView
--(id) initWithPrefix:(NSString *)prefix
+-(id) init
 {	
-	if ((self = [super initWithPrefix:prefix])) {
+	if ((self = [super init])) {
 		//stop animation
 		CCAnimation* stopAnimation = [CCAnimation animationWithName:@"stop" delay:0.04f];
 		
