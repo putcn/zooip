@@ -44,6 +44,7 @@
 	
 	CCTexture2D *bg;
 	CGRect rect;
+	NSLog(@"当前的动物状态为 ***** %@ *****", [[status stringByAppendingString:@"_"] stringByAppendingFormat:direction]);
 	if ([direction isEqualToString:@"right"]) 
 	{
 		self.flipX =YES;
@@ -63,12 +64,10 @@
 	}
 	
 	NSString *showKey = [[status stringByAppendingString:@"_"] stringByAppendingFormat:direction];
-
 	//方向: 0-up, 1-rightUp, 2-right, 3-rightDown, 4-down, 5-leftDown, 6-left, 7-leftUp
 	//状态: 0-stop(静止动画), 1-eat(吃食), 2-ill(生病), 3-sleep(睡觉), 4-stand(站立图片), 5-walk(行走), 6-fly(飞), 7-swimming(游泳),
 	//     8-spread(孔雀开屏),9-crow(公鸡打鸣), 10-trasition(起飞), 11-landing(降落)
 	
-	NSLog(@"当前的动物状态为 ***** %@ *****", showKey);
 	if ([status isEqualToString:@"ill"] || [status isEqualToString:@"sleep"] || [status isEqualToString:@"stand"])
 	{
 		[self stopAllActions];

@@ -33,7 +33,7 @@
 {
 	if ( (self = [super init]) )
 	{
-		view = [AnimalViewFactory createAnimalView:animalType];
+		view = [AnimalViewFactory createAnimalView:animalType birdStage:2];
 		
 		//TODO: Need to set the animal data...
 		
