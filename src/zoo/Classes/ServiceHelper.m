@@ -200,8 +200,8 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 				[dataEnv.animals addObject:aAnimail];
 			}
 			
-			//DataModelAnimal *aAni = (DataModelAnimal *)[dataEnv.animals objectAtIndex:2];
-			//NSLog(@"ani's yeld is %d",aAni.yield);
+			DataModelAnimal *aAni = (DataModelAnimal *)[dataEnv.animals objectAtIndex:2];
+			NSLog(@"ani's yeld is %d",aAni.yield);
 			
 			
 			
