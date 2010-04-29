@@ -15,8 +15,7 @@
 {
 	AnimalView *view;
 	
-	NSString *name;
-	NSString *type;
+	DataModelAnimal *animalData;
 	CGFloat speed;
 	
 	int currDirection;
@@ -29,7 +28,9 @@
 }
 
 -(id) initWithView:(AnimalView*) viewValue setSpeed:(CGFloat) speedValue setLimitRect:(CGRect) limitRectValue;
--(id) initWithType:(NSString *) animalType data:(DataModelAnimal *) animalData;
+-(id) initWithAnimalData:(DataModelAnimal *) data;
+
+@property (nonatomic, copy) DataModelAnimal *animalData;
 
 @end
 

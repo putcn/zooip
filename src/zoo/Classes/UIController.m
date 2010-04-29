@@ -28,18 +28,23 @@ static UIController *_sharedUIController = nil;
 	return nil;
 }
 
-- (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
+-(void) observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context
 {
 	NSLog(@"Value %@ changed in %@", keyPath, [object description]);
 	if ([keyPath isEqual:@""])
 	{
-		NSMutableArray *array = [change objectForKey:NSKeyValueChangeNewKey];
+		//NSMutableArray *array = [change objectForKey:NSKeyValueChangeNewKey];
 		
 		//		for(NSNumber *number in array)
 		//		{
 		//			NSLog(@"%i", [number integerValue]);
 		//		}
 	}
+}
+
+-(void) notify:(NSNotification *)notification
+{
+	//id notificationSender = [notification object];
 }
 
 

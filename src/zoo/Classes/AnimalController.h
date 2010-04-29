@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "DataModelAnimal.h"
-
+#import "Animal.h"
 
 @interface AnimalController : NSObject
 {

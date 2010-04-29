@@ -9,8 +9,11 @@
 #import <Foundation/Foundation.h>
 
 
-@interface ModelLocator : NSObject {
+@interface ModelLocator : NSObject
+{
 
 }
+
++(ModelLocator *) sharedModelLocator;
 
 @end
