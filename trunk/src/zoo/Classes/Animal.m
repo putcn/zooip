@@ -12,6 +12,8 @@
 
 @implementation Animal
 
+@synthesize animalData;
+
 -(id) initWithView:(AnimalView*) viewValue setSpeed:(CGFloat) speedValue setLimitRect:(CGRect) limitRectValue
 {
 	if ( (self=[super init]) )
@@ -29,21 +31,22 @@
 	return self;
 }
 
--(id) initWithType:(NSString *) animalType data:(DataModelAnimal *) animalData
+-(id) initWithAnimalData:(DataModelAnimal *) data
 {
 	if ( (self = [super init]) )
 	{
-		view = [AnimalViewFactory createAnimalView:animalType birdStage:2];
+		self.animalData = data;
 		
 		//TODO: Need to set the animal data...
+		speed = data.speed;
+		view.position = ccp(300, 300);
+		targetPosition = ccp(view.position.x, view.position.y);
+		currSpeed = ccp(0 ,0);
+		currStatus = 6;
+		limitRect = CGRectMake(100, 100, 500, 500);
 		
-		//speed = speedValue;
-//		targetPosition = ccp(view.position.x, view.position.y);
-//		currSpeed = ccp(0 ,0);
-//		currStatus = 6;
-//		
-//		limitRect = limitRectValue;
-//		
+		view = [AnimalViewFactory createAnimalView:data.originalAnimalId birdStage:data.birdStage];
+		
 		[[CCScheduler sharedScheduler] scheduleTimer: [CCTimer timerWithTarget:self selector:@selector(tick:)]];
 	}
 	return self;
@@ -148,9 +151,9 @@
 
 -(void) dealloc
 {
+	//TODO: Remove view from the stage
+	
 	[view release];
-	[name release];
-	[type release];
 	[super dealloc];
 }
 

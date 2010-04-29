@@ -76,7 +76,7 @@
 		[self addChild:uiLayer];
 	}
 	
-	[AnimalViewFactory createAnimalView:@"1"];
+	//[AnimalViewFactory createAnimalView:@"1"];
 	
 	//[[serviceHelper sharedService] connectivityTestWithScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFailedWithReason:"];
 	//[[serviceHelper sharedService] getFarmInfoWithFarmerId:NULL AndIsbodyGarded:NO AndScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFailedWithReason:"];

@@ -11,4 +11,21 @@
 
 @implementation ModelLocator
 
+static ModelLocator *_sharedModelLocator = nil;
+
++(ModelLocator *)sharedModelLocator
+{
+	@synchronized([ModelLocator class])
+	{
+		if (!_sharedModelLocator)
+		{
+			_sharedModelLocator = [[ModelLocator alloc] init];
+		}
+		
+		return _sharedModelLocator;
+	}
+	
+	return nil;
+}
+
 @end
