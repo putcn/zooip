@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1F3B9A2D0EF2145700286867 /* zooAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B9A2B0EF2145700286867 /* zooAppDelegate.m */; };
+		3E022E9B118E847D00D2A6E6 /* AnimalInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E022E9A118E847D00D2A6E6 /* AnimalInfo.png */; };
+		3E4CD8E6118FD12C00222173 /* AnimalToolTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CD8E5118FD12C00222173 /* AnimalToolTip.m */; };
+		3E4CDAD0119032C400222173 /* inner.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4CDACE119032C400222173 /* inner.png */; };
+		3E4CDAD1119032C400222173 /* outer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4CDACF119032C400222173 /* outer.png */; };
 		3E87160411801BB200EBA2E8 /* RandomHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87160311801BB200EBA2E8 /* RandomHelper.m */; };
 		3E87160A11801F3300EBA2E8 /* bgimg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160611801F3300EBA2E8 /* bgimg.jpg */; };
 		3E87160B11801F3300EBA2E8 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160711801F3300EBA2E8 /* house.png */; };
@@ -3039,6 +3043,11 @@
 		1F3B9A2C0EF2145700286867 /* zooAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zooAppDelegate.h; path = Classes/zooAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		1F3B9A820EF2151B00286867 /* zoo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zoo_Prefix.pch; sourceTree = SOURCE_ROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3E022E9A118E847D00D2A6E6 /* AnimalInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnimalInfo.png; sourceTree = "<group>"; };
+		3E4CD8E4118FD12C00222173 /* AnimalToolTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalToolTip.h; sourceTree = "<group>"; };
+		3E4CD8E5118FD12C00222173 /* AnimalToolTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalToolTip.m; sourceTree = "<group>"; };
+		3E4CDACE119032C400222173 /* inner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inner.png; sourceTree = "<group>"; };
+		3E4CDACF119032C400222173 /* outer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outer.png; sourceTree = "<group>"; };
 		3E87160211801BB200EBA2E8 /* RandomHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomHelper.h; sourceTree = "<group>"; };
 		3E87160311801BB200EBA2E8 /* RandomHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomHelper.m; sourceTree = "<group>"; };
 		3E87160611801F3300EBA2E8 /* bgimg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgimg.jpg; sourceTree = "<group>"; };
@@ -6483,6 +6492,9 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3E4CDACE119032C400222173 /* inner.png */,
+				3E4CDACF119032C400222173 /* outer.png */,
+				3E022E9A118E847D00D2A6E6 /* AnimalInfo.png */,
 				C3A9E8BB1186C78300CEBDFC /* icons */,
 				3E87160511801F3300EBA2E8 /* background */,
 				BF00748F1159EA9B0003B411 /* Animals */,
@@ -6589,6 +6601,8 @@
 				C3013EB4118A7656000C80B3 /* TurkeyView.m */,
 				C3013EB5118A7656000C80B3 /* WildgooseView.h */,
 				C3013EB6118A7656000C80B3 /* WildgooseView.m */,
+				3E4CD8E4118FD12C00222173 /* AnimalToolTip.h */,
+				3E4CD8E5118FD12C00222173 /* AnimalToolTip.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -13992,6 +14006,9 @@
 				C3013E42118A756F000C80B3 /* turkeycock_walk_left_13.png in Resources */,
 				C3013E43118A756F000C80B3 /* turkeycock_walk_left_14.png in Resources */,
 				C3013E44118A756F000C80B3 /* turkeycock_walk_left_15.png in Resources */,
+				3E022E9B118E847D00D2A6E6 /* AnimalInfo.png in Resources */,
+				3E4CDAD0119032C400222173 /* inner.png in Resources */,
+				3E4CDAD1119032C400222173 /* outer.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -14062,6 +14079,7 @@
 				C3013ED1118A7656000C80B3 /* TurkeycockView.m in Sources */,
 				C3013ED2118A7656000C80B3 /* TurkeyView.m in Sources */,
 				C3013ED3118A7656000C80B3 /* WildgooseView.m in Sources */,
+				3E4CD8E6118FD12C00222173 /* AnimalToolTip.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
