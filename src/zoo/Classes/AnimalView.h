@@ -7,15 +7,19 @@
 //
 
 #import "cocos2d.h"
+#import "AnimalToolTip.h"
+#import "DataModelAnimal.h"
 
-
-@interface AnimalView : CCSprite
+@interface AnimalView : CCSprite <CCTargetedTouchDelegate>
 {
 	NSMutableDictionary *animationTable;
+	CCSprite *toolTip;
+	DataModelAnimal *data;
 }
 
--(void) update:(int)currDirectionValue status:(int)currStatusValue;
+@property (nonatomic, copy) DataModelAnimal *data;
 
+-(void) update:(int)currDirectionValue status:(int)currStatusValue;
 @end
 
 
