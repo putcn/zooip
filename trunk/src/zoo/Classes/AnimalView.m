@@ -11,12 +11,18 @@
 
 @implementation AnimalView
 
+@synthesize data;
+
 -(id) init
 {
 	if ( (self=[super init]) )
 	{
 		animationTable = [[[NSMutableDictionary alloc] init] retain];
+		toolTip = [[AnimalToolTip alloc]initWithName:@"Animal" setTotalTime:100.0f setLeaveTime:80.0f];
+		toolTip.position = ccp(50, 80);
+		NSLog(@"toolTip x:%d, y:%d", self.position.x, self.position.y);
 		
+		[self addChild:toolTip z:5];
 		// 在子类中实现这个方法
 		// 根据传入的prefix初始化8个方向的动画，
 		// 比如prefix是bird，向上走的动画第一帧图片可能就是bird_walk_up_001
@@ -84,10 +90,57 @@
 
 }
 
+- (CGRect)rect
+{
+	CGSize s = [self.texture contentSize];
+	return CGRectMake(-s.width/2, -s.height/2, s.width, s.height);
+}
+
+- (BOOL)containsTouchLocation:(UITouch *)touch
+{
+	return CGRectContainsPoint(self.rect, [self convertTouchToNodeSpaceAR:touch]);
+}
+
+- (void)onEnter
+{
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+	[super onEnter];
+}
+
+- (void)onExit
+{
+	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
+	[super onExit];
+}
+
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
+	self.scale = 1;
+	return YES;
+}
+
+-(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	toolTip.visible = true;
+	[self schedule:@selector(tick:) interval:4.0];
+}
+
+-(void) popDown
+{
+	toolTip.visible = false;	 
+}
+	 
 -(void) dealloc
 {
 	[animationTable release];
 	[super dealloc];
+}
+
+-(void) tick : (ccTime)dt
+{
+	[self popDown];
+	[self unschedule:@selector(tick:)];
 }
 
 @end
