@@ -17,7 +17,7 @@
 	DataModelAnimal *data;
 }
 
-@property (nonatomic, copy) DataModelAnimal *data;
+@property (nonatomic, retain) DataModelAnimal *data;
 
 -(void) update:(int)currDirectionValue status:(int)currStatusValue;
 @end
