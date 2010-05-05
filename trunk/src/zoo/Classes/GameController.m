@@ -28,4 +28,9 @@ static GameController *_sharedGameController = nil;
 	return nil;
 }
 
+-(void) initGame
+{
+	
+}
+
 @end
