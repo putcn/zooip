@@ -6,11 +6,14 @@
 //  Copyright 2010 Apple Inc. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "cocos2d.h"
 
 
-@interface GameMainScene : NSObject {
+@interface GameMainScene : CCLayer {
 
 }
+
++(GameMainScene *) sharedGameMainScene;
++(id) scene;
 
 @end

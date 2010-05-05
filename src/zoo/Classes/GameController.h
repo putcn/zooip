@@ -16,4 +16,6 @@
 
 +(GameController *) sharedGameController;
 
+-(void) initGame;
+
 @end
