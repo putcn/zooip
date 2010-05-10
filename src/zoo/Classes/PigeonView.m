@@ -108,6 +108,8 @@
 		[animationTable setObject:sleepLeftDown forKey:@"sleep_leftDown"];
 		[animationTable setObject:sleepLeft forKey:@"sleep_left"];
 		
+		
+		NSLog(@"view x:%d, y:%d", self.contentSize.width, self.contentSize.height*3/2);
 	}
 	return self;
 	

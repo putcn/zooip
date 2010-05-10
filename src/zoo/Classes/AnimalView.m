@@ -8,18 +8,25 @@
 
 #import "AnimalView.h"
 
-
 @implementation AnimalView
 
-@synthesize data;
+@synthesize animalId;
 
 -(id) init
 {
 	if ( (self=[super init]) )
 	{
+		NSArray *dirkeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",nil];
+		NSArray *dirvalues = [NSArray arrayWithObjects:@"up",@"rightUp",@"right",@"rightDown",@"down",@"leftDown",@"left",@"leftUp",nil];
+		dirctions = [[NSDictionary dictionaryWithObjects:dirvalues forKeys:dirkeys] retain];
+		
+		NSArray *stakeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",nil];
+		NSArray *stavalues = [NSArray arrayWithObjects:@"stop",@"eat",@"ill",@"sleep",@"stand",@"walk",@"fly",@"swimming",@"spread",@"crow",@"trasition",@"landing",nil];
+		statuses = [[NSDictionary dictionaryWithObjects:stavalues forKeys:stakeys] retain];
+		
 		animationTable = [[[NSMutableDictionary alloc] init] retain];
 		toolTip = [[AnimalToolTip alloc]initWithName:@"Animal" setTotalTime:100.0f setLeaveTime:80.0f];
-		toolTip.position = ccp(50, 80);
+		toolTip.position = ccp(toolTip.contentSize.width/2, 80);
 		NSLog(@"toolTip x:%d, y:%d", self.position.x, self.position.y);
 		
 		[self addChild:toolTip z:5];
@@ -37,14 +44,6 @@
 {
 	
 	//映射动物的方向和状态参数
-	NSArray *dirkeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",nil];
-	NSArray *dirvalues = [NSArray arrayWithObjects:@"up",@"rightUp",@"right",@"rightDown",@"down",@"leftDown",@"left",@"leftUp",nil];
-	NSDictionary *dirctions = [NSDictionary dictionaryWithObjects:dirvalues forKeys:dirkeys];
-	
-	NSArray *stakeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",nil];
-	NSArray *stavalues = [NSArray arrayWithObjects:@"stop",@"eat",@"ill",@"sleep",@"stand",@"walk",@"fly",@"swimming",@"spread",@"crow",@"trasition",@"landing",nil];
-	NSDictionary *statuses = [NSDictionary dictionaryWithObjects:stavalues forKeys:stakeys];
-	
 	NSString *direction= [dirctions objectForKey: [NSString stringWithFormat:@"%d",currDirectionValue]];
 	NSString *status = [statuses objectForKey: [NSString stringWithFormat:@"%d", currStatusValue]];
 	
@@ -68,8 +67,14 @@
 	{
 		self.flipX = NO;
 	}
-	
-	NSString *showKey = [[status stringByAppendingString:@"_"] stringByAppendingFormat:direction];
+	NSString *showKey;
+	if (currDirectionValue == -1) {
+		showKey = status;
+	}
+	else {
+		showKey = [[status stringByAppendingString:@"_"] stringByAppendingFormat:direction];
+	}
+
 	//方向: 0-up, 1-rightUp, 2-right, 3-rightDown, 4-down, 5-leftDown, 6-left, 7-leftUp
 	//状态: 0-stop(静止动画), 1-eat(吃食), 2-ill(生病), 3-sleep(睡觉), 4-stand(站立图片), 5-walk(行走), 6-fly(飞), 7-swimming(游泳),
 	//     8-spread(孔雀开屏),9-crow(公鸡打鸣), 10-trasition(起飞), 11-landing(降落)
@@ -130,17 +135,19 @@
 {
 	toolTip.visible = false;	 
 }
-	 
--(void) dealloc
-{
-	[animationTable release];
-	[super dealloc];
-}
 
 -(void) tick : (ccTime)dt
 {
 	[self popDown];
 	[self unschedule:@selector(tick:)];
+}
+
+-(void) dealloc
+{
+	[animationTable release];
+	[dirctions release];
+	[animationTable release];
+	[super dealloc];
 }
 
 @end

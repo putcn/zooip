@@ -7,20 +7,21 @@
 //
 
 #import "cocos2d.h"
+#import "DataModelAnimal.h"
 
 CCLabel *nameLbl;
 CCLabel *timeLbl;
 CCSprite *processorBar;
 CCSprite *processorFrame;
-
+float remainTime;
+float totalTime;
 
 @interface AnimalToolTip : CCSprite {
-	float totalTime;
-	float leaveTime;
+	
+	DataModelAnimal *data;
 }
- 
-@property (nonatomic,assign) float totalTime;
-@property (nonatomic,assign) float leaveTime;
+
+@property (nonatomic, retain) DataModelAnimal *data;
 
 -(id) initWithName: (NSString *)name setTotalTime:(float)inTotalTime setLeaveTime:(float)inLeaveTime;
 @end

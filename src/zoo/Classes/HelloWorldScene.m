@@ -7,6 +7,7 @@
 #import "HelloWorldScene.h"
 #import "ServiceHelper.h"
 #import "PigeonView.h"
+#import "CraneEggView.h"
 #import "Animal.h"
 #import "UILayer.h"
 
@@ -39,8 +40,6 @@
 		CGSize size = [[CCDirector sharedDirector] winSize];
 		
 		CCSprite *scaleContainer = [CCSprite node];
-		[scaleContainer setContentSize:CGSizeMake(486.4f, 364.8f)];
-		[scaleContainer setAnchorPoint:ccp(0, 0)];
 		scaleContainer.position = ccp( size.width / 2, size.height / 2);
 		[self addChild:scaleContainer];
 		
@@ -84,8 +83,11 @@
 	PigeonView *pigeonView = [[PigeonView alloc] init];
 	pigeonView.position = ccp(200,200);
 	[[Animal alloc] initWithView:pigeonView setSpeed:0.5f setLimitRect:CGRectMake(100, 100, 500, 500)];
-	[baseContainer addChild:pigeonView];
+	[baseContainer addChild:pigeonView z:4];
 	
+	CraneEggView *craneEggView = [[CraneEggView alloc] init];
+	craneEggView.position = ccp(400,100);
+	[baseContainer addChild:craneEggView z:6];
 	return self;
 }
 

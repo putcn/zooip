@@ -81,6 +81,7 @@
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
+	NSLog(@"touch began");
 	self.scale = 1;
 	return YES;
 }
