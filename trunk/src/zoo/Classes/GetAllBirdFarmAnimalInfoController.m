@@ -13,7 +13,7 @@
 
 -(void) execute:(NSDictionary *)value
 {
-	//[[ServiceHelper sharedService] ]
+	//[[ServiceHelper sharedService] getAllBirdAnimalInfo:self andValue:value AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback"];
 }
 
 -(void) resultCallback:(NSObject *)value
