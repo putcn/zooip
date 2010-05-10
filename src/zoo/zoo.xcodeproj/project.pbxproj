@@ -18,6 +18,7 @@
 		3E87160B11801F3300EBA2E8 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160711801F3300EBA2E8 /* house.png */; };
 		3E87160C11801F3300EBA2E8 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160811801F3300EBA2E8 /* tree.png */; };
 		3E87160D11801F3300EBA2E8 /* waterbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160911801F3300EBA2E8 /* waterbox.png */; };
+		3EE2B4421197BD2600E278E5 /* Dejecta.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2B4411197BD2600E278E5 /* Dejecta.m */; };
 		3EED45EC11965AC80093FF6E /* EggView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EED45EB11965AC80093FF6E /* EggView.m */; };
 		3EED460E1196624B0093FF6E /* CraneEggView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EED460D1196624B0093FF6E /* CraneEggView.m */; };
 		3EED461F1196669C0093FF6E /* craneEgg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EED46101196669C0093FF6E /* craneEgg.png */; };
@@ -3415,6 +3416,8 @@
 		3E87160711801F3300EBA2E8 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		3E87160811801F3300EBA2E8 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
 		3E87160911801F3300EBA2E8 /* waterbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterbox.png; sourceTree = "<group>"; };
+		3EE2B4401197BD2600E278E5 /* Dejecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dejecta.h; sourceTree = "<group>"; };
+		3EE2B4411197BD2600E278E5 /* Dejecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dejecta.m; sourceTree = "<group>"; };
 		3EED45EA11965AC80093FF6E /* EggView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggView.h; sourceTree = "<group>"; };
 		3EED45EB11965AC80093FF6E /* EggView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggView.m; sourceTree = "<group>"; };
 		3EED460C1196624B0093FF6E /* CraneEggView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CraneEggView.h; sourceTree = "<group>"; };
@@ -7047,6 +7050,8 @@
 				3EED46BF119673C30093FF6E /* DogView.m */,
 				3EED46C1119674340093FF6E /* BowlsView.h */,
 				3EED46C2119674340093FF6E /* BowlsView.m */,
+				3EE2B4401197BD2600E278E5 /* Dejecta.h */,
+				3EE2B4411197BD2600E278E5 /* Dejecta.m */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -15759,6 +15764,7 @@
 				3EED46BD119673A60093FF6E /* SnakeView.m in Sources */,
 				3EED46C0119673C30093FF6E /* DogView.m in Sources */,
 				3EED46C3119674340093FF6E /* BowlsView.m in Sources */,
+				3EE2B4421197BD2600E278E5 /* Dejecta.m in Sources */,
 				C3B66DCF1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
