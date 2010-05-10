@@ -3353,6 +3353,7 @@
 		C3A9E8EA1186C78300CEBDFC /* 饲料.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D21186C78300CEBDFC /* 饲料.png */; };
 		C3A9E8EB1186C78300CEBDFC /* 鸟窝.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D31186C78300CEBDFC /* 鸟窝.png */; };
 		C3A9E9421186F4F100CEBDFC /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E9411186F4F100CEBDFC /* GameController.m */; };
+		C3B66DCF1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B66DCE1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m */; };
 		C3C525E5117C321800343D7F /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525E4117C321800343D7F /* Button.m */; };
 		C3C525EF117C32C400343D7F /* StorageManageToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525EE117C32C400343D7F /* StorageManageToolbar.m */; };
 		C3C525F2117C333000343D7F /* PlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525F1117C333000343D7F /* PlayerInfo.m */; };
@@ -6799,6 +6800,9 @@
 		C3A9E8D31186C78300CEBDFC /* 鸟窝.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鸟窝.png"; sourceTree = "<group>"; };
 		C3A9E9401186F4F100CEBDFC /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		C3A9E9411186F4F100CEBDFC /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		C3B66DCA1197EF6100AFDE8D /* ServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerController.h; sourceTree = "<group>"; };
+		C3B66DCD1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllBirdFarmAnimalInfoController.h; sourceTree = "<group>"; };
+		C3B66DCE1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllBirdFarmAnimalInfoController.m; sourceTree = "<group>"; };
 		C3C525E3117C321800343D7F /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		C3C525E4117C321800343D7F /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		C3C525ED117C32C400343D7F /* StorageManageToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageManageToolbar.h; sourceTree = "<group>"; };
@@ -12341,6 +12345,16 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
+		C3B66DC31197E92F00AFDE8D /* ServerController */ = {
+			isa = PBXGroup;
+			children = (
+				C3B66DCA1197EF6100AFDE8D /* ServerController.h */,
+				C3B66DCD1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.h */,
+				C3B66DCE1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m */,
+			);
+			name = ServerController;
+			sourceTree = "<group>";
+		};
 		C3C528CA117EA2BD00343D7F /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
@@ -12355,6 +12369,7 @@
 		C3C528CB117EA2D000343D7F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C3B66DC31197E92F00AFDE8D /* ServerController */,
 				C3C528CC117EA30100343D7F /* AnimalController.h */,
 				C3C528CD117EA30100343D7F /* AnimalController.m */,
 				C3C528D4117EA5F200343D7F /* AnimalViewFactory.h */,
@@ -15744,6 +15759,7 @@
 				3EED46BD119673A60093FF6E /* SnakeView.m in Sources */,
 				3EED46C0119673C30093FF6E /* DogView.m in Sources */,
 				3EED46C3119674340093FF6E /* BowlsView.m in Sources */,
+				C3B66DCF1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
