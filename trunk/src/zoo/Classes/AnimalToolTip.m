@@ -11,14 +11,14 @@
 
 
 @implementation AnimalToolTip
-@synthesize totalTime;
-@synthesize leaveTime;
 
--(id) initWithName: (NSString *)name setTotalTime:(float)inTotalTime setLeaveTime:(float)inLeaveTime 
+@synthesize data;
+
+-(id) initWithName: (NSString *)name setTotalTime:(float)inTotalTime setLeaveTime:(float)inLeaveTime;
 {
 	if ((self = [super init])) {
 		totalTime = inTotalTime;
-		leaveTime = inLeaveTime;
+		remainTime = inLeaveTime;
 		CCTexture2D *InfoBg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"AnimalInfo.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = InfoBg.contentSize;
@@ -35,10 +35,10 @@
 		
 		processorBar = [CCSprite spriteWithFile:@"inner.png"];
 		processorFrame = [CCSprite spriteWithFile:@"outer.png"];
-		processorBar.scaleX = leaveTime/totalTime;
-		NSLog(@"-----%d",leaveTime/totalTime);
+		processorBar.scaleX = remainTime/totalTime;
+		NSLog(@"-----%d",remainTime/totalTime);
 		processorFrame.position = ccp(processorFrame.contentSize.width/2 , self.contentSize.height - nameLbl.contentSize.height-timeLbl.contentSize.height);
-		processorBar.position = ccp(processorBar.contentSize.width/2 * leaveTime/totalTime, self.contentSize.height - nameLbl.contentSize.height-timeLbl.contentSize.height);
+		processorBar.position = ccp(processorBar.contentSize.width/2 * remainTime/totalTime, self.contentSize.height - nameLbl.contentSize.height-timeLbl.contentSize.height);
 		[self addChild:nameLbl z:6];
 		[self addChild:timeLbl z:6];
 		[self addChild:processorBar z:6];
@@ -53,9 +53,9 @@
 -(void) tick: (ccTime)dt
 {
 	[timeLbl setString:[NSString stringWithFormat:@"%@", [NSDate date]]];
-	//leaveTime = leaveTime - 1;
-	//processorBar.scaleX = leaveTime/totalTime;
-	//processorBar.position = ccp(processorBar.contentSize.width/2 * leaveTime/totalTime, self.contentSize.height - nameLbl.contentSize.height-timeLbl.contentSize.height);
+	remainTime = remainTime - 1;
+	processorBar.scaleX = remainTime/totalTime;
+	processorBar.position = ccp(processorBar.contentSize.width/2 * remainTime/totalTime, self.contentSize.height - nameLbl.contentSize.height-timeLbl.contentSize.height);
 
 }
 @end
