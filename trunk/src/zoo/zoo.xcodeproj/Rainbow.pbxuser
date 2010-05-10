@@ -1892,6 +1892,20 @@
 		vrLen = 1972;
 		vrLoc = 245;
 	};
+	3EE2B4571197F6A400E278E5 /* GetFarmerInfoController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 510}}";
+			sepNavSelRange = "{361, 0}";
+			sepNavVisRange = "{0, 367}";
+		};
+	};
+	3EE2B4581197F6A400E278E5 /* GetFarmerInfoController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1006, 510}}";
+			sepNavSelRange = "{254, 0}";
+			sepNavVisRange = "{0, 496}";
+		};
+	};
 	3EED45E4119659880093FF6E /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
 		fRef = C3013E7D118A7656000C80B3 /* AnimalView.h */;
@@ -5111,6 +5125,27 @@
 			sepNavVisRange = "{0, 487}";
 		};
 	};
+	C3B66DCA1197EF6100AFDE8D /* ServerController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 510}}";
+			sepNavSelRange = "{326, 0}";
+			sepNavVisRange = "{0, 326}";
+		};
+	};
+	C3B66DCD1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 510}}";
+			sepNavSelRange = "{324, 122}";
+			sepNavVisRange = "{0, 453}";
+		};
+	};
+	C3B66DCE1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1006, 510}}";
+			sepNavSelRange = "{296, 0}";
+			sepNavVisRange = "{0, 536}";
+		};
+	};
 	C3C525E3117C321800343D7F /* Button.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1096, 544}}";
@@ -5233,15 +5268,15 @@
 	};
 	C3C528CC117EA30100343D7F /* AnimalController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1054, 515}}";
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 510}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 391}";
 		};
 	};
 	C3C528CD117EA30100343D7F /* AnimalController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1054, 1352}}";
-			sepNavSelRange = "{1449, 16}";
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 1352}}";
+			sepNavSelRange = "{1556, 0}";
 			sepNavVisRange = "{1086, 892}";
 		};
 	};
@@ -5320,16 +5355,16 @@
 	};
 	CC01757B1174780500CD437F /* ServiceHelper.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1096, 780}}";
-			sepNavSelRange = "{1426, 20}";
-			sepNavVisRange = "{426, 1255}";
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 780}}";
+			sepNavSelRange = "{1402, 0}";
+			sepNavVisRange = "{365, 1316}";
 		};
 	};
 	CC01757C1174780500CD437F /* ServiceHelper.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 3978}}";
-			sepNavSelRange = "{440, 0}";
-			sepNavVisRange = "{237, 517}";
+			sepNavIntBoundsRect = "{{0, 0}, {1391, 3757}}";
+			sepNavSelRange = "{15910, 0}";
+			sepNavVisRange = "{0, 918}";
 		};
 	};
 }
