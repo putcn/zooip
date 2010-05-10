@@ -19,6 +19,7 @@
 		3E87160C11801F3300EBA2E8 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160811801F3300EBA2E8 /* tree.png */; };
 		3E87160D11801F3300EBA2E8 /* waterbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160911801F3300EBA2E8 /* waterbox.png */; };
 		3EE2B4421197BD2600E278E5 /* Dejecta.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2B4411197BD2600E278E5 /* Dejecta.m */; };
+		3EE2B4591197F6A400E278E5 /* GetFarmerInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2B4581197F6A400E278E5 /* GetFarmerInfoController.m */; };
 		3EED45EC11965AC80093FF6E /* EggView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EED45EB11965AC80093FF6E /* EggView.m */; };
 		3EED460E1196624B0093FF6E /* CraneEggView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EED460D1196624B0093FF6E /* CraneEggView.m */; };
 		3EED461F1196669C0093FF6E /* craneEgg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EED46101196669C0093FF6E /* craneEgg.png */; };
@@ -3418,6 +3419,8 @@
 		3E87160911801F3300EBA2E8 /* waterbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterbox.png; sourceTree = "<group>"; };
 		3EE2B4401197BD2600E278E5 /* Dejecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dejecta.h; sourceTree = "<group>"; };
 		3EE2B4411197BD2600E278E5 /* Dejecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dejecta.m; sourceTree = "<group>"; };
+		3EE2B4571197F6A400E278E5 /* GetFarmerInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetFarmerInfoController.h; sourceTree = "<group>"; };
+		3EE2B4581197F6A400E278E5 /* GetFarmerInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFarmerInfoController.m; sourceTree = "<group>"; };
 		3EED45EA11965AC80093FF6E /* EggView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggView.h; sourceTree = "<group>"; };
 		3EED45EB11965AC80093FF6E /* EggView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggView.m; sourceTree = "<group>"; };
 		3EED460C1196624B0093FF6E /* CraneEggView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CraneEggView.h; sourceTree = "<group>"; };
@@ -6954,10 +6957,10 @@
 		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BF0074801159E8740003B411 /* Models */,
 				C3C528CB117EA2D000343D7F /* Controllers */,
 				BF0074831159E87D0003B411 /* Helpers */,
 				BF0074881159E91E0003B411 /* Proxies */,
-				BF0074801159E8740003B411 /* Models */,
 				BF00747F1159E86A0003B411 /* Views */,
 				506EDC2F102F528A00A389B3 /* HelloWorldScene.h */,
 				506EDC30102F528A00A389B3 /* HelloWorldScene.m */,
@@ -12356,6 +12359,8 @@
 				C3B66DCA1197EF6100AFDE8D /* ServerController.h */,
 				C3B66DCD1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.h */,
 				C3B66DCE1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m */,
+				3EE2B4571197F6A400E278E5 /* GetFarmerInfoController.h */,
+				3EE2B4581197F6A400E278E5 /* GetFarmerInfoController.m */,
 			);
 			name = ServerController;
 			sourceTree = "<group>";
@@ -15766,6 +15771,7 @@
 				3EED46C3119674340093FF6E /* BowlsView.m in Sources */,
 				3EE2B4421197BD2600E278E5 /* Dejecta.m in Sources */,
 				C3B66DCF1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m in Sources */,
+				3EE2B4591197F6A400E278E5 /* GetFarmerInfoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
