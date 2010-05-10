@@ -46,6 +46,7 @@
 		limitRect = CGRectMake(100, 100, 500, 500);
 		
 		view = [AnimalViewFactory createAnimalView:data.originalAnimalId birdStage:data.birdStage];
+		view.animalId = data.animalId;
 		
 		[[CCScheduler sharedScheduler] scheduleTimer: [CCTimer timerWithTarget:self selector:@selector(tick:)]];
 	}
