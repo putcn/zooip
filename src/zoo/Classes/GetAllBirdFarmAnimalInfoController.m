@@ -18,12 +18,12 @@
 
 -(void) resultCallback:(NSObject *)value
 {
-	
+	[super resultCallback:value];
 }
 
 -(void) faultCallback:(NSObject *)value
 {
-	
+	[super faultCallback:value];
 }
 
 @end
