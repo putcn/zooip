@@ -90,18 +90,20 @@ static GameMainScene *_sharedGameMainScene = nil;
 	return nil;
 }
 
--(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex
++(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex
 {
 	[baseContainer addChild:sprite z:zIndex];
 }
 
--(void) removeSpriteFromStage:(CCSprite *) sprite
++(void) removeSpriteFromStage:(CCSprite *) sprite
 {
 	[baseContainer removeChild:sprite cleanup:YES];
 }
 
 -(void) dealloc
 {
+	[GameMainScene removeSpriteFromStage:self];
+	[super removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }
 
