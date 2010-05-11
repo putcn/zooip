@@ -10,8 +10,9 @@
 #import "ServerController.h"
 
 
-@interface GetFarmerInfoController : NSObject<ServerController> {
-
+@interface GetFarmerInfoController : ServerController
+{
+	
 }
 
 -(void) execute:(NSDictionary *)value;
