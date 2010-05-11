@@ -11,7 +11,7 @@
 
 @interface InitFlowController : WorkFlowController
 {
-	NSString *step;
+	
 }
 
 @end

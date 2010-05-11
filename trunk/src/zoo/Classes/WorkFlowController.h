@@ -11,6 +11,7 @@
 
 @interface WorkFlowController : NSObject
 {
+	NSString *step;
 	NSMutableDictionary *stepControllers;
 }
 

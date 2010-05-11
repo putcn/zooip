@@ -19,6 +19,7 @@
 +(GameMainScene *) sharedGameMainScene;
 +(id) scene;
 
--(void) addSpriteToStage:(CCSprite *) sprite;
+-(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex;
+-(void) removeSpriteFromStage:(CCSprite *) sprite;
 
 @end
