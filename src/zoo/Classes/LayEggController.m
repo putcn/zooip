@@ -7,7 +7,7 @@
 //
 
 #import "LayEggController.h"
-
+#import "AllLayEggController.h"
 
 @implementation LayEggController
 

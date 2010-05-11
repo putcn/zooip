@@ -90,9 +90,9 @@ static GameMainScene *_sharedGameMainScene = nil;
 	return nil;
 }
 
--(void) addSpriteToStage:(CCSprite *) sprite
+-(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex
 {
-	[baseContainer addChild:sprite];
+	[baseContainer addChild:sprite z:zIndex];
 }
 
 -(void) removeSpriteFromStage:(CCSprite *) sprite
