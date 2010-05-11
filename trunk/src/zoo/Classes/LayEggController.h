@@ -8,11 +8,13 @@
 
 #import <Foundation/Foundation.h>
 #import "ServerController.h"
-
+@class AllLayEggController;
 
 @interface LayEggController : ServerController
 {
-	
+	AllLayEggController *allLayEggController;
 }
+
+-(LayEggController *) initWithAllEggController:(AllLayEggController *)controller;
 
 @end

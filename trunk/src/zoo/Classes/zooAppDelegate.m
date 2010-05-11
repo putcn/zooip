@@ -9,6 +9,7 @@
 #import "zooAppDelegate.h"
 #import "cocos2d.h"
 #import "HelloWorldScene.h"
+#import "GameMainScene.h"
 
 @implementation zooAppDelegate
 
@@ -51,7 +52,8 @@
 	[window makeKeyAndVisible];		
 		
 		
-	[[CCDirector sharedDirector] runWithScene: [HelloWorld scene]];
+//	[[CCDirector sharedDirector] runWithScene: [HelloWorld scene]];
+	[[CCDirector sharedDirector] runWithScene: [GameMainScene scene]];
 }
 
 

@@ -17,6 +17,7 @@
 
 +(AnimalController *) sharedAnimalController;
 
--(void) updateAnimal:(NSMutableArray *)animalsData;
+-(void) addAnimal:(NSMutableArray *)animalIDs;
+-(void) clearAnimal;
 
 @end

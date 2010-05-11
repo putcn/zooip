@@ -11,7 +11,10 @@
 
 @interface AllLayEggController : ServerController
 {
-
+	int totalEggCount;
+	int preEggCount;
 }
+
+-(void) finishEgg;
 
 @end

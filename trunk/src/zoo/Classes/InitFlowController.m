@@ -29,18 +29,22 @@ static NSString *STEP_GET_ALL_EGG_INFO = @"3";
 	if (step == STEP_GET_FARMER_INFO)
 	{
 		step = STEP_GET_ALL_ANIMAL_INFO;
+		return;
 	}
 	else if (step == STEP_GET_ALL_ANIMAL_INFO)
 	{
 		step = STEP_EGG;
+		return;
 	}
 	else if (step == STEP_EGG)
 	{
 		step = STEP_GET_ALL_EGG_INFO;
+		return;
 	}
 	else if (step == STEP_GET_ALL_EGG_INFO)
 	{
 		[self end];
+		return;
 	}
 }
 
