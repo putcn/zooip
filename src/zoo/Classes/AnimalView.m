@@ -7,6 +7,7 @@
 //
 
 #import "AnimalView.h"
+#import "GameMainScene.h"
 
 @implementation AnimalView
 
@@ -30,6 +31,7 @@
 		NSLog(@"toolTip x:%d, y:%d", self.position.x, self.position.y);
 		
 		[self addChild:toolTip z:5];
+		[GameMainScene addSpriteToStage:self z:4];
 		// 在子类中实现这个方法
 		// 根据传入的prefix初始化8个方向的动画，
 		// 比如prefix是bird，向上走的动画第一帧图片可能就是bird_walk_up_001

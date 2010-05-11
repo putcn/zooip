@@ -10,7 +10,6 @@
 #import "AnimalToolTip.h"
 
 
-
 @interface AnimalView : CCSprite <CCTargetedTouchDelegate>
 {	
 	NSMutableDictionary *animationTable;
