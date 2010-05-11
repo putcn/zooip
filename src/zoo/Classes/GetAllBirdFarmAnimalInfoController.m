@@ -11,7 +11,7 @@
 
 @implementation GetAllBirdFarmAnimalInfoController
 
--(void) execute:(NSDictionary *)value
+-(void) execute:(NSObject *)value
 {
 	//[[ServiceHelper sharedService] getAllBirdAnimalInfo:self andValue:value AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback"];
 }
