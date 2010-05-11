@@ -10,13 +10,9 @@
 #import "ServerController.h"
 #import "ServiceHelper.h"
 
-@interface GetAllBirdFarmAnimalInfoController : NSObject <ServerController>
+@interface GetAllBirdFarmAnimalInfoController : ServerController
 {
 	
 }
-
--(void) execute:(NSDictionary *)value;
--(void) resultCallback:(NSObject *)value;
--(void) faultCallback:(NSObject *)value;
 
 @end

@@ -7,11 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "WorkFlowController.h"
 
+@interface ServerController : NSObject
+{
+	WorkFlowController *workFlowController;
+}
 
-@protocol ServerController
-
--(void) execute:(NSDictionary *)value;
+-(ServerController *) initWithWorkFlowController:(WorkFlowController *)controller;
+-(void) execute:(NSObject *)value;
 -(void) resultCallback:(NSObject *)value;
 -(void) faultCallback:(NSObject *)value;
 
