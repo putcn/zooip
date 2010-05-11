@@ -49,19 +49,19 @@
 
 -(void) switchPlayerZoo
 {
-	[[UIController sharedUIController] swithZoo:NO];
+	//[[UIController sharedUIController] swithZoo:NO];
 	isSelf = YES;
 	[zooManageToolbar switchZoo:YES];
 }
 -(void) switchFriendZoo
 {
-	[[GameMainScene sharedGameMainScene] swithZoo:YES];
+	//[[GameMainScene sharedGameMainScene] swithZoo:YES];
 	isSelf = NO;
 	[zooManageToolbar switchZoo:NO];
 }
 -(Boolean) getIsSelf
 {
-	return isSelf;
+	return YES;
 }
 
 -(void) popupShopList

@@ -153,7 +153,7 @@
 -(void) dealloc
 {
 	//TODO: Remove view from the stage
-	
+	[view dealloc];
 	[view release];
 	[super dealloc];
 }
