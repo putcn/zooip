@@ -18,6 +18,7 @@
 		3E87160B11801F3300EBA2E8 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160711801F3300EBA2E8 /* house.png */; };
 		3E87160C11801F3300EBA2E8 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160811801F3300EBA2E8 /* tree.png */; };
 		3E87160D11801F3300EBA2E8 /* waterbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160911801F3300EBA2E8 /* waterbox.png */; };
+		3EC7E343119A3B6400791BAD /* EggViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7E342119A3B6400791BAD /* EggViewFactory.m */; };
 		3EE2B4421197BD2600E278E5 /* Dejecta.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2B4411197BD2600E278E5 /* Dejecta.m */; };
 		3EE2B4591197F6A400E278E5 /* GetFarmerInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2B4581197F6A400E278E5 /* GetFarmerInfoController.m */; };
 		3EED45EC11965AC80093FF6E /* EggView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EED45EB11965AC80093FF6E /* EggView.m */; };
@@ -3421,6 +3422,8 @@
 		3E87160711801F3300EBA2E8 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		3E87160811801F3300EBA2E8 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
 		3E87160911801F3300EBA2E8 /* waterbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterbox.png; sourceTree = "<group>"; };
+		3EC7E341119A3B6400791BAD /* EggViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggViewFactory.h; sourceTree = "<group>"; };
+		3EC7E342119A3B6400791BAD /* EggViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggViewFactory.m; sourceTree = "<group>"; };
 		3EE2B4401197BD2600E278E5 /* Dejecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dejecta.h; sourceTree = "<group>"; };
 		3EE2B4411197BD2600E278E5 /* Dejecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dejecta.m; sourceTree = "<group>"; };
 		3EE2B4571197F6A400E278E5 /* GetFarmerInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetFarmerInfoController.h; sourceTree = "<group>"; };
@@ -12422,6 +12425,8 @@
 				C3A9E83B1181421400CEBDFC /* UIController.m */,
 				C3A9E9401186F4F100CEBDFC /* GameController.h */,
 				C3A9E9411186F4F100CEBDFC /* GameController.m */,
+				3EC7E341119A3B6400791BAD /* EggViewFactory.h */,
+				3EC7E342119A3B6400791BAD /* EggViewFactory.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -15810,6 +15815,7 @@
 				C3B2216D11992B00004D6C3D /* AllLayEggController.m in Sources */,
 				C3B2217211992B71004D6C3D /* LayEggController.m in Sources */,
 				C3B2217711992BD6004D6C3D /* GetAllEggInfoController.m in Sources */,
+				3EC7E343119A3B6400791BAD /* EggViewFactory.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

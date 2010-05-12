@@ -7,12 +7,22 @@
 //
 
 #import "EggView.h"
+#import "GameMainScene.h"
 
 
 @implementation EggView
 
+-(id) init
+{
+	if ((self = [super init])) {
+		[GameMainScene addSpriteToStage:self z:4];
+	}
+}
+
 -(void) dealloc
 {
+	[GameMainScene removeSpriteFromStage:self];
+	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }
 
