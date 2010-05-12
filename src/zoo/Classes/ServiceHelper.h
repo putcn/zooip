@@ -40,20 +40,18 @@ typedef enum {
 } ZooNetworkRequestType;
 
 @interface ServiceHelper : NSObject {
-	
+	NSMutableDictionary *CallBacks;
 }
 
 + (ServiceHelper *)sharedService;
-- (void)restore;
--(void)requestDone:(ASIFormDataRequest *)request;
--(void)nativeNetworkError:(ASIFormDataRequest *)request;
--(void)feedBackWithBadFormat:(NSString *)callBackString;
--(void)operationError:(NSString *)reason;
+- (void) restore;
+-(NSString *)getTimeStamp;
+/*
+-(ASIFormDataRequest *)BuildRequestWithURL:(NSString *)URLString AndRequestFlag:(NSString *)requestFlag AndCallBackScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
+-(void)connectivityTestWithScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
+-(void)getFarmInfoWithFarmerId:(NSString *)farmerId AndIsbodyGarded:(BOOL)IsbodyGarded AndScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
+-(void)getAllBirdFarmAnimalInfoWithFarmId:(NSString *)farmerId AndFarmerId:(NSString *)farmerId AndScope:(id)CallBackDelegate AndSuccessSel:(NSString *)SuccessSelector AndFailedSel:(NSString *)FailedSelector;
+*/
 
-
--(ASIFormDataRequest *)buildRequestWithType:(ZooNetworkRequestType)type;
--(void)getFarmerInfo;
--(void)getFarmInfoWithFarmerId:(NSString *)farmerId AndIsGuarded:(BOOL)isGuarded;
--(void)getAllBirdFarmAnimalInfoWithFarmId:(NSString *)farmId AndFarmerId:(NSString *)farmerId;
-
+-(ASIFormDataRequest *)requestServerForMethod:(ZooNetworkRequestType)methodType WithParameters:(NSDictionary *)parameters AndCallBackScope:(id)callBackDelegate AndSuccessSel:(NSString *)successSelector AndFailedSel:(NSString *)failedSelector;
 @end

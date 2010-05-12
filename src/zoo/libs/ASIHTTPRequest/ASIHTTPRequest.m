@@ -3174,6 +3174,7 @@ static BOOL isiPhoneOS2;
 @synthesize shouldPresentCredentialsBeforeChallenge;
 @synthesize haveBuiltRequestHeaders;
 @synthesize requestFlagMark;
+@synthesize ZooRequestType;
 @end
 
 

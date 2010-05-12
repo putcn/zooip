@@ -317,7 +317,9 @@ extern unsigned long const ASIWWANBandwidthThrottleAmount;
 	
 	//requset flag mark
 	
-	NSInteger requestFlagMark;
+	NSString *requestFlagMark;
+	
+	NSInteger ZooRequestType;
 }
 
 #pragma mark init / dealloc
@@ -645,6 +647,8 @@ extern unsigned long const ASIWWANBandwidthThrottleAmount;
 @property (assign, readonly) int proxyAuthenticationRetryCount;
 @property (assign) BOOL haveBuiltRequestHeaders;
 @property (assign, nonatomic) BOOL haveBuiltPostBody;
-@property (assign) NSInteger requestFlagMark;
+@property (retain) NSString *requestFlagMark;
+@property (assign, nonatomic) NSInteger ZooRequestType;
+
 
 @end
