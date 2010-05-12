@@ -58,4 +58,10 @@
 	processorBar.position = ccp(processorBar.contentSize.width/2 * remainTime/totalTime, self.contentSize.height - nameLbl.contentSize.height-timeLbl.contentSize.height);
 
 }
+
+-(void)dealloc
+{
+	[self removeAllChildrenWithCleanup:YES];
+	[super dealloc];
+}
 @end
