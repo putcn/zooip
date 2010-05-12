@@ -7,6 +7,7 @@
 //
 
 #import "GameMainScene.h"
+#import "ServiceHelper.h"
 
 
 @implementation GameMainScene
@@ -84,10 +85,17 @@ static GameMainScene *_sharedGameMainScene = nil;
 		DragControlLayer *drager = [[DragControlLayer alloc] initWithTarget:scaleContainer];
 		[self addChild:drager];
 		
+		NSDictionary *paras = [NSDictionary dictionaryWithObjectsAndKeys:nil];
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:paras AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:paras AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
 		return self;
 	}
 	
 	return nil;
+}
+
+-(void)requestDoneWith:(NSDictionary *)dic{
+	NSLog(@"%@",dic);
 }
 
 +(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex

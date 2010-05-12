@@ -73,13 +73,18 @@
 		
 		UILayer *uiLayer = [UILayer node];
 		[self addChild:uiLayer];
+		
+		
 	}
 	
-	//[[serviceHelper sharedService] connectivityTestWithScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFailedWithReason:"];
+	
 	//[[serviceHelper sharedService] getFarmInfoWithFarmerId:NULL AndIsbodyGarded:NO AndScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFailedWithReason:"];
 	//[[ServiceHelper sharedService] getFarmerInfo];
 	//[[ServiceHelper sharedService] getFarmInfoWithFarmerId:@"A6215BF61A3AF50A8F72F043A1A6A85C" AndIsGuarded:NO];
+	/*
 	[[ServiceHelper sharedService] getAllBirdFarmAnimalInfoWithFarmId:@"163D7A78682082B36872659C7A9DA8F9" AndFarmerId:@"A6215BF61A3AF50A8F72F043A1A6A85C"];
+	
+	 */
 	PigeonView *pigeonView = [[PigeonView alloc] init];
 	pigeonView.position = ccp(200,200);
 	[[Animal alloc] initWithView:pigeonView setSpeed:0.5f setLimitRect:CGRectMake(100, 100, 500, 500)];
