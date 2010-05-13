@@ -11,9 +11,11 @@
 
 @interface UIController : NSObject
 {
-	int action;
+	NSString *operation;
 }
 
 +(UIController *) sharedUIController;
+
+-(void) switchOperation:(NSString *)op;
 
 @end
