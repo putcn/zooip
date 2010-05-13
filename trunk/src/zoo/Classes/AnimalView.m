@@ -17,6 +17,7 @@
 {
 	if ( (self=[super init]) )
 	{
+		//uiController = [[UIController sharedUIController] alloc];
 		NSArray *dirkeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",nil];
 		NSArray *dirvalues = [NSArray arrayWithObjects:@"up",@"rightUp",@"right",@"rightDown",@"down",@"leftDown",@"left",@"leftUp",nil];
 		dirctions = [[NSDictionary dictionaryWithObjects:dirvalues forKeys:dirkeys] retain];
@@ -31,7 +32,7 @@
 		NSLog(@"toolTip x:%d, y:%d", self.position.x, self.position.y);
 		
 		[self addChild:toolTip z:5];
-		[GameMainScene addSpriteToStage:self z:5];
+		//[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:5];
 		// 在子类中实现这个方法
 		// 根据传入的prefix初始化8个方向的动画，
 		// 比如prefix是bird，向上走的动画第一帧图片可能就是bird_walk_up_001
@@ -129,8 +130,7 @@
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	toolTip.visible = true;
-	[self schedule:@selector(tick:) interval:4.0];
+	[self optAnimationPlay];
 }
 
 -(void) popDown
@@ -144,9 +144,37 @@
 	[self unschedule:@selector(tick:)];
 }
 
+-(CGPoint)countCoordinate: (CGPoint)clickPoint
+{
+	return ccp(self.position.x + clickPoint.x - self.contentSize.width/2, self.position.y + clickPoint.y - self.contentSize.height/2);
+}
+
+-(void)optAnimationPlay
+{
+	NSString *type = @"operation_cure_animal";
+//	if (type == OPERATION_DEFAULT) {
+//		toolTip.visible = true;
+//		[self schedule:@selector(tick:) interval:4.0];
+//	}
+//	else 
+	if(type == @"operation_cure_animal"){
+		CGPoint location = ccp(self.position.x, self.position.y);
+		[[OperationViewController sharedOperationViewController] play:@"infusion" setPosition:location];
+	}
+	else {
+		return;
+	}
+
+}
+
+-(void)callServerController
+{
+	
+}
+
 -(void) dealloc
 {
-	[GameMainScene removeSpriteFromStage:self];
+	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:self];
 	[self removeAllChildrenWithCleanup:YES];
 	[animationTable release];
 	[dirctions release];

@@ -21,6 +21,7 @@
 		CCRepeatForever *repeatAction = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]];
 		[self runAction:repeatAction];
 	}
+	return self;
 }
 
 @end

@@ -8,6 +8,8 @@
 
 #import "GameMainScene.h"
 #import "ServiceHelper.h"
+#import "PigeonView.h"
+#import "Animal.h"
 
 
 @implementation GameMainScene
@@ -85,7 +87,12 @@ static GameMainScene *_sharedGameMainScene = nil;
 		DragControlLayer *drager = [[DragControlLayer alloc] initWithTarget:scaleContainer];
 		[self addChild:drager];
 		
-		NSDictionary *paras = [NSDictionary dictionaryWithObjectsAndKeys:nil];
+		PigeonView *pigeonView = [[PigeonView alloc] init];
+		pigeonView.position = ccp(200,200);
+		[[Animal alloc] initWithView:pigeonView setSpeed:0.5f setLimitRect:CGRectMake(100, 100, 500, 500)];
+		[baseContainer addChild:pigeonView z:4];
+		
+		NSDictionary *paras = [NSDictionary dictionaryWithObjectsAndKeys:@"12",@"farmerId",nil];
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:paras AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:paras AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
 		return self;
@@ -98,19 +105,18 @@ static GameMainScene *_sharedGameMainScene = nil;
 	NSLog(@"%@",dic);
 }
 
-+(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex
+-(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex
 {
 	[baseContainer addChild:sprite z:zIndex];
 }
 
-+(void) removeSpriteFromStage:(CCSprite *) sprite
+-(void) removeSpriteFromStage:(CCSprite *) sprite
 {
 	[baseContainer removeChild:sprite cleanup:YES];
 }
 
 -(void) dealloc
 {
-	[GameMainScene removeSpriteFromStage:self];
 	[super removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }

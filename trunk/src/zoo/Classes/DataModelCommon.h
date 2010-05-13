@@ -12,5 +12,4 @@
 @interface DataModelCommon : NSObject {
 	
 }
-
 @end
