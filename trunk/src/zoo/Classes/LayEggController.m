@@ -24,7 +24,8 @@
 
 -(void) execute:(NSObject *)value
 {
-	//[[ServiceHelper sharedService] getAllBirdAnimalInfo:self andValue:value AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback"];
+	NSDictionary *param = (NSDictionary *)value;
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetLayEggsRemain WithParameters:param AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 }
 
 -(void) resultCallback:(NSObject *)value
