@@ -38,7 +38,13 @@ farm_nextLevelExp,
 farm_currentExp,
 farm_topMaxNumOfBirds;
 
+@synthesize animalIDs;
 @synthesize animals;
+
+@synthesize playerFarmerInfo;
+@synthesize friendFarmerInfo;
+@synthesize playerFarmInfo;
+@synthesize friendFarmInfo;
 
 + (id)sharedDataEnvironment{
     @synchronized( self ) {
@@ -105,7 +111,13 @@ farm_topMaxNumOfBirds;
 	farm_currentExp = 0;
 	farm_topMaxNumOfBirds = 0;
 	
+	animalIDs = nil;
 	animals = nil;
+	
+	playerFarmerInfo = nil;
+	friendFarmerInfo = nil;
+	playerFarmInfo = nil;
+	friendFarmInfo = nil;
 }
 
 @end

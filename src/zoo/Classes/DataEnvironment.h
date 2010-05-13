@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "DataModelFarmerInfo.h"
+#import "DataModelFarmInfo.h"
 
 @interface DataEnvironment : NSObject {
 	//getFarmerInfo
@@ -37,8 +38,14 @@
 	NSInteger farm_currentExp;
 	NSInteger farm_topMaxNumOfBirds;
 	
+	DataModelFarmerInfo *playerFarmerInfo;
+	DataModelFarmerInfo *friendFarmerInfo;
+	DataModelFarmInfo *playerFarmInfo;
+	DataModelFarmInfo *friendFarmInfo;
+	
 	//getAllBirdFarmAnimalInfo
-	NSMutableArray *animals;
+	NSMutableArray *animalIDs;
+	NSMutableDictionary *animals;
 }
 + (DataEnvironment *)sharedDataEnvironment;
 - (void)restore;
@@ -71,6 +78,12 @@
 @property(nonatomic,assign) NSInteger farm_topMaxNumOfBirds;
 
 //getAllBirdFarmAnimalInfo
-@property(nonatomic,retain) NSMutableArray *animals;
+@property(nonatomic,retain) NSMutableArray *animalIDs;
+@property(nonatomic,retain) NSMutableDictionary *animals;
+
+@property(nonatomic,retain) DataModelFarmerInfo *playerFarmerInfo;
+@property(nonatomic,retain) DataModelFarmerInfo *friendFarmerInfo;
+@property(nonatomic,retain) DataModelFarmInfo *playerFarmInfo;
+@property(nonatomic,retain) DataModelFarmInfo *friendFarmInfo;
 
 @end

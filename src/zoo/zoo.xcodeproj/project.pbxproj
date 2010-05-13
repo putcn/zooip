@@ -3360,6 +3360,8 @@
 		C3B2216D11992B00004D6C3D /* AllLayEggController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B2216C11992B00004D6C3D /* AllLayEggController.m */; };
 		C3B2217211992B71004D6C3D /* LayEggController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B2217111992B71004D6C3D /* LayEggController.m */; };
 		C3B2217711992BD6004D6C3D /* GetAllEggInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B2217611992BD6004D6C3D /* GetAllEggInfoController.m */; };
+		C3B224B1119BF637004D6C3D /* DataModelFarmerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B224B0119BF637004D6C3D /* DataModelFarmerInfo.m */; };
+		C3B224B6119BF81C004D6C3D /* DataModelFarmInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B224B5119BF81C004D6C3D /* DataModelFarmInfo.m */; };
 		C3B66DCF1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B66DCE1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m */; };
 		C3C525E5117C321800343D7F /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525E4117C321800343D7F /* Button.m */; };
 		C3C525EF117C32C400343D7F /* StorageManageToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525EE117C32C400343D7F /* StorageManageToolbar.m */; };
@@ -6823,6 +6825,10 @@
 		C3B2217111992B71004D6C3D /* LayEggController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayEggController.m; sourceTree = "<group>"; };
 		C3B2217511992BD6004D6C3D /* GetAllEggInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllEggInfoController.h; sourceTree = "<group>"; };
 		C3B2217611992BD6004D6C3D /* GetAllEggInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllEggInfoController.m; sourceTree = "<group>"; };
+		C3B224AF119BF637004D6C3D /* DataModelFarmerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelFarmerInfo.h; sourceTree = "<group>"; };
+		C3B224B0119BF637004D6C3D /* DataModelFarmerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelFarmerInfo.m; sourceTree = "<group>"; };
+		C3B224B4119BF81C004D6C3D /* DataModelFarmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelFarmInfo.h; sourceTree = "<group>"; };
+		C3B224B5119BF81C004D6C3D /* DataModelFarmInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelFarmInfo.m; sourceTree = "<group>"; };
 		C3B66DCD1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllBirdFarmAnimalInfoController.h; sourceTree = "<group>"; };
 		C3B66DCE1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllBirdFarmAnimalInfoController.m; sourceTree = "<group>"; };
 		C3B66DFF1197FA3900AFDE8D /* WorkFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkFlowController.h; sourceTree = "<group>"; };
@@ -12408,6 +12414,10 @@
 				C7A90E401185C231002F3799 /* DataModelCommon.m */,
 				C7A90E421185C321002F3799 /* DataModelAnimal.h */,
 				C7A90E431185C321002F3799 /* DataModelAnimal.m */,
+				C3B224AF119BF637004D6C3D /* DataModelFarmerInfo.h */,
+				C3B224B0119BF637004D6C3D /* DataModelFarmerInfo.m */,
+				C3B224B4119BF81C004D6C3D /* DataModelFarmInfo.h */,
+				C3B224B5119BF81C004D6C3D /* DataModelFarmInfo.m */,
 			);
 			name = DataStructure;
 			sourceTree = "<group>";
@@ -15816,6 +15826,8 @@
 				C3B2217211992B71004D6C3D /* LayEggController.m in Sources */,
 				C3B2217711992BD6004D6C3D /* GetAllEggInfoController.m in Sources */,
 				3EC7E343119A3B6400791BAD /* EggViewFactory.m in Sources */,
+				C3B224B1119BF637004D6C3D /* DataModelFarmerInfo.m in Sources */,
+				C3B224B6119BF81C004D6C3D /* DataModelFarmInfo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
