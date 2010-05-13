@@ -16,6 +16,7 @@
 
 +(UIController *) sharedUIController;
 
+-(NSString *) getOpeartion;
 -(void) switchOperation:(NSString *)op;
 
 @end
