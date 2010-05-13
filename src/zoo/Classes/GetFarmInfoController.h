@@ -1,9 +1,9 @@
 //
-//  GetFarmerInfoController.h
+//  GetFarmInfoController.h
 //  zoo
 //
-//  Created by Rainbow on 5/10/10.
-//  Copyright 2010 Apple Inc. All rights reserved.
+//  Created by Gu Lei on 10-5-13.
+//  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,7 +11,7 @@
 #import "ServiceHelper.h"
 
 
-@interface GetFarmerInfoController : ServerController
+@interface GetFarmInfoController : ServerController
 {
 	
 }

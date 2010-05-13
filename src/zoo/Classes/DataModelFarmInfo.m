@@ -11,4 +11,17 @@
 
 @implementation DataModelFarmInfo
 
+@synthesize farmId,
+farmerId,
+farm_level,
+farm_experience,
+farm_expGainPerDay,
+farm_expGainTime,
+farm_maxNumOfBirds,
+farm_foodEndTime,
+farm_remain,
+farm_nextLevelExp,
+farm_currentExp,
+farm_topMaxNumOfBirds;
+
 @end

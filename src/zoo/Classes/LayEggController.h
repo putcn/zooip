@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "ServerController.h"
+#import "ServiceHelper.h"
 @class AllLayEggController;
+
 
 @interface LayEggController : ServerController
 {
