@@ -47,6 +47,11 @@ static NSString *OPERATION_CALL = @"operation_call";//召唤
 	//id notificationSender = [notification object];
 }
 
+-(NSString *) getOpeartion
+{
+	return operation;
+}
+
 -(void) switchOperation:(NSString *)op
 {
 	operation = op;
