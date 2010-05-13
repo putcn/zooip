@@ -15,13 +15,14 @@
 -(id) init
 {
 	if ((self = [super init])) {
-		[GameMainScene addSpriteToStage:self z:4];
+		[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:4];
 	}
+	return self;
 }
 
 -(void) dealloc
 {
-	[GameMainScene removeSpriteFromStage:self];
+	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:self];
 	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }

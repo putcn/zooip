@@ -8,7 +8,8 @@
 
 #import "cocos2d.h"
 #import "AnimalToolTip.h"
-
+#import "OperationViewController.h"
+#import "UIController.h"
 
 @interface AnimalView : CCSprite <CCTargetedTouchDelegate>
 {	
@@ -17,11 +18,16 @@
 	NSDictionary *statuses;
 	CCSprite *toolTip;
 	NSString *animalId;
+	OperationViewController *operationViewController;
+	UIController *uiController;
 }
 
 @property (nonatomic, retain) NSString *animalId;
 
 -(void) update:(int)currDirectionValue status:(int)currStatusValue;
+-(CGPoint)countCoordinate: (CGPoint)clickPoint;
+-(void) optAnimationPlay;
+-(void) callServerController;
 @end
 
 
