@@ -8,6 +8,7 @@
 
 #import "InitWorkFlowController.h"
 #import "BaseServerController.h"
+#import "AnimalController.h"
 
 static NSString *STEP_GET_FARMER_INFO = @"0";
 static NSString *STEP_GET_FARM_INFO = @"1";
