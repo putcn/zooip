@@ -81,7 +81,8 @@ static NSString *STEP_GET_ALL_EGG_INFO = @"4";
 
 -(void) endStep
 {
-	
+	//NSMutableArray *allAnimalIds = [DataEnvironment sharedDataEnvironment].animalIDs;
+	//[[AnimalController sharedAnimalController] addAnimal:allAnimalIds];
 }
 
 @end
