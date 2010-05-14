@@ -104,7 +104,6 @@
 		3ECDFAAA119AE7F0008FBE22 /* SpecialFoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDFAA9119AE7F0008FBE22 /* SpecialFoodView.m */; };
 		3ECDFAAD119AE7F9008FBE22 /* SummonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDFAAC119AE7F9008FBE22 /* SummonView.m */; };
 		3EE2B4421197BD2600E278E5 /* Dejecta.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2B4411197BD2600E278E5 /* Dejecta.m */; };
-		3EE2B4591197F6A400E278E5 /* GetFarmerInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2B4581197F6A400E278E5 /* GetFarmerInfoController.m */; };
 		3EED45EC11965AC80093FF6E /* EggView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EED45EB11965AC80093FF6E /* EggView.m */; };
 		3EED460E1196624B0093FF6E /* CraneEggView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EED460D1196624B0093FF6E /* CraneEggView.m */; };
 		3EED461F1196669C0093FF6E /* craneEgg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EED46101196669C0093FF6E /* craneEgg.png */; };
@@ -3414,6 +3413,16 @@
 		C3013ED1118A7656000C80B3 /* TurkeycockView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3013EB2118A7656000C80B3 /* TurkeycockView.m */; };
 		C3013ED2118A7656000C80B3 /* TurkeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3013EB4118A7656000C80B3 /* TurkeyView.m */; };
 		C3013ED3118A7656000C80B3 /* WildgooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3013EB6118A7656000C80B3 /* WildgooseView.m */; };
+		C330DD74119D134E0062753F /* BaseWorkFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C330DD73119D134E0062753F /* BaseWorkFlowController.m */; };
+		C330DDBC119D16320062753F /* InitWorkFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C330DDBB119D16320062753F /* InitWorkFlowController.m */; };
+		C330DE2B119D1E9E0062753F /* DataModelFarmerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C330DE28119D1E9E0062753F /* DataModelFarmerInfo.m */; };
+		C330DE2C119D1E9E0062753F /* DataModelFarmInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C330DE2A119D1E9E0062753F /* DataModelFarmInfo.m */; };
+		C3311136119D209800F2EE18 /* BaseServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3311130119D209800F2EE18 /* BaseServerController.m */; };
+		C3311137119D209800F2EE18 /* GetFarmerInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3311133119D209800F2EE18 /* GetFarmerInfoController.m */; };
+		C3311138119D209800F2EE18 /* GetFarmInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3311135119D209800F2EE18 /* GetFarmInfoController.m */; };
+		C331113A119D20AF00F2EE18 /* GetAllBirdFarmAnimalInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3311139119D20AF00F2EE18 /* GetAllBirdFarmAnimalInfoController.m */; };
+		C331113F119D20EB00F2EE18 /* LayEggController.m in Sources */ = {isa = PBXBuildFile; fileRef = C331113E119D20EB00F2EE18 /* LayEggController.m */; };
+		C3311142119D211900F2EE18 /* AllLayEggController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3311141119D211900F2EE18 /* AllLayEggController.m */; };
 		C3A9E83C1181421400CEBDFC /* UIController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E83B1181421400CEBDFC /* UIController.m */; };
 		C3A9E8D41186C78300CEBDFC /* FriendList.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BC1186C78300CEBDFC /* FriendList.png */; };
 		C3A9E8D51186C78300CEBDFC /* PlayerInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BD1186C78300CEBDFC /* PlayerInfo.png */; };
@@ -3440,12 +3449,6 @@
 		C3A9E8EA1186C78300CEBDFC /* 饲料.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D21186C78300CEBDFC /* 饲料.png */; };
 		C3A9E8EB1186C78300CEBDFC /* 鸟窝.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D31186C78300CEBDFC /* 鸟窝.png */; };
 		C3A9E9421186F4F100CEBDFC /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E9411186F4F100CEBDFC /* GameController.m */; };
-		C3B2215A1198FF6C004D6C3D /* ServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B221591198FF6C004D6C3D /* ServerController.m */; };
-		C3B2216D11992B00004D6C3D /* AllLayEggController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B2216C11992B00004D6C3D /* AllLayEggController.m */; };
-		C3B2217211992B71004D6C3D /* LayEggController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B2217111992B71004D6C3D /* LayEggController.m */; };
-		C3B2217711992BD6004D6C3D /* GetAllEggInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B2217611992BD6004D6C3D /* GetAllEggInfoController.m */; };
-		C3B224D9119C0377004D6C3D /* GetFarmInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B224D8119C0377004D6C3D /* GetFarmInfoController.m */; };
-		C3B66DCF1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B66DCE1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m */; };
 		C3C525E5117C321800343D7F /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525E4117C321800343D7F /* Button.m */; };
 		C3C525EF117C32C400343D7F /* StorageManageToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525EE117C32C400343D7F /* StorageManageToolbar.m */; };
 		C3C525F2117C333000343D7F /* PlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525F1117C333000343D7F /* PlayerInfo.m */; };
@@ -3612,8 +3615,6 @@
 		3ECDFAAE119AE8E7008FBE22 /* OperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationView.h; sourceTree = "<group>"; };
 		3EE2B4401197BD2600E278E5 /* Dejecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dejecta.h; sourceTree = "<group>"; };
 		3EE2B4411197BD2600E278E5 /* Dejecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dejecta.m; sourceTree = "<group>"; };
-		3EE2B4571197F6A400E278E5 /* GetFarmerInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetFarmerInfoController.h; sourceTree = "<group>"; };
-		3EE2B4581197F6A400E278E5 /* GetFarmerInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFarmerInfoController.m; sourceTree = "<group>"; };
 		3EED45EA11965AC80093FF6E /* EggView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggView.h; sourceTree = "<group>"; };
 		3EED45EB11965AC80093FF6E /* EggView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggView.m; sourceTree = "<group>"; };
 		3EED460C1196624B0093FF6E /* CraneEggView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CraneEggView.h; sourceTree = "<group>"; };
@@ -6971,6 +6972,26 @@
 		C3013EB4118A7656000C80B3 /* TurkeyView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TurkeyView.m; sourceTree = "<group>"; };
 		C3013EB5118A7656000C80B3 /* WildgooseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WildgooseView.h; sourceTree = "<group>"; };
 		C3013EB6118A7656000C80B3 /* WildgooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WildgooseView.m; sourceTree = "<group>"; };
+		C330DD72119D134E0062753F /* BaseWorkFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWorkFlowController.h; sourceTree = "<group>"; };
+		C330DD73119D134E0062753F /* BaseWorkFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWorkFlowController.m; sourceTree = "<group>"; };
+		C330DDBA119D16320062753F /* InitWorkFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitWorkFlowController.h; sourceTree = "<group>"; };
+		C330DDBB119D16320062753F /* InitWorkFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitWorkFlowController.m; sourceTree = "<group>"; };
+		C330DE27119D1E9E0062753F /* DataModelFarmerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelFarmerInfo.h; sourceTree = "<group>"; };
+		C330DE28119D1E9E0062753F /* DataModelFarmerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelFarmerInfo.m; sourceTree = "<group>"; };
+		C330DE29119D1E9E0062753F /* DataModelFarmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelFarmInfo.h; sourceTree = "<group>"; };
+		C330DE2A119D1E9E0062753F /* DataModelFarmInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelFarmInfo.m; sourceTree = "<group>"; };
+		C331112F119D209800F2EE18 /* BaseServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseServerController.h; sourceTree = "<group>"; };
+		C3311130119D209800F2EE18 /* BaseServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseServerController.m; sourceTree = "<group>"; };
+		C3311131119D209800F2EE18 /* GetAllBirdFarmAnimalInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllBirdFarmAnimalInfoController.h; sourceTree = "<group>"; };
+		C3311132119D209800F2EE18 /* GetFarmerInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetFarmerInfoController.h; sourceTree = "<group>"; };
+		C3311133119D209800F2EE18 /* GetFarmerInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFarmerInfoController.m; sourceTree = "<group>"; };
+		C3311134119D209800F2EE18 /* GetFarmInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetFarmInfoController.h; sourceTree = "<group>"; };
+		C3311135119D209800F2EE18 /* GetFarmInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFarmInfoController.m; sourceTree = "<group>"; };
+		C3311139119D20AF00F2EE18 /* GetAllBirdFarmAnimalInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllBirdFarmAnimalInfoController.m; sourceTree = "<group>"; };
+		C331113D119D20EB00F2EE18 /* LayEggController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayEggController.h; sourceTree = "<group>"; };
+		C331113E119D20EB00F2EE18 /* LayEggController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayEggController.m; sourceTree = "<group>"; };
+		C3311140119D211900F2EE18 /* AllLayEggController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLayEggController.h; sourceTree = "<group>"; };
+		C3311141119D211900F2EE18 /* AllLayEggController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLayEggController.m; sourceTree = "<group>"; };
 		C3A9E83A1181421400CEBDFC /* UIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIController.h; sourceTree = "<group>"; };
 		C3A9E83B1181421400CEBDFC /* UIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIController.m; sourceTree = "<group>"; };
 		C3A9E8BC1186C78300CEBDFC /* FriendList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FriendList.png; sourceTree = "<group>"; };
@@ -6999,26 +7020,6 @@
 		C3A9E8D31186C78300CEBDFC /* 鸟窝.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鸟窝.png"; sourceTree = "<group>"; };
 		C3A9E9401186F4F100CEBDFC /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		C3A9E9411186F4F100CEBDFC /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
-		C3B221101198F70F004D6C3D /* InitFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitFlowController.h; sourceTree = "<group>"; };
-		C3B221111198F70F004D6C3D /* InitFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitFlowController.m; sourceTree = "<group>"; };
-		C3B221581198FF6C004D6C3D /* ServerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServerController.h; sourceTree = "<group>"; };
-		C3B221591198FF6C004D6C3D /* ServerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServerController.m; sourceTree = "<group>"; };
-		C3B2216B11992B00004D6C3D /* AllLayEggController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLayEggController.h; sourceTree = "<group>"; };
-		C3B2216C11992B00004D6C3D /* AllLayEggController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLayEggController.m; sourceTree = "<group>"; };
-		C3B2217011992B71004D6C3D /* LayEggController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LayEggController.h; sourceTree = "<group>"; };
-		C3B2217111992B71004D6C3D /* LayEggController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayEggController.m; sourceTree = "<group>"; };
-		C3B2217511992BD6004D6C3D /* GetAllEggInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllEggInfoController.h; sourceTree = "<group>"; };
-		C3B2217611992BD6004D6C3D /* GetAllEggInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllEggInfoController.m; sourceTree = "<group>"; };
-		C3B224AF119BF637004D6C3D /* DataModelFarmerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelFarmerInfo.h; sourceTree = "<group>"; };
-		C3B224B0119BF637004D6C3D /* DataModelFarmerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelFarmerInfo.m; sourceTree = "<group>"; };
-		C3B224B4119BF81C004D6C3D /* DataModelFarmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelFarmInfo.h; sourceTree = "<group>"; };
-		C3B224B5119BF81C004D6C3D /* DataModelFarmInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelFarmInfo.m; sourceTree = "<group>"; };
-		C3B224D7119C0377004D6C3D /* GetFarmInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetFarmInfoController.h; sourceTree = "<group>"; };
-		C3B224D8119C0377004D6C3D /* GetFarmInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFarmInfoController.m; sourceTree = "<group>"; };
-		C3B66DCD1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllBirdFarmAnimalInfoController.h; sourceTree = "<group>"; };
-		C3B66DCE1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllBirdFarmAnimalInfoController.m; sourceTree = "<group>"; };
-		C3B66DFF1197FA3900AFDE8D /* WorkFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WorkFlowController.h; sourceTree = "<group>"; };
-		C3B66E001197FA3900AFDE8D /* WorkFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WorkFlowController.m; sourceTree = "<group>"; };
 		C3C525E3117C321800343D7F /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		C3C525E4117C321800343D7F /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		C3C525ED117C32C400343D7F /* StorageManageToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageManageToolbar.h; sourceTree = "<group>"; };
@@ -12655,6 +12656,25 @@
 			path = L;
 			sourceTree = "<group>";
 		};
+		C331112E119D1F7300F2EE18 /* ServerController */ = {
+			isa = PBXGroup;
+			children = (
+				C331112F119D209800F2EE18 /* BaseServerController.h */,
+				C3311130119D209800F2EE18 /* BaseServerController.m */,
+				C3311132119D209800F2EE18 /* GetFarmerInfoController.h */,
+				C3311133119D209800F2EE18 /* GetFarmerInfoController.m */,
+				C3311134119D209800F2EE18 /* GetFarmInfoController.h */,
+				C3311135119D209800F2EE18 /* GetFarmInfoController.m */,
+				C3311131119D209800F2EE18 /* GetAllBirdFarmAnimalInfoController.h */,
+				C3311139119D20AF00F2EE18 /* GetAllBirdFarmAnimalInfoController.m */,
+				C3311140119D211900F2EE18 /* AllLayEggController.h */,
+				C3311141119D211900F2EE18 /* AllLayEggController.m */,
+				C331113D119D20EB00F2EE18 /* LayEggController.h */,
+				C331113E119D20EB00F2EE18 /* LayEggController.m */,
+			);
+			name = ServerController;
+			sourceTree = "<group>";
+		};
 		C3A9E8BB1186C78300CEBDFC /* icons */ = {
 			isa = PBXGroup;
 			children = (
@@ -12686,34 +12706,13 @@
 			path = icons;
 			sourceTree = "<group>";
 		};
-		C3B66DC31197E92F00AFDE8D /* ServerController */ = {
-			isa = PBXGroup;
-			children = (
-				C3B221581198FF6C004D6C3D /* ServerController.h */,
-				C3B221591198FF6C004D6C3D /* ServerController.m */,
-				C3B66DCD1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.h */,
-				C3B66DCE1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m */,
-				3EE2B4571197F6A400E278E5 /* GetFarmerInfoController.h */,
-				3EE2B4581197F6A400E278E5 /* GetFarmerInfoController.m */,
-				C3B2216B11992B00004D6C3D /* AllLayEggController.h */,
-				C3B2216C11992B00004D6C3D /* AllLayEggController.m */,
-				C3B2217011992B71004D6C3D /* LayEggController.h */,
-				C3B2217111992B71004D6C3D /* LayEggController.m */,
-				C3B2217511992BD6004D6C3D /* GetAllEggInfoController.h */,
-				C3B2217611992BD6004D6C3D /* GetAllEggInfoController.m */,
-				C3B224D7119C0377004D6C3D /* GetFarmInfoController.h */,
-				C3B224D8119C0377004D6C3D /* GetFarmInfoController.m */,
-			);
-			name = ServerController;
-			sourceTree = "<group>";
-		};
 		C3B66DFE1197FA0F00AFDE8D /* WorkFlowController */ = {
 			isa = PBXGroup;
 			children = (
-				C3B66DFF1197FA3900AFDE8D /* WorkFlowController.h */,
-				C3B66E001197FA3900AFDE8D /* WorkFlowController.m */,
-				C3B221101198F70F004D6C3D /* InitFlowController.h */,
-				C3B221111198F70F004D6C3D /* InitFlowController.m */,
+				C330DD72119D134E0062753F /* BaseWorkFlowController.h */,
+				C330DD73119D134E0062753F /* BaseWorkFlowController.m */,
+				C330DDBA119D16320062753F /* InitWorkFlowController.h */,
+				C330DDBB119D16320062753F /* InitWorkFlowController.m */,
 			);
 			name = WorkFlowController;
 			sourceTree = "<group>";
@@ -12721,14 +12720,14 @@
 		C3C528CA117EA2BD00343D7F /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				C330DE27119D1E9E0062753F /* DataModelFarmerInfo.h */,
+				C330DE28119D1E9E0062753F /* DataModelFarmerInfo.m */,
+				C330DE29119D1E9E0062753F /* DataModelFarmInfo.h */,
+				C330DE2A119D1E9E0062753F /* DataModelFarmInfo.m */,
 				C7A90E3F1185C231002F3799 /* DataModelCommon.h */,
 				C7A90E401185C231002F3799 /* DataModelCommon.m */,
 				C7A90E421185C321002F3799 /* DataModelAnimal.h */,
 				C7A90E431185C321002F3799 /* DataModelAnimal.m */,
-				C3B224AF119BF637004D6C3D /* DataModelFarmerInfo.h */,
-				C3B224B0119BF637004D6C3D /* DataModelFarmerInfo.m */,
-				C3B224B4119BF81C004D6C3D /* DataModelFarmInfo.h */,
-				C3B224B5119BF81C004D6C3D /* DataModelFarmInfo.m */,
 			);
 			name = DataStructure;
 			sourceTree = "<group>";
@@ -12736,8 +12735,8 @@
 		C3C528CB117EA2D000343D7F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C331112E119D1F7300F2EE18 /* ServerController */,
 				C3B66DFE1197FA0F00AFDE8D /* WorkFlowController */,
-				C3B66DC31197E92F00AFDE8D /* ServerController */,
 				C3C528CC117EA30100343D7F /* AnimalController.h */,
 				C3C528CD117EA30100343D7F /* AnimalController.m */,
 				C3C528D4117EA5F200343D7F /* AnimalViewFactory.h */,
@@ -16200,12 +16199,6 @@
 				3EED46C0119673C30093FF6E /* DogView.m in Sources */,
 				3EED46C3119674340093FF6E /* BowlsView.m in Sources */,
 				3EE2B4421197BD2600E278E5 /* Dejecta.m in Sources */,
-				C3B66DCF1197EFFE00AFDE8D /* GetAllBirdFarmAnimalInfoController.m in Sources */,
-				3EE2B4591197F6A400E278E5 /* GetFarmerInfoController.m in Sources */,
-				C3B2215A1198FF6C004D6C3D /* ServerController.m in Sources */,
-				C3B2216D11992B00004D6C3D /* AllLayEggController.m in Sources */,
-				C3B2217211992B71004D6C3D /* LayEggController.m in Sources */,
-				C3B2217711992BD6004D6C3D /* GetAllEggInfoController.m in Sources */,
 				3EC7E343119A3B6400791BAD /* EggViewFactory.m in Sources */,
 				3EC7E369119A767600791BAD /* ItemsViewFactory.m in Sources */,
 				3EC7E48A119AA32D00791BAD /* CleaningView.m in Sources */,
@@ -16223,7 +16216,16 @@
 				3ECDFAA7119AE7E5008FBE22 /* PutSnakeView.m in Sources */,
 				3ECDFAAA119AE7F0008FBE22 /* SpecialFoodView.m in Sources */,
 				3ECDFAAD119AE7F9008FBE22 /* SummonView.m in Sources */,
-				C3B224D9119C0377004D6C3D /* GetFarmInfoController.m in Sources */,
+				C330DD74119D134E0062753F /* BaseWorkFlowController.m in Sources */,
+				C330DDBC119D16320062753F /* InitWorkFlowController.m in Sources */,
+				C330DE2B119D1E9E0062753F /* DataModelFarmerInfo.m in Sources */,
+				C330DE2C119D1E9E0062753F /* DataModelFarmInfo.m in Sources */,
+				C3311136119D209800F2EE18 /* BaseServerController.m in Sources */,
+				C3311137119D209800F2EE18 /* GetFarmerInfoController.m in Sources */,
+				C3311138119D209800F2EE18 /* GetFarmInfoController.m in Sources */,
+				C331113A119D20AF00F2EE18 /* GetAllBirdFarmAnimalInfoController.m in Sources */,
+				C331113F119D20EB00F2EE18 /* LayEggController.m in Sources */,
+				C3311142119D211900F2EE18 /* AllLayEggController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

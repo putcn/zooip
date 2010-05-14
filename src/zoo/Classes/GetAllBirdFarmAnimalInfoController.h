@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ServerController.h"
+#import "BaseServerController.h"
 #import "ServiceHelper.h"
 #import "DataModelAnimal.h"
 
 
-@interface GetAllBirdFarmAnimalInfoController : ServerController
+@interface GetAllBirdFarmAnimalInfoController : BaseServerController
 {
 	
 }

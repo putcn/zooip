@@ -7,12 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ServerController.h"
+#import "BaseServerController.h"
 #import "ServiceHelper.h"
 @class AllLayEggController;
 
 
-@interface LayEggController : ServerController
+@interface LayEggController : BaseServerController
 {
 	AllLayEggController *allLayEggController;
 }
