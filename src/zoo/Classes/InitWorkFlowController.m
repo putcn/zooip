@@ -21,6 +21,10 @@ static NSString *STEP_GET_ALL_EGG_INFO = @"4";
 {
 	GetFarmerInfoController *getFarmerInfoController = [[GetFarmerInfoController alloc] initWithWorkFlowController:self];
 	[self addController:getFarmerInfoController andStep:STEP_GET_FARMER_INFO];
+	GetFarmInfoController *getFarmInfoController = [[GetFarmInfoController alloc] initWithWorkFlowController:self];
+	[self addController:getFarmInfoController andStep:STEP_GET_FARM_INFO];
+	GetAllBirdFarmAnimalInfoController *getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:self];
+	[self addController:getAllBirdFarmAnimalInfoController andStep:STEP_GET_ALL_ANIMAL_INFO];
 }
 
 -(void) startStep
@@ -36,16 +40,31 @@ static NSString *STEP_GET_ALL_EGG_INFO = @"4";
 	if (curStep == STEP_GET_FARMER_INFO)
 	{
 		curStep = STEP_GET_FARM_INFO;
+		
+		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+							   [[NSNumber alloc] initWithBool:YES],@"bodyguard",nil];
+		[tempController execute:params];
+		
 		return;
 	}
 	else if (curStep == STEP_GET_FARM_INFO)
 	{
 		curStep = STEP_GET_ALL_ANIMAL_INFO;
+		
+		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+		[tempController execute:params];
+		
+		[self endStep];
+		
 		return;
 	}
 	else if (curStep == STEP_GET_ALL_ANIMAL_INFO)
 	{
 		curStep = STEP_LAY_EGG;
+		
 		return;
 	}
 	else if (curStep == STEP_LAY_EGG)
