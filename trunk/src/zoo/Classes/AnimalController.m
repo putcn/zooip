@@ -82,9 +82,8 @@ static AnimalController *_sharedAnimalController = nil;
 //		if (isNew == YES)
 //		{
 			//TODO: Add Animal
-		serverAnimalData = [[DataEnvironment sharedDataEnvironment].animals objectForKey:serverAnimalID];
-		Animal *newAnimal = [[Animal alloc] initWithAnimalData:serverAnimalData];
-		[animals addObject:newAnimal];
+			Animal *newAnimal = [[Animal alloc] initWithAnimalData:serverAnimalData];
+			[animals addObject:newAnimal];
 //		}
 	}
 	
