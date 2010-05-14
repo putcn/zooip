@@ -161,6 +161,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 		}
 	}
 	[request startAsynchronous];
+	NSLog(@"%@",parameters);
 	return request;
 }
 
