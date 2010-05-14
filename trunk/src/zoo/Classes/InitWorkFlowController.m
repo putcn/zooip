@@ -58,12 +58,12 @@ static NSString *STEP_GET_ALL_EGG_INFO = @"4";
 								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
 		[tempController execute:params];
 		
-		[self endStep];
-		
 		return;
 	}
 	else if (curStep == STEP_GET_ALL_ANIMAL_INFO)
 	{
+		[self endStep];
+		
 		curStep = STEP_LAY_EGG;
 		
 		return;
@@ -82,7 +82,7 @@ static NSString *STEP_GET_ALL_EGG_INFO = @"4";
 
 -(void) endStep
 {
-	
+	[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
 }
 
 @end

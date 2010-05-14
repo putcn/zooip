@@ -12,7 +12,7 @@
 @implementation AnimalViewFactory
 
 
-+(AnimalView *) createAnimalView:(int) type birdStage:(int) stage
++(AnimalView *) createAnimalView:(NSInteger) type birdStage:(NSInteger) stage
 {
 	switch (type) {
 		//母鸭

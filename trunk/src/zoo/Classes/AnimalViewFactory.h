@@ -41,6 +41,6 @@
 	
 }
 
-+(AnimalView *) createAnimalView:(int) type birdStage:(int) stage;
++(AnimalView *) createAnimalView:(NSInteger) type birdStage:(NSInteger) stage;
 
 @end

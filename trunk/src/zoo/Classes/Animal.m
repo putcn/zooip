@@ -35,20 +35,24 @@
 {
 	if ( (self = [super init]))
 	{
-		self.animalData = data;
+		animalData = data;
+		
+		NSInteger type = data.originalAnimalId;
+		NSInteger stage = data.birdStage;
+		view = [AnimalViewFactory createAnimalView:type birdStage:stage];
 		
 		//TODO: Need to set the animal data...
-		speed = data.speed;
-		view.position = ccp(300, 300);
-		targetPosition = ccp(view.position.x, view.position.y);
+		speed = data.speed / 60;
 		currSpeed = ccp(0 ,0);
-		currStatus = 6;
+		currStatus = 5;
 		limitRect = CGRectMake(100, 100, 500, 500);
-		
-		view = [AnimalViewFactory createAnimalView:data.originalAnimalId birdStage:data.birdStage];
+		view.position = ccp(200, 200);
+		targetPosition = ccp(view.position.x, view.position.y);
 		view.animalId = data.animalId;
 		
 		[[CCScheduler sharedScheduler] scheduleTimer: [CCTimer timerWithTarget:self selector:@selector(tick:)]];
+		
+		[[GameMainScene sharedGameMainScene] addSpriteToStage:view z:5];
 	}
 	return self;
 }

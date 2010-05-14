@@ -65,8 +65,6 @@ static AnimalController *_sharedAnimalController = nil;
 //	Boolean isNew = YES;
 	for (NSString *serverAnimalID in animalIDs)
 	{
-		//serverAnimalData = [DataEnvironment sharedDataEnvironment]
-		
 		//isNew = YES;
 //		for (Animal *localAnimal in animals)
 //		{
@@ -82,8 +80,9 @@ static AnimalController *_sharedAnimalController = nil;
 //		if (isNew == YES)
 //		{
 			//TODO: Add Animal
-			Animal *newAnimal = [[Animal alloc] initWithAnimalData:serverAnimalData];
-			[animals addObject:newAnimal];
+		serverAnimalData = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:serverAnimalID];
+		Animal *newAnimal = [[Animal alloc] initWithAnimalData:serverAnimalData];
+		[animals addObject:newAnimal];
 //		}
 	}
 	

@@ -87,10 +87,10 @@ static GameMainScene *_sharedGameMainScene = nil;
 		DragControlLayer *drager = [[DragControlLayer alloc] initWithTarget:scaleContainer];
 		[self addChild:drager];
 		
-		PigeonView *pigeonView = [[PigeonView alloc] init];
-		pigeonView.position = ccp(200,200);
-		[[Animal alloc] initWithView:pigeonView setSpeed:0.5f setLimitRect:CGRectMake(100, 100, 500, 500)];
-		[baseContainer addChild:pigeonView z:4];
+//		PigeonView *pigeonView = [[PigeonView alloc] init];
+//		pigeonView.position = ccp(200,200);
+//		[[Animal alloc] initWithView:pigeonView setSpeed:0.5f setLimitRect:CGRectMake(100, 100, 500, 500)];
+//		[baseContainer addChild:pigeonView z:4];
 		
 		InitWorkFlowController *initFlowController = [[InitWorkFlowController alloc] init];
 		[initFlowController setupStep];
