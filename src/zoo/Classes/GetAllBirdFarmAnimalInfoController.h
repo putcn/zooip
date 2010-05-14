@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "ServerController.h"
 #import "ServiceHelper.h"
+#import "DataModelAnimal.h"
 
 
 @interface GetAllBirdFarmAnimalInfoController : ServerController
