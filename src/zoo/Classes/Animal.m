@@ -42,7 +42,7 @@
 		view = [AnimalViewFactory createAnimalView:type birdStage:stage];
 		
 		//TODO: Need to set the animal data...
-		speed = data.speed / 60;
+		speed = data.speed / 60.0f;
 		currSpeed = ccp(0 ,0);
 		currStatus = 5;
 		limitRect = CGRectMake(100, 100, 500, 500);
