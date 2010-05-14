@@ -12735,8 +12735,8 @@
 		C3C528CB117EA2D000343D7F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C331112E119D1F7300F2EE18 /* ServerController */,
 				C3B66DFE1197FA0F00AFDE8D /* WorkFlowController */,
+				C331112E119D1F7300F2EE18 /* ServerController */,
 				C3C528CC117EA30100343D7F /* AnimalController.h */,
 				C3C528CD117EA30100343D7F /* AnimalController.m */,
 				C3C528D4117EA5F200343D7F /* AnimalViewFactory.h */,
