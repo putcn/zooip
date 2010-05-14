@@ -40,8 +40,15 @@ static DataEnvironment *sharedInst = nil;
 	} else if ( (self = [super init]) ) {
 		sharedInst = self;
 		[self restore];
+		
+		playerFarmerInfo = [[DataModelFarmerInfo alloc] init];
+		friendFarmerInfo = [[DataModelFarmerInfo alloc] init];
+		playerFarmInfo = [[DataModelFarmInfo alloc] init];
+		friendFarmInfo = [[DataModelFarmInfo alloc] init];
+		
 		animals = [[NSMutableDictionary alloc] init];
 		animalIDs = [[NSMutableArray alloc] init];
+		
 		self.playerFarmerInfo.platformId = 11;
 	}
 	return sharedInst;

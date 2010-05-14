@@ -92,6 +92,10 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[[Animal alloc] initWithView:pigeonView setSpeed:0.5f setLimitRect:CGRectMake(100, 100, 500, 500)];
 		[baseContainer addChild:pigeonView z:4];
 		
+		InitWorkFlowController *initFlowController = [[InitWorkFlowController alloc] init];
+		[initFlowController setupStep];
+		[initFlowController startStep];
+		
 //		NSDictionary *paras = [NSDictionary dictionaryWithObjectsAndKeys:@"12",@"farmerId",nil];
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:paras AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:paras AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
@@ -101,9 +105,9 @@ static GameMainScene *_sharedGameMainScene = nil;
 	return nil;
 }
 
--(void)requestDoneWith:(NSDictionary *)dic{
-	NSLog(@"%@",dic);
-}
+//-(void)requestDoneWith:(NSDictionary *)dic{
+//	NSLog(@"%@",dic);
+//}
 
 -(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex
 {

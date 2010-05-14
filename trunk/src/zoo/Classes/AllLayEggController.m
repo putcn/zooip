@@ -16,7 +16,7 @@
 	//[[ServiceHelper sharedService] getAllBirdAnimalInfo:self andValue:value AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback"];
 	
 	totalEggCount = 0;
-	preEggCount = 0;
+	curEggCount = 0;
 	
 	//for (int i = 0; i < animals; i++)
 //	{
@@ -37,9 +37,9 @@
 
 -(void) finishEgg
 {
-	preEggCount++;
+	curEggCount++;
 	
-	if (preEggCount >= totalEggCount)
+	if (curEggCount >= totalEggCount)
 	{
 		[self resultCallback:nil];
 	}

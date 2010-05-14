@@ -7,11 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ServerController.h"
+#import "BaseServerController.h"
 #import "ServiceHelper.h"
 
 
-@interface GetFarmInfoController : ServerController
+@interface GetFarmInfoController : BaseServerController
 {
 	
 }

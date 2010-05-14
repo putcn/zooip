@@ -7,14 +7,14 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ServerController.h"
+#import "BaseServerController.h"
 #import "ServiceHelper.h"
 
 
-@interface AllLayEggController : ServerController
+@interface AllLayEggController : BaseServerController
 {
 	int totalEggCount;
-	int preEggCount;
+	int curEggCount;
 }
 
 -(void) finishEgg;
