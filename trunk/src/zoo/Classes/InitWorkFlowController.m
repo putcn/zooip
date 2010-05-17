@@ -9,6 +9,7 @@
 #import "InitWorkFlowController.h"
 #import "BaseServerController.h"
 #import "AnimalController.h"
+#import "ItemController.h"
 
 static NSString *STEP_GET_FARMER_INFO = @"0";
 static NSString *STEP_GET_FARM_INFO = @"1";
@@ -82,6 +83,7 @@ static NSString *STEP_GET_ALL_EGG_INFO = @"4";
 
 -(void) endStep
 {
+	[[ItemController sharedItemController] addItem:@"bowls"];
 	[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
 }
 

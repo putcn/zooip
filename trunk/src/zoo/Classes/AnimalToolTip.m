@@ -7,25 +7,25 @@
 //
 
 #import "AnimalToolTip.h"
-
-
+#import "DataModelAnimal.h"
 
 @implementation AnimalToolTip
 
-@synthesize data;
-
--(id) initWithName: (NSString *)name setTotalTime:(float)inTotalTime setLeaveTime:(float)inLeaveTime;
+-(id) initWithAnimalId: (NSString *)aniId
 {
 	if ((self = [super init])) {
-		totalTime = inTotalTime;
-		remainTime = inLeaveTime;
+		totalTime = 100;
+		remainTime = 20;
 		CCTexture2D *InfoBg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"AnimalInfo.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = InfoBg.contentSize;
 		[self setTexture: InfoBg];
 		[self setTextureRect: rect];
 		[InfoBg release];
-		nameLbl = [CCLabel labelWithString:name fontName:@"Arial" fontSize:15];
+		DataModelAnimal *animal = [[[DataEnvironment sharedDataEnvironment] animals] objectForKey:aniId];
+		NSString *animalName = animal.scientificNameCN;
+		[animal release];
+		nameLbl = [CCLabel labelWithString:animalName fontName:@"Arial" fontSize:15];
 		[nameLbl setColor:ccc3(0, 0, 0)];
 		NSString *currentDate = [NSString stringWithFormat:@"%@",[NSDate date]];
 		timeLbl = [CCLabel labelWithString:currentDate fontName:@"Arial" fontSize:15];
@@ -53,7 +53,7 @@
 -(void) tick: (ccTime)dt
 {
 	[timeLbl setString:[NSString stringWithFormat:@"%@", [NSDate date]]];
-	remainTime = remainTime - 1;
+	//remainTime = remainTime - 1;
 	processorBar.scaleX = remainTime/totalTime;
 	processorBar.position = ccp(processorBar.contentSize.width/2 * remainTime/totalTime, self.contentSize.height - nameLbl.contentSize.height-timeLbl.contentSize.height);
 

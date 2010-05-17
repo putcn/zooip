@@ -1,21 +1,26 @@
 //
-//  EggView.m
+//  DejectaView.m
 //  zoo
 //
-//  Created by Rainbow on 5/9/10.
+//  Created by Rainbow on 5/10/10.
 //  Copyright 2010 Apple Inc. All rights reserved.
 //
 
-#import "EggView.h"
-#import "GameMainScene.h"
+#import "DejectaView.h"
 
 
-@implementation EggView
-@synthesize eggId;
--(id) init
+@implementation DejectaView
+@synthesize dejectaId;
+-(id) initWithPosition: (CGPoint)pos
 {
 	if ((self = [super init])) {
-		[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:4];
+		CCAnimation *animation = [CCAnimation animationWithName:@"animal" delay:0.4];
+		for (int i = 1; i<=4; i++) {
+			[animation addFrameWithFilename:[NSString stringWithFormat:@"dejecta_%02d",i]];
+		}
+		CCRepeatForever *repeatAction = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]];
+		self.position = pos;
+		[self runAction:repeatAction];
 	}
 	return self;
 }
@@ -62,14 +67,14 @@
 
 -(void)optAnimationPlay
 {
-	int type = OPERATION_PICK_EGG;
-	if (type == OPERATION_DEFAULT) {
+	int type = OPERATION_CLEAR_DEJECTA;
+	if (type ==OPERATION_DEFAULT) {
 		[self schedule:@selector(tick:) interval:4.0];
 	}
 	else 
-		if(type == OPERATION_PICK_EGG){
+		if(type == OPERATION_CLEAR_DEJECTA){
 			CGPoint location = ccp(self.position.x, self.position.y);
-			[[OperationViewController sharedOperationViewController] play:@"pickup" setPosition:location];
+			[[OperationViewController sharedOperationViewController] play:@"cleaning" setPosition:location];
 		}
 		else {
 			return;
@@ -80,13 +85,6 @@
 -(void)callServerController
 {
 	
-}
-
--(void) dealloc
-{
-	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:self];
-	[self removeAllChildrenWithCleanup:YES];
-	[super dealloc];
 }
 
 @end

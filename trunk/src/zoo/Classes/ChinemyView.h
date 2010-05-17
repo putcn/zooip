@@ -7,12 +7,16 @@
 //
 
 #import "cocos2d.h"
+#import "OperationViewController.h"
 
 
-@interface ChinemyView : CCSprite {
+@interface ChinemyView : CCSprite<CCTargetedTouchDelegate> {
 	NSMutableDictionary *animationTable;
 	NSDictionary *dirctions;
 }
 -(void) update:(int)currDirectionValue status:(int)currStatusValue;
 
+-(CGPoint)countCoordinate: (CGPoint)clickPoint;
+-(void) optAnimationPlay;
+-(void) callServerController;
 @end

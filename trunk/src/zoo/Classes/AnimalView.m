@@ -27,7 +27,7 @@
 		statuses = [[NSDictionary dictionaryWithObjects:stavalues forKeys:stakeys] retain];
 		
 		animationTable = [[[NSMutableDictionary alloc] init] retain];
-		toolTip = [[AnimalToolTip alloc]initWithName:@"Animal" setTotalTime:100.0f setLeaveTime:80.0f];
+		toolTip = [[AnimalToolTip alloc] initWithAnimalId:animalId];
 		toolTip.position = ccp(toolTip.contentSize.width/2, 80);
 		NSLog(@"toolTip x:%d, y:%d", self.position.x, self.position.y);
 		
@@ -150,13 +150,13 @@
 
 -(void)optAnimationPlay
 {
-	NSString *type = @"operation_cure_animal";
-//	if (type == OPERATION_DEFAULT) {
-//		toolTip.visible = true;
-//		[self schedule:@selector(tick:) interval:4.0];
-//	}
-//	else 
-	if(type == @"operation_cure_animal"){
+	int type = OPERATION_DEFAULT;
+	if (type == OPERATION_DEFAULT) {
+		toolTip.visible = true;
+		[self schedule:@selector(tick:) interval:4.0];
+	}
+	else 
+	if(type == OPERATION_CURE_ANIMAL){
 		CGPoint location = ccp(self.position.x, self.position.y);
 		[[OperationViewController sharedOperationViewController] play:@"infusion" setPosition:location];
 	}
