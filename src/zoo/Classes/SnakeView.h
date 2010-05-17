@@ -7,10 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "cocos2d.h"
+#import "OperationViewController.h"
 
-
-@interface SnakeView : NSObject {
-
+@interface SnakeView : CCSprite<CCTargetedTouchDelegate> {
+	NSString *snakeId;
 }
 
+@property (nonatomic, retain)NSString *snakeId;
+
+-(CGPoint)countCoordinate: (CGPoint)clickPoint;
+-(void) optAnimationPlay;
+-(void) callServerController;
 @end

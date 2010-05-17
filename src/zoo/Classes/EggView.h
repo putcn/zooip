@@ -8,9 +8,13 @@
 
 #import "cocos2d.h"
 
+#import "OperationViewController.h"
 
-@interface EggView : CCSprite {
-
+@interface EggView : CCSprite<CCTargetedTouchDelegate> {
+	NSString *eggId;
 }
-
+@property (nonatomic, retain) NSString *eggId;
+-(CGPoint)countCoordinate: (CGPoint)clickPoint;
+-(void) optAnimationPlay;
+-(void) callServerController;
 @end

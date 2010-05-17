@@ -7,13 +7,20 @@
 //
 
 #import "cocos2d.h"
+#import "OperationViewController.h"
 
 
-@interface DogView : CCSprite {
+@interface DogView : CCSprite<CCTargetedTouchDelegate> {
 	NSMutableDictionary *animationTable;
 	NSDictionary *dirctions;
 	NSDictionary *statuses;
+	NSString *dogId;
 }
+
+@property (nonatomic, retain)NSString *dogId;
 -(void) update:(int)currDirectionValue status:(int)currStatusValue;
 
+-(CGPoint)countCoordinate: (CGPoint)clickPoint;
+-(void) optAnimationPlay;
+-(void) callServerController;
 @end

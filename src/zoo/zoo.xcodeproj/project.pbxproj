@@ -13,13 +13,15 @@
 		3E4CD8E6118FD12C00222173 /* AnimalToolTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CD8E5118FD12C00222173 /* AnimalToolTip.m */; };
 		3E4CDAD0119032C400222173 /* inner.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4CDACE119032C400222173 /* inner.png */; };
 		3E4CDAD1119032C400222173 /* outer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4CDACF119032C400222173 /* outer.png */; };
+		3E8559F011A02E2900AE6BC8 /* EggController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8559EF11A02E2900AE6BC8 /* EggController.m */; };
+		3E85CDB311A10CBE00ED9250 /* ItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E85CDB211A10CBE00ED9250 /* ItemController.m */; };
+		3E85CE0A11A1277500ED9250 /* ToolTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E85CE0911A1277500ED9250 /* ToolTip.m */; };
 		3E87160411801BB200EBA2E8 /* RandomHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87160311801BB200EBA2E8 /* RandomHelper.m */; };
 		3E87160A11801F3300EBA2E8 /* bgimg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160611801F3300EBA2E8 /* bgimg.jpg */; };
 		3E87160B11801F3300EBA2E8 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160711801F3300EBA2E8 /* house.png */; };
 		3E87160C11801F3300EBA2E8 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160811801F3300EBA2E8 /* tree.png */; };
 		3E87160D11801F3300EBA2E8 /* waterbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160911801F3300EBA2E8 /* waterbox.png */; };
 		3EC7E343119A3B6400791BAD /* EggViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7E342119A3B6400791BAD /* EggViewFactory.m */; };
-		3EC7E369119A767600791BAD /* ItemsViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7E368119A767600791BAD /* ItemsViewFactory.m */; };
 		3EC7E441119AA2E200791BAD /* cleaning_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7E3FD119AA2E200791BAD /* cleaning_01.png */; };
 		3EC7E442119AA2E200791BAD /* cleaning_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7E3FE119AA2E200791BAD /* cleaning_02.png */; };
 		3EC7E443119AA2E200791BAD /* cleaning_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7E3FF119AA2E200791BAD /* cleaning_03.png */; };
@@ -103,7 +105,14 @@
 		3ECDFAA7119AE7E5008FBE22 /* PutSnakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDFAA6119AE7E5008FBE22 /* PutSnakeView.m */; };
 		3ECDFAAA119AE7F0008FBE22 /* SpecialFoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDFAA9119AE7F0008FBE22 /* SpecialFoodView.m */; };
 		3ECDFAAD119AE7F9008FBE22 /* SummonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDFAAC119AE7F9008FBE22 /* SummonView.m */; };
-		3EE2B4421197BD2600E278E5 /* Dejecta.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2B4411197BD2600E278E5 /* Dejecta.m */; };
+		3EE2B4421197BD2600E278E5 /* DejectaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2B4411197BD2600E278E5 /* DejectaView.m */; };
+		3EEACF1E119D68BD00158FB0 /* ant_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEACF17119D68BD00158FB0 /* ant_01.png */; };
+		3EEACF1F119D68BD00158FB0 /* ant_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEACF18119D68BD00158FB0 /* ant_02.png */; };
+		3EEACF20119D68BD00158FB0 /* ant_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEACF19119D68BD00158FB0 /* ant_03.png */; };
+		3EEACF21119D68BD00158FB0 /* ant_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEACF1A119D68BD00158FB0 /* ant_04.png */; };
+		3EEACF22119D68BD00158FB0 /* dejecta_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEACF1B119D68BD00158FB0 /* dejecta_01.png */; };
+		3EEACF23119D68BD00158FB0 /* dejecta_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEACF1C119D68BD00158FB0 /* dejecta_02.png */; };
+		3EEACF24119D68BD00158FB0 /* dejecta_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEACF1D119D68BD00158FB0 /* dejecta_03.png */; };
 		3EED45EC11965AC80093FF6E /* EggView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EED45EB11965AC80093FF6E /* EggView.m */; };
 		3EED460E1196624B0093FF6E /* CraneEggView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EED460D1196624B0093FF6E /* CraneEggView.m */; };
 		3EED461F1196669C0093FF6E /* craneEgg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EED46101196669C0093FF6E /* craneEgg.png */; };
@@ -3500,6 +3509,12 @@
 		3E4CD8E5118FD12C00222173 /* AnimalToolTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalToolTip.m; sourceTree = "<group>"; };
 		3E4CDACE119032C400222173 /* inner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inner.png; sourceTree = "<group>"; };
 		3E4CDACF119032C400222173 /* outer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outer.png; sourceTree = "<group>"; };
+		3E8559EE11A02E2900AE6BC8 /* EggController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggController.h; sourceTree = "<group>"; };
+		3E8559EF11A02E2900AE6BC8 /* EggController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggController.m; sourceTree = "<group>"; };
+		3E85CDB111A10CBE00ED9250 /* ItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemController.h; sourceTree = "<group>"; };
+		3E85CDB211A10CBE00ED9250 /* ItemController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemController.m; sourceTree = "<group>"; };
+		3E85CE0811A1277500ED9250 /* ToolTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToolTip.h; sourceTree = "<group>"; };
+		3E85CE0911A1277500ED9250 /* ToolTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolTip.m; sourceTree = "<group>"; };
 		3E87160211801BB200EBA2E8 /* RandomHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomHelper.h; sourceTree = "<group>"; };
 		3E87160311801BB200EBA2E8 /* RandomHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomHelper.m; sourceTree = "<group>"; };
 		3E87160611801F3300EBA2E8 /* bgimg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgimg.jpg; sourceTree = "<group>"; };
@@ -3508,8 +3523,6 @@
 		3E87160911801F3300EBA2E8 /* waterbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterbox.png; sourceTree = "<group>"; };
 		3EC7E341119A3B6400791BAD /* EggViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggViewFactory.h; sourceTree = "<group>"; };
 		3EC7E342119A3B6400791BAD /* EggViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggViewFactory.m; sourceTree = "<group>"; };
-		3EC7E367119A767600791BAD /* ItemsViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemsViewFactory.h; sourceTree = "<group>"; };
-		3EC7E368119A767600791BAD /* ItemsViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemsViewFactory.m; sourceTree = "<group>"; };
 		3EC7E3FD119AA2E200791BAD /* cleaning_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleaning_01.png; sourceTree = "<group>"; };
 		3EC7E3FE119AA2E200791BAD /* cleaning_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleaning_02.png; sourceTree = "<group>"; };
 		3EC7E3FF119AA2E200791BAD /* cleaning_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleaning_03.png; sourceTree = "<group>"; };
@@ -3609,8 +3622,15 @@
 		3ECDFAAB119AE7F9008FBE22 /* SummonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummonView.h; sourceTree = "<group>"; };
 		3ECDFAAC119AE7F9008FBE22 /* SummonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummonView.m; sourceTree = "<group>"; };
 		3ECDFAAE119AE8E7008FBE22 /* OperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationView.h; sourceTree = "<group>"; };
-		3EE2B4401197BD2600E278E5 /* Dejecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dejecta.h; sourceTree = "<group>"; };
-		3EE2B4411197BD2600E278E5 /* Dejecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dejecta.m; sourceTree = "<group>"; };
+		3EE2B4401197BD2600E278E5 /* DejectaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DejectaView.h; sourceTree = "<group>"; };
+		3EE2B4411197BD2600E278E5 /* DejectaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejectaView.m; sourceTree = "<group>"; };
+		3EEACF17119D68BD00158FB0 /* ant_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ant_01.png; sourceTree = "<group>"; };
+		3EEACF18119D68BD00158FB0 /* ant_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ant_02.png; sourceTree = "<group>"; };
+		3EEACF19119D68BD00158FB0 /* ant_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ant_03.png; sourceTree = "<group>"; };
+		3EEACF1A119D68BD00158FB0 /* ant_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ant_04.png; sourceTree = "<group>"; };
+		3EEACF1B119D68BD00158FB0 /* dejecta_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dejecta_01.png; sourceTree = "<group>"; };
+		3EEACF1C119D68BD00158FB0 /* dejecta_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dejecta_02.png; sourceTree = "<group>"; };
+		3EEACF1D119D68BD00158FB0 /* dejecta_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dejecta_03.png; sourceTree = "<group>"; };
 		3EED45EA11965AC80093FF6E /* EggView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggView.h; sourceTree = "<group>"; };
 		3EED45EB11965AC80093FF6E /* EggView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggView.m; sourceTree = "<group>"; };
 		3EED460C1196624B0093FF6E /* CraneEggView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CraneEggView.h; sourceTree = "<group>"; };
@@ -7436,8 +7456,8 @@
 				3EED46BF119673C30093FF6E /* DogView.m */,
 				3EED46C1119674340093FF6E /* BowlsView.h */,
 				3EED46C2119674340093FF6E /* BowlsView.m */,
-				3EE2B4401197BD2600E278E5 /* Dejecta.h */,
-				3EE2B4411197BD2600E278E5 /* Dejecta.m */,
+				3EE2B4401197BD2600E278E5 /* DejectaView.h */,
+				3EE2B4411197BD2600E278E5 /* DejectaView.m */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -7445,6 +7465,13 @@
 		3EED46C411967DAB0093FF6E /* items */ = {
 			isa = PBXGroup;
 			children = (
+				3EEACF17119D68BD00158FB0 /* ant_01.png */,
+				3EEACF18119D68BD00158FB0 /* ant_02.png */,
+				3EEACF19119D68BD00158FB0 /* ant_03.png */,
+				3EEACF1A119D68BD00158FB0 /* ant_04.png */,
+				3EEACF1B119D68BD00158FB0 /* dejecta_01.png */,
+				3EEACF1C119D68BD00158FB0 /* dejecta_02.png */,
+				3EEACF1D119D68BD00158FB0 /* dejecta_03.png */,
 				3EED46C911967DAB0093FF6E /* bowls_0.png */,
 				3EED46CA11967DAB0093FF6E /* bowls_1.png */,
 				3EED46CB11967DAB0093FF6E /* bowls_2.png */,
@@ -8241,6 +8268,8 @@
 				3EC7E392119A8C6C00791BAD /* Animals */,
 				3EED46B4119673430093FF6E /* Items */,
 				3EED45E911965A9A0093FF6E /* Eggs */,
+				3E85CE0811A1277500ED9250 /* ToolTip.h */,
+				3E85CE0911A1277500ED9250 /* ToolTip.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -12735,8 +12764,10 @@
 				C3A9E9411186F4F100CEBDFC /* GameController.m */,
 				3EC7E341119A3B6400791BAD /* EggViewFactory.h */,
 				3EC7E342119A3B6400791BAD /* EggViewFactory.m */,
-				3EC7E367119A767600791BAD /* ItemsViewFactory.h */,
-				3EC7E368119A767600791BAD /* ItemsViewFactory.m */,
+				3E8559EE11A02E2900AE6BC8 /* EggController.h */,
+				3E8559EF11A02E2900AE6BC8 /* EggController.m */,
+				3E85CDB111A10CBE00ED9250 /* ItemController.h */,
+				3E85CDB211A10CBE00ED9250 /* ItemController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -16091,6 +16122,13 @@
 				3EC7E482119AA2E200791BAD /* summon_03.png in Resources */,
 				3EC7E483119AA2E200791BAD /* summon_04.png in Resources */,
 				3EC7E484119AA2E200791BAD /* summon_05.png in Resources */,
+				3EEACF1E119D68BD00158FB0 /* ant_01.png in Resources */,
+				3EEACF1F119D68BD00158FB0 /* ant_02.png in Resources */,
+				3EEACF20119D68BD00158FB0 /* ant_03.png in Resources */,
+				3EEACF21119D68BD00158FB0 /* ant_04.png in Resources */,
+				3EEACF22119D68BD00158FB0 /* dejecta_01.png in Resources */,
+				3EEACF23119D68BD00158FB0 /* dejecta_02.png in Resources */,
+				3EEACF24119D68BD00158FB0 /* dejecta_03.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -16182,9 +16220,8 @@
 				3EED46BD119673A60093FF6E /* SnakeView.m in Sources */,
 				3EED46C0119673C30093FF6E /* DogView.m in Sources */,
 				3EED46C3119674340093FF6E /* BowlsView.m in Sources */,
-				3EE2B4421197BD2600E278E5 /* Dejecta.m in Sources */,
+				3EE2B4421197BD2600E278E5 /* DejectaView.m in Sources */,
 				3EC7E343119A3B6400791BAD /* EggViewFactory.m in Sources */,
-				3EC7E369119A767600791BAD /* ItemsViewFactory.m in Sources */,
 				3EC7E48A119AA32D00791BAD /* CleaningView.m in Sources */,
 				3ECDFA7F119AD7BA008FBE22 /* OperationViewController.m in Sources */,
 				3ECDFA84119AE72E008FBE22 /* EfficientFoodView.m in Sources */,
@@ -16210,6 +16247,9 @@
 				C331113A119D20AF00F2EE18 /* GetAllBirdFarmAnimalInfoController.m in Sources */,
 				C331113F119D20EB00F2EE18 /* LayEggController.m in Sources */,
 				C3311142119D211900F2EE18 /* AllLayEggController.m in Sources */,
+				3E8559F011A02E2900AE6BC8 /* EggController.m in Sources */,
+				3E85CDB311A10CBE00ED9250 /* ItemController.m in Sources */,
+				3E85CE0A11A1277500ED9250 /* ToolTip.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

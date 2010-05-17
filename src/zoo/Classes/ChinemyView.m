@@ -76,5 +76,65 @@
 	[super dealloc];
 }
 
+- (CGRect)rect
+{
+	CGSize s = [self.texture contentSize];
+	return CGRectMake(-s.width/2, -s.height/2, s.width, s.height);
+}
 
+- (BOOL)containsTouchLocation:(UITouch *)touch
+{
+	return CGRectContainsPoint(self.rect, [self convertTouchToNodeSpaceAR:touch]);
+}
+
+- (void)onEnter
+{
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+	[super onEnter];
+}
+
+- (void)onExit
+{
+	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
+	[super onExit];
+}
+
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
+	self.scale = 1;
+	return YES;
+}
+
+-(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	[self optAnimationPlay];
+}
+
+-(CGPoint)countCoordinate: (CGPoint)clickPoint
+{
+	return ccp(self.position.x + clickPoint.x - self.contentSize.width/2, self.position.y + clickPoint.y - self.contentSize.height/2);
+}
+
+-(void)optAnimationPlay
+{
+	int type = OPERATION_CURE_ANIMAL;
+	if (type == OPERATION_DEFAULT) {
+		[self schedule:@selector(tick:) interval:4.0];
+	}
+	else 
+		if(type == OPERATION_CURE_ANIMAL){
+			CGPoint location = ccp(self.position.x, self.position.y);
+			[[OperationViewController sharedOperationViewController] play:@"infusion" setPosition:location];
+		}
+		else {
+			return;
+		}
+	
+}
+
+-(void)callServerController
+{
+	
+}
 @end

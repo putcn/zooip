@@ -1,23 +1,23 @@
 //
-//  BowlsView.h
+//  DejectaView.h
 //  zoo
 //
-//  Created by Rainbow on 5/9/10.
+//  Created by Rainbow on 5/10/10.
 //  Copyright 2010 Apple Inc. All rights reserved.
 //
 
 #import "cocos2d.h"
 #import "OperationViewController.h"
-CCTexture2D *bowls;
+
+CCTexture2D *dejecta;
 CGRect rect;
 
-@interface BowlsView : CCSprite<CCTargetedTouchDelegate> {
-	
+@interface DejectaView : CCSprite<CCTargetedTouchDelegate> {
+	NSString *dejectaId;
 }
+@property (nonatomic, retain)NSString *dejectaId;
 
--(id) initWithFoodEndTime : (NSDate *) foodEndTime;
-
--(void)update: (NSDate *) foodEndTime;
+-(id) initWithPosition:(CGPoint)pos;
 
 -(CGPoint)countCoordinate: (CGPoint)clickPoint;
 -(void) optAnimationPlay;
