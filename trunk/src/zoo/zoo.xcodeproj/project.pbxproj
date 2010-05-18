@@ -3488,6 +3488,7 @@
 		DCCBF1BF0F6022AE0040855A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1BE0F6022AE0040855A /* UIKit.framework */; };
 		F73C656911A2451100697680 /* DataModelEgg.m in Sources */ = {isa = PBXBuildFile; fileRef = F73C656811A2451100697680 /* DataModelEgg.m */; };
 		F73C657211A24A5700697680 /* DataModelSnake.m in Sources */ = {isa = PBXBuildFile; fileRef = F73C657111A24A5700697680 /* DataModelSnake.m */; };
+		F73C659911A24DE900697680 /* DataModelAnt.m in Sources */ = {isa = PBXBuildFile; fileRef = F73C659811A24DE900697680 /* DataModelAnt.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -7093,6 +7094,8 @@
 		F73C656811A2451100697680 /* DataModelEgg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelEgg.m; sourceTree = "<group>"; };
 		F73C657011A24A5700697680 /* DataModelSnake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelSnake.h; sourceTree = "<group>"; };
 		F73C657111A24A5700697680 /* DataModelSnake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelSnake.m; sourceTree = "<group>"; };
+		F73C659711A24DE900697680 /* DataModelAnt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelAnt.h; sourceTree = "<group>"; };
+		F73C659811A24DE900697680 /* DataModelAnt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelAnt.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -12755,6 +12758,8 @@
 				C7A90E431185C321002F3799 /* DataModelAnimal.m */,
 				F73C657011A24A5700697680 /* DataModelSnake.h */,
 				F73C657111A24A5700697680 /* DataModelSnake.m */,
+				F73C659711A24DE900697680 /* DataModelAnt.h */,
+				F73C659811A24DE900697680 /* DataModelAnt.m */,
 			);
 			name = DataStructure;
 			sourceTree = "<group>";
@@ -16262,6 +16267,7 @@
 				3E85CE0A11A1277500ED9250 /* ToolTip.m in Sources */,
 				F73C656911A2451100697680 /* DataModelEgg.m in Sources */,
 				F73C657211A24A5700697680 /* DataModelSnake.m in Sources */,
+				F73C659911A24DE900697680 /* DataModelAnt.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
