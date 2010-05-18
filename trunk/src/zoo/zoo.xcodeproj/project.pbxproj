@@ -3487,6 +3487,7 @@
 		DCCBF1BD0F6022AE0040855A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1BC0F6022AE0040855A /* QuartzCore.framework */; };
 		DCCBF1BF0F6022AE0040855A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1BE0F6022AE0040855A /* UIKit.framework */; };
 		F73C656911A2451100697680 /* DataModelEgg.m in Sources */ = {isa = PBXBuildFile; fileRef = F73C656811A2451100697680 /* DataModelEgg.m */; };
+		F73C657211A24A5700697680 /* DataModelSnake.m in Sources */ = {isa = PBXBuildFile; fileRef = F73C657111A24A5700697680 /* DataModelSnake.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -7090,6 +7091,8 @@
 		DCCBF1BE0F6022AE0040855A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F73C656711A2451100697680 /* DataModelEgg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelEgg.h; sourceTree = "<group>"; };
 		F73C656811A2451100697680 /* DataModelEgg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelEgg.m; sourceTree = "<group>"; };
+		F73C657011A24A5700697680 /* DataModelSnake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelSnake.h; sourceTree = "<group>"; };
+		F73C657111A24A5700697680 /* DataModelSnake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelSnake.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -12750,6 +12753,8 @@
 				C7A90E401185C231002F3799 /* DataModelCommon.m */,
 				C7A90E421185C321002F3799 /* DataModelAnimal.h */,
 				C7A90E431185C321002F3799 /* DataModelAnimal.m */,
+				F73C657011A24A5700697680 /* DataModelSnake.h */,
+				F73C657111A24A5700697680 /* DataModelSnake.m */,
 			);
 			name = DataStructure;
 			sourceTree = "<group>";
@@ -16256,6 +16261,7 @@
 				3E85CDB311A10CBE00ED9250 /* ItemController.m in Sources */,
 				3E85CE0A11A1277500ED9250 /* ToolTip.m in Sources */,
 				F73C656911A2451100697680 /* DataModelEgg.m in Sources */,
+				F73C657211A24A5700697680 /* DataModelSnake.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -12,6 +12,7 @@
 #import "DataEnvironment.h"
 #import "DataModelAnimal.h"
 #import "DataModelEgg.h"
+#import "DataModelSnake.h";
 
 
 @implementation ServiceHelper
@@ -100,7 +101,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 			switch (code) {
 				case 1:
 				{
-					NSArray* eggsArray = [result valueForKey:@"eggs"];
+					NSArray* eggsArray = [result objectForKey:@"eggs"];
 					NSDictionary* eggsDic = [[DataEnvironment sharedDataEnvironment] eggs];
 					for (int i = 0; i < [eggsArray count]; i++) {
 						NSDictionary* eggDic = (NSDictionary*)[eggsArray objectAtIndex:i];
@@ -127,6 +128,30 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 				}
 					break;
 				default:
+					// TODO
+					break;
+			}
+			break;
+		case ZooNetworkRequestgetSnakesOfFarm:
+			switch (code) {
+				case 1:
+				{
+					NSDictionary* snakesDic= [[DataEnvironment sharedDataEnvironment] snakes];
+					NSArray* snakesArray = [result objectForKey:@"snakes"];
+					for (int i = 0; i < [snakesArray count]; i++) {
+						NSDictionary* snakeDic = [snakesArray objectAtIndex:i];
+						DataModelSnake* snake = [[DataModelSnake alloc] init];
+						
+						snake.releaseSnakeId = [[snakeDic objectForKey:@"releaseSnakeId"] isKindOfClass:[NSNull class]]  ? nil : [snakeDic objectForKey:@"releaseSnakeId"];
+						snake.snakeReleaser = [[snakeDic objectForKey:@"snakeReleaser"] isKindOfClass:[NSNull class]]  ? nil : [snakeDic objectForKey:@"snakeReleaser"];
+						snake.eggId = [[snakeDic objectForKey:@"eggId"] isKindOfClass:[NSNull class]]  ? nil : [snakeDic objectForKey:@"eggId"];
+						
+						[snakesDic setValue:snake forKey:snake.releaseSnakeId];
+					}
+				}
+					break;
+				default:
+					// TODO
 					break;
 			}
 			break;
