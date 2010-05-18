@@ -3486,6 +3486,7 @@
 		DCCBF1BB0F6022AE0040855A /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1BA0F6022AE0040855A /* OpenGLES.framework */; };
 		DCCBF1BD0F6022AE0040855A /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1BC0F6022AE0040855A /* QuartzCore.framework */; };
 		DCCBF1BF0F6022AE0040855A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DCCBF1BE0F6022AE0040855A /* UIKit.framework */; };
+		F73C656911A2451100697680 /* DataModelEgg.m in Sources */ = {isa = PBXBuildFile; fileRef = F73C656811A2451100697680 /* DataModelEgg.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -7087,6 +7088,8 @@
 		DCCBF1BA0F6022AE0040855A /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		DCCBF1BC0F6022AE0040855A /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		DCCBF1BE0F6022AE0040855A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		F73C656711A2451100697680 /* DataModelEgg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelEgg.h; sourceTree = "<group>"; };
+		F73C656811A2451100697680 /* DataModelEgg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelEgg.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -12737,6 +12740,8 @@
 		C3C528CA117EA2BD00343D7F /* DataStructure */ = {
 			isa = PBXGroup;
 			children = (
+				F73C656711A2451100697680 /* DataModelEgg.h */,
+				F73C656811A2451100697680 /* DataModelEgg.m */,
 				C330DE27119D1E9E0062753F /* DataModelFarmerInfo.h */,
 				C330DE28119D1E9E0062753F /* DataModelFarmerInfo.m */,
 				C330DE29119D1E9E0062753F /* DataModelFarmInfo.h */,
@@ -16250,6 +16255,7 @@
 				3E8559F011A02E2900AE6BC8 /* EggController.m in Sources */,
 				3E85CDB311A10CBE00ED9250 /* ItemController.m in Sources */,
 				3E85CE0A11A1277500ED9250 /* ToolTip.m in Sources */,
+				F73C656911A2451100697680 /* DataModelEgg.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
