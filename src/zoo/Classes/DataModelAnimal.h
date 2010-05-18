@@ -55,6 +55,8 @@
 	NSString *picturePrefix; //mallard
 	NSInteger productId; //5
 	NSInteger productionFlag; //0
+	// 生蛋剩余时间
+	NSInteger remain;
 	NSInteger runingSpeed; //30
 	NSInteger runingStep; //3
 	NSString *scientificNameCN; //"\U30ab\U30e2"
@@ -109,6 +111,7 @@
 @property (nonatomic,assign) NSInteger originalAnimalId;
 @property (nonatomic,assign) NSInteger productId;
 @property (nonatomic,assign) NSInteger productionFlag;
+@property (nonatomic,assign) NSInteger remain;
 @property (nonatomic,assign) NSInteger runingSpeed;
 @property (nonatomic,assign) NSInteger runingStep;
 @property (nonatomic,assign) NSInteger speed;
