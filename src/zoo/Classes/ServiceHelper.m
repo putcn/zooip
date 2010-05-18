@@ -13,6 +13,7 @@
 #import "DataModelAnimal.h"
 #import "DataModelEgg.h"
 #import "DataModelSnake.h";
+#import "DataModelAnt.h"
 
 
 @implementation ServiceHelper
@@ -152,6 +153,32 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					break;
 				default:
 					// TODO
+					break;
+			}
+			break;
+		case ZooNetworkRequestgetAntsOfFarm:
+			switch (code) {
+				case 0:
+					// TODO 农场无蚂蚁
+					break;
+				case 1:
+				{
+					NSDictionary* antsDic= [[DataEnvironment sharedDataEnvironment] ants];
+					NSArray* antsArray = [result objectForKey:@"ants"];
+					for (int i = 0; i < [antsArray count]; i++) {
+						NSDictionary* antDic = [antsArray objectAtIndex:i];
+						DataModelAnt* ant = [[DataModelAnt alloc] init];
+						
+						ant.releaseAntsId = [[antDic objectForKey:@"releaseAntsId"] isKindOfClass:[NSNull class]]  ? nil : [antDic objectForKey:@"releaseAntsId"];
+						ant.antsReleaser = [[antDic objectForKey:@"antsReleaser"] isKindOfClass:[NSNull class]]  ? nil : [antDic objectForKey:@"antsReleaser"];
+						
+						[antsDic setValue:ant forKey:ant.releaseAntsId];
+					}
+					
+				}
+					break;
+				default:
+					//TODO
 					break;
 			}
 			break;
