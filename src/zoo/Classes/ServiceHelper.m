@@ -11,6 +11,7 @@
 #import "CJSONDeserializer.h"
 #import "DataEnvironment.h"
 #import "DataModelAnimal.h"
+#import "DataModelEgg.h"
 
 
 @implementation ServiceHelper
@@ -80,10 +81,57 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 		shouldTriggerErrorHandler = YES;
 	}
 	
+	NSInteger code = [[result objectForKey:@"code"] intValue];
+	
 	switch (request.ZooRequestType) {
 		case ZooNetworkRequestgetFarmerInfo:
 			//todo
 			break;
+		case ZooNetworkRequestgetFarmInfo:
+			// TODO
+			break;
+		case ZooNetworkRequestgetAllBirdFarmAnimalInfo:
+			// TODO
+			break;
+		case ZooNetworkRequestgetLayEggsRemain:
+			// TODO
+			break;
+		case ZooNetworkRequestgetAllEggsInfo:
+			switch (code) {
+				case 1:
+				{
+					NSArray* eggsArray = [result valueForKey:@"eggs"];
+					NSDictionary* eggsDic = [[DataEnvironment sharedDataEnvironment] eggs];
+					for (int i = 0; i < [eggsArray count]; i++) {
+						NSDictionary* eggDic = (NSDictionary*)[eggsArray objectAtIndex:i];
+						DataModelEgg* egg = [[DataModelEgg alloc] init];
+						
+						egg.birdEggId = [[eggDic objectForKey:@"birdEggId"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"birdEggId"];
+						egg.farmId = [[eggDic objectForKey:@"farmId"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"farmId"];
+						egg.lastStoleTime = [[eggDic objectForKey:@"lastStoleTime"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"lastStoleTime"];
+						egg.coordinate = [[eggDic objectForKey:@"coordinate"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"coordinate"];
+						egg.eggId = [[eggDic objectForKey:@"eggId"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggId"];
+						egg.eggName = [[eggDic objectForKey:@"eggName"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggName"];
+						egg.eggNameEN = [[eggDic objectForKey:@"eggNameEN"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggNameEN"];
+						egg.eggImgId = [[eggDic objectForKey:@"eggImgId"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggImgId"];
+						egg.eggDescription = [[eggDic objectForKey:@"eggDescription"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggDescription"];
+						
+						egg.quantity = [[eggDic objectForKey:@"quantity"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"quantity"] intValue];
+						egg.remain = [[eggDic objectForKey:@"remain"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"remain"] intValue];
+						egg.numOfZygote = [[eggDic objectForKey:@"numOfZygote"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"numOfZygote"] intValue];
+						egg.eggPrice = [[eggDic objectForKey:@"eggPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"eggPrice"] intValue];
+						egg.zygotePrice = [[eggDic objectForKey:@"zygotePrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"zygotePrice"] intValue];
+						
+						[eggsDic setValue:egg forKey:[egg eggId]];
+					}
+				}
+					break;
+				default:
+					break;
+			}
+			break;
+
+
 		default:
 			break;
 	}

@@ -19,6 +19,8 @@
 	
 	NSMutableArray *animalIDs;
 	NSMutableDictionary *animals;
+	
+	NSMutableDictionary* eggs;
 }
 + (DataEnvironment *)sharedDataEnvironment;
 - (void)restore;
@@ -26,7 +28,7 @@
 //getAllBirdFarmAnimalInfo
 @property(nonatomic,retain) NSMutableArray *animalIDs;
 @property(nonatomic,retain) NSMutableDictionary *animals;
-
+@property(nonatomic, retain) NSMutableDictionary* eggs;
 @property(nonatomic,retain) DataModelFarmerInfo *playerFarmerInfo;
 @property(nonatomic,retain) DataModelFarmerInfo *friendFarmerInfo;
 @property(nonatomic,retain) DataModelFarmInfo *playerFarmInfo;
