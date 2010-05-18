@@ -14,7 +14,8 @@
 static DataEnvironment *sharedInst = nil;
 
 @synthesize animalIDs;
-@synthesize animals;
+@synthesize animals,
+eggs;
 
 @synthesize playerFarmerInfo;
 @synthesize friendFarmerInfo;
@@ -48,6 +49,7 @@ static DataEnvironment *sharedInst = nil;
 		
 		animals = [[NSMutableDictionary alloc] init];
 		animalIDs = [[NSMutableArray alloc] init];
+		eggs = [[NSMutableDictionary alloc] init];
 		
 		self.playerFarmerInfo.platformId = 11;
 	}
@@ -72,7 +74,7 @@ static DataEnvironment *sharedInst = nil;
 - (void)restore{
 	animalIDs = nil;
 	animals = nil;
-	
+	eggs = nil;
 	playerFarmerInfo = nil;
 	friendFarmerInfo = nil;
 	playerFarmInfo = nil;

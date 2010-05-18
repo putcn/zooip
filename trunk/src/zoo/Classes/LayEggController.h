@@ -15,6 +15,7 @@
 @interface LayEggController : BaseServerController
 {
 	AllLayEggController *allLayEggController;
+	NSString* animalId;
 }
 
 -(LayEggController *) initWithAllEggController:(AllLayEggController *)controller;

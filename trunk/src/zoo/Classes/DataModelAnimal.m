@@ -45,6 +45,7 @@
 @synthesize originalAnimalId;
 @synthesize productId;
 @synthesize productionFlag;
+@synthesize remain;
 @synthesize runingSpeed;
 @synthesize runingStep;
 @synthesize speed;
