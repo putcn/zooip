@@ -14,6 +14,7 @@
 #import "DataModelEgg.h"
 #import "DataModelSnake.h";
 #import "DataModelAnt.h"
+#import "DataModelDejecta.h"
 
 
 @implementation ServiceHelper
@@ -179,6 +180,34 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					break;
 				default:
 					//TODO
+					break;
+			}
+			break;
+		case ZooNetworkRequestgetDejectaOfFarm:
+			switch (code) {
+				case 0:
+					// TODO 农场无便便
+					break;
+				case 1:
+				{
+					NSDictionary* dejectasDic= [[DataEnvironment sharedDataEnvironment] dejectas];
+					NSArray* dejectasArray = [result objectForKey:@"dejectas"];
+					for (int i = 0; i < [dejectasArray count]; i++) {
+						NSDictionary* dejectaDic = [dejectasArray objectAtIndex:i];
+						DataModelDejecta* dejecta = [[DataModelDejecta alloc] init];
+						
+						dejecta.dejectaId = [[dejectaDic objectForKey:@"dejectaId"] isKindOfClass:[NSNull class]]  ? nil : [dejectaDic objectForKey:@"dejectaId"];
+						
+						dejecta.coordinateX = [[dejectaDic objectForKey:@"coordinateX"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dejectaDic objectForKey:@"coordinateX"] intValue];
+						dejecta.coordinateY = [[dejectaDic objectForKey:@"coordinateY"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dejectaDic objectForKey:@"coordinateY"] intValue];
+						
+						[dejectasDic setValue:dejecta forKey:dejecta.dejectaId];
+					}
+					
+				}
+					break;
+
+				default:
 					break;
 			}
 			break;

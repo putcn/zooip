@@ -3489,6 +3489,7 @@
 		F73C656911A2451100697680 /* DataModelEgg.m in Sources */ = {isa = PBXBuildFile; fileRef = F73C656811A2451100697680 /* DataModelEgg.m */; };
 		F73C657211A24A5700697680 /* DataModelSnake.m in Sources */ = {isa = PBXBuildFile; fileRef = F73C657111A24A5700697680 /* DataModelSnake.m */; };
 		F73C659911A24DE900697680 /* DataModelAnt.m in Sources */ = {isa = PBXBuildFile; fileRef = F73C659811A24DE900697680 /* DataModelAnt.m */; };
+		F73C65CD11A2533600697680 /* DataModelDejecta.m in Sources */ = {isa = PBXBuildFile; fileRef = F73C65CC11A2533600697680 /* DataModelDejecta.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -7096,6 +7097,8 @@
 		F73C657111A24A5700697680 /* DataModelSnake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelSnake.m; sourceTree = "<group>"; };
 		F73C659711A24DE900697680 /* DataModelAnt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelAnt.h; sourceTree = "<group>"; };
 		F73C659811A24DE900697680 /* DataModelAnt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelAnt.m; sourceTree = "<group>"; };
+		F73C65CB11A2533600697680 /* DataModelDejecta.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelDejecta.h; sourceTree = "<group>"; };
+		F73C65CC11A2533600697680 /* DataModelDejecta.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelDejecta.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -12760,6 +12763,8 @@
 				F73C657111A24A5700697680 /* DataModelSnake.m */,
 				F73C659711A24DE900697680 /* DataModelAnt.h */,
 				F73C659811A24DE900697680 /* DataModelAnt.m */,
+				F73C65CB11A2533600697680 /* DataModelDejecta.h */,
+				F73C65CC11A2533600697680 /* DataModelDejecta.m */,
 			);
 			name = DataStructure;
 			sourceTree = "<group>";
@@ -16268,6 +16273,7 @@
 				F73C656911A2451100697680 /* DataModelEgg.m in Sources */,
 				F73C657211A24A5700697680 /* DataModelSnake.m in Sources */,
 				F73C659911A24DE900697680 /* DataModelAnt.m in Sources */,
+				F73C65CD11A2533600697680 /* DataModelDejecta.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
