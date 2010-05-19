@@ -492,6 +492,16 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 		case ZooNetworkRequestgetAllStorageFoods:
 			methodName = @"getAllStorageFoods";
 			break;
+		case ZooNetworkRequesttoFeedAllAnimal:
+			methodName = @"toFeedAllAnimal";
+			break;
+		case ZooNetworkRequesttoFeedPowerFoods:
+			methodName = @"toFeedPowerFoods";
+			break;
+		case ZooNetworkRequesttoFeedProductYieldFood:
+			methodName = @"toFeedProductYieldFood";
+			break;
+
 
 		default:
 			break;
