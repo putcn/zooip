@@ -27,6 +27,7 @@ typedef enum {
 	ZooNetworkRequestgetDejectaOfFarm,
 	ZooNetworkRequestgetLayEggsRemain,
 	ZooNetworkRequestgetFarmerDog,
+	ZooNetworkRequestgetFarmerMessage,
 	ZooNetworkRequestgetFriendsInfo,
 	ZooNetworkRequestgetUserTips,
 	ZooNetworkRequestgetAllStorageAnimal,
