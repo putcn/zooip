@@ -38,6 +38,10 @@ typedef enum {
 	ZooNetworkRequestgetAllOriginalAnimal,
 	ZooNetworkRequestgetAllFoods,
 	ZooNetworkRequestgetAllGoods,
+	ZooNetworkRequesttoFeedAllAnimal,
+	ZooNetworkRequesttoFeedPowerFoods,
+	ZooNetworkRequesttoFeedProductYieldFood
+	
 } ZooNetworkRequestType;
 
 @interface ServiceHelper : NSObject {
