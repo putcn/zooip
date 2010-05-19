@@ -21,7 +21,8 @@ snakes,
 dejectas,
 dogs,
 friendInfos,
-userTipses;
+userTipses,
+storageFoods;
 
 @synthesize playerFarmerInfo;
 @synthesize friendFarmerInfo;
@@ -62,6 +63,7 @@ userTipses;
 		dogs = [[NSMutableDictionary alloc] init];
 		friendInfos = [[NSMutableDictionary alloc] init];
 		userTipses = [[NSMutableDictionary alloc] init];
+		storageFoods = [[NSMutableDictionary alloc] init];
 		
 		self.playerFarmerInfo.platformId = 11;
 	}
@@ -93,6 +95,7 @@ userTipses;
 	dogs = nil;
 	friendInfos = nil;
 	userTipses = nil;
+	storageFoods = nil;
 	playerFarmerInfo = nil;
 	friendFarmerInfo = nil;
 	playerFarmInfo = nil;

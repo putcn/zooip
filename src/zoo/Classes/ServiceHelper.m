@@ -18,6 +18,7 @@
 #import "DataModelDog.h"
 #import "DataModelFriendInfo.h"
 #import "DataModelUserTips.h"
+#import "DataModelStorageFood.h"
 
 
 @implementation ServiceHelper
@@ -334,9 +335,6 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 
 			break;
 		case ZooNetworkRequestgetFriendsInfo:
-			// TODO DELETE
-			// "code:1 + usersInfo + farmId + farmerId + name + tinyurl + experience + uid
-			// code:0 无任何好友信息"
 			switch (code) {
 				case 0:
 					// TODO 无任何好友信息
@@ -381,6 +379,38 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 			[userTipsesDic setValue:userTips forKey:userTips.snsUserId];
 		}
 			break;
+		case ZooNetworkRequestgetAllStorageFoods:
+			switch (code) {
+				case 0:
+					// TODO 仓库无任何饲料
+					break;
+				case 1:
+				{
+					NSDictionary* storageFoodsDic= [[DataEnvironment sharedDataEnvironment] storageFoods];
+					NSArray* storageFoodsArray = [result objectForKey:@"foodstorageFoods"];
+					for (int i = 0; i < [storageFoodsArray count]; i++) {
+						NSDictionary* storageFoodDic = [storageFoodsArray objectAtIndex:i];
+						DataModelStorageFood* storageFood = [[DataModelStorageFood alloc] init];
+						
+						storageFood.foodStorageId = [[storageFoodDic objectForKey:@"foodStorageId"] isKindOfClass:[NSNull class]]  ? nil : [storageFoodDic objectForKey:@"foodStorageId"];
+						storageFood.foodId = [[storageFoodDic objectForKey:@"foodId"] isKindOfClass:[NSNull class]]  ? nil : [storageFoodDic objectForKey:@"foodId"];
+						storageFood.foodName = [[storageFoodDic objectForKey:@"foodName"] isKindOfClass:[NSNull class]]  ? nil : [storageFoodDic objectForKey:@"foodName"];
+						storageFood.foodImg = [[storageFoodDic objectForKey:@"foodImg"] isKindOfClass:[NSNull class]]  ? nil : [storageFoodDic objectForKey:@"foodImg"];
+						
+						storageFood.numOfFood = [[storageFoodDic objectForKey:@"numOfFood"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[storageFoodDic objectForKey:@"numOfFood"] intValue];
+						storageFood.foodPower = [[storageFoodDic objectForKey:@"foodPower"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[storageFoodDic objectForKey:@"foodPower"] intValue];
+						
+						[storageFoodsDic setValue:storageFood forKey:storageFood.foodStorageId];
+					}
+					
+				}
+					break;
+				default:
+					// TODO
+					break;
+			}
+			break;
+
 
 		default:
 			break;
@@ -458,6 +488,9 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 			break;
 		case ZooNetworkRequestgetUserTips:
 			methodName = @"getUserTips";
+			break;
+		case ZooNetworkRequestgetAllStorageFoods:
+			methodName = @"getAllStorageFoods";
 			break;
 
 		default:
