@@ -46,7 +46,7 @@ static OperationViewController *_sharedOperationViewController = nil;
 		
 		[normalFoodView setAnchorPoint:ccp(0,0)];
 		[pesticideView setAnchorPoint:ccp(0,0)];
-		[pickupView setAnchorPoint:ccp(0,0)];
+		//[pickupView setAnchorPoint:ccp(0.5,0.5)];
 		[powerFoodView setAnchorPoint:ccp(0,0)];
 		[productYieldFoodView setAnchorPoint:ccp(0,0)];
 		[putAntView setAnchorPoint:ccp(0,0)];

@@ -26,6 +26,6 @@
 @interface EggViewFactory : NSObject {
 
 }
-+(EggView *)createEggViews: (int)type;
++(EggView *)createEggView: (int)type;
 
 @end

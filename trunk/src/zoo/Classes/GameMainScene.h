@@ -15,6 +15,7 @@
 @interface GameMainScene : CCLayer
 {
 	CCSprite *baseContainer;
+	CCSprite *background;
 }
 
 +(GameMainScene *) sharedGameMainScene;

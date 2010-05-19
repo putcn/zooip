@@ -51,7 +51,7 @@ static GameMainScene *_sharedGameMainScene = nil;
 		baseContainer.position = ccp(-size.width / 2, -size.height / 2);
 		baseContainer.scale = 0.5f;
 		
-		CCSprite *background = [CCSprite spriteWithFile:@"bgimg.jpg"];
+		background = [CCSprite spriteWithFile:@"bgimg.jpg"];
 		background.scale = 0.95f;
 		background.position = ccp(480,320);
 		
@@ -99,6 +99,7 @@ static GameMainScene *_sharedGameMainScene = nil;
 //		NSDictionary *paras = [NSDictionary dictionaryWithObjectsAndKeys:@"12",@"farmerId",nil];
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:paras AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:paras AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
+		
 		return self;
 	}
 	
@@ -111,12 +112,12 @@ static GameMainScene *_sharedGameMainScene = nil;
 
 -(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex
 {
-	[baseContainer addChild:sprite z:zIndex];
+	[background addChild:sprite z:zIndex];
 }
 
 -(void) removeSpriteFromStage:(CCSprite *) sprite
 {
-	[baseContainer removeChild:sprite cleanup:YES];
+	[background removeChild:sprite cleanup:YES];
 }
 
 -(void) dealloc

@@ -95,10 +95,10 @@
 		aAnimail.sickStartTime = [[aAnimalDic objectForKey:@"sickStartTime"] isKindOfClass:[NSNull class]]  ? nil : [aAnimalDic objectForKey:@"sickStartTime"];
 		aAnimail.speedFlag = [[aAnimalDic objectForKey:@"speedFlag"] isKindOfClass:[NSNull class]]  ? nil : [aAnimalDic objectForKey:@"speedFlag"];
 		aAnimail.virusReleaserId = [[aAnimalDic objectForKey:@"virusReleaserId"] isKindOfClass:[NSNull class]]  ? nil : [aAnimalDic objectForKey:@"virusReleaserId"];
+		
 		[dataEnv.animals setValue:aAnimail forKey:aAnimail.animalId];
 		[dataEnv.animalIDs addObject:aAnimail.animalId];
 	}
-	NSLog(@"%@",[dataEnv.animals objectForKey:@"8078E7C43EA86FCB9BB0AFD1D73C886E"]);
 	
 	[super resultCallback:value];
 }

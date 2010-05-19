@@ -7,22 +7,23 @@
 //
 
 #import "BowlsView.h"
+#import "GameMainScene.h"
 
 @implementation BowlsView
 
--(id) initWithFoodEndTime: (NSDate *) foodEndTime
+-(id) initWithFoodEndTime: (double) foodEndTime
 {
 	if ((self = [super init])) {
-		if (foodEndTime) {
+		if (foodEndTime <= 0.0f) {
 			bowls = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_0.png" ofType:nil]]];
 		}
-		else if(foodEndTime) {
+		else if(foodEndTime <= 2160.0f ) {
 			bowls = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_1.png" ofType:nil]]];
 		}
-		else if(foodEndTime) {
+		else if(foodEndTime <= 4320.0f) {
 			bowls = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_2.png" ofType:nil]]];
 		}
-		else if(foodEndTime) {
+		else{
 			bowls = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_3.png" ofType:nil]]];
 		}
 	}
@@ -30,22 +31,23 @@
 	rect.size = bowls.contentSize;
 	[self setTexture: bowls];
 	[self setTextureRect: rect];
-	self.position = ccp(100,100);
+	self.position = ccp(350,180);
+	[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:4];
 	return self;
 }
 
--(void) update:(NSDate *) foodEndTime
+-(void) update:(double) foodEndTime
 {
-	if (foodEndTime) {
+	if (foodEndTime <= 0.0f) {
 		bowls = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_0.png" ofType:nil]]];
 	}
-	else if(foodEndTime) {
+	else if(foodEndTime <= 2160.0f) {
 		bowls = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_1.png" ofType:nil]]];
 	}
-	else if(foodEndTime) {
+	else if(foodEndTime <= 4320.0f) {
 		bowls = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_2.png" ofType:nil]]];
 	}
-	else if(foodEndTime) {
+	else{
 		bowls = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_3.png" ofType:nil]]];
 	}
 	rect.size = bowls.contentSize;

@@ -15,9 +15,9 @@ CGRect rect;
 	
 }
 
--(id) initWithFoodEndTime : (NSDate *) foodEndTime;
+-(id) initWithFoodEndTime : (double) foodEndTime;
 
--(void)update: (NSDate *) foodEndTime;
+-(void)update: (double) foodEndTime;
 
 -(CGPoint)countCoordinate: (CGPoint)clickPoint;
 -(void) optAnimationPlay;
