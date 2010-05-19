@@ -17,6 +17,7 @@
 #import "DataModelDejecta.h"
 #import "DataModelDog.h"
 #import "DataModelFriendInfo.h"
+#import "DataModelUserTips.h"
 
 
 @implementation ServiceHelper
@@ -365,7 +366,21 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					break;
 			}
 			break;
-
+		case ZooNetworkRequestgetUserTips:
+		{
+			NSDictionary* userTipsesDic = [[DataEnvironment sharedDataEnvironment] userTipses];
+			DataModelUserTips* userTips = [[DataModelUserTips alloc] init];
+				
+			userTips.snsUserId = [[userTipsesDic objectForKey:@"snsUserId"] isKindOfClass:[NSNull class]]  ? nil : [userTipsesDic objectForKey:@"farmId"];
+			
+			userTips.egg = [[userTipsesDic objectForKey:@"egg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[userTipsesDic objectForKey:@"egg"] boolValue];
+			userTips.shit = [[userTipsesDic objectForKey:@"shit"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[userTipsesDic objectForKey:@"shit"] boolValue];
+			userTips.snake = [[userTipsesDic objectForKey:@"snake"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[userTipsesDic objectForKey:@"snake"] boolValue];
+			userTips.ant = [[userTipsesDic objectForKey:@"ant"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[userTipsesDic objectForKey:@"ant"] boolValue];
+			
+			[userTipsesDic setValue:userTips forKey:userTips.snsUserId];
+		}
+			break;
 
 		default:
 			break;
@@ -440,6 +455,9 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 			break;
 		case ZooNetworkRequestgetFriendsInfo:
 			methodName = @"getFriendsInfo";
+			break;
+		case ZooNetworkRequestgetUserTips:
+			methodName = @"getUserTips";
 			break;
 
 		default:
