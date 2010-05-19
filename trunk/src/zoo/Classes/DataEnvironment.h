@@ -24,6 +24,7 @@
 	NSMutableDictionary* snakes;
 	NSMutableDictionary* ants;
 	NSMutableDictionary* dejectas;
+	NSMutableDictionary* dogs;
 }
 + (DataEnvironment *)sharedDataEnvironment;
 - (void)restore;
@@ -35,6 +36,7 @@
 @property(nonatomic, retain) NSMutableDictionary* snakes;
 @property(nonatomic, retain) NSMutableDictionary* ants;
 @property(nonatomic, retain) NSMutableDictionary* dejectas;
+@property(nonatomic, retain) NSMutableDictionary* dogs;
 @property(nonatomic,retain) DataModelFarmerInfo *playerFarmerInfo;
 @property(nonatomic,retain) DataModelFarmerInfo *friendFarmerInfo;
 @property(nonatomic,retain) DataModelFarmInfo *playerFarmInfo;

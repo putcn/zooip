@@ -15,6 +15,7 @@
 #import "DataModelSnake.h";
 #import "DataModelAnt.h"
 #import "DataModelDejecta.h"
+#import "DataModelDog.h"
 
 
 @implementation ServiceHelper
@@ -97,7 +98,64 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 			// TODO
 			break;
 		case ZooNetworkRequestgetLayEggsRemain:
-			// TODO
+		{
+			switch (code) {
+				case 0:
+				{
+					// 下蛋成功
+					NSDictionary* eggsDic = [[DataEnvironment sharedDataEnvironment] eggs];
+					NSArray* eggsArray = [result objectForKey:@"eggs"];
+					for (int i = 0; i < [eggsArray count]; i++) {
+						NSDictionary* eggDic = [eggsArray objectAtIndex:i];
+						DataModelEgg* egg = [[DataModelEgg alloc] init];
+						
+						egg.birdEggId = [[eggDic objectForKey:@"birdEggId"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"birdEggId"];
+						egg.farmId = [[eggDic objectForKey:@"farmId"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"farmId"];
+						egg.lastStoleTime = [[eggDic objectForKey:@"lastStoleTime"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"lastStoleTime"];
+						egg.coordinate = [[eggDic objectForKey:@"coordinate"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"coordinate"];
+						egg.eggId = [[eggDic objectForKey:@"eggId"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggId"];
+						//egg.eggName = [[eggDic objectForKey:@"eggName"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggName"];
+						//egg.eggNameEN = [[eggDic objectForKey:@"eggNameEN"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggNameEN"];
+						//egg.eggImgId = [[eggDic objectForKey:@"eggImgId"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggImgId"];
+						egg.eggDescription = [[eggDic objectForKey:@"eggDescription"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggDescription"];
+						
+						egg.quantity = [[eggDic objectForKey:@"quantity"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"quantity"] intValue];
+						egg.remain = [[eggDic objectForKey:@"remain"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"remain"] intValue];
+						egg.numOfZygote = [[eggDic objectForKey:@"numOfZygote"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"numOfZygote"] intValue];
+						//egg.eggPrice = [[eggDic objectForKey:@"eggPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"eggPrice"] intValue];
+						//egg.zygotePrice = [[eggDic objectForKey:@"zygotePrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"zygotePrice"] intValue];
+						
+						[eggsDic setValue:egg forKey:[egg eggId]];
+					}
+				}
+					break;
+				case 1:
+					// TODO 动物处于饥饿状态
+					break;
+				case 2:
+				{
+					// 动物下蛋时间未到
+					// TODO 可以得到postData吗？
+					NSString* animalId = [[request postData] valueForKey:@"animalId"];
+					DataModelAnimal* animal = [[[DataEnvironment sharedDataEnvironment] animals] objectForKey:animalId];
+					NSInteger remain = [[result objectForKey:@"remain"] intValue];
+					[animal setRemain:remain];
+				}
+					break;
+				case 3:
+					// TODO 不存在该动物
+					break;
+				case 4:
+					// TODO 下蛋失败
+					break;
+				case 5:
+					// TODO 公动物不能下蛋
+					break;
+					
+				default:
+					break;
+			}
+		}
 			break;
 		case ZooNetworkRequestgetAllEggsInfo:
 			switch (code) {
@@ -206,12 +264,50 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					
 				}
 					break;
-
 				default:
 					break;
 			}
 			break;
-
+		case ZooNetworkRequestgetFarmerDog:
+			switch (code) {
+				case 0:
+					// TODO 无狗
+					break;
+				case 1:
+				{
+					NSDictionary* dogsDic= [[DataEnvironment sharedDataEnvironment] dogs];
+					NSArray* dogsArray = [result objectForKey:@"dogs"];
+					for (int i = 0; i < [dogsArray count]; i++) {
+						NSDictionary* dogDic = [dogsArray objectAtIndex:i];
+						DataModelDog* dog = [[DataModelDog alloc] init];
+						
+						dog.farmerDogId = [[dogDic objectForKey:@"farmerDogId"] isKindOfClass:[NSNull class]]  ? nil : [dogDic objectForKey:@"farmerDogId"];
+						dog.goodsId = [[dogDic objectForKey:@"goodsId"] isKindOfClass:[NSNull class]]  ? nil : [dogDic objectForKey:@"goodsId"];
+						dog.statusEndTime = [[dogDic objectForKey:@"statusEndTime"] isKindOfClass:[NSNull class]]  ? nil : [dogDic objectForKey:@"statusEndTime"];
+						dog.endTime = [[dogDic objectForKey:@"endTime"] isKindOfClass:[NSNull class]]  ? nil : [dogDic objectForKey:@"endTime"];
+						dog.goodsDuration = [[dogDic objectForKey:@"goodsDuration"] isKindOfClass:[NSNull class]]  ? nil : [dogDic objectForKey:@"goodsDuration"];
+						dog.picturePrefix = [[dogDic objectForKey:@"picturePrefix"] isKindOfClass:[NSNull class]]  ? nil : [dogDic objectForKey:@"picturePrefix"];
+						dog.goodsPicture = [[dogDic objectForKey:@"goodsPicture"] isKindOfClass:[NSNull class]]  ? nil : [dogDic objectForKey:@"goodsPicture"];
+						dog.goodsName = [[dogDic objectForKey:@"goodsName"] isKindOfClass:[NSNull class]]  ? nil : [dogDic objectForKey:@"goodsName"];
+						dog.goodsDescription = [[dogDic objectForKey:@"goodsDescription"] isKindOfClass:[NSNull class]]  ? nil : [dogDic objectForKey:@"goodsDescription"];
+						
+						dog.status = [[dogDic objectForKey:@"status"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dogDic objectForKey:@"status"] boolValue];
+						dog.probability = [[dogDic objectForKey:@"probability"] isKindOfClass:[NSNull class]]  ? 0.0 : [(NSNumber *)[dogDic objectForKey:@"probability"] floatValue];
+						dog.loseGoldenEgg = [[dogDic objectForKey:@"loseGoldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dogDic objectForKey:@"loseGoldenEgg"] intValue];
+						dog.level = [[dogDic objectForKey:@"level"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dogDic objectForKey:@"level"] intValue];
+						dog.speed = [[dogDic objectForKey:@"speed"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dogDic objectForKey:@"speed"] intValue];
+						dog.step = [[dogDic objectForKey:@"step"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dogDic objectForKey:@"step"] intValue];
+						dog.aliveEdge = [[dogDic objectForKey:@"aliveEdge"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dogDic objectForKey:@"aliveEdge"] intValue];
+						
+						[dogsDic setValue:dog forKey:dog.farmerDogId];
+					}
+				}
+					break;
+				default:
+					// TODO
+					break;
+			}
+			break;
 
 		default:
 			break;

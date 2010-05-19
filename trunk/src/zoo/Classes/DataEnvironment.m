@@ -18,7 +18,8 @@ static DataEnvironment *sharedInst = nil;
 eggs,
 ants,
 snakes,
-dejectas;
+dejectas,
+dogs;
 
 @synthesize playerFarmerInfo;
 @synthesize friendFarmerInfo;
@@ -56,6 +57,7 @@ dejectas;
 		ants = [[NSMutableDictionary alloc] init];
 		snakes = [[NSMutableDictionary alloc] init];
 		dejectas = [[NSMutableDictionary alloc] init];
+		dogs = [[NSMutableDictionary alloc] init];
 		
 		self.playerFarmerInfo.platformId = 11;
 	}
@@ -84,6 +86,7 @@ dejectas;
 	ants = nil;
 	snakes = nil;
 	dejectas = nil;
+	dogs = nil;
 	playerFarmerInfo = nil;
 	friendFarmerInfo = nil;
 	playerFarmInfo = nil;
