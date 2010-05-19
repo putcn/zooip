@@ -16,6 +16,7 @@
 #import "DataModelAnt.h"
 #import "DataModelDejecta.h"
 #import "DataModelDog.h"
+#import "DataModelFriendInfo.h"
 
 
 @implementation ServiceHelper
@@ -76,6 +77,8 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 	//NSLog(@"feed back for action : %@, is : %@",request.requestFlagMark,[request responseString]);
 	
 	NSData *jsonData = [[request responseString] dataUsingEncoding:NSUTF8StringEncoding];
+	// TODO DELETE
+	NSLog([request responseString]);
 	NSDictionary *result = [[CJSONDeserializer deserializer] deserializeAsDictionary:jsonData error:nil];
 	NSDictionary *targetCallBack = [CallBacks objectForKey:request.requestFlagMark];
 	
@@ -183,7 +186,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 						egg.eggPrice = [[eggDic objectForKey:@"eggPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"eggPrice"] intValue];
 						egg.zygotePrice = [[eggDic objectForKey:@"zygotePrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"zygotePrice"] intValue];
 						
-						[eggsDic setValue:egg forKey:[egg eggId]];
+						[eggsDic setValue:egg forKey:[egg birdEggId]];
 					}
 				}
 					break;
@@ -308,6 +311,61 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					break;
 			}
 			break;
+		case ZooNetworkRequestgetFarmerMessage:
+			// TODO DELETE
+			//"code:1 + message + farmer + farmerId + snsUserId + platformId + userName + userImg + farmPref + fighter + expirationDate + newUser + antsCurrency + goldenEgg
+			//code:0 无动态信息
+			//code:2 该用户不存在"
+			switch (code) {
+				case 0:
+					// TODO 无动态信息
+					break;
+				case 1:
+					// TODO
+					break;
+				case 2:
+					// TODO 该用户不存在
+					break;
+				default:
+					// TODO
+					break;
+			}
+
+			break;
+		case ZooNetworkRequestgetFriendsInfo:
+			// TODO DELETE
+			// "code:1 + usersInfo + farmId + farmerId + name + tinyurl + experience + uid
+			// code:0 无任何好友信息"
+			switch (code) {
+				case 0:
+					// TODO 无任何好友信息
+					break;
+				case 1:
+				{
+					NSDictionary* friendInfosDic= [[DataEnvironment sharedDataEnvironment] friendInfos];
+					NSArray* friendInfosArray = [result objectForKey:@"usersInfo"];
+					for (int i = 0; i < [friendInfosArray count]; i++) {
+						NSDictionary* friendInfoDic = [friendInfosArray objectAtIndex:i];
+						DataModelFriendInfo* friendInfo = [[DataModelFriendInfo alloc] init];
+						
+						friendInfo.farmId = [[friendInfoDic objectForKey:@"farmId"] isKindOfClass:[NSNull class]]  ? nil : [friendInfoDic objectForKey:@"farmId"];
+						friendInfo.farmerId = [[friendInfoDic objectForKey:@"farmerId"] isKindOfClass:[NSNull class]]  ? nil : [friendInfoDic objectForKey:@"farmerId"];
+						friendInfo.userName = [[friendInfoDic objectForKey:@"userName"] isKindOfClass:[NSNull class]]  ? nil : [friendInfoDic objectForKey:@"userName"];
+						friendInfo.tinyurl = [[friendInfoDic objectForKey:@"tinyurl"] isKindOfClass:[NSNull class]]  ? nil : [friendInfoDic objectForKey:@"tinyurl"];
+						friendInfo.uid = [[friendInfoDic objectForKey:@"uid"] isKindOfClass:[NSNull class]]  ? nil : [friendInfoDic objectForKey:@"uid"];
+						
+						friendInfo.experience = [[friendInfoDic objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[friendInfoDic objectForKey:@"experience"] intValue];
+						
+						[friendInfosDic setValue:friendInfo forKey:friendInfo.farmerId];
+					}
+				}
+					break;
+				default:
+					// TODO
+					break;
+			}
+			break;
+
 
 		default:
 			break;
@@ -334,6 +392,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 	
 	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:[NSURL URLWithString:ServiceBaseURL]];
 	request.requestFlagMark = [self getTimeStamp];
+	request.ZooRequestType = methodType;
 	
 	[CallBacks setObject:tempDic forKey:request.requestFlagMark];
 	
@@ -373,6 +432,16 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 		case ZooNetworkRequestgetLayEggsRemain:
 			methodName = @"getLayEggsRemain";
 			break;
+		case ZooNetworkRequestgetFarmerDog:
+			methodName = @"getFarmerDog";
+			break;
+		case ZooNetworkRequestgetFarmerMessage:
+			methodName = @"getFarmerMessage";
+			break;
+		case ZooNetworkRequestgetFriendsInfo:
+			methodName = @"getFriendsInfo";
+			break;
+
 		default:
 			break;
 	}
