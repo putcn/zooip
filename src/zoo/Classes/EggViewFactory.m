@@ -11,7 +11,7 @@
 
 @implementation EggViewFactory
 
-+(EggView *) createEggViews:(int)type
++(EggView *) createEggView:(int)type
 {
 	switch (type) {
 		case 1:

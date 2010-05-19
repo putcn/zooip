@@ -16,8 +16,9 @@
 {
 	AllLayEggController *allLayEggController;
 	NSString* animalId;
+	int acount;
 }
 
--(LayEggController *) initWithAllEggController:(AllLayEggController *)controller;
+//-(LayEggController *) initWithAllEggController:(AllLayEggController *)controller;
 
 @end

@@ -7,17 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "cocos2d.h"
 #import "EggViewFactory.h"
-
+#import "DataEnvironment.h"
+#import "DataModelEgg.h"
 
 @interface EggController : NSObject {
 
-	NSMutableDictionary *eggs;
+	NSMutableArray *allEggs;
 }
 
 +(EggController *) sharedEggController;
 
--(void) addEggs:(NSMutableArray *)eggIds;
+-(void) addEggs:(NSArray *)eggIds;
 -(void) clearEgg;
 
 @end

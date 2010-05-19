@@ -32,26 +32,38 @@ static EggController *_sharedEggController = nil;
 {
 	if ((self = [super init]))
 	{
-		eggs = [[NSMutableArray alloc] initWithCapacity:0];
+		allEggs = [[NSMutableArray alloc] initWithCapacity:0];
 		return self;
 	}
 	
 	return nil;
 }
 
--(void) addEggs:(NSMutableArray *)eggIds
+-(void) addEggs:(NSArray *)eggIds
 {
-	for (NSString *eggId in eggIds) {
+	DataModelEgg *dataModelEgg;
+	for (NSString *eId in eggIds) {
+		dataModelEgg = (DataModelEgg *) [[DataEnvironment sharedDataEnvironment].eggs objectForKey:eId];
+		EggView *eggView = [EggViewFactory createEggView:[dataModelEgg.eggId intValue]];
+		NSString *coordinate =dataModelEgg.coordinate;
+		NSRange rang = [coordinate rangeOfString:@","];
+		int commaPos = rang.location;
+		int coordinateX = [[coordinate substringToIndex:commaPos] intValue];
+		int coordinateY = [[coordinate substringFromIndex:commaPos + 1] intValue];
+		eggView.position = ccp(coordinateX,768 - coordinateY);
+		eggView.eggId = dataModelEgg.birdEggId;
+		[allEggs addObject:eggView];
 		
-	//	EggView *eggView = [EggViewFactory createEggViews:[DataEnvironment sharedDataEnvironment]];
-//		eggView.position;
-//		eggView.eggId;
 	}
 }
 
 -(void) clearEgg
 {
-	
+	for (EggView *clearEgg in allEggs)
+	{
+		[allEggs removeObject:clearEgg];
+		[clearEgg dealloc];
+	}
 }
 
 @end

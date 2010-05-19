@@ -30,23 +30,17 @@ static ItemController *_itemController = nil;
 
 -(void) addItem:(NSString *)itemType
 {
-	if (itemType == @"snake") {
-		[[SnakeView alloc] init];
-	}
-	else if(itemType == @"ant"){
-		[[AntView alloc] init];
-	}
-	else if(itemType == @"chinemy"){
+	if(itemType == @"chinemy"){
 		[[ChinemyView alloc] init];
 	}
 	else if(itemType == @"dog"){
 		[[DogView alloc] init];
 	}
 	else if(itemType == @"bowls"){
-		[[BowlsView alloc] init];
-	}
-	else if(itemType == @"dejecta"){
-		[[DejectaView alloc] initWithPosition:ccp(400,200)];
+		double foodEndTime = (double)[DataEnvironment sharedDataEnvironment].playerFarmInfo.farm_foodEndTime;
+		NSTimeInterval currentTime = [[NSDate date] timeIntervalSince1970];
+		double intervalTime = foodEndTime - (double)currentTime;
+		[[BowlsView alloc] initWithFoodEndTime:intervalTime];
 	}
 	else {
 		return;

@@ -21,6 +21,13 @@
 		3E87160B11801F3300EBA2E8 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160711801F3300EBA2E8 /* house.png */; };
 		3E87160C11801F3300EBA2E8 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160811801F3300EBA2E8 /* tree.png */; };
 		3E87160D11801F3300EBA2E8 /* waterbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160911801F3300EBA2E8 /* waterbox.png */; };
+		3EB1B27D11A4256000927E2F /* GetSnakeOfFarmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1B27C11A4256000927E2F /* GetSnakeOfFarmController.m */; };
+		3EB1B28011A4258600927E2F /* GetDejectaOfFarmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1B27F11A4258600927E2F /* GetDejectaOfFarmController.m */; };
+		3EB1B28411A425A300927E2F /* GetAntOfFarmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1B28311A425A300927E2F /* GetAntOfFarmController.m */; };
+		3EB1B28711A425EB00927E2F /* GetFarmerDogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1B28611A425EB00927E2F /* GetFarmerDogController.m */; };
+		3EB1B31611A43DD400927E2F /* SnakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1B31511A43DD400927E2F /* SnakeController.m */; };
+		3EB1B31911A43DE700927E2F /* DejectaController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1B31811A43DE700927E2F /* DejectaController.m */; };
+		3EB1B31C11A43DF500927E2F /* AntController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1B31B11A43DF500927E2F /* AntController.m */; };
 		3EC7E343119A3B6400791BAD /* EggViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7E342119A3B6400791BAD /* EggViewFactory.m */; };
 		3EC7E441119AA2E200791BAD /* cleaning_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7E3FD119AA2E200791BAD /* cleaning_01.png */; };
 		3EC7E442119AA2E200791BAD /* cleaning_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7E3FE119AA2E200791BAD /* cleaning_02.png */; };
@@ -3528,6 +3535,20 @@
 		3E87160711801F3300EBA2E8 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		3E87160811801F3300EBA2E8 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
 		3E87160911801F3300EBA2E8 /* waterbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterbox.png; sourceTree = "<group>"; };
+		3EB1B27B11A4256000927E2F /* GetSnakeOfFarmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetSnakeOfFarmController.h; sourceTree = "<group>"; };
+		3EB1B27C11A4256000927E2F /* GetSnakeOfFarmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetSnakeOfFarmController.m; sourceTree = "<group>"; };
+		3EB1B27E11A4258600927E2F /* GetDejectaOfFarmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetDejectaOfFarmController.h; sourceTree = "<group>"; };
+		3EB1B27F11A4258600927E2F /* GetDejectaOfFarmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetDejectaOfFarmController.m; sourceTree = "<group>"; };
+		3EB1B28211A425A300927E2F /* GetAntOfFarmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAntOfFarmController.h; sourceTree = "<group>"; };
+		3EB1B28311A425A300927E2F /* GetAntOfFarmController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAntOfFarmController.m; sourceTree = "<group>"; };
+		3EB1B28511A425EB00927E2F /* GetFarmerDogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetFarmerDogController.h; sourceTree = "<group>"; };
+		3EB1B28611A425EB00927E2F /* GetFarmerDogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFarmerDogController.m; sourceTree = "<group>"; };
+		3EB1B31411A43DD400927E2F /* SnakeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SnakeController.h; sourceTree = "<group>"; };
+		3EB1B31511A43DD400927E2F /* SnakeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SnakeController.m; sourceTree = "<group>"; };
+		3EB1B31711A43DE700927E2F /* DejectaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DejectaController.h; sourceTree = "<group>"; };
+		3EB1B31811A43DE700927E2F /* DejectaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejectaController.m; sourceTree = "<group>"; };
+		3EB1B31A11A43DF500927E2F /* AntController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AntController.h; sourceTree = "<group>"; };
+		3EB1B31B11A43DF500927E2F /* AntController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AntController.m; sourceTree = "<group>"; };
 		3EC7E341119A3B6400791BAD /* EggViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggViewFactory.h; sourceTree = "<group>"; };
 		3EC7E342119A3B6400791BAD /* EggViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggViewFactory.m; sourceTree = "<group>"; };
 		3EC7E3FD119AA2E200791BAD /* cleaning_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleaning_01.png; sourceTree = "<group>"; };
@@ -12709,6 +12730,14 @@
 				C3311141119D211900F2EE18 /* AllLayEggController.m */,
 				C331113D119D20EB00F2EE18 /* LayEggController.h */,
 				C331113E119D20EB00F2EE18 /* LayEggController.m */,
+				3EB1B27B11A4256000927E2F /* GetSnakeOfFarmController.h */,
+				3EB1B27C11A4256000927E2F /* GetSnakeOfFarmController.m */,
+				3EB1B27E11A4258600927E2F /* GetDejectaOfFarmController.h */,
+				3EB1B27F11A4258600927E2F /* GetDejectaOfFarmController.m */,
+				3EB1B28211A425A300927E2F /* GetAntOfFarmController.h */,
+				3EB1B28311A425A300927E2F /* GetAntOfFarmController.m */,
+				3EB1B28511A425EB00927E2F /* GetFarmerDogController.h */,
+				3EB1B28611A425EB00927E2F /* GetFarmerDogController.m */,
 			);
 			name = ServerController;
 			sourceTree = "<group>";
@@ -12803,6 +12832,12 @@
 				3E8559EF11A02E2900AE6BC8 /* EggController.m */,
 				3E85CDB111A10CBE00ED9250 /* ItemController.h */,
 				3E85CDB211A10CBE00ED9250 /* ItemController.m */,
+				3EB1B31411A43DD400927E2F /* SnakeController.h */,
+				3EB1B31511A43DD400927E2F /* SnakeController.m */,
+				3EB1B31711A43DE700927E2F /* DejectaController.h */,
+				3EB1B31811A43DE700927E2F /* DejectaController.m */,
+				3EB1B31A11A43DF500927E2F /* AntController.h */,
+				3EB1B31B11A43DF500927E2F /* AntController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -16291,6 +16326,13 @@
 				F73C65CD11A2533600697680 /* DataModelDejecta.m in Sources */,
 				F76FF03411A2BAE600DCC05D /* DataModelDog.m in Sources */,
 				F76FF09311A3E62300DCC05D /* DataModelFriendInfo.m in Sources */,
+				3EB1B27D11A4256000927E2F /* GetSnakeOfFarmController.m in Sources */,
+				3EB1B28011A4258600927E2F /* GetDejectaOfFarmController.m in Sources */,
+				3EB1B28411A425A300927E2F /* GetAntOfFarmController.m in Sources */,
+				3EB1B28711A425EB00927E2F /* GetFarmerDogController.m in Sources */,
+				3EB1B31611A43DD400927E2F /* SnakeController.m in Sources */,
+				3EB1B31911A43DE700927E2F /* DejectaController.m in Sources */,
+				3EB1B31C11A43DF500927E2F /* AntController.m in Sources */,
 				F76FF0BB11A3F26C00DCC05D /* DataModelUserTips.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

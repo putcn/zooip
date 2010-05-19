@@ -12,6 +12,12 @@
 #import "GetFarmerInfoController.h"
 #import "GetFarmInfoController.h"
 #import "GetAllBirdFarmAnimalInfoController.h"
+#import "LayEggController.h"
+#import "AllLayEggController.h"
+#import "GetSnakeOfFarmController.h"
+#import "GetDejectaOfFarmController.h"
+#import "GetAntOfFarmController.h"
+#import "GetFarmerDogController.h"
 
 @interface InitWorkFlowController : BaseWorkFlowController
 {
