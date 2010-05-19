@@ -3492,6 +3492,7 @@
 		F73C65CD11A2533600697680 /* DataModelDejecta.m in Sources */ = {isa = PBXBuildFile; fileRef = F73C65CC11A2533600697680 /* DataModelDejecta.m */; };
 		F76FF03411A2BAE600DCC05D /* DataModelDog.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF03311A2BAE600DCC05D /* DataModelDog.m */; };
 		F76FF09311A3E62300DCC05D /* DataModelFriendInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF09211A3E62300DCC05D /* DataModelFriendInfo.m */; };
+		F76FF0BB11A3F26C00DCC05D /* DataModelUserTips.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF0BA11A3F26C00DCC05D /* DataModelUserTips.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -7105,6 +7106,8 @@
 		F76FF03311A2BAE600DCC05D /* DataModelDog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelDog.m; sourceTree = "<group>"; };
 		F76FF09111A3E62300DCC05D /* DataModelFriendInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelFriendInfo.h; sourceTree = "<group>"; };
 		F76FF09211A3E62300DCC05D /* DataModelFriendInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelFriendInfo.m; sourceTree = "<group>"; };
+		F76FF0B911A3F26C00DCC05D /* DataModelUserTips.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelUserTips.h; sourceTree = "<group>"; };
+		F76FF0BA11A3F26C00DCC05D /* DataModelUserTips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelUserTips.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -12775,6 +12778,8 @@
 				F76FF03311A2BAE600DCC05D /* DataModelDog.m */,
 				F76FF09111A3E62300DCC05D /* DataModelFriendInfo.h */,
 				F76FF09211A3E62300DCC05D /* DataModelFriendInfo.m */,
+				F76FF0B911A3F26C00DCC05D /* DataModelUserTips.h */,
+				F76FF0BA11A3F26C00DCC05D /* DataModelUserTips.m */,
 			);
 			name = DataStructure;
 			sourceTree = "<group>";
@@ -16286,6 +16291,7 @@
 				F73C65CD11A2533600697680 /* DataModelDejecta.m in Sources */,
 				F76FF03411A2BAE600DCC05D /* DataModelDog.m in Sources */,
 				F76FF09311A3E62300DCC05D /* DataModelFriendInfo.m in Sources */,
+				F76FF0BB11A3F26C00DCC05D /* DataModelUserTips.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
