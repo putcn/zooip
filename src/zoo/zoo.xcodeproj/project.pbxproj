@@ -3501,6 +3501,8 @@
 		F76FF09311A3E62300DCC05D /* DataModelFriendInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF09211A3E62300DCC05D /* DataModelFriendInfo.m */; };
 		F76FF0BB11A3F26C00DCC05D /* DataModelUserTips.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF0BA11A3F26C00DCC05D /* DataModelUserTips.m */; };
 		F76FF0FF11A44AFC00DCC05D /* DataModelStorageFood.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF0FE11A44AFC00DCC05D /* DataModelStorageFood.m */; };
+		F76FF1C611A503EF00DCC05D /* DataModelStorageEgg.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF1C511A503EF00DCC05D /* DataModelStorageEgg.m */; };
+		F76FF1CF11A5057200DCC05D /* DataModelStorageZygoteEgg.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF1CE11A5057200DCC05D /* DataModelStorageZygoteEgg.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -7132,6 +7134,10 @@
 		F76FF0BA11A3F26C00DCC05D /* DataModelUserTips.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelUserTips.m; sourceTree = "<group>"; };
 		F76FF0FD11A44AFC00DCC05D /* DataModelStorageFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelStorageFood.h; sourceTree = "<group>"; };
 		F76FF0FE11A44AFC00DCC05D /* DataModelStorageFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelStorageFood.m; sourceTree = "<group>"; };
+		F76FF1C411A503EF00DCC05D /* DataModelStorageEgg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelStorageEgg.h; sourceTree = "<group>"; };
+		F76FF1C511A503EF00DCC05D /* DataModelStorageEgg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelStorageEgg.m; sourceTree = "<group>"; };
+		F76FF1CD11A5057200DCC05D /* DataModelStorageZygoteEgg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelStorageZygoteEgg.h; sourceTree = "<group>"; };
+		F76FF1CE11A5057200DCC05D /* DataModelStorageZygoteEgg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelStorageZygoteEgg.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -12814,6 +12820,10 @@
 				F76FF0BA11A3F26C00DCC05D /* DataModelUserTips.m */,
 				F76FF0FD11A44AFC00DCC05D /* DataModelStorageFood.h */,
 				F76FF0FE11A44AFC00DCC05D /* DataModelStorageFood.m */,
+				F76FF1C411A503EF00DCC05D /* DataModelStorageEgg.h */,
+				F76FF1C511A503EF00DCC05D /* DataModelStorageEgg.m */,
+				F76FF1CD11A5057200DCC05D /* DataModelStorageZygoteEgg.h */,
+				F76FF1CE11A5057200DCC05D /* DataModelStorageZygoteEgg.m */,
 			);
 			name = DataStructure;
 			sourceTree = "<group>";
@@ -16340,6 +16350,8 @@
 				3EB1B31C11A43DF500927E2F /* AntController.m in Sources */,
 				F76FF0BB11A3F26C00DCC05D /* DataModelUserTips.m in Sources */,
 				F76FF0FF11A44AFC00DCC05D /* DataModelStorageFood.m in Sources */,
+				F76FF1C611A503EF00DCC05D /* DataModelStorageEgg.m in Sources */,
+				F76FF1CF11A5057200DCC05D /* DataModelStorageZygoteEgg.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
