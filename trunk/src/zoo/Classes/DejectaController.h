@@ -8,10 +8,11 @@
 
 #import <Foundation/Foundation.h>
 #import "DejectaView.h"
+#import "OperationEndView.h"
 
 @interface DejectaController : NSObject {
 	
-	NSMutableArray *allDejectas;
+	NSMutableDictionary *allDejectas;
 }
 
 +(DejectaController *) sharedDejectaController;

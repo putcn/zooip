@@ -31,7 +31,7 @@ static DejectaController *_sharedDejectaController = nil;
 {
 	if ((self = [super init]))
 	{
-		allDejectas = [[NSMutableArray alloc] initWithCapacity:0];
+		allDejectas = [[NSMutableDictionary alloc] initWithCapacity:0];
 		return self;
 	}
 	
@@ -45,12 +45,22 @@ static DejectaController *_sharedDejectaController = nil;
 	}
 }
 
+-(void) removeDejecta:(NSString *)dejectaId setExperience:(NSInteger)experience
+{
+	DataModelDejecta *dataModelDejecta;
+	dataModelDejecta = (DataModelDejecta *) [[DataEnvironment sharedDataEnvironment].dejectas objectForKey:dejectaId];
+	CGPoint dejectaPos = [(DejectaView *)[allDejectas objectForKey:dejectaId] position];
+	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(dejectaPos.x, dejectaPos.y+50) setNumber:0];
+	[[allDejectas objectForKey:dejectaId] dealloc];
+	[allDejectas removeObjectForKey:dejectaId];
+}
+
 -(void) clearDejectas
 {
-	for (DejectaView *clearDejecta in allDejectas)
+	for (NSString *clearDejecta in [allDejectas allKeys])
 	{
-		[allDejectas removeObject:clearDejecta];
-		[clearDejecta dealloc];
+		[[allDejectas objectForKey:clearDejecta] dealloc];
+		[allDejectas removeObjectForKey:clearDejecta];
 	}
 }
 

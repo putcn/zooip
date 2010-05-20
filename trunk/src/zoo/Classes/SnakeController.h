@@ -10,10 +10,11 @@
 #import "SnakeView.h"
 #import "DataEnvironment.h"
 #import "DataModelSnake.h"
+#import "OperationEndView.h"
 
 @interface SnakeController : NSObject {
 	
-	NSMutableArray *allSnakes;
+	NSMutableDictionary *allSnakes;
 }
 
 +(SnakeController *) sharedSnakeController;

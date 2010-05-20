@@ -31,7 +31,7 @@ static AntController *_sharedAntController = nil;
 {
 	if ((self = [super init]))
 	{
-		allAnts = [[NSMutableArray alloc] initWithCapacity:0];
+		allAnts = [[NSMutableDictionary alloc] initWithCapacity:0];
 		return self;
 	}
 	
@@ -45,12 +45,22 @@ static AntController *_sharedAntController = nil;
 	}
 }
 
+-(void) removeAnt:(NSString *)antId setExperience:(NSInteger)experience
+{
+	DataModelAnt *dataModelAnt;
+	dataModelAnt = (DataModelAnt *) [[DataEnvironment sharedDataEnvironment].ants objectForKey:antId];
+	CGPoint antPos = [(AntView *)[allAnts objectForKey:antId] position];
+	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(antPos.x, antPos.y+50) setNumber:0];
+	[[allAnts objectForKey:antId] dealloc];
+	[allAnts removeObjectForKey:antId];
+}
+
 -(void) clearAnts
 {
-	for (AntView *clearAnt in allAnts)
+	for (NSString *clearAnt in [allAnts allKeys])
 	{
-		[allAnts removeObject:clearAnt];
-		[clearAnt dealloc];
+		[[allAnts objectForKey:clearAnt] dealloc];
+		[allAnts removeObjectForKey:clearAnt];
 	}
 }
 
