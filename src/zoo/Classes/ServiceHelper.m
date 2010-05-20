@@ -426,6 +426,58 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					break;
 			}
 			break;
+		case ZooNetworkRequeststealEggsFromFarm:
+			switch (code) {
+				case 5:
+				{
+					DataModelFarmerInfo* playerFarmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];
+					playerFarmerInfo.goldenEgg -= [[result objectForKey:@"goldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"goldenEgg"] intValue];
+				}
+					break;
+				default:
+					// TODO
+					break;
+			}
+			break;
+		case ZooNetworkRequesttoReleaseSnake
+			switch (code) {
+				case 5:
+				{
+					DataModelFarmerInfo* playerFarmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];
+					playerFarmerInfo.goldenEgg -= [[result objectForKey:@"goldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"goldenEgg"] intValue];
+				}
+					break;
+				default:
+					// TODO
+					break;
+			}
+			break;
+		case ZooNetworkRequesttoReleaseAnts:
+			switch (code) {
+				case 5:
+				{
+					DataModelFarmerInfo* playerFarmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];
+					playerFarmerInfo.goldenEgg -= [[result objectForKey:@"goldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"goldenEgg"] intValue];
+				}
+					break;
+				default:
+					// TODO
+					break;
+			}
+			break;
+		case ZooNetworkRequesttoThrowFirework:
+			switch (code) {
+				case 5:
+				{
+					DataModelFarmerInfo* playerFarmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];
+					playerFarmerInfo.goldenEgg -= [[result objectForKey:@"goldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"goldenEgg"] intValue];
+				}
+					break;
+				default:
+					// TODO
+					break;
+			}
+			break;
 
 		default:
 			break;
