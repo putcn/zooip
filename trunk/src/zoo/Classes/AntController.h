@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "AntView.h"
 
 @interface AntController : NSObject {
 	

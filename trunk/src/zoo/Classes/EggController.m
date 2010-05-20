@@ -10,7 +10,7 @@
 
 
 @implementation EggController
-
+@synthesize allEggs;
 static EggController *_sharedEggController = nil;
 
 +(EggController *) sharedEggController
@@ -32,7 +32,7 @@ static EggController *_sharedEggController = nil;
 {
 	if ((self = [super init]))
 	{
-		allEggs = [[NSMutableArray alloc] initWithCapacity:0];
+		allEggs = [[NSMutableDictionary alloc] initWithCapacity:0];
 		return self;
 	}
 	
@@ -52,17 +52,16 @@ static EggController *_sharedEggController = nil;
 		int coordinateY = [[coordinate substringFromIndex:commaPos + 1] intValue];
 		eggView.position = ccp(coordinateX,768 - coordinateY);
 		eggView.eggId = dataModelEgg.birdEggId;
-		[allEggs addObject:eggView];
-		
+		[allEggs setObject:eggView forKey:eId];		
 	}
 }
 
 -(void) clearEgg
 {
-	for (EggView *clearEgg in allEggs)
+	for (NSString *clearEgg in [allEggs allKeys])
 	{
-		[allEggs removeObject:clearEgg];
-		[clearEgg dealloc];
+		[[allEggs objectForKey:clearEgg] dealloc];
+		//[allEggs removeObjectForKey:clearEgg];
 	}
 }
 

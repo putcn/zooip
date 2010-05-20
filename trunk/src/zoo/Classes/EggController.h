@@ -14,9 +14,10 @@
 
 @interface EggController : NSObject {
 
-	NSMutableArray *allEggs;
+	NSMutableDictionary *allEggs;
 }
 
+@property (nonatomic, retain)NSMutableDictionary *allEggs;
 +(EggController *) sharedEggController;
 
 -(void) addEggs:(NSArray *)eggIds;
