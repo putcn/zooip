@@ -21,6 +21,9 @@
 #import "DataModelStorageFood.h"
 #import "DataModelStorageEgg.h"
 #import "DataModelStorageZygoteEgg.h"
+#import "DataModelOriginalAnimal.h"
+#import "DataModelFood.h"
+#import "DataModelGood.h"
 
 @implementation ServiceHelper
 static ServiceHelper *sharedInst = nil;
@@ -572,6 +575,115 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 						obj.eggPrice = [[dic objectForKey:@"eggPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"eggPrice"] intValue];
 						
 						[sDic setValue:obj forKey:obj.zygoteStorageId];
+					}
+				}
+					break;
+				default:
+					break;
+			}
+			break;
+		case ZooNetworkRequestgetAllOriginalAnimal:
+			switch (code) {
+				case 1:
+				{
+					// 原始动物信息
+					NSDictionary* sDic= [[DataEnvironment sharedDataEnvironment] originalAnimals];
+					NSArray* sArray = [result objectForKey:@"originalAnimals"];
+					for (int i = 0; i < [sArray count]; i++) {
+						NSDictionary* dic = [sArray objectAtIndex:i];
+						DataModelOriginalAnimal* obj = [[DataModelOriginalAnimal alloc] init];
+						
+						obj.originalAnimalId = [[dic objectForKey:@"originalAnimalId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"originalAnimalId"];
+						obj.scientificNameCN = [[dic objectForKey:@"scientificNameCN"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"scientificNameCN"];
+						obj.scientificNameEN = [[dic objectForKey:@"scientificNameEN"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"scientificNameEN"];
+						obj.productId = [[dic objectForKey:@"productId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"productId"];
+						obj.picturePrefix = [[dic objectForKey:@"picturePrefix"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"picturePrefix"];
+						obj.description = [[dic objectForKey:@"description"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"description"];
+						
+						obj.hatchTime = [[dic objectForKey:@"hatchTime"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"hatchTime"] intValue];
+						obj.babyStage = [[dic objectForKey:@"babyStage"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"babyStage"] intValue];
+						obj.youthStage = [[dic objectForKey:@"youthStage"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"youthStage"] intValue];
+						obj.adultStage = [[dic objectForKey:@"adultStage"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"adultStage"] intValue];
+						obj.baseYield = [[dic objectForKey:@"baseYield"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"baseYield"] intValue];
+						obj.baseCycle = [[dic objectForKey:@"baseCycle"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"baseCycle"] intValue];
+						obj.baseInterval = [[dic objectForKey:@"baseInterval"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"baseInterval"] intValue];
+						obj.basePrice = [[dic objectForKey:@"basePrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"basePrice"] intValue];
+						obj.antsPrice = [[dic objectForKey:@"antsPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"antsPrice"] intValue];
+						obj.levelRequired = [[dic objectForKey:@"levelRequired"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"levelRequired"] intValue];
+						obj.birdType = [[dic objectForKey:@"birdType"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"birdType"] intValue];
+						obj.aliveEdge = [[dic objectForKey:@"aliveEdge"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"aliveEdge"] intValue];
+						obj.step = [[dic objectForKey:@"step"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"step"] intValue];
+						obj.speed = [[dic objectForKey:@"speed"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"speed"] intValue];
+						obj.flyingStep = [[dic objectForKey:@"flyingStep"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"flyingStep"] intValue];
+						obj.flyingSpeed = [[dic objectForKey:@"flyingSpeed"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"flyingSpeed"] intValue];
+						obj.swimmingStep = [[dic objectForKey:@"swimmingStep"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"swimmingStep"] intValue];
+						obj.swimmingSpeed = [[dic objectForKey:@"swimmingSpeed"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"swimmingSpeed"] intValue];
+						obj.runingStep = [[dic objectForKey:@"runingStep"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"runingStep"] intValue];
+						obj.runingSpeed = [[dic objectForKey:@"runingSpeed"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"runingSpeed"] intValue];
+						obj.walkToEatStep = [[dic objectForKey:@"walkToEatStep"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"walkToEatStep"] intValue];
+						obj.walkToEatSpeed = [[dic objectForKey:@"walkToEatSpeed"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"walkToEatSpeed"] intValue];
+						
+						[sDic setValue:obj forKey:obj.originalAnimalId];
+					}
+				}
+					break;
+				default:
+					break;
+			}
+			break;
+		case ZooNetworkRequestgetAllFoods:
+			switch (code) {
+				case 1:
+				{
+					// 商店所有食物信息
+					NSDictionary* sDic= [[DataEnvironment sharedDataEnvironment] foods];
+					NSArray* sArray = [result objectForKey:@"foods"];
+					for (int i = 0; i < [sArray count]; i++) {
+						NSDictionary* dic = [sArray objectAtIndex:i];
+						DataModelFood* obj = [[DataModelFood alloc] init];
+						
+						obj.foodPower = [[dic objectForKey:@"foodPower"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"foodPower"];
+						obj.foodName = [[dic objectForKey:@"foodName"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"foodName"];
+						obj.foodImg = [[dic objectForKey:@"foodImg"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"foodImg"];
+
+						obj.foodId = [[dic objectForKey:@"foodId"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"foodId"] intValue];
+						obj.foodPrice = [[dic objectForKey:@"foodPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"foodPrice"] intValue];
+						obj.antsRequired = [[dic objectForKey:@"antsRequired"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"antsRequired"] intValue];
+						
+						[sDic setValue:obj forKey:obj.foodId];
+					}
+				}
+					break;
+				default:
+					break;
+			}
+			break;
+		case ZooNetworkRequestgetAllGoods:
+			switch (code) {
+				case 1:
+				{
+					// 商店所有道具信息
+					NSDictionary* sDic= [[DataEnvironment sharedDataEnvironment] goods];
+					NSArray* sArray = [result objectForKey:@"goods"];
+					for (int i = 0; i < [sArray count]; i++) {
+						NSDictionary* dic = [sArray objectAtIndex:i];
+						DataModelGood* obj = [[DataModelGood alloc] init];
+						
+						obj.goodsId = [[dic objectForKey:@"goodsId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"goodsId"];
+						obj.capability1 = [[dic objectForKey:@"capability1"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"capability1"];
+						obj.capability2 = [[dic objectForKey:@"capability2"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"capability2"];
+						obj.goodsPicture = [[dic objectForKey:@"goodsPicture"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"goodsPicture"];
+						obj.goodsName = [[dic objectForKey:@"goodsName"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"goodsName"];
+						obj.goodsDescription = [[dic objectForKey:@"goodsDescription"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"goodsDescription"];
+						
+						obj.goodsType = [[dic objectForKey:@"goodsType"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"goodsType"] intValue];
+						obj.goodsDuration = [[dic objectForKey:@"goodsDuration"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"goodsDuration"] intValue];
+						obj.currencyType = [[dic objectForKey:@"currencyType"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"currencyType"] intValue];
+						obj.goodsAntsPrice = [[dic objectForKey:@"goodsAntsPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"goodsAntsPrice"] intValue];
+						obj.goodsGoldenPrice = [[dic objectForKey:@"goodsGoldenPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"goodsGoldenPrice"] intValue];
+						obj.levelRequired = [[dic objectForKey:@"levelRequired"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"levelRequired"] intValue];
+						
+						[sDic setValue:obj forKey:obj.goodsId];
 					}
 				}
 					break;

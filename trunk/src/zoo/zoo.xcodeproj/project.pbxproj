@@ -3503,6 +3503,9 @@
 		F76FF0FF11A44AFC00DCC05D /* DataModelStorageFood.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF0FE11A44AFC00DCC05D /* DataModelStorageFood.m */; };
 		F76FF1C611A503EF00DCC05D /* DataModelStorageEgg.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF1C511A503EF00DCC05D /* DataModelStorageEgg.m */; };
 		F76FF1CF11A5057200DCC05D /* DataModelStorageZygoteEgg.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF1CE11A5057200DCC05D /* DataModelStorageZygoteEgg.m */; };
+		F76FF23011A50FCD00DCC05D /* DataModelOriginalAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF22F11A50FCD00DCC05D /* DataModelOriginalAnimal.m */; };
+		F76FF23311A5117D00DCC05D /* DataModelFood.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF23211A5117D00DCC05D /* DataModelFood.m */; };
+		F76FF23611A512AD00DCC05D /* DataModelGood.m in Sources */ = {isa = PBXBuildFile; fileRef = F76FF23511A512AD00DCC05D /* DataModelGood.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -7138,6 +7141,12 @@
 		F76FF1C511A503EF00DCC05D /* DataModelStorageEgg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelStorageEgg.m; sourceTree = "<group>"; };
 		F76FF1CD11A5057200DCC05D /* DataModelStorageZygoteEgg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelStorageZygoteEgg.h; sourceTree = "<group>"; };
 		F76FF1CE11A5057200DCC05D /* DataModelStorageZygoteEgg.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelStorageZygoteEgg.m; sourceTree = "<group>"; };
+		F76FF22E11A50FCD00DCC05D /* DataModelOriginalAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelOriginalAnimal.h; sourceTree = "<group>"; };
+		F76FF22F11A50FCD00DCC05D /* DataModelOriginalAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelOriginalAnimal.m; sourceTree = "<group>"; };
+		F76FF23111A5117D00DCC05D /* DataModelFood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelFood.h; sourceTree = "<group>"; };
+		F76FF23211A5117D00DCC05D /* DataModelFood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelFood.m; sourceTree = "<group>"; };
+		F76FF23411A512AD00DCC05D /* DataModelGood.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelGood.h; sourceTree = "<group>"; };
+		F76FF23511A512AD00DCC05D /* DataModelGood.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelGood.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -12824,6 +12833,12 @@
 				F76FF1C511A503EF00DCC05D /* DataModelStorageEgg.m */,
 				F76FF1CD11A5057200DCC05D /* DataModelStorageZygoteEgg.h */,
 				F76FF1CE11A5057200DCC05D /* DataModelStorageZygoteEgg.m */,
+				F76FF22E11A50FCD00DCC05D /* DataModelOriginalAnimal.h */,
+				F76FF22F11A50FCD00DCC05D /* DataModelOriginalAnimal.m */,
+				F76FF23111A5117D00DCC05D /* DataModelFood.h */,
+				F76FF23211A5117D00DCC05D /* DataModelFood.m */,
+				F76FF23411A512AD00DCC05D /* DataModelGood.h */,
+				F76FF23511A512AD00DCC05D /* DataModelGood.m */,
 			);
 			name = DataStructure;
 			sourceTree = "<group>";
@@ -16352,6 +16367,9 @@
 				F76FF0FF11A44AFC00DCC05D /* DataModelStorageFood.m in Sources */,
 				F76FF1C611A503EF00DCC05D /* DataModelStorageEgg.m in Sources */,
 				F76FF1CF11A5057200DCC05D /* DataModelStorageZygoteEgg.m in Sources */,
+				F76FF23011A50FCD00DCC05D /* DataModelOriginalAnimal.m in Sources */,
+				F76FF23311A5117D00DCC05D /* DataModelFood.m in Sources */,
+				F76FF23611A512AD00DCC05D /* DataModelGood.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
