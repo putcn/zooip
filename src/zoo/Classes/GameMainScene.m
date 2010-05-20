@@ -58,17 +58,17 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[baseContainer addChild: background z:0];
 		
 		CCSprite *tree = [CCSprite spriteWithFile:@"tree.png"];
-		tree.position = ccp(750,400);
+		tree.position = ccp(800,445);
 		
 		[background addChild:tree z:1];
 		
 		CCSprite *house = [CCSprite spriteWithFile:@"house.png"];
-		house.position = ccp(450,410);
+		house.position = ccp(485,475);
 		
 		[background addChild:house z:1];
 		
 		CCSprite *waterbox = [CCSprite spriteWithFile:@"waterbox.png"];
-		waterbox.position = ccp(330,420);
+		waterbox.position = ccp(345,480);
 		
 		[background addChild:waterbox z:1];
 		
