@@ -141,10 +141,9 @@ static NSString *STEP_GET_DOG = @"8";
 
 -(void) endStep
 {
-	
+	[[EggController sharedEggController] addEggs:[[DataEnvironment sharedDataEnvironment].eggs allKeys]];
 	[[ItemController sharedItemController] addItem:@"bowls"];
 	[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
-	[[EggController sharedEggController] addEggs:[[DataEnvironment sharedDataEnvironment].eggs allKeys]];
 	if ([DataEnvironment sharedDataEnvironment].playerFarmerInfo.haveTurtle) {
 		[[ItemController sharedItemController] addItem:@"chinemy"];
 	}
