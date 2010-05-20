@@ -46,7 +46,7 @@
 		currSpeed = ccp(0 ,0);
 		currStatus = 5;
 		limitRect = CGRectMake(100, 100, 500, 500);
-		view.position = ccp(200, 200);
+		view.position = ccp(400, 200);
 		targetPosition = ccp(view.position.x, view.position.y);
 		view.animalId = data.animalId;
 		
