@@ -78,9 +78,10 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 -(void)requestDone:(ASIFormDataRequest *)request{
 	//NSLog(@"feed back for action : %@, is : %@",request.requestFlagMark,[request responseString]);
 	
-	NSData *jsonData = [[request responseString] dataUsingEncoding:NSUTF8StringEncoding];
+	NSString* response = [request responseString]; 
+	NSData *jsonData = [response dataUsingEncoding:NSUTF8StringEncoding];
 	// TODO DELETE
-	NSLog([request responseString]);
+	NSLog(response);
 	NSDictionary *result = [[CJSONDeserializer deserializer] deserializeAsDictionary:jsonData error:nil];
 	NSDictionary *targetCallBack = [CallBacks objectForKey:request.requestFlagMark];
 	
@@ -140,7 +141,6 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 				case 2:
 				{
 					// 动物下蛋时间未到
-					// TODO 可以得到postData吗？
 					NSString* animalId = [[request postData] valueForKey:@"animalId"];
 					DataModelAnimal* animal = [[[DataEnvironment sharedDataEnvironment] animals] objectForKey:animalId];
 					NSInteger remain = [[result objectForKey:@"remain"] intValue];
@@ -410,7 +410,22 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					break;
 			}
 			break;
-
+		case ZooNetworkRequestpickEggsToStorage:
+			switch (code) {
+				case 1:
+				// 收蛋成功
+				{
+					// TODO pickEggsToStorage 需要返回code:1的例子
+					//"code:1 收蛋成功 + 经验值:experience + 金蛋数:goldenEgg + 
+					//加经验值后升级返回数据: 当前级别:level + 升到下级所需经验值:nextLevelExp + 当前用户的经验:currentExp"
+					
+				}
+					break;
+				default:
+					// TODO
+					break;
+			}
+			break;
 
 		default:
 			break;
@@ -501,8 +516,196 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 		case ZooNetworkRequesttoFeedProductYieldFood:
 			methodName = @"toFeedProductYieldFood";
 			break;
-
-
+		case ZooNetworkRequestpickEggsToStorage:
+			methodName = @"pickEggsToStorage";
+			break;
+		case ZooNetworkRequeststealEggsFromFarm:
+			methodName = @"stealEggsFromFarm";
+			break;
+		case ZooNetworkRequesttoReleaseSnake:
+			methodName = @"toReleaseSnake";
+			break;
+		case ZooNetworkRequesttoReleaseAnts:
+			methodName = @"toReleaseAnts";
+			break;
+			
+		case ZooNetworkRequesttoThrowFirework:
+			methodName = @"toThrowFirework";
+			break;
+			
+		case ZooNetworkRequesttoKillAnts:
+			methodName = @"toKillAnts";
+			break;
+			
+		case ZooNetworkRequesttoKillSnake:
+			methodName = @"toKillSnake";
+			break;
+		case ZooNetworkRequesttoCureAnimal:
+			methodName = @"toCureAnimal";
+			break;
+		case ZooNetworkRequesttoClearDejecta:
+			methodName = @"toClearDejecta";
+			break;
+			
+		case ZooNetworkRequestgetAllStorageAnimal:
+			methodName = @"getAllStorageAnimal";
+			break;
+			
+		case ZooNetworkRequestgetAllStorageAuctionAnimal:
+			methodName = @"getAllStorageAuctionAnimal";
+			break;
+			
+		case ZooNetworkRequestaddAuctionAnimalToFarm:
+			methodName = @"addAuctionAnimalToFarm";
+			break;
+			
+		case ZooNetworkRequestaddAnimalToFarm:
+			methodName = @"addAnimalToFarm";
+			break;
+			
+		case ZooNetworkRequestupdateAnimalNameInfo:
+			methodName = @"updateAnimalNameInfo";
+			break;
+		case ZooNetworkRequesttoMateAnimal:
+			methodName = @"toMateAnimal";
+			break;
+			
+		case ZooNetworkRequesttoFeedFemaleAnimal:
+			methodName = @"toFeedFemaleAnimal";
+			break;
+			
+		case ZooNetworkRequesttoDisbandMateAnimal:
+			methodName = @"toDisbandMateAnimal";
+			break;
+			
+		case ZooNetworkRequestremoveAnimal:
+			methodName = @"removeAnimal";
+			break;
+			
+		case ZooNetworkRequestexpansionInfo:
+			methodName = @"expansionInfo";
+			break;
+			
+		case ZooNetworkRequestexpansionFarm:
+			methodName = @"expansionFarm";
+			break;
+			
+		case ZooNetworkRequestgetAllStorageProducts:
+			methodName = @"getAllStorageProducts";
+			break;
+			
+		case ZooNetworkRequestgetAllStorageZygoteEgg:
+			methodName = @"getAllStorageZygoteEgg";
+			break;
+			
+		case ZooNetworkRequesttoIncubatingEgg:
+			methodName = @"toIncubatingEgg";
+			break;
+			
+		case ZooNetworkRequesttoSellZygoteEgg:
+			methodName = @"toSellZygoteEgg";
+			break;
+			
+		case ZooNetworkRequesttoSellProduct:
+			methodName = @"toSellProduct";
+			break;
+			
+		case ZooNetworkRequesttoSellAllZygoteEgg:
+			methodName = @"toSellAllZygoteEgg";
+			break;
+			
+		case ZooNetworkRequesttoSellAllProducts:
+			methodName = @"toSellAllProducts";
+			break;
+			
+		case ZooNetworkRequestgetAllOriginalAnimal:
+			methodName = @"getAllOriginalAnimal";
+			break;
+			
+		case ZooNetworkRequestgetAllFoods:
+			methodName = @"getAllFoods";
+			break;
+			
+		case ZooNetworkRequestgetAllGoods:
+			methodName = @"getAllGoods";
+			break;
+			
+		case ZooNetworkRequestbuyFoodByGoldenEgg:
+			methodName = @"buyFoodByGoldenEgg";
+			break;
+			
+		case ZooNetworkRequestbuyFoodByAnts:
+			methodName = @"buyFoodByAnts";
+			break;
+			
+		case ZooNetworkRequestbuyAnimalByGoldenEgg:
+			methodName = @"buyAnimalByGoldenEgg";
+			break;
+			
+		case ZooNetworkRequestbuyAnimalByAnts:
+			methodName = @"buyAnimalByAnts";
+			break;
+			
+		case ZooNetworkRequestbuyTurtleByAnts:
+			methodName = @"buyTurtleByAnts";
+			break;
+			
+		case ZooNetworkRequestbuyDogByAnts:
+			methodName = @"buyDogByAnts";
+			break;
+			
+		case ZooNetworkRequestgetAuctionPageList:
+			methodName = @"getAuctionPageList";
+			break;
+			
+		case ZooNetworkRequestgetBidInfo:
+			methodName = @"getBidInfo";
+			break;
+			
+		case ZooNetworkRequestbidAuction:
+			methodName = @"bidAuction";
+			break;
+		case ZooNetworkRequestsellBird:
+			methodName = @"sellBird";
+			break;
+			
+		case ZooNetworkRequestsellZygote:
+			methodName = @"sellZygote";
+			break;
+			
+		case ZooNetworkRequestgetAuctionBack:
+			methodName = @"getAuctionBack";
+			break;
+			
+		case ZooNetworkRequestdealAuction:
+			methodName = @"dealAuction";
+			break;
+			
+		case ZooNetworkRequestcleanAuction:
+			methodName = @"cleanAuction";
+			break;
+			
+		case ZooNetworkRequestgetMyAuction:
+			methodName = @"getMyAuction";
+			break;
+			
+		case ZooNetworkRequestgetMyBid:
+			methodName = @"getMyBid";
+			break;
+			
+		case ZooNetworkRequestupdateNewUser:
+			methodName = @"updateNewUser";
+			break;
+			
+		case ZooNetworkRequesttoGetIncubatingTime:
+			methodName = @"toGetIncubatingTime";
+			break;
+			
+		case ZooNetworkRequestaddNewUserInfo:
+			methodName = @"addNewUserInfo";
+			break;
+			
+			
 		default:
 			break;
 	}
