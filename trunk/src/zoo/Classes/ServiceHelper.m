@@ -410,22 +410,6 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					break;
 			}
 			break;
-		case ZooNetworkRequestpickEggsToStorage:
-			switch (code) {
-				case 1:
-				// 收蛋成功
-				{
-					// TODO pickEggsToStorage 需要返回code:1的例子
-					//"code:1 收蛋成功 + 经验值:experience + 金蛋数:goldenEgg + 
-					//加经验值后升级返回数据: 当前级别:level + 升到下级所需经验值:nextLevelExp + 当前用户的经验:currentExp"
-					
-				}
-					break;
-				default:
-					// TODO
-					break;
-			}
-			break;
 		case ZooNetworkRequeststealEggsFromFarm:
 			switch (code) {
 				case 5:
@@ -439,7 +423,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					break;
 			}
 			break;
-		case ZooNetworkRequesttoReleaseSnake
+		case ZooNetworkRequesttoReleaseSnake:
 			switch (code) {
 				case 5:
 				{
@@ -471,6 +455,32 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 				{
 					DataModelFarmerInfo* playerFarmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];
 					playerFarmerInfo.goldenEgg -= [[result objectForKey:@"goldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"goldenEgg"] intValue];
+				}
+					break;
+				default:
+					// TODO
+					break;
+			}
+			break;
+		case ZooNetworkRequestpickEggsToStorage:
+		case ZooNetworkRequesttoKillAnts:
+		case ZooNetworkRequesttoKillSnake:
+		case ZooNetworkRequesttoCureAnimal:
+		case ZooNetworkRequesttoClearDejecta:
+			switch (code) {
+				case 1:
+					// 收蛋／杀蚂蚁／杀蛇／治疗动物／清理便便成功
+				{
+					// TODO 需要返回code:1的例子
+					DataModelFarmerInfo* playerFarmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];
+					
+					playerFarmerInfo.experience += [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
+					playerFarmerInfo.goldenEgg += [[result objectForKey:@"goldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"goldenEgg"] intValue];
+					if ([result valueForKey:@"level"] != nil) {
+						playerFarmerInfo.level = [[result objectForKey:@"level"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"level"] intValue];
+						playerFarmerInfo.nextLevelExp = [[result objectForKey:@"nextLevelExp"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"nextLevelExp"] intValue];
+						playerFarmerInfo.experience = [[result objectForKey:@"currentExp"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"currentExp"] intValue];
+					}
 				}
 					break;
 				default:
