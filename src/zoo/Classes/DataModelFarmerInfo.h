@@ -21,6 +21,9 @@
 	NSInteger fighter;
 	BOOL isNewUser;
 	BOOL haveNewMessage;
+	NSInteger level;
+	NSInteger experience;
+	NSInteger nextLevelExp;
 	NSInteger goldenEgg;
 	BOOL haveTurtle;
 }
@@ -30,6 +33,9 @@
 @property(nonatomic,assign) NSInteger platformId;
 @property(nonatomic,assign) NSInteger farmPref;
 @property(nonatomic,assign) NSInteger fighter;
+@property(nonatomic,assign) NSInteger level;
+@property(nonatomic,assign) NSInteger experience;
+@property(nonatomic,assign) NSInteger nextLevelExp;
 @property(nonatomic,assign) NSInteger goldenEgg;
 @property(nonatomic,assign) BOOL isNewUser;
 @property(nonatomic,assign) BOOL haveNewMessage;

@@ -21,6 +21,9 @@ farmPref,
 fighter,
 isNewUser,
 haveNewMessage,
+level,
+experience,
+nextLevelExp,
 goldenEgg,
 haveTurtle;
 
