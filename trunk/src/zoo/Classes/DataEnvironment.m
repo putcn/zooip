@@ -22,7 +22,9 @@ dejectas,
 dogs,
 friendInfos,
 userTipses,
-storageFoods;
+storageFoods,
+storageEggs,
+storageZygoteEggs;
 
 @synthesize playerFarmerInfo;
 @synthesize friendFarmerInfo;
@@ -64,6 +66,8 @@ storageFoods;
 		friendInfos = [[NSMutableDictionary alloc] init];
 		userTipses = [[NSMutableDictionary alloc] init];
 		storageFoods = [[NSMutableDictionary alloc] init];
+		storageEggs = [[NSMutableDictionary alloc] init];
+		storageZygoteEggs = [[NSMutableDictionary alloc] init];
 		
 		self.playerFarmerInfo.platformId = 11;
 	}
@@ -96,6 +100,8 @@ storageFoods;
 	friendInfos = nil;
 	userTipses = nil;
 	storageFoods = nil;
+	storageEggs = nil;
+	storageZygoteEggs = nil;
 	playerFarmerInfo = nil;
 	friendFarmerInfo = nil;
 	playerFarmInfo = nil;

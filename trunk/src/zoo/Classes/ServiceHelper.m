@@ -19,7 +19,8 @@
 #import "DataModelFriendInfo.h"
 #import "DataModelUserTips.h"
 #import "DataModelStorageFood.h"
-
+#import "DataModelStorageEgg.h"
+#import "DataModelStorageZygoteEgg.h"
 
 @implementation ServiceHelper
 static ServiceHelper *sharedInst = nil;
@@ -518,7 +519,67 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					break;
 			}
 			break;
-
+		case ZooNetworkRequestgetAllStorageProducts:
+			switch (code) {
+				case 1:
+				{
+					// 所有蛋信息
+					NSDictionary* sDic= [[DataEnvironment sharedDataEnvironment] storageEggs];
+					NSArray* sArray = [result objectForKey:@"eggs"];
+					for (int i = 0; i < [sArray count]; i++) {
+						NSDictionary* dic = [sArray objectAtIndex:i];
+						DataModelStorageEgg* obj = [[DataModelStorageEgg alloc] init];
+						
+						obj.eggStorageId = [[dic objectForKey:@"eggStorageId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggStorageId"];
+						obj.eggId = [[dic objectForKey:@"eggId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggId"];
+						obj.eggName = [[dic objectForKey:@"eggName"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggName"];
+						obj.eggImgId = [[dic objectForKey:@"eggImgId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggImgId"];
+						obj.eggDescription = [[dic objectForKey:@"eggDescription"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggDescription"];
+						
+						obj.numOfProduct = [[dic objectForKey:@"numOfProduct"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"numOfProduct"] intValue];
+						obj.numOfStolen = [[dic objectForKey:@"numOfStolen"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"numOfStolen"] intValue];
+						obj.eggPrice = [[dic objectForKey:@"eggPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"eggPrice"] intValue];
+						
+						[sDic setValue:obj forKey:obj.eggStorageId];
+					}
+				}
+					break;
+				default:
+					break;
+			}
+			break;
+		case ZooNetworkRequestgetAllStorageZygoteEgg:
+			switch (code) {
+				case 1:
+				{
+					// 所有受精蛋信息
+					NSDictionary* sDic= [[DataEnvironment sharedDataEnvironment] storageZygoteEggs];
+					NSArray* sArray = [result objectForKey:@"eggs"];
+					for (int i = 0; i < [sArray count]; i++) {
+						NSDictionary* dic = [sArray objectAtIndex:i];
+						DataModelStorageZygoteEgg* obj = [[DataModelStorageZygoteEgg alloc] init];
+						
+						obj.zygoteStorageId = [[dic objectForKey:@"zygoteStorageId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"zygoteStorageId"];
+						obj.eggId = [[dic objectForKey:@"eggId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggId"];
+						obj.eggName = [[dic objectForKey:@"eggName"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggName"];
+						obj.originalAnimalId = [[dic objectForKey:@"originalAnimalId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"originalAnimalId"];
+						obj.zygoteBirthday = [[dic objectForKey:@"zygoteBirthday"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"zygoteBirthday"];
+						
+						obj.baseYield = [[dic objectForKey:@"baseYield"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"baseYield"] intValue];
+						obj.incubatingTime = [[dic objectForKey:@"incubatingTime"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"incubatingTime"] intValue];
+						obj.zygoteGender = [[dic objectForKey:@"zygoteGender"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"zygoteGender"] intValue];
+						obj.status = [[dic objectForKey:@"status"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"status"] intValue];
+						obj.eggPrice = [[dic objectForKey:@"eggPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"eggPrice"] intValue];
+						
+						[sDic setValue:obj forKey:obj.zygoteStorageId];
+					}
+				}
+					break;
+				default:
+					break;
+			}
+			break;
+			
 		default:
 			break;
 	}
