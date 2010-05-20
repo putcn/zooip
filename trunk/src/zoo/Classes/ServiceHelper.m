@@ -488,6 +488,36 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					break;
 			}
 			break;
+		case ZooNetworkRequestgetAllStorageAnimal:
+			// TODO getAllStorageAnimal
+			/*"code:1 所有动物信息 
+			storageAnimals: adultBirdStorageId + originalAnimalId + amount + 
+			animalType + scientificNameCN + scientificNameEN + gender + hatchTime + babyStage + 
+			youthStage + adultStage + baseYield + baseCycle + baseInterval + basePrice + antsPrice + 
+			productId + levelRequired + picturePrefix + discount + description 
+			code:0 粪便已经清除"*/
+			break;
+		case ZooNetworkRequestgetAllStorageAuctionAnimal:
+			// TODO getAllStorageAuctionAnimal
+			//"code:1 所有库存动物信息 storageAnimals: auctionBirdStorageId + animalId + originalAnimalId + animalType + scientificNameCN + scientificNameEN + gender + hatchTime + babyStage + youthStage + adultStage + baseYield + baseCycle + baseInterval + basePrice + antsPrice + productId + levelRequired + picturePrefix + discount + description 
+			//code:0 无任何库存动物"
+			break;
+		case ZooNetworkRequestremoveAnimal:
+			switch (code) {
+				case 1:
+					// 删除动物成功
+				{
+					// TODO 删除动物
+					DataModelFarmerInfo* playerFarmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];
+					
+					playerFarmerInfo.goldenEgg += [[result objectForKey:@"goldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"goldenEgg"] intValue];
+				}
+					break;
+				default:
+					// TODO
+					break;
+			}
+			break;
 
 		default:
 			break;
