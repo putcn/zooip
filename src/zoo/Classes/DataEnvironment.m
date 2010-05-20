@@ -24,7 +24,10 @@ friendInfos,
 userTipses,
 storageFoods,
 storageEggs,
-storageZygoteEggs;
+storageZygoteEggs,
+originalAnimals,
+foods,
+goods;
 
 @synthesize playerFarmerInfo;
 @synthesize friendFarmerInfo;
@@ -68,6 +71,9 @@ storageZygoteEggs;
 		storageFoods = [[NSMutableDictionary alloc] init];
 		storageEggs = [[NSMutableDictionary alloc] init];
 		storageZygoteEggs = [[NSMutableDictionary alloc] init];
+		originalAnimals = [[NSMutableDictionary alloc] init];
+		foods = [[NSMutableDictionary alloc] init];
+		goods = [[NSMutableDictionary alloc] init];
 		
 		self.playerFarmerInfo.platformId = 11;
 	}
@@ -102,6 +108,10 @@ storageZygoteEggs;
 	storageFoods = nil;
 	storageEggs = nil;
 	storageZygoteEggs = nil;
+	originalAnimals = nil;
+	foods = nil;
+	goods =nil;
+	
 	playerFarmerInfo = nil;
 	friendFarmerInfo = nil;
 	playerFarmInfo = nil;
