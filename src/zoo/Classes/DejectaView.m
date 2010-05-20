@@ -11,15 +11,17 @@
 
 @implementation DejectaView
 @synthesize dejectaId;
--(id) initWithPosition: (CGPoint)pos
+-(id) initWithID: (NSString *)sId
 {
 	if ((self = [super init])) {
+		dejectaId = sId;
 		CCAnimation *animation = [CCAnimation animationWithName:@"animal" delay:0.4];
 		for (int i = 1; i<=4; i++) {
 			[animation addFrameWithFilename:[NSString stringWithFormat:@"dejecta_%02d",i]];
 		}
 		CCRepeatForever *repeatAction = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]];
-		self.position = pos;
+		DataModelDejecta *dataModelDejecta = (DataModelDejecta *)[[DataEnvironment sharedDataEnvironment].dejectas objectForKey:dejectaId];
+		self.position = ccp(dataModelDejecta.coordinateX,dataModelDejecta.coordinateY);
 		[self runAction:repeatAction];
 	}
 	return self;

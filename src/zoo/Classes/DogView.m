@@ -11,10 +11,11 @@
 
 @implementation DogView
 @synthesize dogId;
--(id) init
+-(id) initWithID: (NSString *)sId
 {
 	if((self = [super init]))
 	{
+		dogId = sId;
 		NSArray *dirkeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",nil];
 		NSArray *dirvalues = [NSArray arrayWithObjects:@"up",@"rightUp",@"right",@"rightDown",@"down",@"leftDown",@"left",@"leftUp",nil];
 		dirctions = [[NSDictionary dictionaryWithObjects:dirvalues forKeys:dirkeys] retain];

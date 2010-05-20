@@ -9,13 +9,17 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "OperationViewController.h"
+#import "DataModelSnake.h"
+#import "DataEnvironment.h"
+#import "EggController.h"
+#import "EggView.h"
 
 @interface SnakeView : CCSprite<CCTargetedTouchDelegate> {
 	NSString *snakeId;
 }
 
 @property (nonatomic, retain)NSString *snakeId;
-
+-(id) initWithID: (NSString *)sId;
 -(CGPoint)countCoordinate: (CGPoint)clickPoint;
 -(void) optAnimationPlay;
 -(void) callServerController;

@@ -8,6 +8,8 @@
 
 #import "cocos2d.h"
 #import "OperationViewController.h"
+#import "DataEnvironment.h"
+#import "DataModelDejecta.h"
 
 CCTexture2D *dejecta;
 CGRect rect;
@@ -17,8 +19,7 @@ CGRect rect;
 }
 @property (nonatomic, retain)NSString *dejectaId;
 
--(id) initWithPosition:(CGPoint)pos;
-
+-(id) initWithID: (NSString *)sId;
 -(CGPoint)countCoordinate: (CGPoint)clickPoint;
 -(void) optAnimationPlay;
 -(void) callServerController;

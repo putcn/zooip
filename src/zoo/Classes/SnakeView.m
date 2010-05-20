@@ -11,14 +11,22 @@
 
 @implementation SnakeView
 @synthesize snakeId;
--(id) init
+-(id) initWithID: (NSString *)sId
 {
 	if ((self = [super init])) {
+		snakeId = sId;
 		CCTexture2D *snake = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_0.png" ofType:nil]]];
 		CGRect rect = CGRectZero;
 		rect.size = snake.contentSize;
 		[self setTexture: snake];
 		[self setTextureRect: rect]; 
+		DataModelSnake *dataModelSnake =  (DataModelSnake *)[[DataEnvironment sharedDataEnvironment].snakes objectForKey:snakeId];
+		NSString *eggId = dataModelSnake.eggId;
+		[dataModelSnake dealloc];
+		EggView *eggView = (EggView *)[[EggController sharedEggController].allEggs objectForKey:eggId];
+		CGPoint eggPos = eggView.position;
+		[eggView dealloc];
+		self.position = eggPos;
 	}
 	return self;
 }

@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SnakeView.h"
+#import "DataEnvironment.h"
+#import "DataModelSnake.h"
 
 @interface SnakeController : NSObject {
 	

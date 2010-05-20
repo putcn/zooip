@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "DejectaView.h"
 
 @interface DejectaController : NSObject {
 	
