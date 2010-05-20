@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "AntView.h"
+#import "DataModelAnt.h"
+#import "OperationEndView.h"
 
 @interface AntController : NSObject {
 	
-	NSMutableArray *allAnts;
+	NSMutableDictionary *allAnts;
 }
 
 +(AntController *) sharedAntController;

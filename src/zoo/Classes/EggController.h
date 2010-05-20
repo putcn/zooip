@@ -11,6 +11,7 @@
 #import "EggViewFactory.h"
 #import "DataEnvironment.h"
 #import "DataModelEgg.h"
+#import "OperationEndView.h"
 
 @interface EggController : NSObject {
 
@@ -21,6 +22,7 @@
 +(EggController *) sharedEggController;
 
 -(void) addEggs:(NSArray *)eggIds;
+-(void) removeEgg:(NSString *)eggId setExperience:(NSInteger) experience;
 -(void) clearEgg;
 
 @end

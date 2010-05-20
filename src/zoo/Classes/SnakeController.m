@@ -31,7 +31,7 @@ static SnakeController *_sharedSnakeController = nil;
 {
 	if ((self = [super init]))
 	{
-		allSnakes = [[NSMutableArray alloc] initWithCapacity:0];
+		allSnakes = [[NSMutableDictionary alloc] initWithCapacity:0];
 		return self;
 	}
 	
@@ -45,14 +45,23 @@ static SnakeController *_sharedSnakeController = nil;
 	}
 }
 
--(void) clearSnakes
+-(void) removeSnake:(NSString *)snakeId setExperience:(NSInteger)experience
 {
-	for (SnakeView *clearSnake in allSnakes)
-	{
-		[allSnakes removeObject:clearSnake];
-		[clearSnake dealloc];
-	}
+	DataModelSnake *dataModelSnake;
+	dataModelSnake = (DataModelSnake *) [[DataEnvironment sharedDataEnvironment].snakes objectForKey:snakeId];
+	CGPoint snakePos = [(SnakeView *)[allSnakes objectForKey:snakeId] position];
+	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(snakePos.x, snakePos.y+50) setNumber:0];
+	[[allSnakes objectForKey:snakeId] dealloc];
+	[allSnakes removeObjectForKey:snakeId];
 }
 
+-(void) clearSnakes
+{
+	for (NSString *clearSnake in [allSnakes allKeys])
+	{
+		[[allSnakes objectForKey:clearSnake] dealloc];
+		[allSnakes removeObjectForKey:clearSnake];
+	}
+}
 
 @end
