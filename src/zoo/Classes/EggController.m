@@ -65,7 +65,7 @@ static EggController *_sharedEggController = nil;
 	CGPoint eggPos = [(EggView *)[allEggs objectForKey:eggId] position];
 	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(eggPos.x, eggPos.y+50) setNumber:eggNum];
 	[[allEggs objectForKey:eggId] dealloc];
-	[allEggs removeObjectForKey:eggId];
+	//ß[allEggs removeObjectForKey:eggId];
 	
 }
 

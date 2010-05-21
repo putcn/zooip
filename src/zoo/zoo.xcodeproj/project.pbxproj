@@ -3437,6 +3437,8 @@
 		C331113A119D20AF00F2EE18 /* GetAllBirdFarmAnimalInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3311139119D20AF00F2EE18 /* GetAllBirdFarmAnimalInfoController.m */; };
 		C331113F119D20EB00F2EE18 /* LayEggController.m in Sources */ = {isa = PBXBuildFile; fileRef = C331113E119D20EB00F2EE18 /* LayEggController.m */; };
 		C3311142119D211900F2EE18 /* AllLayEggController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3311141119D211900F2EE18 /* AllLayEggController.m */; };
+		C342594011A6759300B6FDB7 /* FeedPowerFoodsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C342593D11A6759300B6FDB7 /* FeedPowerFoodsController.m */; };
+		C342594111A6759300B6FDB7 /* PickEggToStorageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C342593F11A6759300B6FDB7 /* PickEggToStorageController.m */; };
 		C3A9E83C1181421400CEBDFC /* UIController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E83B1181421400CEBDFC /* UIController.m */; };
 		C3A9E8D41186C78300CEBDFC /* FriendList.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BC1186C78300CEBDFC /* FriendList.png */; };
 		C3A9E8D51186C78300CEBDFC /* PlayerInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BD1186C78300CEBDFC /* PlayerInfo.png */; };
@@ -7043,6 +7045,10 @@
 		C331113E119D20EB00F2EE18 /* LayEggController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LayEggController.m; sourceTree = "<group>"; };
 		C3311140119D211900F2EE18 /* AllLayEggController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AllLayEggController.h; sourceTree = "<group>"; };
 		C3311141119D211900F2EE18 /* AllLayEggController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AllLayEggController.m; sourceTree = "<group>"; };
+		C342593C11A6759300B6FDB7 /* FeedPowerFoodsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedPowerFoodsController.h; sourceTree = "<group>"; };
+		C342593D11A6759300B6FDB7 /* FeedPowerFoodsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedPowerFoodsController.m; sourceTree = "<group>"; };
+		C342593E11A6759300B6FDB7 /* PickEggToStorageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickEggToStorageController.h; sourceTree = "<group>"; };
+		C342593F11A6759300B6FDB7 /* PickEggToStorageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickEggToStorageController.m; sourceTree = "<group>"; };
 		C3A9E83A1181421400CEBDFC /* UIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIController.h; sourceTree = "<group>"; };
 		C3A9E83B1181421400CEBDFC /* UIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIController.m; sourceTree = "<group>"; };
 		C3A9E8BC1186C78300CEBDFC /* FriendList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FriendList.png; sourceTree = "<group>"; };
@@ -12744,6 +12750,10 @@
 		C331112E119D1F7300F2EE18 /* ServerController */ = {
 			isa = PBXGroup;
 			children = (
+				C342593C11A6759300B6FDB7 /* FeedPowerFoodsController.h */,
+				C342593D11A6759300B6FDB7 /* FeedPowerFoodsController.m */,
+				C342593E11A6759300B6FDB7 /* PickEggToStorageController.h */,
+				C342593F11A6759300B6FDB7 /* PickEggToStorageController.m */,
 				C331112F119D209800F2EE18 /* BaseServerController.h */,
 				C3311130119D209800F2EE18 /* BaseServerController.m */,
 				C3311132119D209800F2EE18 /* GetFarmerInfoController.h */,
@@ -16380,6 +16390,8 @@
 				F76FF23011A50FCD00DCC05D /* DataModelOriginalAnimal.m in Sources */,
 				F76FF23311A5117D00DCC05D /* DataModelFood.m in Sources */,
 				F76FF23611A512AD00DCC05D /* DataModelGood.m in Sources */,
+				C342594011A6759300B6FDB7 /* FeedPowerFoodsController.m in Sources */,
+				C342594111A6759300B6FDB7 /* PickEggToStorageController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

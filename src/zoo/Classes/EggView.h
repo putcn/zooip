@@ -9,9 +9,13 @@
 #import "cocos2d.h"
 
 #import "OperationViewController.h"
+#import "PickEggToStorageController.h"
+
 
 @interface EggView : CCSprite<CCTargetedTouchDelegate> {
 	NSString *eggId;
+	
+	PickEggToStorageController *pickEggController;
 }
 @property (nonatomic, retain) NSString *eggId;
 -(CGPoint)countCoordinate: (CGPoint)clickPoint;
