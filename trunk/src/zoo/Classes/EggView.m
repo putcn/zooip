@@ -15,6 +15,7 @@
 -(id) init
 {
 	if ((self = [super init])) {
+		pickEggController = [[PickEggToStorageController alloc] init];
 		[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:4];
 	}
 	return self;
@@ -52,12 +53,18 @@
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
+	[self callServerController];
 	[self optAnimationPlay];
 }
 
 -(CGPoint)countCoordinate: (CGPoint)clickPoint
 {
 	return ccp(self.position.x + clickPoint.x - self.contentSize.width/2, self.position.y + clickPoint.y - self.contentSize.height/2);
+}
+
+-(void) postPickEggRequest
+{
+	
 }
 
 -(void)optAnimationPlay
@@ -79,7 +86,15 @@
 
 -(void)callServerController
 {
+	int type = OPERATION_PICK_EGG;
 	
+	if(type == OPERATION_PICK_EGG)
+	{
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+								self.eggId,@"birdEggId",nil];
+		pickEggController.eggId = self.eggId;
+		[pickEggController execute:params];
+	}
 }
 
 -(void) dealloc
