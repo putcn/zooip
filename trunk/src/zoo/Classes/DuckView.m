@@ -61,7 +61,7 @@
 		//add swimming textures to animationTable
 		[animationTable setObject:swimmingUp forKey:@"swimming_up"];
 		[animationTable setObject:swimmingDown forKey:@"swimming_down"];
-		[animationTable setObject:swimmingLeftUp	forKey:@"swimming_leftUp"];
+		[animationTable setObject:swimmingLeftUp forKey:@"swimming_leftUp"];
 		[animationTable setObject:swimmingLeftDown forKey:@"swimming_leftDown"];
 		[animationTable setObject:swimmingLeft forKey:@"swimming_left"];
 		
