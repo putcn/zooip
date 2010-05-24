@@ -52,7 +52,6 @@ static DejectaController *_sharedDejectaController = nil;
 	CGPoint dejectaPos = [(DejectaView *)[allDejectas objectForKey:dejectaId] position];
 	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(dejectaPos.x, dejectaPos.y+50) setNumber:0];
 	[[allDejectas objectForKey:dejectaId] dealloc];
-	[allDejectas removeObjectForKey:dejectaId];
 }
 
 -(void) clearDejectas
@@ -60,7 +59,6 @@ static DejectaController *_sharedDejectaController = nil;
 	for (NSString *clearDejecta in [allDejectas allKeys])
 	{
 		[[allDejectas objectForKey:clearDejecta] dealloc];
-		[allDejectas removeObjectForKey:clearDejecta];
 	}
 }
 

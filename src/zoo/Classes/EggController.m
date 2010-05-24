@@ -54,7 +54,6 @@ static EggController *_sharedEggController = nil;
 		eggView.eggId = dataModelEgg.birdEggId;
 		[allEggs setObject:eggView forKey:eId];		
 	}
-	[dataModelEgg dealloc];
 }
 
 -(void) removeEgg:(NSString *)eggId setExperience:(NSInteger)experience
@@ -63,9 +62,8 @@ static EggController *_sharedEggController = nil;
 	dataModelEgg = (DataModelEgg *) [[DataEnvironment sharedDataEnvironment].eggs objectForKey:eggId];
 	NSInteger eggNum = dataModelEgg.remain;
 	CGPoint eggPos = [(EggView *)[allEggs objectForKey:eggId] position];
-	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(eggPos.x, eggPos.y+50) setNumber:eggNum];
+	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(eggPos.x, eggPos.y+20) setNumber:eggNum];
 	[[allEggs objectForKey:eggId] dealloc];
-	//ß[allEggs removeObjectForKey:eggId];
 	
 }
 
@@ -74,7 +72,6 @@ static EggController *_sharedEggController = nil;
 	for (NSString *clearEgg in [allEggs allKeys])
 	{
 		[[allEggs objectForKey:clearEgg] dealloc];
-		//[allEggs removeObjectForKey:clearEgg];
 	}
 }
 

@@ -52,7 +52,6 @@ static SnakeController *_sharedSnakeController = nil;
 	CGPoint snakePos = [(SnakeView *)[allSnakes objectForKey:snakeId] position];
 	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(snakePos.x, snakePos.y+50) setNumber:0];
 	[[allSnakes objectForKey:snakeId] dealloc];
-	[allSnakes removeObjectForKey:snakeId];
 }
 
 -(void) clearSnakes
@@ -60,7 +59,6 @@ static SnakeController *_sharedSnakeController = nil;
 	for (NSString *clearSnake in [allSnakes allKeys])
 	{
 		[[allSnakes objectForKey:clearSnake] dealloc];
-		[allSnakes removeObjectForKey:clearSnake];
 	}
 }
 
