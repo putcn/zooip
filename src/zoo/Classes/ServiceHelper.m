@@ -85,8 +85,9 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 	NSString* response = [request responseString]; 
 	NSData *jsonData = [response dataUsingEncoding:NSUTF8StringEncoding];
 	// TODO DELETE
-	NSLog(response);
+	
 	NSDictionary *result = [[CJSONDeserializer deserializer] deserializeAsDictionary:jsonData error:nil];
+	NSLog(@"result: %@",result);
 	NSDictionary *targetCallBack = [CallBacks objectForKey:request.requestFlagMark];
 	
 	BOOL shouldTriggerErrorHandler = NO;
@@ -675,7 +676,6 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 						obj.goodsPicture = [[dic objectForKey:@"goodsPicture"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"goodsPicture"];
 						obj.goodsName = [[dic objectForKey:@"goodsName"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"goodsName"];
 						obj.goodsDescription = [[dic objectForKey:@"goodsDescription"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"goodsDescription"];
-						
 						obj.goodsType = [[dic objectForKey:@"goodsType"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"goodsType"] intValue];
 						obj.goodsDuration = [[dic objectForKey:@"goodsDuration"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"goodsDuration"] intValue];
 						obj.currencyType = [[dic objectForKey:@"currencyType"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"currencyType"] intValue];
@@ -727,7 +727,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 	[request setRequestMethod:@"POST"];
 
 	//set testing uid and pid
-	[request setPostValue:@"25313321" forKey:@"uid"];
+	[request setPostValue:@"1188554455" forKey:@"uid"];
 	[request setPostValue:@"11" forKey:@"pid"];
 	
 	NSString *methodName;
