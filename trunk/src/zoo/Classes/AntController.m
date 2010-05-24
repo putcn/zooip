@@ -52,7 +52,6 @@ static AntController *_sharedAntController = nil;
 	CGPoint antPos = [(AntView *)[allAnts objectForKey:antId] position];
 	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(antPos.x, antPos.y+50) setNumber:0];
 	[[allAnts objectForKey:antId] dealloc];
-	[allAnts removeObjectForKey:antId];
 }
 
 -(void) clearAnts
@@ -60,7 +59,6 @@ static AntController *_sharedAntController = nil;
 	for (NSString *clearAnt in [allAnts allKeys])
 	{
 		[[allAnts objectForKey:clearAnt] dealloc];
-		[allAnts removeObjectForKey:clearAnt];
 	}
 }
 

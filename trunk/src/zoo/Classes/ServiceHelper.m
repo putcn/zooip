@@ -136,7 +136,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 						//egg.eggPrice = [[eggDic objectForKey:@"eggPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"eggPrice"] intValue];
 						//egg.zygotePrice = [[eggDic objectForKey:@"zygotePrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[eggDic objectForKey:@"zygotePrice"] intValue];
 						
-						[eggsDic setValue:egg forKey:[egg eggId]];
+						[eggsDic setValue:egg forKey:[egg birdEggId]];
 					}
 				}
 					break;
@@ -199,6 +199,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					break;
 				default:
 					// TODO
+					
 					break;
 			}
 			break;

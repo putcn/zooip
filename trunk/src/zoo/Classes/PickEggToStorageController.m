@@ -22,8 +22,9 @@
 
 -(void) resultCallback:(NSObject *)value
 {
-	//NSDictionary = (NSDictionary *)[value valueForKey:@""]
-	[[EggController sharedEggController] removeEgg:eggId setExperience:12];
+	NSDictionary *result = (NSDictionary *)value;
+	NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
+	[[EggController sharedEggController] removeEgg:eggId setExperience:experience];
 	[super resultCallback:value];
 }
 
