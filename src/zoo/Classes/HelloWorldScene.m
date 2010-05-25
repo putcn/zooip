@@ -10,7 +10,6 @@
 #import "CraneEggView.h"
 #import "Animal.h"
 #import "UILayer.h"
-#import "ManageContainer.h"
 
 // HelloWorld implementation
 @implementation HelloWorld
