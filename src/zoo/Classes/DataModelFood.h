@@ -11,11 +11,11 @@
 
 @interface DataModelFood : NSObject {
 	
+	NSString* foodId;
 	NSString* foodPower;
 	NSString* foodName;
 	NSString* foodImg;
-	
-	NSInteger foodId;
+
 	NSInteger foodPrice;
 	NSInteger antsRequired;
 }
@@ -23,8 +23,8 @@
 @property (nonatomic, retain) NSString* foodPower;
 @property (nonatomic, retain) NSString* foodName;
 @property (nonatomic, retain) NSString* foodImg;
+@property (nonatomic, retain) NSString* foodId;
 
-@property (nonatomic, assign) NSInteger foodId;
 @property (nonatomic, assign) NSInteger foodPrice;
 @property (nonatomic, assign) NSInteger antsRequired;
 

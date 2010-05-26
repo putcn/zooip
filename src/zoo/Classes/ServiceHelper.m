@@ -85,7 +85,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 	NSString* response = [request responseString]; 
 	NSData *jsonData = [response dataUsingEncoding:NSUTF8StringEncoding];
 	// TODO DELETE
-	
+	NSLog(response);
 	NSDictionary *result = [[CJSONDeserializer deserializer] deserializeAsDictionary:jsonData error:nil];
 	NSLog(@"result: %@",result);
 	NSDictionary *targetCallBack = [CallBacks objectForKey:request.requestFlagMark];
@@ -199,7 +199,6 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 					break;
 				default:
 					// TODO
-					
 					break;
 			}
 			break;
@@ -638,7 +637,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 				case 1:
 				{
 					// 商店所有食物信息
-					NSDictionary* sDic= [[DataEnvironment sharedDataEnvironment] foods];
+					NSMutableDictionary* sDic= [[DataEnvironment sharedDataEnvironment] foods];
 					NSArray* sArray = [result objectForKey:@"foods"];
 					for (int i = 0; i < [sArray count]; i++) {
 						NSDictionary* dic = [sArray objectAtIndex:i];
@@ -647,12 +646,13 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 						obj.foodPower = [[dic objectForKey:@"foodPower"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"foodPower"];
 						obj.foodName = [[dic objectForKey:@"foodName"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"foodName"];
 						obj.foodImg = [[dic objectForKey:@"foodImg"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"foodImg"];
-
-						obj.foodId = [[dic objectForKey:@"foodId"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"foodId"] intValue];
+						
+						obj.foodId = [[dic objectForKey:@"foodId"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"foodId"] stringValue];
+						
 						obj.foodPrice = [[dic objectForKey:@"foodPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"foodPrice"] intValue];
 						obj.antsRequired = [[dic objectForKey:@"antsRequired"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"antsRequired"] intValue];
 						
-						[sDic setValue:obj forKey:obj.foodId];
+						[sDic setObject:obj forKey:obj.foodId];
 					}
 				}
 					break;
@@ -728,7 +728,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 	[request setRequestMethod:@"POST"];
 
 	//set testing uid and pid
-	[request setPostValue:@"1188554455" forKey:@"uid"];
+	[request setPostValue:@"1122334455" forKey:@"uid"];
 	[request setPostValue:@"11" forKey:@"pid"];
 	
 	NSString *methodName;
