@@ -100,10 +100,80 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 	
 	switch (request.ZooRequestType) {
 		case ZooNetworkRequestgetFarmerInfo:
-			//todo
+		{
+			NSDictionary *farmerDic = [result objectForKey:@"farmer"];
+			if ([[result objectForKey:@"uid"] intValue] == [[DataEnvironment sharedDataEnvironment] playerUid]) {
+				DataModelFarmerInfo *farmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];
+				
+				farmerInfo.antsCurrency = [[farmerDic objectForKey:@"antsCurrency"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"antsCurrency"] intValue];
+				farmerInfo.farmPref = [[farmerDic objectForKey:@"farmPref"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"farmPref"] intValue];
+				farmerInfo.fighter = [[farmerDic objectForKey:@"fighter"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"fighter"] intValue];
+				farmerInfo.goldenEgg = [[farmerDic objectForKey:@"goldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"goldenEgg"] intValue];
+				farmerInfo.platformId = [[farmerDic objectForKey:@"platformId"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"platformId"] intValue];
+				farmerInfo.snsUserId = [[farmerDic objectForKey:@"snsUserId"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"snsUserId"] intValue];
+				
+				farmerInfo.farmerId = [[farmerDic objectForKey:@"farmerId"] isKindOfClass:[NSNull class]]  ? nil : [farmerDic objectForKey:@"farmerId"];
+				farmerInfo.userImg = [[farmerDic objectForKey:@"userImg"] isKindOfClass:[NSNull class]]  ? nil : [farmerDic objectForKey:@"userImg"];
+				farmerInfo.userName = [[farmerDic objectForKey:@"userName"] isKindOfClass:[NSNull class]]  ? nil : [farmerDic objectForKey:@"userName"];
+				
+				farmerInfo.haveNewMessage = [[farmerDic objectForKey:@"haveNewMessage"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"haveNewMessage"] intValue];
+				farmerInfo.haveTurtle = [[farmerDic objectForKey:@"haveTurtle"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"haveTurtle"] intValue];
+				farmerInfo.isNewUser = [[farmerDic objectForKey:@"isNewUser"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"isNewUser"] intValue];
+				
+			}
+			DataModelFarmerInfo *farmerInfo = [[DataEnvironment sharedDataEnvironment] friendFarmerInfo];
+			
+			farmerInfo.antsCurrency = [[farmerDic objectForKey:@"antsCurrency"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"antsCurrency"] intValue];
+			farmerInfo.farmPref = [[farmerDic objectForKey:@"farmPref"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"farmPref"] intValue];
+			farmerInfo.fighter = [[farmerDic objectForKey:@"fighter"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"fighter"] intValue];
+			farmerInfo.goldenEgg = [[farmerDic objectForKey:@"goldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"goldenEgg"] intValue];
+			farmerInfo.platformId = [[farmerDic objectForKey:@"platformId"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"platformId"] intValue];
+			farmerInfo.snsUserId = [[farmerDic objectForKey:@"snsUserId"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"snsUserId"] intValue];
+			
+			farmerInfo.farmerId = [[farmerDic objectForKey:@"farmerId"] isKindOfClass:[NSNull class]]  ? nil : [farmerDic objectForKey:@"farmerId"];
+			farmerInfo.userImg = [[farmerDic objectForKey:@"userImg"] isKindOfClass:[NSNull class]]  ? nil : [farmerDic objectForKey:@"userImg"];
+			farmerInfo.userName = [[farmerDic objectForKey:@"userName"] isKindOfClass:[NSNull class]]  ? nil : [farmerDic objectForKey:@"userName"];
+			
+			farmerInfo.haveNewMessage = [[farmerDic objectForKey:@"haveNewMessage"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"haveNewMessage"] intValue];
+			farmerInfo.haveTurtle = [[farmerDic objectForKey:@"haveTurtle"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"haveTurtle"] intValue];
+			farmerInfo.isNewUser = [[farmerDic objectForKey:@"isNewUser"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"isNewUser"] intValue];
+		}
 			break;
 		case ZooNetworkRequestgetFarmInfo:
-			// TODO
+		{
+			NSDictionary *farmDic = [result objectForKey:@"farm"];
+			if ([[result objectForKey:@"uid"] intValue] == [[DataEnvironment sharedDataEnvironment] playerUid]) {
+				DataModelFarmInfo *farmInfo = [[DataEnvironment sharedDataEnvironment] playerFarmInfo];
+				
+				farmInfo.farm_currentExp = [[farmDic objectForKey:@"currentExp"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"currentExp"] intValue];
+				farmInfo.farm_experience = [[farmDic objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"experience"] intValue];
+				farmInfo.farm_expGainPerDay = [[farmDic objectForKey:@"expGainPerDay"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"expGainPerDay"] intValue];
+				farmInfo.farm_foodEndTime = [[farmDic objectForKey:@"foodEndTime"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"foodEndTime"] intValue];
+				farmInfo.farm_level = [[farmDic objectForKey:@"level"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"level"] intValue];
+				farmInfo.farm_maxNumOfBirds = [[farmDic objectForKey:@"maxNumOfBirds"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"maxNumOfBirds"] intValue];
+				farmInfo.farm_nextLevelExp = [[farmDic objectForKey:@"nextLevelExp"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"nextLevelExp"] intValue];
+				farmInfo.farm_remain = [[farmDic objectForKey:@"remain"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"remain"] intValue];
+				farmInfo.farm_topMaxNumOfBirds = [[farmDic objectForKey:@"topMaxNumOfBirds"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"topMaxNumOfBirds"] intValue];
+				
+				farmInfo.farmerId = [[farmDic objectForKey:@"farmerId"] isKindOfClass:[NSNull class]]  ? nil : [farmDic objectForKey:@"farmerId"];
+				farmInfo.farmId = [[farmDic objectForKey:@"farmId"] isKindOfClass:[NSNull class]]  ? nil : [farmDic objectForKey:@"farmId"];
+				
+			}
+			DataModelFarmInfo *farmInfo = [[DataEnvironment sharedDataEnvironment] friendFarmInfo];
+			
+			farmInfo.farm_currentExp = [[farmDic objectForKey:@"currentExp"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"currentExp"] intValue];
+			farmInfo.farm_experience = [[farmDic objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"experience"] intValue];
+			farmInfo.farm_expGainPerDay = [[farmDic objectForKey:@"expGainPerDay"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"expGainPerDay"] intValue];
+			farmInfo.farm_foodEndTime = [[farmDic objectForKey:@"foodEndTime"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"foodEndTime"] intValue];
+			farmInfo.farm_level = [[farmDic objectForKey:@"level"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"level"] intValue];
+			farmInfo.farm_maxNumOfBirds = [[farmDic objectForKey:@"maxNumOfBirds"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"maxNumOfBirds"] intValue];
+			farmInfo.farm_nextLevelExp = [[farmDic objectForKey:@"nextLevelExp"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"nextLevelExp"] intValue];
+			farmInfo.farm_remain = [[farmDic objectForKey:@"remain"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"remain"] intValue];
+			farmInfo.farm_topMaxNumOfBirds = [[farmDic objectForKey:@"topMaxNumOfBirds"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"topMaxNumOfBirds"] intValue];
+			
+			farmInfo.farmerId = [[farmDic objectForKey:@"farmerId"] isKindOfClass:[NSNull class]]  ? nil : [farmDic objectForKey:@"farmerId"];
+			farmInfo.farmId = [[farmDic objectForKey:@"farmId"] isKindOfClass:[NSNull class]]  ? nil : [farmDic objectForKey:@"farmId"];
+		}
 			break;
 		case ZooNetworkRequestgetAllBirdFarmAnimalInfo:
 			// TODO
@@ -647,8 +717,8 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 						obj.foodName = [[dic objectForKey:@"foodName"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"foodName"];
 						obj.foodImg = [[dic objectForKey:@"foodImg"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"foodImg"];
 						
-						obj.foodId = [[dic objectForKey:@"foodId"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"foodId"] stringValue];
-						
+						NSInteger foodId = [[dic objectForKey:@"foodId"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"foodId"] intValue];
+						obj.foodId = [NSString stringWithFormat:@"%d", foodId];
 						obj.foodPrice = [[dic objectForKey:@"foodPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"foodPrice"] intValue];
 						obj.antsRequired = [[dic objectForKey:@"antsRequired"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"antsRequired"] intValue];
 						
