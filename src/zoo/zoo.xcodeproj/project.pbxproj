@@ -6122,6 +6122,7 @@
 		C342594011A6759300B6FDB7 /* FeedPowerFoodsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C342593D11A6759300B6FDB7 /* FeedPowerFoodsController.m */; };
 		C342594111A6759300B6FDB7 /* PickEggToStorageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C342593F11A6759300B6FDB7 /* PickEggToStorageController.m */; };
 		C374429911ABCC60004BABFE /* FeedAllAnimalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C374429811ABCC60004BABFE /* FeedAllAnimalController.m */; };
+		C37443E611AD161A004BABFE /* CureAnimalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37443E511AD161A004BABFE /* CureAnimalController.m */; };
 		C3A9E83C1181421400CEBDFC /* UIController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E83B1181421400CEBDFC /* UIController.m */; };
 		C3A9E8D41186C78300CEBDFC /* FriendList.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BC1186C78300CEBDFC /* FriendList.png */; };
 		C3A9E8D51186C78300CEBDFC /* PlayerInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BD1186C78300CEBDFC /* PlayerInfo.png */; };
@@ -12419,6 +12420,8 @@
 		C342593F11A6759300B6FDB7 /* PickEggToStorageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickEggToStorageController.m; sourceTree = "<group>"; };
 		C374429711ABCC60004BABFE /* FeedAllAnimalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedAllAnimalController.h; sourceTree = "<group>"; };
 		C374429811ABCC60004BABFE /* FeedAllAnimalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedAllAnimalController.m; sourceTree = "<group>"; };
+		C37443E411AD161A004BABFE /* CureAnimalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CureAnimalController.h; sourceTree = "<group>"; };
+		C37443E511AD161A004BABFE /* CureAnimalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CureAnimalController.m; sourceTree = "<group>"; };
 		C3A9E83A1181421400CEBDFC /* UIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIController.h; sourceTree = "<group>"; };
 		C3A9E83B1181421400CEBDFC /* UIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIController.m; sourceTree = "<group>"; };
 		C3A9E8BC1186C78300CEBDFC /* FriendList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FriendList.png; sourceTree = "<group>"; };
@@ -22606,6 +22609,8 @@
 		C331112E119D1F7300F2EE18 /* ServerController */ = {
 			isa = PBXGroup;
 			children = (
+				C37443E411AD161A004BABFE /* CureAnimalController.h */,
+				C37443E511AD161A004BABFE /* CureAnimalController.m */,
 				C342593C11A6759300B6FDB7 /* FeedPowerFoodsController.h */,
 				C342593D11A6759300B6FDB7 /* FeedPowerFoodsController.m */,
 				C342593E11A6759300B6FDB7 /* PickEggToStorageController.h */,
@@ -28933,6 +28938,7 @@
 				3EB0713311AD084900F31A7F /* ButtonContainer.m in Sources */,
 				3EB0713411AD084900F31A7F /* ItemButton.m in Sources */,
 				3EB0713511AD084900F31A7F /* ManageContainer.m in Sources */,
+				C37443E611AD161A004BABFE /* CureAnimalController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

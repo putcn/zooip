@@ -10,6 +10,7 @@
 #import "AnimalToolTip.h"
 #import "OperationViewController.h"
 #import "UIController.h"
+#import "CureAnimalController.h"
 
 @interface AnimalView : CCSprite <CCTargetedTouchDelegate>
 {	
@@ -20,6 +21,8 @@
 	NSString *animalId;
 	OperationViewController *operationViewController;
 	UIController *uiController;
+	
+	CureAnimalController *cureAnimalController;
 }
 
 @property (nonatomic, retain) NSString *animalId;
