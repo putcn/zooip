@@ -7,10 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseServerController.h"
+#import "ServiceHelper.h"
 
 
-@interface FeedProductYieldFoodController : NSObject {
-
+@interface FeedProductYieldFoodController : BaseServerController
+{
+	
 }
+
+-(void) execute:(NSDictionary *)value;
+-(void) resultCallback:(NSObject *)value;
+-(void) faultCallback:(NSObject *)value;
+
 
 @end
