@@ -23,6 +23,11 @@
 		//eat animation
 		CCAnimation* eatAnimation = [CCAnimation animationWithName:@"eat" delay:0.04f];
 		
+		//stand textures
+		CCTexture2D *standUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_stand_left.png" ofType:nil]]];
+		CCTexture2D *standDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_stand_right.png" ofType:nil]]];
+		
+		
 		//add walk animations to animationTable
 		for (int i = 1; i<=17; i++) {
 			[walkUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"maleMandarinDuck_walk_up_%02d.png", i]];
@@ -43,9 +48,9 @@
 		}
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:eatAnimation]] forKey:@"eat_left"];
 		
-		//stand textures
-		CCTexture2D *standUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_stand_left.png" ofType:nil]]];
-		CCTexture2D *standDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_stand_right.png" ofType:nil]]];
+		//add stand textures
+		[animationTable setObject:standUp forKey:@"stand_up"];
+		[animationTable setObject:standDown forKey:@"stand_down"];		
 		
 		//swimming textures
 		CCTexture2D *swimmingUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_swimming_up.png" ofType:nil]]];
