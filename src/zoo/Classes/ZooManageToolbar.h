@@ -8,11 +8,14 @@
 
 #import "cocos2d.h"
 #import "Button.h"
+#import "UIController.h"
 
 @interface ZooManageToolbar : CCSprite
 {
 	NSMutableArray *playerStatusIconTextures;
 	NSMutableArray *friendStatusIconTextures;
+	NSMutableArray *playerOperationButtons;
+	NSMutableArray *friendOperationButtons;
 	CCSprite *playerButtonContainer;
 	CCSprite *friendButtonContainer;
 	CCSprite *statusIcon;

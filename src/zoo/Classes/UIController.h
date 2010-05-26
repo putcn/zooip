@@ -15,6 +15,7 @@ typedef enum
 	OPERATION_FEED_POWER,//喂食营养饲料
 	OPERATION_FEED_PRODUCT_YIELD,//喂食增产饲料
 	OPERATION_PICK_EGG,//捡蛋
+	OPERATION_STEAL_EGG,//偷蛋
 	OPERATION_THROW_FIREWORK,//放鞭炮
 	OPERATION_CURE_ANIMAL,//治疗
 	OPERATION_RELEASE_ANTS,//放蚂蚁
@@ -32,7 +33,7 @@ typedef enum
 
 +(UIController *) sharedUIController;
 
--(int) getOpeartion;
+-(int) getOperation;
 -(void) switchOperation:(int)op;
 
 @end

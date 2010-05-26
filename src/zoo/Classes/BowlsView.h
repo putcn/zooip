@@ -8,11 +8,13 @@
 
 #import "cocos2d.h"
 #import "OperationViewController.h"
+#import "FeedAllAnimalController.h"
 CCTexture2D *bowls;
 CGRect rect;
 
-@interface BowlsView : CCSprite<CCTargetedTouchDelegate> {
-	
+@interface BowlsView : CCSprite<CCTargetedTouchDelegate>
+{
+	FeedAllAnimalController *feedAllAnimalController;
 }
 
 -(id) initWithFoodEndTime : (double) foodEndTime;

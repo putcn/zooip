@@ -18,11 +18,13 @@
 	SEL selector;
 	
 	int pri;
+	
+	float defaultScale;
 }
 
 -(id) initWithLabel:(NSString*) labelText setColor:(ccColor3B) labelColor setFont:(NSString*) labelFont 
 		setSize:(int) labelSize setBackground:(NSString*) imagePath setTarget:(id) target setSelector:(SEL) handler
-		setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue;
+		setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue scale:(float) scaleValue;
 
 -(void) setLabel:(NSString*) labelValue;
 

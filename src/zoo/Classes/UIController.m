@@ -33,7 +33,7 @@ static UIController *_sharedUIController = nil;
 	//id notificationSender = [notification object];
 }
 
--(int) getOpeartion
+-(int) getOperation
 {
 	return operation;
 }
