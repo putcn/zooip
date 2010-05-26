@@ -61,6 +61,24 @@
 		CCTexture2D *sleepLeftDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"magpie_sleep_leftDown.png" ofType:nil]]];
 		CCTexture2D *sleepLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"magpie_sleep_left.png" ofType:nil]]];		
 		
+		
+		//sick textures
+		CCTexture2D *sickUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"magpie_ill_up.png" ofType:nil]]];
+		CCTexture2D *sickDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"magpie_ill_down.png" ofType:nil]]];
+		CCTexture2D *sickLeftUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"magpie_ill_leftUp.png" ofType:nil]]];
+		CCTexture2D *sickLeftDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"magpie_ill_leftDown.png" ofType:nil]]];
+		CCTexture2D *sickLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"magpie_ill_left.png" ofType:nil]]];		
+		
+		//add sick textures to animationTable
+		[animationTable setObject:sickUp forKey:@"sick_up"];
+		[animationTable setObject:sickDown forKey:@"sick_down"];
+		[animationTable setObject:sickLeftUp	forKey:@"sick_leftUp"];
+		[animationTable setObject:sickLeftDown forKey:@"sick_leftDown"];
+		[animationTable setObject:sickLeft forKey:@"sick_left"];
+		
+		
+		
+		
 		//add stand textures
 		[animationTable setObject:standUp forKey:@"stand_up"];
 		[animationTable setObject:standDown forKey:@"stand_down"];		

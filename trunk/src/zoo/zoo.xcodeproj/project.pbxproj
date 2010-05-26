@@ -6049,6 +6049,33 @@
 		50F414F01069373D002A0D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EC1069373D002A0D5E /* Default.png */; };
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
+		84BAE6A5138DDEF300E6F7D3 /* babyRCC.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6A4138DDEF300E6F7D3 /* babyRCC.png */; };
+		84BAE6A8138DDEF300E6F7D3 /* babyDuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6A7138DDEF300E6F7D3 /* babyDuck.png */; };
+		84BAE6AB138DDEF300E6F7D3 /* babyHen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6AA138DDEF300E6F7D3 /* babyHen.png */; };
+		84BAE6AE138DDEF300E6F7D3 /* babyMagpie.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6AD138DDEF300E6F7D3 /* babyMagpie.png */; };
+		84BAE6B1138DDEF300E6F7D3 /* babyMallard.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6B0138DDEF300E6F7D3 /* babyMallard.png */; };
+		84BAE6B4138DDEF300E6F7D3 /* babyPeacock.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6B3138DDEF300E6F7D3 /* babyPeacock.png */; };
+		84BAE6B7138DDEF300E6F7D3 /* babyPiegon.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6B6138DDEF300E6F7D3 /* babyPiegon.png */; };
+		84BAE6BA138DDEF300E6F7D3 /* babySwan.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6B9138DDEF300E6F7D3 /* babySwan.png */; };
+		84BAE6BD138DDEF300E6F7D3 /* babyWildgoose.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6BC138DDEF300E6F7D3 /* babyWildgoose.png */; };
+		84BAE6C0138DDEF300E6F7D3 /* crane.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6BF138DDEF300E6F7D3 /* crane.png */; };
+		84BAE6C3138DDEF300E6F7D3 /* duck.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6C2138DDEF300E6F7D3 /* duck.png */; };
+		84BAE6C6138DDEF300E6F7D3 /* goose.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6C5138DDEF300E6F7D3 /* goose.png */; };
+		84BAE6C9138DDEF300E6F7D3 /* hen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6C8138DDEF300E6F7D3 /* hen.png */; };
+		84BAE6CC138DDEF300E6F7D3 /* magpie.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6CB138DDEF300E6F7D3 /* magpie.png */; };
+		84BAE6CF138DDEF300E6F7D3 /* maleMandarinDuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6CE138DDEF300E6F7D3 /* maleMandarinDuck.png */; };
+		84BAE6D2138DDEF300E6F7D3 /* malePheasant.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6D1138DDEF300E6F7D3 /* malePheasant.png */; };
+		84BAE6D5138DDEF300E6F7D3 /* mallard.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6D4138DDEF300E6F7D3 /* mallard.png */; };
+		84BAE6D8138DDEF300E6F7D3 /* parrot.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6D7138DDEF300E6F7D3 /* parrot.png */; };
+		84BAE6DB138DDEF300E6F7D3 /* peacock.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6DA138DDEF300E6F7D3 /* peacock.png */; };
+		84BAE6DE138DDEF300E6F7D3 /* peahen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6DD138DDEF300E6F7D3 /* peahen.png */; };
+		84BAE6E1138DDEF300E6F7D3 /* pheasant.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6E0138DDEF300E6F7D3 /* pheasant.png */; };
+		84BAE6E4138DDEF300E6F7D3 /* pigeon.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6E3138DDEF300E6F7D3 /* pigeon.png */; };
+		84BAE6E7138DDEF300E6F7D3 /* rooster.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6E6138DDEF300E6F7D3 /* rooster.png */; };
+		84BAE6EA138DDEF300E6F7D3 /* swan.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6E9138DDEF300E6F7D3 /* swan.png */; };
+		84BAE6ED138DDEF300E6F7D3 /* turkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6EC138DDEF300E6F7D3 /* turkey.png */; };
+		84BAE6F0138DDEF300E6F7D3 /* turkeycock.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6EF138DDEF300E6F7D3 /* turkeycock.png */; };
+		84BAE6F3138DDEF300E6F7D3 /* wildgoose.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6F2138DDEF300E6F7D3 /* wildgoose.png */; };
 		BF00748B1159E9B90003B411 /* GameMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748A1159E9B90003B411 /* GameMainScene.m */; };
 		BF00748E1159EA530003B411 /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748D1159EA530003B411 /* ModelLocator.m */; };
 		C3013EB7118A7656000C80B3 /* AnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3013E7E118A7656000C80B3 /* AnimalView.m */; };
@@ -12270,6 +12297,33 @@
 		50F414ED1069373D002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F414EE1069373D002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		84BAE6A4138DDEF300E6F7D3 /* babyRCC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyRCC.png; sourceTree = "<group>"; };
+		84BAE6A7138DDEF300E6F7D3 /* babyDuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyDuck.png; sourceTree = "<group>"; };
+		84BAE6AA138DDEF300E6F7D3 /* babyHen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyHen.png; sourceTree = "<group>"; };
+		84BAE6AD138DDEF300E6F7D3 /* babyMagpie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyMagpie.png; sourceTree = "<group>"; };
+		84BAE6B0138DDEF300E6F7D3 /* babyMallard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyMallard.png; sourceTree = "<group>"; };
+		84BAE6B3138DDEF300E6F7D3 /* babyPeacock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyPeacock.png; sourceTree = "<group>"; };
+		84BAE6B6138DDEF300E6F7D3 /* babyPiegon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyPiegon.png; sourceTree = "<group>"; };
+		84BAE6B9138DDEF300E6F7D3 /* babySwan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babySwan.png; sourceTree = "<group>"; };
+		84BAE6BC138DDEF300E6F7D3 /* babyWildgoose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyWildgoose.png; sourceTree = "<group>"; };
+		84BAE6BF138DDEF300E6F7D3 /* crane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crane.png; sourceTree = "<group>"; };
+		84BAE6C2138DDEF300E6F7D3 /* duck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duck.png; sourceTree = "<group>"; };
+		84BAE6C5138DDEF300E6F7D3 /* goose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goose.png; sourceTree = "<group>"; };
+		84BAE6C8138DDEF300E6F7D3 /* hen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hen.png; sourceTree = "<group>"; };
+		84BAE6CB138DDEF300E6F7D3 /* magpie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magpie.png; sourceTree = "<group>"; };
+		84BAE6CE138DDEF300E6F7D3 /* maleMandarinDuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = maleMandarinDuck.png; sourceTree = "<group>"; };
+		84BAE6D1138DDEF300E6F7D3 /* malePheasant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malePheasant.png; sourceTree = "<group>"; };
+		84BAE6D4138DDEF300E6F7D3 /* mallard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mallard.png; sourceTree = "<group>"; };
+		84BAE6D7138DDEF300E6F7D3 /* parrot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parrot.png; sourceTree = "<group>"; };
+		84BAE6DA138DDEF300E6F7D3 /* peacock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peacock.png; sourceTree = "<group>"; };
+		84BAE6DD138DDEF300E6F7D3 /* peahen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peahen.png; sourceTree = "<group>"; };
+		84BAE6E0138DDEF300E6F7D3 /* pheasant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pheasant.png; sourceTree = "<group>"; };
+		84BAE6E3138DDEF300E6F7D3 /* pigeon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pigeon.png; sourceTree = "<group>"; };
+		84BAE6E6138DDEF300E6F7D3 /* rooster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rooster.png; sourceTree = "<group>"; };
+		84BAE6E9138DDEF300E6F7D3 /* swan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swan.png; sourceTree = "<group>"; };
+		84BAE6EC138DDEF300E6F7D3 /* turkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turkey.png; sourceTree = "<group>"; };
+		84BAE6EF138DDEF300E6F7D3 /* turkeycock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turkeycock.png; sourceTree = "<group>"; };
+		84BAE6F2138DDEF300E6F7D3 /* wildgoose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wildgoose.png; sourceTree = "<group>"; };
 		BF0074891159E9B90003B411 /* GameMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMainScene.h; sourceTree = "<group>"; };
 		BF00748A1159E9B90003B411 /* GameMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMainScene.m; sourceTree = "<group>"; };
 		BF00748C1159EA530003B411 /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
@@ -12769,6 +12823,7 @@
 		3ED292BE11AA38CE002F95E3 /* babyCrane */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6A3138DDEF300E6F7D3 /* babyRCC_pose */,
 				3ED292BF11AA38CE002F95E3 /* babyRCC_eat */,
 				3ED292DD11AA38CE002F95E3 /* babyRCC_ill */,
 				3ED292E311AA38CE002F95E3 /* babyRCC_rest */,
@@ -13040,6 +13095,7 @@
 		3ED2938011AA38CF002F95E3 /* babyDuck */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6A6138DDEF300E6F7D3 /* pose */,
 				3ED2938111AA38CF002F95E3 /* eat */,
 				3ED293A011AA38CF002F95E3 /* ill */,
 				3ED293A611AA38CF002F95E3 /* rest */,
@@ -13258,6 +13314,7 @@
 		3ED2940D11AA38CF002F95E3 /* babyHen */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6A9138DDEF300E6F7D3 /* pose */,
 				3ED2940E11AA38CF002F95E3 /* eat */,
 				3ED2948C11AA38CF002F95E3 /* ill */,
 				3ED2949211AA38CF002F95E3 /* rest */,
@@ -13593,6 +13650,7 @@
 		3ED294F311AA38CF002F95E3 /* babyMagpie */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6AC138DDEF300E6F7D3 /* pose */,
 				3ED294F411AA38CF002F95E3 /* babyMagpie_stop_01.png */,
 				3ED294F511AA38CF002F95E3 /* babyMagpie_stop_02.png */,
 				3ED294F611AA38CF002F95E3 /* babyMagpie_stop_03.png */,
@@ -13627,6 +13685,7 @@
 		3ED2950E11AA38CF002F95E3 /* babyMallard */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6AF138DDEF300E6F7D3 /* pose */,
 				3ED2950F11AA38CF002F95E3 /* eat */,
 				3ED2952E11AA38CF002F95E3 /* ill */,
 				3ED2953411AA38CF002F95E3 /* rest */,
@@ -13845,6 +13904,7 @@
 		3ED2959B11AA38CF002F95E3 /* babyPeacock */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6B2138DDEF300E6F7D3 /* pose */,
 				3ED2959C11AA38CF002F95E3 /* eat */,
 				3ED295C511AA38CF002F95E3 /* ill */,
 				3ED295CB11AA38CF002F95E3 /* rest */,
@@ -14070,6 +14130,7 @@
 		3ED2962F11AA38CF002F95E3 /* babyPiegon */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6B5138DDEF300E6F7D3 /* pose */,
 				3ED2963011AA38CF002F95E3 /* babyPiegon_stop_01.png */,
 				3ED2963111AA38CF002F95E3 /* babyPiegon_stop_02.png */,
 				3ED2963211AA38CF002F95E3 /* babyPiegon_stop_03.png */,
@@ -14102,6 +14163,7 @@
 		3ED2964811AA38CF002F95E3 /* babySwan */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6B8138DDEF300E6F7D3 /* pose */,
 				3ED2964911AA38CF002F95E3 /* eat */,
 				3ED2966B11AA38CF002F95E3 /* ill */,
 				3ED2967111AA38CF002F95E3 /* sleep */,
@@ -14343,6 +14405,7 @@
 		3ED296EC11AA38CF002F95E3 /* babyWildgoose */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6BB138DDEF300E6F7D3 /* pose */,
 				3ED296ED11AA38CF002F95E3 /* eat */,
 				3ED2970C11AA38CF002F95E3 /* ill */,
 				3ED2971211AA38CF002F95E3 /* sleep */,
@@ -14568,6 +14631,7 @@
 		3ED2978711AA38D0002F95E3 /* crane */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6BE138DDEF300E6F7D3 /* pose */,
 				3ED2978811AA38D0002F95E3 /* redCrownedCrane_eat */,
 				3ED297AC11AA38D0002F95E3 /* redCrownedCrane_flying */,
 				3ED2980711AA38D0002F95E3 /* redcrownedCrane_ill */,
@@ -15144,6 +15208,7 @@
 		3ED2992D11AA38D0002F95E3 /* duck */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6C1138DDEF300E6F7D3 /* pose */,
 				3ED2992E11AA38D0002F95E3 /* eat */,
 				3ED2996B11AA38D0002F95E3 /* ill */,
 				3ED2997111AA38D0002F95E3 /* sleep */,
@@ -15383,6 +15448,7 @@
 		3ED299CF11AA38D0002F95E3 /* goose */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6C4138DDEF300E6F7D3 /* pose */,
 				3ED299D011AA38D0002F95E3 /* goose_eat */,
 				3ED29A0911AA38D0002F95E3 /* goose_ill */,
 				3ED29A0F11AA38D0002F95E3 /* goose_sleep */,
@@ -15662,6 +15728,7 @@
 		3ED29A9911AA38D0002F95E3 /* hen */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6C7138DDEF300E6F7D3 /* pose */,
 				3ED29A9A11AA38D0002F95E3 /* hen_eat */,
 				3ED29AAF11AA38D0002F95E3 /* hen_ill */,
 				3ED29AB511AA38D0002F95E3 /* sleep */,
@@ -15843,6 +15910,7 @@
 		3ED29B0811AA38D0002F95E3 /* magpie */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6CA138DDEF300E6F7D3 /* pose */,
 				3ED29B0911AA38D0002F95E3 /* fly */,
 				3ED29B5011AA38D0002F95E3 /* landing */,
 				3ED29B8311AA38D1002F95E3 /* magpie_eat */,
@@ -16394,6 +16462,7 @@
 		3ED29C5D11AA38D1002F95E3 /* maleMandarinDuck */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6CD138DDEF300E6F7D3 /* pose */,
 				3ED29C5E11AA38D1002F95E3 /* eat */,
 				3ED29C7711AA38D1002F95E3 /* ill */,
 				3ED29C7D11AA38D1002F95E3 /* sleep */,
@@ -16616,6 +16685,7 @@
 		3ED29CE711AA38D1002F95E3 /* malePheasant */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6D0138DDEF300E6F7D3 /* pose */,
 				3ED29CE811AA38D1002F95E3 /* eat */,
 				3ED29CFF11AA38D1002F95E3 /* rest */,
 				3ED29D0511AA38D1002F95E3 /* sick */,
@@ -16863,6 +16933,7 @@
 		3ED29D9111AA38D1002F95E3 /* mallard */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6D3138DDEF300E6F7D3 /* pose */,
 				3ED29D9211AA38D1002F95E3 /* eat */,
 				3ED29DB311AA38D1002F95E3 /* fly */,
 				3ED29DF111AA38D1002F95E3 /* ill */,
@@ -17430,6 +17501,7 @@
 		3ED29EF611AA38D1002F95E3 /* parrot */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6D6138DDEF300E6F7D3 /* pose */,
 				3ED29EF711AA38D1002F95E3 /* eat */,
 				3ED29F1A11AA38D1002F95E3 /* fly */,
 				3ED29F5711AA38D2002F95E3 /* ill */,
@@ -17928,6 +18000,7 @@
 		3ED2A02411AA38D2002F95E3 /* peacock */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6D9138DDEF300E6F7D3 /* pose */,
 				3ED2A02511AA38D2002F95E3 /* eat */,
 				3ED2A05811AA38D2002F95E3 /* ill */,
 				3ED2A05E11AA38D2002F95E3 /* rest */,
@@ -18251,6 +18324,7 @@
 		3ED2A11311AA38D2002F95E3 /* peahen */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6DC138DDEF300E6F7D3 /* pose */,
 				3ED2A11411AA38D2002F95E3 /* eat */,
 				3ED2A14111AA38D2002F95E3 /* ill */,
 				3ED2A14711AA38D2002F95E3 /* rest */,
@@ -18510,6 +18584,7 @@
 		3ED2A1C911AA38D2002F95E3 /* pheasant */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6DF138DDEF300E6F7D3 /* pose */,
 				3ED2A1CA11AA38D2002F95E3 /* eat */,
 				3ED2A1E211AA38D2002F95E3 /* rest */,
 				3ED2A1E811AA38D2002F95E3 /* sick */,
@@ -18758,6 +18833,7 @@
 		3ED2A27411AA38D2002F95E3 /* pigeon */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6E2138DDEF300E6F7D3 /* pose */,
 				3ED2A27511AA38D2002F95E3 /* eat */,
 				3ED2A27F11AA38D2002F95E3 /* fly */,
 				3ED2A2AE11AA38D2002F95E3 /* ill */,
@@ -19172,6 +19248,7 @@
 		3ED2A34E11AA38D2002F95E3 /* rooster */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6E5138DDEF300E6F7D3 /* pose */,
 				3ED2A34F11AA38D2002F95E3 /* cock_crow_left */,
 				3ED2A3A111AA38D3002F95E3 /* cock_eat_left */,
 				3ED2A3CC11AA38D3002F95E3 /* cock_ill */,
@@ -19545,6 +19622,7 @@
 		3ED2A47611AA38D3002F95E3 /* swan */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6E8138DDEF300E6F7D3 /* pose */,
 				3ED2A47711AA38D3002F95E3 /* eat */,
 				3ED2A4A411AA38D3002F95E3 /* fly */,
 				3ED2A4EB11AA38D3002F95E3 /* ill */,
@@ -20226,6 +20304,7 @@
 		3ED2A65411AA38D3002F95E3 /* turkey */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6EB138DDEF300E6F7D3 /* pose */,
 				3ED2A65511AA38D3002F95E3 /* eat */,
 				3ED2A67311AA38D3002F95E3 /* ill */,
 				3ED2A67911AA38D3002F95E3 /* sleep */,
@@ -20490,6 +20569,7 @@
 		3ED2A71611AA38D3002F95E3 /* turkeycock */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6EE138DDEF300E6F7D3 /* pose */,
 				3ED2A71711AA38D3002F95E3 /* eat */,
 				3ED2A73611AA38D3002F95E3 /* rest */,
 				3ED2A73C11AA38D3002F95E3 /* sick */,
@@ -20695,6 +20775,7 @@
 		3ED2A79611AA38D4002F95E3 /* wildgoose */ = {
 			isa = PBXGroup;
 			children = (
+				84BAE6F1138DDEF300E6F7D3 /* pose */,
 				3ED2A79711AA38D4002F95E3 /* eat */,
 				3ED2A7C011AA38D4002F95E3 /* fly */,
 				3ED2A80711AA38D4002F95E3 /* ill */,
@@ -22168,6 +22249,222 @@
 				50F414EF1069373D002A0D5E /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		84BAE6A3138DDEF300E6F7D3 /* babyRCC_pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6A4138DDEF300E6F7D3 /* babyRCC.png */,
+			);
+			path = babyRCC_pose;
+			sourceTree = "<group>";
+		};
+		84BAE6A6138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6A7138DDEF300E6F7D3 /* babyDuck.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6A9138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6AA138DDEF300E6F7D3 /* babyHen.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6AC138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6AD138DDEF300E6F7D3 /* babyMagpie.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6AF138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6B0138DDEF300E6F7D3 /* babyMallard.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6B2138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6B3138DDEF300E6F7D3 /* babyPeacock.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6B5138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6B6138DDEF300E6F7D3 /* babyPiegon.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6B8138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6B9138DDEF300E6F7D3 /* babySwan.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6BB138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6BC138DDEF300E6F7D3 /* babyWildgoose.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6BE138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6BF138DDEF300E6F7D3 /* crane.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6C1138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6C2138DDEF300E6F7D3 /* duck.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6C4138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6C5138DDEF300E6F7D3 /* goose.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6C7138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6C8138DDEF300E6F7D3 /* hen.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6CA138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6CB138DDEF300E6F7D3 /* magpie.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6CD138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6CE138DDEF300E6F7D3 /* maleMandarinDuck.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6D0138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6D1138DDEF300E6F7D3 /* malePheasant.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6D3138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6D4138DDEF300E6F7D3 /* mallard.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6D6138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6D7138DDEF300E6F7D3 /* parrot.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6D9138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6DA138DDEF300E6F7D3 /* peacock.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6DC138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6DD138DDEF300E6F7D3 /* peahen.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6DF138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6E0138DDEF300E6F7D3 /* pheasant.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6E2138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6E3138DDEF300E6F7D3 /* pigeon.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6E5138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6E6138DDEF300E6F7D3 /* rooster.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6E8138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6E9138DDEF300E6F7D3 /* swan.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6EB138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6EC138DDEF300E6F7D3 /* turkey.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6EE138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6EF138DDEF300E6F7D3 /* turkeycock.png */,
+			);
+			path = pose;
+			sourceTree = "<group>";
+		};
+		84BAE6F1138DDEF300E6F7D3 /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				84BAE6F2138DDEF300E6F7D3 /* wildgoose.png */,
+			);
+			path = pose;
 			sourceTree = "<group>";
 		};
 		BF00747F1159E86A0003B411 /* Views */ = {
@@ -28458,6 +28755,33 @@
 				3ED2BE4911AA38E2002F95E3 /* wildgoose_walk_leftDown_29.png in Resources */,
 				3ED2BE4A11AA38E2002F95E3 /* wildgoose_walk_leftDown_30.png in Resources */,
 				3ED2BE4B11AA38E2002F95E3 /* wildgoose_walk_leftDown_31.png in Resources */,
+				84BAE6A5138DDEF300E6F7D3 /* babyRCC.png in Resources */,
+				84BAE6A8138DDEF300E6F7D3 /* babyDuck.png in Resources */,
+				84BAE6AB138DDEF300E6F7D3 /* babyHen.png in Resources */,
+				84BAE6AE138DDEF300E6F7D3 /* babyMagpie.png in Resources */,
+				84BAE6B1138DDEF300E6F7D3 /* babyMallard.png in Resources */,
+				84BAE6B4138DDEF300E6F7D3 /* babyPeacock.png in Resources */,
+				84BAE6B7138DDEF300E6F7D3 /* babyPiegon.png in Resources */,
+				84BAE6BA138DDEF300E6F7D3 /* babySwan.png in Resources */,
+				84BAE6BD138DDEF300E6F7D3 /* babyWildgoose.png in Resources */,
+				84BAE6C0138DDEF300E6F7D3 /* crane.png in Resources */,
+				84BAE6C3138DDEF300E6F7D3 /* duck.png in Resources */,
+				84BAE6C6138DDEF300E6F7D3 /* goose.png in Resources */,
+				84BAE6C9138DDEF300E6F7D3 /* hen.png in Resources */,
+				84BAE6CC138DDEF300E6F7D3 /* magpie.png in Resources */,
+				84BAE6CF138DDEF300E6F7D3 /* maleMandarinDuck.png in Resources */,
+				84BAE6D2138DDEF300E6F7D3 /* malePheasant.png in Resources */,
+				84BAE6D5138DDEF300E6F7D3 /* mallard.png in Resources */,
+				84BAE6D8138DDEF300E6F7D3 /* parrot.png in Resources */,
+				84BAE6DB138DDEF300E6F7D3 /* peacock.png in Resources */,
+				84BAE6DE138DDEF300E6F7D3 /* peahen.png in Resources */,
+				84BAE6E1138DDEF300E6F7D3 /* pheasant.png in Resources */,
+				84BAE6E4138DDEF300E6F7D3 /* pigeon.png in Resources */,
+				84BAE6E7138DDEF300E6F7D3 /* rooster.png in Resources */,
+				84BAE6EA138DDEF300E6F7D3 /* swan.png in Resources */,
+				84BAE6ED138DDEF300E6F7D3 /* turkey.png in Resources */,
+				84BAE6F0138DDEF300E6F7D3 /* turkeycock.png in Resources */,
+				84BAE6F3138DDEF300E6F7D3 /* wildgoose.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
