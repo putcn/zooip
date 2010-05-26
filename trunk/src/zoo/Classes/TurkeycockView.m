@@ -78,10 +78,6 @@
 		[animationTable setObject:sickLeft forKey:@"sick_left"];
 		
 		
-		
-		
-		
-		
 		//add stand textures
 		[animationTable setObject:standUp forKey:@"stand_up"];
 		[animationTable setObject:standDown forKey:@"stand_down"];		
