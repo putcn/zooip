@@ -23,7 +23,7 @@
 	
 //	NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
 //	[[EggController sharedEggController] removeEgg:eggId setExperience:experience];
-//	[super resultCallback:value];
+	[super resultCallback:value];
 }
 
 -(void) faultCallback:(NSObject *)value

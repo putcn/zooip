@@ -14,6 +14,7 @@
 -(id) initWithID: (NSString *)sId
 {
 	if ((self = [super init])) {
+		clearDejectaController = [[ClearDejectaController alloc] init];
 		dejectaId = sId;
 		CCAnimation *animation = [CCAnimation animationWithName:@"animal" delay:0.4];
 		for (int i = 1; i<=4; i++) {
@@ -60,6 +61,7 @@
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	[self optAnimationPlay];
+	[self callServerController];
 }
 
 -(CGPoint)countCoordinate: (CGPoint)clickPoint
@@ -69,7 +71,7 @@
 
 -(void)optAnimationPlay
 {
-	int type = OPERATION_CLEAR_DEJECTA;
+	int type = [[UIController sharedUIController] getOperation];
 	if (type ==OPERATION_DEFAULT) {
 		[self schedule:@selector(tick:) interval:4.0];
 	}
@@ -86,7 +88,14 @@
 
 -(void)callServerController
 {
-	
+	int type = [[UIController sharedUIController] getOperation];
+	if (type == OPERATION_CLEAR_DEJECTA)
+	{
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:dejectaId,@"dejectaId",
+								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"cleanerId",
+								[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmId,@"farmerId",nil];
+		[clearDejectaController execute:params];
+	}
 }
 
 @end
