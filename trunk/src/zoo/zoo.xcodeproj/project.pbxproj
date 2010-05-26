@@ -6123,6 +6123,10 @@
 		C342594111A6759300B6FDB7 /* PickEggToStorageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C342593F11A6759300B6FDB7 /* PickEggToStorageController.m */; };
 		C374429911ABCC60004BABFE /* FeedAllAnimalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C374429811ABCC60004BABFE /* FeedAllAnimalController.m */; };
 		C37443E611AD161A004BABFE /* CureAnimalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37443E511AD161A004BABFE /* CureAnimalController.m */; };
+		C37443EE11AD16FF004BABFE /* ClearDejectaController.m in Sources */ = {isa = PBXBuildFile; fileRef = C37443ED11AD16FF004BABFE /* ClearDejectaController.m */; };
+		C374441711AD1976004BABFE /* KillSnakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C374441611AD1976004BABFE /* KillSnakeController.m */; };
+		C374441A11AD1993004BABFE /* KillAntsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C374441911AD1993004BABFE /* KillAntsController.m */; };
+		C374441D11AD19D1004BABFE /* FeedProductYieldFoodController.m in Sources */ = {isa = PBXBuildFile; fileRef = C374441C11AD19D1004BABFE /* FeedProductYieldFoodController.m */; };
 		C3A9E83C1181421400CEBDFC /* UIController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E83B1181421400CEBDFC /* UIController.m */; };
 		C3A9E8D41186C78300CEBDFC /* FriendList.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BC1186C78300CEBDFC /* FriendList.png */; };
 		C3A9E8D51186C78300CEBDFC /* PlayerInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BD1186C78300CEBDFC /* PlayerInfo.png */; };
@@ -12422,6 +12426,14 @@
 		C374429811ABCC60004BABFE /* FeedAllAnimalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedAllAnimalController.m; sourceTree = "<group>"; };
 		C37443E411AD161A004BABFE /* CureAnimalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CureAnimalController.h; sourceTree = "<group>"; };
 		C37443E511AD161A004BABFE /* CureAnimalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CureAnimalController.m; sourceTree = "<group>"; };
+		C37443EC11AD16FF004BABFE /* ClearDejectaController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClearDejectaController.h; sourceTree = "<group>"; };
+		C37443ED11AD16FF004BABFE /* ClearDejectaController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClearDejectaController.m; sourceTree = "<group>"; };
+		C374441511AD1976004BABFE /* KillSnakeController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillSnakeController.h; sourceTree = "<group>"; };
+		C374441611AD1976004BABFE /* KillSnakeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillSnakeController.m; sourceTree = "<group>"; };
+		C374441811AD1993004BABFE /* KillAntsController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KillAntsController.h; sourceTree = "<group>"; };
+		C374441911AD1993004BABFE /* KillAntsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillAntsController.m; sourceTree = "<group>"; };
+		C374441B11AD19D1004BABFE /* FeedProductYieldFoodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedProductYieldFoodController.h; sourceTree = "<group>"; };
+		C374441C11AD19D1004BABFE /* FeedProductYieldFoodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedProductYieldFoodController.m; sourceTree = "<group>"; };
 		C3A9E83A1181421400CEBDFC /* UIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIController.h; sourceTree = "<group>"; };
 		C3A9E83B1181421400CEBDFC /* UIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIController.m; sourceTree = "<group>"; };
 		C3A9E8BC1186C78300CEBDFC /* FriendList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FriendList.png; sourceTree = "<group>"; };
@@ -22637,6 +22649,14 @@
 				3EB1B28611A425EB00927E2F /* GetFarmerDogController.m */,
 				C374429711ABCC60004BABFE /* FeedAllAnimalController.h */,
 				C374429811ABCC60004BABFE /* FeedAllAnimalController.m */,
+				C37443EC11AD16FF004BABFE /* ClearDejectaController.h */,
+				C37443ED11AD16FF004BABFE /* ClearDejectaController.m */,
+				C374441511AD1976004BABFE /* KillSnakeController.h */,
+				C374441611AD1976004BABFE /* KillSnakeController.m */,
+				C374441811AD1993004BABFE /* KillAntsController.h */,
+				C374441911AD1993004BABFE /* KillAntsController.m */,
+				C374441B11AD19D1004BABFE /* FeedProductYieldFoodController.h */,
+				C374441C11AD19D1004BABFE /* FeedProductYieldFoodController.m */,
 			);
 			name = ServerController;
 			sourceTree = "<group>";
@@ -28939,6 +28959,10 @@
 				3EB0713411AD084900F31A7F /* ItemButton.m in Sources */,
 				3EB0713511AD084900F31A7F /* ManageContainer.m in Sources */,
 				C37443E611AD161A004BABFE /* CureAnimalController.m in Sources */,
+				C37443EE11AD16FF004BABFE /* ClearDejectaController.m in Sources */,
+				C374441711AD1976004BABFE /* KillSnakeController.m in Sources */,
+				C374441A11AD1993004BABFE /* KillAntsController.m in Sources */,
+				C374441D11AD19D1004BABFE /* FeedProductYieldFoodController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
