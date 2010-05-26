@@ -10,5 +10,5 @@
 
 
 @implementation BabyCraneView
-
+  //NSLog
 @end
