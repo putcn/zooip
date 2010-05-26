@@ -7,10 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "BaseServerController.h"
+#import "ServiceHelper.h"
 
 
-@interface KillAntsController : NSObject {
-
+@interface KillAntsController : BaseServerController
+{
+	
 }
+
+-(void) execute:(NSDictionary *)value;
+-(void) resultCallback:(NSObject *)value;
+-(void) faultCallback:(NSObject *)value;
 
 @end

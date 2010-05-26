@@ -22623,8 +22623,6 @@
 			children = (
 				C37443E411AD161A004BABFE /* CureAnimalController.h */,
 				C37443E511AD161A004BABFE /* CureAnimalController.m */,
-				C342593C11A6759300B6FDB7 /* FeedPowerFoodsController.h */,
-				C342593D11A6759300B6FDB7 /* FeedPowerFoodsController.m */,
 				C342593E11A6759300B6FDB7 /* PickEggToStorageController.h */,
 				C342593F11A6759300B6FDB7 /* PickEggToStorageController.m */,
 				C331112F119D209800F2EE18 /* BaseServerController.h */,
@@ -22655,6 +22653,8 @@
 				C374441611AD1976004BABFE /* KillSnakeController.m */,
 				C374441811AD1993004BABFE /* KillAntsController.h */,
 				C374441911AD1993004BABFE /* KillAntsController.m */,
+				C342593C11A6759300B6FDB7 /* FeedPowerFoodsController.h */,
+				C342593D11A6759300B6FDB7 /* FeedPowerFoodsController.m */,
 				C374441B11AD19D1004BABFE /* FeedProductYieldFoodController.h */,
 				C374441C11AD19D1004BABFE /* FeedProductYieldFoodController.m */,
 			);
