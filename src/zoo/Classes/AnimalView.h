@@ -11,6 +11,9 @@
 #import "OperationViewController.h"
 #import "UIController.h"
 #import "CureAnimalController.h"
+#import "FeedPowerFoodsController.h"
+#import "FeedProductYieldFoodController.h"
+#import "UIController.h"
 
 @interface AnimalView : CCSprite <CCTargetedTouchDelegate>
 {	
@@ -23,6 +26,8 @@
 	UIController *uiController;
 	
 	CureAnimalController *cureAnimalController;
+	FeedPowerFoodsController *feedPowerFoodsController;
+	FeedProductYieldFoodController *feedProductYieldFoodController;
 }
 
 @property (nonatomic, retain) NSString *animalId;

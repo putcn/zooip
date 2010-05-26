@@ -29,11 +29,14 @@ typedef enum
 @interface UIController : NSObject
 {
 	int operation;
+	NSString *selectFoodId;
 }
 
 +(UIController *) sharedUIController;
 
 -(int) getOperation;
 -(void) switchOperation:(int)op;
+-(NSString *) getSelectFoodId;
+-(void) setSelectFoodId:(NSString *)foodId;
 
 @end

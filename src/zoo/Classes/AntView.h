@@ -8,12 +8,15 @@
 
 #import "Cocos2d.h"
 #import "OperationViewController.h"
+#import "KillAntsController.h"
 
 
 @interface AntView : CCSprite <CCTargetedTouchDelegate>{
 	NSDictionary *dirctions;
 	CCAnimation *animation;
 	NSString *antId;
+	
+	KillAntsController *killAntsController;
 }
 
 @property (nonatomic, retain)NSString *antId;

@@ -14,6 +14,7 @@
 -(id) initWithID: (NSString *)sId
 {
 	if ((self = [super init])) {
+		killSnakeController = [[KillSnakeController alloc] init];
 		snakeId = sId;
 		CCTexture2D *snake = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_0.png" ofType:nil]]];
 		CGRect rect = CGRectZero;
@@ -64,6 +65,7 @@
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	[self optAnimationPlay];
+	[self callServerController];
 }
 
 -(CGPoint)countCoordinate: (CGPoint)clickPoint
@@ -73,7 +75,7 @@
 
 -(void)optAnimationPlay
 {
-	int type = OPERATION_KILL_SNAKE;
+	int type = [[UIController sharedUIController] getOperation];
 	if (type == OPERATION_DEFAULT) {
 		[self schedule:@selector(tick:) interval:4.0];
 	}
@@ -90,7 +92,15 @@
 
 -(void)callServerController
 {
+	int type = [[UIController sharedUIController] getOperation];
 	
+	if (type == OPERATION_KILL_SNAKE)
+	{
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:snakeId,@"releaseSnakeId",
+								[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"killerId",
+								[DataEnvironment sharedDataEnvironment].friendFarmerInfo.farmerId,@"farmerId",nil];
+		[killSnakeController execute:params];
+	}
 }
 
 @end

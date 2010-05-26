@@ -13,9 +13,12 @@
 #import "DataEnvironment.h"
 #import "EggController.h"
 #import "EggView.h"
+#import "KillSnakeController.h"
 
 @interface SnakeView : CCSprite<CCTargetedTouchDelegate> {
 	NSString *snakeId;
+	
+	KillSnakeController *killSnakeController;
 }
 
 @property (nonatomic, retain)NSString *snakeId;

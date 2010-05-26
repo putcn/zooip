@@ -161,6 +161,16 @@
 		CGPoint location = ccp(self.position.x, self.position.y);
 		[[OperationViewController sharedOperationViewController] play:@"infusion" setPosition:location];
 	}
+	else if (type == OPERATION_FEED_POWER)
+	{
+		CGPoint location = ccp(self.position.x, self.position.y);
+		[[OperationViewController sharedOperationViewController] play:@"power_food" setPosition:location];
+	}
+	else if (type == OPERATION_FEED_PRODUCT_YIELD)
+	{
+		CGPoint location = ccp(self.position.x, self.position.y);
+		[[OperationViewController sharedOperationViewController] play:@"product_yield_food" setPosition:location];
+	}
 	else {
 		return;
 	}
@@ -177,6 +187,20 @@
 								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId,@"farmerId",
 								[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmerId,@"friendId",nil];
 		[cureAnimalController execute:params];
+	}
+	else if (type == OPERATION_FEED_POWER)
+	{
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:animalId,@"animalId",
+								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId,@"farmerId",
+								[[UIController sharedUIController] getSelectFoodId],@"foodId",nil];
+		[feedPowerFoodsController execute:params];
+	}
+	else if (type == OPERATION_FEED_PRODUCT_YIELD)
+	{
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:animalId,@"animalId",
+								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId,@"farmerId",
+								[[UIController sharedUIController] getSelectFoodId],@"foodId",nil];
+		[feedProductYieldFoodController execute:params];
 	}
 }
 
