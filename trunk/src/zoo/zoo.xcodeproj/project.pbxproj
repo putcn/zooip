@@ -6092,6 +6092,7 @@
 		C3311142119D211900F2EE18 /* AllLayEggController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3311141119D211900F2EE18 /* AllLayEggController.m */; };
 		C342594011A6759300B6FDB7 /* FeedPowerFoodsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C342593D11A6759300B6FDB7 /* FeedPowerFoodsController.m */; };
 		C342594111A6759300B6FDB7 /* PickEggToStorageController.m in Sources */ = {isa = PBXBuildFile; fileRef = C342593F11A6759300B6FDB7 /* PickEggToStorageController.m */; };
+		C374429911ABCC60004BABFE /* FeedAllAnimalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C374429811ABCC60004BABFE /* FeedAllAnimalController.m */; };
 		C3A9E83C1181421400CEBDFC /* UIController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E83B1181421400CEBDFC /* UIController.m */; };
 		C3A9E8D41186C78300CEBDFC /* FriendList.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BC1186C78300CEBDFC /* FriendList.png */; };
 		C3A9E8D51186C78300CEBDFC /* PlayerInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BD1186C78300CEBDFC /* PlayerInfo.png */; };
@@ -12355,6 +12356,8 @@
 		C342593D11A6759300B6FDB7 /* FeedPowerFoodsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedPowerFoodsController.m; sourceTree = "<group>"; };
 		C342593E11A6759300B6FDB7 /* PickEggToStorageController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PickEggToStorageController.h; sourceTree = "<group>"; };
 		C342593F11A6759300B6FDB7 /* PickEggToStorageController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PickEggToStorageController.m; sourceTree = "<group>"; };
+		C374429711ABCC60004BABFE /* FeedAllAnimalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedAllAnimalController.h; sourceTree = "<group>"; };
+		C374429811ABCC60004BABFE /* FeedAllAnimalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedAllAnimalController.m; sourceTree = "<group>"; };
 		C3A9E83A1181421400CEBDFC /* UIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIController.h; sourceTree = "<group>"; };
 		C3A9E83B1181421400CEBDFC /* UIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIController.m; sourceTree = "<group>"; };
 		C3A9E8BC1186C78300CEBDFC /* FriendList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FriendList.png; sourceTree = "<group>"; };
@@ -22326,6 +22329,8 @@
 				3EB1B28311A425A300927E2F /* GetAntOfFarmController.m */,
 				3EB1B28511A425EB00927E2F /* GetFarmerDogController.h */,
 				3EB1B28611A425EB00927E2F /* GetFarmerDogController.m */,
+				C374429711ABCC60004BABFE /* FeedAllAnimalController.h */,
+				C374429811ABCC60004BABFE /* FeedAllAnimalController.m */,
 			);
 			name = ServerController;
 			sourceTree = "<group>";
@@ -28597,6 +28602,7 @@
 				F76FF23611A512AD00DCC05D /* DataModelGood.m in Sources */,
 				C342594011A6759300B6FDB7 /* FeedPowerFoodsController.m in Sources */,
 				C342594111A6759300B6FDB7 /* PickEggToStorageController.m in Sources */,
+				C374429911ABCC60004BABFE /* FeedAllAnimalController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

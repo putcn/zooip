@@ -15,7 +15,7 @@
 
 -(id) initWithLabel:(NSString*) labelText setColor:(ccColor3B) labelColor setFont:(NSString*) labelFont
 		setSize:(int) labelSize setBackground:(NSString*) imagePath setTarget:(id) target setSelector:(SEL) handler 
-		setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue
+		setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue scale:(float) scaleValue
 {
 	if( (self=[super init] ))
 	{
@@ -38,7 +38,9 @@
 		
 		pri = priorityValue;
 	}
-	self.scale = 0.75f;
+	
+	defaultScale = scaleValue;
+	self.scale = scaleValue;
 	return self;
 }
 
@@ -82,13 +84,13 @@
 {
 	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
 	NSLog(@"touch began");
-	self.scale = 1;
+	self.scale = defaultScale * 1.3;
 	return YES;
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	self.scale = 0.75f;
+	self.scale = defaultScale;
 	if (selector != nil && [self containsTouchLocation:touch])
 	{
 		[targetCallBack performSelector:selector withObject:self];

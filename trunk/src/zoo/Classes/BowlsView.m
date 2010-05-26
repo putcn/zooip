@@ -14,6 +14,8 @@
 -(id) initWithFoodEndTime: (double) foodEndTime
 {
 	if ((self = [super init])) {
+		feedAllAnimalController = [[FeedAllAnimalController alloc] init];
+		
 		if (foodEndTime <= 0.0f) {
 			bowls = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_0.png" ofType:nil]]];
 		}
@@ -88,6 +90,7 @@
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	[self optAnimationPlay];
+	[self callServerController];
 }
 
 -(CGPoint)countCoordinate: (CGPoint)clickPoint
@@ -98,8 +101,9 @@
 -(void)optAnimationPlay
 {
 	int type = OPERATION_FEED_ALL;
+	//int type = [[UIController sharedUIController] getOperation];
 	if (type == OPERATION_DEFAULT) {
-		[self schedule:@selector(tick:) interval:4.0];
+		//[self schedule:@selector(tick:) interval:4.0];
 	}
 	else if(type == OPERATION_FEED_ALL){
 		CGPoint location = ccp(self.position.x, self.position.y);
@@ -122,7 +126,15 @@
 
 -(void)callServerController
 {
+	int type = OPERATION_FEED_ALL;
+	//int type = [[UIController sharedUIController] getOperation];
 	
+	if(type == OPERATION_FEED_ALL)
+	{
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+		[feedAllAnimalController execute:params];
+	}
 }
 
 -(void) dealloc
