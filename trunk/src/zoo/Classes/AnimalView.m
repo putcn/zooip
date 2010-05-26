@@ -130,6 +130,7 @@
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	[self optAnimationPlay];
+	[self callServerController];
 }
 
 -(void) popDown
@@ -150,7 +151,7 @@
 
 -(void)optAnimationPlay
 {
-	int type = OPERATION_DEFAULT;
+	int type = [[UIController sharedUIController] getOperation];
 	if (type == OPERATION_DEFAULT) {
 		toolTip.visible = true;
 		[self schedule:@selector(tick:) interval:4.0];
@@ -168,7 +169,15 @@
 
 -(void)callServerController
 {
+	int type = [[UIController sharedUIController] getOperation];
 	
+	if (type == OPERATION_CURE_ANIMAL)
+	{
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:animalId,@"animalId",
+								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId,@"farmerId",
+								[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmerId,@"friendId",nil];
+		[cureAnimalController execute:params];
+	}
 }
 
 -(void) dealloc
