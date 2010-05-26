@@ -43,4 +43,14 @@ static UIController *_sharedUIController = nil;
 	operation = op;
 }
 
+-(NSString *) getSelectFoodId
+{
+	return selectFoodId;
+}
+
+-(void) setSelectFoodId:(NSString *)foodId
+{
+	selectFoodId = foodId;
+}
+
 @end

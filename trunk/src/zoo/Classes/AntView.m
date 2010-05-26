@@ -15,6 +15,7 @@
 -(id) initWithID: (NSString *)sId
 {
 	if ((self = [super init])) {
+		killAntsController = [[KillAntsController alloc] init];
 		antId = sId;
 		NSArray *dirkeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",nil];
 		NSArray *dirvalues = [NSArray arrayWithObjects:@"up",@"rightUp",@"right",@"rightDown",@"down",@"leftDown",@"left",@"leftUp",nil];
@@ -83,6 +84,7 @@
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	[self optAnimationPlay];
+	[self callServerController];
 }
 
 -(CGPoint)countCoordinate: (CGPoint)clickPoint
@@ -92,7 +94,7 @@
 
 -(void)optAnimationPlay
 {
-	int type = OPERATION_KILL_ANTS;
+	int type = [[UIController sharedUIController] getOperation];
 	if (type == OPERATION_DEFAULT) {
 		[self schedule:@selector(tick:) interval:4.0];
 	}
@@ -109,7 +111,15 @@
 
 -(void)callServerController
 {
+	int type = [[UIController sharedUIController] getOperation];
 	
+	if (type == OPERATION_KILL_ANTS)
+	{
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:antId,@"releaseAntsId",
+								[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"killerId ",
+								[DataEnvironment sharedDataEnvironment].friendFarmerInfo.farmerId,@"farmerId",nil];
+		[killAntsController execute:params];
+	}
 }
 
 -(void) dealloc
