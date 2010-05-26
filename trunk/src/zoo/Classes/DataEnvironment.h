@@ -12,6 +12,8 @@
 
 @interface DataEnvironment : NSObject
 {
+	NSString* playerUid;
+	
 	DataModelFarmerInfo *playerFarmerInfo;
 	DataModelFarmerInfo *friendFarmerInfo;
 	DataModelFarmInfo *playerFarmInfo;
@@ -38,6 +40,7 @@
 + (DataEnvironment *)sharedDataEnvironment;
 - (void)restore;
 
+@property(nonatomic,retain) NSString* playerUid;
 //getAllBirdFarmAnimalInfo
 @property(nonatomic,retain) NSMutableArray *animalIDs;
 @property(nonatomic,retain) NSMutableDictionary *animals;

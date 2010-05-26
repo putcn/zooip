@@ -13,6 +13,7 @@
 
 static DataEnvironment *sharedInst = nil;
 
+@synthesize playerUid;
 @synthesize animalIDs;
 @synthesize animals,
 eggs,
@@ -53,6 +54,8 @@ goods;
 	} else if ( (self = [super init]) ) {
 		sharedInst = self;
 		[self restore];
+		
+		playerUid = @"1122334455";
 		
 		playerFarmerInfo = [[DataModelFarmerInfo alloc] init];
 		friendFarmerInfo = [[DataModelFarmerInfo alloc] init];
@@ -96,6 +99,7 @@ goods;
 }
 
 - (void)restore{
+	playerUid = nil;
 	animalIDs = nil;
 	animals = nil;
 	eggs = nil;
