@@ -59,7 +59,7 @@
 		
 		
 		//add walk animations to animationTable
-		for (int i = 1; i<=37; i++) {
+		for (int i = 1; i<=17; i++) {
 			[walkUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"parrot_walk_up_%02d.png", i]];
 			[walkDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"parrot_walk_down_%02d.png", i]];
 			[walkLeftUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"parrot_walk_leftUp_%02d.png", i]];
@@ -73,7 +73,7 @@
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkLeftAnimation]] forKey:@"walk_left"];
 		
 		//add fly animations to animationTable
-		for (int i = 1; i<=13; i++) {
+		for (int i = 1; i<=11; i++) {
 			[flyUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"parrot_fly_up_%02d.png", i]];
 			[flyDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"parrot_fly_down_%02d.png", i]];
 			[flyLeftUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"parrot_fly_leftUp_%02d.png", i]];
@@ -88,7 +88,7 @@
 		
 		
 		//add transiton animations to animationTable
-		for (int i = 1; i<=17; i++) {
+		for (int i = 1; i<=9; i++) {
 			[transitionUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"parrot_transition_up_%02d.png", i]];
 			[transitionDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"parrot_transition_down_%02d.png", i]];
 			[transitionLeftUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"parrot_transition_leftUp_%02d.png", i]];
@@ -103,7 +103,7 @@
 		
 		
 		//add landing animations to animationTable
-		for (int i = 1; i<=11; i++) {
+		for (int i = 1; i<=9; i++) {
 			[landingUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"parrot_landing_up_%02d.png", i]];
 			[landingDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"parrot_landing_down_%02d.png", i]];
 			[landingLeftUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"parrot_landing_leftUp_%02d.png", i]];
@@ -116,10 +116,6 @@
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:flyLeftDownAnimation]] forKey:@"landing_leftDown"];
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:flyLeftAnimation]] forKey:@"landing_left"];
 		
-		
-		
-		
-	
 		
 		
 		//ill textures

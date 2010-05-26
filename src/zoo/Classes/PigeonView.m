@@ -32,18 +32,18 @@
 		CCAnimation* eatAnimation = [CCAnimation animationWithName:@"eat" delay:0.04f];
 		
 		//transition
-//		CCAnimation* transitionUpAnimation = [CCAnimation animationWithName:@"transitionUp" delay:0.04f];
-//		CCAnimation* transitionDownAnimation = [CCAnimation animationWithName:@"transitionRightUp" delay:0.04f];
-//		CCAnimation* transitionLeftUpAnimation = [CCAnimation animationWithName:@"transitionRight" delay:0.04f];
-//		CCAnimation* transitionLeftDownAnimation = [CCAnimation animationWithName:@"transitionRightDown" delay:0.04f];
-//		CCAnimation* transitionLeftAnimation = [CCAnimation animationWithName:@"transitionDown" delay:0.04f];
+		CCAnimation* transitionUpAnimation = [CCAnimation animationWithName:@"transitionUp" delay:0.04f];
+		CCAnimation* transitionDownAnimation = [CCAnimation animationWithName:@"transitionRightUp" delay:0.04f];
+		CCAnimation* transitionLeftUpAnimation = [CCAnimation animationWithName:@"transitionRight" delay:0.04f];
+		CCAnimation* transitionLeftDownAnimation = [CCAnimation animationWithName:@"transitionRightDown" delay:0.04f];
+		CCAnimation* transitionLeftAnimation = [CCAnimation animationWithName:@"transitionDown" delay:0.04f];
 		
 		//landing
-//		CCAnimation* landingUpAnimation = [CCAnimation animationWithName:@"landingUp" delay:0.04f];
-//		CCAnimation* landingDownAnimation = [CCAnimation animationWithName:@"landingRightUp" delay:0.04f];
-//		CCAnimation* landingLeftUpAnimation = [CCAnimation animationWithName:@"landingRight" delay:0.04f];
-//		CCAnimation* landingLeftDownAnimation = [CCAnimation animationWithName:@"landingRightDown" delay:0.04f];
-//		CCAnimation* landingLeftAnimation = [CCAnimation animationWithName:@"landingDown" delay:0.04f];
+		CCAnimation* landingUpAnimation = [CCAnimation animationWithName:@"landingUp" delay:0.04f];
+		CCAnimation* landingDownAnimation = [CCAnimation animationWithName:@"landingRightUp" delay:0.04f];
+		CCAnimation* landingLeftUpAnimation = [CCAnimation animationWithName:@"landingRight" delay:0.04f];
+		CCAnimation* landingLeftDownAnimation = [CCAnimation animationWithName:@"landingRightDown" delay:0.04f];
+		CCAnimation* landingLeftAnimation = [CCAnimation animationWithName:@"landingDown" delay:0.04f];
 		
 		//add walk animations to animationTable
 		for (int i = 1; i<=11; i++) {
@@ -79,6 +79,35 @@
 		}
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:eatAnimation]] forKey:@"eat_left"];
 		
+		
+		//add transiton animations to animationTable
+		for (int i = 1; i<=8; i++) {
+			[transitionUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"pigeon_transition_up_%02d.png", i]];
+			[transitionDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"pigeon_transition_down_%02d.png", i]];
+			[transitionLeftUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"pigeon_transition_leftUp_%02d.png", i]];
+			[transitionLeftDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"pigeon_transition_leftDown_%02d.png", i]];
+			[transitionLeftAnimation addFrameWithFilename:[NSString stringWithFormat:@"pigeon_transition_left_%02d.png", i]];
+		}
+		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:flyUpAnimation]] forKey:@"transition_up"];
+		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:flyDownAnimation]] forKey:@"transition_down"];
+		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:flyLeftUpAnimation]] forKey:@"transition_leftUp"];
+		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:flyLeftDownAnimation]] forKey:@"transition_leftDown"];
+		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:flyLeftAnimation]] forKey:@"transition_left"];
+		
+		
+		//add landing animations to animationTable
+		for (int i = 1; i<=7; i++) {
+			[landingUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"pigeon_landing_up_%02d.png", i]];
+			[landingDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"pigeon_landing_down_%02d.png", i]];
+			[landingLeftUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"pigeon_landing_leftUp_%02d.png", i]];
+			[landingLeftDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"pigeon_landing_leftDown_%02d.png", i]];
+			[landingLeftAnimation addFrameWithFilename:[NSString stringWithFormat:@"pigeon_landing_left_%02d.png", i]];
+		}
+		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:flyUpAnimation]] forKey:@"landing_up"];
+		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:flyDownAnimation]] forKey:@"landing_down"];
+		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:flyLeftUpAnimation]] forKey:@"landing_leftUp"];
+		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:flyLeftDownAnimation]] forKey:@"landing_leftDown"];
+		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:flyLeftAnimation]] forKey:@"landing_left"];
 		
 		//ill textures
 		CCTexture2D *illUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"pigeon_ill_up.png" ofType:nil]]];
