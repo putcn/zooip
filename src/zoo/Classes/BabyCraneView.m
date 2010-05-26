@@ -12,7 +12,7 @@
 
 @implementation BabyCraneView
 
-/*   等待修改图片资源名称
+
 -(id) init
 {	
 	if ((self = [super init])) {
@@ -27,7 +27,7 @@
 		CCAnimation* eatAnimation = [CCAnimation animationWithName:@"eat" delay:0.04f];
 				
 		//add eat animation
-		for (int i = 1; i<=29; i++) {
+		for (int i = 1; i<=28; i++) {
 			[eatAnimation addFrameWithFilename:[NSString stringWithFormat:@"babyRCC_eat_left_%02d.png",i]];
 		}
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:eatAnimation]] forKey:@"eat_left"];
@@ -36,11 +36,11 @@
 		
 		//add walk animations to animationTable
 		for (int i = 1; i<=29; i++) {
-			[walkUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"babyRCC_walk_up_%02d.png", i]];
-			[walkDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"babyRCC_walk_down_%02d.png", i]];
-			[walkLeftUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"babyRCC_walk_leftUp_%02d.png", i]];
-			[walkLeftDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"babyRCC_walk_leftDown_%02d.png", i]];
-			[walkLeftAnimation addFrameWithFilename:[NSString stringWithFormat:@"babyRCC_walk_left_%02d.png", i]];
+			[walkUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"babyCrane_walk_up_%02d.png", i]];
+			[walkDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"babyCrane_walk_down_%02d.png", i]];
+			[walkLeftUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"babyCrane_walk_leftUp_%02d.png", i]];
+			[walkLeftDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"babyCrane_walk_leftDown_%02d.png", i]];
+			[walkLeftAnimation addFrameWithFilename:[NSString stringWithFormat:@"babyCrane_walk_left_%02d.png", i]];
 		}
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkUpAnimation]] forKey:@"walk_up"];
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkDownAnimation]] forKey:@"walk_down"];
@@ -49,18 +49,18 @@
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkLeftAnimation]] forKey:@"walk_left"];
 		
 			//ill textures
-		CCTexture2D *illUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyRCC_ill_up.png" ofType:nil]]];
-		CCTexture2D *illDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyRCC_ill_down.png" ofType:nil]]];
-		CCTexture2D *illLeftUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyRCC_ill_leftUp.png" ofType:nil]]];
-		CCTexture2D *illLeftDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyRCC_ill_leftDown.png" ofType:nil]]];
-		CCTexture2D *illLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyRCC_ill_left.png" ofType:nil]]];
+		CCTexture2D *illUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_ill_up.png" ofType:nil]]];
+		CCTexture2D *illDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_ill_down.png" ofType:nil]]];
+		CCTexture2D *illLeftUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_ill_leftUp.png" ofType:nil]]];
+		CCTexture2D *illLeftDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_ill_leftDown.png" ofType:nil]]];
+		CCTexture2D *illLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_ill_left.png" ofType:nil]]];
 		
 		//sleep textures
-		CCTexture2D *sleepUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyRCC_sleep_up.png" ofType:nil]]];
-		CCTexture2D *sleepDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyRCC_sleep_down.png" ofType:nil]]];
-		CCTexture2D *sleepLeftUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyRCC_sleep_leftUp.png" ofType:nil]]];
-		CCTexture2D *sleepLeftDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyRCC_sleep_leftDown.png" ofType:nil]]];
-		CCTexture2D *sleepLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyRCC_sleep_left.png" ofType:nil]]];
+		CCTexture2D *sleepUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_sleep_up.png" ofType:nil]]];
+		CCTexture2D *sleepDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_sleep_down.png" ofType:nil]]];
+		CCTexture2D *sleepLeftUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_sleep_leftUp.png" ofType:nil]]];
+		CCTexture2D *sleepLeftDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_sleep_leftDown.png" ofType:nil]]];
+		CCTexture2D *sleepLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_sleep_left.png" ofType:nil]]];
 		
 		//add ill textures to animationTable
 		[animationTable setObject:illUp forKey:@"ill_up"];
@@ -82,7 +82,7 @@
 	return self;
 	
 }
-*/
+
 
 
 @end
