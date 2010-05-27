@@ -9,10 +9,11 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Button.h"
+#import "ManageContainer.h"
 
 @interface StorageManageToolbar : CCSprite
 {
-	
+	ManageContainer *manageContainer;
 }
 
 -(void) addButton;

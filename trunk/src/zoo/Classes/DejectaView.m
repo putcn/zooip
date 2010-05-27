@@ -17,8 +17,8 @@
 		clearDejectaController = [[ClearDejectaController alloc] init];
 		dejectaId = sId;
 		CCAnimation *animation = [CCAnimation animationWithName:@"animal" delay:0.4];
-		for (int i = 1; i<=4; i++) {
-			[animation addFrameWithFilename:[NSString stringWithFormat:@"dejecta_%02d",i]];
+		for (int i = 1; i<=3; i++) {
+			[animation addFrameWithFilename:[NSString stringWithFormat:@"dejecta_%02d.png",i]];
 		}
 		CCRepeatForever *repeatAction = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]];
 		DataModelDejecta *dataModelDejecta = (DataModelDejecta *)[[DataEnvironment sharedDataEnvironment].dejectas objectForKey:dejectaId];

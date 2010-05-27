@@ -85,8 +85,9 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 	NSString* response = [request responseString]; 
 	NSData *jsonData = [response dataUsingEncoding:NSUTF8StringEncoding];
 	// TODO DELETE
-	NSLog(response);
+	//NSLog(response);
 	NSDictionary *result = [[CJSONDeserializer deserializer] deserializeAsDictionary:jsonData error:nil];
+	NSLog(@"%@",result);
 	NSDictionary *targetCallBack = [CallBacks objectForKey:request.requestFlagMark];
 	
 	BOOL shouldTriggerErrorHandler = NO;

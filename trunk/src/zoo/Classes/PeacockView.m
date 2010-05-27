@@ -84,7 +84,7 @@
 		//add sleep textures to animationTable
 		[animationTable setObject:sleepUp forKey:@"sleep_up"];
 		[animationTable setObject:sleepDown forKey:@"sleep_down"];
-		[animationTable setObject:sleepLeftUp	forKey:@"sleep_leftUp"];
+		[animationTable setObject:sleepLeftUp forKey:@"sleep_leftUp"];
 		[animationTable setObject:sleepLeftDown forKey:@"sleep_leftDown"];
 		[animationTable setObject:sleepLeft forKey:@"sleep_left"];
 		

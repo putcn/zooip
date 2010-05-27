@@ -11,13 +11,13 @@
 
 @implementation DogView
 @synthesize dogId;
--(id) initWithID: (NSString *)sId
+-(id) init
 {
 	if((self = [super init]))
 	{
-		dogId = sId;
 		NSArray *dirkeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",nil];
 		NSArray *dirvalues = [NSArray arrayWithObjects:@"up",@"rightUp",@"right",@"rightDown",@"down",@"leftDown",@"left",@"leftUp",nil];
+		animationTable = [[[NSMutableDictionary alloc] init] retain];
 		dirctions = [[NSDictionary dictionaryWithObjects:dirvalues forKeys:dirkeys] retain];
 		//walk animations
 		CCAnimation* walkUpAnimation = [CCAnimation animationWithName:@"walkUp" delay:0.04f];
@@ -40,6 +40,8 @@
 		}
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:restAnimation] ] forKey:@"rest"];
 	}
+	
+	[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:4];
 	return self;
 }
 
@@ -54,11 +56,19 @@
 	}
 	else if ([direction isEqualToString:@"rightUp"]) {
 		self.flipX =YES;
-		direction = @"leftUp";
+		direction = @"left";
 	}
 	else if ([direction isEqualToString:@"rightDown"]){
 		self.flipX =YES;
-		direction = @"leftDown";
+		direction = @"left";
+	}	
+	else if ([direction isEqualToString:@"leftUp"]) {
+		self.flipX =NO;
+		direction = @"left";
+	}
+	else if ([direction isEqualToString:@"leftDown"]){
+		self.flipX =NO;
+		direction = @"left";
 	}
 	else 
 	{

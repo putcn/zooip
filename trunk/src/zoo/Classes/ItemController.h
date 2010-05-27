@@ -14,7 +14,8 @@
 #import "BowlsView.h"
 #import	"DejectaView.h"
 #import "Animal.h"
-
+#import "GameMainScene.h"
+#import "DataModelDog.h"
 
 @interface ItemController : NSObject {
 

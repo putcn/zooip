@@ -14,8 +14,8 @@
 	id targetCallBack;
 	SEL selector;
 	int pri;
-	NSString * itemId;
-	NSString * itemType;
+	NSString *itemId;
+	NSString *itemType;
 }
 
 @property (nonatomic, retain)NSString *itemId;

@@ -7,14 +7,13 @@
 //
 
 #import "ButtonContainer.h"
-#import "ItemButton.h"
-#import "Button.h"
 
 @implementation ButtonContainer
 
--(id) initWithTab: (NSString *)tabName
+-(id) initWithTab: (NSString *)tabName setTarget:(id)target
 {
 	if ((self = [super init])) {
+		parentTarget = target;
 		CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ButtonContainer.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
@@ -32,8 +31,8 @@
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllGoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
 
-		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:0 offsetX:0 offsetY:0];
-		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:0 offsetX:0 offsetY:0];
+		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
+		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
 		forwardPageBtn.flipX = YES;
 		nextPageBtn.position = ccp(self.contentSize.width/2 + 100, 0);
 		forwardPageBtn.position = ccp(self.contentSize.width/2 - 100, 0);
@@ -116,8 +115,8 @@
 				price = [NSString stringWithFormat:@"%d",originAnimal.antsPrice];
 			}
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",originAnimal.picturePrefix];
-			ItemButton *itemButton = [[itemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:@"peacock_stand_right.png" setBuyType:buyType setPrice:price setTarget:self setSelector:@selector(itemInfoHandler:) setPriority:0 offsetX:1 offsetY:1];
-			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 140);
+			ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%12];
 		}
 	}
@@ -140,8 +139,8 @@
 				price = [NSString stringWithFormat:@"%d",dataModelFood.antsRequired];
 			}
 			NSString *picFileName = [NSString stringWithFormat:@"food_%@.png",dataModelFood.foodImg];
-			ItemButton *itemButton = [[itemButton alloc] initWithItem:dataModelFood.foodId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:self setSelector:@selector(itemInfoHandler:) setPriority:0 offsetX:1 offsetY:1];
-			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 140);
+			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelFood.foodId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%12];
 		}
 	}
@@ -163,40 +162,12 @@
 				price = [NSString stringWithFormat:@"%d",dataModelGood.goodsAntsPrice];
 			}
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",dataModelGood.goodsPicture];
-			ItemButton *itemButton = [[itemButton alloc] initWithItem:dataModelGood.goodsId setitType:tabFlag setImagePath:@"peacock_stand_left.png" setBuyType:buyType setPrice:price setTarget:self setSelector:@selector(itemInfoHandler:) setPriority:0 offsetX:1 offsetY:1];
-			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 140);
+			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelGood.goodsId setitType:tabFlag setImagePath:@"peacock_stand_left.png" setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%12];
 		}
 	}
 
 }
-
-
--(void) itemInfoHandler:(ItemButton *) itemButton
-{
-	NSLog(@"itemButton:%@", itemButton.itemId);
-	NSLog(@"itemTypeL:%@",itemButton.itemType);
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 @end

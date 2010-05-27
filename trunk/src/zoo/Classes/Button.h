@@ -20,6 +20,8 @@
 	int pri;
 	
 	float defaultScale;
+	
+	NSDictionary *params;
 }
 
 -(id) initWithLabel:(NSString*) labelText setColor:(ccColor3B) labelColor setFont:(NSString*) labelFont 
@@ -29,5 +31,6 @@
 -(void) setLabel:(NSString*) labelValue;
 
 @property (retain, nonatomic) NSString *label;
+@property (nonatomic, retain) NSDictionary *params;
 
 @end

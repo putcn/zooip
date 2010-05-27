@@ -18,7 +18,7 @@
 }
 
 @property (nonatomic, retain)NSString *dogId;
--(id) initWithID: (NSString *)sId;
+-(id) init;
 -(void) update:(int)currDirectionValue status:(int)currStatusValue;
 
 -(CGPoint)countCoordinate: (CGPoint)clickPoint;
