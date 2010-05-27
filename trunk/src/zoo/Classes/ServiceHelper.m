@@ -87,7 +87,6 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 	// TODO DELETE
 	NSLog(response);
 	NSDictionary *result = [[CJSONDeserializer deserializer] deserializeAsDictionary:jsonData error:nil];
-	NSLog(@"result: %@",result);
 	NSDictionary *targetCallBack = [CallBacks objectForKey:request.requestFlagMark];
 	
 	BOOL shouldTriggerErrorHandler = NO;
@@ -102,7 +101,9 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 		case ZooNetworkRequestgetFarmerInfo:
 		{
 			NSDictionary *farmerDic = [result objectForKey:@"farmer"];
-			if ([[result objectForKey:@"uid"] intValue] == [[DataEnvironment sharedDataEnvironment] playerUid]) {
+			NSString* uid = [[request postData] objectForKey:@"uid"];
+			NSString* playerUid = [[DataEnvironment sharedDataEnvironment] playerUid];
+			if (uid == playerUid) {
 				DataModelFarmerInfo *farmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];
 				
 				farmerInfo.antsCurrency = [[farmerDic objectForKey:@"antsCurrency"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmerDic objectForKey:@"antsCurrency"] intValue];
@@ -142,7 +143,9 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 		case ZooNetworkRequestgetFarmInfo:
 		{
 			NSDictionary *farmDic = [result objectForKey:@"farm"];
-			if ([[result objectForKey:@"uid"] intValue] == [[DataEnvironment sharedDataEnvironment] playerUid]) {
+			NSString* uid = [[request postData] objectForKey:@"uid"];
+			NSString* playerUid = [[DataEnvironment sharedDataEnvironment] playerUid];
+			if (uid == playerUid) {
 				DataModelFarmInfo *farmInfo = [[DataEnvironment sharedDataEnvironment] playerFarmInfo];
 				
 				farmInfo.farm_currentExp = [[farmDic objectForKey:@"currentExp"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[farmDic objectForKey:@"currentExp"] intValue];
