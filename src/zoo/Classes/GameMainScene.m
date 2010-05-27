@@ -100,15 +100,20 @@ static GameMainScene *_sharedGameMainScene = nil;
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:paras AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:paras AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
 		
+//		NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:@"12",@"farmerId",@"1",@"goodsId",nil];
+//		NSDictionary *param1 =  [NSDictionary dictionaryWithObjectsAndKeys:@"12",@"farmerId",nil];
+//		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllGoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+//		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyTurtleByAnts WithParameters:param AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+//		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerDog WithParameters:param1 AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		
 		return self;
 	}
 	
 	return nil;
 }
 
-//-(void)requestDoneWith:(NSDictionary *)dic{
-//	NSLog(@"%@",dic);
-//}
+-(void) resultCallback:(NSObject *)value{
+}
 
 -(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex
 {
@@ -118,6 +123,16 @@ static GameMainScene *_sharedGameMainScene = nil;
 -(void) removeSpriteFromStage:(CCSprite *) sprite
 {
 	[background removeChild:sprite cleanup:YES];
+}
+
+-(void) addDialogToScreen:(CCSprite *)sprite z:(int) zIndex
+{
+	[self addChild:sprite z:zIndex];
+}
+
+-(void) removeDialogFromScreen:(CCSprite *)sprite
+{
+	[self removeChild:sprite cleanup:YES];
 }
 
 -(void) dealloc

@@ -23,5 +23,6 @@
 
 -(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex;
 -(void) removeSpriteFromStage:(CCSprite *) sprite;
-
+-(void) addDialogToScreen:(CCSprite *)sprite z:(int) zIndex;
+-(void) removeDialogFromScreen:(CCSprite *)sprite;
 @end

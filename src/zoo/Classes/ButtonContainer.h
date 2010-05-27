@@ -13,16 +13,21 @@
 #import "DataModelOriginalAnimal.h"
 #import "DataModelFood.h"
 #import "DataModelGood.h"
+#import "Button.h"
+#import "ItemButton.h"
 
 @interface ButtonContainer : CCSprite {
 	int currentPageNum;
 	int totalPage;
 	int currentNum;
 	NSString *tabFlag;
+	id parentTarget;
 }
--(id) initWithTab:(NSString *)tabName;
+-(id) initWithTab:(NSString *)tabName setTarget:(id)target;
 
 -(void) resultCallback:(NSObject *)value;
 -(void) faultCallback:(NSObject *)value;
+-(void) nextPage:(Button *)button;
+-(void) forwardPage:(Button *)button;
 -(void) generatePage;
 @end

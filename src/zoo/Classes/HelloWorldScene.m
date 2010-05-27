@@ -10,6 +10,8 @@
 #import "CraneEggView.h"
 #import "Animal.h"
 #import "UILayer.h"
+#import "ManageContainer.h"
+#import "ItemInfoPane.h"
 
 // HelloWorld implementation
 @implementation HelloWorld
@@ -74,10 +76,11 @@
 		UILayer *uiLayer = [UILayer node];
 		[self addChild:uiLayer];
 
+		ManageContainer *manageContainer = [[ManageContainer alloc] init];
+		[self addChild:manageContainer z:3];
 		
-		PigeonView * pigeonView = [[PigeonView alloc] init];
-		[[Animal alloc] initWithView:pigeonView setSpeed:0.5f setLimitRect:CGRectMake(100, 100, 200, 200)];
-		[background addChild:pigeonView];
+//		ItemInfoPane *itemInfoPane = [[ItemInfoPane alloc] initWithItem:@"10" type:@"animal"];
+//		[self addChild:itemInfoPane z:3];
 	}
 	return self;
 }

@@ -14,7 +14,7 @@
 
 @synthesize animalData;
 
--(id) initWithView:(AnimalView*) viewValue setSpeed:(CGFloat) speedValue setLimitRect:(CGRect) limitRectValue
+-(id) initWithView:(CCSprite*) viewValue setSpeed:(CGFloat) speedValue setLimitRect:(CGRect) limitRectValue
 {
 	if ( (self=[super init]) )
 	{

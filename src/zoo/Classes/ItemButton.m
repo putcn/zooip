@@ -25,7 +25,6 @@
 		[self setTexture: itemImg];
 		[self setTextureRect: rect];
 		[itemImg release];
-		//[self setContentSize:CGSizeMake(150, 100)];
 		targetCallBack = [target retain];
 		selector = handler;
 		pri = priorityValue;
@@ -55,7 +54,7 @@
 	[priceLbl setColor:ccc3(255, 0, 255)];
 	
 	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
-	buyImg.position = ccp(buyImg.contentSize.width/2 +20, self.contentSize.height - item.contentSize.height - buyImg.contentSize.height/2);
+	buyImg.position = ccp(buyImg.contentSize.width/2 +20, self.contentSize.height - 80);
 	priceLbl.position = ccp(buyImg.contentSize.width + 50 , buyImg.position.y);
 	
 	[self addChild:item z:7];

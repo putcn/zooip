@@ -14,7 +14,6 @@
 @interface Animal : NSObject
 {
 	AnimalView *view;
-	
 	DataModelAnimal *animalData;
 	CGFloat speed;
 	
@@ -27,7 +26,7 @@
 	CGRect limitRect;
 }
 
--(id) initWithView:(AnimalView*) viewValue setSpeed:(CGFloat) speedValue setLimitRect:(CGRect) limitRectValue;
+-(id) initWithView:(CCSprite*) viewValue setSpeed:(CGFloat) speedValue setLimitRect:(CGRect) limitRectValue;
 -(id) initWithAnimalData:(DataModelAnimal *) data;
 
 @property (nonatomic, copy) DataModelAnimal *animalData;

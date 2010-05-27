@@ -11,7 +11,7 @@
 
 @implementation Button
 
-@synthesize label;
+@synthesize label, params;
 
 -(id) initWithLabel:(NSString*) labelText setColor:(ccColor3B) labelColor setFont:(NSString*) labelFont
 		setSize:(int) labelSize setBackground:(NSString*) imagePath setTarget:(id) target setSelector:(SEL) handler 

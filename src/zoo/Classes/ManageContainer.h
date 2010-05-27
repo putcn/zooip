@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "UIController.h"
+#import "ItemInfoPane.h"
 
 
 @interface ManageContainer : CCSprite{
@@ -18,6 +19,8 @@
 	
 	CCTexture2D *tabEnable;
 	CCTexture2D *tabDisable;
+	ItemInfoPane *itemInfoPane;
+	
 	
 	int tabIndex;
 }

@@ -7,7 +7,7 @@
 //
 
 #import "StorageManageToolbar.h"
-
+#import "GameMainScene.h"
 
 @implementation StorageManageToolbar
 
@@ -53,7 +53,21 @@
 
 -(void) btnShopButtonHandler
 {
-	//[self.parent popupShopList];
+	if (manageContainer == nil) {
+		manageContainer = [[ManageContainer alloc] init];
+		manageContainer.position = ccp(240,160);
+		[[GameMainScene sharedGameMainScene] addDialogToScreen:manageContainer z:10];
+	}
+	else {
+		if (manageContainer.position.x == 240) {
+			manageContainer.position = ccp(1000,0);
+		}
+		else {
+			manageContainer.position = ccp(240,160);
+		}
+
+	}
+
 }
 
 -(void) btnStorageButtonHandler
