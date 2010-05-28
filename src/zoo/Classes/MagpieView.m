@@ -44,8 +44,7 @@
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:eatAnimation]] forKey:@"eat_left"];
 		
 		//stand textures
-		CCTexture2D *standUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"magpie_stand_left.png" ofType:nil]]];
-		CCTexture2D *standDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"magpie_stand_right.png" ofType:nil]]];
+		CCTexture2D *standLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"magpie.png" ofType:nil]]];
 		
 		//ill textures
 		CCTexture2D *illUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"magpie_ill_up.png" ofType:nil]]];
@@ -80,8 +79,7 @@
 		
 		
 		//add stand textures
-		[animationTable setObject:standUp forKey:@"stand_up"];
-		[animationTable setObject:standDown forKey:@"stand_down"];		
+		[animationTable setObject:standLeft forKey:@"stand_left"];	
 		
 		//add ill textures to animationTable
 		[animationTable setObject:illUp forKey:@"ill_up"];

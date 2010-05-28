@@ -40,7 +40,7 @@
 		}
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:restAnimation] ] forKey:@"rest"];
 	}
-	
+	[self runAction:[animationTable objectForKey:@"rest"]];
 	[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:4];
 	return self;
 }

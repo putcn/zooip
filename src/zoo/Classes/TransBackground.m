@@ -50,11 +50,12 @@
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
 	return YES;
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	return YES;
+	
 }
 @end

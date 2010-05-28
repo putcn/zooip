@@ -22,10 +22,6 @@
 		[self setTextureRect: rect];
 		[bg release];
 		self.title = @"购买动物";
-//		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:5];
-//		transBackground.scale = 17.0f;
-//		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-//		[self addChild:transBackground z:5];
 		[self addTitle];
 		[self updateInfo:itId type:itType setTarget:target];
 	}
@@ -153,10 +149,10 @@
 	cancelBtn.position = ccp(self.contentSize.height/2 + 200, 50);
 	[self addChild:confirmBtn z:10];
 	[self addChild:cancelBtn z:10];
-//	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:5];
-//	transBackground.scale = 17.0f;
-//	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-//	[self addChild:transBackground z:5];
+	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:5];
+	transBackground.scale = 17.0f;
+	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+	[self addChild:transBackground z:5];
 }
 
 -(void) setImg: (NSString *) imagePath setBuyType: (int) buyType setPrice:(NSString *) price
