@@ -151,21 +151,21 @@
 		}
 	}
 
-
-	itemInfoPane.position = ccp(2000, itemInfoPane.contentSize.height/2);
+	itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
 	
 }
 
 -(void) cancel:(Button *)button
 {
-	itemInfoPane.position = ccp(2000, itemInfoPane.contentSize.height/2);
+	itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
 	NSLog(@"取消");
 }
 
 
 -(void) resultCallback:(NSObject *)value
 {
-	NSLog(@"购买成功");
+	//MessageDialog *dialog = [[MessageDialog alloc] initDialog:@"ItemInfoPane.png" setTarget:self setSelector:nil];
+	NSLog(@"操作已成功!");
 }
 
 -(void) faultCallback:(NSObject *)value

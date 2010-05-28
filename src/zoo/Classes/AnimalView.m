@@ -51,7 +51,7 @@
 	
 	CCTexture2D *bg;
 	CGRect rect;
-	NSLog(@"当前的动物状态为 ***** %@ *****", [[status stringByAppendingString:@"_"] stringByAppendingFormat:direction]);
+	//NSLog(@"当前的动物状态为 ***** %@ *****", [[status stringByAppendingString:@"_"] stringByAppendingFormat:direction]);
 	if ([direction isEqualToString:@"right"]) 
 	{
 		self.flipX =YES;

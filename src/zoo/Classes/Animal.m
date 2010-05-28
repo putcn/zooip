@@ -95,7 +95,7 @@
 		targetPosition.y = [RandomHelper getRandomNum:currY - 50 to:currY + 50];
 		
 		if (CGRectContainsPoint(limitRect, targetPosition)) isFound = YES;
-		NSLog(@"===Loop Find===");
+		//NSLog(@"===Loop Find===");
 	}
 	
 	[self calculateSpeed];

@@ -28,15 +28,15 @@
 		
 		CGSize s = [self.texture contentSize];
 		
-		lblMessage = [CCLabel labelWithString:@"" dimensions:CGSizeMake(s.width - 50, s.height - 70)
+		lblMessage = [CCLabel labelWithString:@"操作已成功!" dimensions:CGSizeMake(s.width - 50, s.height - 70)
 								  alignment:UITextAlignmentCenter fontName:@"Microsoft YaHei" fontSize:12];
 		lblMessage.position = ccp( s.width / 2 , (s.height / 2) - 10 );
 		lblMessage.color = ccc3(0, 0, 0);
 		[self addChild:lblMessage];
 		
-		//CloseButton *btnClose = [CloseButton node];
-		//btnClose.position = ccp( s.width - 5, 5 );
-		//[self addChild:btnClose];
+		Button *btnClose = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:self setSelector:@selector(closeDialogHandler) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+		btnClose.position = ccp( s.width - 5, 5 );
+		[self addChild:btnClose];
 		
 		self.position = ccp( -500 , -500 );
 		isOpen = NO;
