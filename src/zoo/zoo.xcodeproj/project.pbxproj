@@ -6146,6 +6146,7 @@
 		C374441711AD1976004BABFE /* KillSnakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = C374441611AD1976004BABFE /* KillSnakeController.m */; };
 		C374441A11AD1993004BABFE /* KillAntsController.m in Sources */ = {isa = PBXBuildFile; fileRef = C374441911AD1993004BABFE /* KillAntsController.m */; };
 		C374441D11AD19D1004BABFE /* FeedProductYieldFoodController.m in Sources */ = {isa = PBXBuildFile; fileRef = C374441C11AD19D1004BABFE /* FeedProductYieldFoodController.m */; };
+		C396D85C11AF5EF50057078D /* CollisionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = C396D85B11AF5EF50057078D /* CollisionHelper.m */; };
 		C3A9E83C1181421400CEBDFC /* UIController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E83B1181421400CEBDFC /* UIController.m */; };
 		C3A9E8D41186C78300CEBDFC /* FriendList.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BC1186C78300CEBDFC /* FriendList.png */; };
 		C3A9E8D51186C78300CEBDFC /* PlayerInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8BD1186C78300CEBDFC /* PlayerInfo.png */; };
@@ -12474,6 +12475,8 @@
 		C374441911AD1993004BABFE /* KillAntsController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KillAntsController.m; sourceTree = "<group>"; };
 		C374441B11AD19D1004BABFE /* FeedProductYieldFoodController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedProductYieldFoodController.h; sourceTree = "<group>"; };
 		C374441C11AD19D1004BABFE /* FeedProductYieldFoodController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedProductYieldFoodController.m; sourceTree = "<group>"; };
+		C396D85A11AF5EF50057078D /* CollisionHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CollisionHelper.h; sourceTree = "<group>"; };
+		C396D85B11AF5EF50057078D /* CollisionHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CollisionHelper.m; sourceTree = "<group>"; };
 		C3A9E83A1181421400CEBDFC /* UIController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIController.h; sourceTree = "<group>"; };
 		C3A9E83B1181421400CEBDFC /* UIController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIController.m; sourceTree = "<group>"; };
 		C3A9E8BC1186C78300CEBDFC /* FriendList.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FriendList.png; sourceTree = "<group>"; };
@@ -22571,6 +22574,8 @@
 		BF0074831159E87D0003B411 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				C396D85A11AF5EF50057078D /* CollisionHelper.h */,
+				C396D85B11AF5EF50057078D /* CollisionHelper.m */,
 				3E87160211801BB200EBA2E8 /* RandomHelper.h */,
 				3E87160311801BB200EBA2E8 /* RandomHelper.m */,
 				CC01757B1174780500CD437F /* ServiceHelper.h */,
@@ -29051,6 +29056,7 @@
 				C374441A11AD1993004BABFE /* KillAntsController.m in Sources */,
 				C374441D11AD19D1004BABFE /* FeedProductYieldFoodController.m in Sources */,
 				3EAD8B0011AEC76D00CE397E /* TransBackground.m in Sources */,
+				C396D85C11AF5EF50057078D /* CollisionHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

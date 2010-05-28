@@ -32,15 +32,15 @@ static int height;
 +(int)getMapType:(CGPoint)point
 {
 	int x = (int)point.x;
-	int y = (int)point.y;
+	int y = height - (int)point.y;
 	
 	
 	UInt32 pixel = collisionMap[(y*width)+x];
 	
 	if ((pixel & 0xff000000) == 0) return -1; // Limited ..
-	if (pixel & 0x00ff0000) return 0; // Land ..
+	if (pixel & 0x00ff0000) return 0; // Sky ..
 	if (pixel & 0x0000ff00) return 1; // Water ..
-	if (pixel & 0x000000ff) return 2; // Sky ..
+	if (pixel & 0x000000ff) return 2; // Land ..
 	
 	return -1;
 }

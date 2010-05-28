@@ -10,6 +10,7 @@
 #import "ServiceHelper.h"
 #import "PigeonView.h"
 #import "Animal.h"
+#import "CollisionHelper.h"
 
 
 @implementation GameMainScene
@@ -44,6 +45,8 @@ static GameMainScene *_sharedGameMainScene = nil;
 {
 	if( (self=[super init]) ) 
 	{
+		[CollisionHelper initCollisionMap];
+		
 		CGSize size = [[CCDirector sharedDirector] winSize];
 		
 		//set the backgroud and the size set 50%
@@ -58,7 +61,7 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[baseContainer addChild: background z:0];
 		
 		CCSprite *tree = [CCSprite spriteWithFile:@"tree.png"];
-		tree.position = ccp(800,445);
+		tree.position = ccp(805,436);
 		
 		[background addChild:tree z:1];
 		
@@ -68,7 +71,7 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[background addChild:house z:1];
 		
 		CCSprite *waterbox = [CCSprite spriteWithFile:@"waterbox.png"];
-		waterbox.position = ccp(345,480);
+		waterbox.position = ccp(360,486);
 		
 		[background addChild:waterbox z:1];
 		
