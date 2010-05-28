@@ -69,6 +69,10 @@
 	{
 		self.flipX = NO;
 	}
+	if ([status isEqualToString:@"stand"]) {
+		direction = @"left";
+	}
+	
 	NSString *showKey;
 	if (currDirectionValue == -1) {
 		showKey = status;
