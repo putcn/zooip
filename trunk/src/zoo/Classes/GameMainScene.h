@@ -12,6 +12,7 @@
 #import "DragControlLayer.h"
 #import "InitWorkFlowController.h"
 
+
 @interface GameMainScene : CCLayer
 {
 	CCSprite *baseContainer;

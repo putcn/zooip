@@ -7,6 +7,7 @@
 //
 
 #import "ScaleControlLayer.h"
+#import "CollisionHelper.h"
 
 
 @implementation ScaleControlLayer

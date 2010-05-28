@@ -34,9 +34,9 @@ static ItemController *_itemController = nil;
 		[[ChinemyView alloc] init];
 	}
 	else if(itemType == @"dog"){
-		DogView *dogView = [[DogView alloc] init];
-		dogView.position = ccp(550,350);
-		[[Animal alloc] initWithView:dogView setSpeed:0.5f setLimitRect:CGRectMake(500, 300, 100, 100)];
+//		DogView *dogView = [[DogView alloc] init];
+//		dogView.position = ccp(550,350);
+//		[[Animal alloc] initWithView:dogView setSpeed:0.5f setLimitRect:CGRectMake(500, 300, 100, 100)];
 	}
 	else if(itemType == @"bowls"){
 		double foodEndTime = (double)[DataEnvironment sharedDataEnvironment].playerFarmInfo.farm_foodEndTime;

@@ -33,7 +33,7 @@
 	rect.size = bowls.contentSize;
 	[self setTexture: bowls];
 	[self setTextureRect: rect];
-	self.position = ccp(350,180);
+	self.position = ccp(386,176);
 	[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:4];
 	return self;
 }
