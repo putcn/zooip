@@ -132,7 +132,7 @@
 {
 	int type = OPERATION_DEFAULT;
 	if (type == OPERATION_DEFAULT) {
-		[self schedule:@selector(tick:) interval:4.0];
+	//	[self schedule:@selector(tick:) interval:4.0];
 	}
 
 	else {

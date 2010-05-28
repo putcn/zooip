@@ -7,6 +7,7 @@
 //
 
 #import "DejectaView.h"
+#import "GameMainScene.h"
 
 
 @implementation DejectaView
@@ -22,8 +23,10 @@
 		}
 		CCRepeatForever *repeatAction = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]];
 		DataModelDejecta *dataModelDejecta = (DataModelDejecta *)[[DataEnvironment sharedDataEnvironment].dejectas objectForKey:dejectaId];
-		self.position = ccp(dataModelDejecta.coordinateX,dataModelDejecta.coordinateY);
+		self.position = ccp(dataModelDejecta.coordinateX, 768 - dataModelDejecta.coordinateY);
 		[self runAction:repeatAction];
+		[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:4];
+		
 	}
 	return self;
 }
@@ -73,7 +76,7 @@
 {
 	int type = [[UIController sharedUIController] getOperation];
 	if (type ==OPERATION_DEFAULT) {
-		[self schedule:@selector(tick:) interval:4.0];
+		//[self schedule:@selector(tick:) interval:4.0];
 	}
 	else 
 		if(type == OPERATION_CLEAR_DEJECTA){

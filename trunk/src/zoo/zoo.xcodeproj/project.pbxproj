@@ -31,6 +31,8 @@
 		3E87160B11801F3300EBA2E8 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160711801F3300EBA2E8 /* house.png */; };
 		3E87160C11801F3300EBA2E8 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160811801F3300EBA2E8 /* tree.png */; };
 		3E87160D11801F3300EBA2E8 /* waterbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160911801F3300EBA2E8 /* waterbox.png */; };
+		3EAD8A9F11AEC0F700CE397E /* transimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAD8A9E11AEC0F700CE397E /* transimg.png */; };
+		3EAD8B0011AEC76D00CE397E /* TransBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD8AFF11AEC76D00CE397E /* TransBackground.m */; };
 		3EAE655E11AD4ED1004BA790 /* ItemInfoPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE655D11AD4ED1004BA790 /* ItemInfoPane.m */; };
 		3EAE656811AD5C8B004BA790 /* Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAE656011AD5C8B004BA790 /* Cancel.png */; };
 		3EAE656911AD5C8B004BA790 /* Confirm.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAE656111AD5C8B004BA790 /* Confirm.png */; };
@@ -6260,6 +6262,9 @@
 		3E87160711801F3300EBA2E8 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		3E87160811801F3300EBA2E8 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
 		3E87160911801F3300EBA2E8 /* waterbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterbox.png; sourceTree = "<group>"; };
+		3EAD8A9E11AEC0F700CE397E /* transimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transimg.png; sourceTree = "<group>"; };
+		3EAD8AFE11AEC76D00CE397E /* TransBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransBackground.h; sourceTree = "<group>"; };
+		3EAD8AFF11AEC76D00CE397E /* TransBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransBackground.m; sourceTree = "<group>"; };
 		3EAE655C11AD4ED1004BA790 /* ItemInfoPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemInfoPane.h; sourceTree = "<group>"; };
 		3EAE655D11AD4ED1004BA790 /* ItemInfoPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemInfoPane.m; sourceTree = "<group>"; };
 		3EAE656011AD5C8B004BA790 /* Cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cancel.png; sourceTree = "<group>"; };
@@ -12698,6 +12703,7 @@
 		3EAE655F11AD5C8B004BA790 /* foods */ = {
 			isa = PBXGroup;
 			children = (
+				3EAD8A9E11AEC0F700CE397E /* transimg.png */,
 				3EAE656011AD5C8B004BA790 /* Cancel.png */,
 				3EAE656111AD5C8B004BA790 /* Confirm.png */,
 				3EAE656211AD5C8B004BA790 /* food_1.png */,
@@ -22615,6 +22621,8 @@
 				C3C525E4117C321800343D7F /* Button.m */,
 				3EAE655C11AD4ED1004BA790 /* ItemInfoPane.h */,
 				3EAE655D11AD4ED1004BA790 /* ItemInfoPane.m */,
+				3EAD8AFE11AEC76D00CE397E /* TransBackground.h */,
+				3EAD8AFF11AEC76D00CE397E /* TransBackground.m */,
 			);
 			name = UIControls;
 			sourceTree = "<group>";
@@ -28887,6 +28895,7 @@
 				3E4B1FC111AE7E840044D43E /* nextpage.png in Resources */,
 				3E4B1FC211AE7E840044D43E /* TabButton1.png in Resources */,
 				3E4B1FC311AE7E840044D43E /* TabButton2.png in Resources */,
+				3EAD8A9F11AEC0F700CE397E /* transimg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -29041,6 +29050,7 @@
 				C374441711AD1976004BABFE /* KillSnakeController.m in Sources */,
 				C374441A11AD1993004BABFE /* KillAntsController.m in Sources */,
 				C374441D11AD19D1004BABFE /* FeedProductYieldFoodController.m in Sources */,
+				3EAD8B0011AEC76D00CE397E /* TransBackground.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

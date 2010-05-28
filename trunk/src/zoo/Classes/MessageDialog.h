@@ -7,6 +7,7 @@
 //
 
 #import "cocos2d.h"
+#import "Button.h"
 
 @interface MessageDialog : CCSprite <CCTargetedTouchDelegate>
 {

@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "UIController.h"
 #import "ItemInfoPane.h"
+#import "MessageDialog.h"
 
 
 @interface ManageContainer : CCSprite{
