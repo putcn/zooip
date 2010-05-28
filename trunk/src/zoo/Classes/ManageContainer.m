@@ -120,6 +120,7 @@
 			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",[button.params objectForKey:@"itemId"],@"originalAnimalId",@"1",@"amount",nil];
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 
+			
 		}
 		else if([[button.params objectForKey:@"itemBuyType"] intValue] == 1){
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
