@@ -11,7 +11,11 @@
 #import "Animal.h"
 #import "UILayer.h"
 #import "ManageContainer.h"
+#import "StorageContainer.h";
+
+#import "ManageContainer.h"
 #import "ItemInfoPane.h"
+
 
 // HelloWorld implementation
 @implementation HelloWorld
@@ -73,15 +77,28 @@
 		// add the label as a child to this Layer
 		[scaleContainer addChild: baseContainer];
 		
+		
 		UILayer *uiLayer = [UILayer node];
 		[self addChild:uiLayer];
 
-		ManageContainer *manageContainer = [[ManageContainer alloc] init];
-		[self addChild:manageContainer z:3];
+		//	test code   begin
+		
+		
+		
+		
+		
+		ManageContainer *itemInfoPane = [[ManageContainer alloc] init];
+		[self addChild: itemInfoPane z:3];
+		
+		//store view
+		//StorageContainer *stotragePane = [ [StorageContainer alloc] init ];
+		//[self addChild:stotragePane z:3];
+		
 		
 //		ItemInfoPane *itemInfoPane = [[ItemInfoPane alloc] initWithItem:@"10" type:@"animal"];
 //		[self addChild:itemInfoPane z:3];
 	}
+
 	return self;
 }
 
