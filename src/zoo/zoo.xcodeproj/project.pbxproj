@@ -6192,6 +6192,8 @@
 		50F414F01069373D002A0D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EC1069373D002A0D5E /* Default.png */; };
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
+		8432CD8111B346CF0093DA32 /* StoButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */; };
+		8432CD8611B3471F0093DA32 /* SellinfoPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8511B3471F0093DA32 /* SellinfoPane.m */; };
 		84BAE6A5138DDEF300E6F7D3 /* babyRCC.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6A4138DDEF300E6F7D3 /* babyRCC.png */; };
 		84BAE6A8138DDEF300E6F7D3 /* babyDuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6A7138DDEF300E6F7D3 /* babyDuck.png */; };
 		84BAE6AB138DDEF300E6F7D3 /* babyHen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6AA138DDEF300E6F7D3 /* babyHen.png */; };
@@ -6216,6 +6218,7 @@
 		84BAE6EA138DDEF300E6F7D3 /* swan.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6E9138DDEF300E6F7D3 /* swan.png */; };
 		84BAE6ED138DDEF300E6F7D3 /* turkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6EC138DDEF300E6F7D3 /* turkey.png */; };
 		84BAE6F0138DDEF300E6F7D3 /* turkeycock.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6EF138DDEF300E6F7D3 /* turkeycock.png */; };
+		84DB49B811AF5656005E5E71 /* StorageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB49B711AF5656005E5E71 /* StorageContainer.m */; };
 		BF00748B1159E9B90003B411 /* GameMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748A1159E9B90003B411 /* GameMainScene.m */; };
 		BF00748E1159EA530003B411 /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748D1159EA530003B411 /* ModelLocator.m */; };
 		C3013EB7118A7656000C80B3 /* AnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3013E7E118A7656000C80B3 /* AnimalView.m */; };
@@ -12591,6 +12594,10 @@
 		50F414ED1069373D002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F414EE1069373D002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8432CD7F11B346CF0093DA32 /* StoButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoButtonContainer.h; sourceTree = "<group>"; };
+		8432CD8011B346CF0093DA32 /* StoButtonContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoButtonContainer.m; sourceTree = "<group>"; };
+		8432CD8411B3471F0093DA32 /* SellinfoPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellinfoPane.h; sourceTree = "<group>"; };
+		8432CD8511B3471F0093DA32 /* SellinfoPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellinfoPane.m; sourceTree = "<group>"; };
 		84BAE6A4138DDEF300E6F7D3 /* babyRCC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyRCC.png; sourceTree = "<group>"; };
 		84BAE6A7138DDEF300E6F7D3 /* babyDuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyDuck.png; sourceTree = "<group>"; };
 		84BAE6AA138DDEF300E6F7D3 /* babyHen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyHen.png; sourceTree = "<group>"; };
@@ -12615,6 +12622,8 @@
 		84BAE6E9138DDEF300E6F7D3 /* swan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swan.png; sourceTree = "<group>"; };
 		84BAE6EC138DDEF300E6F7D3 /* turkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turkey.png; sourceTree = "<group>"; };
 		84BAE6EF138DDEF300E6F7D3 /* turkeycock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turkeycock.png; sourceTree = "<group>"; };
+		84DB49B611AF5656005E5E71 /* StorageContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageContainer.h; sourceTree = "<group>"; };
+		84DB49B711AF5656005E5E71 /* StorageContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageContainer.m; sourceTree = "<group>"; };
 		BF0074891159E9B90003B411 /* GameMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMainScene.h; sourceTree = "<group>"; };
 		BF00748A1159E9B90003B411 /* GameMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMainScene.m; sourceTree = "<group>"; };
 		BF00748C1159EA530003B411 /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
@@ -23061,6 +23070,12 @@
 		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				8432CD8411B3471F0093DA32 /* SellinfoPane.h */,
+				8432CD8511B3471F0093DA32 /* SellinfoPane.m */,
+				8432CD7F11B346CF0093DA32 /* StoButtonContainer.h */,
+				8432CD8011B346CF0093DA32 /* StoButtonContainer.m */,
+				84DB49B611AF5656005E5E71 /* StorageContainer.h */,
+				84DB49B711AF5656005E5E71 /* StorageContainer.m */,
 				3EB0712D11AD084900F31A7F /* ButtonContainer.h */,
 				3EB0712E11AD084900F31A7F /* ButtonContainer.m */,
 				3EB0712F11AD084900F31A7F /* ItemButton.h */,
@@ -29636,8 +29651,11 @@
 				C374441711AD1976004BABFE /* KillSnakeController.m in Sources */,
 				C374441A11AD1993004BABFE /* KillAntsController.m in Sources */,
 				C374441D11AD19D1004BABFE /* FeedProductYieldFoodController.m in Sources */,
+				84DB49B811AF5656005E5E71 /* StorageContainer.m in Sources */,
 				3EAD8B0011AEC76D00CE397E /* TransBackground.m in Sources */,
 				C396D85C11AF5EF50057078D /* CollisionHelper.m in Sources */,
+				8432CD8111B346CF0093DA32 /* StoButtonContainer.m in Sources */,
+				8432CD8611B3471F0093DA32 /* SellinfoPane.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
