@@ -50,6 +50,8 @@
 	}
 	return self;
 }
+
+
 -(void)addTitle
 {
 	NSLog(@"%@",title);
@@ -111,6 +113,8 @@
 	}
 
 }
+
+
 
 -(void) buyItem:(Button *)button
 {
