@@ -78,15 +78,11 @@
 		CCTexture2D *sleepLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_sleep_left.png" ofType:nil]]];
 		
 		
-		
 		//stand textures
-		CCTexture2D *standUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_stand_left.png" ofType:nil]]];
-		CCTexture2D *standDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_stand_right.png" ofType:nil]]];
-		
-		
+		CCTexture2D *standLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"mandarinduck.png" ofType:nil]]];
 		//add stand textures
-		[animationTable setObject:standUp forKey:@"stand_up"];
-		[animationTable setObject:standDown forKey:@"stand_down"];		
+		[animationTable setObject:standLeft forKey:@"stand_left"];				
+		
 			
 		
 		//add ill textures to animationTable

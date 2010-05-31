@@ -130,7 +130,16 @@
 		[animationTable setObject:swimmingLeftDown forKey:@"swimming_leftDown"];
 		[animationTable setObject:swimmingLeft forKey:@"swimming_left"];
 		
-				
+		
+		
+		//stand textures
+		CCTexture2D *standLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"mallard.png" ofType:nil]]];
+		//add stand textures
+		[animationTable setObject:standLeft forKey:@"stand_left"];
+		
+		
+		
+		
 		//ill textures
 		CCTexture2D *illUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"mallard_ill_up.png" ofType:nil]]];
 		CCTexture2D *illDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"mallard_ill_down.png" ofType:nil]]];

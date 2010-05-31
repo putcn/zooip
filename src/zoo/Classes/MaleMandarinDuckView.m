@@ -24,8 +24,9 @@
 		CCAnimation* eatAnimation = [CCAnimation animationWithName:@"eat" delay:0.04f];
 		
 		//stand textures
-		CCTexture2D *standUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_stand_left.png" ofType:nil]]];
-		CCTexture2D *standDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_stand_right.png" ofType:nil]]];
+		CCTexture2D *standLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"malemandarinduck.png" ofType:nil]]];
+		//add stand textures
+		[animationTable setObject:standLeft forKey:@"stand_left"];
 		
 		
 		//add walk animations to animationTable
@@ -48,10 +49,6 @@
 		}
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:eatAnimation]] forKey:@"eat_left"];
 		
-		//add stand textures
-		[animationTable setObject:standUp forKey:@"stand_up"];
-		[animationTable setObject:standDown forKey:@"stand_down"];		
-		
 		//swimming textures
 		CCTexture2D *swimmingUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_swimming_up.png" ofType:nil]]];
 		CCTexture2D *swimmingDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_swimming_down.png" ofType:nil]]];
@@ -72,10 +69,6 @@
 		CCTexture2D *sleepLeftUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_sleep_leftUp.png" ofType:nil]]];
 		CCTexture2D *sleepLeftDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_sleep_leftDown.png" ofType:nil]]];
 		CCTexture2D *sleepLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"maleMandarinDuck_sleep_left.png" ofType:nil]]];
-		
-		//add stand textures
-		[animationTable setObject:standUp forKey:@"stand_up"];
-		[animationTable setObject:standDown forKey:@"stand_down"];	
 		
 		//add swimming textures to animationTable
 		[animationTable setObject:swimmingUp forKey:@"swimming_up"];
