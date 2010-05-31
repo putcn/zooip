@@ -48,7 +48,15 @@
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkLeftDownAnimation]] forKey:@"walk_leftDown"];
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkLeftAnimation]] forKey:@"walk_left"];
 		
-			//ill textures
+		
+		//stand textures
+		CCTexture2D *standLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyRCC.png" ofType:nil]]];
+		//add stand textures
+		[animationTable setObject:standLeft forKey:@"stand_left"];				
+		
+		
+		
+		//ill textures
 		CCTexture2D *illUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_ill_up.png" ofType:nil]]];
 		CCTexture2D *illDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_ill_down.png" ofType:nil]]];
 		CCTexture2D *illLeftUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"babyCrane_ill_leftUp.png" ofType:nil]]];

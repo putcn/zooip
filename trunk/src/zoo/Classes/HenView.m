@@ -44,6 +44,12 @@
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:eatAnimation]] forKey:@"eat_left"];
 		
 		
+		
+		//stand textures
+		CCTexture2D *standLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"hen.png" ofType:nil]]];
+		//add stand textures
+		[animationTable setObject:standLeft forKey:@"stand_left"];
+		
 		//ill textures
 		CCTexture2D *illUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"hen_ill_up.png" ofType:nil]]];
 		CCTexture2D *illDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"hen_ill_down.png" ofType:nil]]];

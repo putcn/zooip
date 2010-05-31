@@ -45,6 +45,8 @@
 		
 		//stand textures
 		CCTexture2D *standLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"turkeycock.png" ofType:nil]]];
+		//add stand textures
+		[animationTable setObject:standLeft forKey:@"stand_left"];
 		
 		//ill textures
 		CCTexture2D *illUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"turkeycock_ill_up.png" ofType:nil]]];
@@ -76,9 +78,6 @@
 		[animationTable setObject:sickLeftDown forKey:@"sick_leftDown"];
 		[animationTable setObject:sickLeft forKey:@"sick_left"];
 		
-		
-		//add stand textures
-		[animationTable setObject:standLeft forKey:@"stand_left"];
 		
 		//add ill textures to animationTable
 		[animationTable setObject:illUp forKey:@"ill_up"];

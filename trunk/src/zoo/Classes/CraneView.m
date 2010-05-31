@@ -75,6 +75,14 @@
 		}
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:eatAnimation]] forKey:@"eat_left"];
 		
+		
+		//stand textures
+		CCTexture2D *standLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"crane.png" ofType:nil]]];
+		//add stand textures
+		[animationTable setObject:standLeft forKey:@"stand_left"];				
+		
+		
+		
 		//add landing animations to animationTable
 		for (int i = 1; i<=15; i++) {
 			[landingUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"crane_landing_up_%02d.png", i]];

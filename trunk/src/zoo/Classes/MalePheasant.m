@@ -45,8 +45,10 @@
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:eatAnimation]] forKey:@"eat_left"];
 		
 		//stand textures
-		CCTexture2D *standUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"malePheasant_stand_left.png" ofType:nil]]];
-		CCTexture2D *standDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"malePheasant_stand_right.png" ofType:nil]]];
+		CCTexture2D *standLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"malepheasant.png" ofType:nil]]];
+		//add stand textures
+		[animationTable setObject:standLeft forKey:@"stand_left"];
+		
 		
 		//ill textures
 		CCTexture2D *illUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"malePheasant_ill_up.png" ofType:nil]]];
@@ -62,10 +64,6 @@
 		CCTexture2D *sleepLeftDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"malePheasant_sleep_leftDown.png" ofType:nil]]];
 		CCTexture2D *sleepLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"malePheasant_sleep_left.png" ofType:nil]]];		
 	
-		//add stand textures
-		[animationTable setObject:standUp forKey:@"stand_up"];
-		[animationTable setObject:standDown forKey:@"stand_down"];		
-		
 		//add ill textures to animationTable
 		[animationTable setObject:illUp forKey:@"ill_up"];
 		[animationTable setObject:illDown forKey:@"ill_down"];
