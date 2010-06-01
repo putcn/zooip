@@ -29,7 +29,7 @@ static int height;
 	collisionMap = (const UInt32*)CFDataGetBytePtr(imageData);
 }
 
-+(int)getMapType:(CGPoint)point
++(int)getMapType:(CGPoint)point isByte:(BOOL)isByte
 {
 	int x = (int)point.x;
 	int y = height - (int)point.y;
@@ -37,12 +37,24 @@ static int height;
 	
 	UInt32 pixel = collisionMap[(y*width)+x];
 	
-	if ((pixel & 0xff000000) == 0) return -1; // Limited ..
-	if (pixel & 0x00ff0000) return 0; // Sky ..
-	if (pixel & 0x0000ff00) return 1; // Water ..
-	if (pixel & 0x000000ff) return 2; // Land ..
-	
-	return -1;
+	if (isByte == YES)
+	{
+		if ((pixel & 0xff000000) == 0) return 0x0000; // Limited ..
+		if (pixel & 0x00ff0000) return 0x0001; // Sky ..
+		if (pixel & 0x0000ff00) return 0x0010; // Water ..
+		if (pixel & 0x000000ff) return 0x0100; // Land ..
+		
+		return 0x0000;
+	}
+	else
+	{
+		if ((pixel & 0xff000000) == 0) return -1; // Limited ..
+		if (pixel & 0x00ff0000) return 0; // Sky ..
+		if (pixel & 0x0000ff00) return 1; // Water ..
+		if (pixel & 0x000000ff) return 2; // Land ..
+		
+		return -1;
+	}
 }
 
 @end
