@@ -15,6 +15,7 @@
 	NSString* eggId;
 	NSString* originalAnimalId;
 	NSString* eggName;
+	NSString* eggNameEN;
 	NSString* zygoteBirthday;
 	
 	NSInteger baseYield;
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) NSString* eggId;
 @property (nonatomic, retain) NSString* originalAnimalId;
 @property (nonatomic, retain) NSString* eggName;
+@property (nonatomic, retain) NSString* eggNameEN;
 @property (nonatomic, retain) NSString* zygoteBirthday;
 
 @property (nonatomic, assign) NSInteger baseYield;

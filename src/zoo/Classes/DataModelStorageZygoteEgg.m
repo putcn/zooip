@@ -21,6 +21,7 @@ incubatingTime,
 zygoteGender,
 status,
 eggName,
+eggNameEN,
 eggPrice;
 
 @end

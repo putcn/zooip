@@ -14,6 +14,7 @@
 	NSString* eggStorageId;
 	NSString* eggId;
 	NSString* eggName;
+	NSString* eggNameEN;
 	NSString* eggImgId;
 	NSString* eggDescription;
 	
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) NSString* eggStorageId;
 @property (nonatomic, retain) NSString* eggId;
 @property (nonatomic, retain) NSString* eggName;
+@property (nonatomic, retain) NSString* eggNameEN;
 @property (nonatomic, retain) NSString* eggImgId;
 @property (nonatomic, retain) NSString* eggDescription;
 

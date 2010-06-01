@@ -113,10 +113,19 @@
 			int buyType = 0;
 			
 			NSString *price = [NSString stringWithFormat:@"%d",storageEgg.eggPrice];
-			NSString *picFileName = [NSString stringWithFormat:@"%@.png",storageEgg.eggName];
+
+			NSString *picName = [NSString stringWithFormat:@"%@",storageEgg.eggNameEN];
+			NSArray *eNameArr = [picName componentsSeparatedByString:@" "];
 			
+			//NSLog(@"   ==============eggname  size------>>>>>>>>>>>>>>>>>> %@",[eNameArr objectAtIndex:0]);			
+			
+			
+			NSString *picFileName = [NSString stringWithFormat:@"%@Egg.png",[eNameArr objectAtIndex:0] ];
+						
 			ItemButton *itemButton = [[ItemButton alloc] initWithItem:storageEgg.eggId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
+			
 			[self addChild:itemButton z:7 tag:i%12];
 		}
 	}
@@ -142,9 +151,17 @@
 			}
 			 
 			 */
-			NSString *picFileName = [NSString stringWithFormat:@"food_%@.png",dataModelStorageZygoteEggs.eggName];
+			
+			NSString *picName = [NSString stringWithFormat:@"%@",dataModelStorageZygoteEggs.eggNameEN];
+			NSArray *eNameArr = [picName componentsSeparatedByString:@" "];
+			
+			
+			NSString *picFileName = [NSString stringWithFormat:@"%@Egg.png",[eNameArr objectAtIndex:0]];
+			
 			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelStorageZygoteEggs.eggId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
+			
 			[self addChild:itemButton z:7 tag:i%12];
 		}
 	}

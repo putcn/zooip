@@ -200,7 +200,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 						egg.coordinate = [[eggDic objectForKey:@"coordinate"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"coordinate"];
 						egg.eggId = [[eggDic objectForKey:@"eggId"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggId"];
 						//egg.eggName = [[eggDic objectForKey:@"eggName"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggName"];
-						//egg.eggNameEN = [[eggDic objectForKey:@"eggNameEN"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggNameEN"];
+						egg.eggNameEN = [[eggDic objectForKey:@"eggNameEN"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggNameEN"];
 						//egg.eggImgId = [[eggDic objectForKey:@"eggImgId"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggImgId"];
 						egg.eggDescription = [[eggDic objectForKey:@"eggDescription"] isKindOfClass:[NSNull class]]  ? nil : [eggDic objectForKey:@"eggDescription"];
 						
@@ -611,6 +611,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 						obj.eggStorageId = [[dic objectForKey:@"eggStorageId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggStorageId"];
 						obj.eggId = [[dic objectForKey:@"eggId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggId"];
 						obj.eggName = [[dic objectForKey:@"eggName"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggName"];
+						obj.eggNameEN = [[dic objectForKey:@"eggNameEN"] isKindOfClass:[NSNull class]]? nil: [dic objectForKey:@"eggNameEN"];
 						obj.eggImgId = [[dic objectForKey:@"eggImgId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggImgId"];
 						obj.eggDescription = [[dic objectForKey:@"eggDescription"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggDescription"];
 						
@@ -640,6 +641,7 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 						obj.zygoteStorageId = [[dic objectForKey:@"zygoteStorageId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"zygoteStorageId"];
 						obj.eggId = [[dic objectForKey:@"eggId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggId"];
 						obj.eggName = [[dic objectForKey:@"eggName"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"eggName"];
+						obj.eggNameEN = [[dic objectForKey:@"eggNameEN"] isKindOfClass:[NSNull class]]? nil: [dic objectForKey:@"eggNameEN"];
 						obj.originalAnimalId = [[dic objectForKey:@"originalAnimalId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"originalAnimalId"];
 						obj.zygoteBirthday = [[dic objectForKey:@"zygoteBirthday"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"zygoteBirthday"];
 						
