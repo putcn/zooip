@@ -28,6 +28,7 @@
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
 		[self setTextureRect: rect];
+		[bg release];
 		self.position = ccp(240,160);
 		self.scale = 300.0f/1024.0f;
 		self.title = @"商店";

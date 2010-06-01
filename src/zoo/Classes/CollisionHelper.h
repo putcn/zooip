@@ -14,6 +14,6 @@
 }
 
 +(void)initCollisionMap;
-+(int)getMapType:(CGPoint)point;
++(int)getMapType:(CGPoint)point isByte:(BOOL)isByte;
 
 @end
