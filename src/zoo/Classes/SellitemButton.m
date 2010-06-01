@@ -47,20 +47,20 @@
 	[itemImg release];
 	
 	CCLabel *eggNameLbl = [CCLabel labelWithString:eggName fontName:@"Arial" fontSize:20];
-	//CCLabel *eggTotalLab = [CCLabel labelWithString:eggTotal fontName:@"Arial" fontSize:20];
+	CCLabel *eggTotalLab = [CCLabel labelWithString:eggTotal fontName:@"Arial" fontSize:20];
 
 	[eggNameLbl  setColor:ccc3(255, 0, 255)];
-	//[eggTotalLab setColor:ccc3(255, 0, 255)];
+	[eggTotalLab setColor:ccc3(255, 0, 255)];
 	
 	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
 	
 	eggNameLbl .position = ccp(50 , self.contentSize.height - 80);
-	//eggTotalLab.position = ccp(70 , self.contentSize.height - 80);
+	eggTotalLab.position = ccp(eggNameLbl .position.x + 70 , self.contentSize.height - 80);
 	
 	[self addChild:item z:7];
 	
 	[self addChild:eggNameLbl z:7];
-	//[self addChild:eggTotalLab z:7];
+	[self addChild:eggTotalLab z:7];
 }
 
 - (CGRect)rect

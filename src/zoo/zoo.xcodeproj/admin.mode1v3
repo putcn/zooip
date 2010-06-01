@@ -270,7 +270,6 @@
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>2D500B1D0D5A766B00DBA0E3</string>
 								<string>BF0074801159E8740003B411</string>
-								<string>C3C528CA117EA2BD00343D7F</string>
 								<string>BF0074881159E91E0003B411</string>
 								<string>BF00747F1159E86A0003B411</string>
 								<string>BF0074851159E89A0003B411</string>
@@ -279,15 +278,15 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>55</integer>
-									<integer>51</integer>
-									<integer>49</integer>
+									<integer>19</integer>
+									<integer>17</integer>
+									<integer>15</integer>
 									<integer>4</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 773}, {346, 653}}</string>
+							<string>{{0, 0}, {346, 653}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -326,7 +325,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>StoButtonContainer.m</string>
+								<string>SellinfoPane.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -334,11 +333,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>StoButtonContainer.m</string>
+										<string>SellinfoPane.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>84DF912711B4DDA900BDCEE7</string>
+										<string>84DF917511B4E81800BDCEE7</string>
 										<key>history</key>
 										<array>
 											<string>84BAE681138DDEF300E6F7D3</string>
@@ -439,14 +438,11 @@
 											<string>8432CDE111B35D450093DA32</string>
 											<string>8432CE0511B3854F0093DA32</string>
 											<string>8432CE0811B38D1D0093DA32</string>
-											<string>8432CE3A11B3937E0093DA32</string>
 											<string>8432CE4511B393EA0093DA32</string>
 											<string>8432CE6A11B3957C0093DA32</string>
 											<string>8432CE7411B395A20093DA32</string>
 											<string>8432CE8211B396B20093DA32</string>
-											<string>8432CEEC11B3AFFE0093DA32</string>
 											<string>8432CEF011B3AFFE0093DA32</string>
-											<string>8432CF1211B3B5410093DA32</string>
 											<string>8432CF1311B3B5410093DA32</string>
 											<string>8432CF4A11B3BDFE0093DA32</string>
 											<string>8432CF6311B3C3100093DA32</string>
@@ -468,7 +464,6 @@
 											<string>8408917111B4A1A8001C29CA</string>
 											<string>8408917211B4A1A8001C29CA</string>
 											<string>8408917311B4A1A8001C29CA</string>
-											<string>8408917411B4A1A8001C29CA</string>
 											<string>8408917511B4A1A8001C29CA</string>
 											<string>8408917611B4A1A8001C29CA</string>
 											<string>8408917711B4A1A8001C29CA</string>
@@ -488,8 +483,6 @@
 											<string>8408918511B4A1A8001C29CA</string>
 											<string>8408918611B4A1A8001C29CA</string>
 											<string>8408918711B4A1A8001C29CA</string>
-											<string>8408918811B4A1A8001C29CA</string>
-											<string>8408918911B4A1A8001C29CA</string>
 											<string>8408918F11B4A1A8001C29CA</string>
 											<string>840891A911B4A695001C29CA</string>
 											<string>840891E311B4AC74001C29CA</string>
@@ -498,12 +491,21 @@
 											<string>840891EC11B4AD02001C29CA</string>
 											<string>840891F311B4AE21001C29CA</string>
 											<string>840891F411B4AE21001C29CA</string>
-											<string>84DF90E311B4CF8000BDCEE7</string>
-											<string>84DF90E411B4CF8000BDCEE7</string>
 											<string>84DF90E511B4CF8000BDCEE7</string>
-											<string>84DF910411B4D74000BDCEE7</string>
-											<string>84DF910511B4D74000BDCEE7</string>
-											<string>84DF910611B4D74000BDCEE7</string>
+											<string>84DF914D11B4E1E500BDCEE7</string>
+											<string>84DF915D11B4E41000BDCEE7</string>
+											<string>84DF915E11B4E41000BDCEE7</string>
+											<string>84DF916011B4E41000BDCEE7</string>
+											<string>84DF916111B4E41000BDCEE7</string>
+											<string>84DF916C11B4E81800BDCEE7</string>
+											<string>84DF916D11B4E81800BDCEE7</string>
+											<string>84DF916E11B4E81800BDCEE7</string>
+											<string>84DF916F11B4E81800BDCEE7</string>
+											<string>84DF917011B4E81800BDCEE7</string>
+											<string>84DF917111B4E81800BDCEE7</string>
+											<string>84DF917211B4E81800BDCEE7</string>
+											<string>84DF917311B4E81800BDCEE7</string>
+											<string>84DF917411B4E81800BDCEE7</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -704,7 +706,6 @@
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>84B679DC11AA65F000FB02C3</string>
-		<string>/Users/admin/Workspace/Zoo/src/zoo/zoo.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>0 144 1440 734 0 0 1440 878 </string>
@@ -723,12 +724,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>StoButtonContainer.m</string>
+								<string>SellinfoPane.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -745,8 +748,6 @@
 							<string>339pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
