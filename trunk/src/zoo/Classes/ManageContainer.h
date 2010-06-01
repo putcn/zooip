@@ -11,6 +11,7 @@
 #import "UIController.h"
 #import "ItemInfoPane.h"
 #import "MessageDialog.h"
+#import "TransBackground.h"
 
 
 @interface ManageContainer : CCSprite{

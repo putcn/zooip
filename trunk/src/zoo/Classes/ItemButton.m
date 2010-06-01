@@ -34,6 +34,8 @@
 	return self;
 }
 
+
+//根据商品的图片名称,买入类型,价格生成商品的图标
 -(void) setImg: (NSString *) imagePath setBuyType: (int) buyType setPrice:(NSString *) price
 {
 	CCSprite *item = [CCSprite node];

@@ -105,7 +105,8 @@ count;
 	itemType = itType;
 	itemBuyType = @"goldEgg";
 	itemPrice = 0;
-	NSDictionary *dic;
+	NSDictionary *dic;	
+	//判断商品的类型,显示不同的物品信息到不同的信息框中
 	if (itemType == @"animal") {
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals retain];
 		DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemId];
@@ -166,20 +167,24 @@ count;
 		[goods release];
 	}
 	[dic release];
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(buyItem:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancel:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
-	//为Button添加绑定的参数列表
+	
+	//添加确认和取消按钮,回调函数分别为[ManageContainer buyItem] 和[ManageContainer Cancel]
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(buyItem:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
+	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancel:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
+	
+	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
 	confirmBtn.target = self;
-	//confirmBtn.params = [NSDictionary dictionaryWithObjectsAndKeys:itemId, @"itemId", itemType, @"itemType", [NSString stringWithFormat:@"%d",itemBuyType], @"itemBuyType",nil];
 	confirmBtn.position = ccp(self.contentSize.width/2 - 200, 50);
 	cancelBtn.position = ccp(self.contentSize.height/2 + 200, 50);
 	[self addChild:confirmBtn z:10];
 	[self addChild:cancelBtn z:10];
-	
-	ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:10 delta:1 target:self price:itemPrice z:7 Priority:0];
-	scalerPane.position = ccp(200,200);
-	[self addChild:scalerPane z:5];
-	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:5];
+	if(itemType != @"goods")
+	{
+		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:10 delta:1 target:self price:itemPrice z:39 Priority:0];
+		scalerPane.position = ccp(200,200);
+		[self addChild:scalerPane z:5];
+	}
+	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:40];
 	transBackground.scale = 17.0f;
 	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 	[self addChild:transBackground z:5];
@@ -216,6 +221,8 @@ count;
 	[self addChild:priceLbl z:7];
 }							  
 
+
+//从计数器ScalerPance回调的价格计算函数, 传入参数values封装了要买的数量
 -(void) updatePrice:(NSDictionary *)values
 {
 	count = [[values objectForKey:@"count"] intValue];

@@ -14,7 +14,7 @@
 @synthesize label, target;
 
 -(id) initWithLabel:(NSString*) labelText setColor:(ccColor3B) labelColor setFont:(NSString*) labelFont
-		setSize:(int) labelSize setBackground:(NSString*) imagePath setTarget:(id) target setSelector:(SEL) handler 
+		setSize:(int) labelSize setBackground:(NSString*) imagePath setTarget:(id) targetValue setSelector:(SEL) handler 
 		setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue scale:(float) scaleValue
 {
 	if( (self=[super init] ))
@@ -33,7 +33,7 @@
 		text.color = labelColor;
 		[self addChild:text];
 		
-		targetCallBack = [target retain];
+		targetCallBack = [targetValue retain];
 		selector = handler;
 		
 		pri = priorityValue;
