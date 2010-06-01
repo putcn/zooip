@@ -9,17 +9,19 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "UIController.h"
-#import "SellinfoPane.h"
+#import "ItemInfoPane.h"
+#import "MessageDialog.h"
+
 
 @interface StorageContainer : CCSprite {
-	
 	NSString *title;
 	NSMutableDictionary *tabDic;
 	NSMutableDictionary *tabContentDic;
 	
 	CCTexture2D *tabEnable;
 	CCTexture2D *tabDisable;
-	SellinfoPane *itemInfoPane;
+	ItemInfoPane *itemInfoPane;
+	
 	
 	int tabIndex;
 }
@@ -29,4 +31,6 @@
 -(void)addTitle;
 -(void)addTab:(NSArray *)tabArray;
 @end
+
+
 
