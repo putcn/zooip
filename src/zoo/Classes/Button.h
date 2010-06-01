@@ -21,7 +21,7 @@
 	
 	float defaultScale;
 	
-	NSDictionary *params;
+	id target; 
 }
 
 -(id) initWithLabel:(NSString*) labelText setColor:(ccColor3B) labelColor setFont:(NSString*) labelFont 
@@ -31,6 +31,6 @@
 -(void) setLabel:(NSString*) labelValue;
 
 @property (retain, nonatomic) NSString *label;
-@property (nonatomic, retain) NSDictionary *params;
+@property (nonatomic, retain) id target;
 
 @end
