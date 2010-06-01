@@ -24,6 +24,8 @@ typedef enum
 	OPERATION_KILL_SNAKE,//灭蛇
 	OPERATION_CLEAR_DEJECTA,//清便
 	OPERATION_CALL,//召唤
+	OPERATION_MARRY,//动物结婚
+	OPERATION_MARRY_MANAGEMENT,//结婚管理
 } ZooOperationType;
 
 @interface UIController : NSObject

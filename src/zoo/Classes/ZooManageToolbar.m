@@ -18,6 +18,7 @@
 	if (self)
 	{
 		selectIndex = 0;
+		secondTouchAniManagement = NO;
 		
 		playerButtonContainer = [[CCSprite alloc] init];
 		[self addChild:playerButtonContainer];
@@ -91,7 +92,7 @@
 	
 	//动物管理
 	button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"动物管理.png" setTarget:self
-							   setSelector:@selector(btnPlayerOperationButtonHandler:) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
+							   setSelector:@selector(btnManagementButtonHandler:) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
 	button.position = ccp(160, 20);
 	//button.tag = 4;
 	[playerButtonContainer addChild: button];
@@ -354,6 +355,22 @@
 -(void) btnFeedButtonHandler:(Button *)button
 {
 	
+}
+
+-(void)btnManagementButtonHandler:(Button *)button
+{
+	if(!secondTouchAniManagement)
+	{
+		aniManagementBtnCtrl = [[AnimalMangementButtonContainer alloc] init];
+		//aniManagementBtnCtrl .position = ccp(160,40);
+		[self addChild:aniManagementBtnCtrl];
+
+	}
+	else {
+		[self removeChild:aniManagementBtnCtrl cleanup:YES];
+	}
+
+	secondTouchAniManagement = !secondTouchAniManagement;
 }
 
 -(void) spriteMoveOutFinished
