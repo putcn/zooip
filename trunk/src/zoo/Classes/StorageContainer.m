@@ -111,7 +111,7 @@
 
 
 
--(void) itemInfoHandler:(ItemButton *) itemButton
+-(void) itemInfoHandler:(SellitemButton *) itemButton
 {
 	if (itemInfoPane == nil) {
 		itemInfoPane = [[SellinfoPane alloc] initWithItem:itemButton.itemId type:itemButton.itemType setTarget:self];
