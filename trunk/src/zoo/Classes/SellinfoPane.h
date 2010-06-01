@@ -14,19 +14,37 @@
 #import "DataModelGood.h"
 #import "Button.h"
 
+
 @interface SellinfoPane : CCSprite {
 	NSString *title;
 	NSString *itemId;
 	NSString *itemType;
-	NSInteger itemBuyType;
+	NSString *itemBuyType;
+	NSInteger itemPrice;
+	NSInteger count;
+	CCLabel *priceLbl;
 }
 
 @property (nonatomic, retain) NSString *title;
-
+@property (nonatomic, retain) NSString *itemId;
+@property (nonatomic, retain) NSString *itemType;
+@property (nonatomic, retain) NSString *itemBuyType;
+@property (nonatomic, assign) NSInteger count;
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget: (id)target; 
-
 -(void)addTitle;
--(void)addInfo: (id)target;
--(void) setImg: (NSString *) imagePath setBuyType: (int) buyType setPrice:(NSString *) price;
+//-(void)addInfo: (id)target;
+-(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price;
 -(void) updateInfo: (NSString *) itId type: (NSString *) itType setTarget:(id)target;
+-(void) updatePrice: (NSDictionary *)values;
 @end
+
+
+
+
+
+
+
+
+
+
+
