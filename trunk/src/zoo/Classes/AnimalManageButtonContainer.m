@@ -27,7 +27,6 @@
 			//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		
 			NSDictionary *itemDic;
-			NSArray *itemArray;
 			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].animalIDs;
 			//*****itemArray = [itemDic allKeys];
 			totalPage = [[DataEnvironment sharedDataEnvironment].animalIDs count] + 1;
@@ -91,7 +90,6 @@
 -(void) generatePage
 {
 	if (tabFlag == @"animal") {
-		NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].animalIDs;
 		NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
 		DataModelOriginalAnimal *originAnimal;
 		NSString *aniID;
@@ -106,13 +104,9 @@
 			originAnimal = [animalIDs objectAtIndex:i];
 			aniID = [animalIDs objectAtIndex:i];
 			DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
-			DataModelAnimal *serverAnimalData = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:originAnimal];
 			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
-			NSInteger orgID= serverAnimalData2.originalAnimalId;
 			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
-			//NSInteger orgIDD = originAnimal.originalAnimalId;
-			id tar = parentTarget;
 			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 			//ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);

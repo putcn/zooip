@@ -45,7 +45,7 @@
 	[playerOperationButtons addObject:button];
 	
 	//结婚管理
-	button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"结婚管理.png" setTarget:self
+	button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"婚姻管理.png" setTarget:self
 							   setSelector:@selector(btnAnimalMarryManagementButtonHandler:) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
 	button.position = ccp(160, 50);
 	button.tag = OPERATION_MARRY_MANAGEMENT;
