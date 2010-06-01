@@ -9,9 +9,11 @@
 #import "cocos2d.h"
 #import "Button.h"
 #import "UIController.h"
+#import "AnimalMangementButtonContainer.h"
 
 @interface ZooManageToolbar : CCSprite
 {
+	AnimalMangementButtonContainer *aniManagementBtnCtrl;
 	NSMutableArray *playerStatusIconTextures;
 	NSMutableArray *friendStatusIconTextures;
 	NSMutableArray *playerOperationButtons;
@@ -20,6 +22,7 @@
 	CCSprite *friendButtonContainer;
 	CCSprite *statusIcon;
 	int selectIndex;
+	BOOL secondTouchAniManagement; //The seconde time of touch the animal management.
 }
 
 -(void) addButton;
