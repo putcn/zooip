@@ -15,6 +15,7 @@
 eggStorageId,
 eggId,
 eggName,
+eggNameEN,
 eggImgId,
 eggDescription,
 numOfProduct,

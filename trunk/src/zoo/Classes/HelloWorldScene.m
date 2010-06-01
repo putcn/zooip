@@ -87,12 +87,12 @@
 		
 		
 		
-		ManageContainer *itemInfoPane = [[ManageContainer alloc] init];
-		[self addChild: itemInfoPane z:3];
+		//ManageContainer *itemInfoPane = [[ManageContainer alloc] init];
+		//[self addChild: itemInfoPane z:3];
 		
 		//store view
-		//StorageContainer *stotragePane = [ [StorageContainer alloc] init ];
-		//[self addChild:stotragePane z:3];
+		StorageContainer *stotragePane = [ [StorageContainer alloc] init ];
+		[self addChild:stotragePane z:3];
 		
 		
 //		ItemInfoPane *itemInfoPane = [[ItemInfoPane alloc] initWithItem:@"10" type:@"animal"];
