@@ -6192,6 +6192,7 @@
 		50F414F01069373D002A0D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EC1069373D002A0D5E /* Default.png */; };
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
+		8408914511B49FBC001C29CA /* SellitemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8408914411B49FBC001C29CA /* SellitemButton.m */; };
 		8432CD8111B346CF0093DA32 /* StoButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */; };
 		8432CD8611B3471F0093DA32 /* SellinfoPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8511B3471F0093DA32 /* SellinfoPane.m */; };
 		8432CD9411B351A60093DA32 /* wildgoose.png in Resources */ = {isa = PBXBuildFile; fileRef = 8432CD9311B351A60093DA32 /* wildgoose.png */; };
@@ -12605,6 +12606,8 @@
 		50F414ED1069373D002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F414EE1069373D002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8408914311B49FBC001C29CA /* SellitemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellitemButton.h; sourceTree = "<group>"; };
+		8408914411B49FBC001C29CA /* SellitemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellitemButton.m; sourceTree = "<group>"; };
 		8432CD7F11B346CF0093DA32 /* StoButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoButtonContainer.h; sourceTree = "<group>"; };
 		8432CD8011B346CF0093DA32 /* StoButtonContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StoButtonContainer.m; sourceTree = "<group>"; };
 		8432CD8411B3471F0093DA32 /* SellinfoPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellinfoPane.h; sourceTree = "<group>"; };
@@ -23153,6 +23156,8 @@
 				3EAE655D11AD4ED1004BA790 /* ItemInfoPane.m */,
 				3EAD8AFE11AEC76D00CE397E /* TransBackground.h */,
 				3EAD8AFF11AEC76D00CE397E /* TransBackground.m */,
+				8408914311B49FBC001C29CA /* SellitemButton.h */,
+				8408914411B49FBC001C29CA /* SellitemButton.m */,
 			);
 			name = UIControls;
 			sourceTree = "<group>";
@@ -29716,6 +29721,7 @@
 				C396D85C11AF5EF50057078D /* CollisionHelper.m in Sources */,
 				8432CD8111B346CF0093DA32 /* StoButtonContainer.m in Sources */,
 				8432CD8611B3471F0093DA32 /* SellinfoPane.m in Sources */,
+				8408914511B49FBC001C29CA /* SellitemButton.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

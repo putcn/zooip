@@ -13,7 +13,7 @@
 #import "DataModelStorageEgg.h"
 #import "DataModelStorageZygoteEgg.h"
 #import "Button.h"
-#import "ItemButton.h"
+#import "SellitemButton.h"
 
 @interface StoButtonContainer : CCSprite {
 	int currentPageNum;
