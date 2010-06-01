@@ -6197,6 +6197,8 @@
 		6074900711B50DF3002D8922 /* AnimalManagementButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6074900111B50DF3002D8922 /* AnimalManagementButtonItem.m */; };
 		6074900811B50DF3002D8922 /* AnimalManagerContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6074900311B50DF3002D8922 /* AnimalManagerContainer.m */; };
 		6074900911B50DF3002D8922 /* AnimalMangementButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6074900511B50DF3002D8922 /* AnimalMangementButtonContainer.m */; };
+		6074904E11B515E1002D8922 /* 动物结婚.png in Resources */ = {isa = PBXBuildFile; fileRef = 6074904C11B515E1002D8922 /* 动物结婚.png */; };
+		6074904F11B515E1002D8922 /* 婚姻管理.png in Resources */ = {isa = PBXBuildFile; fileRef = 6074904D11B515E1002D8922 /* 婚姻管理.png */; };
 		8408914511B49FBC001C29CA /* SellitemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8408914411B49FBC001C29CA /* SellitemButton.m */; };
 		8432CD8111B346CF0093DA32 /* StoButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */; };
 		8432CD8611B3471F0093DA32 /* SellinfoPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8511B3471F0093DA32 /* SellinfoPane.m */; };
@@ -12621,6 +12623,8 @@
 		6074900311B50DF3002D8922 /* AnimalManagerContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManagerContainer.m; sourceTree = "<group>"; };
 		6074900411B50DF3002D8922 /* AnimalMangementButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalMangementButtonContainer.h; sourceTree = "<group>"; };
 		6074900511B50DF3002D8922 /* AnimalMangementButtonContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalMangementButtonContainer.m; sourceTree = "<group>"; };
+		6074904C11B515E1002D8922 /* 动物结婚.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "动物结婚.png"; sourceTree = "<group>"; };
+		6074904D11B515E1002D8922 /* 婚姻管理.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "婚姻管理.png"; sourceTree = "<group>"; };
 		8408914311B49FBC001C29CA /* SellitemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellitemButton.h; sourceTree = "<group>"; };
 		8408914411B49FBC001C29CA /* SellitemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellitemButton.m; sourceTree = "<group>"; };
 		8432CD7F11B346CF0093DA32 /* StoButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoButtonContainer.h; sourceTree = "<group>"; };
@@ -23294,6 +23298,8 @@
 		C3A9E8BB1186C78300CEBDFC /* icons */ = {
 			isa = PBXGroup;
 			children = (
+				6074904C11B515E1002D8922 /* 动物结婚.png */,
+				6074904D11B515E1002D8922 /* 婚姻管理.png */,
 				C3A9E8BC1186C78300CEBDFC /* FriendList.png */,
 				C3A9E8BD1186C78300CEBDFC /* PlayerInfo.png */,
 				C3A9E8BE1186C78300CEBDFC /* store_info.png */,
@@ -29587,6 +29593,8 @@
 				8432CF3F11B3BC8A0093DA32 /* zygote5.png in Resources */,
 				8432CF4011B3BC8A0093DA32 /* zygote6.png in Resources */,
 				8432CF4111B3BC8A0093DA32 /* zygote7.png in Resources */,
+				6074904E11B515E1002D8922 /* 动物结婚.png in Resources */,
+				6074904F11B515E1002D8922 /* 婚姻管理.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

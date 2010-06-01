@@ -34,7 +34,7 @@
 			self.title = @"动物结婚";
 		}
 		else {
-			self.title = @"结婚管理";
+			self.title = @"婚姻管理";
 		}
 
 		[self addTitle];
