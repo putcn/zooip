@@ -4,7 +4,8 @@
 //
 //  Created by Rainbow on 5/24/10.
 //  Copyright 2010 Apple Inc. All rights reserved.
-//
+//  
+//  进入商店界面 
 
 #import "ManageContainer.h"
 #import "Button.h"
@@ -31,6 +32,8 @@
 		self.scale = 300.0f/1024.0f;
 		self.title = @"商店";
 		[self addTitle];
+		
+		//根据Tab的名称加载商店信息
 		NSArray *tabArray = [[NSArray alloc] initWithObjects:@"animal",@"food",@"goods",nil];
 		[self addTab:tabArray];
 		for (int i = 0; i< tabArray.count; i++) {
@@ -47,11 +50,17 @@
 			[tabContentDic setObject:buttonContainer forKey:[NSString stringWithFormat:@"tabContent_%d",i]];
 		}
 		
+		//设置一层半透明背景,点击事件的优先级为50,屏蔽下面图层的点击事件
+		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:50];
+		transBackground.scale = 17.0f;
+		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+		[self addChild:transBackground z:-1];
+		
 	}
 	return self;
 }
 
-
+//设置标题
 -(void)addTitle
 {
 	NSLog(@"%@",title);
@@ -61,19 +70,19 @@
 	[self addChild:titleLbl z:10];
 }
 
+//添加Tab按钮,点击Tab之后的回调方法为:tabHandler
 -(void)addTab:(NSArray*) tabArray
 {
 	CGRect rect = CGRectZero;
 	rect.size = tabEnable.contentSize;
-	
 	for (int i = 0; i < [tabArray count]; i++) {
 		NSString *tempString = [tabArray objectAtIndex:i];
 		CCSprite *tempTab;
 		if (i == 0) {
-			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:30 setBackground:@"TabButton2.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:2 offsetX:0 offsetY:0 scale:1.0f];
+			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:30 setBackground:@"TabButton2.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
 		}
 		else {
-			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:30 setBackground:@"TabButton1.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:2 offsetX:0 offsetY:0 scale:1.0f];
+			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:30 setBackground:@"TabButton1.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
 		}
 		tempTab.position = ccp((rect.size.width + 10) * i + tempTab.contentSize.width/2 + 5 , self.contentSize.height - 90);
 		tempTab.tag = i;
@@ -82,7 +91,7 @@
 	}
 }
  
-
+//根据点击不同的Tab切换商店的内容
 -(void)tabHandler:(Button *)button
 {
 	tabIndex = button.tag;
@@ -100,8 +109,10 @@
 	}
 }
 
+//点击不同的物品之后,弹出不同的物品信息
 -(void) itemInfoHandler:(ItemButton *) itemButton
 {
+	//判断是否首次加载物品信息框
 	if (itemInfoPane == nil) {
 		itemInfoPane = [[ItemInfoPane alloc] initWithItem:itemButton.itemId type:itemButton.itemType setTarget:self];
 		itemInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2);
@@ -115,9 +126,10 @@
 }
 
 
-
+//点击购买物品之后回调此方法
 -(void) buyItem:(Button *)button
 {
+	//获取从Button回调的参数,强制转换为ItemInfoPane对象,改对象携带了购买物品所需要的所有参数
 	ItemInfoPane *itemInfo = (ItemInfoPane *)button.target; 
 	if (itemInfo.itemType == @"animal") {
 		if (itemInfo.itemBuyType == @"goldEgg") {

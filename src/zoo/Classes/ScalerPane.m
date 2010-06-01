@@ -17,6 +17,7 @@
 	if ((self = [super init])) {
 		min = countMin;
 		max = countMax;
+		delta = countdDelta;
 		count = min;
 		uPrice = unitPrice;
 		targetCallBack = parentTarget;
@@ -38,12 +39,14 @@
 	return self;
 }
 
+
 -(void) counterAdd:(Button*) button
 {
 	if (count < max) {
-		count ++;
+		count = count + delta;
 		[counterLbl setString:[NSString stringWithFormat:@"%d",count]];
 		NSDictionary *values = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%d",count], @"count",nil];
+		//当产品数量增加的时候执行回调函数 [ItemInfoPane updataPrice]
 		[targetCallBack performSelector:@selector(updatePrice:) withObject:values];
 	}
 	
@@ -52,7 +55,7 @@
 -(void) counterReduce:(Button*) button
 {
 	if (count > min) {
-		count --;
+		count = count - delta;
 		totalPrice  = uPrice * count;
 		[counterLbl setString:[NSString stringWithFormat:@"%d",count]];
 		NSDictionary *values = [NSDictionary dictionaryWithObjectsAndKeys:[NSString stringWithFormat:@"%d",count], @"count",nil];
