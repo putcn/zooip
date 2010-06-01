@@ -161,8 +161,15 @@
 				buyType = 1;
 				price = [NSString stringWithFormat:@"%d",dataModelGood.goodsAntsPrice];
 			}
-			NSString *picFileName = [NSString stringWithFormat:@"%@.png",dataModelGood.goodsPicture];
-			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelGood.goodsId setitType:tabFlag setImagePath:@"peacock_stand_left.png" setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			NSString *picFileName;
+			if ([dataModelGood.goodsPicture intValue]== 1) {
+				picFileName = @"tibentanmastiff_rest_01.png";
+			}
+			else if([dataModelGood.goodsPicture intValue]== 2)
+			{	
+				picFileName = @"chinemy_walk_left_01.png";
+			}
+			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelGood.goodsId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%12];
 		}

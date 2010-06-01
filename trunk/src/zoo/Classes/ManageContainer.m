@@ -118,45 +118,51 @@
 
 -(void) buyItem:(Button *)button
 {
-	if ([button.params objectForKey:@"itemType"] == @"animal") {
-		if ([[button.params objectForKey:@"itemBuyType"] intValue] == 0) {
+	ItemInfoPane *itemInfo = (ItemInfoPane *)button.target; 
+	if (itemInfo.itemType == @"animal") {
+		if (itemInfo.itemBuyType == @"goldEgg") {
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",[button.params objectForKey:@"itemId"],@"originalAnimalId",@"1",@"amount",nil];
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"originalAnimalId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 
 			
 		}
-		else if([[button.params objectForKey:@"itemBuyType"] intValue] == 1){
+		else if(itemInfo.itemBuyType == @"ant"){
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",[button.params objectForKey:@"itemId"],@"originalAnimalId",@"1",@"amount",nil];
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"originalAnimalId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 						
 		}
 	}
-	else if([button.params objectForKey:@"itemType"] == @"food"){
-		if ([[button.params objectForKey:@"itemBuyType"] intValue] == 0) {
+	else if(itemInfo.itemType == @"food"){
+		if (itemInfo.itemBuyType == @"goldEgg") {
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 			NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",farmId,@"farmId",[button.params objectForKey:@"itemId"],@"foodId",@"1000",@"numOfFood",nil];
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",farmId,@"farmId",itemInfo.itemId,@"foodId",[NSString stringWithFormat:@"%d",itemInfo.count],@"numOfFood",nil];
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyFoodByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
-		else if([[button.params objectForKey:@"itemBuyType"] intValue]== 1){
+		else if(itemInfo.itemBuyType == @"ant"){
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 			NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",farmId,@"farmId",[button.params objectForKey:@"itemId"],@"foodId",@"1000",@"numOfFood",nil];
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",farmId,@"farmId",itemInfo.itemId,@"foodId",[NSString stringWithFormat:@"%d",itemInfo.count],@"numOfFood",nil];
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyFoodByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
 	}
-	else if([button.params objectForKey:@"itemType"] == @"goods"){
-		if ([[button.params objectForKey:@"itemBuyType"] intValue]== 0) {
-		//	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	else if(itemInfo.itemType == @"goods"){
+		if (itemInfo.itemId = @"1") {
+			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"goodsId",nil];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyDogByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
-		else if([[button.params objectForKey:@"itemBuyType"] intValue]== 1){
-			
+		else if(itemInfo.itemId== @"2"){
+			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"goodsId",nil];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyTurtleByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];			
 		}
 	}
 
 	itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
+	[itemInfo release];
 	
 }
 
