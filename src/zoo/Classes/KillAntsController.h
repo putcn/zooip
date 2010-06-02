@@ -13,8 +13,10 @@
 
 @interface KillAntsController : BaseServerController
 {
-	
+	NSString *antId;
 }
+
+@property (nonatomic, retain) NSString *antId;
 
 -(void) execute:(NSDictionary *)value;
 -(void) resultCallback:(NSObject *)value;

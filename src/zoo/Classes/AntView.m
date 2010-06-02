@@ -124,7 +124,8 @@
 
 -(void) dealloc
 {
-	[dirctions dealloc];
+	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:self];
+	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }
 

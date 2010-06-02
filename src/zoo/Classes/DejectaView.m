@@ -97,8 +97,16 @@
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:dejectaId,@"dejectaId",
 								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"cleanerId",
 								[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmId,@"farmerId",nil];
+		clearDejectaController.dejectaId = self.dejectaId;
 		[clearDejectaController execute:params];
 	}
+}
+
+-(void) dealloc
+{
+	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:self];
+	[self removeAllChildrenWithCleanup:YES];
+	[super dealloc];
 }
 
 @end

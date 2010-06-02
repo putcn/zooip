@@ -12,12 +12,9 @@
 #import "DataModelDejecta.h"
 #import "ClearDejectaController.h"
 
-CCTexture2D *dejecta;
-CGRect rect;
 
 @interface DejectaView : CCSprite<CCTargetedTouchDelegate> {
-	NSString *dejectaId;
-	
+	NSString *dejectaId;	
 	ClearDejectaController *clearDejectaController;
 }
 @property (nonatomic, retain)NSString *dejectaId;
