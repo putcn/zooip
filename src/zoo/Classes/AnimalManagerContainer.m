@@ -75,7 +75,19 @@
 
 -(void) itemInfoHandler:(AnimalManagementButtonItem *) itemButton
 {
+	//TODO: add the service handler for to mate.
 	
+	//判断是否首次加载物品信息框
+	if (animalToMateInfoPanel == nil) {
+		//-(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget:(id)target
+		animalToMateInfoPanel = [[AnimalManageToMateInfoPanel alloc] initWithItem:itemButton.itemId type:itemButton.itemType setTarget:self];
+		animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
+		[self addChild:animalToMateInfoPanel z:20];
+	}
+	else {		
+		[animalToMateInfoPanel updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
+		animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
+	}
 }
 
 -(void) buyItem:(Button *)button
@@ -85,7 +97,7 @@
 
 -(void) cancel:(Button *)button
 {
-	itemInfoPane.position = ccp(2000, itemInfoPane.contentSize.height/2);
+	animalToMateInfoPanel.position = ccp(2000, animalToMateInfoPanel.contentSize.height/2);
 	NSLog(@"取消");
 }
 

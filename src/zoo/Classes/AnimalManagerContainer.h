@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "UIController.h"
 #import "SellinfoPane.h"
+#import "AnimalManageToMateInfoPanel.h"
 
 @interface AnimalManagerContainer : CCSprite {
 	
@@ -19,7 +20,7 @@
 	
 	CCTexture2D *tabEnable;
 	CCTexture2D *tabDisable;
-	SellinfoPane *itemInfoPane;
+	AnimalManageToMateInfoPanel *animalToMateInfoPanel;
 	
 	int tabIndex;
 }

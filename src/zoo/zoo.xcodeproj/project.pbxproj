@@ -6199,6 +6199,8 @@
 		6074900911B50DF3002D8922 /* AnimalMangementButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6074900511B50DF3002D8922 /* AnimalMangementButtonContainer.m */; };
 		6074904E11B515E1002D8922 /* 动物结婚.png in Resources */ = {isa = PBXBuildFile; fileRef = 6074904C11B515E1002D8922 /* 动物结婚.png */; };
 		6074904F11B515E1002D8922 /* 婚姻管理.png in Resources */ = {isa = PBXBuildFile; fileRef = 6074904D11B515E1002D8922 /* 婚姻管理.png */; };
+		608EC6E311B643E100160062 /* AnimalManageInfoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 608EC6E211B643E100160062 /* AnimalManageInfoPanel.m */; };
+		608EC6EA11B645E200160062 /* AnimalManageToMateInfoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 608EC6E911B645E200160062 /* AnimalManageToMateInfoPanel.m */; };
 		8408914511B49FBC001C29CA /* SellitemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8408914411B49FBC001C29CA /* SellitemButton.m */; };
 		8432CD8111B346CF0093DA32 /* StoButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */; };
 		8432CD8611B3471F0093DA32 /* SellinfoPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8511B3471F0093DA32 /* SellinfoPane.m */; };
@@ -12625,6 +12627,10 @@
 		6074900511B50DF3002D8922 /* AnimalMangementButtonContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalMangementButtonContainer.m; sourceTree = "<group>"; };
 		6074904C11B515E1002D8922 /* 动物结婚.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "动物结婚.png"; sourceTree = "<group>"; };
 		6074904D11B515E1002D8922 /* 婚姻管理.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "婚姻管理.png"; sourceTree = "<group>"; };
+		608EC6E111B643E100160062 /* AnimalManageInfoPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageInfoPanel.h; sourceTree = "<group>"; };
+		608EC6E211B643E100160062 /* AnimalManageInfoPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageInfoPanel.m; sourceTree = "<group>"; };
+		608EC6E811B645E200160062 /* AnimalManageToMateInfoPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageToMateInfoPanel.h; sourceTree = "<group>"; };
+		608EC6E911B645E200160062 /* AnimalManageToMateInfoPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageToMateInfoPanel.m; sourceTree = "<group>"; };
 		8408914311B49FBC001C29CA /* SellitemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellitemButton.h; sourceTree = "<group>"; };
 		8408914411B49FBC001C29CA /* SellitemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellitemButton.m; sourceTree = "<group>"; };
 		8432CD7F11B346CF0093DA32 /* StoButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoButtonContainer.h; sourceTree = "<group>"; };
@@ -23141,6 +23147,10 @@
 		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				608EC6E111B643E100160062 /* AnimalManageInfoPanel.h */,
+				608EC6E211B643E100160062 /* AnimalManageInfoPanel.m */,
+				608EC6E811B645E200160062 /* AnimalManageToMateInfoPanel.h */,
+				608EC6E911B645E200160062 /* AnimalManageToMateInfoPanel.m */,
 				60748FFE11B50DF3002D8922 /* AnimalManageButtonContainer.h */,
 				60748FFF11B50DF3002D8922 /* AnimalManageButtonContainer.m */,
 				6074900011B50DF3002D8922 /* AnimalManagementButtonItem.h */,
@@ -29760,6 +29770,8 @@
 				6074900711B50DF3002D8922 /* AnimalManagementButtonItem.m in Sources */,
 				6074900811B50DF3002D8922 /* AnimalManagerContainer.m in Sources */,
 				6074900911B50DF3002D8922 /* AnimalMangementButtonContainer.m in Sources */,
+				608EC6E311B643E100160062 /* AnimalManageInfoPanel.m in Sources */,
+				608EC6EA11B645E200160062 /* AnimalManageToMateInfoPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
