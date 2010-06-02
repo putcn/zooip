@@ -64,6 +64,21 @@
 		[animationTable setObject:illLeftDown forKey:@"ill_leftDown"];
 		[animationTable setObject:illLeft forKey:@"ill_left"];
 		
+		//sleep textures
+		CCTexture2D *sleepUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"hen_sleep.png" ofType:nil]]];
+		CCTexture2D *sleepDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"hen_sleep.png" ofType:nil]]];
+		CCTexture2D *sleepLeftUp = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"hen_sleep.png" ofType:nil]]];
+		CCTexture2D *sleepLeftDown = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"hen_sleep.png" ofType:nil]]];
+		CCTexture2D *sleepLeft = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"hen_sleep.png" ofType:nil]]];		
+		
+		//add sleep textures to animationTable
+		[animationTable setObject:sleepUp forKey:@"sleep_up"];
+		[animationTable setObject:sleepDown forKey:@"sleep_down"];
+		[animationTable setObject:sleepLeftUp	forKey:@"sleep_leftUp"];
+		[animationTable setObject:sleepLeftDown forKey:@"sleep_leftDown"];
+		[animationTable setObject:sleepLeft forKey:@"sleep_left"];
+		
+		
 		
 	}
 	return self;

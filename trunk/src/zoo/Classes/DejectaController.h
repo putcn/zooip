@@ -15,9 +15,12 @@
 	NSMutableDictionary *allDejectas;
 }
 
+@property (nonatomic, retain) NSMutableDictionary *allDejectas;
+
 +(DejectaController *) sharedDejectaController;
 
 -(void) addDejectas:(NSArray *)dejectaIds;
+-(void) removeDejecta:(NSString *)dejectaId setExperience:(NSInteger)experience;
 -(void) clearDejectas;
 
 @end

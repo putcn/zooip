@@ -10,6 +10,8 @@
 
 
 @implementation DejectaController
+@synthesize allDejectas;
+
 static DejectaController *_sharedDejectaController = nil;
 
 +(DejectaController *) sharedDejectaController

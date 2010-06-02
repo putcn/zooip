@@ -7,6 +7,8 @@
 //
 
 #import "ItemButton.h"
+#import "DataEnvironment.h"
+#import "DataModelOriginalAnimal.h"
 
 
 @implementation ItemButton
@@ -54,7 +56,11 @@
 	}
 	CCLabel *priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:20];
 	[priceLbl setColor:ccc3(255, 0, 255)];
-	
+	if (itemType == @"animal") {
+		if ([itemId intValue] >= 50) {
+			item.flipX = YES;
+		}
+	}
 	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
 	buyImg.position = ccp(buyImg.contentSize.width/2 +20, self.contentSize.height - 80);
 	priceLbl.position = ccp(buyImg.contentSize.width + 50 , buyImg.position.y);

@@ -12,8 +12,10 @@
 
 @interface ClearDejectaController : BaseServerController
 {
-	
+	NSString * dejectaId;
 }
+
+@property (nonatomic,retain) NSString *dejectaId;
 
 -(void) execute:(NSDictionary *)value;
 -(void) resultCallback:(NSObject *)value;

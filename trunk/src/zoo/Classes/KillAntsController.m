@@ -7,9 +7,12 @@
 //
 
 #import "KillAntsController.h"
+#import "AntController.h"
 
 
 @implementation KillAntsController
+@synthesize antId;
+
 
 -(void) execute:(NSDictionary *)value
 {
@@ -19,10 +22,9 @@
 
 -(void) resultCallback:(NSObject *)value
 {
-	//	NSDictionary *result = (NSDictionary *)value;
-	
-	//	NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
-	//	[[EggController sharedEggController] removeEgg:eggId setExperience:experience];
+	NSDictionary *result = (NSDictionary *)value;
+	NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
+	[[AntController sharedAntController] removeAnt:antId setExperience:experience];
 	[super resultCallback:value];
 }
 

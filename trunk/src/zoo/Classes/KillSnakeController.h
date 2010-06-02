@@ -13,9 +13,10 @@
 
 @interface KillSnakeController : BaseServerController
 {
-	
+	NSString *snakeId;
 }
 
+@property (nonatomic, retain) NSString *snakeId;
 -(void) execute:(NSDictionary *)value;
 -(void) resultCallback:(NSObject *)value;
 -(void) faultCallback:(NSObject *)value;

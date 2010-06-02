@@ -31,7 +31,8 @@ static ItemController *_itemController = nil;
 -(void) addItem:(NSString *)itemType
 {
 	if(itemType == @"chinemy"){
-		[[ChinemyView alloc] init];
+		ChinemyView *chinemyView = [[ChinemyView alloc] init];
+		chinemyView.position = ccp(700, 300);
 	}
 	else if(itemType == @"dog"){
 		DogView *dogView = [[DogView alloc] init];
