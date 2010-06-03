@@ -11,15 +11,16 @@
 
 @implementation AnimalManagementButtonItem
 
-@synthesize itemId,itemType;
+@synthesize itemId,itemType,animalID;
 
--(id) initWithItem:(NSString *)itId setitType:(NSString *)itType setImagePath:(NSString*) imagePath setAnimalName:(NSString *) animalName setTarget:(id) target setSelector:(SEL) handler
+-(id) initWithItem:(NSString *)itId setitType:(NSString *)itType setAnimalID:(NSString *)animalIDP setImagePath:(NSString*) imagePath setAnimalName:(NSString *) animalName setTarget:(id) target setSelector:(SEL) handler
 setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue
 {
 	if( (self=[super init] ))
 	{
 		itemId = itId;
 		itemType = itType;
+		animalID = animalIDP;
 		CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"itemButtonBack.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = itemImg.contentSize;
