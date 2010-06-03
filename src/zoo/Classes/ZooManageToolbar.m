@@ -7,6 +7,7 @@
 //
 
 #import "ZooManageToolbar.h"
+#import "GameMainScene.h"
 
 
 @implementation ZooManageToolbar
@@ -308,7 +309,7 @@
 {
 	CCTexture2D *bg;
 	
-	if ([self.parent getIsSelf])
+	if ([[GameMainScene sharedGameMainScene] getIsSelfZoo])
 	{
 		bg = [playerStatusIconTextures objectAtIndex:index];
 	}
@@ -388,7 +389,7 @@
 	id ease = [CCEaseBackOut actionWithAction: actionMove];
 	[ease setDuration:0.3];
 	
-	if ([self.parent getIsSelf])
+	if ([[GameMainScene sharedGameMainScene] getIsSelfZoo])
 	{
 		[playerButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
 	}

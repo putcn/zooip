@@ -69,7 +69,7 @@
 	{
 		self.flipX = NO;
 	}
-	if ([status isEqualToString:@"stand"] || [status isEqualToString:@"eat") {
+	if ([status isEqualToString:@"stand"] || [status isEqualToString:@"eat"]) {
 		direction = @"left";
 	}
 	
