@@ -120,4 +120,12 @@ static AnimalController *_sharedAnimalController = nil;
 	}
 }
 
+-(void) gotoEat
+{
+	for (Animal *callAnimal in animals)
+	{
+		[callAnimal gotoEat];
+	}
+}
+
 @end

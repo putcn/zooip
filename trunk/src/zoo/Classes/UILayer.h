@@ -23,8 +23,6 @@
 	StorageManageToolbar *storageManageToolbar;
 	ZooManageToolbar *zooManageToolbar;
 	FriendsToolbar *friendsToolbar;
-	
-	Boolean isSelf;
 }
 
 @end

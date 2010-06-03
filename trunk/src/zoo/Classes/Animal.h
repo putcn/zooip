@@ -33,15 +33,18 @@ typedef enum
 	
 	CGRect landLandingArea;
 	CGRect waterLandingArea;
+	CGRect bowlArea;
 	
 	//0x0000, 第一位为天空，第二位为水，第三位为陆地...
 	UInt16 moveArea;
 	
 	int waitRemain;
+	BOOL isGotoEat;
 }
 
 -(id) initWithView:(CCSprite*) viewValue setSpeed:(CGFloat) speedValue setLimitRect:(CGRect) limitRectValue;
 -(id) initWithAnimalData:(DataModelAnimal *) data;
+-(void) gotoEat;
 
 @property (nonatomic, copy) DataModelAnimal *animalData;
 @property (nonatomic, assign) UInt16 moveArea;
@@ -57,4 +60,5 @@ typedef enum
 -(void) switchNormalState;
 -(void) updateSpeed;
 -(BOOL) isCanReach:(CGPoint)targetPoint;
+
 @end

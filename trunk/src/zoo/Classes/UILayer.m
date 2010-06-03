@@ -7,13 +7,12 @@
 //
 
 #import "UILayer.h"
+#import "OperationViewController.h"
 
 @implementation UILayer
 
 -(id) init
 {
-	isSelf = YES;
-	
 	if ((self = [super init]))
 	{
 		playerInfo = [[PlayerInfo alloc] init];
@@ -50,18 +49,14 @@
 -(void) switchPlayerZoo
 {
 	//[[UIController sharedUIController] swithZoo:NO];
-	isSelf = YES;
+	//isSelf = YES;
 	[zooManageToolbar switchZoo:YES];
 }
 -(void) switchFriendZoo
 {
 	//[[GameMainScene sharedGameMainScene] swithZoo:YES];
-	isSelf = NO;
+	//isSelf = NO;
 	[zooManageToolbar switchZoo:NO];
-}
--(Boolean) getIsSelf
-{
-	return YES;
 }
 
 -(void) popupShopList

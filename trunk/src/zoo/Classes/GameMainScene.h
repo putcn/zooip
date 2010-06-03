@@ -17,10 +17,14 @@
 {
 	CCSprite *baseContainer;
 	CCSprite *background;
+	
+	Boolean isSelfZoo;
 }
 
 +(GameMainScene *) sharedGameMainScene;
 +(id) scene;
+
+-(Boolean) getIsSelfZoo;
 
 -(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex;
 -(void) removeSpriteFromStage:(CCSprite *) sprite;

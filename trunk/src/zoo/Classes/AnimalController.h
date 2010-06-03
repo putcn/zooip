@@ -20,4 +20,6 @@
 -(void) addAnimal:(NSMutableArray *)animalIDs;
 -(void) clearAnimal;
 
+-(void) gotoEat;
+
 @end

@@ -41,6 +41,8 @@
 	{
 		animalData = data;
 		
+		isGotoEat = NO;
+		
 		NSInteger type = data.originalAnimalId;
 		NSInteger stage = data.birdStage;
 		view = [AnimalViewFactory createAnimalView:type birdStage:stage];
@@ -56,6 +58,7 @@
 		
 		landLandingArea = CGRectMake(520, 78, 260, 150);
 		waterLandingArea = CGRectMake(20, 358, 200, 150);
+		bowlArea = CGRectMake(320, 140, 130, 80);
 		
 		[self setupMoveArea:data.aliveEdge];
 		
@@ -66,6 +69,16 @@
 	return self;
 }
 
+-(void) gotoEat
+{
+	targetPosition = ccp(386,176);
+	isGotoEat = YES;
+	[self updateSpeed];
+	[self calculateSpeed];
+	[self findDirection];
+	[view update:currDirection status:currStatus];
+}
+
 @end
 
 @implementation Animal (Private)
@@ -73,80 +86,115 @@
 -(void) tick: (ccTime) dt
 {
 	//TODO: 判断是否已经进入水中或登陆，进入水中或登陆时，切换状态...
-	if (currStatus == 4)
+	if (isGotoEat == YES)
 	{
-		if (waitRemain <= 0)
+		CGPoint point = view.position;
+		
+		if (CGRectContainsPoint(bowlArea, point))
 		{
-			[self switchNormalState];
-			[self updateSpeed];
-			[self findTarget];
+			currStatus = 1;
+			waitRemain = 600;
+//			[self switchNormalState];
+//			[self updateSpeed];
+//			[self findTarget];
 			[view update:currDirection status:currStatus];
+//			//NSLog(@"当前方向: %d", currDirection);
 		}
 		else
 		{
-			waitRemain--;
+			CGPoint nextPosition;
+			BOOL isReach = NO;
+			nextPosition = ccpAdd(point, currSpeed);
+			isReach = [self isCanReach:nextPosition];
+			
+			if (!isReach)
+			{
+				isGotoEat = NO;
+				[self findTarget];
+				[view update:currDirection status:currStatus];
+				return;
+			}
+			
+			view.position = nextPosition;
 		}
 	}
 	else
 	{
-		CGPoint point = view.position;
-		
-		if ((fabs(point.x - targetPosition.x) <= speed) &&
-			(fabs(point.y - targetPosition.y) <= speed))
+		if (currStatus == 4 || currStatus == 1)
 		{
-			[self switchNormalState];
-			[self updateSpeed];
-			[self findTarget];
-			[view update:currDirection status:currStatus];
-			//NSLog(@"当前方向: %d", currDirection);
+			if (waitRemain <= 0)
+			{
+				[self switchNormalState];
+				[self updateSpeed];
+				[self findTarget];
+				[view update:currDirection status:currStatus];
+			}
+			else
+			{
+				waitRemain--;
+			}
 		}
 		else
 		{
-			if (currStatus != 6 && currStatus != 10 && currStatus != 11)
+			CGPoint point = view.position;
+			
+			if ((fabs(point.x - targetPosition.x) <= speed) &&
+				(fabs(point.y - targetPosition.y) <= speed))
 			{
-				CGPoint nextPosition;
-				BOOL isReach = NO;
-				while (!isReach)
+				[self switchNormalState];
+				[self updateSpeed];
+				[self findTarget];
+				[view update:currDirection status:currStatus];
+				//NSLog(@"当前方向: %d", currDirection);
+			}
+			else
+			{
+				if (currStatus != 6 && currStatus != 10 && currStatus != 11)
 				{
-					nextPosition = ccpAdd(point, currSpeed);
-					isReach = [self isCanReach:nextPosition];
+					CGPoint nextPosition;
+					BOOL isReach = NO;
+					while (!isReach)
+					{
+						nextPosition = ccpAdd(point, currSpeed);
+						isReach = [self isCanReach:nextPosition];
+						
+						if (!isReach)
+						{
+							[self findTarget];
+							[view update:currDirection status:currStatus];
+						}
+					}
 					
-					if (!isReach)
+					view.position = nextPosition;
+					
+					int mapType = [CollisionHelper getMapType:view.position isByte:NO];
+					if (mapType == 1)//Water
 					{
-						[self findTarget];
-						[view update:currDirection status:currStatus];
+						if (currStatus != 7)
+						{
+							currStatus = 7;
+							[view update:currDirection status:currStatus];
+						}
 					}
-				}
-				
-				view.position = nextPosition;
-				
-				int mapType = [CollisionHelper getMapType:view.position isByte:NO];
-				if (mapType == 1)//Water
-				{
-					if (currStatus != 7)
+					else if (mapType == 2)//Land
 					{
-						currStatus = 7;
-						[view update:currDirection status:currStatus];
+						if (currStatus != 5)
+						{
+							currStatus = 5;
+							[view update:currDirection status:currStatus];
+						}
 					}
-				}
-				else if (mapType == 2)//Land
-				{
-					if (currStatus != 5)
+					else
 					{
-						currStatus = 5;
-						[view update:currDirection status:currStatus];
+						
 					}
 				}
 				else
 				{
-					
+					CGPoint nextPosition;
+					nextPosition = ccpAdd(point, currSpeed);
+					view.position = nextPosition;
 				}
-			}
-			else
-			{
-				CGPoint nextPosition;
-				nextPosition = ccpAdd(point, currSpeed);
-				view.position = nextPosition;
 			}
 		}
 	}
@@ -293,6 +341,40 @@
 	{
 		currDirection = 3;
 	}
+	
+//	if (currSpeed.x == 0 && currSpeed.y == 0)
+//	{
+//		currDirection = 6;
+//		return;
+//	}
+//	
+//	if (currSpeed.x == 0 && currSpeed.y != 0)
+//	{
+//		if (currSpeed.y > 0)
+//		{
+//			currDirection = 0;
+//		}
+//		else
+//		{
+//			currDirection = 4;
+//		}
+//		return;
+//	}
+//	
+//	if (currSpeed.x != 0 && currSpeed.y == 0)
+//	{
+//		if (currSpeed.x > 0)
+//		{
+//			currDirection = 2;
+//		}
+//		else
+//		{
+//			currDirection = 6;
+//		}
+//		return;
+//	}
+//	
+//	
 }
 
 -(void) switchNormalState
@@ -417,25 +499,39 @@
 
 -(void) updateSpeed
 {
-	if (currStatus == 4)
+	if (!isGotoEat)
 	{
-		speed = 0;
-	}
-	else if (currStatus == 5)
-	{
-		speed = animalData.speed / 60.0f;
-	}
-	else if (currStatus == 7)
-	{
-		speed = animalData.swimmingSpeed / 60.0f;
-	}
-	else if (currStatus == 6 || currStatus == 10 || currStatus == 11)
-	{
-		speed = animalData.flyingSpeed / 15.0f;
+		if (currStatus == 4)
+		{
+			speed = 0;
+		}
+		else if (currStatus == 5)
+		{
+			speed = animalData.speed / 60.0f;
+		}
+		else if (currStatus == 7)
+		{
+			speed = animalData.swimmingSpeed / 60.0f;
+		}
+		else if (currStatus == 6 || currStatus == 10 || currStatus == 11)
+		{
+			speed = animalData.flyingSpeed / 15.0f;
+		}
+		else
+		{
+			speed = 0;
+		}
 	}
 	else
 	{
-		speed = 0;
+		if (currStatus == 6 || currStatus == 10 || currStatus == 11)
+		{
+			speed = animalData.flyingSpeed / 15.0f;
+		}
+		else
+		{
+			speed = animalData.walkToEatSpeed / 60.0f;
+		}
 	}
 }
 

@@ -11,6 +11,7 @@
 #import "PigeonView.h"
 #import "Animal.h"
 #import "CollisionHelper.h"
+#import "AnimalController.h"
 
 
 @implementation GameMainScene
@@ -46,6 +47,8 @@ static GameMainScene *_sharedGameMainScene = nil;
 	if( (self=[super init]) ) 
 	{
 		[CollisionHelper initCollisionMap];
+		
+		isSelfZoo = YES;
 		
 		CGSize size = [[CCDirector sharedDirector] winSize];
 		
@@ -118,6 +121,11 @@ static GameMainScene *_sharedGameMainScene = nil;
 -(void) resultCallback:(NSObject *)value{
 }
 
+-(Boolean) getIsSelfZoo
+{
+	return isSelfZoo;
+}
+
 -(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex
 {
 	[background addChild:sprite z:zIndex];
@@ -136,6 +144,33 @@ static GameMainScene *_sharedGameMainScene = nil;
 -(void) removeDialogFromScreen:(CCSprite *)sprite
 {
 	[self removeChild:sprite cleanup:YES];
+}
+
+- (void)onEnter
+{
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:51 swallowsTouches:YES];
+	[super onEnter];
+}
+
+- (void)onExit
+{
+	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
+	[super onExit];
+}	
+
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	int type = [[UIController sharedUIController] getOperation];
+	if (type == OPERATION_CALL)
+	{
+		[[AnimalController sharedAnimalController] gotoEat];
+		
+		//CGPoint location = [background convertTouchToNodeSpaceAR:touch];
+		CGPoint location = ccp(326,186);
+		[[OperationViewController sharedOperationViewController] play:@"summon" setPosition:location];
+	}
+	
+	return NO;
 }
 
 -(void) dealloc
