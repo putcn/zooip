@@ -9,8 +9,9 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "UIController.h"
-#import "ItemInfoPane.h"
 #import "MessageDialog.h"
+#import "SellinfoPane.h"
+
 
 
 @interface StorageContainer : CCSprite {
@@ -20,7 +21,7 @@
 	
 	CCTexture2D *tabEnable;
 	CCTexture2D *tabDisable;
-	ItemInfoPane *itemInfoPane;
+	SellinfoPane *itemInfoPane;
 	
 	
 	int tabIndex;

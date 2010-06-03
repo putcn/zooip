@@ -28,5 +28,6 @@
 -(void) faultCallback:(NSObject *)value;
 -(void) nextPage:(Button *)button;
 -(void) forwardPage:(Button *)button;
+-(void) sellAllEggsHandler:(Button *)button;
 -(void) generatePage;
 @end
