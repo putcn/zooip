@@ -11,22 +11,25 @@
 #import "ScalerPane.h"
 
 @implementation SellinfoPane
-@synthesize title;
+@synthesize title,itemId,itemType,itemBuyType,count;
 
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget:(id)target
 {
 	if ((self = [super init])) {
-		itemId = itId;
-		itemType = itType;
+				
 		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ItemInfoPane.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
 		[self setTextureRect: rect];
 		[bg release];
-		self.title = @"出售卵";
-		[self addTitle];
-		[self addInfo:target];
+		self.title = @"出 售";
+		priceLbl = [[CCLabel alloc] retain];
+		
+		
+		[self updateInfo:itId type:itType setTarget:target];
+
+		
 	}
 	return self;
 }
@@ -39,156 +42,142 @@
 	[self addChild:titleLbl z:10];
 }
 
-//-(void)addInfo:(id)target
-//{
-//	NSDictionary *dic;
-//	if (itemType == @"egg") {
-//		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs retain];
-//		DataModelStorageEgg *storageEgg = [dic objectForKey:itemId];
-//		
-//		int buyType = 0;
-//		NSString *price = [NSString stringWithFormat:@"%d",originalAnimal.basePrice];
-//		if (originalAnimal.antsPrice > 0) {
-//			buyType = 1;
-//			price = [NSString stringWithFormat:@"%d",originalAnimal.antsPrice];
-//		}
-//		
-//		
-//		NSString *picName = [NSString stringWithFormat:@"%@",storageEgg.eggNameEN];
-//		//NSString *eggName = [NSString stringWithFormat:@"%@",storageEgg.eggNameEN];
-//		//NSString *eggTotal = [NSString stringWithFormat:@"%d",storageEgg.numOfProduct];
-//		NSArray *eNameArr = [picName componentsSeparatedByString:@" "];
-//		
-//		NSString *picFileName = [NSString stringWithFormat:@"%@Egg.png",[eNameArr objectAtIndex:0] ];		
-//		[self setImg:picFileName setBuyType:buyType setPrice:price];
-//		
-//		CCLabel *nameLbl = [CCLabel labelWithString:originalAnimal.scientificNameCN fontName:@"Arial" fontSize:30];
-//		[nameLbl setColor:ccc3(0, 0, 0)];
-//		nameLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 100);
-//		[self addChild:nameLbl z:10];
-//		[originalAnimal release];
-//	}
-//	if (itemType == @"eggs") {
-//		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].foods retain];
-//		DataModelFood *food = [dic objectForKey:itemId];
-//		int buyType = 0;
-//		NSString *price = [NSString stringWithFormat:@"%d",food.foodPrice];
-//		if (food.antsRequired > 0) {
-//			buyType = 1;
-//			price = [NSString stringWithFormat:@"%d",food.antsRequired];
-//		}
-//		NSString *picFileName = [NSString stringWithFormat:@"food_%@.png",food.foodImg];
-//		[self setImg:picFileName setBuyType:buyType setPrice:price];
-//		CCLabel *nameLbl = [CCLabel labelWithString:food.foodName fontName:@"Arial" fontSize:30];
-//		[nameLbl setColor:ccc3(0, 0, 0)];
-//		nameLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 100);
-//		[self addChild:nameLbl z:10];
-//		[food release];
-//	}
-//	
-//	
-//	[dic release];
-//	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(buyItem:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
-//	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancel:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
-//	//为Button添加绑定的参数列表
-//	confirmBtn.params = [NSDictionary dictionaryWithObjectsAndKeys:itemId, @"itemId", itemType, @"itemType", itemBuyType, @"itemBuyType",nil];
-//	confirmBtn.position = ccp(self.contentSize.width/2 - 200, 50);
-//	cancelBtn.position = ccp(self.contentSize.height/2 + 200, 50);
-//	[self addChild:confirmBtn z:10];
-//	[self addChild:cancelBtn z:10];
-//}
 
 
 -(void)updateInfo:(NSString *) itId type: (NSString *) itType setTarget:(id)target
 {
+	
 	[self removeAllChildrenWithCleanup:YES];
 	[self addTitle];
 	itemId = itId;
 	itemType = itType;
-	itemBuyType = @"goldEgg";
 	itemPrice = 0;
 	NSDictionary *dic;
-	if (itemType == @"animal") {
-		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals retain];
-		DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemId];
-		itemPrice = originalAnimal.basePrice;
-		if (originalAnimal.antsPrice > 0) {
-			itemBuyType = @"ant";
-			itemPrice = originalAnimal.antsPrice;
-		}
+	if (itemType == @"egg") {
+		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs retain];
+		DataModelStorageEgg *storageEggs = [dic objectForKey:itemId];
+		itemPrice = storageEggs.eggPrice;
+		
+		NSString *eggNameEn = [NSString stringWithFormat: @"%@",storageEggs.eggNameEN];
+		NSArray *eggNameArr = [eggNameEn componentsSeparatedByString:@" "];
+		
 		NSString *price = [NSString stringWithFormat:@"%d",itemPrice]; 
-		NSString *picFileName = [NSString stringWithFormat:@"%@.png",originalAnimal.picturePrefix];
+		NSString *picFileName = [NSString stringWithFormat:@"%@Egg.png",[eggNameArr objectAtIndex:0] ];
 		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
 		
-		CCLabel *nameLbl = [CCLabel labelWithString:originalAnimal.scientificNameCN fontName:@"Arial" fontSize:30];
+		CCLabel *nameLbl = [CCLabel labelWithString:storageEggs.eggName fontName:@"Arial" fontSize:30];
 		[nameLbl setColor:ccc3(0, 0, 0)];
 		nameLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 100);
 		[self addChild:nameLbl z:10];
-		[originalAnimal release];
+		
+		
+		NSString *signPrice = [NSString stringWithFormat:@"单个售价 : %d  金蛋",itemPrice];
+		CCLabel *signPriceLbl = [CCLabel labelWithString:signPrice fontName:@"Arial" fontSize:30];
+		[signPriceLbl setColor:ccc3(0, 0, 0)];
+		signPriceLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 150);
+		[self addChild:signPriceLbl z:10];
+		
+		eggTotalNum  = storageEggs.numOfProduct;
+		NSString *eggTotalNumStr = [NSString stringWithFormat:@" 总  数 :  %d",eggTotalNum];
+		
+		CCLabel *toalEggNumLbl = [CCLabel labelWithString:eggTotalNumStr fontName:@"Arial" fontSize:30];
+		[toalEggNumLbl setColor:ccc3(0, 0, 0)];
+		toalEggNumLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 200);
+		[self addChild:toalEggNumLbl z:10];
+		
+		
+		NSString *sumPrice = [NSString stringWithFormat:@"总计收入 : %d  金蛋",itemPrice * eggTotalNum];
+		CCLabel *sumPriceLbl = [CCLabel labelWithString:sumPrice fontName:@"Arial" fontSize:30];
+		[sumPriceLbl setColor:ccc3(0, 0, 0)];
+		sumPriceLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 250);
+		[self addChild:sumPriceLbl z:10];
+		
+		[storageEggs release];
 	}
-	if (itemType == @"food") {
-		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].foods retain];
-		DataModelFood *food = [dic objectForKey:itemId];
-		itemPrice = food.foodPrice;
-		if (food.antsRequired > 0) {
-			itemBuyType = @"ant";
-			itemPrice = food.antsRequired;
-		}
+	
+	if (itemType == @"zygoteegg") {
+		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs retain];
+		DataModelStorageZygoteEgg *modelZygoteEggs = [dic objectForKey:itemId];
+		itemPrice = modelZygoteEggs.eggPrice;
+		
+		//=========
+		NSString *picName = [NSString stringWithFormat:@"%@",modelZygoteEggs.eggNameEN];
+		NSString *eggName = [NSString stringWithFormat:@"%@",modelZygoteEggs.eggNameEN];
+		NSString *eggTotal = [NSString stringWithFormat:@"555"];
+		NSArray *eNameArr = [picName componentsSeparatedByString:@" "];
+		NSString *picFileName = [NSString stringWithFormat:@"%@Egg.png",[eNameArr objectAtIndex:0]];
+		///=========
+		
 		NSString *price = [NSString stringWithFormat:@"%d",itemPrice]; 
-		NSString *picFileName = [NSString stringWithFormat:@"food_%@.png",food.foodImg];
+		NSString *priceStr = [NSString stringWithFormat:@"受精卵售价 : %d 金蛋",itemPrice];
+		
 		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
-		CCLabel *nameLbl = [CCLabel labelWithString:food.foodName fontName:@"Arial" fontSize:30];
+		
+		CCLabel *nameLbl = [CCLabel labelWithString:modelZygoteEggs.eggName fontName:@"Arial" fontSize:30];
 		[nameLbl setColor:ccc3(0, 0, 0)];
 		nameLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 100);
 		[self addChild:nameLbl z:10];
-		[food release];
+		
+		CCLabel *eggPriLbl = [CCLabel labelWithString:priceStr fontName:@"Arial" fontSize:30];
+		[eggPriLbl setColor:ccc3(0, 0, 0)];
+		eggPriLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 150);
+		[self addChild:eggPriLbl z:10];
+		
+		CCLabel *zygoteEggPriLbl = [CCLabel labelWithString:priceStr fontName:@"Arial" fontSize:30];
+		[zygoteEggPriLbl setColor:ccc3(0, 0, 0)];
+		zygoteEggPriLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 200);
+		[self addChild:zygoteEggPriLbl z:10];
+		
+		CCLabel *eggProduceLbl = [CCLabel labelWithString:@"普通动物产量 ：33" fontName:@"Arial" fontSize:30];
+		[eggProduceLbl setColor:ccc3(0, 0, 0)];
+		eggProduceLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 250);
+		[self addChild:eggProduceLbl z:10];
+		
+		CCLabel *zygoteEggProduceLbl = [CCLabel labelWithString:@"受精蛋预计产量 ：33" fontName:@"Arial" fontSize:30];
+		[zygoteEggProduceLbl setColor:ccc3(0, 0, 0)];
+		zygoteEggProduceLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 300);
+		[self addChild:zygoteEggProduceLbl z:10];
+		
+		CCLabel *sexLbl = [CCLabel labelWithString:@"性别 ：母" fontName:@"Arial" fontSize:30];
+		[sexLbl setColor:ccc3(0, 0, 0)];
+		sexLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 350);
+		[self addChild:sexLbl z:10];
+		
+		
+		[modelZygoteEggs release];
 	}
-	if (itemType == @"goods") {
-		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].goods retain];
-		DataModelGood *goods = [dic objectForKey:itemId];
-		itemPrice = goods.goodsGoldenPrice;
-		if (goods.goodsAntsPrice > 0){
-			itemBuyType = @"ant";
-			itemPrice = goods.goodsAntsPrice;
-		}
-		NSString *price = [NSString stringWithFormat:@"%d", itemPrice];
-		NSString *picFileName;
-		if ([goods.goodsPicture intValue]== 1) {
-			picFileName = @"tibentanmastiff_rest_01.png";
-		}
-		else if([goods.goodsPicture intValue]== 2)
-		{	
-			picFileName = @"chinemy_walk_left_01.png";
-		}
-		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
-		CCLabel *nameLbl = [CCLabel labelWithString:goods.goodsName	fontName:@"Arial" fontSize:30];
-		[nameLbl setColor:ccc3(0, 0, 0)];
-		nameLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 100);
-		[self addChild:nameLbl z:10];
-		[goods release];
-	}
+	
+	
 	[dic release];
 	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(buyItem:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+	
 	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancel:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+	
 	//为Button添加绑定的参数列表
 	confirmBtn.target = self;
 	//confirmBtn.params = [NSDictionary dictionaryWithObjectsAndKeys:itemId, @"itemId", itemType, @"itemType", [NSString stringWithFormat:@"%d",itemBuyType], @"itemBuyType",nil];
 	confirmBtn.position = ccp(self.contentSize.width/2 - 200, 50);
 	cancelBtn.position = ccp(self.contentSize.height/2 + 200, 50);
+
 	[self addChild:confirmBtn z:10];
 	[self addChild:cancelBtn z:10];
+
+
 	
-	ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:10 delta:1 target:self price:itemPrice z:7 Priority:0];
+	ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0];
 	scalerPane.position = ccp(200,200);
 	[self addChild:scalerPane z:5];
 	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:5];
 	transBackground.scale = 17.0f;
 	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 	[self addChild:transBackground z:5];
+	 
+	 
 }
 
 -(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price
 {
+	
 	CCSprite *item = [CCSprite node];
 	CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:imagePath ofType:nil] ] ];
 	CGRect rect = CGRectZero;
@@ -197,31 +186,27 @@
 	[item setTextureRect: rect];
 	item.scale = 2.0f;
 	[itemImg release];
-	CCSprite *buyImg;
-	if (buyType == @"goldEgg") {
-		buyImg = [CCSprite spriteWithFile:@"goldegg.png"];
-	}
-	else {
-		buyImg = [CCSprite spriteWithFile:@"goldant.png"];
-	}
+	
 	priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:20];
 	[priceLbl setColor:ccc3(255, 0, 255)];
 	
 	item.position = ccp(item.contentSize.width/2 + 150, self.contentSize.height  - item.contentSize.height /2 - 150);
-	buyImg.position = ccp(item.position.x - 60, 300);
 	priceLbl.position = ccp(item.position.x + 20 , 300);
-	buyImg.scale = 1.5f;
 	priceLbl.scale = 1.5f;
 	
 	[self addChild:item z:7];
-	[self addChild:buyImg z:7];
 	[self addChild:priceLbl z:7];
+	 
+	 
 }							  
 
 -(void) updatePrice:(NSDictionary *)values
 {
+	
 	count = [[values objectForKey:@"count"] intValue];
-	[priceLbl setString:[NSString stringWithFormat:@"%d", count * itemPrice]];
+	[priceLbl setString:[NSString stringWithFormat:@"总计收入 :  %d  金蛋", count * itemPrice]];
+	 
+	 
 }
 
 -(void) dealloc

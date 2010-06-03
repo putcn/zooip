@@ -10,8 +10,8 @@
 #import "cocos2d.h"
 #import "DataEnvironment.h"
 #import "DataModelOriginalAnimal.h"
-#import "DataModelFood.h"
-#import "DataModelGood.h"
+#import "DataModelStorageEgg.h"
+#import "DataModelStorageZygoteEgg.h"
 #import "Button.h"
 
 
@@ -22,6 +22,7 @@
 	NSString *itemBuyType;
 	NSInteger itemPrice;
 	NSInteger count;
+	NSInteger eggTotalNum;
 	CCLabel *priceLbl;
 }
 
@@ -30,9 +31,9 @@
 @property (nonatomic, retain) NSString *itemType;
 @property (nonatomic, retain) NSString *itemBuyType;
 @property (nonatomic, assign) NSInteger count;
+
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget: (id)target; 
 -(void)addTitle;
-//-(void)addInfo: (id)target;
 -(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price;
 -(void) updateInfo: (NSString *) itId type: (NSString *) itType setTarget:(id)target;
 -(void) updatePrice: (NSDictionary *)values;

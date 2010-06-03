@@ -6,10 +6,12 @@
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "ManageContainer.h"
 #import "Button.h"
-#import "ButtonContainer.h"
+#import "SellitemButton.h"
+#import "StoButtonContainer.h"
 #import "StorageContainer.h"
+
+
 
 
 @implementation StorageContainer
@@ -36,7 +38,7 @@
 		[self addTab:tabArray];
 		for (int i = 0; i< tabArray.count; i++) {
 			NSString *tab = [tabArray objectAtIndex:i];
-			ButtonContainer *buttonContainer = [[ButtonContainer alloc] initWithTab:tab setTarget:self];
+			StoButtonContainer *buttonContainer = [[StoButtonContainer alloc] initWithTab:tab setTarget:self];
 			if (i == 0) {
 				buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
 			}
@@ -88,12 +90,12 @@
 {
 	tabIndex = button.tag;
 	[button setTexture:tabEnable];
-	ButtonContainer	*buttonContainer = [tabContentDic objectForKey:[NSString stringWithFormat:@"tabContent_%d",tabIndex]];
+	SellitemButton	*buttonContainer = [tabContentDic objectForKey:[NSString stringWithFormat:@"tabContent_%d",tabIndex]];
 	buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
 	int tabCount = [tabDic count];
 	for (int i = 0; i < tabCount; i++) {
 		if (i != tabIndex) {
-			ButtonContainer	*buttonContainer = [tabContentDic objectForKey:[NSString stringWithFormat:@"tabContent_%d",i]];
+			SellitemButton	*buttonContainer = [tabContentDic objectForKey:[NSString stringWithFormat:@"tabContent_%d",i]];
 			buttonContainer.position = ccp(2000, self.contentSize.height/2 - 50);
 			Button *disableButton = [tabDic objectForKey:[NSString stringWithFormat:@"tab_%d",i]];
 			[disableButton setTexture:tabDisable];
@@ -101,10 +103,11 @@
 	}
 }
 
--(void) itemInfoHandler:(ItemButton *) itemButton
+-(void) itemInfoHandler:(SellitemButton *) itemButton
 {
+	
 	if (itemInfoPane == nil) {
-		itemInfoPane = [[ItemInfoPane alloc] initWithItem:itemButton.itemId type:itemButton.itemType setTarget:self];
+		itemInfoPane = [[SellinfoPane alloc] initWithItem:itemButton.itemId type:itemButton.itemType setTarget:self];
 		itemInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2);
 		[self addChild:itemInfoPane z:20];
 	}
@@ -117,33 +120,59 @@
 
 
 
+/*
+ ZooNetworkRequesttoSellZygoteEgg,
+ ZooNetworkRequesttoSellProduct,
+ ZooNetworkRequesttoSellAllZygoteEgg,
+ ZooNetworkRequesttoSellAllProducts,
+ 
+ */
+
 -(void) buyItem:(Button *)button
 {
-	ItemInfoPane *itemInfo = (ItemInfoPane *)button.target; 
+	
+	
+	SellinfoPane *itemInfo = (SellinfoPane *)button.target; 
+
+	
 	if (itemInfo.itemType == @"egg") {
 		
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"originalAnimalId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			DataModelStorageEgg *storageEgg = (DataModelStorageEgg *)[[DataEnvironment sharedDataEnvironment].storageEggs objectForKey:itemInfo.itemId];
+		//=====
+			//NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",storageEgg.eggId,@"eggId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
+		//====
 			
-			
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"A6215BF61A3AF50A8F72F043A1A6A85C",@"farmerId",storageEgg.eggId,@"eggId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellProduct WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		
+	}
+	
+	
+	if(itemInfo.itemType == @"zygoteegg"){
+		
+			//NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+			//NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+			NSString *farmerId = [NSString stringWithFormat:@"A6215BF61A3AF50A8F72F043A1A6A85C"]; 
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"zygoteStorageId",nil];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		
 		
 	}
-	else if(itemInfo.itemType == @"food"){
 		
-			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-			NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",farmId,@"farmId",itemInfo.itemId,@"foodId",[NSString stringWithFormat:@"%d",itemInfo.count],@"numOfFood",nil];
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyFoodByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-		
-		
-	}
-		
+	
 	itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
 	[itemInfo release];
 	
+	
 }
+
+
+
+
+
+
+
 
 -(void) cancel:(Button *)button
 {
