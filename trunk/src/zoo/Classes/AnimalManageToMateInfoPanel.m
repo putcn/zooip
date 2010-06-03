@@ -16,12 +16,15 @@ title,
 itemId,
 itemType,
 itemBuyType,
-count;
+count,
+infoMessagePanelTest;
 
--(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget:(id)target
+-(id) initWithItem: (NSString *) itId type: (NSString *) itType animalID:(NSString *) aniID setTarget:(id)target
 {
 	if ((self = [super init])) {
+		itemId = itId;
 		parentTarget = target;
+		animalID = aniID;
 		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ItemInfoPane.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
@@ -37,13 +40,7 @@ count;
 		currentPageNum = 1;
 		
 		// add button.
-		Button *toMateBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMate:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
-		Button *toMarryBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMarry:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
-		toMarryBtn.flipX = YES;
-		toMateBtn.position = ccp(self.contentSize.width/2 + 100, 0);
-		toMarryBtn.position = ccp(self.contentSize.width/2 - 100, 0);
-		[self addChild:toMateBtn z:7];
-		[self addChild:toMarryBtn z:7];
+		[self generateButtons];
 		
 		//generate one button. Generate other button list.
 		[self generateOne];
@@ -52,10 +49,55 @@ count;
 	return self;
 }
 
+-(void)generateButtons
+{
+	Button *toMateBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMate:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
+	Button *toMarryBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMarry:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
+	//toMarryBtn.flipX = YES;
+	toMateBtn.position = ccp(self.contentSize.width/2 + 100, 280);
+	toMarryBtn.position = ccp(self.contentSize.width/2 - 100, 280);
+	[self addChild:toMateBtn z:7];
+	[self addChild:toMarryBtn z:7];
+}
+
 -(void)generateOne
 {
-	//Gen the one clicked.
+	//Gen the one clicked at the right postion.
+
+	DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:animalID];
+	NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
+	NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
+	NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
+	//For Test
+	NSString *tabFlag = @"animals";
+	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+	//AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalIDs setImagePath:<#(NSString *)imagePath#> setAnimalName:<#(NSString *)animalName#> setTarget:<#(id)target#> setSelector:<#(SEL)handler#> setPriority:<#(int)priorityValue#> offsetX:<#(int)offsetXValue#> offsetY:<#(int)offsetYValue#>
+	//ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+	itemButton.position = ccp(30,30);
+	[self addChild:itemButton z:7 tag:1%12];
 	
+	
+	
+}
+
+-(void)generateAnother
+{
+	DataModelAnimal *serverAnimalDataAnother;
+	if (leftAnimalID == animalID) {
+		serverAnimalDataAnother = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:rightAnimalID];
+	}
+	else {
+		serverAnimalDataAnother = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID];
+	}
+
+	NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalDataAnother.scientificNameCN];
+	NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalDataAnother.picturePrefix];
+	NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalDataAnother.originalAnimalId];
+	
+	NSString *tabFlag = @"animals";
+	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+	itemButton.position = ccp(400,30);
+	[self addChild:itemButton z:7 tag:1%12];
 }
 
 -(void)generateOthers
@@ -69,21 +111,28 @@ count;
 		if (endNumber >= [[DataEnvironment sharedDataEnvironment].animalIDs count]) {
 			endNumber = [[DataEnvironment sharedDataEnvironment].animalIDs count];
 		}
+	
+	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:animalID];
+	
 		currentNum = endNumber - (currentPageNum -1 ) *12 ;
 		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
 			//originAnimal = [originAnimalDic objectForKey:[animalArray objectAtIndex:i]];
 			originAnimal = [animalIDs objectAtIndex:i];
 			aniID = [animalIDs objectAtIndex:i];
-			DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
-			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
-			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
-			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
+			DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
+			if(serverAnimalDataOne.animalType == serverAnimalList.animalType && serverAnimalList.gender != serverAnimalDataOne.gender && aniID != leftAnimalID && aniID != rightAnimalID)
+			{
+			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalList.scientificNameCN];
+			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalList.picturePrefix];
+			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalList.originalAnimalId];
 			//For Test
 			NSString *tabFlag = @"animals";
-			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-			//ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
+//			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+				AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(updateInfoPanel:) setPriority:2 offsetX:1 offsetY:1];
+				//ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			itemButton.position = ccp(225 * (i%4) + 240/**this uesed to be 120 pixel***/, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%12];
+			}
 		}
 }
 
@@ -95,11 +144,96 @@ count;
 -(void) toMate:(Button *)button
 {
 	//TODO: Imp the mate func
+	//Pop up the panel which need to choose ants count and present the persent of success rate.
+	
+	
+	NSString *action = @"marry";
+	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
+	NSString *maleId;
+	NSString *femaleId;
+	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID];
+	if(serverAnimalDataOne.gender == 0)
+	{
+		maleId = leftAnimalID;
+		femaleId = rightAnimalID;
+	}
+	else {
+		maleId = rightAnimalID;
+		femaleId = leftAnimalID;
+	}
+	
+	//NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmerId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",femaleId,@"maleId",maleId,@"femaleId",action,@"action",nil];
+	//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+	
+	//TODO: add the service handler for to mate.
+	
+	//判断是否首次加载物品信息框
+	if (toMateRateChoose == nil) {
+		//-(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget:(id)target
+		//NSString *testString = itemButton.animalID;
+		//animalToMateInfoPanel = [[AnimalManageToMateInfoPanel alloc] initWithItem:itemButton.itemId animalID:itemButton.animalID type:itemButton.itemType setTarget:self];
+		//animalToMateInfoPanel = [[AnimalManageToMateAntsChoose alloc] initWithItem:itemButton.itemId type:itemButton.itemType animalID:itemButton.animalID setTarget:self];
+		toMateRateChoose = [[AnimalManageToMateAntsChoose alloc] initWithParam:params setTarget:self];
+		toMateRateChoose.position = ccp(self.contentSize.width/2, toMateRateChoose.contentSize.height/2);
+		[self addChild:toMateRateChoose z:20 tag:1999];
+	}
+	else {		
+		//****[toMateRateChoose updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
+		//****toMateRateChoose.position = ccp(self.contentSize.width/2, toMateRateChoose.contentSize.height/2);
+	}
 }
+
+-(void)mateConfirm:(Button *)button
+{
+	//shopPopupList = [[MessageDialog alloc] initDialog:@"store_info.png" setTarget:nil setSelector:nil];
+	//[self addChild:shopPopupList];
+	[self removeChildByTag:1999 cleanup:YES];
+	[self removeAllChildrenWithCleanup:YES];
+	infoMessagePanelTest = [[AnimalManageInfoPanel alloc]initDialog:@"箭头.png" setTarget:self setSelector:nil withTitle:@"success" withContent:@"success"];
+	infoMessagePanelTest.position = ccp(100,100);
+	[self addChild:infoMessagePanelTest z:100];
+}
+
+-(void)mateCancle:(Button *)button
+{
+	
+}
+
+
+-(void) resultCallback:(NSObject *)value
+{
+	//MessageDialog *dialog = [[MessageDialog alloc] initDialog:@"ItemInfoPane.png" setTarget:self setSelector:nil];
+	NSLog(@"操作已成功!");
+
+
+}
+
 
 -(void) toMarry:(Button *)button
 {
 	//TODO: Imp the marry func
+	//POP up the Animal management success or not info panel.
+	
+	NSString *action = @"marry";
+	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSString *maleId;
+	NSString *femaleId;
+	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID];
+	if(serverAnimalDataOne.gender == 0)
+	{
+		maleId = leftAnimalID;
+		femaleId = rightAnimalID;
+	}
+	else {
+		maleId = rightAnimalID;
+		femaleId = leftAnimalID;
+	}
+	
+	//NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",maleId,@"maleId",femaleId,@"femaleId",action,@"action",nil];
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+	
 }
 
 
@@ -112,6 +246,31 @@ count;
 	[self addChild:titleLbl z:10];
 }
 
+//This to update the panel. Re-generate the one to mate and all the list of its pair.
+//Move the clicked one to the right position and re-generate the list.
+//List all and remove the one just clicked.
+
+-(void)updateInfoPanel:(AnimalManagementButtonItem *)buttonItem
+{
+	[self removeAllChildrenWithCleanup:YES];
+	[self addTitle];
+	
+	DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:buttonItem.animalID];
+	if(serverAnimalList.gender == 0)
+	{
+		leftAnimalID = buttonItem.animalID;
+		rightAnimalID = animalID;
+	}
+	else {
+		leftAnimalID = animalID;
+		rightAnimalID = buttonItem.animalID;
+	}
+	
+	[self generateOne];
+	[self generateAnother];
+	[self generateOthers];
+	[self generateButtons];
+}
 
 -(void)updateInfo:(NSString *) itId type: (NSString *) itType setTarget:(id)target
 {

@@ -10,7 +10,7 @@
 
 
 @implementation AnimalManageInfoPanel
-
+					  
 @synthesize isOpen;
 
 -(id) initDialog:(NSString*) filePath setTarget:(id) target setSelector:(SEL) handler withTitle:(NSString *)infoTitle withContent:(NSString *)infoContent
@@ -20,12 +20,13 @@
 	if( (self=[super init] ))
 	{
 		//Set the background
-		CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:filePath ofType:nil] ] ];
+		CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ItemInfoPane.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
 		[self setTextureRect: rect];
 		[bg release];
+
 		
 		CGSize s = [self.texture contentSize];
 		
@@ -35,11 +36,12 @@
 		lblMessage.color = ccc3(0, 0, 0);
 		[self addChild:lblMessage];
 		
-		Button *btnClose = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:self setSelector:@selector(closeDialogHandler) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+		Button *btnClose = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:self setSelector:@selector(closeDialogHandler:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
 		btnClose.position = ccp( s.width - 5, 5 );
 		[self addChild:btnClose];
 		
-		self.position = ccp( -500 , -500 );
+		//self.position = ccp( -500 , -500 );
+		//self.position = ccp( 100 , 100 );
 		isOpen = NO;
 		
 		targetCallBack = [target retain];
@@ -61,12 +63,13 @@
 {
 	[lblMessage release];
 	[self.texture release];
+	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }
 
--(void) closeDialogHandler
+-(void) closeDialogHandler:(Button*)btn
 {
-	if (isOpen) [self popUp:@""];
+	if (!isOpen) [self popUp:@""];
 }
 -(void) popUp:(NSString*) msg;
 {

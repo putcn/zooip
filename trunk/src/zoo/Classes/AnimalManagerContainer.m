@@ -80,13 +80,16 @@
 	//判断是否首次加载物品信息框
 	if (animalToMateInfoPanel == nil) {
 		//-(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget:(id)target
-		animalToMateInfoPanel = [[AnimalManageToMateInfoPanel alloc] initWithItem:itemButton.itemId type:itemButton.itemType setTarget:self];
+		NSString *testString = itemButton.animalID;
+		//animalToMateInfoPanel = [[AnimalManageToMateInfoPanel alloc] initWithItem:itemButton.itemId animalID:itemButton.animalID type:itemButton.itemType setTarget:self];
+		animalToMateInfoPanel = [[AnimalManageToMateInfoPanel alloc] initWithItem:itemButton.itemId type:itemButton.itemType animalID:itemButton.animalID setTarget:self];
+	
 		animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
 		[self addChild:animalToMateInfoPanel z:20];
 	}
 	else {		
-		[animalToMateInfoPanel updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
-		animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
+		//***[animalToMateInfoPanel updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
+		//***animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
 	}
 }
 

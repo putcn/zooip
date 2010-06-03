@@ -21,9 +21,10 @@
 
 @property BOOL isOpen;
 
--(id) initDialog:(NSString *) filePath setTarget:(id) target setSelector:(SEL) handler;
+
 -(void) popUp:(NSString*) msg;
 -(void) closeDialogHandler;
 -(void)addTitle:(NSString *) title;
+-(id) initDialog:(NSString*) filePath setTarget:(id) target setSelector:(SEL) handler withTitle:(NSString *)infoTitle withContent:(NSString *)infoContent;
 
 @end
