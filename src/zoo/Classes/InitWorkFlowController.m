@@ -14,6 +14,7 @@
 #import "SnakeController.h"
 #import "DejectaController.h"
 #import "AntController.h"
+#import "GameMainScene.h"
 
 static NSString *STEP_GET_FARMER_INFO = @"0";
 static NSString *STEP_GET_FARM_INFO = @"1";
@@ -141,6 +142,8 @@ static NSString *STEP_GET_DOG = @"8";
 
 -(void) endStep
 {
+	UILayer *uiLayer = [[UILayer alloc] init];
+	[[GameMainScene sharedGameMainScene] addChild:uiLayer z:10];
 	[[EggController sharedEggController] addEggs:[[DataEnvironment sharedDataEnvironment].eggs allKeys]];
 	[[ItemController sharedItemController] addItem:@"bowls"];
 	[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];

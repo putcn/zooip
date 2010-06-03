@@ -84,10 +84,6 @@ static GameMainScene *_sharedGameMainScene = nil;
 		scaleContainer.position = ccp( size.width / 2, size.height / 2);
 		[scaleContainer addChild:baseContainer];
 		[self addChild:scaleContainer];
-		
-		UILayer *uiLayer = [UILayer node];
-		[self addChild:uiLayer];
-		
 		ScaleControlLayer *scaler = [[ScaleControlLayer alloc] initWithTarget:scaleContainer];
 		[self addChild:scaler];
 		DragControlLayer *drager = [[DragControlLayer alloc] initWithTarget:scaleContainer];
@@ -102,10 +98,14 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[initFlowController setupStep];
 		[initFlowController startStep];
 		
-//		NSDictionary *paras = [NSDictionary dictionaryWithObjectsAndKeys:@"12",@"farmerId",nil];
-//		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:paras AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
-//		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:paras AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
+	
 		
+//		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"2318393DAD70AF92F9D488C5CE85B8D9",@"farmId",@"EA4416A19E664C3D6246DF8E8D4EDC84",@"adultBirdStorageId",nil];
+//		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"requestFaildWithReason:"];
+	
+//		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"088A81B9307D26AAD5D1924394C2A2E9",@"farmerId",nil];
+//		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"requestDoneWith:" AndFailedSel:@"requestFaildWithReason:"];
+
 //		NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:@"12",@"farmerId",@"1",@"goodsId",nil];
 //		NSDictionary *param1 =  [NSDictionary dictionaryWithObjectsAndKeys:@"12",@"farmerId",nil];
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllGoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];

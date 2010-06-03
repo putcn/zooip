@@ -16,7 +16,7 @@
 	if ((self = [super init]))
 	{
 		playerInfo = [[PlayerInfo alloc] init];
-		playerInfo.position = ccp(140, 302);
+		playerInfo.position = ccp(150, 295);
 		[self addChild:playerInfo];
 		
 		zooManageToolbar = [[ZooManageToolbar alloc] init];
