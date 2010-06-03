@@ -11,6 +11,25 @@
 
 @interface PlayerInfo : CCSprite
 {
+	NSString *userName;
+	NSString *userImg;
+	NSString *currentExperience;
+	NSString *nextLevelExperience;
+	NSString *level;
+	NSString *maxNumOfBirds;
+	NSString *topMaxNumOfBirds;
+	NSString *animalNum;
+	NSString *antsNum;
+	NSString *goldenEggNum;
+	CCLabel *userNameLbl;
+	CCLabel *experienceLbl;
+	CCLabel *experienceBar;
+	CCLabel *levelLbl;
+	CCLabel *capacity;
+	CCLabel *antsNumLbl;
+	CCLabel *goldenEggNumLbl;
+	CCLabel *animalNumLbl;
+	CCSprite *userImgSprite;
 	
 }
 

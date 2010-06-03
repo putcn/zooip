@@ -20,6 +20,7 @@
 +(SnakeController *) sharedSnakeController;
 
 -(void) addSnakes:(NSArray *)snakeIds;
+-(void) removeSnake:(NSString *)snakeId setExperience:(NSInteger)experience;
 -(void) clearSnakes;
 
 @end
