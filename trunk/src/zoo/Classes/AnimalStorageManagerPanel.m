@@ -8,6 +8,7 @@
 
 #import "AnimalStorageManagerPanel.h"
 #import "DataModelAnimal.h"
+#import "ServiceHelper.h"
 
 @implementation AnimalStorageManagerPanel
 
@@ -22,12 +23,21 @@
 		[self setTextureRect: rect];
 		[bg release];
 		tabFlag = tabName;
+		currentPageNum = 1;
+		
 		if (tabFlag == @"animal") {
 			NSDictionary *itemDic;
 			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].animalIDs;
 			totalPage = [[DataEnvironment sharedDataEnvironment].animalIDs count] + 1;
-			currentPageNum = 1;
+			
 			[self generatePage];
+		}
+		
+		if (tabFlag == @"animal") {
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		}
+		else if(tabFlag == @"food"){
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllFoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
 		
 		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
@@ -41,12 +51,18 @@
 	return self;
 }
 
+
 -(void) resultCallback:(NSObject *)value
 {
 	NSDictionary *itemDic;
 	NSArray *itemArray;
 	if (tabFlag == @"animal") {
 		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+		itemArray = [itemDic allKeys];
+	}
+	else if(tabFlag == @"food")
+	{
+		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].foods;
 		itemArray = [itemDic allKeys];
 	}
 	totalPage = itemArray.count/12 + 1;
@@ -58,6 +74,7 @@
 {
 	NSLog(@"Server Connection Fail");
 }
+
 
 -(void) nextPage:(Button *)button
 {
@@ -101,17 +118,37 @@
 			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
 			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
-			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%12];
 		}
 	}
-	
-}
-
--(void)itemInfoHandler:(id) sender
-{
-	
+	if (tabFlag == @"animal") {
+		NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+		DataModelOriginalAnimal *originAnimal;
+		NSArray *animalArray = [originAnimalDic allKeys];
+		int endNumber = currentPageNum * 12;
+		if (endNumber >= animalArray.count) {
+			endNumber = animalArray.count;
+		}
+		currentNum = endNumber - (currentPageNum -1 ) *12 ;
+		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
+			originAnimal = [originAnimalDic objectForKey:[animalArray objectAtIndex:i]];
+			
+			int buyType = 0;
+			NSString *price = [NSString stringWithFormat:@"%d",originAnimal.basePrice];
+			if (originAnimal.antsPrice > 0) {
+				buyType = 1;
+				price = [NSString stringWithFormat:@"%d",originAnimal.antsPrice];
+			}
+			
+			//根据动物的originalAnimalId生成ItemButton
+			NSString *picFileName = [NSString stringWithFormat:@"%@.png",originAnimal.picturePrefix];
+			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:49 offsetX:1 offsetY:1];
+			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
+			[self addChild:itemButton z:7 tag:i%12];
+		}
+	}
 }
 
 @end
