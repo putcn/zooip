@@ -236,7 +236,7 @@ infoMessagePanelTest;
 	//POP up the Animal management success or not info panel.
 	
 	NSString *action = @"marry";
-	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
 	NSString *maleId;
 	NSString *femaleId;
 	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID];
@@ -251,7 +251,7 @@ infoMessagePanelTest;
 	}
 	
 	//NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
-	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 	
 }
