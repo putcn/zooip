@@ -11,4 +11,9 @@
 
 @implementation DataModelStorageAnimal
 
+@synthesize
+adultBirdStorageId,
+originalAnimalId,
+amount;
+
 @end

@@ -355,7 +355,8 @@
 
 -(void) btnFeedButtonHandler:(Button *)button
 {
-	
+//	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",nil];
+//	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:nil AndFailedSel:nil];
 }
 
 -(void)btnManagementButtonHandler:(Button *)button

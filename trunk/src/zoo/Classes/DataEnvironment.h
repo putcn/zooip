@@ -35,7 +35,8 @@
 	NSMutableDictionary* originalAnimals;
 	NSMutableDictionary* foods;
 	NSMutableDictionary* goods;
-	
+	NSMutableDictionary* storageAnimals;
+	NSMutableDictionary* storageAuctionAnimals;
 }
 + (DataEnvironment *)sharedDataEnvironment;
 - (void)restore;
@@ -57,6 +58,8 @@
 @property(nonatomic, retain) NSMutableDictionary* originalAnimals;
 @property(nonatomic, retain) NSMutableDictionary* foods;
 @property(nonatomic, retain) NSMutableDictionary* goods;
+@property(nonatomic, retain) NSMutableDictionary* storageAnimals;
+@property(nonatomic, retain) NSMutableDictionary* storageAuctionAnimals;
 
 @property(nonatomic,retain) DataModelFarmerInfo *playerFarmerInfo;
 @property(nonatomic,retain) DataModelFarmerInfo *friendFarmerInfo;

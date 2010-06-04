@@ -28,7 +28,9 @@ storageEggs,
 storageZygoteEggs,
 originalAnimals,
 foods,
-goods;
+goods,
+storageAnimals,
+storageAuctionAnimals;
 
 @synthesize playerFarmerInfo;
 @synthesize friendFarmerInfo;
@@ -77,6 +79,8 @@ goods;
 		originalAnimals = [[NSMutableDictionary alloc] init];
 		foods = [[NSMutableDictionary alloc] init];
 		goods = [[NSMutableDictionary alloc] init];
+		storageAnimals = [[NSMutableDictionary alloc] init];
+		storageAuctionAnimals = [[NSMutableDictionary alloc] init];
 		
 		self.playerFarmerInfo.platformId = 11;
 	}
