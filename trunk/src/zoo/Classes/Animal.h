@@ -11,11 +11,6 @@
 #import "AnimalViewFactory.h"
 #import "DataModelAnimal.h"
 
-typedef enum
-{
-	STATE_NORMAL = 0,
-	STATE_CALL = 1,
-} ZooAnimalState;
 
 @interface Animal : NSObject
 {

@@ -71,12 +71,43 @@
 
 -(void) gotoEat
 {
-	targetPosition = ccp(386,176);
-	isGotoEat = YES;
-	[self updateSpeed];
-	[self calculateSpeed];
-	[self findDirection];
-	[view update:currDirection status:currStatus];
+	if (currStatus == 4)
+	{
+		int mapType = [CollisionHelper getMapType:view.position isByte:NO];
+		if (mapType == 1)//Water
+		{
+			currStatus = 7;
+		}
+		else if (mapType == 2)
+		{
+			currStatus = 5;
+		}
+	}
+	else if (currStatus == 10 || currStatus == 11)
+	{
+		currStatus = 6;
+	}
+	
+	if (CGRectContainsPoint(bowlArea, view.position) == NO)
+	{
+		targetPosition = ccp(386,176);
+		isGotoEat = YES;
+		[self updateSpeed];
+		[self calculateSpeed];
+		[self findDirection];
+		[view update:currDirection status:currStatus];
+	}
+	else
+	{
+		if (currStatus != 1)
+		{
+			isGotoEat = NO;
+			currStatus = 1;
+			waitRemain = 600;
+			[self updateSpeed];
+			[view update:currDirection status:currStatus];
+		}
+	}
 }
 
 @end
@@ -92,13 +123,14 @@
 		
 		if (CGRectContainsPoint(bowlArea, point))
 		{
-			currStatus = 1;
-			waitRemain = 600;
-//			[self switchNormalState];
-//			[self updateSpeed];
-//			[self findTarget];
-			[view update:currDirection status:currStatus];
-//			//NSLog(@"当前方向: %d", currDirection);
+			if (currStatus != 1)
+			{
+				isGotoEat = NO;
+				currStatus = 1;
+				waitRemain = 600;
+				[self updateSpeed];
+				[view update:currDirection status:currStatus];
+			}
 		}
 		else
 		{
@@ -113,6 +145,28 @@
 				[self findTarget];
 				[view update:currDirection status:currStatus];
 				return;
+			}
+			
+			int mapType = [CollisionHelper getMapType:view.position isByte:NO];
+			if (mapType == 1)//Water
+			{
+				if (currStatus != 7 && currStatus != 6)
+				{
+					currStatus = 7;
+					[view update:currDirection status:currStatus];
+				}
+			}
+			else if (mapType == 2)//Land
+			{
+				if (currStatus != 5 && currStatus != 6)
+				{
+					currStatus = 5;
+					[view update:currDirection status:currStatus];
+				}
+			}
+			else
+			{
+				
 			}
 			
 			view.position = nextPosition;
@@ -381,7 +435,7 @@
 {
 	int randomNumber = [RandomHelper getRandomNum:0 to:100];
 	
-	if (currStatus == 4)
+	if (currStatus == 4 || currStatus == 1)
 	{
 		if (randomNumber > 0 && randomNumber < 10)
 		{
@@ -530,7 +584,7 @@
 		}
 		else
 		{
-			speed = animalData.walkToEatSpeed / 60.0f;
+			speed = animalData.walkToEatSpeed / 30.0f;
 		}
 	}
 }
