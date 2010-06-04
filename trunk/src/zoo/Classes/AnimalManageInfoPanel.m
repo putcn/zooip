@@ -69,7 +69,7 @@
 
 -(void) closeDialogHandler:(Button*)btn
 {
-	if (!isOpen) [self popUp:@""];
+	if (isOpen) [self popUp:@""];
 }
 -(void) popUp:(NSString*) msg;
 {

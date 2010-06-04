@@ -63,7 +63,7 @@
 
 -(void)btnAnimalMarryManagementButtonHandler:(Button *)button
 {
-	animalManagerContainer = [[AnimalManagerContainer alloc] initWithFile:@"MarryManagement"];
+	animalManagerContainer = [[AnimalManagerContainer alloc] initWithName:@"MarryManagement"];
 	[self addChild:animalManagerContainer];
 }
 

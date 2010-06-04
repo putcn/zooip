@@ -23156,6 +23156,10 @@
 		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				607BF4F011B7DCF800326E47 /* AniamalManagementMateOrDisapart.h */,
+				607BF4F111B7DCF800326E47 /* AniamalManagementMateOrDisapart.m */,
+				607BF4F311B7DD3100326E47 /* AnimalManagementMateOrDisList.h */,
+				607BF4F411B7DD3100326E47 /* AnimalManagementMateOrDisList.m */,
 				60A0CDBC11B78066001AF9BD /* AnimalManageToMateAntsChoose.h */,
 				60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */,
 				608EC6E111B643E100160062 /* AnimalManageInfoPanel.h */,
@@ -23208,10 +23212,6 @@
 				3EAD8AFF11AEC76D00CE397E /* TransBackground.m */,
 				8408914311B49FBC001C29CA /* SellitemButton.h */,
 				8408914411B49FBC001C29CA /* SellitemButton.m */,
-				607BF4F011B7DCF800326E47 /* AniamalManagementMateOrDisapart.h */,
-				607BF4F111B7DCF800326E47 /* AniamalManagementMateOrDisapart.m */,
-				607BF4F311B7DD3100326E47 /* AnimalManagementMateOrDisList.h */,
-				607BF4F411B7DD3100326E47 /* AnimalManagementMateOrDisList.m */,
 			);
 			name = UIControls;
 			sourceTree = "<group>";

@@ -54,8 +54,9 @@ infoMessagePanelTest;
 	Button *toMateBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMate:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
 	Button *toMarryBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMarry:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
 	//toMarryBtn.flipX = YES;
-	toMateBtn.position = ccp(self.contentSize.width/2 + 100, 280);
-	toMarryBtn.position = ccp(self.contentSize.width/2 - 100, 280);
+	float tempx  = self.contentSize.width/2;
+	toMateBtn.position = ccp(self.contentSize.width/2 + 50, 440);
+	toMarryBtn.position = ccp(self.contentSize.width/2 - 50, 440);
 	[self addChild:toMateBtn z:7];
 	[self addChild:toMarryBtn z:7];
 }
@@ -68,15 +69,27 @@ infoMessagePanelTest;
 	NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
 	NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
 	NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
-	//For Test
-	NSString *tabFlag = @"animals";
-	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-	//AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalIDs setImagePath:<#(NSString *)imagePath#> setAnimalName:<#(NSString *)animalName#> setTarget:<#(id)target#> setSelector:<#(SEL)handler#> setPriority:<#(int)priorityValue#> offsetX:<#(int)offsetXValue#> offsetY:<#(int)offsetYValue#>
-	//ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-	itemButton.position = ccp(30,30);
-	[self addChild:itemButton z:7 tag:1%12];
-	
-	
+	if (serverAnimalData2.gender == 1) {
+		leftAnimalID = animalID;
+		//For Test
+		NSString *tabFlag = @"animals";
+		AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:leftAnimalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:2 offsetX:1 offsetY:1];
+		//AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalIDs setImagePath:<#(NSString *)imagePath#> setAnimalName:<#(NSString *)animalName#> setTarget:<#(id)target#> setSelector:<#(SEL)handler#> setPriority:<#(int)priorityValue#> offsetX:<#(int)offsetXValue#> offsetY:<#(int)offsetYValue#>
+		//ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+		itemButton.position = ccp(150,440);
+		[self addChild:itemButton z:7 tag:1%12];
+	}
+	else {
+		rightAnimalID = animalID;
+		//For Test
+		NSString *tabFlag = @"animals";
+		AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:rightAnimalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:2 offsetX:1 offsetY:1];
+		//AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalIDs setImagePath:<#(NSString *)imagePath#> setAnimalName:<#(NSString *)animalName#> setTarget:<#(id)target#> setSelector:<#(SEL)handler#> setPriority:<#(int)priorityValue#> offsetX:<#(int)offsetXValue#> offsetY:<#(int)offsetYValue#>
+		//ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+		itemButton.position = ccp(630,440);
+		[self addChild:itemButton z:7 tag:1%12];
+	}
+
 	
 }
 
@@ -96,7 +109,14 @@ infoMessagePanelTest;
 	
 	NSString *tabFlag = @"animals";
 	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-	itemButton.position = ccp(400,30);
+	if(serverAnimalDataAnother.gender == 1)
+	{
+	itemButton.position = ccp(150,440);
+	}
+	else {
+		itemButton.position = ccp(630,440);
+	}
+
 	[self addChild:itemButton z:7 tag:1%12];
 }
 
@@ -130,7 +150,7 @@ infoMessagePanelTest;
 //			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 				AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(updateInfoPanel:) setPriority:2 offsetX:1 offsetY:1];
 				//ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-			itemButton.position = ccp(225 * (i%4) + 240/**this uesed to be 120 pixel***/, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
+			itemButton.position = ccp(225 * (i%4) + 240/**this uesed to be 120 pixel***/, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100 - 300);
 			[self addChild:itemButton z:7 tag:i%12];
 			}
 		}
@@ -152,7 +172,7 @@ infoMessagePanelTest;
 	NSString *maleId;
 	NSString *femaleId;
 	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID];
-	if(serverAnimalDataOne.gender == 0)
+	if(serverAnimalDataOne.gender == 1)
 	{
 		maleId = leftAnimalID;
 		femaleId = rightAnimalID;
@@ -163,7 +183,7 @@ infoMessagePanelTest;
 	}
 	
 	//NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmerId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
-	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",femaleId,@"maleId",maleId,@"femaleId",action,@"action",nil];
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
 	//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 	
 	//TODO: add the service handler for to mate.
@@ -220,7 +240,7 @@ infoMessagePanelTest;
 	NSString *maleId;
 	NSString *femaleId;
 	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID];
-	if(serverAnimalDataOne.gender == 0)
+	if(serverAnimalDataOne.gender == 1)
 	{
 		maleId = leftAnimalID;
 		femaleId = rightAnimalID;
@@ -231,7 +251,7 @@ infoMessagePanelTest;
 	}
 	
 	//NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
-	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",maleId,@"maleId",femaleId,@"femaleId",action,@"action",nil];
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 	
 }
@@ -256,7 +276,7 @@ infoMessagePanelTest;
 	[self addTitle];
 	
 	DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:buttonItem.animalID];
-	if(serverAnimalList.gender == 0)
+	if(serverAnimalList.gender == 1)
 	{
 		leftAnimalID = buttonItem.animalID;
 		rightAnimalID = animalID;
