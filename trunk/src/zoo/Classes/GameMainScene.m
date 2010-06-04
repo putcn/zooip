@@ -98,8 +98,6 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[initFlowController setupStep];
 		[initFlowController startStep];
 		
-	
-		
 //		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"2318393DAD70AF92F9D488C5CE85B8D9",@"farmId",@"EA4416A19E664C3D6246DF8E8D4EDC84",@"adultBirdStorageId",nil];
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"requestFaildWithReason:"];
 	

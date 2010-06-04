@@ -6324,6 +6324,7 @@
 		C3B6313811B89FE700695343 /* DataModelStorageAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6313711B89FE700695343 /* DataModelStorageAnimal.m */; };
 		C3B6313B11B8A09C00695343 /* AnimalStorageManagerButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */; };
 		C3B6316111B8A8D600695343 /* DataModelStorageAuctionAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6316011B8A8D600695343 /* DataModelStorageAuctionAnimal.m */; };
+		C3B6320111B9055D00695343 /* GetAllOriginalAnimalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6320011B9055D00695343 /* GetAllOriginalAnimalController.m */; };
 		C3C525E5117C321800343D7F /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525E4117C321800343D7F /* Button.m */; };
 		C3C525EF117C32C400343D7F /* StorageManageToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525EE117C32C400343D7F /* StorageManageToolbar.m */; };
 		C3C525F2117C333000343D7F /* PlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525F1117C333000343D7F /* PlayerInfo.m */; };
@@ -12826,6 +12827,8 @@
 		C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalStorageManagerButtonItem.m; sourceTree = "<group>"; };
 		C3B6315F11B8A8D600695343 /* DataModelStorageAuctionAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelStorageAuctionAnimal.h; sourceTree = "<group>"; };
 		C3B6316011B8A8D600695343 /* DataModelStorageAuctionAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelStorageAuctionAnimal.m; sourceTree = "<group>"; };
+		C3B631FF11B9055D00695343 /* GetAllOriginalAnimalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllOriginalAnimalController.h; sourceTree = "<group>"; };
+		C3B6320011B9055D00695343 /* GetAllOriginalAnimalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllOriginalAnimalController.m; sourceTree = "<group>"; };
 		C3C525E3117C321800343D7F /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		C3C525E4117C321800343D7F /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		C3C525ED117C32C400343D7F /* StorageManageToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageManageToolbar.h; sourceTree = "<group>"; };
@@ -23301,6 +23304,8 @@
 		C331112E119D1F7300F2EE18 /* ServerController */ = {
 			isa = PBXGroup;
 			children = (
+				C3B631FF11B9055D00695343 /* GetAllOriginalAnimalController.h */,
+				C3B6320011B9055D00695343 /* GetAllOriginalAnimalController.m */,
 				C37443E411AD161A004BABFE /* CureAnimalController.h */,
 				C37443E511AD161A004BABFE /* CureAnimalController.m */,
 				C342593E11A6759300B6FDB7 /* PickEggToStorageController.h */,
@@ -29820,6 +29825,7 @@
 				C3B6313B11B8A09C00695343 /* AnimalStorageManagerButtonItem.m in Sources */,
 				C3B6316111B8A8D600695343 /* DataModelStorageAuctionAnimal.m in Sources */,
 				607521C811B8D7AA007A7514 /* AnimalStorageManagerContainer.m in Sources */,
+				C3B6320111B9055D00695343 /* GetAllOriginalAnimalController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

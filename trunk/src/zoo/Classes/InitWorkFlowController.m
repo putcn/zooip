@@ -25,6 +25,7 @@ static NSString *STEP_GET_SNAKE = @"5";
 static NSString *STEP_GET_DEJECTA = @"6";
 static NSString *STEP_GET_ANT = @"7";
 static NSString *STEP_GET_DOG = @"8";
+static NSString *STEP_GET_ALL_ORIGINAL_ANIMAL = @"9";
 
 @implementation InitWorkFlowController
 
@@ -48,7 +49,8 @@ static NSString *STEP_GET_DOG = @"8";
 	[self addController:getAntOfFarmController andStep:STEP_GET_ANT];
 	GetFarmerDogController *getFarmerDogController = [[GetFarmerDogController alloc] initWithWorkFlowController:self];
 	[self addController:getFarmerDogController andStep:STEP_GET_DOG];
-
+	GetAllOriginalAnimalController *getAllOriginalAnimalController = [[GetAllOriginalAnimalController alloc] initWithWorkFlowController:self];
+	[self addController:getAllOriginalAnimalController andStep:STEP_GET_ALL_ORIGINAL_ANIMAL];
 }
 
 -(void) startStep
@@ -108,14 +110,16 @@ static NSString *STEP_GET_DOG = @"8";
 		[tempController execute:params];
 		return;
 	}
-	else if (curStep == STEP_GET_SNAKE){
+	else if (curStep == STEP_GET_SNAKE)
+	{
 		curStep = STEP_GET_DEJECTA;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
 		[tempController execute:params];
 		return;
 	}
-	else if (curStep == STEP_GET_DEJECTA){
+	else if (curStep == STEP_GET_DEJECTA)
+	{
 		curStep = STEP_GET_ANT;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
@@ -123,7 +127,8 @@ static NSString *STEP_GET_DOG = @"8";
 		return;
 		
 	}
-	else if (curStep == STEP_GET_ANT){
+	else if (curStep == STEP_GET_ANT)
+	{
 		curStep = STEP_GET_DOG;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",nil];
@@ -131,13 +136,18 @@ static NSString *STEP_GET_DOG = @"8";
 		return;
 		
 	}
-	else if (curStep == STEP_GET_DOG){
+	else if (curStep == STEP_GET_DOG)
+	{
+		curStep = STEP_GET_ALL_ORIGINAL_ANIMAL;
+		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
+		[tempController execute:nil];
+		return;
+	}
+	else if (curStep == STEP_GET_ALL_ORIGINAL_ANIMAL)
+	{
 		[self endStep];
 		return;
 	}
-
-
-
 }
 
 -(void) endStep

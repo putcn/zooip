@@ -19,6 +19,7 @@
 #import "GetDejectaOfFarmController.h"
 #import "GetAntOfFarmController.h"
 #import "GetFarmerDogController.h"
+#import "GetAllOriginalAnimalController.h"
 
 @interface InitWorkFlowController : BaseWorkFlowController
 {
