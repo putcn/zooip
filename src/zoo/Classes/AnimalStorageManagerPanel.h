@@ -12,9 +12,9 @@
 #import "DataEnvironment.h"
 #import "Button.h"
 #import "DataModelOriginalAnimal.h"
-#import "AnimalManagementButtonItem.h"
-#import "AnimalManageButtonContainer.h"
 
+#import "AnimalStorageManagerPanel.h"
+#import "AnimalStorageManagerButtonItem.h"
 
 @interface AnimalStorageManagerPanel : CCSprite {
 	int currentPageNum;
