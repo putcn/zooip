@@ -23165,6 +23165,10 @@
 		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				C3B6313311B89FA700695343 /* AnimalStorageManagerPanel.h */,
+				C3B6313411B89FA700695343 /* AnimalStorageManagerPanel.m */,
+				C3B6313911B8A09C00695343 /* AnimalStorageManagerButtonItem.h */,
+				C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */,
 				607BF4F011B7DCF800326E47 /* AniamalManagementMateOrDisapart.h */,
 				607BF4F111B7DCF800326E47 /* AniamalManagementMateOrDisapart.m */,
 				607BF4F311B7DD3100326E47 /* AnimalManagementMateOrDisList.h */,
@@ -23221,10 +23225,6 @@
 				3EAD8AFF11AEC76D00CE397E /* TransBackground.m */,
 				8408914311B49FBC001C29CA /* SellitemButton.h */,
 				8408914411B49FBC001C29CA /* SellitemButton.m */,
-				C3B6313311B89FA700695343 /* AnimalStorageManagerPanel.h */,
-				C3B6313411B89FA700695343 /* AnimalStorageManagerPanel.m */,
-				C3B6313911B8A09C00695343 /* AnimalStorageManagerButtonItem.h */,
-				C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */,
 			);
 			name = UIControls;
 			sourceTree = "<group>";
