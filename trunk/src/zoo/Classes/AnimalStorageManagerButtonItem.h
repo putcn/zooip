@@ -1,5 +1,5 @@
 //
-//  DataModelStorageAnimal.h
+//  AnimalStorageManagerButtonItem.h
 //  zoo
 //
 //  Created by Gu Lei on 10-6-4.
@@ -9,8 +9,7 @@
 #import <Foundation/Foundation.h>
 
 
-@interface DataModelStorageAnimal : NSObject
-{
+@interface AnimalStorageManagerButtonItem : NSObject {
 
 }
 
