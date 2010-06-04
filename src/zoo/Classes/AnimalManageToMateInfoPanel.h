@@ -18,6 +18,8 @@
 #import "ServiceHelper.h"
 #import "AnimalManageToMateAntsChoose.h"
 #import "AnimalManageInfoPanel.h"
+#import "AnimalManagementMateOrDisList.h"
+
 
 @interface AnimalManageToMateInfoPanel: CCSprite {
 	NSString *title;
