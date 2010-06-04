@@ -24,6 +24,8 @@
 #import "DataModelOriginalAnimal.h"
 #import "DataModelFood.h"
 #import "DataModelGood.h"
+#import "DataModelStorageAnimal.h"
+#import "DataModelStorageAuctionAnimal.h"
 
 @implementation ServiceHelper
 static ServiceHelper *sharedInst = nil;
@@ -568,18 +570,56 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 			}
 			break;
 		case ZooNetworkRequestgetAllStorageAnimal:
-			// TODO getAllStorageAnimal
-			/*"code:1 所有动物信息 
-			storageAnimals: adultBirdStorageId + originalAnimalId + amount + 
-			animalType + scientificNameCN + scientificNameEN + gender + hatchTime + babyStage + 
-			youthStage + adultStage + baseYield + baseCycle + baseInterval + basePrice + antsPrice + 
-			productId + levelRequired + picturePrefix + discount + description 
-			code:0 粪便已经清除"*/
+			switch (code)
+			{
+				case 1:
+				{
+					NSDictionary* storageAnimals= [DataEnvironment sharedDataEnvironment].storageAnimals;
+					NSArray* sArray = [result objectForKey:@"storageAnimals"];
+					for (int i = 0; i < [sArray count]; i++)
+					{
+						NSDictionary* dic = [sArray objectAtIndex:i];
+						DataModelStorageAnimal *obj = [[DataModelStorageAnimal alloc] init];
+						
+						obj.adultBirdStorageId = [[dic objectForKey:@"adultBirdStorageId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"adultBirdStorageId"];
+						obj.originalAnimalId = [[dic objectForKey:@"originalAnimalId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"originalAnimalId"];
+						
+						obj.amount = [[dic objectForKey:@"amount"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"amount"] intValue];
+						
+						[storageAnimals setValue:obj forKey:obj.originalAnimalId];
+					}
+					break;
+				}
+				default:
+				{
+					break;
+				}
+			}
 			break;
 		case ZooNetworkRequestgetAllStorageAuctionAnimal:
-			// TODO getAllStorageAuctionAnimal
-			//"code:1 所有库存动物信息 storageAnimals: auctionBirdStorageId + animalId + originalAnimalId + animalType + scientificNameCN + scientificNameEN + gender + hatchTime + babyStage + youthStage + adultStage + baseYield + baseCycle + baseInterval + basePrice + antsPrice + productId + levelRequired + picturePrefix + discount + description 
-			//code:0 无任何库存动物"
+			switch (code)
+			{
+				case 1:
+				{
+					NSDictionary* storageAuctionAnimals= [DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
+					NSArray* sArray = [result objectForKey:@"storageAnimals"];
+					for (int i = 0; i < [sArray count]; i++)
+					{
+						NSDictionary* dic = [sArray objectAtIndex:i];
+						DataModelStorageAuctionAnimal *obj = [[DataModelStorageAuctionAnimal alloc] init];
+						
+						obj.auctionBirdStorageId = [[dic objectForKey:@"auctionBirdStorageId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"auctionBirdStorageId"];
+						obj.animalId = [[dic objectForKey:@"animalId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"animalId"];
+						
+						[storageAuctionAnimals setValue:obj forKey:obj.animalId];
+					}
+					break;
+				}
+				default:
+				{
+					break;
+				}
+			}
 			break;
 		case ZooNetworkRequestremoveAnimal:
 			switch (code) {

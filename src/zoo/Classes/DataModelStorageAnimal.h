@@ -11,7 +11,15 @@
 
 @interface DataModelStorageAnimal : NSObject
 {
-
+	NSString* adultBirdStorageId;
+	NSString* originalAnimalId;
+	
+	NSInteger amount;
 }
+
+@property (nonatomic, retain) NSString* adultBirdStorageId;
+@property (nonatomic, retain) NSString* originalAnimalId;
+
+@property (nonatomic, assign) NSInteger amount;
 
 @end
