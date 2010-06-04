@@ -48,12 +48,9 @@ setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetY
 	[itemImg release];
 
 	CCLabel *animalNameLable = [CCLabel labelWithString:animalName fontName:@"Arial" fontSize:20];
-	//****[animalNameLable setColor:ccc3(255, 0, 255)];
+	[animalNameLable setColor:ccc3(255, 0, 255)];
 	
 	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
-	//buyImg.position = ccp(buyImg.contentSize.width/2 +20, self.contentSize.height - 80);
-	//TODO: TO imp the animalNameLable position
-	//animalNameLable.position = ccp(buyImg.contentSize.width + 50 , buyImg.position.y);
 	
 	[self addChild:item z:7];
 	[self addChild:animalNameLable z:7];

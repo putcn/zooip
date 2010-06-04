@@ -24,11 +24,8 @@
 		[bg release];
 		tabFlag = tabName;
 		if (tabFlag == @"animal") {
-			//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-		
 			NSDictionary *itemDic;
 			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].animalIDs;
-			//*****itemArray = [itemDic allKeys];
 			totalPage = [[DataEnvironment sharedDataEnvironment].animalIDs count] + 1;
 			currentPageNum = 1;
 			[self generatePage];
@@ -93,23 +90,19 @@
 		NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
 		DataModelOriginalAnimal *originAnimal;
 		NSString *aniID;
-		//NSArray *animalArray = [originAnimalDic allKeys];
 		int endNumber = currentPageNum * 12;
 		if (endNumber >= [[DataEnvironment sharedDataEnvironment].animalIDs count]) {
 			endNumber = [[DataEnvironment sharedDataEnvironment].animalIDs count];
 		}
 		currentNum = endNumber - (currentPageNum -1 ) *12 ;
 		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
-			//originAnimal = [originAnimalDic objectForKey:[animalArray objectAtIndex:i]];
 			originAnimal = [animalIDs objectAtIndex:i];
 			aniID = [animalIDs objectAtIndex:i];
 			DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
 			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
 			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
-			//AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:aniID tabFlag setAnimalID: setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-			//ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%12];
 		}
