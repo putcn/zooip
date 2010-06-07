@@ -594,6 +594,11 @@
 	}
 }
 
+-(void) removeAnimalView
+{
+	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:view];
+}
+
 -(void) dealloc
 {
 	//TODO: Remove view from the stage

@@ -18,11 +18,13 @@
 #import "DataModelDog.h"
 
 @interface ItemController : NSObject {
-
+	NSMutableDictionary *allItems;
 }
 
 +(ItemController *)sharedItemController;
 
 -(void) addItem: (NSString *)itemType;
+
+-(void) clearItems;
 
 @end

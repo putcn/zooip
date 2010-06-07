@@ -12,12 +12,13 @@
 
 @interface AnimalController : NSObject
 {
-	NSMutableArray *animals;
+	NSMutableDictionary *animals;
 }
 
 +(AnimalController *) sharedAnimalController;
 
 -(void) addAnimal:(NSMutableArray *)animalIDs;
+-(void) removeAnimal:(NSString *)animalId;
 -(void) clearAnimal;
 
 -(void) gotoEat;

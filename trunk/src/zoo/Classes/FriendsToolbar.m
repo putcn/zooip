@@ -7,6 +7,12 @@
 //
 
 #import "FriendsToolbar.h"
+#import "AnimalController.h"
+#import "EggController.h"
+#import "ItemController.h"
+#import "DejectaController.h"
+#import "AntController.h"
+#import "SnakeController.h"
 
 
 @implementation FriendsToolbar
@@ -30,7 +36,12 @@
 
 -(void) btnButtonHandler
 {
-	//[self.parent popupFriendList];
+	[[EggController sharedEggController] clearEgg];
+	[[AnimalController sharedAnimalController] clearAnimal];
+	[[ItemController sharedItemController] clearItems];
+	[[DejectaController sharedDejectaController] clearDejectas];
+	[[AntController sharedAntController] clearAnts];
+	[[SnakeController sharedSnakeController] clearSnakes];
 }
 
 @end

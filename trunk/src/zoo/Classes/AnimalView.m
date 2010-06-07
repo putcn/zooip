@@ -210,7 +210,6 @@
 
 -(void) dealloc
 {
-	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:self];
 	[self removeAllChildrenWithCleanup:YES];
 	[animationTable release];
 	[dirctions release];
