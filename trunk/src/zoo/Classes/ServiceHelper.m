@@ -29,9 +29,9 @@
 
 @implementation ServiceHelper
 static ServiceHelper *sharedInst = nil;
-static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/php/remoteService.php";
-static NSString *testingFarmerId = @"A6215BF61A3AF50A8F72F043A1A6A85C";
-static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
+static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/php/remoteService.php";//
+//static NSString *testingFarmerId = @"A6215BF61A3AF50A8F72F043A1A6A85C";
+//static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 
 + (id)sharedService{
     @synchronized( self ) {
@@ -843,9 +843,12 @@ static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 	[request setDidFailSelector:@selector(requestWentWrong:)];
 	[request setRequestMethod:@"POST"];
 
+	NSString *uid = [DataEnvironment sharedDataEnvironment].playerUid;
+	NSString *pid = [DataEnvironment sharedDataEnvironment].pid;
+	
 	//set testing uid and pid
-	[request setPostValue:@"1122334455" forKey:@"uid"];
-	[request setPostValue:@"11" forKey:@"pid"];
+	[request setPostValue:uid forKey:@"uid"];
+	[request setPostValue:pid forKey:@"pid"];
 	
 	NSString *methodName;
 	

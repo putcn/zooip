@@ -48,8 +48,6 @@ static GameMainScene *_sharedGameMainScene = nil;
 	{
 		[CollisionHelper initCollisionMap];
 		
-		isSelfZoo = YES;
-		
 		CGSize size = [[CCDirector sharedDirector] winSize];
 		
 		//set the backgroud and the size set 50%
@@ -117,11 +115,6 @@ static GameMainScene *_sharedGameMainScene = nil;
 }
 
 -(void) resultCallback:(NSObject *)value{
-}
-
--(Boolean) getIsSelfZoo
-{
-	return isSelfZoo;
 }
 
 -(void) addSpriteToStage:(CCSprite *) sprite z:(int) zIndex

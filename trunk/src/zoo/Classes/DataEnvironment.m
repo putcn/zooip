@@ -14,6 +14,8 @@
 static DataEnvironment *sharedInst = nil;
 
 @synthesize playerUid;
+@synthesize friendUid;
+@synthesize pid;
 @synthesize animalIDs;
 @synthesize animals,
 eggs,
@@ -58,6 +60,8 @@ storageAuctionAnimals;
 		[self restore];
 		
 		playerUid = @"1122334455";
+		friendUid = @"1177553155";
+		pid = @"11";
 		
 		playerFarmerInfo = [[DataModelFarmerInfo alloc] init];
 		friendFarmerInfo = [[DataModelFarmerInfo alloc] init];
@@ -82,7 +86,7 @@ storageAuctionAnimals;
 		storageAnimals = [[NSMutableDictionary alloc] init];
 		storageAuctionAnimals = [[NSMutableDictionary alloc] init];
 		
-		self.playerFarmerInfo.platformId = 11;
+		//self.playerFarmerInfo.platformId = 11;
 	}
 	return sharedInst;
 }

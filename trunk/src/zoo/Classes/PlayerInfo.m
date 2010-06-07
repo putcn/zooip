@@ -12,6 +12,7 @@
 #import "DataModelFarmerInfo.h"
 #import "DataModelFarmInfo.h"
 #import "DataModelFriendInfo.h"
+#import "ModelLocator.h"
 
 @implementation PlayerInfo
 
@@ -28,7 +29,7 @@
 		DataModelFarmInfo *farmInfo = (DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo;
 		DataModelFarmInfo *friendFarmInfo = (DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].friendFarmInfo;
 		animalNum = [NSString stringWithFormat:@"%d",[[DataEnvironment sharedDataEnvironment].animalIDs count]];
-		if ([[GameMainScene sharedGameMainScene] getIsSelfZoo]) {
+		if ([[ModelLocator sharedModelLocator] getIsSelfZoo]) {
 			userName = farmerInfo.userName;
 			userImg = farmerInfo.userImg;
 			currentExperience = [NSString stringWithFormat:@"%d",farmInfo.farm_currentExp];
