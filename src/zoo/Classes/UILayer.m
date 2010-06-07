@@ -59,9 +59,4 @@
 	[zooManageToolbar switchZoo:NO];
 }
 
--(void) popupShopList
-{
-	[shopPopupList popUp:@""];
-}
-
 @end

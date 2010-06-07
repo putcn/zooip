@@ -163,11 +163,6 @@ static NSString *STEP_GET_ALL_ORIGINAL_ANIMAL = @"9";
 
 -(void) endStep
 {
-	UILayer *uiLayer = [[UILayer alloc] init];
-	FeedbackDialog *feedbackDialog = [[FeedbackDialog alloc] init];
-	feedbackDialog.position = ccp(-feedbackDialog.contentSize.width/2,280);
-	[[GameMainScene sharedGameMainScene] addChild:uiLayer z:10];
-	[[GameMainScene sharedGameMainScene] addChild:feedbackDialog z:100];
 	[[EggController sharedEggController] addEggs:[[DataEnvironment sharedDataEnvironment].eggs allKeys]];
 	[[ItemController sharedItemController] addItem:@"bowls"];
 	[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];

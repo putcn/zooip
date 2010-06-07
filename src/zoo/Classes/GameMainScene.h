@@ -17,6 +17,8 @@
 {
 	CCSprite *baseContainer;
 	CCSprite *background;
+	
+	UILayer *uiLayer;
 }
 
 +(GameMainScene *) sharedGameMainScene;
