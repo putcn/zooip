@@ -17,14 +17,16 @@
 	int pri;
 	NSString *itemId;
 	NSString *itemType;
-	NSString *animalID;
+	NSString *storageID;
+	NSInteger amount;
+	NSString *genDer;
 }
 
 @property (nonatomic, retain)NSString *itemId;
 @property (nonatomic, retain)NSString *itemType;
-@property (nonatomic, retain)NSString *animalID;
+@property (nonatomic, retain)NSString *storageID;
 
--(id) initWithItems:(NSString *)itId setitType:(NSString *)itType setAnimalID:(NSString *)animalIDP setImagePath:(NSString*) imagePath setAnimalName:(NSString *) animalName setTarget:(id) target setSelector:(SEL) handler
+-(id) initWithItems:(NSString *)itId setitType:(NSString *)itType setAmount:(NSInteger) Amount setGender:(NSString *)gender setAnimalID:(NSString *)animalIDP setImagePath:(NSString*) imagePath setAnimalName:(NSString *) animalName setTarget:(id) target setSelector:(SEL) handler
 		setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue;
 
 -(void) setImg: (NSString *) itemImg setName:(NSString *) animalName;

@@ -14,6 +14,7 @@
 #import "MessageDialog.h"
 #import "TransBackground.h"
 #import "AnimalStorageManagerButtonItem.h"
+#import "AnimalStorageManagerPanel.h"
 
 
 
@@ -24,9 +25,9 @@
 	
 	CCTexture2D *tabEnable;
 	CCTexture2D *tabDisable;
-	ItemInfoPane *itemInfoPane;
+	AnimalStorageManagerPanel *itemInfoPane;
 	
-	
+	NSString *currentTagFlag;
 	int tabIndex;
 }
 @property (nonatomic,retain) NSString *title;
