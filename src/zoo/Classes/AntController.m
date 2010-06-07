@@ -41,7 +41,8 @@ static AntController *_sharedAntController = nil;
 -(void) addAnts:(NSArray *)antIds
 {
 	for (NSString *anId in antIds) {
-		[[AntView alloc] initWithID:anId];	
+		AntView * antView = [[AntView alloc] initWithID:anId];
+		[allAnts setObject:antView forKey:anId];
 	}
 }
 
@@ -51,14 +52,20 @@ static AntController *_sharedAntController = nil;
 	dataModelAnt = (DataModelAnt *) [[DataEnvironment sharedDataEnvironment].ants objectForKey:antId];
 	CGPoint antPos = [(AntView *)[allAnts objectForKey:antId] position];
 	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(antPos.x, antPos.y+50) setNumber:0];
-	[[allAnts objectForKey:antId] dealloc];
+	AntView *antView = [allAnts objectForKey:antId];
+	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:antView];
+	[antView release];
+	[allAnts removeObjectForKey:antId];
 }
 
 -(void) clearAnts
 {
 	for (NSString *clearAnt in [allAnts allKeys])
 	{
-		[[allAnts objectForKey:clearAnt] dealloc];
+		AntView *antView = [allAnts objectForKey:clearAnt];
+		[[GameMainScene sharedGameMainScene] removeSpriteFromStage:antView];
+		[antView release];
+		[allAnts removeObjectForKey:clearAnt];
 	}
 }
 

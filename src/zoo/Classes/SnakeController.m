@@ -41,7 +41,8 @@ static SnakeController *_sharedSnakeController = nil;
 -(void) addSnakes:(NSArray *)snakeIds
 {
 	for (NSString *snId in snakeIds) {
-		[[SnakeView alloc] initWithID:snId];
+		SnakeView *snakeView = [[SnakeView alloc] initWithID:snId];
+		[allSnakes setObject:snakeView forKey:snId];
 	}
 }
 
@@ -51,14 +52,21 @@ static SnakeController *_sharedSnakeController = nil;
 	dataModelSnake = (DataModelSnake *) [[DataEnvironment sharedDataEnvironment].snakes objectForKey:snakeId];
 	CGPoint snakePos = [(SnakeView *)[allSnakes objectForKey:snakeId] position];
 	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(snakePos.x, snakePos.y+50) setNumber:0];
-	[[allSnakes objectForKey:snakeId] dealloc];
+	SnakeView *snakeView = [allSnakes objectForKey:snakeId];
+	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:snakeView];
+	[[allSnakes objectForKey:snakeId] release];
+	[allSnakes removeObjectForKey:snakeId];
+	
 }
 
 -(void) clearSnakes
 {
 	for (NSString *clearSnake in [allSnakes allKeys])
 	{
-		[[allSnakes objectForKey:clearSnake] dealloc];
+		SnakeView *snakeView = [allSnakes objectForKey:clearSnake];
+		[[GameMainScene sharedGameMainScene] removeSpriteFromStage:snakeView];
+		[snakeView release];
+		[allSnakes removeObjectForKey:clearSnake];
 	}
 }
 

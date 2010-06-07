@@ -43,7 +43,8 @@ static DejectaController *_sharedDejectaController = nil;
 -(void) addDejectas:(NSArray *)dejectaIds
 {
 	for (NSString *deId in dejectaIds) {
-		[[DejectaView alloc] initWithID:deId];
+		DejectaView *dejectaView = [[DejectaView alloc] initWithID:deId];
+		[allDejectas setObject:dejectaView forKey:deId];
 	}
 }
 
@@ -51,16 +52,23 @@ static DejectaController *_sharedDejectaController = nil;
 {
 	DataModelDejecta *dataModelDejecta;
 	dataModelDejecta = (DataModelDejecta *) [[DataEnvironment sharedDataEnvironment].dejectas objectForKey:dejectaId];
+	
 	CGPoint dejectaPos = [(DejectaView *)[allDejectas objectForKey:dejectaId] position];
 	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(dejectaPos.x, dejectaPos.y+50) setNumber:0];
-	[[allDejectas objectForKey:dejectaId] dealloc];
+	DejectaView *dejectaView = [allDejectas objectForKey:dejectaId];
+	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:dejectaView];
+	[[allDejectas objectForKey:dejectaId] release];
+	[allDejectas removeObjectForKey:dejectaId];
 }
 
 -(void) clearDejectas
 {
 	for (NSString *clearDejecta in [allDejectas allKeys])
 	{
-		[[allDejectas objectForKey:clearDejecta] dealloc];
+		DejectaView *dejectaView = [allDejectas objectForKey:clearDejecta];
+		[[GameMainScene sharedGameMainScene] removeSpriteFromStage:dejectaView];
+		[dejectaView release];
+		[allDejectas removeObjectForKey:clearDejecta];
 	}
 }
 

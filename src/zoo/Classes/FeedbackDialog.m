@@ -7,6 +7,7 @@
 //
 
 #import "FeedbackDialog.h"
+#import "GameMainScene.h"
 
 
 @implementation FeedbackDialog
@@ -19,7 +20,8 @@ static FeedbackDialog *_feedbackDialog;
         if ( _feedbackDialog == nil ) {
             /* _feedbackDialog set up in init */
 			
-            [[self alloc] init];
+            
+			_feedbackDialog = [[self alloc] init];
 			
         }
     }
@@ -30,7 +32,6 @@ static FeedbackDialog *_feedbackDialog;
 -(id)init
 {
 	if ((self = [super init])) {
-		_feedbackDialog = self;
 		isShowing = NO;
 		msgQuence = [[NSMutableArray alloc] init];
 		CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"msgPopup.png" ofType:nil] ] ];
@@ -48,6 +49,8 @@ static FeedbackDialog *_feedbackDialog;
 		id finishAction = [CCCallFunc actionWithTarget:self selector:@selector(msgFinish:)];
 		actionSequence = [[CCSequence actions:moveTo, delay, moveBack, finishAction,nil] retain];
 		[self addChild:msgLbl z:10];
+		self.position = ccp(-self.contentSize.width/2,280);
+		[[GameMainScene sharedGameMainScene] addDialogToScreen:self z:100];
 	}
 	return self;
 }

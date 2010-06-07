@@ -139,6 +139,7 @@
 
 -(void) dealloc
 {
+	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }
 @end

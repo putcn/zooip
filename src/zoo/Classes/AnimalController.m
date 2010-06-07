@@ -32,7 +32,7 @@ static AnimalController *_sharedAnimalController = nil;
 {
 	if ((self = [super init]))
 	{
-		animals = [[NSMutableArray alloc] initWithCapacity:0];
+		animals = [[NSMutableDictionary alloc] initWithCapacity:0];
 		return self;
 	}
 	
@@ -82,7 +82,7 @@ static AnimalController *_sharedAnimalController = nil;
 			//TODO: Add Animal
 		serverAnimalData = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:serverAnimalID];
 		Animal *newAnimal = [[Animal alloc] initWithAnimalData:serverAnimalData];
-		[animals addObject:newAnimal];
+		[animals setObject:newAnimal forKey:serverAnimalID];
 //		}
 	}
 	
@@ -111,12 +111,23 @@ static AnimalController *_sharedAnimalController = nil;
 //	}
 }
 
+-(void) removeAnimal:(NSString *)animalId
+{
+	Animal *animal = [animals objectForKey:animalId];
+	[animal removeAnimalView];
+	[animal release];
+	[animals removeObjectForKey:animalId];
+	
+}
+
 -(void) clearAnimal
 {
-	for (Animal *clearAnimal in animals)
+	for (NSString *clearAnimal in [animals allKeys] )
 	{
-		[animals removeObject:clearAnimal];
-		[clearAnimal dealloc];
+		Animal *animal = [animals objectForKey:clearAnimal];
+		[animal removeAnimalView];
+		[animal release];
+		[animals removeObjectForKey:clearAnimal];
 	}
 }
 

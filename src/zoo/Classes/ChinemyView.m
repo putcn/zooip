@@ -70,11 +70,6 @@
 
 }
 
--(void) dealloc
-{
-	[dirctions dealloc];
-	[super dealloc];
-}
 
 - (CGRect)rect
 {
@@ -137,4 +132,12 @@
 {
 	
 }
+
+-(void)dealloc
+{
+	[self removeAllChildrenWithCleanup:YES];
+	[super dealloc];
+}
+
 @end
+

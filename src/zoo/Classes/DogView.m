@@ -147,11 +147,10 @@
 }
 								   
 -(void) dealloc
-	{
-		[dirctions dealloc];
-		[statuses dealloc];
-		[super dealloc];
-	}
+{
+	[self removeAllChildrenWithCleanup:YES];
+	[super dealloc];
+}
 								   
 
 @end

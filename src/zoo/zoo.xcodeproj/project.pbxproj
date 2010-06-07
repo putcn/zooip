@@ -13014,7 +13014,6 @@
 				BF0074801159E8740003B411 /* Models */,
 				C3C528CB117EA2D000343D7F /* Controllers */,
 				BF0074831159E87D0003B411 /* Helpers */,
-				BF0074881159E91E0003B411 /* Proxies */,
 				BF00747F1159E86A0003B411 /* Views */,
 				506EDC2F102F528A00A389B3 /* HelloWorldScene.h */,
 				506EDC30102F528A00A389B3 /* HelloWorldScene.m */,
@@ -23163,6 +23162,7 @@
 				3E87160311801BB200EBA2E8 /* RandomHelper.m */,
 				CC01757B1174780500CD437F /* ServiceHelper.h */,
 				CC01757C1174780500CD437F /* ServiceHelper.m */,
+				BF0074881159E91E0003B411 /* Proxies */,
 			);
 			name = Helpers;
 			sourceTree = "<group>";
