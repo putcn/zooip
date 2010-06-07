@@ -16,6 +16,7 @@
 #import "AnimalStorageManagerPanel.h"
 #import "AnimalStorageManagerButtonItem.h"
 
+
 @interface AnimalStorageManagerPanel : CCSprite {
 	int currentPageNum;
 	int totalPage;
