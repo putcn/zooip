@@ -7,6 +7,7 @@
 //
 
 #import "serviceHelper.h"
+#import "ModelLocator.h"
 #import "ASIFormDataRequest.h"
 #import "CJSONDeserializer.h"
 #import "DataEnvironment.h"
@@ -842,8 +843,16 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 	[request setDidFinishSelector:@selector(requestDone:)];
 	[request setDidFailSelector:@selector(requestWentWrong:)];
 	[request setRequestMethod:@"POST"];
-
-	NSString *uid = [DataEnvironment sharedDataEnvironment].playerUid;
+	
+	NSString *uid;
+	if (methodType == ZooNetworkRequestgetFarmerInfo && [[ModelLocator sharedModelLocator] getIsSelfZoo] == NO)
+	{
+		uid = [DataEnvironment sharedDataEnvironment].friendUid;
+	}
+	else
+	{
+		uid = [DataEnvironment sharedDataEnvironment].playerUid;
+	}
 	NSString *pid = [DataEnvironment sharedDataEnvironment].pid;
 	
 	//set testing uid and pid

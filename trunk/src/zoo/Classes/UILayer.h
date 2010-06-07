@@ -7,7 +7,6 @@
 //
 
 #import "cocos2d.h"
-#import "GameMainScene.h"
 #import "UIController.h"
 #import "PlayerInfo.h"
 #import "ZooManageToolbar.h"
