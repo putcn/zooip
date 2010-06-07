@@ -180,6 +180,31 @@ infoMessagePanelTest;
 
 -(void)mateConfirm:(Button *)button
 {
+//	//获取从Button回调的参数,强制转换为ItemInfoPane对象,改对象携带了购买物品所需要的所有参数
+//	ItemInfoPane *itemInfo = (ItemInfoPane *)button.target; 
+//	if (itemInfo.itemType == @"animal") {
+//		if (itemInfo.itemBuyType == @"goldEgg") {
+//			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+//			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"originalAnimalId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
+//			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+//			
+//			
+//		}
+//		else if(itemInfo.itemBuyType == @"ant"){
+//			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+//			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"originalAnimalId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
+//			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+//			
+//		}
+//	}
+//	itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
+//	[itemInfo release];
+//	-(void) cancel:(Button *)button
+//	{
+//		itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
+//		NSLog(@"取消");
+//	}
+	//toMateRateChoose
 	[self removeChildByTag:1999 cleanup:YES];
 	[self removeAllChildrenWithCleanup:YES];
 	infoMessagePanelTest = [[AnimalManageInfoPanel alloc]initDialog:@"箭头.png" setTarget:self setSelector:nil withTitle:@"success" withContent:@"success"];
@@ -189,7 +214,8 @@ infoMessagePanelTest;
 
 -(void)mateCancle:(Button *)button
 {
-	
+	toMateRateChoose.position = ccp(10000, toMateRateChoose.contentSize.height/2);
+	//NSLog(@"取消");
 }
 
 

@@ -82,6 +82,8 @@ paramsDict;
 	transBackground.scale = 17.0f;
 	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 	[self addChild:transBackground z:5];
+	
+	[self setImg:@"" setBuyType:@"" setPrice:@"1"];
 }
 
 
@@ -164,8 +166,8 @@ paramsDict;
 	buyImg.scale = 1.5f;
 	priceLbl.scale = 1.5f;
 	
-	[self addChild:item z:7];
-	[self addChild:buyImg z:7];
+	//[self addChild:item z:7];
+	//[self addChild:buyImg z:7];
 	[self addChild:priceLbl z:7];
 }							  
 
@@ -174,7 +176,8 @@ paramsDict;
 -(void) updatePrice:(NSDictionary *)values
 {
 	count = [[values objectForKey:@"count"] intValue];
-	[priceLbl setString:[NSString stringWithFormat:@"%d", count * itemPrice]];
+	itemPrice+=6;
+	[priceLbl setString:[NSString stringWithFormat:@"%d", itemPrice]];
 }
 
 -(void) dealloc
