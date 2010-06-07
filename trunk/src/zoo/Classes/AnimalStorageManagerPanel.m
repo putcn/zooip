@@ -7,8 +7,10 @@
 //
 
 #import "AnimalStorageManagerPanel.h"
-#import "DataModelAnimal.h"
+#import "DataModelStorageAnimal.h"
+#import "DataModelStorageAuctionAnimal.h"
 #import "ServiceHelper.h"
+#import "DataModelAnimal.h"
 
 @implementation AnimalStorageManagerPanel
 
@@ -25,19 +27,24 @@
 		tabFlag = tabName;
 		currentPageNum = 1;
 		
-		if (tabFlag == @"animal") {
-			NSDictionary *itemDic;
-			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].animalIDs;
-			totalPage = [[DataEnvironment sharedDataEnvironment].animalIDs count] + 1;
+		if (tabFlag == @"stoAnimals") {
 			
-			[self generatePage];
+			//NSDictionary *itemDic;
+//			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].animalIDs;
+//			totalPage = [[DataEnvironment sharedDataEnvironment].animalIDs count] + 1;
+//			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
+//			[self generatePage];
 		}
 		
-		if (tabFlag == @"animal") {
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		
+		NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
+		if (tabFlag == @"stoAnimals") {
+			
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
-		else if(tabFlag == @"food"){
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllFoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		else if(tabFlag == @"auctionAnimals"){
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
 		
 		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
@@ -56,13 +63,13 @@
 {
 	NSDictionary *itemDic;
 	NSArray *itemArray;
-	if (tabFlag == @"animal") {
-		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+	if (tabFlag == @"stoAnimals") {
+		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
 		itemArray = [itemDic allKeys];
 	}
-	else if(tabFlag == @"food")
+	else if(tabFlag == @"auctionAnimals")
 	{
-		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].foods;
+		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
 		itemArray = [itemDic allKeys];
 	}
 	totalPage = itemArray.count/12 + 1;
@@ -102,52 +109,51 @@
 
 -(void) generatePage
 {
-	if (tabFlag == @"animal") {
-		NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
-		DataModelOriginalAnimal *originAnimal;
-		NSString *aniID;
-		int endNumber = currentPageNum * 12;
-		if (endNumber >= [[DataEnvironment sharedDataEnvironment].animalIDs count]) {
-			endNumber = [[DataEnvironment sharedDataEnvironment].animalIDs count];
-		}
-		currentNum = endNumber - (currentPageNum -1 ) *12 ;
-		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
-			originAnimal = [animalIDs objectAtIndex:i];
-			aniID = [animalIDs objectAtIndex:i];
-			DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
-			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
-			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
-			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
-			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
-			[self addChild:itemButton z:7 tag:i%12];
-		}
-	}
-	if (tabFlag == @"animal") {
-		NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
-		DataModelOriginalAnimal *originAnimal;
-		NSArray *animalArray = [originAnimalDic allKeys];
+	if (tabFlag == @"stoAnimals") {
+		NSDictionary *storageAnimal = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
+		DataModelStorageAnimal *stoAnimals;
+		NSArray *animalArray = [storageAnimal allKeys];
+		
 		int endNumber = currentPageNum * 12;
 		if (endNumber >= animalArray.count) {
 			endNumber = animalArray.count;
 		}
 		currentNum = endNumber - (currentPageNum -1 ) *12 ;
 		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
-			originAnimal = [originAnimalDic objectForKey:[animalArray objectAtIndex:i]];
+			stoAnimals = [storageAnimal objectForKey:[animalArray objectAtIndex:i]];
+			DataModelOriginalAnimal *serverAnimalToshow = (DataModelOriginalAnimal *)[[DataEnvironment sharedDataEnvironment].originalAnimals objectForKey:stoAnimals.originalAnimalId];			
 			
-			int buyType = 0;
-			NSString *price = [NSString stringWithFormat:@"%d",originAnimal.basePrice];
-			if (originAnimal.antsPrice > 0) {
-				buyType = 1;
-				price = [NSString stringWithFormat:@"%d",originAnimal.antsPrice];
-			}
-			
-			//根据动物的originalAnimalId生成ItemButton
-			NSString *picFileName = [NSString stringWithFormat:@"%@.png",originAnimal.picturePrefix];
-			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:49 offsetX:1 offsetY:1];
+			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalToshow.scientificNameCN];
+			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalToshow.picturePrefix];
+			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalToshow.originalAnimalId];
+			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItems:orgid setitType:tabFlag setAnimalID:serverAnimalToshow.originalAnimalId setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%12];
 		}
+	}
+	if (tabFlag == @"auctionAnimals") {
+		NSDictionary *auctionAnimals = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
+		DataModelStorageAuctionAnimal *stoauAnimals;
+		NSArray *animalArray = [auctionAnimals allKeys];
+		
+		int endNumber = currentPageNum * 12;
+		if (endNumber >= animalArray.count) {
+			endNumber = animalArray.count;
+		}
+		currentNum = endNumber - (currentPageNum -1 ) *12 ;
+		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
+			stoauAnimals = [auctionAnimals objectForKey:[animalArray objectAtIndex:i]];
+			DataModelOriginalAnimal *serverAnimalToshow = (DataModelOriginalAnimal *)[[DataEnvironment sharedDataEnvironment].originalAnimals objectForKey:stoauAnimals.animalId];			
+			DataModelAnimal *serverAnimalShow = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:stoauAnimals.animalId];
+			
+			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalToshow.scientificNameCN];
+			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalToshow.picturePrefix];
+			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalToshow.originalAnimalId];
+			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItems:orgid setitType:tabFlag setAnimalID:serverAnimalToshow.originalAnimalId setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
+			[self addChild:itemButton z:7 tag:i%12];
+		}
+		
 	}
 }
 

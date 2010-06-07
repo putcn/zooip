@@ -85,7 +85,7 @@
 	
 	//添加动物
 	button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"鸟窝.png" setTarget:self
-							   setSelector:@selector(btnPlayerOperationButtonHandler:) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
+							   setSelector:@selector(btnPlayerOperationAddAnimalsButtonHandler:) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
 	button.position = ccp(125, 20);
 	//button.tag = 3;
 	[playerButtonContainer addChild: button];
@@ -338,6 +338,24 @@
 	[ease setDuration:0.3];
 	
 	[playerButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
+}
+
+-(void) btnPlayerOperationAddAnimalsButtonHandler:(Button *)button
+{
+
+	if(!secondTouchAniManagement)
+	{
+		animalManagerContainer = [[AnimalStorageManagerContainer alloc] init];
+
+		//animalManagerContainer = [[AnimalStorageManagerPanel alloc] initWithName:@"animalMarry"];
+		[self addChild:animalManagerContainer];
+		
+	}
+	else {
+		[self removeChild:animalManagerContainer cleanup:YES];
+	}
+	
+	secondTouchAniManagement = !secondTouchAniManagement;
 }
 
 -(void) btnFriendOperationButtonHandler:(Button *)button

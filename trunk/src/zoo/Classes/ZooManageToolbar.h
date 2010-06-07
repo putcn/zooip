@@ -10,10 +10,13 @@
 #import "Button.h"
 #import "UIController.h"
 #import "AnimalMangementButtonContainer.h"
+#import "AnimalStorageManagerContainer.h"
 
 @interface ZooManageToolbar : CCSprite
 {
 	AnimalMangementButtonContainer *aniManagementBtnCtrl;
+	AnimalStorageManagerContainer *animalManagerContainer;
+	
 	NSMutableArray *playerStatusIconTextures;
 	NSMutableArray *friendStatusIconTextures;
 	NSMutableArray *playerOperationButtons;

@@ -13,7 +13,7 @@
 
 @synthesize itemId,itemType,animalID;
 
--(id) initWithItem:(NSString *)itId setitType:(NSString *)itType setAnimalID:(NSString *)animalIDP setImagePath:(NSString*) imagePath setAnimalName:(NSString *) animalName setTarget:(id) target setSelector:(SEL) handler
+-(id) initWithItems:(NSString *)itId setitType:(NSString *)itType setAnimalID:(NSString *)animalIDP setImagePath:(NSString*) imagePath setAnimalName:(NSString *) animalName setTarget:(id) target setSelector:(SEL) handler
 	   setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue
 {
 	if( (self=[super init] ))
