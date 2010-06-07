@@ -12,6 +12,7 @@
 @implementation ModelLocator
 
 static ModelLocator *_sharedModelLocator = nil;
+static Boolean isSelfZoo = YES;
 
 +(ModelLocator *)sharedModelLocator
 {
@@ -26,6 +27,16 @@ static ModelLocator *_sharedModelLocator = nil;
 	}
 	
 	return nil;
+}
+
+-(void) setIsSelfZoo:(Boolean) isSelf
+{
+	isSelfZoo = isSelf;
+}
+
+-(Boolean) getIsSelfZoo
+{
+	return isSelfZoo;
 }
 
 @end

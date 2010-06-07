@@ -11,9 +11,11 @@
 
 @interface ModelLocator : NSObject
 {
-
 }
 
 +(ModelLocator *) sharedModelLocator;
+
+-(void) setIsSelfZoo:(Boolean) isSelf;
+-(Boolean) getIsSelfZoo;
 
 @end

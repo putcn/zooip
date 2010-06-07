@@ -12,7 +12,9 @@
 
 @interface DataEnvironment : NSObject
 {
-	NSString* playerUid;
+	NSString *playerUid;
+	NSString *friendUid;
+	NSString *pid;
 	
 	DataModelFarmerInfo *playerFarmerInfo;
 	DataModelFarmerInfo *friendFarmerInfo;
@@ -42,6 +44,8 @@
 - (void)restore;
 
 @property(nonatomic,retain) NSString* playerUid;
+@property(nonatomic,retain) NSString* friendUid;
+@property(nonatomic,retain) NSString* pid;
 //getAllBirdFarmAnimalInfo
 @property(nonatomic,retain) NSMutableArray *animalIDs;
 @property(nonatomic,retain) NSMutableDictionary *animals;
