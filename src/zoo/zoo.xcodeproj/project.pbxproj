@@ -31,8 +31,12 @@
 		3E87160B11801F3300EBA2E8 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160711801F3300EBA2E8 /* house.png */; };
 		3E87160C11801F3300EBA2E8 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160811801F3300EBA2E8 /* tree.png */; };
 		3E87160D11801F3300EBA2E8 /* waterbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160911801F3300EBA2E8 /* waterbox.png */; };
+		3EA9E0A511BC73D000EF4ECB /* FeedbackDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9E0A411BC73D000EF4ECB /* FeedbackDialog.m */; };
+		3EA9E0A711BC7B2E00EF4ECB /* msgPopup.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9E0A611BC7B2E00EF4ECB /* msgPopup.png */; };
+		3EA9E23E11BCB67100EF4ECB /* GetAllOriginalAnimalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9E23D11BCB67100EF4ECB /* GetAllOriginalAnimalController.m */; };
 		3EAD8A9F11AEC0F700CE397E /* transimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAD8A9E11AEC0F700CE397E /* transimg.png */; };
 		3EAD8B0011AEC76D00CE397E /* TransBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD8AFF11AEC76D00CE397E /* TransBackground.m */; };
+		3EAD8FDC11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD8FDB11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.m */; };
 		3EAE655E11AD4ED1004BA790 /* ItemInfoPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAE655D11AD4ED1004BA790 /* ItemInfoPane.m */; };
 		3EAE656811AD5C8B004BA790 /* Cancel.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAE656011AD5C8B004BA790 /* Cancel.png */; };
 		3EAE656911AD5C8B004BA790 /* Confirm.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAE656111AD5C8B004BA790 /* Confirm.png */; };
@@ -6200,7 +6204,6 @@
 		6074904E11B515E1002D8922 /* 动物结婚.png in Resources */ = {isa = PBXBuildFile; fileRef = 6074904C11B515E1002D8922 /* 动物结婚.png */; };
 		6074904F11B515E1002D8922 /* 婚姻管理.png in Resources */ = {isa = PBXBuildFile; fileRef = 6074904D11B515E1002D8922 /* 婚姻管理.png */; };
 		607521C811B8D7AA007A7514 /* AnimalStorageManagerContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 607521C711B8D7AA007A7514 /* AnimalStorageManagerContainer.m */; };
-		607BF4F211B7DCF800326E47 /* AniamalManagementMateOrDisapart.m in Sources */ = {isa = PBXBuildFile; fileRef = 607BF4F111B7DCF800326E47 /* AniamalManagementMateOrDisapart.m */; };
 		607BF4F511B7DD3100326E47 /* AnimalManagementMateOrDisList.m in Sources */ = {isa = PBXBuildFile; fileRef = 607BF4F411B7DD3100326E47 /* AnimalManagementMateOrDisList.m */; };
 		608EC6E311B643E100160062 /* AnimalManageInfoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 608EC6E211B643E100160062 /* AnimalManageInfoPanel.m */; };
 		608EC6EA11B645E200160062 /* AnimalManageToMateInfoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 608EC6E911B645E200160062 /* AnimalManageToMateInfoPanel.m */; };
@@ -6324,7 +6327,6 @@
 		C3B6313811B89FE700695343 /* DataModelStorageAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6313711B89FE700695343 /* DataModelStorageAnimal.m */; };
 		C3B6313B11B8A09C00695343 /* AnimalStorageManagerButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */; };
 		C3B6316111B8A8D600695343 /* DataModelStorageAuctionAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6316011B8A8D600695343 /* DataModelStorageAuctionAnimal.m */; };
-		C3B6320111B9055D00695343 /* GetAllOriginalAnimalController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6320011B9055D00695343 /* GetAllOriginalAnimalController.m */; };
 		C3C525E5117C321800343D7F /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525E4117C321800343D7F /* Button.m */; };
 		C3C525EF117C32C400343D7F /* StorageManageToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525EE117C32C400343D7F /* StorageManageToolbar.m */; };
 		C3C525F2117C333000343D7F /* PlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525F1117C333000343D7F /* PlayerInfo.m */; };
@@ -6415,9 +6417,16 @@
 		3E87160711801F3300EBA2E8 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		3E87160811801F3300EBA2E8 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
 		3E87160911801F3300EBA2E8 /* waterbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterbox.png; sourceTree = "<group>"; };
+		3EA9E0A311BC73D000EF4ECB /* FeedbackDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackDialog.h; sourceTree = "<group>"; };
+		3EA9E0A411BC73D000EF4ECB /* FeedbackDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackDialog.m; sourceTree = "<group>"; };
+		3EA9E0A611BC7B2E00EF4ECB /* msgPopup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgPopup.png; sourceTree = "<group>"; };
+		3EA9E23C11BCB67100EF4ECB /* GetAllOriginalAnimalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllOriginalAnimalController.h; sourceTree = "<group>"; };
+		3EA9E23D11BCB67100EF4ECB /* GetAllOriginalAnimalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllOriginalAnimalController.m; sourceTree = "<group>"; };
 		3EAD8A9E11AEC0F700CE397E /* transimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transimg.png; sourceTree = "<group>"; };
 		3EAD8AFE11AEC76D00CE397E /* TransBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransBackground.h; sourceTree = "<group>"; };
 		3EAD8AFF11AEC76D00CE397E /* TransBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransBackground.m; sourceTree = "<group>"; };
+		3EAD8FDA11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AniamalManagementMateOrDisapart.h; sourceTree = "<group>"; };
+		3EAD8FDB11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AniamalManagementMateOrDisapart.m; sourceTree = "<group>"; };
 		3EAE655C11AD4ED1004BA790 /* ItemInfoPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemInfoPane.h; sourceTree = "<group>"; };
 		3EAE655D11AD4ED1004BA790 /* ItemInfoPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ItemInfoPane.m; sourceTree = "<group>"; };
 		3EAE656011AD5C8B004BA790 /* Cancel.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Cancel.png; sourceTree = "<group>"; };
@@ -12638,8 +12647,6 @@
 		6074904D11B515E1002D8922 /* 婚姻管理.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "婚姻管理.png"; sourceTree = "<group>"; };
 		607521C611B8D7AA007A7514 /* AnimalStorageManagerContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalStorageManagerContainer.h; sourceTree = "<group>"; };
 		607521C711B8D7AA007A7514 /* AnimalStorageManagerContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalStorageManagerContainer.m; sourceTree = "<group>"; };
-		607BF4F011B7DCF800326E47 /* AniamalManagementMateOrDisapart.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AniamalManagementMateOrDisapart.h; sourceTree = "<group>"; };
-		607BF4F111B7DCF800326E47 /* AniamalManagementMateOrDisapart.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AniamalManagementMateOrDisapart.m; sourceTree = "<group>"; };
 		607BF4F311B7DD3100326E47 /* AnimalManagementMateOrDisList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManagementMateOrDisList.h; sourceTree = "<group>"; };
 		607BF4F411B7DD3100326E47 /* AnimalManagementMateOrDisList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManagementMateOrDisList.m; sourceTree = "<group>"; };
 		608EC6E111B643E100160062 /* AnimalManageInfoPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageInfoPanel.h; sourceTree = "<group>"; };
@@ -12827,8 +12834,6 @@
 		C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalStorageManagerButtonItem.m; sourceTree = "<group>"; };
 		C3B6315F11B8A8D600695343 /* DataModelStorageAuctionAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelStorageAuctionAnimal.h; sourceTree = "<group>"; };
 		C3B6316011B8A8D600695343 /* DataModelStorageAuctionAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelStorageAuctionAnimal.m; sourceTree = "<group>"; };
-		C3B631FF11B9055D00695343 /* GetAllOriginalAnimalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllOriginalAnimalController.h; sourceTree = "<group>"; };
-		C3B6320011B9055D00695343 /* GetAllOriginalAnimalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllOriginalAnimalController.m; sourceTree = "<group>"; };
 		C3C525E3117C321800343D7F /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		C3C525E4117C321800343D7F /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		C3C525ED117C32C400343D7F /* StorageManageToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageManageToolbar.h; sourceTree = "<group>"; };
@@ -13030,6 +13035,7 @@
 		3EAE655F11AD5C8B004BA790 /* foods */ = {
 			isa = PBXGroup;
 			children = (
+				3EA9E0A611BC7B2E00EF4ECB /* msgPopup.png */,
 				3EAD8A9E11AEC0F700CE397E /* transimg.png */,
 				3EAE656011AD5C8B004BA790 /* Cancel.png */,
 				3EAE656111AD5C8B004BA790 /* Confirm.png */,
@@ -23174,14 +23180,14 @@
 		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				3EAD8FDA11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.h */,
+				3EAD8FDB11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.m */,
 				607521C611B8D7AA007A7514 /* AnimalStorageManagerContainer.h */,
 				607521C711B8D7AA007A7514 /* AnimalStorageManagerContainer.m */,
 				C3B6313311B89FA700695343 /* AnimalStorageManagerPanel.h */,
 				C3B6313411B89FA700695343 /* AnimalStorageManagerPanel.m */,
 				C3B6313911B8A09C00695343 /* AnimalStorageManagerButtonItem.h */,
 				C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */,
-				607BF4F011B7DCF800326E47 /* AniamalManagementMateOrDisapart.h */,
-				607BF4F111B7DCF800326E47 /* AniamalManagementMateOrDisapart.m */,
 				607BF4F311B7DD3100326E47 /* AnimalManagementMateOrDisList.h */,
 				607BF4F411B7DD3100326E47 /* AnimalManagementMateOrDisList.m */,
 				60A0CDBC11B78066001AF9BD /* AnimalManageToMateAntsChoose.h */,
@@ -23236,6 +23242,8 @@
 				3EAD8AFF11AEC76D00CE397E /* TransBackground.m */,
 				8408914311B49FBC001C29CA /* SellitemButton.h */,
 				8408914411B49FBC001C29CA /* SellitemButton.m */,
+				3EA9E0A311BC73D000EF4ECB /* FeedbackDialog.h */,
+				3EA9E0A411BC73D000EF4ECB /* FeedbackDialog.m */,
 			);
 			name = UIControls;
 			sourceTree = "<group>";
@@ -23304,8 +23312,8 @@
 		C331112E119D1F7300F2EE18 /* ServerController */ = {
 			isa = PBXGroup;
 			children = (
-				C3B631FF11B9055D00695343 /* GetAllOriginalAnimalController.h */,
-				C3B6320011B9055D00695343 /* GetAllOriginalAnimalController.m */,
+				3EA9E23C11BCB67100EF4ECB /* GetAllOriginalAnimalController.h */,
+				3EA9E23D11BCB67100EF4ECB /* GetAllOriginalAnimalController.m */,
 				C37443E411AD161A004BABFE /* CureAnimalController.h */,
 				C37443E511AD161A004BABFE /* CureAnimalController.m */,
 				C342593E11A6759300B6FDB7 /* PickEggToStorageController.h */,
@@ -29650,6 +29658,7 @@
 				8432CF4111B3BC8A0093DA32 /* zygote7.png in Resources */,
 				6074904E11B515E1002D8922 /* 动物结婚.png in Resources */,
 				6074904F11B515E1002D8922 /* 婚姻管理.png in Resources */,
+				3EA9E0A711BC7B2E00EF4ECB /* msgPopup.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -29818,14 +29827,15 @@
 				608EC6E311B643E100160062 /* AnimalManageInfoPanel.m in Sources */,
 				608EC6EA11B645E200160062 /* AnimalManageToMateInfoPanel.m in Sources */,
 				60A0CDBE11B78066001AF9BD /* AnimalManageToMateAntsChoose.m in Sources */,
-				607BF4F211B7DCF800326E47 /* AniamalManagementMateOrDisapart.m in Sources */,
 				607BF4F511B7DD3100326E47 /* AnimalManagementMateOrDisList.m in Sources */,
 				C3B6313511B89FA700695343 /* AnimalStorageManagerPanel.m in Sources */,
 				C3B6313811B89FE700695343 /* DataModelStorageAnimal.m in Sources */,
 				C3B6313B11B8A09C00695343 /* AnimalStorageManagerButtonItem.m in Sources */,
 				C3B6316111B8A8D600695343 /* DataModelStorageAuctionAnimal.m in Sources */,
 				607521C811B8D7AA007A7514 /* AnimalStorageManagerContainer.m in Sources */,
-				C3B6320111B9055D00695343 /* GetAllOriginalAnimalController.m in Sources */,
+				3EAD8FDC11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.m in Sources */,
+				3EA9E0A511BC73D000EF4ECB /* FeedbackDialog.m in Sources */,
+				3EA9E23E11BCB67100EF4ECB /* GetAllOriginalAnimalController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

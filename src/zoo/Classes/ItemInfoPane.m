@@ -180,7 +180,11 @@ count;
 	[self addChild:cancelBtn z:10];
 	if(itemType != @"goods")
 	{
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:10 delta:1 target:self price:itemPrice z:39 Priority:0];
+		ScalerPane *scalerPane;
+		if(itemType == @"animal")
+			scalerPane = [[ScalerPane alloc] initWithCounter:1 max:10 delta:1 target:self price:itemPrice z:39 Priority:0];
+		else if(itemType == @"food")
+			scalerPane = [[ScalerPane alloc] initWithCounter:500 max:10000 delta:500 target:self price:itemPrice z:39 Priority:0];
 		scalerPane.position = ccp(200,200);
 		[self addChild:scalerPane z:5];
 	}
