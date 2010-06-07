@@ -10,6 +10,7 @@
 #import "ManageContainer.h"
 #import "Button.h"
 #import "ButtonContainer.h"
+#import "FeedbackDialog.h"
 
 
 @implementation ManageContainer
@@ -151,7 +152,7 @@
 		if (itemInfo.itemBuyType == @"goldEgg") {
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 			NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",farmId,@"farmId",itemInfo.itemId,@"foodId",[NSString stringWithFormat:@"%d",itemInfo.count],@"numOfFood",nil];
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",farmId,@"farmId",itemInfo.itemId,@"foodId",@"10000",@"numOfFood",nil];
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyFoodByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
 		else if(itemInfo.itemBuyType == @"ant"){
@@ -188,8 +189,7 @@
 
 -(void) resultCallback:(NSObject *)value
 {
-	//MessageDialog *dialog = [[MessageDialog alloc] initDialog:@"ItemInfoPane.png" setTarget:self setSelector:nil];
-	NSLog(@"操作已成功!");
+	[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你购买物品成功!"];
 }
 
 -(void) faultCallback:(NSObject *)value
