@@ -10,6 +10,7 @@
 #import "Button.h"
 #import "StoButtonContainer.h"
 #import "AnimalManageButtonContainer.h"
+#import "FeedbackDialog.h"
 
 @implementation AnimalManagerContainer
 
@@ -93,15 +94,37 @@
 {
 	if(managementType == @"animalMarry")
 	{
-		//判断是否首次加载
-		if (animalToMateInfoPanel == nil) {
-			animalToMateInfoPanel = [[AnimalManageToMateInfoPanel alloc] initWithItem:itemButton.itemId type:itemButton.itemType animalID:itemButton.animalID setTarget:self];
-			animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
-			[self addChild:animalToMateInfoPanel z:20];
+		BOOL ret = NO;
+		NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
+		NSString *aniID;
+		DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:itemButton.animalID];
+		
+		for (int i = 0; i < [[DataEnvironment sharedDataEnvironment].animalIDs count]; i ++) {
+			aniID = [animalIDs objectAtIndex:i];
+			DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
+			//if(serverAnimalDataOne.animalType == serverAnimalList.animalType && serverAnimalList.gender != serverAnimalDataOne.gender && aniID != leftAnimalID && aniID != rightAnimalID)
+			if(serverAnimalDataOne.animalType == serverAnimalList.animalType && serverAnimalList.gender != serverAnimalDataOne.gender)
+			{
+				ret = YES;
+				break;
+			}
 		}
-		else {//TODO: 第二次加载需要完善		
-			//***[animalToMateInfoPanel updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
-			//***animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
+		if(!ret) //没有可以结婚的,弹出窗口
+		{
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有可以结婚的动物!"];
+		}
+		else 
+		{
+			//判断是否首次加载
+			if (animalToMateInfoPanel == nil) {
+				animalToMateInfoPanel = [[AnimalManageToMateInfoPanel alloc] initWithItem:itemButton.itemId type:itemButton.itemType animalID:itemButton.animalID setTarget:self];
+				animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
+				[self addChild:animalToMateInfoPanel z:20];
+			}
+			else {//TODO: 第二次加载需要完善		
+				//***[animalToMateInfoPanel updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
+				//***animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
+			}
 		}
 	}
 	else {

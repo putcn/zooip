@@ -9,6 +9,7 @@
 #import "AniamalManagementMateOrDisapart.h"
 #import "TransBackground.h"
 #import "ScalerPane.h"
+#import "FeedbackDialog.h"
 
 
 @implementation AniamalManagementMateOrDisapart
@@ -187,6 +188,27 @@ infoMessagePanelTest;
 	
 }
 
+-(void) resultCallbackDis:(NSObject *)value
+{
+	NSDictionary* dic = (NSDictionary*)value;
+ 	NSInteger code = [[dic objectForKey:@"code"] intValue];
+	
+	switch (code) {
+		case 1:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"离婚成功"];
+			break;
+		case 0:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不是自己的公动物，不能离婚"];
+			break;
+		case 2:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不是自己的母动物，不能离婚"];
+			break;
+		default:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"离婚失败"];
+			break;
+	}
+}
+
 
 -(void) resultCallback:(NSObject *)value
 {
@@ -205,17 +227,9 @@ infoMessagePanelTest;
 	NSString *maleId;
 	NSString *femaleId;
 	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID];
-	if(serverAnimalDataOne.gender == 1)
-	{
-		maleId = leftAnimalID;
-		femaleId = rightAnimalID;
-	}
-	else {
-		maleId = rightAnimalID;
-		femaleId = leftAnimalID;
-	}
+
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",nil];
-	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoDisbandMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoDisbandMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackDis:" AndFailedSel:@"faultCallback:"];
 	
 }
 

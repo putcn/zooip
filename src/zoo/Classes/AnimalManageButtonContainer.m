@@ -110,9 +110,5 @@
 	
 }
 
--(void)itemInfoHandler:(id) sender
-{
-	
-}
 
 @end
