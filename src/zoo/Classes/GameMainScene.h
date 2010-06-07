@@ -10,7 +10,7 @@
 #import "UILayer.h"
 #import "ScaleControlLayer.h"
 #import "DragControlLayer.h"
-#import "InitWorkFlowController.h"
+#import "PlayerInitWorkFlowController.h"
 
 
 @interface GameMainScene : CCLayer

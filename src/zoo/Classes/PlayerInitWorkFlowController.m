@@ -1,13 +1,23 @@
 //
-//  InitWorkFlowController.m
+//  PlayerInitWorkFlowController.m
 //  zoo
 //
 //  Created by Gu Lei on 10-5-14.
 //  Copyright 2010 __MyCompanyName__. All rights reserved.
 //
 
-#import "InitWorkFlowController.h"
+#import "PlayerInitWorkFlowController.h"
 #import "BaseServerController.h"
+#import "GetFarmerInfoController.h"
+#import "GetFarmInfoController.h"
+#import "GetAllBirdFarmAnimalInfoController.h"
+#import "LayEggController.h"
+#import "AllLayEggController.h"
+#import "GetSnakeOfFarmController.h"
+#import "GetDejectaOfFarmController.h"
+#import "GetAntOfFarmController.h"
+#import "GetFarmerDogController.h"
+#import "GetAllOriginalAnimalController.h"
 #import "AnimalController.h"
 #import "ItemController.h"
 #import "EggController.h"
@@ -28,7 +38,7 @@ static NSString *STEP_GET_ANT = @"7";
 static NSString *STEP_GET_DOG = @"8";
 static NSString *STEP_GET_ALL_ORIGINAL_ANIMAL = @"9";
 
-@implementation InitWorkFlowController
+@implementation PlayerInitWorkFlowController
 
 -(void) setupStep
 {
