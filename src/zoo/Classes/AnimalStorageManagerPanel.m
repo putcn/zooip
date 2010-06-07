@@ -28,12 +28,8 @@
 		currentPageNum = 1;
 		
 		if (tabFlag == @"stoAnimals") {
-			
-			//NSDictionary *itemDic;
-//			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].animalIDs;
-//			totalPage = [[DataEnvironment sharedDataEnvironment].animalIDs count] + 1;
-//			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
-//			[self generatePage];
+
+			//TODO: modify the current Page Number;
 		}
 		
 		
@@ -122,11 +118,17 @@
 		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
 			stoAnimals = [storageAnimal objectForKey:[animalArray objectAtIndex:i]];
 			DataModelOriginalAnimal *serverAnimalToshow = (DataModelOriginalAnimal *)[[DataEnvironment sharedDataEnvironment].originalAnimals objectForKey:stoAnimals.originalAnimalId];			
-			
+			NSString *gender;
+			if ([serverAnimalToshow.originalAnimalId intValue] > 50) {
+				gender = @"母";
+			}
+			else {
+				gender = @"公";
+			}
+
 			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalToshow.scientificNameCN];
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalToshow.picturePrefix];
-			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalToshow.originalAnimalId];
-			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItems:orgid setitType:tabFlag setAnimalID:serverAnimalToshow.originalAnimalId setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItems:stoAnimals.adultBirdStorageId setitType:tabFlag setAmount:stoAnimals.amount setGender:gender setAnimalID:stoAnimals.originalAnimalId setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%12];
 		}
@@ -143,13 +145,11 @@
 		currentNum = endNumber - (currentPageNum -1 ) *12 ;
 		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
 			stoauAnimals = [auctionAnimals objectForKey:[animalArray objectAtIndex:i]];
-			DataModelOriginalAnimal *serverAnimalToshow = (DataModelOriginalAnimal *)[[DataEnvironment sharedDataEnvironment].originalAnimals objectForKey:stoauAnimals.animalId];			
 			DataModelAnimal *serverAnimalShow = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:stoauAnimals.animalId];
-			
-			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalToshow.scientificNameCN];
-			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalToshow.picturePrefix];
-			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalToshow.originalAnimalId];
-			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItems:orgid setitType:tabFlag setAnimalID:serverAnimalToshow.originalAnimalId setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			NSInteger n = 0;
+			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalShow.scientificNameCN];
+			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalShow.picturePrefix];
+			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItems:stoauAnimals.auctionBirdStorageId setitType:tabFlag setAmount:n setGender:serverAnimalShow.gender setAnimalID:serverAnimalShow.animalId setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%12];
 		}

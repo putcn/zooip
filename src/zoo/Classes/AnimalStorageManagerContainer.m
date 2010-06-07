@@ -10,6 +10,7 @@
 #import "Button.h"
 #import "ServiceHelper.h"
 #import "AnimalStorageManagerPanel.h"
+#import "FeedbackDialog.h"
 
 @implementation AnimalStorageManagerContainer
 @synthesize title;
@@ -101,19 +102,42 @@
 	int tabCount = [tabDic count];
 	for (int i = 0; i < tabCount; i++) {
 		if (i != tabIndex) {
-			AnimalStorageManagerPanel	*buttonContainer = [tabContentDic objectForKey:[NSString stringWithFormat:@"tabContent_%d",i]];
+			AnimalStorageManagerPanel *buttonContainer = [tabContentDic objectForKey:[NSString stringWithFormat:@"tabContent_%d",i]];
 			buttonContainer.position = ccp(2000, self.contentSize.height/2 - 50);
 			Button *disableButton = [tabDic objectForKey:[NSString stringWithFormat:@"tab_%d",i]];
 			[disableButton setTexture:tabDisable];
 		}
 	}
+	
+
 }
 
 //点击不同的动物，放入到动物园
 -(void) itemInfoHandler:(AnimalStorageManagerButtonItem *) itemButton
 {
-
 	
+	
+	//AnimalStorageManagerPanel *itemInfo = (AnimalStorageManagerPanel *)itemButton.target; 
+	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
+	
+	if(itemButton.itemType ==@"auctionAnimals")
+	{
+		currentTagFlag = @"auctionAnimals";
+		NSString *auctionBirdStorageId = itemButton.itemId;
+		
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",auctionBirdStorageId,@"auctionBirdStorageId",nil];
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAuctionAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		//itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
+
+	}
+	else if (itemButton.itemType == @"stoAnimals")
+	{
+		currentTagFlag = @"stoAnimals";
+		NSString *adultBirdStorageId = itemButton.itemId;
+		
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",adultBirdStorageId,@"adultBirdStorageId",nil];
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+	}
 }
 
 
@@ -166,7 +190,45 @@
 
 -(void) resultCallback:(NSObject *)value
 {
-	//MessageDialog *dialog = [[MessageDialog alloc] initDialog:@"ItemInfoPane.png" setTarget:self setSelector:nil];
+	NSDictionary* dic = (NSDictionary*)value;
+ 	NSInteger code = [[dic objectForKey:@"code"] intValue];
+	if(currentTagFlag == @"auctionAnimals")
+	{
+		switch (code) {
+			case 0:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"找不到拍卖所得动物"];
+				break;
+			case 1:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"添加动物到饲养场成功"];
+				break;
+			case 2:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"仓库中没有该动物!"];
+				break;
+			case 3:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"饲养场动物数量超标!"];
+				break;
+			default:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作出现异常"];
+				break;
+		}
+	}
+	else if(currentTagFlag == @"stoAnimals")
+	{
+		switch (code) {
+			case 1:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"添加动物到饲养场成功"];
+				break;
+			case 2:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"仓库动物数量不足!"];
+				break;
+			case 3:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"饲养场动物数量超标!"];
+				break;
+			default :
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作出现异常"];
+				break;
+		}
+	}
 	NSLog(@"操作已成功!");
 }
 

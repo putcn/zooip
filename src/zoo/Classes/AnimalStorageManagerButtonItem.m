@@ -11,16 +11,18 @@
 
 @implementation AnimalStorageManagerButtonItem
 
-@synthesize itemId,itemType,animalID;
+@synthesize itemId,itemType,storageID;
 
--(id) initWithItems:(NSString *)itId setitType:(NSString *)itType setAnimalID:(NSString *)animalIDP setImagePath:(NSString*) imagePath setAnimalName:(NSString *) animalName setTarget:(id) target setSelector:(SEL) handler
+-(id) initWithItems:(NSString *)itId setitType:(NSString *)itType setAmount:(NSInteger) Amount setGender:(NSString *)gender setAnimalID:(NSString *)animalIDP setImagePath:(NSString*) imagePath setAnimalName:(NSString *) animalName setTarget:(id) target setSelector:(SEL) handler
 	   setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue
 {
 	if( (self=[super init] ))
 	{
 		itemId = itId;
 		itemType = itType;
-		animalID = animalIDP;
+		storageID = animalIDP;
+		amount = Amount;
+		genDer = gender;
 		CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"itemButtonBack.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = itemImg.contentSize;
@@ -47,7 +49,6 @@
 	[item setTextureRect: rect];
 	[itemImg release];
 	
-	CCLabel *animalNameLable = [CCLabel labelWithString:animalName fontName:@"Arial" fontSize:20];
 	//****[animalNameLable setColor:ccc3(255, 0, 255)];
 	
 	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
@@ -56,7 +57,29 @@
 	//animalNameLable.position = ccp(buyImg.contentSize.width + 50 , buyImg.position.y);
 	
 	[self addChild:item z:7];
-	[self addChild:animalNameLable z:7];
+	//[self addChild:animalNameLable z:7];
+	
+	CCLabel *buyImg;
+	if (itemType == @"stoAnimals") {
+		buyImg = [CCLabel labelWithString:[NSString stringWithFormat: @"%d", amount] fontName:@"Arial" fontSize:20];
+	}
+	else {
+		buyImg = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:20];
+	}
+	CCLabel *priceLbl = [CCLabel labelWithString:genDer fontName:@"Arial" fontSize:20];
+	[priceLbl setColor:ccc3(255, 0, 255)];
+	if (itemType == @"animal") {
+		if ([itemId intValue] >= 50) {
+			item.flipX = YES;
+		}
+	}
+	
+	buyImg.position = ccp(buyImg.contentSize.width/2 +20, self.contentSize.height - 80);
+	priceLbl.position = ccp(buyImg.contentSize.width + 50 , buyImg.position.y);
+	
+
+	[self addChild:buyImg z:7];
+	[self addChild:priceLbl z:7];
 }
 
 - (CGRect)rect
