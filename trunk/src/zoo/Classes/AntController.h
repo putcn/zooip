@@ -20,5 +20,6 @@
 
 -(void) addAnts:(NSArray *)antIds;
 -(void) clearAnts;
+-(void) removeAnt:(NSString *)antId setExperience:(NSInteger)experience;
 
 @end

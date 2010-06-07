@@ -6279,7 +6279,6 @@
 		C3013ED2118A7656000C80B3 /* TurkeyView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3013EB4118A7656000C80B3 /* TurkeyView.m */; };
 		C3013ED3118A7656000C80B3 /* WildgooseView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3013EB6118A7656000C80B3 /* WildgooseView.m */; };
 		C330DD74119D134E0062753F /* BaseWorkFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C330DD73119D134E0062753F /* BaseWorkFlowController.m */; };
-		C330DDBC119D16320062753F /* InitWorkFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C330DDBB119D16320062753F /* InitWorkFlowController.m */; };
 		C330DE2B119D1E9E0062753F /* DataModelFarmerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C330DE28119D1E9E0062753F /* DataModelFarmerInfo.m */; };
 		C330DE2C119D1E9E0062753F /* DataModelFarmInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C330DE2A119D1E9E0062753F /* DataModelFarmInfo.m */; };
 		C3311136119D209800F2EE18 /* BaseServerController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3311130119D209800F2EE18 /* BaseServerController.m */; };
@@ -6323,6 +6322,8 @@
 		C3A9E8EA1186C78300CEBDFC /* 饲料.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D21186C78300CEBDFC /* 饲料.png */; };
 		C3A9E8EB1186C78300CEBDFC /* 鸟窝.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D31186C78300CEBDFC /* 鸟窝.png */; };
 		C3A9E9421186F4F100CEBDFC /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E9411186F4F100CEBDFC /* GameController.m */; };
+		C3B4CB0311BCD00600604D76 /* PlayerInitWorkFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B4CB0211BCD00600604D76 /* PlayerInitWorkFlowController.m */; };
+		C3B4CB3B11BCDCB400604D76 /* FriendInitWorkFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B4CB3A11BCDCB400604D76 /* FriendInitWorkFlowController.m */; };
 		C3B6313511B89FA700695343 /* AnimalStorageManagerPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6313411B89FA700695343 /* AnimalStorageManagerPanel.m */; };
 		C3B6313811B89FE700695343 /* DataModelStorageAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6313711B89FE700695343 /* DataModelStorageAnimal.m */; };
 		C3B6313B11B8A09C00695343 /* AnimalStorageManagerButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */; };
@@ -12762,8 +12763,6 @@
 		C3013EB6118A7656000C80B3 /* WildgooseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WildgooseView.m; sourceTree = "<group>"; };
 		C330DD72119D134E0062753F /* BaseWorkFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseWorkFlowController.h; sourceTree = "<group>"; };
 		C330DD73119D134E0062753F /* BaseWorkFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseWorkFlowController.m; sourceTree = "<group>"; };
-		C330DDBA119D16320062753F /* InitWorkFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitWorkFlowController.h; sourceTree = "<group>"; };
-		C330DDBB119D16320062753F /* InitWorkFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitWorkFlowController.m; sourceTree = "<group>"; };
 		C330DE27119D1E9E0062753F /* DataModelFarmerInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelFarmerInfo.h; sourceTree = "<group>"; };
 		C330DE28119D1E9E0062753F /* DataModelFarmerInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelFarmerInfo.m; sourceTree = "<group>"; };
 		C330DE29119D1E9E0062753F /* DataModelFarmInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelFarmInfo.h; sourceTree = "<group>"; };
@@ -12826,6 +12825,10 @@
 		C3A9E8D31186C78300CEBDFC /* 鸟窝.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鸟窝.png"; sourceTree = "<group>"; };
 		C3A9E9401186F4F100CEBDFC /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		C3A9E9411186F4F100CEBDFC /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
+		C3B4CB0111BCD00600604D76 /* PlayerInitWorkFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerInitWorkFlowController.h; sourceTree = "<group>"; };
+		C3B4CB0211BCD00600604D76 /* PlayerInitWorkFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerInitWorkFlowController.m; sourceTree = "<group>"; };
+		C3B4CB3911BCDCB400604D76 /* FriendInitWorkFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendInitWorkFlowController.h; sourceTree = "<group>"; };
+		C3B4CB3A11BCDCB400604D76 /* FriendInitWorkFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendInitWorkFlowController.m; sourceTree = "<group>"; };
 		C3B6313311B89FA700695343 /* AnimalStorageManagerPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalStorageManagerPanel.h; sourceTree = "<group>"; };
 		C3B6313411B89FA700695343 /* AnimalStorageManagerPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalStorageManagerPanel.m; sourceTree = "<group>"; };
 		C3B6313611B89FE700695343 /* DataModelStorageAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelStorageAnimal.h; sourceTree = "<group>"; };
@@ -23392,8 +23395,10 @@
 			children = (
 				C330DD72119D134E0062753F /* BaseWorkFlowController.h */,
 				C330DD73119D134E0062753F /* BaseWorkFlowController.m */,
-				C330DDBA119D16320062753F /* InitWorkFlowController.h */,
-				C330DDBB119D16320062753F /* InitWorkFlowController.m */,
+				C3B4CB0111BCD00600604D76 /* PlayerInitWorkFlowController.h */,
+				C3B4CB0211BCD00600604D76 /* PlayerInitWorkFlowController.m */,
+				C3B4CB3911BCDCB400604D76 /* FriendInitWorkFlowController.h */,
+				C3B4CB3A11BCDCB400604D76 /* FriendInitWorkFlowController.m */,
 			);
 			name = WorkFlowController;
 			sourceTree = "<group>";
@@ -29768,7 +29773,6 @@
 				3ECDFAAA119AE7F0008FBE22 /* SpecialFoodView.m in Sources */,
 				3ECDFAAD119AE7F9008FBE22 /* SummonView.m in Sources */,
 				C330DD74119D134E0062753F /* BaseWorkFlowController.m in Sources */,
-				C330DDBC119D16320062753F /* InitWorkFlowController.m in Sources */,
 				C330DE2B119D1E9E0062753F /* DataModelFarmerInfo.m in Sources */,
 				C330DE2C119D1E9E0062753F /* DataModelFarmInfo.m in Sources */,
 				C3311136119D209800F2EE18 /* BaseServerController.m in Sources */,
@@ -29836,6 +29840,8 @@
 				3EAD8FDC11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.m in Sources */,
 				3EA9E0A511BC73D000EF4ECB /* FeedbackDialog.m in Sources */,
 				3EA9E23E11BCB67100EF4ECB /* GetAllOriginalAnimalController.m in Sources */,
+				C3B4CB0311BCD00600604D76 /* PlayerInitWorkFlowController.m in Sources */,
+				C3B4CB3B11BCDCB400604D76 /* FriendInitWorkFlowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

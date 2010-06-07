@@ -94,9 +94,9 @@ static GameMainScene *_sharedGameMainScene = nil;
 //		[[Animal alloc] initWithView:pigeonView setSpeed:0.5f setLimitRect:CGRectMake(100, 100, 500, 500)];
 //		[baseContainer addChild:pigeonView z:4];
 		
-		InitWorkFlowController *initFlowController = [[InitWorkFlowController alloc] init];
-		[initFlowController setupStep];
-		[initFlowController startStep];
+		PlayerInitWorkFlowController *playerInitFlowController = [[PlayerInitWorkFlowController alloc] init];
+		[playerInitFlowController setupStep];
+		[playerInitFlowController startStep];
 		
 //		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"2318393DAD70AF92F9D488C5CE85B8D9",@"farmId",@"EA4416A19E664C3D6246DF8E8D4EDC84",@"adultBirdStorageId",nil];
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"requestFaildWithReason:"];

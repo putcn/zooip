@@ -23,8 +23,12 @@
 -(void) resultCallback:(NSObject *)value
 {
 	NSDictionary *result = (NSDictionary *)value;
-	NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
-	[[DejectaController sharedDejectaController] removeDejecta:dejectaId setExperience:experience];
+	NSInteger code = [[result objectForKey:@"code"] intValue];
+	if (code == 1)
+	{
+		NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
+		[[DejectaController sharedDejectaController] removeDejecta:self.dejectaId setExperience:experience];
+	}
 	[super resultCallback:value];
 }
 

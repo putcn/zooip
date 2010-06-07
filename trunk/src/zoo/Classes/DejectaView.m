@@ -16,7 +16,7 @@
 {
 	if ((self = [super init])) {
 		clearDejectaController = [[ClearDejectaController alloc] init];
-		dejectaId = sId;
+		self.dejectaId = sId;
 		CCAnimation *animation = [CCAnimation animationWithName:@"animal" delay:0.4];
 		for (int i = 1; i<=3; i++) {
 			[animation addFrameWithFilename:[NSString stringWithFormat:@"dejecta_%02d.png",i]];

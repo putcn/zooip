@@ -279,9 +279,14 @@
 			//NSLog(@"===Loop Find===");
 		}
 	}
-	else if (currStatus == 6 || currStatus == 10)
+	else if (currStatus == 6)
 	{
 		targetPosition.x = [RandomHelper getRandomNum:0 to:1024];
+		targetPosition.y = [RandomHelper getRandomNum:446 to:768];
+	}
+	else if (currStatus == 10)
+	{
+		targetPosition.x = currX;
 		targetPosition.y = [RandomHelper getRandomNum:446 to:768];
 	}
 	
@@ -580,7 +585,7 @@
 	{
 		if (currStatus == 6 || currStatus == 10 || currStatus == 11)
 		{
-			speed = animalData.flyingSpeed / 15.0f;
+			speed = animalData.flyingSpeed / 20.0f;
 		}
 		else
 		{
