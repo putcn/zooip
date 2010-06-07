@@ -9,6 +9,7 @@
 #import "AnimalManageToMateInfoPanel.h"
 #import "TransBackground.h"
 #import "ScalerPane.h"
+#import "FeedbackDialog.h"
 
 @implementation AnimalManageToMateInfoPanel
 @synthesize 
@@ -174,6 +175,7 @@ infoMessagePanelTest;
 		//****[toMateRateChoose updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
 		//****toMateRateChoose.position = ccp(self.contentSize.width/2, toMateRateChoose.contentSize.height/2);
 	}
+	//[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有可以结婚的动物!"];
 }
 
 -(void)mateConfirm:(Button *)button
@@ -191,12 +193,21 @@ infoMessagePanelTest;
 }
 
 
--(void) resultCallback:(NSObject *)value
+-(void) resultCallbackMa:(NSObject *)value
 {
+	NSDictionary* dic = (NSDictionary*)value;
+ 	NSInteger code = [[dic objectForKey:@"code"] intValue];
+
+		switch (code) {
+			case 1:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"结婚成功"];
+				break;
+			default:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"结婚失败"];
+				break;
+		}
 	//MessageDialog *dialog = [[MessageDialog alloc] initDialog:@"ItemInfoPane.png" setTarget:self setSelector:nil];
 	NSLog(@"操作已成功!");
-
-
 }
 
 
@@ -207,23 +218,20 @@ infoMessagePanelTest;
 	
 	NSString *action = @"marry";
 	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-	NSString *maleId;
-	NSString *femaleId;
+
 	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID];
-	if(serverAnimalDataOne.gender == 1)
+
+	if(leftAnimalID == nil || rightAnimalID == nil)
 	{
-		maleId = leftAnimalID;
-		femaleId = rightAnimalID;
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"选择异性"];
 	}
 	else {
-		maleId = rightAnimalID;
-		femaleId = leftAnimalID;
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackMa:" AndFailedSel:@"faultCallback:"];
+		serverAnimalDataOne.coupleAnimalId = rightAnimalID;
+		DataModelAnimal *serverAnimalDataRight = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:rightAnimalID];
+		serverAnimalDataRight.coupleAnimalId = leftAnimalID;
 	}
-	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
-	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-	serverAnimalDataOne.coupleId = rightAnimalID;
-	DataModelAnimal *serverAnimalDataRight = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:rightAnimalID];
-	serverAnimalDataRight.coupleId = leftAnimalID;
 }
 
 

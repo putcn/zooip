@@ -53,7 +53,8 @@ setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetY
 	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
 	
 	[self addChild:item z:7];
-	[self addChild:animalNameLable z:7];
+	//TODO: add name and gender image
+	//***[self addChild:animalNameLable z:7];
 }
 
 - (CGRect)rect

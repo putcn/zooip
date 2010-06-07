@@ -23183,14 +23183,14 @@
 		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
-				3EAD8FDA11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.h */,
-				3EAD8FDB11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.m */,
 				607521C611B8D7AA007A7514 /* AnimalStorageManagerContainer.h */,
 				607521C711B8D7AA007A7514 /* AnimalStorageManagerContainer.m */,
 				C3B6313311B89FA700695343 /* AnimalStorageManagerPanel.h */,
 				C3B6313411B89FA700695343 /* AnimalStorageManagerPanel.m */,
 				C3B6313911B8A09C00695343 /* AnimalStorageManagerButtonItem.h */,
 				C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */,
+				3EAD8FDA11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.h */,
+				3EAD8FDB11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.m */,
 				607BF4F311B7DD3100326E47 /* AnimalManagementMateOrDisList.h */,
 				607BF4F411B7DD3100326E47 /* AnimalManagementMateOrDisList.m */,
 				60A0CDBC11B78066001AF9BD /* AnimalManageToMateAntsChoose.h */,
