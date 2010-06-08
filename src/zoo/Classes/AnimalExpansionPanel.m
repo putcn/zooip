@@ -80,21 +80,21 @@ paramsDict;
 	goldenEgg = [[dic objectForKey:@"goldenEgg"] intValue];
 	levelRequire = [[dic objectForKey:@"levelRequire"] intValue];
 	
-	switch (code) {
-		case 0:
-			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场不存在"];
-			break;
-		case 1:
-			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"级别不足"];
-			break;
-		case 2:
-			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"取得正确数据!"];
-			break;
-		default:
-			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作出现异常"];
-			break;
-			
-	}
+//	switch (code) {
+//		case 0:
+//			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场不存在"];
+//			break;
+//		case 1:
+//			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"级别不足"];
+//			break;
+//		case 2:
+//			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"取得正确数据!"];
+//			break;
+//		default:
+//			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作出现异常"];
+//			break;
+//			
+//	}
 	
 	[self updateButtonsAndRates];
 	
