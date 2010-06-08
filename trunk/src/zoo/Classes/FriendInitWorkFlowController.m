@@ -140,6 +140,8 @@ static NSString *STEP_GET_DOG = @"7";
 
 -(void) endStep
 {
+	
+	[[GameMainScene sharedGameMainScene] updateUserInfo];
 	[[EggController sharedEggController] addEggs:[[DataEnvironment sharedDataEnvironment].eggs allKeys]];
 	[[ItemController sharedItemController] addItem:@"bowls"];
 	[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
