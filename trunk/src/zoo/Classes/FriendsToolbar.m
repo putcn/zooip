@@ -37,11 +37,18 @@
 -(void) btnButtonHandler
 {
 	[[EggController sharedEggController] clearEgg];
+	[[DataEnvironment sharedDataEnvironment].eggs removeAllObjects];
 	[[AnimalController sharedAnimalController] clearAnimal];
+	[[DataEnvironment sharedDataEnvironment].animals removeAllObjects];
+	[[DataEnvironment sharedDataEnvironment].animalIDs removeAllObjects];
 	[[ItemController sharedItemController] clearItems];
+	[[DataEnvironment sharedDataEnvironment].dogs removeAllObjects];
 	[[DejectaController sharedDejectaController] clearDejectas];
+	[[DataEnvironment sharedDataEnvironment].dejectas removeAllObjects];
 	[[AntController sharedAntController] clearAnts];
+	[[DataEnvironment sharedDataEnvironment].ants removeAllObjects];
 	[[SnakeController sharedSnakeController] clearSnakes];
+	[[DataEnvironment sharedDataEnvironment].snakes removeAllObjects];
 }
 
 @end

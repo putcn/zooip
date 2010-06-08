@@ -94,7 +94,32 @@
 
 -(void) updateUserInfo
 {
-
+	DataModelFarmerInfo *farmerInfo = (DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].playerFarmerInfo;
+	DataModelFarmerInfo *friendInfo = (DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].friendFarmerInfo;
+	DataModelFarmInfo *farmInfo = (DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo;
+	DataModelFarmInfo *friendFarmInfo = (DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].friendFarmInfo;
+	animalNum = [NSString stringWithFormat:@"%d",[[DataEnvironment sharedDataEnvironment].animalIDs count]];	
+	if ([[ModelLocator sharedModelLocator] getIsSelfZoo]) {
+		userName = farmerInfo.userName;
+		userImg = farmerInfo.userImg;
+		currentExperience = [NSString stringWithFormat:@"%d",farmInfo.farm_currentExp];
+		nextLevelExperience = [NSString stringWithFormat:@"%d", farmInfo.farm_nextLevelExp];
+		level = [NSString stringWithFormat:@"%d", farmInfo.farm_level];
+		maxNumOfBirds = [NSString stringWithFormat:@"%d", farmInfo.farm_maxNumOfBirds];
+		topMaxNumOfBirds = [NSString stringWithFormat:@"%d", farmInfo.farm_topMaxNumOfBirds];
+		antsNum = [NSString stringWithFormat:@"%d", farmerInfo.antsCurrency];
+		goldenEggNum = [NSString stringWithFormat:@"%d", farmerInfo.goldenEgg];
+	}else {
+		userName = friendInfo.userName;
+		userImg = friendInfo.userImg;
+		currentExperience = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_currentExp];
+		nextLevelExperience = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_nextLevelExp];
+		level = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_level];
+		maxNumOfBirds = @"unknown";
+		topMaxNumOfBirds = @"unknown";
+		antsNum = @"unknown";
+		goldenEggNum = @"unknown";
+	}
 
 }
 @end
