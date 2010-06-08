@@ -9,7 +9,8 @@
 #import "ZooManageToolbar.h"
 #import "GameMainScene.h"
 #import "ModelLocator.h"
-
+#import "AnimalExpansionPanel.h"
+#import "FeedbackDialog.h"
 
 @implementation ZooManageToolbar
 
@@ -21,6 +22,8 @@
 	{
 		selectIndex = 0;
 		secondTouchAniManagement = NO;
+		secondTouchFarmExpansion = NO;
+		secondTouchFarmStorage = NO;
 		
 		playerButtonContainer = [[CCSprite alloc] init];
 		[self addChild:playerButtonContainer];
@@ -102,7 +105,7 @@
 	
 	//扩容
 	button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"扩容.png" setTarget:self
-							   setSelector:@selector(btnPlayerOperationButtonHandler:) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
+							   setSelector:@selector(btnFarmExpansionButtionHandler:) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
 	button.position = ccp(195, 20);
 	//button.tag = 5;
 	[playerButtonContainer addChild: button];
@@ -325,6 +328,25 @@
 	
 	[statusIcon setVisible:YES];
 }
+-(void)btnFarmExpansionButtionHandler:(Button *)button
+{
+	//-(id)initWithParam:(NSDictionary *)param setTarget:(id)target
+	//secondTouchFarmExpansion
+	
+	if(!secondTouchFarmExpansion)
+	{
+		animalExpansionPanel = [[AnimalExpansionPanel alloc] initWithParam:nil setTarget:self];
+		
+		//animalManagerContainer = [[AnimalStorageManagerPanel alloc] initWithName:@"animalMarry"];
+		[self addChild:animalExpansionPanel];
+		
+	}
+	else {
+		[self removeChild:animalExpansionPanel cleanup:YES];
+	}
+	
+	secondTouchFarmExpansion = !secondTouchFarmExpansion;
+}
 
 -(void) btnPlayerOperationButtonHandler:(Button *)button
 {
@@ -344,7 +366,7 @@
 -(void) btnPlayerOperationAddAnimalsButtonHandler:(Button *)button
 {
 
-	if(!secondTouchAniManagement)
+	if(!secondTouchFarmStorage)
 	{
 		animalManagerContainer = [[AnimalStorageManagerContainer alloc] init];
 
@@ -356,7 +378,7 @@
 		[self removeChild:animalManagerContainer cleanup:YES];
 	}
 	
-	secondTouchAniManagement = !secondTouchAniManagement;
+	secondTouchFarmStorage = !secondTouchFarmStorage;
 }
 
 -(void) btnFriendOperationButtonHandler:(Button *)button
@@ -433,6 +455,62 @@
 	
 	[self setStatusIcon:0];
 	[statusIcon setVisible:YES];
+}
+
+-(void)levelupConfirm:(Button *)button
+{
+	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",nil];
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestexpansionFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackFarmExpand:" AndFailedSel:@"faultCallback:"];
+}
+-(void)faultCallback:(NSObject *)value
+{
+	NSLog(@"操作失败!");
+}
+
+-(void) resultCallbackFarmExpand:(NSObject *)value
+{
+	NSDictionary* dic = (NSDictionary*)value;
+ 	NSInteger code = [[dic objectForKey:@"code"] intValue];
+	
+	switch (code) {
+		case 0:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场不存在"];
+			break;
+		case 1:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"金蛋余额不足！"];
+			break;
+		case 2:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"级别不够！"];
+			break;
+		case 3:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"扩容失败！"];
+			break;
+		case 4:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"级别不足！"];
+			break;
+		case 5:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蚂蚁余额不足！"];
+			break;
+		case 6:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"扩容成功！"];
+			break;
+		case 7:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"上一次操作正在进行！"];
+			break;
+		default:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作出现异常"];
+			break;
+			
+	}
+	NSLog(@"操作已成功!");
+	animalExpansionPanel.position = ccp(10000,5000);
+}
+
+
+-(void)levelCancle:(Button *)button
+{
+	animalExpansionPanel.position = ccp(10000,5000);
 }
 
 @end
