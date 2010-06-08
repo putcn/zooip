@@ -11,11 +11,13 @@
 #import "UIController.h"
 #import "AnimalMangementButtonContainer.h"
 #import "AnimalStorageManagerContainer.h"
+#import "AnimalExpansionPanel.h"
 
 @interface ZooManageToolbar : CCSprite
 {
 	AnimalMangementButtonContainer *aniManagementBtnCtrl;
 	AnimalStorageManagerContainer *animalManagerContainer;
+	AnimalExpansionPanel *animalExpansionPanel;
 	
 	NSMutableArray *playerStatusIconTextures;
 	NSMutableArray *friendStatusIconTextures;
@@ -26,6 +28,8 @@
 	CCSprite *statusIcon;
 	int selectIndex;
 	BOOL secondTouchAniManagement; //The seconde time of touch the animal management.
+	BOOL secondTouchFarmExpansion; 
+	BOOL secondTouchFarmStorage;
 }
 
 -(void) addButton;
