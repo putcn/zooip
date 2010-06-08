@@ -12,7 +12,13 @@
 #import "Animal.h"
 #import "CollisionHelper.h"
 #import "AnimalController.h"
-
+#import "ModelLocator.h"
+#import "FriendInitWorkFlowController.h"
+#import "EggController.h"
+#import "ItemController.h"
+#import "DejectaController.h"
+#import "AntController.h"
+#import "SnakeController.h"
 
 @implementation GameMainScene
 
@@ -98,6 +104,7 @@ static GameMainScene *_sharedGameMainScene = nil;
 		
 		uiLayer = [[UILayer alloc] init];
 		[self addChild:uiLayer z:10];
+		[uiLayer switchPlayerZoo];
 		
 //		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"2318393DAD70AF92F9D488C5CE85B8D9",@"farmId",@"EA4416A19E664C3D6246DF8E8D4EDC84",@"adultBirdStorageId",nil];
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"requestFaildWithReason:"];
@@ -138,6 +145,52 @@ static GameMainScene *_sharedGameMainScene = nil;
 -(void) removeDialogFromScreen:(CCSprite *)sprite
 {
 	[self removeChild:sprite cleanup:YES];
+}
+
+-(void) updateUserInfo
+{
+	[uiLayer updateUserInfo];
+}
+
+-(void) switchZoo:(Boolean)isSelfZoo uid:(NSString *)playerUid
+{
+	[self clearAll];
+	
+	if (isSelfZoo)
+	{
+		[[ModelLocator sharedModelLocator] setIsSelfZoo:YES];
+		PlayerInitWorkFlowController *playerInitFlowController = [[PlayerInitWorkFlowController alloc] init];
+		[playerInitFlowController setupStep];
+		[playerInitFlowController startStep];
+		
+		[uiLayer switchPlayerZoo];
+	}
+	else
+	{
+		[[ModelLocator sharedModelLocator] setIsSelfZoo:NO];
+		FriendInitWorkFlowController *friendInitFlowController = [[FriendInitWorkFlowController alloc] init];
+		[friendInitFlowController setupStep];
+		[friendInitFlowController startStep];
+		
+		[uiLayer switchFriendZoo];
+	}
+}
+
+-(void) clearAll
+{
+	[[EggController sharedEggController] clearEgg];
+	[[DataEnvironment sharedDataEnvironment].eggs removeAllObjects];
+	[[AnimalController sharedAnimalController] clearAnimal];
+	[[DataEnvironment sharedDataEnvironment].animals removeAllObjects];
+	[[DataEnvironment sharedDataEnvironment].animalIDs removeAllObjects];
+	[[ItemController sharedItemController] clearItems];
+	[[DataEnvironment sharedDataEnvironment].dogs removeAllObjects];
+	[[DejectaController sharedDejectaController] clearDejectas];
+	[[DataEnvironment sharedDataEnvironment].dejectas removeAllObjects];
+	[[AntController sharedAntController] clearAnts];
+	[[DataEnvironment sharedDataEnvironment].ants removeAllObjects];
+	[[SnakeController sharedSnakeController] clearSnakes];
+	[[DataEnvironment sharedDataEnvironment].snakes removeAllObjects];
 }
 
 - (void)onEnter

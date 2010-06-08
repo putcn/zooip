@@ -24,4 +24,8 @@
 	FriendsToolbar *friendsToolbar;
 }
 
+-(void) updateUserInfo;
+-(void) switchPlayerZoo;
+-(void) switchFriendZoo;
+
 @end

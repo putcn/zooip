@@ -39,7 +39,7 @@
 
 -(id) initWithView:(CCSprite*) viewValue setSpeed:(CGFloat) speedValue setLimitRect:(CGRect) limitRectValue;
 -(id) initWithAnimalData:(DataModelAnimal *) data;
--(id) removeAnimalView;
+-(void) removeAnimalView;
 -(void) gotoEat;
 
 @property (nonatomic, copy) DataModelAnimal *animalData;

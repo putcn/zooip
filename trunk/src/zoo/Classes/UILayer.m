@@ -59,4 +59,9 @@
 	[zooManageToolbar switchZoo:NO];
 }
 
+-(void) updateUserInfo
+{
+	[playerInfo updateUserInfo];
+}
+
 @end

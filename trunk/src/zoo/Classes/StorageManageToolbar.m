@@ -48,7 +48,7 @@
 
 -(void) switchPlayerZoo
 {
-	//[self.parent switchPlayerZoo];
+	[[GameMainScene sharedGameMainScene] switchZoo:YES uid:nil];
 }
 
 -(void) btnShopButtonHandler

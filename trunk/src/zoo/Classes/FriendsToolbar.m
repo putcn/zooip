@@ -7,12 +7,8 @@
 //
 
 #import "FriendsToolbar.h"
-#import "AnimalController.h"
-#import "EggController.h"
-#import "ItemController.h"
-#import "DejectaController.h"
-#import "AntController.h"
-#import "SnakeController.h"
+#import "ModelLocator.h"
+#import "GameMainScene.h"
 
 
 @implementation FriendsToolbar
@@ -36,19 +32,14 @@
 
 -(void) btnButtonHandler
 {
-	[[EggController sharedEggController] clearEgg];
-	[[DataEnvironment sharedDataEnvironment].eggs removeAllObjects];
-	[[AnimalController sharedAnimalController] clearAnimal];
-	[[DataEnvironment sharedDataEnvironment].animals removeAllObjects];
-	[[DataEnvironment sharedDataEnvironment].animalIDs removeAllObjects];
-	[[ItemController sharedItemController] clearItems];
-	[[DataEnvironment sharedDataEnvironment].dogs removeAllObjects];
-	[[DejectaController sharedDejectaController] clearDejectas];
-	[[DataEnvironment sharedDataEnvironment].dejectas removeAllObjects];
-	[[AntController sharedAntController] clearAnts];
-	[[DataEnvironment sharedDataEnvironment].ants removeAllObjects];
-	[[SnakeController sharedSnakeController] clearSnakes];
-	[[DataEnvironment sharedDataEnvironment].snakes removeAllObjects];
+	if ([[ModelLocator sharedModelLocator] getIsSelfZoo])
+	{
+		[[GameMainScene sharedGameMainScene] switchZoo:NO uid:nil];
+	}
+	else
+	{
+		[[GameMainScene sharedGameMainScene] switchZoo:YES uid:nil];
+	}
 }
 
 @end

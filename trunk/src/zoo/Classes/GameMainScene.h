@@ -28,4 +28,9 @@
 -(void) removeSpriteFromStage:(CCSprite *) sprite;
 -(void) addDialogToScreen:(CCSprite *)sprite z:(int) zIndex;
 -(void) removeDialogFromScreen:(CCSprite *)sprite;
+
+-(void) updateUserInfo;
+-(void) switchZoo:(Boolean)isSelfZoo uid:(NSString *)playerUid;
+-(void) clearAll;
+
 @end
