@@ -6207,6 +6207,7 @@
 		607BF4F511B7DD3100326E47 /* AnimalManagementMateOrDisList.m in Sources */ = {isa = PBXBuildFile; fileRef = 607BF4F411B7DD3100326E47 /* AnimalManagementMateOrDisList.m */; };
 		608EC6E311B643E100160062 /* AnimalManageInfoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 608EC6E211B643E100160062 /* AnimalManageInfoPanel.m */; };
 		608EC6EA11B645E200160062 /* AnimalManageToMateInfoPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 608EC6E911B645E200160062 /* AnimalManageToMateInfoPanel.m */; };
+		6098BB0811BDD38B00F0DB3B /* AnimalExpansionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098BB0711BDD38B00F0DB3B /* AnimalExpansionPanel.m */; };
 		60A0CDBE11B78066001AF9BD /* AnimalManageToMateAntsChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */; };
 		8408914511B49FBC001C29CA /* SellitemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8408914411B49FBC001C29CA /* SellitemButton.m */; };
 		8432CD8111B346CF0093DA32 /* StoButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */; };
@@ -12654,6 +12655,8 @@
 		608EC6E211B643E100160062 /* AnimalManageInfoPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageInfoPanel.m; sourceTree = "<group>"; };
 		608EC6E811B645E200160062 /* AnimalManageToMateInfoPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageToMateInfoPanel.h; sourceTree = "<group>"; };
 		608EC6E911B645E200160062 /* AnimalManageToMateInfoPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageToMateInfoPanel.m; sourceTree = "<group>"; };
+		6098BB0611BDD38B00F0DB3B /* AnimalExpansionPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalExpansionPanel.h; sourceTree = "<group>"; };
+		6098BB0711BDD38B00F0DB3B /* AnimalExpansionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalExpansionPanel.m; sourceTree = "<group>"; };
 		60A0CDBC11B78066001AF9BD /* AnimalManageToMateAntsChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageToMateAntsChoose.h; sourceTree = "<group>"; };
 		60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageToMateAntsChoose.m; sourceTree = "<group>"; };
 		8408914311B49FBC001C29CA /* SellitemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellitemButton.h; sourceTree = "<group>"; };
@@ -23183,6 +23186,8 @@
 		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				6098BB0611BDD38B00F0DB3B /* AnimalExpansionPanel.h */,
+				6098BB0711BDD38B00F0DB3B /* AnimalExpansionPanel.m */,
 				607521C611B8D7AA007A7514 /* AnimalStorageManagerContainer.h */,
 				607521C711B8D7AA007A7514 /* AnimalStorageManagerContainer.m */,
 				C3B6313311B89FA700695343 /* AnimalStorageManagerPanel.h */,
@@ -29842,6 +29847,7 @@
 				3EA9E23E11BCB67100EF4ECB /* GetAllOriginalAnimalController.m in Sources */,
 				C3B4CB0311BCD00600604D76 /* PlayerInitWorkFlowController.m in Sources */,
 				C3B4CB3B11BCDCB400604D76 /* FriendInitWorkFlowController.m in Sources */,
+				6098BB0811BDD38B00F0DB3B /* AnimalExpansionPanel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
