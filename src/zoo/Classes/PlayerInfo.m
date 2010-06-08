@@ -25,7 +25,7 @@
 		self.scale = 0.8f;
 		[self setContentSize:CGSizeMake(300, 40)];
 		DataModelFarmerInfo *farmerInfo = (DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].playerFarmerInfo;
-		DataModelFriendInfo *friendInfo = (DataModelFriendInfo *)[DataEnvironment sharedDataEnvironment].friendFarmerInfo;
+		DataModelFarmerInfo *friendInfo = (DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].friendFarmerInfo;
 		DataModelFarmInfo *farmInfo = (DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo;
 		DataModelFarmInfo *friendFarmInfo = (DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].friendFarmInfo;
 		animalNum = [NSString stringWithFormat:@"%d",[[DataEnvironment sharedDataEnvironment].animalIDs count]];
@@ -41,10 +41,10 @@
 			goldenEggNum = [NSString stringWithFormat:@"%d", farmerInfo.goldenEgg];
 		}else {
 			userName = friendInfo.userName;
-			userImg = friendInfo.tinyurl;
+			userImg = friendInfo.userImg;
 			currentExperience = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_currentExp];
 			nextLevelExperience = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_nextLevelExp];
-			level = [NSString stringWithFormat:@"%d", farmInfo.farm_level];
+			level = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_level];
 			maxNumOfBirds = @"unknown";
 			topMaxNumOfBirds = @"unknown";
 			antsNum = @"unknown";
@@ -92,40 +92,9 @@
 	return self;
 }
 
--(void) updatePlayerInfo
+-(void) updateUserInfo
 {
 
 
 }
-
--(void) updateFriendInfo
-{
-	
-}
-
--(void) setFriendInfoVisible:(bool) isShow
-{
-	
-}
-
--(void) showPlayerInfo
-{
-	
-}
-
--(void) hidePlayerInfo
-{
-	
-}
-
--(void) showFriendInfo
-{
-	
-}
-
--(void) hideFriendInfo
-{
-	
-}
-
 @end
