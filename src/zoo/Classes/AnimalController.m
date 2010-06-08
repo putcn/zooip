@@ -133,8 +133,9 @@ static AnimalController *_sharedAnimalController = nil;
 
 -(void) gotoEat
 {
-	for (Animal *callAnimal in animals)
+	for (NSString *callAnimalID in [animals allKeys] )
 	{
+		Animal *callAnimal = [animals objectForKey:callAnimalID];
 		[callAnimal gotoEat];
 	}
 }

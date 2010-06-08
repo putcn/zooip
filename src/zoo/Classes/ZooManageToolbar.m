@@ -228,7 +228,7 @@
 	button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"召唤.png" setTarget:self
 							   setSelector:@selector(btnFriendOperationButtonHandler:) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
 	button.position = ccp(335, 20);
-	button.tag = OPERATION_FEED_ALL;
+	button.tag = OPERATION_CALL;
 	[friendButtonContainer addChild: button];
 	[friendOperationButtons addObject:button];
 }
@@ -361,6 +361,8 @@
 
 -(void) btnFriendOperationButtonHandler:(Button *)button
 {
+	[[UIController sharedUIController] switchOperation:button.tag];
+	
 	selectIndex = [friendOperationButtons indexOfObject:button];
 	
 	id actionMove = [CCMoveTo actionWithDuration:0.6  position:ccp(-400, playerButtonContainer.position.y)];

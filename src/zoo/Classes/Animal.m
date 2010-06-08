@@ -69,6 +69,11 @@
 	return self;
 }
 
+-(void) removeAnimalView
+{
+	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:view];
+}
+
 -(void) gotoEat
 {
 	if (currStatus == 4)
@@ -592,11 +597,6 @@
 			speed = animalData.walkToEatSpeed / 30.0f;
 		}
 	}
-}
-
--(void) removeAnimalView
-{
-	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:view];
 }
 
 -(void) dealloc
