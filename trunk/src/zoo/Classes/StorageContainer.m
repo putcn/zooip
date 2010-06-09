@@ -10,6 +10,7 @@
 #import "SellitemButton.h"
 #import "StoButtonContainer.h"
 #import "StorageContainer.h"
+#import "FeedbackDialog.h";
 
 
 
@@ -139,25 +140,30 @@
 		
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 			DataModelStorageEgg *storageEgg = (DataModelStorageEgg *)[[DataEnvironment sharedDataEnvironment].storageEggs objectForKey:itemInfo.itemId];
-		//=====
-			//NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",storageEgg.eggId,@"eggId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
-		//====
+
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",storageEgg.eggId,@"eggId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
+	
 			
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"A6215BF61A3AF50A8F72F043A1A6A85C",@"farmerId",storageEgg.eggId,@"eggId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
+			//NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"A6215BF61A3AF50A8F72F043A1A6A85C",@"farmerId",storageEgg.eggId,@"eggId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellProduct WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+				
 		
-	}
+	
+	}//end if
 	
 	
 	if(itemInfo.itemType == @"zygoteegg"){
 		
-			//NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-			//NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-			NSString *farmerId = [NSString stringWithFormat:@"A6215BF61A3AF50A8F72F043A1A6A85C"]; 
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"zygoteStorageId",nil];
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		
+		NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+		DataModelStorageZygoteEgg *storageZyEggModel = (DataModelStorageZygoteEgg *)[[DataEnvironment sharedDataEnvironment].storageZygoteEggs objectForKey:itemInfo.itemId];
 		
 		
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",storageZyEggModel.zygoteStorageId,@"zygoteStorageId",nil];
+		
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+				
+					
 	}
 		
 	
@@ -170,6 +176,40 @@
 
 
 
+//hatch egg handler
+
+
+-(void) hatchHandler:(Button *)button
+{
+	SellinfoPane *itemInfo = (SellinfoPane *)button.target; 
+				
+		
+		NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+		
+		NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
+		
+		DataModelStorageZygoteEgg *storageZyEggModel = (DataModelStorageZygoteEgg *)[[DataEnvironment sharedDataEnvironment].storageZygoteEggs objectForKey:itemInfo.itemId];
+		
+		
+		eggHatchInfoPane = [[EggHatchInfoPane alloc] initWithItem:farmerId farmID:farmId storageZyID:storageZyEggModel.zygoteStorageId setTarget:self];
+		
+		eggHatchInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2 - 50);
+		[self addChild:eggHatchInfoPane z:20];
+		
+		
+}
+
+
+
+
+
+
+-(void) cancelHandler:(Button *)button
+{
+	
+	eggHatchInfoPane.position = ccp(10000, eggHatchInfoPane.contentSize.height/2);
+	
+}
 
 
 
@@ -183,7 +223,8 @@
 
 -(void) resultCallback:(NSObject *)value
 {
-	//MessageDialog *dialog = [[MessageDialog alloc] initDialog:@"ItemInfoPane.png" setTarget:self setSelector:nil];
+	[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你出售成功!"];
+
 	NSLog(@"操作已成功!");
 }
 
