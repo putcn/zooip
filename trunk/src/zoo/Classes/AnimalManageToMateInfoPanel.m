@@ -173,13 +173,16 @@ infoMessagePanelTest;
 	}
 	else {		
 		//****[toMateRateChoose updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
-		//****toMateRateChoose.position = ccp(self.contentSize.width/2, toMateRateChoose.contentSize.height/2);
+		toMateRateChoose.position = ccp(self.contentSize.width/2, toMateRateChoose.contentSize.height/2);
 	}
-	//[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有可以结婚的动物!"];
 }
 
--(void)mateConfirm:(Button *)button
+//Mate confirm button.
+-(void)MateAnimals:(Button *)button
 {
+	AnimalManageToMateAntsChoose *antChoose = (AnimalManageToMateAntsChoose *)button.target;
+	
+	
 //	//获取从Button回调的参数,强制转换为ItemInfoPane对象,改对象携带了购买物品所需要的所有参数
 //	ItemInfoPane *itemInfo = (ItemInfoPane *)button.target; 
 //	if (itemInfo.itemType == @"animal") {
@@ -212,7 +215,8 @@ infoMessagePanelTest;
 	[self addChild:infoMessagePanelTest z:100];
 }
 
--(void)mateCancle:(Button *)button
+//Mate cancle button.
+-(void)cancleMate:(Button *)button
 {
 	toMateRateChoose.position = ccp(10000, toMateRateChoose.contentSize.height/2);
 	//NSLog(@"取消");
@@ -338,7 +342,7 @@ infoMessagePanelTest;
 	[self addChild:cancelBtn z:10];
 	if(itemType != @"goods")
 	{
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:10 delta:1 target:self price:itemPrice z:39 Priority:0];
+		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:0];
 		scalerPane.position = ccp(200,200);
 		[self addChild:scalerPane z:5];
 	}

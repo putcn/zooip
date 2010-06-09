@@ -140,11 +140,12 @@
 	}
 }
 
--(void) buyItem:(Button *)button
+-(void) MateAnimals:(Button *)button
 {
+	
 }
 
--(void) cancel:(Button *)button
+-(void) cancelMate:(Button *)button
 {
 	animalToMateInfoPanel.position = ccp(2000, animalToMateInfoPanel.contentSize.height/2);
 	NSLog(@"取消");
