@@ -38,8 +38,6 @@ infoMessagePanelTest;
 		priceLbl = [[CCLabel alloc] retain];
 		//****[self updateInfo:itId type:itType setTarget:target];
 		
-		//********
-		
 		currentPageNum = 1;
 		
 		// add button.
@@ -174,18 +172,9 @@ infoMessagePanelTest;
 	}
 }
 
--(void)mateConfirm:(Button *)button
-{
-	[self removeChildByTag:1999 cleanup:YES];
-	[self removeAllChildrenWithCleanup:YES];
-	infoMessagePanelTest = [[AnimalManageInfoPanel alloc]initDialog:@"箭头.png" setTarget:self setSelector:nil withTitle:@"success" withContent:@"success"];
-	infoMessagePanelTest.position = ccp(100,100);
-	[self addChild:infoMessagePanelTest z:100];
-}
-
 -(void)mateCancle:(Button *)button
 {
-	toMateRateChoose.position = ccp(19999,19998);
+	toMateRateChoose.position = ccp(5000,5000);
 }
 
 -(void) resultCallbackDis:(NSObject *)value
@@ -306,7 +295,7 @@ infoMessagePanelTest;
 	[self addChild:cancelBtn z:10];
 	if(itemType != @"goods")
 	{
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:10 delta:1 target:self price:itemPrice z:39 Priority:0];
+		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:0];
 		scalerPane.position = ccp(200,200);
 		[self addChild:scalerPane z:5];
 	}

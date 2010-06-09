@@ -35,7 +35,7 @@
 		//[self addButton];
 		
 		statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"" setTarget:self
-									   setSelector:@selector(btnStatusIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
+									   setSelector:@selector(btnStatusIconHandlerFeed) setPriority:0 offsetX:-1 offsetY:2 scale:0.55];
 		statusIcon.position = ccp(20, 50);
 		[statusIcon setVisible:YES];
 		
@@ -83,7 +83,7 @@
 			countOfFoodButton ++;
 			//动物结婚
 			button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:[NSString stringWithFormat:@"food_%d.png",countOfFoodButton] setTarget:self
-									   setSelector:@selector(btnPlayerOperationButtonHandlerFeed:) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
+									   setSelector:@selector(btnPlayerOperationButtonHandlerFeed:) setPriority:0 offsetX:-1 offsetY:2 scale:0.55];
 			button.position = ccp(60 + countOfFoodButton*30, 50);
 			
 			bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"food_%d.png",countOfFoodButton] ofType:nil] ] ];
@@ -92,22 +92,11 @@
 			//button.tag = OPERATION_MARRY;
 			[playerButtonContainer addChild: button];
 			[playerOperationButtons addObject:button];
-			[playerStatusIconTextures addObject:bg];
 		}
 	}
 }
 
--(void)btnAnimalMarryButtonHandler:(Button *)button
-{
-	animalManagerContainer = [[AnimalManagerContainer alloc] initWithName:@"animalMarry"];
-	[self addChild:animalManagerContainer];
-}
 
--(void)btnAnimalMarryManagementButtonHandler:(Button *)button
-{
-	animalManagerContainer = [[AnimalManagerContainer alloc] initWithName:@"MarryManagement"];
-	[self addChild:animalManagerContainer];
-}
 
 -(void) btnPlayerOperationButtonHandlerFeed:(Button *)button
 {
@@ -145,5 +134,40 @@
 	[statusIcon setVisible:YES];
 }
 
+-(void) btnStatusIconHandlerFeed
+{
+	[statusIcon setVisible:NO];
+	
+	id actionMove = [CCMoveTo actionWithDuration:0.6  position:ccp(0, playerButtonContainer.position.y)];
+	id actionMoveDone = [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveInFinishedFeed)];
+	
+	id ease = [CCEaseBackOut actionWithAction: actionMove];
+	[ease setDuration:0.3];
+	
+	if ([[ModelLocator sharedModelLocator] getIsSelfZoo])
+	{
+		[playerButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
+	}
+	
+}
+-(void)spriteMoveInFinishedFeed
+{
+	
+}
+
+-(void) dealloc
+{
+	[playerStatusIconTextures release];
+	
+	[playerOperationButtons release];
+	
+	[playerButtonContainer release];
+	
+	[animalManagerContainer release];
+	
+	[statusIcon release];
+	
+	[super dealloc];
+}
 
 @end

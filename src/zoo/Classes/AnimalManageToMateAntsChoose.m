@@ -9,6 +9,7 @@
 #import "AnimalManageToMateAntsChoose.h"
 #import "TransBackground.h"
 #import "ScalerPane.h"
+#import "RandomHelper.h"
 
 @implementation AnimalManageToMateAntsChoose
 @synthesize 
@@ -63,8 +64,8 @@ paramsDict;
 	[self removeAllChildrenWithCleanup:YES];
 	[self addTitle];
 	
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(mateConfirm:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(mateCancle:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(MateAnimals:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancleMate:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
 	
 	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
 	confirmBtn.target = self;
@@ -74,7 +75,7 @@ paramsDict;
 	[self addChild:cancelBtn z:10];
 	if(itemType != @"goods")
 	{
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:10 delta:1 target:self price:itemPrice z:39 Priority:0];
+		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:0];
 		scalerPane.position = ccp(200,200);
 		[self addChild:scalerPane z:5];
 	}
@@ -119,8 +120,8 @@ paramsDict;
 	[dic release];
 	
 	//添加确认和取消按钮,回调函数分别为[ManageContainer buyItem] 和[ManageContainer Cancel]
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(buyItem:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancel:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(MateAnimals:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
+	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancelMate:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
 	
 	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
 	confirmBtn.target = self;
@@ -130,7 +131,7 @@ paramsDict;
 	[self addChild:cancelBtn z:10];
 	if(itemType != @"goods")
 	{
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:10 delta:1 target:self price:itemPrice z:39 Priority:0];
+		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:0];
 		scalerPane.position = ccp(200,200);
 		[self addChild:scalerPane z:5];
 	}
@@ -171,12 +172,13 @@ paramsDict;
 	[self addChild:priceLbl z:7];
 }							  
 
-
 //从计数器ScalerPance回调的价格计算函数, 传入参数values封装了要买的数量
 -(void) updatePrice:(NSDictionary *)values
 {
 	count = [[values objectForKey:@"count"] intValue];
-	itemPrice+=6;
+	itemPrice = (count-1) * [RandomHelper getRandomNum:6 to:7] + [RandomHelper getRandomNum:6 to:7];
+	if(itemPrice > 50)
+		itemPrice = 50;
 	[priceLbl setString:[NSString stringWithFormat:@"%d", itemPrice]];
 }
 
