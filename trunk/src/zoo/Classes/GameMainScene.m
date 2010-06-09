@@ -22,6 +22,7 @@
 
 @implementation GameMainScene
 
+
 static GameMainScene *_sharedGameMainScene = nil;
 
 + (GameMainScene *)sharedGameMainScene
@@ -117,6 +118,8 @@ static GameMainScene *_sharedGameMainScene = nil;
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllGoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyTurtleByAnts WithParameters:param AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 //		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerDog WithParameters:param1 AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		
+
 		
 		return self;
 	}

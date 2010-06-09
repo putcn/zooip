@@ -121,9 +121,9 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 				farmerInfo.userImg = [[farmerDic objectForKey:@"userImg"] isKindOfClass:[NSNull class]]  ? nil : [farmerDic objectForKey:@"userImg"];
 				farmerInfo.userName = [[farmerDic objectForKey:@"userName"] isKindOfClass:[NSNull class]]  ? nil : [farmerDic objectForKey:@"userName"];
 				
-				farmerInfo.haveNewMessage = [[farmerDic objectForKey:@"haveNewMessage"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"haveNewMessage"] intValue];
-				farmerInfo.haveTurtle = [[farmerDic objectForKey:@"haveTurtle"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"haveTurtle"] intValue];
-				farmerInfo.isNewUser = [[farmerDic objectForKey:@"isNewUser"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"isNewUser"] intValue];
+				farmerInfo.haveNewMessage = [[farmerDic objectForKey:@"newMessage"] isKindOfClass:[NSNull class]]  ? NO : [[farmerDic objectForKey:@"newMessage"] boolValue];
+				farmerInfo.haveTurtle = [[farmerDic objectForKey:@"turtle"] isKindOfClass:[NSNull class]]  ? NO : [[farmerDic objectForKey:@"turtle"] boolValue];
+				farmerInfo.isNewUser = [[farmerDic objectForKey:@"newUser"] isKindOfClass:[NSNull class]]  ? NO : [[farmerDic objectForKey:@"newUser"] boolValue];
 				
 			}
 			DataModelFarmerInfo *farmerInfo = [[DataEnvironment sharedDataEnvironment] friendFarmerInfo];
@@ -139,9 +139,9 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 			farmerInfo.userImg = [[farmerDic objectForKey:@"userImg"] isKindOfClass:[NSNull class]]  ? nil : [farmerDic objectForKey:@"userImg"];
 			farmerInfo.userName = [[farmerDic objectForKey:@"userName"] isKindOfClass:[NSNull class]]  ? nil : [farmerDic objectForKey:@"userName"];
 			
-			farmerInfo.haveNewMessage = [[farmerDic objectForKey:@"haveNewMessage"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"haveNewMessage"] intValue];
-			farmerInfo.haveTurtle = [[farmerDic objectForKey:@"haveTurtle"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"haveTurtle"] intValue];
-			farmerInfo.isNewUser = [[farmerDic objectForKey:@"isNewUser"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"isNewUser"] intValue];
+			farmerInfo.haveNewMessage = [[farmerDic objectForKey:@"newMessage"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"newMessage"] intValue];
+			farmerInfo.haveTurtle = [[farmerDic objectForKey:@"turtle"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"turtle"] intValue];
+			farmerInfo.isNewUser = [[farmerDic objectForKey:@"newUser"] isKindOfClass:[NSNull class]]  ? NO : [(NSNumber *)[farmerDic objectForKey:@"newUser"] intValue];
 		}
 			break;
 		case ZooNetworkRequestgetFarmInfo:

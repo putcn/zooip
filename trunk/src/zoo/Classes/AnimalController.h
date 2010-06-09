@@ -22,5 +22,7 @@
 -(void) clearAnimal;
 
 -(void) gotoEat;
+-(void) scatterAll;
+-(void) cureAnimal:(NSString *)cureAnimalId;
 
 @end
