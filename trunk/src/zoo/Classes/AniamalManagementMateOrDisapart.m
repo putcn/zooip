@@ -169,8 +169,8 @@ infoMessagePanelTest;
 		[self addChild:toMateRateChoose z:20 tag:1999];
 	}
 	else {		
-		//****[toMateRateChoose updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
-		//****toMateRateChoose.position = ccp(self.contentSize.width/2, toMateRateChoose.contentSize.height/2);
+		//[toMateRateChoose updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
+		toMateRateChoose.position = ccp(self.contentSize.width/2, toMateRateChoose.contentSize.height/2);
 	}
 }
 
@@ -185,7 +185,7 @@ infoMessagePanelTest;
 
 -(void)mateCancle:(Button *)button
 {
-	
+	toMateRateChoose.position = ccp(19999,19998);
 }
 
 -(void) resultCallbackDis:(NSObject *)value
@@ -224,9 +224,6 @@ infoMessagePanelTest;
 	//POP up the Animal management success or not info panel.
 	
 	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-	NSString *maleId;
-	NSString *femaleId;
-	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID];
 
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",nil];
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoDisbandMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackDis:" AndFailedSel:@"faultCallback:"];
