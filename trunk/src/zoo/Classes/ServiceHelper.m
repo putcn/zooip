@@ -859,6 +859,8 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 	[request setPostValue:uid forKey:@"uid"];
 	[request setPostValue:pid forKey:@"pid"];
 	
+	[request setUseCookiePersistance:NO];
+	
 	NSString *methodName;
 	
 	switch (methodType) {

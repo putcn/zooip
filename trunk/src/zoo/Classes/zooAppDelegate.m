@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "HelloWorldScene.h"
 #import "GameMainScene.h"
+#import "LoginScence.h"
 
 @implementation zooAppDelegate
 
@@ -51,9 +52,10 @@
 	[[CCDirector sharedDirector] attachInView:window];	
 	[window makeKeyAndVisible];		
 		
-		
+	
 	//[[CCDirector sharedDirector] runWithScene: [HelloWorld scene]];
 	[[CCDirector sharedDirector] runWithScene: [GameMainScene scene]];
+	//[[CCDirector sharedDirector] runWithScene: [LoginScence scene]];
 }
 
 

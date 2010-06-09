@@ -16,9 +16,6 @@
 #import "ManageContainer.h"
 #import "ItemInfoPane.h"
 
-static NSString* kApiKey = @"3f4a21fe5b424314a3adef0d2e271549";
-static NSString* kApiSecret = @"698e2d6e7b2249409289fe9b6594954f";
-
 // HelloWorld implementation
 @implementation HelloWorld
 
