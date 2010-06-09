@@ -6223,6 +6223,8 @@
 		8432CF3F11B3BC8A0093DA32 /* zygote5.png in Resources */ = {isa = PBXBuildFile; fileRef = 8432CF3511B3BC8A0093DA32 /* zygote5.png */; };
 		8432CF4011B3BC8A0093DA32 /* zygote6.png in Resources */ = {isa = PBXBuildFile; fileRef = 8432CF3611B3BC8A0093DA32 /* zygote6.png */; };
 		8432CF4111B3BC8A0093DA32 /* zygote7.png in Resources */ = {isa = PBXBuildFile; fileRef = 8432CF3711B3BC8A0093DA32 /* zygote7.png */; };
+		849AAE3C11BE713900B97CD4 /* FriendInitWorkFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AAE3B11BE713900B97CD4 /* FriendInitWorkFlowController.m */; };
+		849AAE3F11BE715100B97CD4 /* EggHatchInfoPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AAE3E11BE715100B97CD4 /* EggHatchInfoPane.m */; };
 		84BAE6A5138DDEF300E6F7D3 /* babyRCC.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6A4138DDEF300E6F7D3 /* babyRCC.png */; };
 		84BAE6A8138DDEF300E6F7D3 /* babyDuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6A7138DDEF300E6F7D3 /* babyDuck.png */; };
 		84BAE6AB138DDEF300E6F7D3 /* babyHen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6AA138DDEF300E6F7D3 /* babyHen.png */; };
@@ -6324,7 +6326,6 @@
 		C3A9E8EB1186C78300CEBDFC /* 鸟窝.png in Resources */ = {isa = PBXBuildFile; fileRef = C3A9E8D31186C78300CEBDFC /* 鸟窝.png */; };
 		C3A9E9421186F4F100CEBDFC /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3A9E9411186F4F100CEBDFC /* GameController.m */; };
 		C3B4CB0311BCD00600604D76 /* PlayerInitWorkFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B4CB0211BCD00600604D76 /* PlayerInitWorkFlowController.m */; };
-		C3B4CB3B11BCDCB400604D76 /* FriendInitWorkFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B4CB3A11BCDCB400604D76 /* FriendInitWorkFlowController.m */; };
 		C3B6313511B89FA700695343 /* AnimalStorageManagerPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6313411B89FA700695343 /* AnimalStorageManagerPanel.m */; };
 		C3B6313811B89FE700695343 /* DataModelStorageAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6313711B89FE700695343 /* DataModelStorageAnimal.m */; };
 		C3B6313B11B8A09C00695343 /* AnimalStorageManagerButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */; };
@@ -12676,6 +12677,12 @@
 		8432CF3511B3BC8A0093DA32 /* zygote5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zygote5.png; sourceTree = "<group>"; };
 		8432CF3611B3BC8A0093DA32 /* zygote6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zygote6.png; sourceTree = "<group>"; };
 		8432CF3711B3BC8A0093DA32 /* zygote7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zygote7.png; sourceTree = "<group>"; };
+		8474A84D11BCE31700696BB3 /* zygote8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zygote8.png; sourceTree = "<group>"; };
+		8474A84E11BCE31700696BB3 /* zygote9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zygote9.png; sourceTree = "<group>"; };
+		8474A84F11BCE31700696BB3 /* zygote11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zygote11.png; sourceTree = "<group>"; };
+		849AAE3B11BE713900B97CD4 /* FriendInitWorkFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendInitWorkFlowController.m; sourceTree = "<group>"; };
+		849AAE3D11BE715100B97CD4 /* EggHatchInfoPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggHatchInfoPane.h; sourceTree = "<group>"; };
+		849AAE3E11BE715100B97CD4 /* EggHatchInfoPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggHatchInfoPane.m; sourceTree = "<group>"; };
 		84BAE6A4138DDEF300E6F7D3 /* babyRCC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyRCC.png; sourceTree = "<group>"; };
 		84BAE6A7138DDEF300E6F7D3 /* babyDuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyDuck.png; sourceTree = "<group>"; };
 		84BAE6AA138DDEF300E6F7D3 /* babyHen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyHen.png; sourceTree = "<group>"; };
@@ -12828,10 +12835,8 @@
 		C3A9E8D31186C78300CEBDFC /* 鸟窝.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "鸟窝.png"; sourceTree = "<group>"; };
 		C3A9E9401186F4F100CEBDFC /* GameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
 		C3A9E9411186F4F100CEBDFC /* GameController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
-		C3B4CB0111BCD00600604D76 /* PlayerInitWorkFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerInitWorkFlowController.h; sourceTree = "<group>"; };
 		C3B4CB0211BCD00600604D76 /* PlayerInitWorkFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerInitWorkFlowController.m; sourceTree = "<group>"; };
 		C3B4CB3911BCDCB400604D76 /* FriendInitWorkFlowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendInitWorkFlowController.h; sourceTree = "<group>"; };
-		C3B4CB3A11BCDCB400604D76 /* FriendInitWorkFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendInitWorkFlowController.m; sourceTree = "<group>"; };
 		C3B6313311B89FA700695343 /* AnimalStorageManagerPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalStorageManagerPanel.h; sourceTree = "<group>"; };
 		C3B6313411B89FA700695343 /* AnimalStorageManagerPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalStorageManagerPanel.m; sourceTree = "<group>"; };
 		C3B6313611B89FE700695343 /* DataModelStorageAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelStorageAnimal.h; sourceTree = "<group>"; };
@@ -22911,6 +22916,9 @@
 		8432CF2D11B3BC890093DA32 /* zygegg */ = {
 			isa = PBXGroup;
 			children = (
+				8474A84D11BCE31700696BB3 /* zygote8.png */,
+				8474A84E11BCE31700696BB3 /* zygote9.png */,
+				8474A84F11BCE31700696BB3 /* zygote11.png */,
 				8432CF2E11B3BC890093DA32 /* zygote1.png */,
 				8432CF2F11B3BC890093DA32 /* zygote10.png */,
 				8432CF3011B3BC890093DA32 /* zygote12.png */,
@@ -23320,6 +23328,9 @@
 		C331112E119D1F7300F2EE18 /* ServerController */ = {
 			isa = PBXGroup;
 			children = (
+				849AAE3D11BE715100B97CD4 /* EggHatchInfoPane.h */,
+				849AAE3E11BE715100B97CD4 /* EggHatchInfoPane.m */,
+				849AAE3B11BE713900B97CD4 /* FriendInitWorkFlowController.m */,
 				3EA9E23C11BCB67100EF4ECB /* GetAllOriginalAnimalController.h */,
 				3EA9E23D11BCB67100EF4ECB /* GetAllOriginalAnimalController.m */,
 				C37443E411AD161A004BABFE /* CureAnimalController.h */,
@@ -23400,10 +23411,8 @@
 			children = (
 				C330DD72119D134E0062753F /* BaseWorkFlowController.h */,
 				C330DD73119D134E0062753F /* BaseWorkFlowController.m */,
-				C3B4CB0111BCD00600604D76 /* PlayerInitWorkFlowController.h */,
 				C3B4CB0211BCD00600604D76 /* PlayerInitWorkFlowController.m */,
 				C3B4CB3911BCDCB400604D76 /* FriendInitWorkFlowController.h */,
-				C3B4CB3A11BCDCB400604D76 /* FriendInitWorkFlowController.m */,
 			);
 			name = WorkFlowController;
 			sourceTree = "<group>";
@@ -29846,8 +29855,9 @@
 				3EA9E0A511BC73D000EF4ECB /* FeedbackDialog.m in Sources */,
 				3EA9E23E11BCB67100EF4ECB /* GetAllOriginalAnimalController.m in Sources */,
 				C3B4CB0311BCD00600604D76 /* PlayerInitWorkFlowController.m in Sources */,
-				C3B4CB3B11BCDCB400604D76 /* FriendInitWorkFlowController.m in Sources */,
 				6098BB0811BDD38B00F0DB3B /* AnimalExpansionPanel.m in Sources */,
+				849AAE3C11BE713900B97CD4 /* FriendInitWorkFlowController.m in Sources */,
+				849AAE3F11BE715100B97CD4 /* EggHatchInfoPane.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

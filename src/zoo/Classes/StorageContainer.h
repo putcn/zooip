@@ -11,6 +11,7 @@
 #import "UIController.h"
 #import "MessageDialog.h"
 #import "SellinfoPane.h"
+#import "EggHatchInfoPane.h"
 
 
 
@@ -22,6 +23,7 @@
 	CCTexture2D *tabEnable;
 	CCTexture2D *tabDisable;
 	SellinfoPane *itemInfoPane;
+	EggHatchInfoPane *eggHatchInfoPane;
 	
 	
 	int tabIndex;

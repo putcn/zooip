@@ -92,6 +92,15 @@
 		sumPriceLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 250);
 		[self addChild:sumPriceLbl z:10];
 		
+		
+		
+		//数目选择孔件
+		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0];
+		scalerPane.position = ccp(200,200);
+		[self addChild:scalerPane z:5];
+		
+		
+		
 		[storageEggs release];
 	}
 	
@@ -101,11 +110,14 @@
 		itemPrice = modelZygoteEggs.eggPrice;
 		
 		//=========
-		NSString *picName = [NSString stringWithFormat:@"%@",modelZygoteEggs.eggNameEN];
+		NSString *picName = [NSString stringWithFormat:@"%@",modelZygoteEggs.eggId];
 		NSString *eggName = [NSString stringWithFormat:@"%@",modelZygoteEggs.eggNameEN];
 		NSString *eggTotal = [NSString stringWithFormat:@"555"];
 		NSArray *eNameArr = [picName componentsSeparatedByString:@" "];
-		NSString *picFileName = [NSString stringWithFormat:@"%@Egg.png",[eNameArr objectAtIndex:0]];
+		
+		NSString *picFileName = [NSString stringWithFormat:@"zygote%@.png",picName];
+		
+		//NSString *picFileName = [NSString stringWithFormat:@"%@Egg.png",[eNameArr objectAtIndex:0]];
 		///=========
 		
 		NSString *price = [NSString stringWithFormat:@"%d",itemPrice]; 
@@ -144,6 +156,13 @@
 		[self addChild:sexLbl z:10];
 		
 		
+		//孵化按钮
+		Button *hatchBtn = [[Button alloc] initWithLabel:@"孵化" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"TabButton2.png" setTarget:target setSelector:@selector(hatchHandler:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+		hatchBtn.target = self;
+		hatchBtn.position = ccp(self.contentSize.height/2 + 100, 50);
+		[self addChild:hatchBtn z:10];
+		
+		
 		[modelZygoteEggs release];
 	}
 	
@@ -157,16 +176,15 @@
 	confirmBtn.target = self;
 	//confirmBtn.params = [NSDictionary dictionaryWithObjectsAndKeys:itemId, @"itemId", itemType, @"itemType", [NSString stringWithFormat:@"%d",itemBuyType], @"itemBuyType",nil];
 	confirmBtn.position = ccp(self.contentSize.width/2 - 200, 50);
+	
 	cancelBtn.position = ccp(self.contentSize.height/2 + 200, 50);
 
 	[self addChild:confirmBtn z:10];
 	[self addChild:cancelBtn z:10];
+	
 
 
 	
-	ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0];
-	scalerPane.position = ccp(200,200);
-	[self addChild:scalerPane z:5];
 	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:5];
 	transBackground.scale = 17.0f;
 	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
