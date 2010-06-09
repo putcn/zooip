@@ -398,8 +398,19 @@
 
 -(void) btnFeedButtonHandler:(Button *)button
 {
-//	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",nil];
-//	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:nil AndFailedSel:nil];
+	if(!secondTouchFeedButton)
+	{
+		feed = [[AnimalFeedButtonContainer alloc] init];
+		//aniManagementBtnCtrl .position = ccp(160,40);
+		[self addChild:feed];
+		
+	}
+	else {
+		[self removeChild:feed cleanup:YES];
+	}
+	
+	secondTouchFeedButton = !secondTouchFeedButton;
+	
 }
 
 -(void)btnManagementButtonHandler:(Button *)button

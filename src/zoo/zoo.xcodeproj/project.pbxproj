@@ -23197,6 +23197,8 @@
 		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				6092141311BF33DB00D50ABE /* AnimalFeedButtonContainer.h */,
+				6092141411BF33DB00D50ABE /* AnimalFeedButtonContainer.m */,
 				6098BB0611BDD38B00F0DB3B /* AnimalExpansionPanel.h */,
 				6098BB0711BDD38B00F0DB3B /* AnimalExpansionPanel.m */,
 				607521C611B8D7AA007A7514 /* AnimalStorageManagerContainer.h */,
@@ -23263,8 +23265,6 @@
 				8408914411B49FBC001C29CA /* SellitemButton.m */,
 				3EA9E0A311BC73D000EF4ECB /* FeedbackDialog.h */,
 				3EA9E0A411BC73D000EF4ECB /* FeedbackDialog.m */,
-				6092141311BF33DB00D50ABE /* AnimalFeedButtonContainer.h */,
-				6092141411BF33DB00D50ABE /* AnimalFeedButtonContainer.m */,
 			);
 			name = UIControls;
 			sourceTree = "<group>";

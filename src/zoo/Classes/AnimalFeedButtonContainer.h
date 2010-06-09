@@ -21,6 +21,11 @@
 	AnimalManagerContainer *animalManagerContainer;
 	
 	int selectIndex;
+	
+	//The food buttons.
+	int countOfFoodButton;
+	
+	CCSprite *statusIcon;
 }
 
 -(void) addButton;

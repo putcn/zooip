@@ -7,6 +7,9 @@
 //
 
 #import "AnimalFeedButtonContainer.h"
+#import "DataEnvironment.h"
+#import "DataModelStorageFood.h"
+#import "ModelLocator.h"
 
 
 @implementation AnimalFeedButtonContainer
@@ -23,36 +26,75 @@
 		playerButtonContainer = [[CCSprite alloc] init];
 		[self addChild:playerButtonContainer];
 		playerButtonContainer.position = ccp(20, playerButtonContainer.position.y);
-		[self addButton];
+		
+		NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId;
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
+		
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageFoods WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+
+		//[self addButton];
+		
+		statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"" setTarget:self
+									   setSelector:@selector(btnStatusIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
+		statusIcon.position = ccp(20, 50);
+		[statusIcon setVisible:YES];
+		
+		CCTexture2D *bg = [playerStatusIconTextures objectAtIndex:selectIndex];
+		CGRect rect = CGRectZero;
+		rect.size = bg.contentSize;
+		[statusIcon setTexture:bg];
+		[statusIcon setTextureRect: rect];
+		
+		[self addChild:statusIcon];
 	}
 	
 	return self;
 }
 
+-(void)resultCallback:(NSObject *)value
+{
+	NSDictionary* dic = (NSDictionary*)value;
+	NSArray *foodArray = [dic allKeys];
+	DataModelStorageFood *dataStorageFood;
+	
+	for (int i = 0; i < foodArray.count; i ++) {
+		dataStorageFood = [dic objectForKey:[foodArray objectAtIndex:i]];
+		//NSInteger numoffood = dataStorageFood.numOfFood;
+	}
+	
+	[self addButton];
+}
+
 - (void) addButton
 {
+	NSDictionary *storageFood = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageFoods;
+	NSArray *animalArray = [storageFood allKeys];
+	DataModelStorageFood *dataStorageFood;
+	
+	CCTexture2D *bg;
+
 	playerOperationButtons = [[NSMutableArray alloc] init];
-	
+	playerStatusIconTextures = [[NSMutableArray alloc] initWithCapacity:0];
 	Button *button;
-	
-	//动物结婚
-	button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"动物结婚.png" setTarget:self
-							   setSelector:@selector(btnAnimalMarryButtonHandler:) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
-	button.position = ccp(120, 50);
-	button.tag = OPERATION_MARRY;
-	//button.visible = NO;
-	[playerButtonContainer addChild: button];
-	[playerOperationButtons addObject:button];
-	
-	//结婚管理
-	button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"婚姻管理.png" setTarget:self
-							   setSelector:@selector(btnAnimalMarryManagementButtonHandler:) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
-	button.position = ccp(160, 50);
-	button.tag = OPERATION_MARRY_MANAGEMENT;
-	//button.visible = NO;
-	[playerButtonContainer addChild: button];
-	[playerOperationButtons addObject:button];
-	
+	for (int i = 0; i < animalArray.count; i ++) {
+		dataStorageFood = [storageFood objectForKey:[animalArray objectAtIndex:i]];
+		if(dataStorageFood.numOfFood !=0)
+		{
+			countOfFoodButton ++;
+			//动物结婚
+			button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:[NSString stringWithFormat:@"food_%d.png",countOfFoodButton] setTarget:self
+									   setSelector:@selector(btnPlayerOperationButtonHandlerFeed:) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
+			button.position = ccp(60 + countOfFoodButton*30, 50);
+			
+			bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"food_%d.png",countOfFoodButton] ofType:nil] ] ];
+			[playerStatusIconTextures addObject:bg];
+			
+			//button.tag = OPERATION_MARRY;
+			[playerButtonContainer addChild: button];
+			[playerOperationButtons addObject:button];
+			[playerStatusIconTextures addObject:bg];
+		}
+	}
 }
 
 -(void)btnAnimalMarryButtonHandler:(Button *)button
@@ -67,7 +109,7 @@
 	[self addChild:animalManagerContainer];
 }
 
--(void) btnPlayerOperationButtonHandler:(Button *)button
+-(void) btnPlayerOperationButtonHandlerFeed:(Button *)button
 {
 	[[UIController sharedUIController] switchOperation:button.tag];
 	
@@ -82,6 +124,26 @@
 	[playerButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
 }
 
+-(void) spriteMoveOutFinished
+{
+	[self setStatusIcon:selectIndex];
+}
+-(void) setStatusIcon: (int)index
+{
+	CCTexture2D *bg;
+	
+	if ([[ModelLocator sharedModelLocator] getIsSelfZoo])
+	{
+		bg = [playerStatusIconTextures objectAtIndex:index];
+	}
+	CGRect rect = CGRectZero;
+	rect.size = bg.contentSize;
+	[statusIcon setTexture:bg];
+	
+	[statusIcon setTextureRect: rect];
+	
+	[statusIcon setVisible:YES];
+}
 
 
 @end
