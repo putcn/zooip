@@ -140,4 +140,14 @@ static AnimalController *_sharedAnimalController = nil;
 	}
 }
 
+-(void) scatterAll
+{
+	
+}
+
+-(void) cureAnimal:(NSString *)cureAnimalId
+{
+	
+}
+
 @end

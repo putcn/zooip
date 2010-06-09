@@ -43,7 +43,7 @@ static ItemController *_itemController = nil;
 {
 	if(itemType == @"chinemy"){
 		ChinemyView *chinemyView = [[ChinemyView alloc] init];
-		chinemyView.position = ccp(700, 300);
+		chinemyView.position = ccp(850, 400);
 		[allItems setObject:chinemyView forKey:@"chinemy"];
 	}
 	else if(itemType == @"dog"){
