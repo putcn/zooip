@@ -22,7 +22,6 @@
 
 @implementation GameMainScene
 
-
 static GameMainScene *_sharedGameMainScene = nil;
 
 + (GameMainScene *)sharedGameMainScene
