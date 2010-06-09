@@ -26,6 +26,14 @@ typedef enum
 	OPERATION_CALL,//召唤
 	OPERATION_MARRY,//动物结婚
 	OPERATION_MARRY_MANAGEMENT,//结婚管理
+	
+	//BUTTON FOR FOOD TYPE 1...5
+	
+	FOODTYPE1,
+	FOODTYPE2,
+	FOODTYPE3,
+	FOODTYPE4,
+	FOODTYPE5,
 } ZooOperationType;
 
 @interface UIController : NSObject

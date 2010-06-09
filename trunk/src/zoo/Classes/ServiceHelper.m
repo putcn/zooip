@@ -469,7 +469,7 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 				case 1:
 				{
 					NSDictionary* storageFoodsDic= [[DataEnvironment sharedDataEnvironment] storageFoods];
-					NSArray* storageFoodsArray = [result objectForKey:@"foodstorageFoods"];
+					NSArray* storageFoodsArray = [result objectForKey:@"foods"];
 					for (int i = 0; i < [storageFoodsArray count]; i++) {
 						NSDictionary* storageFoodDic = [storageFoodsArray objectAtIndex:i];
 						DataModelStorageFood* storageFood = [[DataModelStorageFood alloc] init];

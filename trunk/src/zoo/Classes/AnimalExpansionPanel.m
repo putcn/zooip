@@ -106,8 +106,6 @@ paramsDict;
 	DataModelFarmInfo *farmInfo = (DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo;
 	DataModelFarmerInfo *farmerInfo = (DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].playerFarmerInfo;
 
-	NSString *animalNum = [NSString stringWithFormat:@"%d",[[DataEnvironment sharedDataEnvironment].animalIDs count]];
-
 	if ([[ModelLocator sharedModelLocator] getIsSelfZoo]) {
 		level = [NSString stringWithFormat:@"%d", farmInfo.farm_level];
 		maxNumOfBirds = [NSString stringWithFormat:@"%d", farmInfo.farm_maxNumOfBirds];
