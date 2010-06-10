@@ -611,6 +611,7 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						obj.auctionBirdStorageId = [[dic objectForKey:@"auctionBirdStorageId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"auctionBirdStorageId"];
 						obj.animalId = [[dic objectForKey:@"animalId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"animalId"];
+						obj.originalAnimalId = [[dic objectForKey:@"originalAnimalId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"originalAnimalId"];
 						
 						[storageAuctionAnimals setValue:obj forKey:obj.animalId];
 					}
