@@ -187,7 +187,7 @@ animalID;
 	AnimalManageToMateAntsChoose *antChoose = (AnimalManageToMateAntsChoose *)button.target;
 	
 	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId;
-	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",leftAnimalID,@"animalId",antChoose.count,@"ants",nil];
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",antChoose.femaledIdBeforeMarry,@"animalId",[NSString stringWithFormat:@"%d",antChoose.count],@"ants",nil];
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackMateBeforeMarry:" AndFailedSel:@"faultCallback:"];
 }
 
