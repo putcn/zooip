@@ -78,12 +78,14 @@ infoMessagePanelTest;
 	NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
 	//For Test
 	NSString *tabFlag = @"animals";
-	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:serverAnimalData2.animalId setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:serverAnimalData2.animalId setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:2 offsetX:1 offsetY:1];
 	if (serverAnimalData2.gender == 1) {
-		itemButton.position = ccp(150,440);
+		itemButton.position = ccp(self.contentSize.width/2 - 200,self.contentSize.height/2 +150);
+		//itemButton.position = ccp(150,440);
 	}
 	else {
-		itemButton.position = ccp(630,440);
+		//itemButton.position = ccp(630,440);
+		itemButton.position = ccp(self.contentSize.width/2 + 200,self.contentSize.height/2 +150);
 	}
 	
 	[self addChild:itemButton z:7 tag:1%12];
@@ -95,14 +97,14 @@ infoMessagePanelTest;
 	NSString *orgidAnother = [NSString stringWithFormat:@"%d",serverAnimalDataAnother.originalAnimalId];
 	
 	//NSString *tabFlag = @"animals";
-	AnimalManagementButtonItem *itemButtonAnother = [[AnimalManagementButtonItem alloc] initWithItem:orgidAnother setitType:tabFlag setAnimalID:serverAnimalDataAnother.animalId setImagePath:picFileNameAnother setAnimalName:animalNameAnother setTarget:self setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+	AnimalManagementButtonItem *itemButtonAnother = [[AnimalManagementButtonItem alloc] initWithItem:orgidAnother setitType:tabFlag setAnimalID:serverAnimalDataAnother.animalId setImagePath:picFileNameAnother setAnimalName:animalNameAnother setTarget:self setSelector:nil setPriority:2 offsetX:1 offsetY:1];
 	if (serverAnimalDataAnother .gender ==1) {
 		leftAnimalID = serverAnimalDataAnother.animalId;
-		itemButtonAnother.position = ccp(150,440);		
+		itemButtonAnother.position = ccp(self.contentSize.width/2 - 200,self.contentSize.height/2 +150);		
 	}
 	else {
 		rightAnimalID = serverAnimalDataAnother.animalId;
-		itemButtonAnother.position = ccp(630,30);
+		itemButtonAnother.position = ccp(self.contentSize.width/2 + 200,self.contentSize.height/2 +150);
 	}
 	
 	
@@ -173,7 +175,7 @@ infoMessagePanelTest;
 	
 	//判断是否首次加载
 	if (toMateRateChoose == nil) {
-		toMateRateChoose = [[AnimalManageToMateAntsChoose alloc] initWithParam:params setTarget:self];
+		toMateRateChoose = [[AnimalManageToMateAntsChoose alloc] initWithParam:params setTarget:self setLeftAnimalId:leftAnimalID setRightAnimalId:rightAnimalID];
 		toMateRateChoose.position = ccp(self.contentSize.width/2, toMateRateChoose.contentSize.height/2);
 		[self addChild:toMateRateChoose z:20 tag:1999];
 	}
@@ -183,7 +185,7 @@ infoMessagePanelTest;
 	}
 }
 
--(void)mateCancle:(Button *)button
+-(void)cancleMate:(Button *)button
 {
 	toMateRateChoose.position = ccp(5000,5000);
 }
