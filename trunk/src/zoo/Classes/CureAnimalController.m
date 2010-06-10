@@ -7,9 +7,10 @@
 //
 
 #import "CureAnimalController.h"
-
+#import "AnimalController.h"
 
 @implementation CureAnimalController
+@synthesize animalId;
 
 -(void) execute:(NSDictionary *)value
 {
@@ -19,6 +20,12 @@
 
 -(void) resultCallback:(NSObject *)value
 {
+	NSDictionary *result = (NSDictionary *)value;
+	NSInteger code = [[result objectForKey:@"code"] intValue];
+	if (code == 1) {		
+		[[AnimalController sharedAnimalController] cureAnimal:animalId];
+	}
+	
 	[super resultCallback:value];
 }
 

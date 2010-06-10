@@ -13,9 +13,10 @@
 
 @interface CureAnimalController : BaseServerController
 {
-	
+	NSString *animalId;
 }
 
+@property (nonatomic,retain)NSString *animalId;
 -(void) execute:(NSDictionary *)value;
 -(void) resultCallback:(NSObject *)value;
 -(void) faultCallback:(NSObject *)value;
