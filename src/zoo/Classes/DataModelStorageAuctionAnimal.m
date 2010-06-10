@@ -13,6 +13,7 @@
 
 @synthesize
 auctionBirdStorageId,
-animalId;
+animalId,
+originalAnimalId;
 
 @end

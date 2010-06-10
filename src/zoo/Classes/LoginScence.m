@@ -9,9 +9,8 @@
 #import "LoginScence.h"
 #import "ASIHTTPRequest.h"
 
-static NSString* kApiKey = @"3f4a21fe5b424314a3adef0d2e271549";
-static NSString* kApiSecret = @"698e2d6e7b2249409289fe9b6594954f";
-
+static NSString* kApiKey = @"b856de458be342f4a80a4e2cc824f146";
+static NSString* kApiSecret = @"8426c76e6db84d70bb6516fdf3a4ec34";
 
 @implementation LoginScence
 

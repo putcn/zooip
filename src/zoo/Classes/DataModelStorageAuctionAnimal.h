@@ -13,9 +13,11 @@
 {
 	NSString* auctionBirdStorageId;
 	NSString* animalId;
+	NSString* originalAnimalId;
 }
 
 @property (nonatomic, retain) NSString* auctionBirdStorageId;
 @property (nonatomic, retain) NSString* animalId;
+@property (nonatomic, retain) NSString* originalAnimalId;
 
 @end
