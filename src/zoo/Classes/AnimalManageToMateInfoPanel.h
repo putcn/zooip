@@ -49,6 +49,12 @@
 @property (nonatomic, assign) NSInteger count;
 @property (nonatomic ,retain) AnimalManageInfoPanel *infoMessagePanelTest;
 
+//Add the access for mate service helper.
+
+@property (nonatomic, retain) NSString *leftAnimalID;
+@property (nonatomic, retain) NSString *rightAnimalID;
+@property (nonatomic, retain) NSString *animalID;
+
 
 
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType animalID:(NSString *) aniID setTarget:(id)target;

@@ -27,6 +27,11 @@
 	
 	//for params;
 	NSDictionary *paramsDict;
+	
+	NSString *maledIdBeforeMarry;
+	NSString *femaledIdBeforeMarry;
+	NSString *animalIDAfterMarry;
+	NSInteger antsCount;
 		
 }
 
@@ -37,8 +42,13 @@
 @property (nonatomic, assign) NSInteger count;
 @property (nonatomic,retain) NSDictionary *paramsDict;
 
+@property (nonatomic, retain) NSString *maledIdBeforeMarry;
+@property (nonatomic, retain) NSString *femaledIdBeforeMarry;
+@property (nonatomic, retain) NSString *animalIDAfterMarry;
+@property (nonatomic, assign) NSInteger antsCount;
 
--(id)initWithParam:(NSDictionary *)param setTarget:(id)target;
+
+-(id)initWithParam:(NSDictionary *)param setTarget:(id)target setLeftAnimalId:(NSString *)leftAnimalID setRightAnimalId:(NSString *) rightAnimalID;
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget: (id)target; 
 -(id)initWithParam:(NSDictionary *)param setTarget:(id)target;
 -(void)addTitle;
