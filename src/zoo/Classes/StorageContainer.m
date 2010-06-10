@@ -8,7 +8,6 @@
 
 #import "Button.h"
 #import "SellitemButton.h"
-#import "StoButtonContainer.h"
 #import "StorageContainer.h"
 #import "FeedbackDialog.h";
 
@@ -35,25 +34,77 @@
 		self.scale = 300.0f/1024.0f;
 		self.title = @"仓库";
 		[self addTitle];
-		NSArray *tabArray = [[NSArray alloc] initWithObjects:@"egg",@"zygoteegg",nil];
-		[self addTab:tabArray];
-		for (int i = 0; i< tabArray.count; i++) {
-			NSString *tab = [tabArray objectAtIndex:i];
-			StoButtonContainer *buttonContainer = [[StoButtonContainer alloc] initWithTab:tab setTarget:self];
-			if (i == 0) {
-				buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
-			}
-			else {
-				buttonContainer.position = ccp(2000, self.contentSize.height/2 - 50);
-			}
-			
-			[self addChild:buttonContainer z:7];
-			[tabContentDic setObject:buttonContainer forKey:[NSString stringWithFormat:@"tabContent_%d",i]];
-		}
+		[self addMainPanel];
+		
+		//testType = @"egg";
+		
+		//设置一层半透明背景,点击事件的优先级为50,屏蔽下面图层的点击事件
+		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:50];
+		transBackground.scale = 17.0f;
+		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+		[self addChild:transBackground z:-1];
+		
+		
+		
 		
 	}
 	return self;
 }
+
+
+
+-(void)addMainPanel
+{
+	
+	NSArray *tabArray = [[NSArray alloc] initWithObjects:@"egg",@"zygoteegg",nil];
+	[self addTab:tabArray];
+	
+	for (int i = 0; i< tabArray.count; i++) {
+		NSString *tab = [tabArray objectAtIndex:i];
+		 buttonContainer = [[StoButtonContainer alloc] initWithTab:tab setTarget:self];
+		if (i == 0) {
+			buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
+		}
+		else {
+			buttonContainer.position = ccp(2000, self.contentSize.height/2 - 50);
+		}
+		
+		[self addChild:buttonContainer z:7];
+		[tabContentDic setObject:buttonContainer forKey:[NSString stringWithFormat:@"tabContent_%d",i]];
+	}
+	
+	
+	/*
+	 
+	 for (int i = 0; i< tabArray.count; i++) {
+	 NSString *tab = [tabArray objectAtIndex:i];
+	 StoButtonContainer *buttonContainer = [[StoButtonContainer alloc] initWithTab:tab setTarget:self];
+	 if (i == 0) {
+	 buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
+	 }
+	 else {
+	 buttonContainer.position = ccp(2000, self.contentSize.height/2 - 50);
+	 }
+	 
+	 [self addChild:buttonContainer z:7];
+	 [tabContentDic setObject:buttonContainer forKey:[NSString stringWithFormat:@"tabContent_%d",i]];
+	 }
+	 
+	*/
+	
+	
+	
+	
+	
+	
+	Button *sellAllBtn = [[Button alloc] initWithLabel:@"全部卖出" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:18 setBackground:@"TabButton2.png" setTarget:self setSelector:@selector(sellAllEggsHandler:) setPriority:1 offsetX:0 offsetY:0 scale:2.0f];
+	sellAllBtn.position = ccp(self.contentSize.width/2 +400, 80);
+	[self addChild:sellAllBtn z:7];
+	
+	
+	
+}
+
 
 
 -(void)addTitle
@@ -69,6 +120,7 @@
 {
 	CGRect rect = CGRectZero;
 	rect.size = tabEnable.contentSize;
+	
 	
 	for (int i = 0; i < [tabArray count]; i++) {
 		NSString *tempString = [tabArray objectAtIndex:i];
@@ -91,6 +143,13 @@
 {
 	tabIndex = button.tag;
 	[button setTexture:tabEnable];
+	
+	if (tabIndex == 0) {
+		testType = @"egg";
+	}else {
+		testType = @"zygoteegg";
+	}
+
 	SellitemButton	*buttonContainer = [tabContentDic objectForKey:[NSString stringWithFormat:@"tabContent_%d",tabIndex]];
 	buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
 	int tabCount = [tabDic count];
@@ -108,11 +167,17 @@
 {
 	
 	if (itemInfoPane == nil) {
+		
+		 curr_itemId   = itemButton.itemId;
+		 curr_itemType = itemButton.itemType;
+		 curr_target   = self;
+		
 		itemInfoPane = [[SellinfoPane alloc] initWithItem:itemButton.itemId type:itemButton.itemType setTarget:self];
 		itemInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2);
 		[self addChild:itemInfoPane z:20];
 	}
-	else {		
+	else {
+		
 		[itemInfoPane updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
 		itemInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2);
 	}
@@ -121,13 +186,6 @@
 
 
 
-/*
- ZooNetworkRequesttoSellZygoteEgg,
- ZooNetworkRequesttoSellProduct,
- ZooNetworkRequesttoSellAllZygoteEgg,
- ZooNetworkRequesttoSellAllProducts,
- 
- */
 
 -(void) buyItem:(Button *)button
 {
@@ -139,12 +197,11 @@
 	if (itemInfo.itemType == @"egg") {
 		
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+			
 			DataModelStorageEgg *storageEgg = (DataModelStorageEgg *)[[DataEnvironment sharedDataEnvironment].storageEggs objectForKey:itemInfo.itemId];
 
 			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",storageEgg.eggId,@"eggId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
 	
-			
-			//NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:@"A6215BF61A3AF50A8F72F043A1A6A85C",@"farmerId",storageEgg.eggId,@"eggId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellProduct WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 				
 		
@@ -154,11 +211,10 @@
 	
 	if(itemInfo.itemType == @"zygoteegg"){
 		
-		
 		NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+		
 		DataModelStorageZygoteEgg *storageZyEggModel = (DataModelStorageZygoteEgg *)[[DataEnvironment sharedDataEnvironment].storageZygoteEggs objectForKey:itemInfo.itemId];
-		
-		
+				
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",storageZyEggModel.zygoteStorageId,@"zygoteStorageId",nil];
 		
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
@@ -181,16 +237,14 @@
 
 -(void) hatchHandler:(Button *)button
 {
-	SellinfoPane *itemInfo = (SellinfoPane *)button.target; 
-				
-		
+		SellinfoPane *itemInfo = (SellinfoPane *)button.target; 
+						
 		NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 		
 		NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
 		
 		DataModelStorageZygoteEgg *storageZyEggModel = (DataModelStorageZygoteEgg *)[[DataEnvironment sharedDataEnvironment].storageZygoteEggs objectForKey:itemInfo.itemId];
-		
-		
+				
 		eggHatchInfoPane = [[EggHatchInfoPane alloc] initWithItem:farmerId farmID:farmId storageZyID:storageZyEggModel.zygoteStorageId setTarget:self];
 		
 		eggHatchInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2 - 50);
@@ -200,12 +254,10 @@
 }
 
 
-
-
-
-
 -(void) cancelHandler:(Button *)button
 {
+	//刷新孵化界面
+	[self addMainPanel];
 	
 	eggHatchInfoPane.position = ccp(10000, eggHatchInfoPane.contentSize.height/2);
 	
@@ -221,12 +273,79 @@
 }
 
 
+//出售单个卵成功
 -(void) resultCallback:(NSObject *)value
 {
 	[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你出售成功!"];
-
+	
+	//刷新界面
+	[self addMainPanel];
+	
 	NSLog(@"操作已成功!");
 }
+
+
+//sell all eggs
+-(void) sellAllEggsHandler:(Button *)button
+{
+	
+		
+	if (testType==nil) {
+		testType = @"egg";
+	}
+	
+	
+	if (testType == @"egg") {
+		
+		NSString *par = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:par,@"farmerId",nil];
+		
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellAllProducts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultAllEggCallback:" AndFailedSel:@"faultCallback:"];
+		
+	}
+	if(testType == @"zygoteegg")
+	{
+		
+		NSString *par = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:par,@"farmerId",nil];
+		
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellAllProducts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultAllEggCallback:" AndFailedSel:@"faultCallback:"];
+		
+		
+	}	
+	
+}
+
+
+
+-(void) resultAllEggCallback:(NSObject *)value
+{
+	
+	NSDictionary *result = (NSDictionary *)value;
+	
+	NSInteger code = [[result objectForKey:@"code"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"code"] intValue];
+	
+	if (code == 0) {
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有可卖的蛋!"];
+	}
+	
+	if (code == 1) {
+		//刷新界面
+		[self addMainPanel];
+		
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功卖出所有蛋!"];
+	}
+	
+	
+
+	
+	
+}
+
+
+
+
 
 -(void) faultCallback:(NSObject *)value
 {

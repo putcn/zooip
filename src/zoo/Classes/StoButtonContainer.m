@@ -17,26 +17,13 @@
  -(id) initWithTab: (NSString *)tabName setTarget:(id)target
  {
  if ((self = [super init])) {
- parentTarget = target;
- CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ButtonContainer.png" ofType:nil] ] ];
- CGRect rect = CGRectZero;
- rect.size = bg.contentSize;
- [self setTexture: bg];
- [self setTextureRect: rect];
- [bg release];
- tabFlag = tabName;
-	
 	 
- NSString *par = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
- NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:par,@"farmerId",nil];
-if (tabFlag == @"egg") {
- 
- [[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageProducts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-}
- else if(tabFlag == @"zygoteegg"){
- [[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
- }
- 
+	 [self removeAllChildrenWithCleanup:YES];
+	 parentTarget = target;
+	 tabFlag = tabName;
+	 
+	  [self initView];
+	
  /*
  Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
  Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
@@ -50,12 +37,57 @@ if (tabFlag == @"egg") {
  [self addChild:nextPageBtn z:7];
  [self addChild:forwardPageBtn z:7];
  [self addChild:sellAllBtn z:7];
+  
   */
+	  
+	 
  }
  return self;
  }
  
  
+-(void) initView
+{
+	
+	CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ButtonContainer.png" ofType:nil] ] ];
+	CGRect rect = CGRectZero;
+	rect.size = bg.contentSize;
+	[self setTexture: bg];
+	[self setTextureRect: rect];
+	[bg release];
+
+	
+	
+	NSString *par = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:par,@"farmerId",nil];
+	if (tabFlag == @"egg") {
+		
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageProducts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+	}
+	else if(tabFlag == @"zygoteegg"){
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+	}
+	
+	/*
+	 Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
+	 Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
+	 Button *sellAllBtn = [[Button alloc] initWithLabel:@"全部卖出" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:18 setBackground:@"TabButton2.png" setTarget:self setSelector:@selector(sellAllEggsHandler:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
+	 
+	 forwardPageBtn.flipX = YES;
+	 nextPageBtn.position = ccp(self.contentSize.width/2 + 100, 0);
+	 forwardPageBtn.position = ccp(self.contentSize.width/2 - 100, 0);
+	 sellAllBtn.position = ccp(self.contentSize.width/2 +400, 20);
+	 
+	 [self addChild:nextPageBtn z:7];
+	 [self addChild:forwardPageBtn z:7];
+	 [self addChild:sellAllBtn z:7];
+	 
+	 */
+	
+}
+	
+	
+
 
 -(void) resultCallback:(NSObject *)value
 {
@@ -84,6 +116,20 @@ if (tabFlag == @"egg") {
 	totalPage = itemArray.count/12 + 1;
 	currentPageNum = 1;
 	[self generatePage];
+	
+	
+	
+	
+	NSString *totalStrPrice = [NSString stringWithFormat:@"当前总计收入 ：%d  金蛋",totalPrice];
+	totalPriceLab = [CCLabel labelWithString:totalStrPrice fontName:@"Arial" fontSize:40];
+	
+	totalPriceLab.position = ccp(self.contentSize.width/2 - 100, 20);
+	[totalPriceLab setColor:ccc3(0, 0, 0)];
+	
+	[self addChild:totalPriceLab z:7 tag:10];
+	
+	
+	
 }
 
 -(void) faultCallback:(NSObject *)value
@@ -98,21 +144,16 @@ if (tabFlag == @"egg") {
 	
 	Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
 	Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
-	Button *sellAllBtn = [[Button alloc] initWithLabel:@"全部卖出" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:18 setBackground:@"TabButton2.png" setTarget:self setSelector:@selector(sellAllEggsHandler:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
 	
 	forwardPageBtn.flipX = YES;
 	nextPageBtn.position = ccp(self.contentSize.width/2 + 100, 0);
 	forwardPageBtn.position = ccp(self.contentSize.width/2 - 100, 0);
-	sellAllBtn.position = ccp(self.contentSize.width/2 +400, 20);
 	
 	[self addChild:nextPageBtn z:7];
 	[self addChild:forwardPageBtn z:7];
-	[self addChild:sellAllBtn z:7];
 	
 	
 }
-
-
 
 
 -(void) nextPage:(Button *)button
@@ -141,37 +182,13 @@ if (tabFlag == @"egg") {
 
 
 
-//sell all eggs
--(void) sellAllEggsHandler:(Button *)button
-{
-	NSLog(@"--------sell all eggs ---------");
-	if (tabFlag == @"egg") {
-		
-		
-	}
-	else if(tabFlag == @"zygoteegg")
-	{
-		
-		
-	}	
-	
-	}
-	
-
-
-
-
 
 -(void) generatePage
 {
-	//CCLabel *signPriceLbl = [CCLabel labelWithString:signPrice fontName:@"Arial" fontSize:30];
-	CCLabel *totalPriceLab;
-	 NSInteger totalPrice;
 	
 	if (tabFlag == @"egg") {
 		NSDictionary *storageEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
 		
-		//DataModelStorageEgg
 		DataModelStorageEgg *storageEgg;
 		NSArray *eggsArray = [storageEggDic allKeys];
 		int endNumber = currentPageNum * 12;
@@ -236,15 +253,11 @@ if (tabFlag == @"egg") {
 		
 		}
 		
-		NSString *totalStrPrice = [NSString stringWithFormat:@"当前总计收入 ：%d  金蛋",totalPrice];
-		totalPriceLab = [CCLabel labelWithString:totalStrPrice fontName:@"Arial" fontSize:40];
+				
 		
-		totalPriceLab.position = ccp(self.contentSize.width/2 - 100, 20);
-		[totalPriceLab setColor:ccc3(0, 0, 0)];
-
-		[self addChild:totalPriceLab z:7 tag:10];
 			 
 	}
+	
 	
 	
 	

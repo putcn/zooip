@@ -177,6 +177,7 @@
 	
 	if (code == 0) {
 		infoStr = [NSString stringWithFormat:@"没有受精卵或受精卵已经孵出"];
+		
 	}
 	
 	if (code == 1) {
@@ -212,6 +213,7 @@
 		infoStr = [NSString stringWithFormat:@"公动物不能喂食物"];
 	}
 	
+	[[FeedbackDialog sharedFeedbackDialog] addMessage:infoStr];
 	
 	[lab_notice setString:infoStr];
 	
@@ -267,6 +269,7 @@
 		infoStr = [NSString stringWithFormat:@"公动物不能喂食物"];
 	}
 	
+	[[FeedbackDialog sharedFeedbackDialog] addMessage:infoStr];
 	
 	[lab_notice setString:infoStr];
 	

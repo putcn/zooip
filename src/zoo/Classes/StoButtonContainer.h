@@ -14,6 +14,7 @@
 #import "DataModelStorageZygoteEgg.h"
 #import "Button.h"
 #import "SellitemButton.h"
+#import "FeedbackDialog.h"
 
 @interface StoButtonContainer : CCSprite {
 	int currentPageNum;
@@ -21,6 +22,9 @@
 	int currentNum;
 	NSString *tabFlag;
 	id parentTarget;
+	
+	CCLabel *totalPriceLab;
+	NSInteger totalPrice;
 }
 -(id) initWithTab:(NSString *)tabName setTarget:(id)target;
 

@@ -145,19 +145,22 @@
 		eggProduceLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 250);
 		[self addChild:eggProduceLbl z:10];
 		
-		CCLabel *zygoteEggProduceLbl = [CCLabel labelWithString:@"受精蛋预计产量 ：33" fontName:@"Arial" fontSize:30];
+		//modelZygoteEggs
+		NSString *zygoYield =[NSString stringWithFormat:@"受精蛋预计产量 ：%d",modelZygoteEggs.baseYield];
+	
+		CCLabel *zygoteEggProduceLbl = [CCLabel labelWithString:zygoYield fontName:@"Arial" fontSize:30];
 		[zygoteEggProduceLbl setColor:ccc3(0, 0, 0)];
 		zygoteEggProduceLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 300);
 		[self addChild:zygoteEggProduceLbl z:10];
 		
-		CCLabel *sexLbl = [CCLabel labelWithString:@"性别 ：母" fontName:@"Arial" fontSize:30];
+		CCLabel *sexLbl = [CCLabel labelWithString:modelZygoteEggs.zygoteGender fontName:@"Arial" fontSize:30];
 		[sexLbl setColor:ccc3(0, 0, 0)];
 		sexLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 350);
 		[self addChild:sexLbl z:10];
 		
 		
 		//孵化按钮
-		Button *hatchBtn = [[Button alloc] initWithLabel:@"孵化" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"TabButton2.png" setTarget:target setSelector:@selector(hatchHandler:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+		Button *hatchBtn = [[Button alloc] initWithLabel:@"孵化" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"TabButton2.png" setTarget:target setSelector:@selector(hatchHandler:) setPriority:0 offsetX:0 offsetY:0 scale:2.0f];
 		hatchBtn.target = self;
 		hatchBtn.position = ccp(self.contentSize.height/2 + 100, 50);
 		[self addChild:hatchBtn z:10];
@@ -168,13 +171,13 @@
 	
 	
 	[dic release];
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(buyItem:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"出售" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"TabButton2.png" setTarget:target setSelector:@selector(buyItem:) setPriority:0 offsetX:0 offsetY:0 scale:2.0f];
 	
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancel:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"TabButton2.png" setTarget:target setSelector:@selector(cancel:) setPriority:0 offsetX:0 offsetY:0 scale:2.0f];
 	
 	//为Button添加绑定的参数列表
 	confirmBtn.target = self;
-	//confirmBtn.params = [NSDictionary dictionaryWithObjectsAndKeys:itemId, @"itemId", itemType, @"itemType", [NSString stringWithFormat:@"%d",itemBuyType], @"itemBuyType",nil];
+	
 	confirmBtn.position = ccp(self.contentSize.width/2 - 200, 50);
 	
 	cancelBtn.position = ccp(self.contentSize.height/2 + 200, 50);
