@@ -115,7 +115,9 @@
 
 -(void) spriteMoveOutFinished
 {
-	[self setStatusIcon:selectIndex];
+	[self setStatusIcon:selectIndex];	
+	NSString *index = [[NSNumber numberWithInt:(selectIndex + 1)] stringValue];
+	[[UIController sharedUIController] setSelectFoodId:index];
 }
 -(void) setStatusIcon: (int)index
 {
@@ -148,6 +150,7 @@
 	{
 		[playerButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
 	}
+
 	
 }
 -(void)spriteMoveInFinishedFeed

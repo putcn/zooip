@@ -53,15 +53,15 @@ static UIController *_sharedUIController = nil;
 	selectFoodId = foodId;
 	
 	//TODO: 根据食物ID进行操作分类
-	if (selectFoodId == @"1")
+	if ([foodId isEqualToString:@"1"])
 	{
 		operation = OPERATION_FEED_ALL;
 	}
-	else if (selectFoodId == @"2" || selectFoodId == @"3" || selectFoodId == @"4")
+	else if ([foodId isEqualToString:@"2"] || [foodId isEqualToString:@"3"] || [foodId isEqualToString:@"4"])
 	{
 		operation = OPERATION_FEED_POWER;
 	}
-	else if (selectFoodId == @"5")
+	else if ([foodId isEqualToString:@"5"])
 	{
 		operation = OPERATION_FEED_PRODUCT_YIELD;
 	}

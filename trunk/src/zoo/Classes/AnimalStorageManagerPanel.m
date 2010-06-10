@@ -145,14 +145,14 @@
 		currentNum = endNumber - (currentPageNum -1 ) *12 ;
 		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
 			stoauAnimals = [auctionAnimals objectForKey:[animalArray objectAtIndex:i]];
-			DataModelAnimal *serverAnimalShow = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:stoauAnimals.animalId];
+			DataModelAnimal *serverAnimalShow = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].storageAuctionAnimals objectForKey:stoauAnimals.auctionBirdStorageId];
 			NSInteger n = 0;
 			NSString *localGender;
 			if (serverAnimalShow.gender == 0) {
-				localGender = @"female";
+				localGender = @"母";
 			}
 			else {
-				localGender = @"male";
+				localGender = @"公";
 			}
 
 			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalShow.scientificNameCN];

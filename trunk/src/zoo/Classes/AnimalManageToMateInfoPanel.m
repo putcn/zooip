@@ -18,7 +18,10 @@ itemId,
 itemType,
 itemBuyType,
 count,
-infoMessagePanelTest;
+infoMessagePanelTest,
+leftAnimalID,
+rightAnimalID,
+animalID;
 
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType animalID:(NSString *) aniID setTarget:(id)target
 {
@@ -167,7 +170,7 @@ infoMessagePanelTest;
 	
 	//判断是否首次加载物品信息框
 	if (toMateRateChoose == nil) {
-		toMateRateChoose = [[AnimalManageToMateAntsChoose alloc] initWithParam:params setTarget:self];
+		toMateRateChoose = [[AnimalManageToMateAntsChoose alloc] initWithParam:params setTarget:self setLeftAnimalId:leftAnimalID setRightAnimalId:rightAnimalID];
 		toMateRateChoose.position = ccp(self.contentSize.width/2, toMateRateChoose.contentSize.height/2);
 		[self addChild:toMateRateChoose z:20 tag:1999];
 	}
@@ -178,41 +181,14 @@ infoMessagePanelTest;
 }
 
 //Mate confirm button.
+//婚前交配，需要farmId，maleID，FemaleId，action(marry or mate)
 -(void)MateAnimals:(Button *)button
 {
 	AnimalManageToMateAntsChoose *antChoose = (AnimalManageToMateAntsChoose *)button.target;
 	
-	
-//	//获取从Button回调的参数,强制转换为ItemInfoPane对象,改对象携带了购买物品所需要的所有参数
-//	ItemInfoPane *itemInfo = (ItemInfoPane *)button.target; 
-//	if (itemInfo.itemType == @"animal") {
-//		if (itemInfo.itemBuyType == @"goldEgg") {
-//			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-//			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"originalAnimalId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
-//			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-//			
-//			
-//		}
-//		else if(itemInfo.itemBuyType == @"ant"){
-//			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-//			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"originalAnimalId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
-//			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-//			
-//		}
-//	}
-//	itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
-//	[itemInfo release];
-//	-(void) cancel:(Button *)button
-//	{
-//		itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
-//		NSLog(@"取消");
-//	}
-	//toMateRateChoose
-	[self removeChildByTag:1999 cleanup:YES];
-	[self removeAllChildrenWithCleanup:YES];
-	infoMessagePanelTest = [[AnimalManageInfoPanel alloc]initDialog:@"箭头.png" setTarget:self setSelector:nil withTitle:@"success" withContent:@"success"];
-	infoMessagePanelTest.position = ccp(100,100);
-	[self addChild:infoMessagePanelTest z:100];
+	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId;
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",leftAnimalID,@"animalId",antChoose.count,@"ants",nil];
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackMateBeforeMarry:" AndFailedSel:@"faultCallback:"];
 }
 
 //Mate cancle button.
@@ -220,6 +196,13 @@ infoMessagePanelTest;
 {
 	toMateRateChoose.position = ccp(10000, toMateRateChoose.contentSize.height/2);
 	//NSLog(@"取消");
+}
+
+-(void)resultCallbackMateBeforeMarry:(NSObject *)value
+{
+	//处理婚前交配结果。
+	
+	[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配失败"];
 }
 
 

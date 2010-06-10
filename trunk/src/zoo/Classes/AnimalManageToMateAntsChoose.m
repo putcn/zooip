@@ -18,7 +18,11 @@ itemId,
 itemType,
 itemBuyType,
 count,
-paramsDict;
+paramsDict,
+maledIdBeforeMarry,
+femaledIdBeforeMarry,
+animalIDAfterMarry,
+antsCount;
 
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget:(id)target
 {
@@ -35,10 +39,17 @@ paramsDict;
 	}
 	return self;
 }
--(id)initWithParam:(NSDictionary *)param setTarget:(id)target
+
+//initWithParam:params setTarget:self setLeftAnimalId:leftAnimalID setRightAnimalId:rightAnimalID];
+
+-(id)initWithParam:(NSDictionary *)param setTarget:(id)target setLeftAnimalId:(NSString *)leftAnimalID setRightAnimalId:(NSString *) rightAnimalID
 {
 	if((self =[super init]))
-	{
+	{		
+		maledIdBeforeMarry = leftAnimalID;
+		femaledIdBeforeMarry = rightAnimalID;
+		animalIDAfterMarry = rightAnimalID;
+		
 		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ItemInfoPane.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
@@ -176,6 +187,7 @@ paramsDict;
 -(void) updatePrice:(NSDictionary *)values
 {
 	count = [[values objectForKey:@"count"] intValue];
+	antsCount = count;
 	itemPrice = (count-1) * [RandomHelper getRandomNum:6 to:7] + [RandomHelper getRandomNum:6 to:7];
 	if(itemPrice > 50)
 		itemPrice = 50;

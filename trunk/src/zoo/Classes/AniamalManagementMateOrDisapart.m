@@ -134,6 +134,17 @@ infoMessagePanelTest;
 	NSLog(@"Server Connection Fail");
 }
 
+//动物婚后交配
+-(void) MateAnimals:(Button *)button
+{
+	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
+	NSString *action = @"mate";
+	
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackMateAfterMarry:" AndFailedSel:@"faultCallback:"];
+
+}
+
 -(void) toMate:(Button *)button
 {
 	//TODO: Imp the mate func
@@ -175,6 +186,38 @@ infoMessagePanelTest;
 -(void)mateCancle:(Button *)button
 {
 	toMateRateChoose.position = ccp(5000,5000);
+}
+
+-(void)resultCallbackMateAfterMarry :(NSObject *)value
+{
+	NSDictionary *dic = (NSDictionary *)value;
+	NSInteger code = [[dic objectForKey:@"code"] intValue];
+	switch (code) {
+		case 0:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物已经配对"];
+			break;
+		case 7:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"配对失败"];
+			break;
+		case 8:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"近亲不能结婚"];
+			break;
+		case 9:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配成功，产生一个受精蛋"];
+			break;
+		case 10:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配成功，没能产生受精蛋"];
+			break;
+		case 11:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物交配时间未到"];
+			break;
+		case 12:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配失败"];
+			break;
+		default:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作异常"];
+			break;
+	}
 }
 
 -(void) resultCallbackDis:(NSObject *)value
