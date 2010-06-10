@@ -52,7 +52,7 @@
 		currSpeed = ccp(0 ,0);
 		currStatus = 5;
 		limitRect = CGRectMake(100, 100, 500, 500);
-		view.position = ccp([RandomHelper getRandomNum:460 to:900], [RandomHelper getRandomNum:120 to:220]);
+		view.position = ccp([RandomHelper getRandomNum:460 to:800], [RandomHelper getRandomNum:120 to:220]);
 		targetPosition = ccp(view.position.x, view.position.y);
 		view.animalId = data.animalId;
 		
