@@ -8,6 +8,7 @@
 
 #import "LoginScence.h"
 #import "ASIHTTPRequest.h"
+#import "GameMainScene.h"
 
 static NSString* kApiKey = @"b856de458be342f4a80a4e2cc824f146";
 static NSString* kApiSecret = @"8426c76e6db84d70bb6516fdf3a4ec34";
@@ -70,6 +71,9 @@ static NSString* kApiSecret = @"8426c76e6db84d70bb6516fdf3a4ec34";
 		NSString* name = [user objectForKey:@"name"];
 		NSString* originheadUrl = [user objectForKey:@"tinyurl"];
 		NSMutableString* headUrl = [NSMutableString string];
+		
+		//[[CCDirector sharedDirector] popScene];
+		[[CCDirector sharedDirector] replaceScene:[GameMainScene scene]];
 	}
 }
 
