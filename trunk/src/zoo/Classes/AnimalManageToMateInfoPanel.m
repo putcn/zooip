@@ -158,17 +158,7 @@ animalID;
 
 -(void) toMate:(Button *)button
 {
-	//TODO: Imp the mate func
-	//Pop up the panel which need to choose ants count and present the persent of success rate.
-	
-	NSString *action = @"marry";
-	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
-	//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-	
-	//TODO: add the service handler for to mate.
-	
-	//判断是否首次加载物品信息框
+	//判断是否首次加载物
 	if (toMateRateChoose == nil) {
 		toMateRateChoose = [[AnimalManageToMateAntsChoose alloc] initWithParam:params setTarget:self setLeftAnimalId:leftAnimalID setRightAnimalId:rightAnimalID];
 		toMateRateChoose.position = ccp(self.contentSize.width/2, toMateRateChoose.contentSize.height/2);
