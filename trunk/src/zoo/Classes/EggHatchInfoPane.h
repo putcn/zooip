@@ -11,6 +11,7 @@
 #import "cocos2d.h"
 #import "Button.h"
 #import "ServiceHelper.h"
+#import "FeedbackDialog.h"
 
 
 @interface EggHatchInfoPane : CCSprite {

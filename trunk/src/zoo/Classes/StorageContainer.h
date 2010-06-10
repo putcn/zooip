@@ -12,6 +12,8 @@
 #import "MessageDialog.h"
 #import "SellinfoPane.h"
 #import "EggHatchInfoPane.h"
+#import "TransBackground.h"
+#import "StoButtonContainer.h"
 
 
 
@@ -24,6 +26,15 @@
 	CCTexture2D *tabDisable;
 	SellinfoPane *itemInfoPane;
 	EggHatchInfoPane *eggHatchInfoPane;
+	
+	StoButtonContainer *buttonContainer;
+	
+		
+	NSString *curr_itemId;
+	NSString *curr_itemType;
+	NSString *testType;
+	id curr_target;
+	
 	
 	
 	int tabIndex;

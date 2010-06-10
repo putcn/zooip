@@ -80,12 +80,19 @@
 		[[GameMainScene sharedGameMainScene] addDialogToScreen:storageContainer z:10];
 	}
 	else {
+		
+	
 		if (storageContainer.position.x == 240) {
+			storageContainer.scale = 0;
+			storageContainer = [[StorageContainer alloc] init];
 			storageContainer.position = ccp(1000,0);
+			[[GameMainScene sharedGameMainScene] addDialogToScreen:storageContainer z:10];
+			
 		}
 		else {
 			storageContainer.position = ccp(240,160);
 		}
+		
 		
 	}
 	
