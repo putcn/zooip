@@ -7,14 +7,14 @@
 //
 
 #import "FirecrackerView.h"
-
+#import "GameMainScene.h"
 
 @implementation FirecrackerView
 
 -(id)init
 {
 	if ((self = [super init])) {
-		
+		self.scale = 3.0f;
 		CCAnimation *operationAnimation = [CCAnimation animationWithName:@"operation" delay:0.2];
 		for (int i = 1; i<= 9; i++) {
 			[operationAnimation addFrameWithFilename:[NSString stringWithFormat:@"firecracker_%02d.png", i]];

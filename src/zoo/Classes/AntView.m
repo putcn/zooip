@@ -22,7 +22,7 @@
 		dirctions = [[NSDictionary dictionaryWithObjects:dirvalues forKeys:dirkeys] retain];
 		animation = [CCAnimation animationWithName:@"animal" delay:0.5];
 		for (int i = 1; i <= 4; i++) {
-			[animation addFrameWithFilename:[NSString stringWithFormat:@"ant_%02d", i]];
+			[animation addFrameWithFilename:[NSString stringWithFormat:@"ant_%02d.png", i]];
 		}
 	}
 	return self;
