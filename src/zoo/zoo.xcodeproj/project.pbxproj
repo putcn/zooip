@@ -6230,6 +6230,7 @@
 		8432CF4111B3BC8A0093DA32 /* zygote7.png in Resources */ = {isa = PBXBuildFile; fileRef = 8432CF3711B3BC8A0093DA32 /* zygote7.png */; };
 		849AAE3C11BE713900B97CD4 /* FriendInitWorkFlowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AAE3B11BE713900B97CD4 /* FriendInitWorkFlowController.m */; };
 		849AAE3F11BE715100B97CD4 /* EggHatchInfoPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AAE3E11BE715100B97CD4 /* EggHatchInfoPane.m */; };
+		849E038511C1DF39002056FC /* FriendInfoBut.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E038411C1DF39002056FC /* FriendInfoBut.m */; };
 		84BAE6A5138DDEF300E6F7D3 /* babyRCC.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6A4138DDEF300E6F7D3 /* babyRCC.png */; };
 		84BAE6A8138DDEF300E6F7D3 /* babyDuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6A7138DDEF300E6F7D3 /* babyDuck.png */; };
 		84BAE6AB138DDEF300E6F7D3 /* babyHen.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6AA138DDEF300E6F7D3 /* babyHen.png */; };
@@ -12715,6 +12716,8 @@
 		849AAE3B11BE713900B97CD4 /* FriendInitWorkFlowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendInitWorkFlowController.m; sourceTree = "<group>"; };
 		849AAE3D11BE715100B97CD4 /* EggHatchInfoPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggHatchInfoPane.h; sourceTree = "<group>"; };
 		849AAE3E11BE715100B97CD4 /* EggHatchInfoPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggHatchInfoPane.m; sourceTree = "<group>"; };
+		849E038311C1DF39002056FC /* FriendInfoBut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendInfoBut.h; sourceTree = "<group>"; };
+		849E038411C1DF39002056FC /* FriendInfoBut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendInfoBut.m; sourceTree = "<group>"; };
 		84BAE6A4138DDEF300E6F7D3 /* babyRCC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyRCC.png; sourceTree = "<group>"; };
 		84BAE6A7138DDEF300E6F7D3 /* babyDuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyDuck.png; sourceTree = "<group>"; };
 		84BAE6AA138DDEF300E6F7D3 /* babyHen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = babyHen.png; sourceTree = "<group>"; };
@@ -23331,6 +23334,8 @@
 				8408914411B49FBC001C29CA /* SellitemButton.m */,
 				3EA9E0A311BC73D000EF4ECB /* FeedbackDialog.h */,
 				3EA9E0A411BC73D000EF4ECB /* FeedbackDialog.m */,
+				849E038311C1DF39002056FC /* FriendInfoBut.h */,
+				849E038411C1DF39002056FC /* FriendInfoBut.m */,
 			);
 			name = UIControls;
 			sourceTree = "<group>";
@@ -30028,6 +30033,7 @@
 				C39CFC2811BFC6A90063B01E /* SBJsonParser.m in Sources */,
 				C39CFC2911BFC6A90063B01E /* SBJsonWriter.m in Sources */,
 				C39CFC2A11BFC6A90063B01E /* XMLHandler.m in Sources */,
+				849E038511C1DF39002056FC /* FriendInfoBut.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
