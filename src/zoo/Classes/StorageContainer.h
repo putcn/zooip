@@ -29,10 +29,16 @@
 	
 	StoButtonContainer *buttonContainer;
 	
+	StoButtonContainer *onePane;
+	StoButtonContainer *twoPane;
+	
+	
 		
 	NSString *curr_itemId;
 	NSString *curr_itemType;
 	NSString *testType;
+	
+	NSMutableArray *num_paneNum;
 	id curr_target;
 	
 	
