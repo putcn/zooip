@@ -79,7 +79,7 @@
 	}
 	else if(type == OPERATION_RELEASE_ANTS)
 	{
-		CGPoint location = [self countCoordinate:click];
+		CGPoint location = ccp(self.position.x, self.position.y);
 		[[OperationViewController sharedOperationViewController] play:@"put_ant" setPosition:location];
 	}
 	else if (type == OPERATION_CALL)

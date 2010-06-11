@@ -116,7 +116,6 @@
 -(void) itemInfoHandler:(AnimalStorageManagerButtonItem *) itemButton
 {
 	
-	
 	//AnimalStorageManagerPanel *itemInfo = (AnimalStorageManagerPanel *)itemButton.target; 
 	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
 	
@@ -141,45 +140,6 @@
 }
 
 
-//点击购买物品之后回调此方法
--(void) buyItem:(Button *)button
-{
-	//获取从Button回调的参数,强制转换为ItemInfoPane对象,改对象携带了购买物品所需要的所有参数
-	ItemInfoPane *itemInfo = (ItemInfoPane *)button.target; 
-	if (itemInfo.itemType == @"animal") {
-		if (itemInfo.itemBuyType == @"goldEgg") {
-			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"originalAnimalId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-			
-			
-		}
-		else if(itemInfo.itemBuyType == @"ant"){
-			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"originalAnimalId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-			
-		}
-	}
-	else if(itemInfo.itemType == @"food"){
-		if (itemInfo.itemBuyType == @"goldEgg") {
-			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-			NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",farmId,@"farmId",itemInfo.itemId,@"foodId",[NSString stringWithFormat:@"%d",itemInfo.count],@"numOfFood",nil];
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyFoodByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-		}
-		else if(itemInfo.itemBuyType == @"ant"){
-			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-			NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",farmId,@"farmId",itemInfo.itemId,@"foodId",[NSString stringWithFormat:@"%d",itemInfo.count],@"numOfFood",nil];
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyFoodByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-		}
-	}
-	
-	itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
-	[itemInfo release];
-	
-}
 
 -(void) cancel:(Button *)button
 {

@@ -107,7 +107,7 @@ animalID;
 	NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalDataAnother.originalAnimalId];
 	
 	NSString *tabFlag = @"animals";
-	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:2 offsetX:1 offsetY:1];
 	if(serverAnimalDataAnother.gender == 1)
 	{
 		itemButton.position = ccp(150,440);
@@ -160,7 +160,7 @@ animalID;
 {
 	//判断是否首次加载物
 	if (toMateRateChoose == nil) {
-		//toMateRateChoose = [[AnimalManageToMateAntsChoose alloc] initWithParam:params setTarget:self setLeftAnimalId:leftAnimalID setRightAnimalId:rightAnimalID];
+		toMateRateChoose = [[AnimalManageToMateAntsChoose alloc] initWithParam:nil setTarget:self setLeftAnimalId:leftAnimalID setRightAnimalId:rightAnimalID];
 		toMateRateChoose.position = ccp(self.contentSize.width/2, toMateRateChoose.contentSize.height/2);
 		[self addChild:toMateRateChoose z:20 tag:1999];
 	}
