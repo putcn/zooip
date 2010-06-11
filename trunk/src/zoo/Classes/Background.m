@@ -8,6 +8,7 @@
 
 #import "Background.h"
 #import "UIController.h"
+#import "AnimalController.h"
 
 @implementation Background
 
@@ -81,6 +82,16 @@
 		CGPoint location = [self countCoordinate:click];
 		[[OperationViewController sharedOperationViewController] play:@"put_ant" setPosition:location];
 	}
+	else if (type == OPERATION_CALL)
+	{
+		[[AnimalController sharedAnimalController] gotoEat];
+		
+		//CGPoint location = [background convertTouchToNodeSpaceAR:touch];
+		CGPoint location = ccp(326,186);
+		[[OperationViewController sharedOperationViewController] play:@"summon" setPosition:location];
+	}
+	
+	
 	else {
 		return;
 	}

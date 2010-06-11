@@ -196,33 +196,6 @@ static GameMainScene *_sharedGameMainScene = nil;
 	[[DataEnvironment sharedDataEnvironment].snakes removeAllObjects];
 }
 
-- (void)onEnter
-{
-	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:51 swallowsTouches:YES];
-	[super onEnter];
-}
-
-- (void)onExit
-{
-	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
-	[super onExit];
-}	
-
-- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
-{
-	int type = [[UIController sharedUIController] getOperation];
-	if (type == OPERATION_CALL)
-	{
-		[[AnimalController sharedAnimalController] gotoEat];
-		
-		//CGPoint location = [background convertTouchToNodeSpaceAR:touch];
-		CGPoint location = ccp(326,186);
-		[[OperationViewController sharedOperationViewController] play:@"summon" setPosition:location];
-	}
-	
-	return NO;
-}
-
 -(void) dealloc
 {
 	[super removeAllChildrenWithCleanup:YES];

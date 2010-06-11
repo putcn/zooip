@@ -59,7 +59,9 @@ static NSString* kApiSecret = @"8426c76e6db84d70bb6516fdf3a4ec34";
 
 - (void)session:(Session*)session didLogin:(RRUID)uid
 {
-	[[Request requestWithDelegate:self] call:@"users.getInfo" params:nil];
+	
+	[[CCDirector sharedDirector] replaceScene:[GameMainScene scene]];
+	//[[Request requestWithDelegate:self] call:@"users.getInfo" params:nil];
 }
 
 - (void)request:(Request*)request didLoad:(id)result

@@ -8,6 +8,7 @@
 
 #import "FeedAllAnimalController.h"
 #import "BowlsView.h"
+#import "ItemController.h"
 
 @implementation FeedAllAnimalController
 
@@ -19,10 +20,15 @@
 
 -(void) resultCallback:(NSObject *)value
 {
-//	NSDictionary *result = (NSDictionary *)value;
+	NSDictionary *result = (NSDictionary *)value;
+	NSInteger code = [[result objectForKey:@"code"] intValue];
+	if(code == 1)
+	{
+		NSInteger foodEndTime = [[result objectForKey:@"remain"] intValue]*3600;
+		BowlsView *bowlsView = (BowlsView *)[[ItemController sharedItemController].allItems objectForKey:@"bowls"];
+		[bowlsView update:foodEndTime];
+	}
 	
-//	NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
-//	[[EggController sharedEggController] removeEgg:eggId setExperience:experience];
 	[super resultCallback:value];
 }
 
