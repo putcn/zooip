@@ -381,6 +381,11 @@
 	secondTouchFarmStorage = !secondTouchFarmStorage;
 }
 
+-(void)storageCancle
+{
+	//animalManagerContainer
+}
+
 -(void) btnFriendOperationButtonHandler:(Button *)button
 {
 	[[UIController sharedUIController] switchOperation:button.tag];

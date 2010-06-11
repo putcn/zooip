@@ -52,13 +52,10 @@
 	//****[animalNameLable setColor:ccc3(255, 0, 255)];
 	
 	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
-	//buyImg.position = ccp(buyImg.contentSize.width/2 +20, self.contentSize.height - 80);
-	//TODO: TO imp the animalNameLable position
-	//animalNameLable.position = ccp(buyImg.contentSize.width + 50 , buyImg.position.y);
-	
 	[self addChild:item z:7];
 	//[self addChild:animalNameLable z:7];
 	
+	//存储的是仓库里面动物的数量
 	CCLabel *buyImg;
 	if (itemType == @"stoAnimals") {
 		buyImg = [CCLabel labelWithString:[NSString stringWithFormat: @"%d", amount] fontName:@"Arial" fontSize:20];
@@ -66,6 +63,12 @@
 	else {
 		buyImg = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:20];
 	}
+	
+	//数量的显示颜色
+	[buyImg setColor:ccc3(255, 0, 255)];
+	
+	
+	//动物Gender 字体和显示颜色
 	CCLabel *priceLbl = [CCLabel labelWithString:genDer fontName:@"Arial" fontSize:20];
 	[priceLbl setColor:ccc3(255, 0, 255)];
 	if (itemType == @"animal") {
@@ -73,11 +76,9 @@
 			item.flipX = YES;
 		}
 	}
-	
-	buyImg.position = ccp(buyImg.contentSize.width/2 +20, self.contentSize.height - 80);
+	//设置位置
+	buyImg.position = ccp(buyImg.contentSize.width +30, buyImg.contentSize.width + 20);
 	priceLbl.position = ccp(buyImg.contentSize.width + 50 , buyImg.position.y);
-	
-
 	[self addChild:buyImg z:7];
 	[self addChild:priceLbl z:7];
 }
