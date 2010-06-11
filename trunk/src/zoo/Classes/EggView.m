@@ -16,6 +16,8 @@
 {
 	if ((self = [super init])) {
 		pickEggController = [[PickEggToStorageController alloc] init];
+		stealEggsController = [[StealEggsFromFarmController alloc] init];
+		releaseSnakeController = [[ToReleaseSnakeController alloc] init];
 		[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:4];
 	}
 	return self;
@@ -74,13 +76,19 @@
 //		[self schedule:@selector(tick:) interval:4.0];
 //	}
 //	else 
-		if(type == OPERATION_PICK_EGG){
-			CGPoint location = ccp(self.position.x, self.position.y);
-			[[OperationViewController sharedOperationViewController] play:@"pickup" setPosition:location];
-		}
-		else {
-			return;
-		}
+	if(type == OPERATION_PICK_EGG || type == OPERATION_STEAL_EGG){
+		CGPoint location = ccp(self.position.x, self.position.y);
+		[[OperationViewController sharedOperationViewController] play:@"pickup" setPosition:location];
+	}
+	else if(type == OPERATION_RELEASE_SNAKE)
+	{
+		CGPoint location = ccp(self.position.x, self.position.y);
+		[[OperationViewController sharedOperationViewController] play:@"put_snake" setPosition:location];
+	}
+	else {
+		return;
+	}
+
 	
 }
 
@@ -94,6 +102,21 @@
 								self.eggId,@"birdEggId",nil];
 		pickEggController.eggId = self.eggId;
 		[pickEggController execute:params];
+	}
+	else if(type == OPERATION_STEAL_EGG)
+	{
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmerId,@"farmerId",
+								[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"thiefId",eggId,@"birdEggId",@"0",@"bodyguard",nil];
+		stealEggsController.eggId = self.eggId;
+		[stealEggsController execute:params];
+	}
+	else if(type == OPERATION_RELEASE_SNAKE)
+	{
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmerId,@"farmerId",
+								[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmId,@"farmId",
+								[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"releaserId", @"0",@"bodyguard",nil];
+		releaseSnakeController.eggId = self.eggId;
+		[releaseSnakeController execute:params];
 	}
 }
 

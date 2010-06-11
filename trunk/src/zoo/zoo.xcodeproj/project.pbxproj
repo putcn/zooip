@@ -35,6 +35,7 @@
 		3E87160B11801F3300EBA2E8 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160711801F3300EBA2E8 /* house.png */; };
 		3E87160C11801F3300EBA2E8 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160811801F3300EBA2E8 /* tree.png */; };
 		3E87160D11801F3300EBA2E8 /* waterbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160911801F3300EBA2E8 /* waterbox.png */; };
+		3EA7898711C18DFF002254E3 /* Background.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA7898611C18DFF002254E3 /* Background.m */; };
 		3EA9E0A511BC73D000EF4ECB /* FeedbackDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9E0A411BC73D000EF4ECB /* FeedbackDialog.m */; };
 		3EA9E0A711BC7B2E00EF4ECB /* msgPopup.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9E0A611BC7B2E00EF4ECB /* msgPopup.png */; };
 		3EA9E23E11BCB67100EF4ECB /* GetAllOriginalAnimalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9E23D11BCB67100EF4ECB /* GetAllOriginalAnimalController.m */; };
@@ -6451,6 +6452,8 @@
 		3E87160711801F3300EBA2E8 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		3E87160811801F3300EBA2E8 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
 		3E87160911801F3300EBA2E8 /* waterbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterbox.png; sourceTree = "<group>"; };
+		3EA7898511C18DFF002254E3 /* Background.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Background.h; sourceTree = "<group>"; };
+		3EA7898611C18DFF002254E3 /* Background.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Background.m; sourceTree = "<group>"; };
 		3EA9E0A311BC73D000EF4ECB /* FeedbackDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedbackDialog.h; sourceTree = "<group>"; };
 		3EA9E0A411BC73D000EF4ECB /* FeedbackDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedbackDialog.m; sourceTree = "<group>"; };
 		3EA9E0A611BC7B2E00EF4ECB /* msgPopup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgPopup.png; sourceTree = "<group>"; };
@@ -23264,6 +23267,8 @@
 		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				3EA7898511C18DFF002254E3 /* Background.h */,
+				3EA7898611C18DFF002254E3 /* Background.m */,
 				849AAE3D11BE715100B97CD4 /* EggHatchInfoPane.h */,
 				849AAE3E11BE715100B97CD4 /* EggHatchInfoPane.m */,
 				6092141311BF33DB00D50ABE /* AnimalFeedButtonContainer.h */,
@@ -30033,6 +30038,7 @@
 				C39CFC2811BFC6A90063B01E /* SBJsonParser.m in Sources */,
 				C39CFC2911BFC6A90063B01E /* SBJsonWriter.m in Sources */,
 				C39CFC2A11BFC6A90063B01E /* XMLHandler.m in Sources */,
+				3EA7898711C18DFF002254E3 /* Background.m in Sources */,
 				849E038511C1DF39002056FC /* FriendInfoBut.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -49,13 +49,13 @@ static OperationViewController *_sharedOperationViewController = nil;
 		//[pickupView setAnchorPoint:ccp(0.5,0.5)];
 		[powerFoodView setAnchorPoint:ccp(0,0)];
 		[productYieldFoodView setAnchorPoint:ccp(0,0)];
-		[putAntView setAnchorPoint:ccp(0,0)];
+		//[putAntView setAnchorPoint:ccp(0,0)];
 		[putSnakeView setAnchorPoint:ccp(0,0)];
 		[specialFoodView setAnchorPoint:ccp(0,0)];
 		[summonView setAnchorPoint:ccp(0,0)];
 		[cleaningView setAnchorPoint:ccp(0,0)];
 		[efficientFoodView setAnchorPoint:ccp(0,0)];
-		[firecrackerView setAnchorPoint:ccp(0,0)];
+		//[firecrackerView setAnchorPoint:ccp(0,0)];
 		[infusionView setAnchorPoint:ccp(0,0)];
 		
 		[[GameMainScene sharedGameMainScene] addSpriteToStage:normalFoodView z:6];

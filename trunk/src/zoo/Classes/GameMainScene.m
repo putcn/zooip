@@ -19,6 +19,7 @@
 #import "DejectaController.h"
 #import "AntController.h"
 #import "SnakeController.h"
+#import "Background.h"
 
 @implementation GameMainScene
 
@@ -61,7 +62,7 @@ static GameMainScene *_sharedGameMainScene = nil;
 		baseContainer.position = ccp(-size.width / 2, -size.height / 2);
 		baseContainer.scale = 0.5f;
 		
-		background = [CCSprite spriteWithFile:@"bgimg.jpg"];
+		background = [[Background alloc] init];
 		background.scale = 0.95f;
 		background.position = ccp(480,320);
 		

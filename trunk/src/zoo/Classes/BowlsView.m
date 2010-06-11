@@ -15,6 +15,7 @@
 {
 	if ((self = [super init])) {
 		feedAllAnimalController = [[FeedAllAnimalController alloc] init];
+		relaseAntController = [[ToReleaseAntsController alloc] init];
 		
 		if (foodEndTime <= 0.0f) {
 			bowls = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_0.png" ofType:nil]]];
@@ -100,7 +101,7 @@
 
 -(void)optAnimationPlay
 {
-	int type = OPERATION_FEED_ALL;
+	int type = [[UIController sharedUIController] getOperation];
 	//int type = [[UIController sharedUIController] getOperation];
 	if (type == OPERATION_DEFAULT) {
 		//[self schedule:@selector(tick:) interval:4.0];
@@ -118,6 +119,11 @@
 		CGPoint location = ccp(self.position.x, self.position.y);
 		[[OperationViewController sharedOperationViewController] play:@"product_yield_food" setPosition:location];
 	}
+	else if(type == OPERATION_RELEASE_ANTS)
+	{
+		CGPoint location = ccp(self.position.x, self.position.y);
+		[[OperationViewController sharedOperationViewController] play:@"put_ant" setPosition:location];
+	}
 	else {
 		return;
 	}
@@ -126,7 +132,7 @@
 
 -(void)callServerController
 {
-	int type = OPERATION_FEED_ALL;
+	int type = [[UIController sharedUIController] getOperation];
 	//int type = [[UIController sharedUIController] getOperation];
 	
 	if(type == OPERATION_FEED_ALL)
@@ -134,6 +140,13 @@
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
 								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
 		[feedAllAnimalController execute:params];
+	}
+	else if(type == OPERATION_RELEASE_ANTS)
+	{
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmerId,@"farmerId",
+								[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmId,@"farmId",
+								[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"releaserId", @"0",@"bodyguard",nil];	
+		[relaseAntController execute:params];
 	}
 }
 

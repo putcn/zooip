@@ -10,12 +10,16 @@
 
 #import "OperationViewController.h"
 #import "PickEggToStorageController.h"
+#import "StealEggsFromFarmController.h"
+#import "ToReleaseSnakeController.h"
 
 
 @interface EggView : CCSprite<CCTargetedTouchDelegate> {
 	NSString *eggId;
 	
 	PickEggToStorageController *pickEggController;
+	StealEggsFromFarmController *stealEggsController;
+	ToReleaseSnakeController *releaseSnakeController;
 }
 @property (nonatomic, retain) NSString *eggId;
 -(CGPoint)countCoordinate: (CGPoint)clickPoint;

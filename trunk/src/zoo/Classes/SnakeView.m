@@ -25,7 +25,7 @@
 		NSString *eggId = dataModelSnake.eggId;
 		[dataModelSnake dealloc];
 		EggView *eggView = (EggView *)[[EggController sharedEggController].allEggs objectForKey:eggId];
-		CGPoint eggPos = eggView.position;
+		CGPoint eggPos = ccp(eggView.position.x+self.contentSize.width/2, eggView.position.y);
 		[eggView dealloc];
 		self.position = eggPos;
 	}
