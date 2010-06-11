@@ -48,6 +48,7 @@
  
 -(void) initView
 {
+	[self removeAllChildrenWithCleanup:YES];
 	
 	CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ButtonContainer.png" ofType:nil] ] ];
 	CGRect rect = CGRectZero;
@@ -153,9 +154,6 @@
 	[self addChild:forwardPageBtn z:7];
 	
 	
-}
-
-
 -(void) nextPage:(Button *)button
 {
 	if ( currentPageNum + 1 <= totalPage) {
@@ -197,12 +195,21 @@
 			
 		}
 		
+		
 		currentNum = endNumber - (currentPageNum -1 ) *12 ;
+		
+		
+	if ( eggsArray.count > 0) {
+		
+	
 		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
+			
 			storageEgg = [storageEggDic objectForKey:[eggsArray objectAtIndex:i]];
 			
+			curr_eggNum = storageEgg.numOfProduct;
+			
 			//NSString *price = [NSString stringWithFormat:@"%d",storageEgg.eggPrice];
-
+			
 			NSString *picName = [NSString stringWithFormat:@"%@",storageEgg.eggNameEN];
 			NSString *eggName = [NSString stringWithFormat:@"%@",storageEgg.eggNameEN];
 			NSString *eggTotal = [NSString stringWithFormat:@"%d",storageEgg.numOfProduct];
@@ -218,7 +225,14 @@
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			
 			[self addChild:itemButton z:7 tag:i%12];
+			
 		}
+	}
+		
+		eggsArray = nil;
+		[eggsArray release];
+		
+		
 	}
 	else if (tabFlag == @"zygoteegg"){
 		NSDictionary *storageZygoteEggsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs;
@@ -230,14 +244,17 @@
 			endNumber = zygoteEggsArray.count;
 		}
 		currentNum = endNumber - (currentPageNum -1 ) *12 ;
+		
+	if (zygoteEggsArray.count > 0) {
+		
+	
 		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
 			dataModelStorageZygoteEggs = [storageZygoteEggsDic objectForKey:[zygoteEggsArray objectAtIndex:i]];
 
-						
 			NSString *picName = [NSString stringWithFormat:@"%@",dataModelStorageZygoteEggs.eggId];
 			NSString *eggZnName = [NSString stringWithFormat:@"%@",dataModelStorageZygoteEggs.eggName];
 
-			NSString *eggTotal = [NSString stringWithFormat:@"555"];
+			NSString *eggTotal = [NSString stringWithFormat:@"1"];
              //分割字符串
 			//NSArray *eNameArr = [picName componentsSeparatedByString:@" "];
 			
@@ -246,15 +263,17 @@
 			NSString *picFileName = [NSString stringWithFormat:@"zygote%@.png",picName];
 						
 			SellitemButton *itemButton = [[SellitemButton alloc] initWithItem:dataModelStorageZygoteEggs.zygoteStorageId setitType:tabFlag setImagePath:picFileName setEggTotal:eggTotal setEggName:eggZnName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-			
+	
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			
 			[self addChild:itemButton z:7 tag:i%12];
 		
 		}
-		
+	
+	}
 				
-		
+		zygoteEggsArray = nil;
+		[zygoteEggsArray release];
 			 
 	}
 	

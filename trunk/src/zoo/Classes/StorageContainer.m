@@ -33,6 +33,10 @@
 		self.position = ccp(240,160);
 		self.scale = 300.0f/1024.0f;
 		self.title = @"仓库";
+		
+		//NSMutableArray *mutable = [[NSMutableArray alloc] init];
+		num_paneNum = [ [NSMutableArray alloc] init];
+		
 		[self addTitle];
 		[self addMainPanel];
 		
@@ -57,11 +61,19 @@
 {
 	
 	NSArray *tabArray = [[NSArray alloc] initWithObjects:@"egg",@"zygoteegg",nil];
-	[self addTab:tabArray];
+	[self addTab:tabArray];		
 	
+	
+	//[self removeAllChildrenWithCleanup:YES];
+	//[self dealloc];
+
+	/*
 	for (int i = 0; i< tabArray.count; i++) {
-		NSString *tab = [tabArray objectAtIndex:i];
+		 NSString *tab = [tabArray objectAtIndex:i];
 		 buttonContainer = [[StoButtonContainer alloc] initWithTab:tab setTarget:self];
+		
+		
+		
 		if (i == 0) {
 			buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
 		}
@@ -72,6 +84,58 @@
 		[self addChild:buttonContainer z:7];
 		[tabContentDic setObject:buttonContainer forKey:[NSString stringWithFormat:@"tabContent_%d",i]];
 	}
+	
+	 */
+	 
+	
+	
+	if (onePane == nil) {
+		NSString *tab1 = [tabArray objectAtIndex:0];
+		NSString *tab2 = [tabArray objectAtIndex:1];
+		onePane = [[StoButtonContainer alloc] initWithTab:tab1 setTarget:self];
+		onePane.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
+		
+		
+		twoPane = [[StoButtonContainer alloc] initWithTab:tab2 setTarget:self];
+		twoPane.position = ccp(2000, self.contentSize.height/2 - 50);
+		
+		[tabContentDic setObject:onePane forKey:[NSString stringWithFormat:@"tabContent_%d",0]];
+		[tabContentDic setObject:twoPane forKey:[NSString stringWithFormat:@"tabContent_%d",1]];
+		
+		[self addChild:onePane z:7];
+		[self addChild:twoPane z:7];
+	}else {
+		
+		onePane.scale = 0;
+		twoPane.scale = 0;
+		[self removeChild:onePane cleanup:YES];
+		[self removeChild:twoPane cleanup:YES];
+		[onePane release];
+		[twoPane release];
+		
+		
+		
+		NSString *tab1 = [tabArray objectAtIndex:0];
+		NSString *tab2 = [tabArray objectAtIndex:1];
+		onePane = [[StoButtonContainer alloc] initWithTab:tab1 setTarget:self];
+		onePane.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
+		
+		
+		twoPane = [[StoButtonContainer alloc] initWithTab:tab2 setTarget:self];
+		twoPane.position = ccp(2000, self.contentSize.height/2 - 50);
+		
+		[tabContentDic setObject:onePane forKey:[NSString stringWithFormat:@"tabContent_%d",0]];
+		[tabContentDic setObject:twoPane forKey:[NSString stringWithFormat:@"tabContent_%d",1]];
+		
+		[self addChild:onePane z:7];
+		[self addChild:twoPane z:7];
+		
+		
+	}
+
+	
+		
+	
 	
 	
 	/*
@@ -351,5 +415,14 @@
 {
 	NSLog(@"Server Connection Fail");
 }
+
+
+-(void) dealloc
+{
+	[self removeAllChildrenWithCleanup:YES];
+	[super dealloc];
+}
+
+
 
 @end
