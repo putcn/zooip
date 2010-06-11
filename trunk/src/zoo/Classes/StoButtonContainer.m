@@ -154,6 +154,9 @@
 	[self addChild:forwardPageBtn z:7];
 	
 	
+}
+
+
 -(void) nextPage:(Button *)button
 {
 	if ( currentPageNum + 1 <= totalPage) {
@@ -206,7 +209,7 @@
 			
 			storageEgg = [storageEggDic objectForKey:[eggsArray objectAtIndex:i]];
 			
-			curr_eggNum = storageEgg.numOfProduct;
+
 			
 			//NSString *price = [NSString stringWithFormat:@"%d",storageEgg.eggPrice];
 			
@@ -254,7 +257,7 @@
 			NSString *picName = [NSString stringWithFormat:@"%@",dataModelStorageZygoteEggs.eggId];
 			NSString *eggZnName = [NSString stringWithFormat:@"%@",dataModelStorageZygoteEggs.eggName];
 
-			NSString *eggTotal = [NSString stringWithFormat:@"1"];
+			NSString *eggTotal = [NSString stringWithFormat:@""];
              //分割字符串
 			//NSArray *eNameArr = [picName componentsSeparatedByString:@" "];
 			

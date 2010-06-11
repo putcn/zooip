@@ -265,6 +265,13 @@
 			849E035511C1D648002056FC /* PBXTextBookmark */ = 849E035511C1D648002056FC /* PBXTextBookmark */;
 			849E035611C1D648002056FC /* PBXTextBookmark */ = 849E035611C1D648002056FC /* PBXTextBookmark */;
 			849E035711C1D648002056FC /* PBXTextBookmark */ = 849E035711C1D648002056FC /* PBXTextBookmark */;
+			849E035E11C1D713002056FC /* XCBuildMessageTextBookmark */ = 849E035E11C1D713002056FC /* XCBuildMessageTextBookmark */;
+			849E035F11C1D713002056FC /* PBXTextBookmark */ = 849E035F11C1D713002056FC /* PBXTextBookmark */;
+			849E036211C1D72D002056FC /* XCBuildMessageTextBookmark */ = 849E036211C1D72D002056FC /* XCBuildMessageTextBookmark */;
+			849E036311C1D72D002056FC /* PBXTextBookmark */ = 849E036311C1D72D002056FC /* PBXTextBookmark */;
+			849E038811C1E4E7002056FC /* PBXTextBookmark */ = 849E038811C1E4E7002056FC /* PBXTextBookmark */;
+			849E038911C1E4E7002056FC /* XCBuildMessageTextBookmark */ = 849E038911C1E4E7002056FC /* XCBuildMessageTextBookmark */;
+			849E038A11C1E4E7002056FC /* PBXTextBookmark */ = 849E038A11C1E4E7002056FC /* PBXTextBookmark */;
 			84A65BDC11B73E1D002314FD = 84A65BDC11B73E1D002314FD /* PBXTextBookmark */;
 			84A65BDD11B73E1D002314FD = 84A65BDD11B73E1D002314FD /* PBXTextBookmark */;
 			84A65BDE11B73E1D002314FD = 84A65BDE11B73E1D002314FD /* PBXTextBookmark */;
@@ -428,23 +435,23 @@
 	3EB0712E11AD084900F31A7F /* ButtonContainer.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {2206, 3294}}";
-			sepNavSelRange = "{603, 0}";
-			sepNavVisRange = "{3243, 1682}";
+			sepNavSelRange = "{3820, 0}";
+			sepNavVisRange = "{33, 2056}";
 			sepNavWindowFrame = "{{371, 89}, {750, 789}}";
 		};
 	};
 	3EB0712F11AD084900F31A7F /* ItemButton.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1597, 528}}";
-			sepNavSelRange = "{321, 0}";
+			sepNavIntBoundsRect = "{{0, 0}, {1597, 723}}";
+			sepNavSelRange = "{325, 95}";
 			sepNavVisRange = "{0, 812}";
 		};
 	};
 	3EB0713011AD084900F31A7F /* ItemButton.m */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {1597, 2105}}";
-			sepNavSelRange = "{882, 0}";
-			sepNavVisRange = "{2594, 683}";
+			sepNavSelRange = "{666, 0}";
+			sepNavVisRange = "{117, 1451}";
 			sepNavWindowFrame = "{{74, -17}, {750, 792}}";
 		};
 	};
@@ -778,17 +785,17 @@
 	};
 	8432CD7F11B346CF0093DA32 /* StoButtonContainer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {973, 675}}";
+			sepNavIntBoundsRect = "{{0, 0}, {973, 723}}";
 			sepNavSelRange = "{578, 0}";
-			sepNavVisRange = "{28, 842}";
+			sepNavVisRange = "{0, 870}";
 			sepNavWindowFrame = "{{15, 89}, {750, 789}}";
 		};
 	};
 	8432CD8011B346CF0093DA32 /* StoButtonContainer.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1933, 5507}}";
-			sepNavSelRange = "{5465, 0}";
-			sepNavVisRange = "{4669, 1185}";
+			sepNavIntBoundsRect = "{{0, 0}, {860, 5108}}";
+			sepNavSelRange = "{6535, 0}";
+			sepNavVisRange = "{6354, 650}";
 			sepNavWindowFrame = "{{15, 80}, {750, 795}}";
 		};
 	};
@@ -1718,7 +1725,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 289;
+		rLoc = 292;
 		rType = 1;
 	};
 	849E02DD11C1C905002056FC /* PBXTextBookmark */ = {
@@ -1726,7 +1733,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 282";
 		rLen = 4;
-		rLoc = 9380;
+		rLoc = 9342;
 		rType = 0;
 		vrLen = 61;
 		vrLoc = 9217;
@@ -1767,7 +1774,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 289;
+		rLoc = 292;
 		rType = 1;
 	};
 	849E02E811C1C96F002056FC /* PBXTextBookmark */ = {
@@ -1775,7 +1782,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 271";
 		rLen = 0;
-		rLoc = 9345;
+		rLoc = 9307;
 		rType = 0;
 		vrLen = 1180;
 		vrLoc = 8084;
@@ -1785,7 +1792,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 217";
 		rLen = 0;
-		rLoc = 6389;
+		rLoc = 6393;
 		rType = 0;
 		vrLen = 1496;
 		vrLoc = 6394;
@@ -1795,7 +1802,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 204";
 		rLen = 0;
-		rLoc = 6389;
+		rLoc = 6393;
 		rType = 0;
 		vrLen = 1600;
 		vrLoc = 5989;
@@ -1806,7 +1813,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 289;
+		rLoc = 292;
 		rType = 1;
 	};
 	849E02F211C1CA9F002056FC /* PBXTextBookmark */ = {
@@ -1814,7 +1821,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 283";
 		rLen = 4;
-		rLoc = 9380;
+		rLoc = 9342;
 		rType = 0;
 		vrLen = 61;
 		vrLoc = 9200;
@@ -1825,7 +1832,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		fallbackIsa = XCBuildMessageTextBookmark;
 		rLen = 1;
-		rLoc = 289;
+		rLoc = 292;
 		rType = 1;
 	};
 	849E02F611C1CAC0002056FC /* PBXTextBookmark */ = {
@@ -1833,7 +1840,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 202";
 		rLen = 0;
-		rLoc = 6389;
+		rLoc = 6393;
 		rType = 0;
 		vrLen = 1568;
 		vrLoc = 5936;
@@ -1843,7 +1850,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 227";
 		rLen = 0;
-		rLoc = 7599;
+		rLoc = 7562;
 		rType = 0;
 		vrLen = 1556;
 		vrLoc = 6283;
@@ -1853,7 +1860,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 230";
 		rLen = 0;
-		rLoc = 7651;
+		rLoc = 7614;
 		rType = 0;
 		vrLen = 1523;
 		vrLoc = 6348;
@@ -1863,7 +1870,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 231";
 		rLen = 0;
-		rLoc = 7654;
+		rLoc = 7617;
 		rType = 0;
 		vrLen = 1503;
 		vrLoc = 6348;
@@ -1873,7 +1880,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 206";
 		rLen = 0;
-		rLoc = 6448;
+		rLoc = 6452;
 		rType = 0;
 		vrLen = 1514;
 		vrLoc = 6126;
@@ -1883,7 +1890,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 206";
 		rLen = 0;
-		rLoc = 6448;
+		rLoc = 6452;
 		rType = 0;
 		vrLen = 1514;
 		vrLoc = 6126;
@@ -1893,7 +1900,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 206";
 		rLen = 0;
-		rLoc = 6448;
+		rLoc = 6452;
 		rType = 0;
 		vrLen = 1510;
 		vrLoc = 6126;
@@ -1903,7 +1910,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 206";
 		rLen = 0;
-		rLoc = 6448;
+		rLoc = 6452;
 		rType = 0;
 		vrLen = 1512;
 		vrLoc = 6126;
@@ -1923,7 +1930,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 206";
 		rLen = 0;
-		rLoc = 6448;
+		rLoc = 6452;
 		rType = 0;
 		vrLen = 1512;
 		vrLoc = 6126;
@@ -1933,7 +1940,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 207";
 		rLen = 0;
-		rLoc = 6448;
+		rLoc = 6452;
 		rType = 0;
 		vrLen = 1535;
 		vrLoc = 5961;
@@ -1943,7 +1950,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 207";
 		rLen = 0;
-		rLoc = 6448;
+		rLoc = 6452;
 		rType = 0;
 		vrLen = 1547;
 		vrLoc = 5961;
@@ -1953,7 +1960,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 211";
 		rLen = 0;
-		rLoc = 6572;
+		rLoc = 6535;
 		rType = 0;
 		vrLen = 1550;
 		vrLoc = 5961;
@@ -1963,7 +1970,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 220";
 		rLen = 0;
-		rLoc = 6970;
+		rLoc = 6933;
 		rType = 0;
 		vrLen = 1452;
 		vrLoc = 6226;
@@ -1973,7 +1980,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 220";
 		rLen = 0;
-		rLoc = 6970;
+		rLoc = 6933;
 		rType = 0;
 		vrLen = 1454;
 		vrLoc = 6226;
@@ -1983,7 +1990,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 195";
 		rLen = 0;
-		rLoc = 6169;
+		rLoc = 6173;
 		rType = 0;
 		vrLen = 914;
 		vrLoc = 5930;
@@ -1993,7 +2000,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 195";
 		rLen = 0;
-		rLoc = 6169;
+		rLoc = 6173;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 5930;
@@ -2003,7 +2010,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 195";
 		rLen = 0;
-		rLoc = 6169;
+		rLoc = 6173;
 		rType = 0;
 		vrLen = 906;
 		vrLoc = 5930;
@@ -2023,7 +2030,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 195";
 		rLen = 0;
-		rLoc = 6169;
+		rLoc = 6173;
 		rType = 0;
 		vrLen = 1161;
 		vrLoc = 5935;
@@ -2033,7 +2040,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 220";
 		rLen = 0;
-		rLoc = 6970;
+		rLoc = 6933;
 		rType = 0;
 		vrLen = 1478;
 		vrLoc = 6174;
@@ -2043,7 +2050,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 287";
 		rLen = 4;
-		rLoc = 9380;
+		rLoc = 9342;
 		rType = 0;
 		vrLen = 210;
 		vrLoc = 9125;
@@ -2053,7 +2060,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 287";
 		rLen = 4;
-		rLoc = 9380;
+		rLoc = 9342;
 		rType = 0;
 		vrLen = 210;
 		vrLoc = 9125;
@@ -2063,7 +2070,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 211";
 		rLen = 0;
-		rLoc = 6658;
+		rLoc = 6621;
 		rType = 0;
 		vrLen = 1380;
 		vrLoc = 6318;
@@ -2073,7 +2080,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 218";
 		rLen = 0;
-		rLoc = 6970;
+		rLoc = 6933;
 		rType = 0;
 		vrLen = 1545;
 		vrLoc = 6564;
@@ -2083,7 +2090,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 224";
 		rLen = 0;
-		rLoc = 7169;
+		rLoc = 7132;
 		rType = 0;
 		vrLen = 1376;
 		vrLoc = 6321;
@@ -2093,7 +2100,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 203";
 		rLen = 0;
-		rLoc = 6289;
+		rLoc = 6293;
 		rType = 0;
 		vrLen = 1178;
 		vrLoc = 5959;
@@ -2103,7 +2110,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 289";
 		rLen = 4;
-		rLoc = 9380;
+		rLoc = 9342;
 		rType = 0;
 		vrLen = 104;
 		vrLoc = 9251;
@@ -2113,7 +2120,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 203";
 		rLen = 0;
-		rLoc = 6289;
+		rLoc = 6293;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 5936;
@@ -2123,7 +2130,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 203";
 		rLen = 0;
-		rLoc = 6289;
+		rLoc = 6293;
 		rType = 0;
 		vrLen = 1131;
 		vrLoc = 5936;
@@ -2133,7 +2140,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 237";
 		rLen = 0;
-		rLoc = 7651;
+		rLoc = 7614;
 		rType = 0;
 		vrLen = 1381;
 		vrLoc = 6477;
@@ -2143,7 +2150,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 291";
 		rLen = 4;
-		rLoc = 9380;
+		rLoc = 9342;
 		rType = 0;
 		vrLen = 1015;
 		vrLoc = 8376;
@@ -2153,7 +2160,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 217";
 		rLen = 0;
-		rLoc = 6658;
+		rLoc = 6621;
 		rType = 0;
 		vrLen = 1388;
 		vrLoc = 6517;
@@ -2163,7 +2170,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 293";
 		rLen = 4;
-		rLoc = 9380;
+		rLoc = 9342;
 		rType = 0;
 		vrLen = 955;
 		vrLoc = 8492;
@@ -2173,7 +2180,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 281";
 		rLen = 0;
-		rLoc = 9335;
+		rLoc = 9297;
 		rType = 0;
 		vrLen = 1489;
 		vrLoc = 6789;
@@ -2193,7 +2200,7 @@
 		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
 		name = "StoButtonContainer.m: 201";
 		rLen = 0;
-		rLoc = 6289;
+		rLoc = 6293;
 		rType = 0;
 		vrLen = 1427;
 		vrLoc = 7170;
@@ -2207,6 +2214,87 @@
 		rType = 0;
 		vrLen = 1185;
 		vrLoc = 4669;
+	};
+	849E035E11C1D713002056FC /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'curr_eggNum' undeclared (first use in this function)";
+		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 211;
+		rType = 1;
+	};
+	849E035F11C1D713002056FC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
+		name = "StoButtonContainer.m: 212";
+		rLen = 1;
+		rLoc = 6535;
+		rType = 0;
+		vrLen = 412;
+		vrLoc = 6251;
+	};
+	849E036211C1D72D002056FC /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "'curr_eggNum' undeclared (first use in this function)";
+		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 211;
+		rType = 1;
+	};
+	849E036311C1D72D002056FC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
+		name = "StoButtonContainer.m: 212";
+		rLen = 0;
+		rLoc = 6535;
+		rType = 0;
+		vrLen = 1402;
+		vrLoc = 5987;
+	};
+	849E038311C1DF39002056FC /* FriendInfoBut.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {973, 723}}";
+			sepNavSelRange = "{608, 0}";
+			sepNavVisRange = "{0, 887}";
+		};
+	};
+	849E038411C1DF39002056FC /* FriendInfoBut.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {2045, 723}}";
+			sepNavSelRange = "{589, 0}";
+			sepNavVisRange = "{0, 599}";
+		};
+	};
+	849E038811C1E4E7002056FC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */;
+		name = "StoButtonContainer.m: 212";
+		rLen = 0;
+		rLoc = 6535;
+		rType = 0;
+		vrLen = 650;
+		vrLoc = 6354;
+	};
+	849E038911C1E4E7002056FC /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Expected ':' before '(' token";
+		fRef = 849E038311C1DF39002056FC /* FriendInfoBut.h */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 31;
+		rType = 1;
+	};
+	849E038A11C1E4E7002056FC /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 849E038311C1DF39002056FC /* FriendInfoBut.h */;
+		name = "FriendInfoBut.h: 29";
+		rLen = 266;
+		rLoc = 522;
+		rType = 0;
+		vrLen = 599;
+		vrLoc = 278;
 	};
 	84A65BDC11B73E1D002314FD /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -3137,9 +3225,9 @@
 	};
 	BF00748A1159E9B90003B411 /* GameMainScene.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1453, 2407}}";
-			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{1831, 2175}";
+			sepNavIntBoundsRect = "{{0, 0}, {1500, 3477}}";
+			sepNavSelRange = "{5351, 0}";
+			sepNavVisRange = "{4973, 1494}";
 			sepNavWindowFrame = "{{15, 89}, {750, 789}}";
 		};
 	};
@@ -3653,16 +3741,16 @@
 	};
 	C3C525E3117C321800343D7F /* Button.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1031, 632}}";
-			sepNavSelRange = "{320, 6}";
-			sepNavVisRange = "{3, 701}";
+			sepNavIntBoundsRect = "{{0, 0}, {973, 723}}";
+			sepNavSelRange = "{728, 0}";
+			sepNavVisRange = "{0, 798}";
 		};
 	};
 	C3C525E4117C321800343D7F /* Button.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1299, 1762}}";
-			sepNavSelRange = "{2044, 0}";
-			sepNavVisRange = "{1629, 757}";
+			sepNavIntBoundsRect = "{{0, 0}, {1299, 1638}}";
+			sepNavSelRange = "{168, 26}";
+			sepNavVisRange = "{0, 1238}";
 		};
 	};
 	C3C525ED117C32C400343D7F /* StorageManageToolbar.h */ = {
@@ -3816,16 +3904,16 @@
 	};
 	CC017578117475AF00CD437F /* DataEnvironment.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1031, 1296}}";
-			sepNavSelRange = "{1781, 17}";
-			sepNavVisRange = "{1105, 1493}";
+			sepNavIntBoundsRect = "{{0, 0}, {973, 1296}}";
+			sepNavSelRange = "{720, 11}";
+			sepNavVisRange = "{453, 1739}";
 		};
 	};
 	CC017579117475AF00CD437F /* DataEnvironment.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1031, 2324}}";
-			sepNavSelRange = "{1827, 17}";
-			sepNavVisRange = "{1341, 996}";
+			sepNavIntBoundsRect = "{{0, 0}, {973, 2266}}";
+			sepNavSelRange = "{387, 11}";
+			sepNavVisRange = "{134, 699}";
 			sepNavWindowFrame = "{{15, 86}, {750, 792}}";
 		};
 	};
@@ -3864,6 +3952,20 @@
 			sepNavIntBoundsRect = "{{0, 0}, {1011, 938}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 763}";
+		};
+	};
+	F76FF09111A3E62300DCC05D /* DataModelFriendInfo.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {973, 723}}";
+			sepNavSelRange = "{211, 38}";
+			sepNavVisRange = "{0, 636}";
+		};
+	};
+	F76FF09211A3E62300DCC05D /* DataModelFriendInfo.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {973, 723}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 271}";
 		};
 	};
 	F76FF0FE11A44AFC00DCC05D /* DataModelStorageFood.m */ = {
