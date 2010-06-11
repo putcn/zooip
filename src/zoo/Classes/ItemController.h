@@ -21,6 +21,7 @@
 	NSMutableDictionary *allItems;
 }
 
+@property (nonatomic, retain) NSMutableDictionary *allItems;
 +(ItemController *)sharedItemController;
 
 -(void) addItem: (NSString *)itemType;

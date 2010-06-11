@@ -11,8 +11,9 @@
 
 @implementation ItemController
 
-static ItemController *_itemController = nil;
+@synthesize allItems;
 
+static ItemController *_itemController = nil;
 +(ItemController *) sharedItemController
 {
 	@synchronized([ItemController class])
