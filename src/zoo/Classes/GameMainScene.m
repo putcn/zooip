@@ -70,7 +70,7 @@ static GameMainScene *_sharedGameMainScene = nil;
 		CCSprite *tree = [CCSprite spriteWithFile:@"tree.png"];
 		tree.position = ccp(805,436);
 		
-		[background addChild:tree z:1];
+		[background addChild:tree z:10];
 		
 		CCSprite *house = [CCSprite spriteWithFile:@"house.png"];
 		house.position = ccp(485,475);
