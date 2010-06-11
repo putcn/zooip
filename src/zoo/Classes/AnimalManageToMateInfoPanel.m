@@ -160,7 +160,7 @@ animalID;
 {
 	//判断是否首次加载物
 	if (toMateRateChoose == nil) {
-		toMateRateChoose = [[AnimalManageToMateAntsChoose alloc] initWithParam:params setTarget:self setLeftAnimalId:leftAnimalID setRightAnimalId:rightAnimalID];
+		//toMateRateChoose = [[AnimalManageToMateAntsChoose alloc] initWithParam:params setTarget:self setLeftAnimalId:leftAnimalID setRightAnimalId:rightAnimalID];
 		toMateRateChoose.position = ccp(self.contentSize.width/2, toMateRateChoose.contentSize.height/2);
 		[self addChild:toMateRateChoose z:20 tag:1999];
 	}
