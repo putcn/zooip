@@ -6353,6 +6353,7 @@
 		C3B6313811B89FE700695343 /* DataModelStorageAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6313711B89FE700695343 /* DataModelStorageAnimal.m */; };
 		C3B6313B11B8A09C00695343 /* AnimalStorageManagerButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */; };
 		C3B6316111B8A8D600695343 /* DataModelStorageAuctionAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = C3B6316011B8A8D600695343 /* DataModelStorageAuctionAnimal.m */; };
+		C3BBE9C011C5D454004D91C1 /* GetFriendsInfoController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3BBE9BF11C5D454004D91C1 /* GetFriendsInfoController.m */; };
 		C3C525E5117C321800343D7F /* Button.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525E4117C321800343D7F /* Button.m */; };
 		C3C525EF117C32C400343D7F /* StorageManageToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525EE117C32C400343D7F /* StorageManageToolbar.m */; };
 		C3C525F2117C333000343D7F /* PlayerInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C525F1117C333000343D7F /* PlayerInfo.m */; };
@@ -12917,6 +12918,8 @@
 		C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalStorageManagerButtonItem.m; sourceTree = "<group>"; };
 		C3B6315F11B8A8D600695343 /* DataModelStorageAuctionAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataModelStorageAuctionAnimal.h; sourceTree = "<group>"; };
 		C3B6316011B8A8D600695343 /* DataModelStorageAuctionAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataModelStorageAuctionAnimal.m; sourceTree = "<group>"; };
+		C3BBE9BE11C5D454004D91C1 /* GetFriendsInfoController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetFriendsInfoController.h; sourceTree = "<group>"; };
+		C3BBE9BF11C5D454004D91C1 /* GetFriendsInfoController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetFriendsInfoController.m; sourceTree = "<group>"; };
 		C3C525E3117C321800343D7F /* Button.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Button.h; sourceTree = "<group>"; };
 		C3C525E4117C321800343D7F /* Button.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Button.m; sourceTree = "<group>"; };
 		C3C525ED117C32C400343D7F /* StorageManageToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageManageToolbar.h; sourceTree = "<group>"; };
@@ -23459,6 +23462,8 @@
 				C342593D11A6759300B6FDB7 /* FeedPowerFoodsController.m */,
 				C374441B11AD19D1004BABFE /* FeedProductYieldFoodController.h */,
 				C374441C11AD19D1004BABFE /* FeedProductYieldFoodController.m */,
+				C3BBE9BE11C5D454004D91C1 /* GetFriendsInfoController.h */,
+				C3BBE9BF11C5D454004D91C1 /* GetFriendsInfoController.m */,
 			);
 			name = ServerController;
 			sourceTree = "<group>";
@@ -30040,6 +30045,7 @@
 				C39CFC2A11BFC6A90063B01E /* XMLHandler.m in Sources */,
 				3EA7898711C18DFF002254E3 /* Background.m in Sources */,
 				849E038511C1DF39002056FC /* FriendInfoBut.m in Sources */,
+				C3BBE9C011C5D454004D91C1 /* GetFriendsInfoController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
