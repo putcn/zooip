@@ -29,6 +29,8 @@
 		targetCallBack = [target retain];
 		selector = handler;
 		pri = priorityValue;
+		
+		
 		[self setImg:imagePath setEggTotal:eggTotal setEggName:eggName];
 	}
 	self.scale = 1.5f;
@@ -38,8 +40,8 @@
 
 -(void) setImg: (NSString *) imagePath setEggTotal: (NSString*) eggTotal setEggName:(NSString *) eggName
 {
-	CCSprite *item = [CCSprite node];
-	CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:imagePath ofType:nil] ] ];
+	item = [CCSprite node];
+	itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:imagePath ofType:nil] ] ];
 	CGRect rect = CGRectZero;
 	rect.size = itemImg.contentSize;
 	[item setTexture: itemImg];
@@ -61,6 +63,25 @@
 	
 	[self addChild:eggNameLbl z:7];
 	[self addChild:eggTotalLab z:7];
+	
+	
+	
+	
+}
+
+
+-(void)upData
+{
+	
+	NSLog(@"＝＝＝＝＝＝＝＝＝＝＝ 删除在根目录＝＝＝＝＝＝＝＝＝＝");
+	NSLog(@"＝＝＝＝＝＝＝＝＝＝＝ 删除在根目录＝＝＝＝＝＝＝＝＝＝");
+	NSLog(@"＝＝＝＝＝＝＝＝＝＝＝ 删除在根目录＝＝＝＝＝＝＝＝＝＝");
+	NSLog(@"＝＝＝＝＝＝＝＝＝＝＝ 删除在根目录＝＝＝＝＝＝＝＝＝＝");
+	//itemImg.scale = 0;
+	item.scale = 0;
+	//[self removeChild: item cleanup:YES];
+	//[item release];
+	
 }
 
 - (CGRect)rect

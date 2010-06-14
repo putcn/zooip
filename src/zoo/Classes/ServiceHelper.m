@@ -640,11 +640,15 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 			}
 			break;
 		case ZooNetworkRequestgetAllStorageProducts:
+		{
+			//Clear the data first
+			NSMutableDictionary* clearDic = [[DataEnvironment sharedDataEnvironment] storageEggs];
+			[clearDic removeAllObjects];
 			switch (code) {
 				case 1:
 				{
 					// 所有蛋信息
-					NSDictionary* sDic= [[DataEnvironment sharedDataEnvironment] storageEggs];
+					NSMutableDictionary* sDic = [[DataEnvironment sharedDataEnvironment] storageEggs];
 					NSArray* sArray = [result objectForKey:@"eggs"];
 					for (int i = 0; i < [sArray count]; i++) {
 						NSDictionary* dic = [sArray objectAtIndex:i];
@@ -669,6 +673,7 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 					break;
 			}
 			break;
+		}
 		case ZooNetworkRequestgetAllStorageZygoteEgg:
 			switch (code) {
 				case 1:

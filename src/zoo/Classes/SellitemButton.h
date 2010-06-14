@@ -16,6 +16,10 @@
 	int pri;
 	NSString *itemId;
 	NSString *itemType;
+	CCSprite *item;
+	CCTexture2D *itemImg;
+
+	
 }
 
 @property (nonatomic, retain)NSString *itemId;

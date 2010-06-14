@@ -20,11 +20,17 @@
 	int currentPageNum;
 	int totalPage;
 	int currentNum;
+	
 	NSString *tabFlag;
 	id parentTarget;
 	
 	CCLabel *totalPriceLab;
+	
+	
 	NSInteger totalPrice;
+	
+	NSMutableArray *itemNumArray;
+	NSMutableArray *eggSourceArray;
 }
 -(id) initWithTab:(NSString *)tabName setTarget:(id)target;
 

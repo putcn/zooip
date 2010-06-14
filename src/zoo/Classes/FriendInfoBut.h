@@ -14,6 +14,7 @@
 	
 	id targetCallBack;
 	SEL selector;
+	int pri;
 	
 	NSString* friendFarmId;
 	NSString* friendFarmerId;
@@ -31,5 +32,7 @@
 			setTarget:(id) target setSelector:(SEL) handler setPriority:(int) priorityValue 
 			offsetX:(int) offsetXValue offsetY:(int) offsetYValue;
 
+
+-(void) setFriendIco: (NSString *) icoPath setFriendName: (NSString *) friendName setExperience:(int) exprience;
 
 @end
