@@ -26,8 +26,10 @@
 	int countOfFoodButton;
 	
 	CCSprite *statusIcon;
+	
+	id parentTarget;
 }
-
+-(id) initWithTarget:(id)target;
 -(void) addButton;
 
 

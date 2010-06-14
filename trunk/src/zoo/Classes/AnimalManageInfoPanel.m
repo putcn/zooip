@@ -133,4 +133,12 @@
 	}
 }
 
+-(void)dealloc
+{
+	[lblMessage release]
+	
+	[targetCallBack release];
+	[super dealloc];
+}
+
 @end

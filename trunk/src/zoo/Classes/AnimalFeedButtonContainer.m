@@ -15,13 +15,14 @@
 @implementation AnimalFeedButtonContainer
 
 
--(id) init
+-(id) initWithTarget:(id)target
 {
 	self = [super init];
 	
 	if (self)
 	{
 		selectIndex = 0;
+		parentTarget = target;
 		
 		playerButtonContainer = [[CCSprite alloc] init];
 		[self addChild:playerButtonContainer];
@@ -84,7 +85,7 @@
 			//动物结婚
 			button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:[NSString stringWithFormat:@"food_%d.png",countOfFoodButton] setTarget:self
 									   setSelector:@selector(btnPlayerOperationButtonHandlerFeed:) setPriority:0 offsetX:-1 offsetY:2 scale:0.55];
-			button.position = ccp(60 + countOfFoodButton*30, 50);
+			button.position = ccp(20 + countOfFoodButton*25, 50);
 			
 			bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:[NSString stringWithFormat:@"food_%d.png",countOfFoodButton] ofType:nil] ] ];
 			[playerStatusIconTextures addObject:bg];
@@ -118,6 +119,10 @@
 	[self setStatusIcon:selectIndex];	
 	NSString *index = [[NSNumber numberWithInt:(selectIndex + 1)] stringValue];
 	[[UIController sharedUIController] setSelectFoodId:index];
+	//btnPlayerOperationFeedButtonHandler for hide the arrow.
+	
+	id tempAction = [CCCallFuncN actionWithTarget:parentTarget selector:@selector(btnPlayerOperationFeedButtonHandler:)];
+	[playerButtonContainer runAction:tempAction];
 }
 -(void) setStatusIcon: (int)index
 {
@@ -169,6 +174,10 @@
 	[animalManagerContainer release];
 	
 	[statusIcon release];
+	
+	[animalManagerContainer release];
+	
+	[parentTarget release];
 	
 	[super dealloc];
 }

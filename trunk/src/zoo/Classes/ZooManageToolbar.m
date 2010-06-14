@@ -363,6 +363,20 @@
 	[playerButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
 }
 
+//指定喂食按钮，让其消失
+-(void)btnPlayerOperationFeedButtonHandler:(Button *)button
+{
+	selectIndex = 1;
+	
+	id actionMove = [CCMoveTo actionWithDuration:0.6  position:ccp(-400, playerButtonContainer.position.y)];
+	id actionMoveDone = [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveOutFinished)];
+	
+	id ease = [CCEaseBackIn actionWithAction: actionMove];
+	[ease setDuration:0.3];
+	
+	[playerButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
+}
+
 -(void) btnPlayerOperationAddAnimalsButtonHandler:(Button *)button
 {
 
@@ -405,7 +419,7 @@
 {
 	if(!secondTouchFeedButton)
 	{
-		feed = [[AnimalFeedButtonContainer alloc] init];
+		feed = [[AnimalFeedButtonContainer alloc] initWithTarget:self];
 		//aniManagementBtnCtrl .position = ccp(160,40);
 		[self addChild:feed];
 		
@@ -437,6 +451,19 @@
 -(void) spriteMoveOutFinished
 {
 	[self setStatusIcon:selectIndex];
+	
+	if (aniManagementBtnCtrl != nil) {
+		aniManagementBtnCtrl.position = ccp(10000,5000);
+	}
+	if (animalManagerContainer != nil) {
+		animalManagerContainer.position = ccp(10000,5000);
+	}
+	if (animalExpansionPanel != nil) {
+		animalExpansionPanel.position = ccp(10000,5000);
+	}
+	if (feed != nil) {
+		feed.position = ccp(10000,5000);
+	}
 }
 
 -(void) btnStatusIconHandler

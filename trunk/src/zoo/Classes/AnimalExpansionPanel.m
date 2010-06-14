@@ -203,6 +203,23 @@ paramsDict;
 -(void) dealloc
 {
 	[self removeAllChildrenWithCleanup:YES];
+	
+	[title release];
+	[itemId release];
+	[itemType release];
+	[itemBuyType release];
+	[priceLbl release];
+	[paramsDict release];
+	
+	[level release];
+	[maxNumOfBirds release];
+	[goldenEggNum release];
+	[levelLbl release];
+	[goldenEggNumLbl release];
+	[capacity release];
+	[requireLevelLbl release];
+	[requireGoldenEggLbl release];
+	[thisTarget release];
 	[super dealloc];
 }
 
