@@ -11,6 +11,8 @@
 #import "DataEnvironment.h"
 #import "DataModelSnake.h"
 #import "SnakeController.h"
+#import "EggController.h"
+#import "GameMainScene.h"
 
 
 @implementation ToReleaseSnakeController
@@ -26,13 +28,16 @@
 {
 	NSDictionary *result = (NSDictionary *)value;
 	NSInteger code = [[result objectForKey:@"code"] intValue];
-	if (code == 1) {		
+	if (code == 1) {
 		NSString *snakeId = [result objectForKey:@"releaseSnakeId"];
 		DataModelSnake *dataModelSnake = [[DataModelSnake alloc] init];
 		dataModelSnake.eggId = eggId;
 		dataModelSnake.releaseSnakeId = snakeId;
 		[[DataEnvironment sharedDataEnvironment].snakes setObject:dataModelSnake forKey:snakeId];
 		[[SnakeController sharedSnakeController] addSnakes:[NSArray arrayWithObject:snakeId]];
+	}
+	if (code == 3) {
+		[self fleeAnimation];
 	}
 	[super resultCallback:value];
 }
@@ -41,5 +46,43 @@
 {
 	[super faultCallback:value];
 }
+
+-(CGPoint) eggPosition
+{
+	EggView *eggView = (EggView *)[[EggController sharedEggController].allEggs objectForKey:eggId];
+	return eggView.position;
+	
+}
+
+-(void) releaseAnimation
+{
+	CCSprite *sprite = [CCSprite node];
+	[sprite setAnchorPoint:CGPointMake(0, 0.5)];
+	CCAnimation* animation = [CCAnimation animationWithName:@"releaseSanke" delay:0.04f];
+	for (int i = 1; i<=3; i++) {
+		[animation addFrameWithFilename:[NSString stringWithFormat:@"snake_sleep_%02d.png", i]];
+	}
+	CCAnimate *animate = [CCAnimate actionWithAnimation:animation];
+	sprite.position = [self eggPosition];
+	[sprite runAction:animate]; 
+	[[GameMainScene sharedGameMainScene] addSpriteToStage:sprite z:10];
+}
+
+-(void) fleeAnimation
+{
+	CCSprite *sprite = [CCSprite node];
+	[sprite setAnchorPoint:CGPointMake(0, 0.5)];
+	CCAnimation* animation = [CCAnimation animationWithName:@"releaseSanke" delay:0.1f];
+	for (int i = 1; i<=16; i++) {
+		[animation addFrameWithFilename:[NSString stringWithFormat:@"snake_walk_left_%02d.png", i]];		
+	}
+	CCAnimate *animate = [CCAnimate actionWithAnimation:animation];
+	sprite.position = [self eggPosition];
+	CCMoveTo *moveTo = [CCMoveTo actionWithDuration:2.0f position:ccp(sprite.position.x + 50, sprite.position.y)];
+	[sprite runAction:[CCSpawn actions:animate, moveTo, nil]];
+	[[GameMainScene sharedGameMainScene] addSpriteToStage:sprite z:10];
+	
+}
+
 
 @end

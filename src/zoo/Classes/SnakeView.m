@@ -16,7 +16,7 @@
 	if ((self = [super init])) {
 		killSnakeController = [[KillSnakeController alloc] init];
 		snakeId = sId;
-		CCTexture2D *snake = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bowls_0.png" ofType:nil]]];
+		CCTexture2D *snake = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"snake.png" ofType:nil]]];
 		CGRect rect = CGRectZero;
 		rect.size = snake.contentSize;
 		[self setTexture: snake];
@@ -25,7 +25,8 @@
 		NSString *eggId = dataModelSnake.eggId;
 		[dataModelSnake dealloc];
 		EggView *eggView = (EggView *)[[EggController sharedEggController].allEggs objectForKey:eggId];
-		CGPoint eggPos = ccp(eggView.position.x+self.contentSize.width/2, eggView.position.y);
+		[self setAnchorPoint:CGPointMake(0, 0.5)];
+		CGPoint eggPos = ccp(eggView.position.x+50, eggView.position.y);
 		[eggView dealloc];
 		self.position = eggPos;
 	}

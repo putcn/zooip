@@ -24,7 +24,7 @@
 	{
 		self.scale = 0.8f;
 		[self setContentSize:CGSizeMake(300, 40)];
-		CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"Icon.png" ofType:nil] ] ];
+		CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"tibentanmastiff_rest_01.png" ofType:nil] ] ];
 		userImgSprite = [[CCSprite node] retain];
 		[userImgSprite setTexture:useImgTexture];
 		[userImgSprite setContentSize:CGSizeMake(40, 40)];

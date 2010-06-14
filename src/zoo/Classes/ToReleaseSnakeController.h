@@ -19,5 +19,6 @@
 -(void) execute:(NSDictionary *)value;
 -(void) resultCallback:(NSObject *)value;
 -(void) faultCallback:(NSObject *)value;
-
+-(void) releaseAnimation;
+-(void) fleeAnimation;
 @end

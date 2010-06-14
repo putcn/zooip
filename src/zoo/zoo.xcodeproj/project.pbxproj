@@ -14,6 +14,7 @@
 		3E0CE36E11BF302A002FCB22 /* ToReleaseAntsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE36811BF302A002FCB22 /* ToReleaseAntsController.m */; };
 		3E0CE36F11BF302A002FCB22 /* ToReleaseSnakeController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE36A11BF302A002FCB22 /* ToReleaseSnakeController.m */; };
 		3E0CE37011BF302A002FCB22 /* ToThrowFireworkController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE36C11BF302A002FCB22 /* ToThrowFireworkController.m */; };
+		3E3007B111C6721800A1C3B7 /* ImgInitUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3007B011C6721800A1C3B7 /* ImgInitUtil.m */; };
 		3E4B1F9A11AE7C6A0044D43E /* malepheasant.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4B1F9911AE7C6A0044D43E /* malepheasant.png */; };
 		3E4B1F9C11AE7C770044D43E /* malemandarinduck.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4B1F9B11AE7C770044D43E /* malemandarinduck.png */; };
 		3E4B1FBC11AE7E840044D43E /* ButtonContainer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4B1FB411AE7E840044D43E /* ButtonContainer.png */; };
@@ -6006,7 +6007,7 @@
 		3EED495E11967DAB0093FF6E /* snake_sleep_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EED481911967DAB0093FF6E /* snake_sleep_01.png */; };
 		3EED495F11967DAB0093FF6E /* snake_sleep_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EED481A11967DAB0093FF6E /* snake_sleep_02.png */; };
 		3EED496011967DAB0093FF6E /* snake_sleep_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EED481B11967DAB0093FF6E /* snake_sleep_03.png */; };
-		3EED496111967DAB0093FF6E /* snake_sleep_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EED481C11967DAB0093FF6E /* snake_sleep_04.png */; };
+		3EED496111967DAB0093FF6E /* snake.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EED481C11967DAB0093FF6E /* snake.png */; };
 		502BC35D1120837500A0B92A /* CDAudioManager.h in Headers */ = {isa = PBXBuildFile; fileRef = 502BC3551120837500A0B92A /* CDAudioManager.h */; };
 		502BC35E1120837500A0B92A /* CDAudioManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 502BC3561120837500A0B92A /* CDAudioManager.m */; };
 		502BC35F1120837500A0B92A /* CDConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 502BC3571120837500A0B92A /* CDConfig.h */; };
@@ -6427,6 +6428,8 @@
 		3E0CE36A11BF302A002FCB22 /* ToReleaseSnakeController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToReleaseSnakeController.m; sourceTree = "<group>"; };
 		3E0CE36B11BF302A002FCB22 /* ToThrowFireworkController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ToThrowFireworkController.h; sourceTree = "<group>"; };
 		3E0CE36C11BF302A002FCB22 /* ToThrowFireworkController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToThrowFireworkController.m; sourceTree = "<group>"; };
+		3E3007AF11C6721800A1C3B7 /* ImgInitUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImgInitUtil.h; sourceTree = "<group>"; };
+		3E3007B011C6721800A1C3B7 /* ImgInitUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImgInitUtil.m; sourceTree = "<group>"; };
 		3E4B1F9911AE7C6A0044D43E /* malepheasant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malepheasant.png; sourceTree = "<group>"; };
 		3E4B1F9B11AE7C770044D43E /* malemandarinduck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = malemandarinduck.png; sourceTree = "<group>"; };
 		3E4B1FB411AE7E840044D43E /* ButtonContainer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonContainer.png; sourceTree = "<group>"; };
@@ -12480,7 +12483,7 @@
 		3EED481911967DAB0093FF6E /* snake_sleep_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_sleep_01.png; sourceTree = "<group>"; };
 		3EED481A11967DAB0093FF6E /* snake_sleep_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_sleep_02.png; sourceTree = "<group>"; };
 		3EED481B11967DAB0093FF6E /* snake_sleep_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_sleep_03.png; sourceTree = "<group>"; };
-		3EED481C11967DAB0093FF6E /* snake_sleep_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = snake_sleep_04.png; sourceTree = "<group>"; };
+		3EED481C11967DAB0093FF6E /* snake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = snake.png; path = sleep/snake.png; sourceTree = "<group>"; };
 		502BC3551120837500A0B92A /* CDAudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDAudioManager.h; sourceTree = "<group>"; };
 		502BC3561120837500A0B92A /* CDAudioManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDAudioManager.m; sourceTree = "<group>"; };
 		502BC3571120837500A0B92A /* CDConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDConfig.h; sourceTree = "<group>"; };
@@ -13105,6 +13108,14 @@
 				1F3B9A2B0EF2145700286867 /* zooAppDelegate.m */,
 			);
 			path = Classes;
+			sourceTree = "<group>";
+		};
+		3E83057311C61C9C00AB827E /* pose */ = {
+			isa = PBXGroup;
+			children = (
+				3EED481C11967DAB0093FF6E /* snake.png */,
+			);
+			name = pose;
 			sourceTree = "<group>";
 		};
 		3E87160511801F3300EBA2E8 /* background */ = {
@@ -22533,6 +22544,7 @@
 		3EED47B211967DAB0093FF6E /* snake */ = {
 			isa = PBXGroup;
 			children = (
+				3E83057311C61C9C00AB827E /* pose */,
 				3EED47B311967DAB0093FF6E /* b */,
 				3EED47C411967DAB0093FF6E /* bl */,
 				3EED47D511967DAB0093FF6E /* eat */,
@@ -22687,7 +22699,6 @@
 				3EED481911967DAB0093FF6E /* snake_sleep_01.png */,
 				3EED481A11967DAB0093FF6E /* snake_sleep_02.png */,
 				3EED481B11967DAB0093FF6E /* snake_sleep_03.png */,
-				3EED481C11967DAB0093FF6E /* snake_sleep_04.png */,
 			);
 			path = sleep;
 			sourceTree = "<group>";
@@ -23263,6 +23274,8 @@
 				3EED45E911965A9A0093FF6E /* Eggs */,
 				3E85CE0811A1277500ED9250 /* ToolTip.h */,
 				3E85CE0911A1277500ED9250 /* ToolTip.m */,
+				3E3007AF11C6721800A1C3B7 /* ImgInitUtil.h */,
+				3E3007B011C6721800A1C3B7 /* ImgInitUtil.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -24213,7 +24226,7 @@
 				3EED495E11967DAB0093FF6E /* snake_sleep_01.png in Resources */,
 				3EED495F11967DAB0093FF6E /* snake_sleep_02.png in Resources */,
 				3EED496011967DAB0093FF6E /* snake_sleep_03.png in Resources */,
-				3EED496111967DAB0093FF6E /* snake_sleep_04.png in Resources */,
+				3EED496111967DAB0093FF6E /* snake.png in Resources */,
 				3EC7E441119AA2E200791BAD /* cleaning_01.png in Resources */,
 				3EC7E442119AA2E200791BAD /* cleaning_02.png in Resources */,
 				3EC7E443119AA2E200791BAD /* cleaning_03.png in Resources */,
@@ -30046,6 +30059,7 @@
 				3EA7898711C18DFF002254E3 /* Background.m in Sources */,
 				849E038511C1DF39002056FC /* FriendInfoBut.m in Sources */,
 				C3BBE9C011C5D454004D91C1 /* GetFriendsInfoController.m in Sources */,
+				3E3007B111C6721800A1C3B7 /* ImgInitUtil.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
