@@ -23426,6 +23426,8 @@
 				849AAE3E11BE715100B97CD4 /* EggHatchInfoPane.m */,
 				3EA9E23C11BCB67100EF4ECB /* GetAllOriginalAnimalController.h */,
 				3EA9E23D11BCB67100EF4ECB /* GetAllOriginalAnimalController.m */,
+				C3BBE9BE11C5D454004D91C1 /* GetFriendsInfoController.h */,
+				C3BBE9BF11C5D454004D91C1 /* GetFriendsInfoController.m */,
 				C37443E411AD161A004BABFE /* CureAnimalController.h */,
 				C37443E511AD161A004BABFE /* CureAnimalController.m */,
 				C342593E11A6759300B6FDB7 /* PickEggToStorageController.h */,
@@ -23462,8 +23464,6 @@
 				C342593D11A6759300B6FDB7 /* FeedPowerFoodsController.m */,
 				C374441B11AD19D1004BABFE /* FeedProductYieldFoodController.h */,
 				C374441C11AD19D1004BABFE /* FeedProductYieldFoodController.m */,
-				C3BBE9BE11C5D454004D91C1 /* GetFriendsInfoController.h */,
-				C3BBE9BF11C5D454004D91C1 /* GetFriendsInfoController.m */,
 			);
 			name = ServerController;
 			sourceTree = "<group>";
