@@ -31,6 +31,7 @@
 @property (nonatomic, retain) NSString *itemType;
 @property (nonatomic, retain) NSString *itemBuyType;
 @property (nonatomic, assign) NSInteger count;
+@property (nonatomic, assign) NSInteger eggTotalNum;
 
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget: (id)target; 
 -(void)addTitle;
