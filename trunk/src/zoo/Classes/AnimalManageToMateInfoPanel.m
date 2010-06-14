@@ -366,6 +366,19 @@ animalID;
 -(void) dealloc
 {
 	[self removeAllChildrenWithCleanup:YES];
+	
+	[title release];
+	[itemId release];
+	[itemType release];
+	[itemBuyType release];
+	[priceLbl release];
+
+	[parentTarget release];
+	[leftAnimalID release];
+	[rightAnimalID release];
+	[animalID release];
+	[toMateRateChoose release];
+	[infoMessagePanelTest release];
 	[super dealloc];
 }
 

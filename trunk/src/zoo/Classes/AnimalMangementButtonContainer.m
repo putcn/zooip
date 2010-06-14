@@ -82,6 +82,17 @@
 	[playerButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
 }
 
-
+-(void)dealloc
+{
+	[playerStatusIconTextures release];
+	
+	[playerOperationButtons release];
+	
+	[playerButtonContainer  release];
+	
+	[animalManagerContainer release];
+	
+	[super dealloc];
+}
 
 @end

@@ -110,5 +110,11 @@
 	
 }
 
+-(void)dealloc
+{
+	[tabFlag release];
+	[parentTarget release];
+	[super dealloc];
+}
 
 @end

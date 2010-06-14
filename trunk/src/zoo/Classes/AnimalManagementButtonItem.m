@@ -98,6 +98,10 @@ setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetY
 
 -(void) dealloc
 {
+	[itemId release];
+	[itemType release];
+	[animalID release];
+	
 	[targetCallBack release];
 	[super dealloc];
 }
