@@ -63,33 +63,10 @@
 	NSArray *tabArray = [[NSArray alloc] initWithObjects:@"egg",@"zygoteegg",nil];
 	[self addTab:tabArray];		
 	
-	
-	//[self removeAllChildrenWithCleanup:YES];
-	//[self dealloc];
-
-	/*
-	for (int i = 0; i< tabArray.count; i++) {
-		 NSString *tab = [tabArray objectAtIndex:i];
-		 buttonContainer = [[StoButtonContainer alloc] initWithTab:tab setTarget:self];
-		
-		
-		
-		if (i == 0) {
-			buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
-		}
-		else {
-			buttonContainer.position = ccp(2000, self.contentSize.height/2 - 50);
-		}
-		
-		[self addChild:buttonContainer z:7];
-		[tabContentDic setObject:buttonContainer forKey:[NSString stringWithFormat:@"tabContent_%d",i]];
-	}
-	
-	 */
-	 
+			 
 	
 	
-	if (onePane == nil) {
+	if (onePane == nil || twoPane == nil) {
 		NSString *tab1 = [tabArray objectAtIndex:0];
 		NSString *tab2 = [tabArray objectAtIndex:1];
 		onePane = [[StoButtonContainer alloc] initWithTab:tab1 setTarget:self];
@@ -110,8 +87,8 @@
 		twoPane.scale = 0;
 		[self removeChild:onePane cleanup:YES];
 		[self removeChild:twoPane cleanup:YES];
-		[onePane release];
-		[twoPane release];
+		//[onePane release];
+		//[twoPane release];
 		
 		
 		
@@ -133,32 +110,6 @@
 		
 	}
 
-	
-		
-	
-	
-	
-	/*
-	 
-	 for (int i = 0; i< tabArray.count; i++) {
-	 NSString *tab = [tabArray objectAtIndex:i];
-	 StoButtonContainer *buttonContainer = [[StoButtonContainer alloc] initWithTab:tab setTarget:self];
-	 if (i == 0) {
-	 buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
-	 }
-	 else {
-	 buttonContainer.position = ccp(2000, self.contentSize.height/2 - 50);
-	 }
-	 
-	 [self addChild:buttonContainer z:7];
-	 [tabContentDic setObject:buttonContainer forKey:[NSString stringWithFormat:@"tabContent_%d",i]];
-	 }
-	 
-	*/
-	
-	
-	
-	
 	
 	
 	Button *sellAllBtn = [[Button alloc] initWithLabel:@"全部卖出" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:18 setBackground:@"TabButton2.png" setTarget:self setSelector:@selector(sellAllEggsHandler:) setPriority:1 offsetX:0 offsetY:0 scale:2.0f];
@@ -260,16 +211,25 @@
 	
 	if (itemInfo.itemType == @"egg") {
 		
+		
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 			
 			DataModelStorageEgg *storageEgg = (DataModelStorageEgg *)[[DataEnvironment sharedDataEnvironment].storageEggs objectForKey:itemInfo.itemId];
 
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",storageEgg.eggId,@"eggId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
 	
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellProduct WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-				
 		
-	
+			if (itemInfo.count == 0) {
+				NSLog(@"Hggggggggggggggg-----------------------------------------    %d",itemInfo.count);
+				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",storageEgg.eggId,@"eggId",[NSString stringWithFormat:@"%d",1],@"amount",nil];
+				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellProduct WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+				
+			}else{
+				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",storageEgg.eggId,@"eggId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
+				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellProduct WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+				
+			}
+			
+		
 	}//end if
 	
 	
@@ -343,7 +303,7 @@
 	[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你出售成功!"];
 	
 	//刷新界面
-	[self addMainPanel];
+	[self updadaPane];
 	
 	NSLog(@"操作已成功!");
 }
@@ -396,7 +356,7 @@
 	
 	if (code == 1) {
 		//刷新界面
-		[self addMainPanel];
+		[self updadaPane];
 		
 		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功卖出所有蛋!"];
 	}
@@ -406,9 +366,6 @@
 	
 	
 }
-
-
-
 
 
 -(void) faultCallback:(NSObject *)value
@@ -422,6 +379,18 @@
 	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }
+
+
+
+-(void) updadaPane
+{
+
+	[onePane upData];
+	[twoPane upData];		
+	
+}
+
+
 
 
 

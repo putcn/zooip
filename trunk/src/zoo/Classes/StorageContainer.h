@@ -38,6 +38,8 @@
 	NSString *curr_itemType;
 	NSString *testType;
 	
+	NSString *isEggEmpty;
+	
 	NSMutableArray *num_paneNum;
 	id curr_target;
 	

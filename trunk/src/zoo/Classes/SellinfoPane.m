@@ -11,7 +11,7 @@
 #import "ScalerPane.h"
 
 @implementation SellinfoPane
-@synthesize title,itemId,itemType,itemBuyType,count;
+@synthesize title,itemId,itemType,itemBuyType,count,eggTotalNum;
 
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget:(id)target
 {
@@ -77,7 +77,7 @@
 		signPriceLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 150);
 		[self addChild:signPriceLbl z:10];
 		
-		eggTotalNum  = storageEggs.numOfProduct;
+		eggTotalNum  = storageEggs.numOfProduct + storageEggs.numOfStolen;
 		NSString *eggTotalNumStr = [NSString stringWithFormat:@" 总  数 :  %d",eggTotalNum];
 		
 		CCLabel *toalEggNumLbl = [CCLabel labelWithString:eggTotalNumStr fontName:@"Arial" fontSize:30];
@@ -226,6 +226,8 @@
 	
 	count = [[values objectForKey:@"count"] intValue];
 	[priceLbl setString:[NSString stringWithFormat:@"总计收入 :  %d  金蛋", count * itemPrice]];
+	
+	NSLog(@"vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv   %d",count);
 	 
 	 
 }
