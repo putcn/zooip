@@ -162,4 +162,20 @@
 	NSLog(@"Server Connection Fail");
 }
 
+-(void)dealloc
+{
+	[title release];
+	[tabDic release];
+	[tabContentDic release];
+	
+	[tabEnable release];
+	[tabDisable release];
+	[animalToMateInfoPanel release];
+	[animalToMateOrDisapart release];
+
+	[managementType release];
+	
+	[super dealloc];
+}
+
 @end
