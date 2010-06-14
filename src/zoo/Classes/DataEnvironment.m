@@ -60,8 +60,8 @@ storageAuctionAnimals;
 		sharedInst = self;
 		[self restore];
 		
-		playerUid = @"1122334455";
-		friendUid = @"1177553155";
+		playerUid = @"1177553155";
+		friendUid = @"1122334455";
 		pid = @"11";
 		
 		playerFarmerInfo = [[DataModelFarmerInfo alloc] init];
