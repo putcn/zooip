@@ -197,6 +197,21 @@ antsCount;
 -(void) dealloc
 {
 	[self removeAllChildrenWithCleanup:YES];
+	
+	[title release];
+	[itemId  release];
+	[itemType  release];
+	[itemBuyType release];
+
+	[priceLbl release];
+	
+	
+	//for params;
+	[paramsDict release];
+	
+	[maledIdBeforeMarry release];
+	[femaledIdBeforeMarry release];
+	[animalIDAfterMarry release];
 	[super dealloc];
 }
 

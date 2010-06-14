@@ -53,6 +53,7 @@ animalID;
 	return self;
 }
 
+//生成结婚和交配按钮
 -(void)generateButtons
 {
 	Button *toMateBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMate:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
@@ -64,6 +65,7 @@ animalID;
 	[self addChild:toMarryBtn z:7];
 }
 
+//生成左边的动物，公的
 -(void)generateOne
 {
 	//Gen the one clicked at the right postion.
@@ -92,6 +94,7 @@ animalID;
 	
 }
 
+//生成右边的动物，母的
 -(void)generateAnother
 {
 	DataModelAnimal *serverAnimalDataAnother;
@@ -119,6 +122,7 @@ animalID;
 	[self addChild:itemButton z:7 tag:1%12];
 }
 
+//生成下面的可选列表
 -(void)generateOthers
 {
 	//Gen the list of can be mate/marry.
@@ -155,6 +159,8 @@ animalID;
 {
 	NSLog(@"Server Connection Fail");
 }
+
+
 
 -(void) toMate:(Button *)button
 {

@@ -167,4 +167,10 @@
 	}
 }
 
+-(void)dealloc
+{
+	[tabFlag release];
+	[super dealloc];
+}
+
 @end
