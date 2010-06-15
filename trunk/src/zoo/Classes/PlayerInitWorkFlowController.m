@@ -48,7 +48,7 @@ static NSString *STEP_GET_ALL_ORIGINAL_ANIMAL = @"9";
 	[self addController:getFarmInfoController andStep:STEP_GET_FARM_INFO];
 	GetAllBirdFarmAnimalInfoController *getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:self];
 	[self addController:getAllBirdFarmAnimalInfoController andStep:STEP_GET_ALL_ANIMAL_INFO];
-	LayEggController *layEggController = [[LayEggController alloc] initWithWorkFlowController:self];
+	LayEggController *layEggController =(LayEggController *)[[LayEggController alloc] initWithWorkFlowController:self];
 	[self addController:layEggController andStep:STEP_LAY_EGG];
 	AllLayEggController *allLayEggController = [[AllLayEggController alloc] initWithWorkFlowController: self];
 	[self addController:allLayEggController andStep:STEP_GET_ALL_EGG_INFO];
