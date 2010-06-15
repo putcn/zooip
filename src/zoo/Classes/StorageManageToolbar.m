@@ -74,6 +74,8 @@
 {
 	//storageContainer
 	
+	
+	
 	if (storageContainer == nil) {
 		storageContainer = [[StorageContainer alloc] init];
 		storageContainer.position = ccp(240,160);

@@ -20,6 +20,7 @@
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
 		[self setTextureRect: rect];
+		[bg release];
 		
 	}
 	return self;
