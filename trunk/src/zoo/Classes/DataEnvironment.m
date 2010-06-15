@@ -24,6 +24,7 @@ ants,
 snakes,
 dejectas,
 dogs,
+friendIDs,
 friendInfos,
 userTipses,
 storageFoods,
@@ -109,6 +110,8 @@ storageAuctionAnimals;
 		friendInfo_2.experience = 100;
 		
 		[friendInfos setValue:friendInfo_2 forKey:@"1166553155"];
+		
+		friendIDs = [[NSMutableArray alloc] init];
 	}
 	return sharedInst;
 }
@@ -137,6 +140,7 @@ storageAuctionAnimals;
 	snakes = nil;
 	dejectas = nil;
 	dogs = nil;
+	friendIDs = nil;
 	friendInfos = nil;
 	userTipses = nil;
 	storageFoods = nil;

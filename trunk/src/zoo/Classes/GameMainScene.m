@@ -170,6 +170,8 @@ static GameMainScene *_sharedGameMainScene = nil;
 	}
 	else
 	{
+		[DataEnvironment sharedDataEnvironment].friendUid = playerUid;
+		
 		[[ModelLocator sharedModelLocator] setIsSelfZoo:NO];
 		FriendInitWorkFlowController *friendInitFlowController = [[FriendInitWorkFlowController alloc] init];
 		[friendInitFlowController setupStep];

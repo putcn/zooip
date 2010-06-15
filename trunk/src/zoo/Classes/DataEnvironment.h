@@ -29,6 +29,7 @@
 	NSMutableDictionary* ants;
 	NSMutableDictionary* dejectas;
 	NSMutableDictionary* dogs;
+	NSMutableArray *friendIDs;
 	NSMutableDictionary* friendInfos;
 	NSMutableDictionary* userTipses;
 	NSMutableDictionary* storageFoods;
@@ -54,6 +55,7 @@
 @property(nonatomic, retain) NSMutableDictionary* ants;
 @property(nonatomic, retain) NSMutableDictionary* dejectas;
 @property(nonatomic, retain) NSMutableDictionary* dogs;
+@property(nonatomic, retain) NSMutableArray* friendIDs;
 @property(nonatomic, retain) NSMutableDictionary* friendInfos;
 @property(nonatomic, retain) NSMutableDictionary* userTipses;
 @property(nonatomic, retain) NSMutableDictionary* storageFoods;
