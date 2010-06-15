@@ -11,8 +11,6 @@
 
 @implementation StoButtonContainer
 
-
-//========
  
  -(id) initWithTab: (NSString *)tabName setTarget:(id)target
  {
@@ -29,14 +27,7 @@
 	 [self setTextureRect: rect];
 	 [bg release];
 	 
-	 
-	 
-	 
-	 
-	  [self initView];
-	 
-	 
-	  
+	 [self initView];
 	 
  }
  return self;
@@ -71,7 +62,6 @@
 	NSDictionary *itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
 	NSArray *itemArray = [itemDic allKeys];
 
-
 	totalPage = itemArray.count/12 + 1;
 	
 	currentPageNum = 1;
@@ -83,7 +73,6 @@
 	totalPriceLab.position = ccp(self.contentSize.width/2 - 100, 20);
 	[totalPriceLab setColor:ccc3(0, 0, 0)];
 	[self addChild:totalPriceLab z:7 tag:10];
-	
 	
 }
 
@@ -101,11 +90,11 @@
 	NSString *totalStrPrice = [NSString stringWithFormat:@"当前总计收入 ：%d  金蛋",totalPrice];
 	[totalPriceLab	setString:totalStrPrice];
 		
-	itemDic = nil;
-	[itemDic release];
-	itemArray = nil;
-	[itemArray release];
+	//[itemDic release];
+	//[itemArray release];
 	
+
+
 	
 }
 
@@ -187,6 +176,7 @@
 			
 			[eggSourceArray addObject:storageEgg];
 			
+			
 			NSString *picName = [NSString stringWithFormat:@"%@",storageEgg.eggNameEN];
 			NSString *eggName = [NSString stringWithFormat:@"%@",storageEgg.eggNameEN];
 			NSString *eggTotal = [NSString stringWithFormat:@"%d",(storageEgg.numOfProduct + storageEgg.numOfStolen)];
@@ -201,8 +191,6 @@
 			
 			[itemNumArray addObject:itemButton];
 			
-			//[self addChild:[itemNumArray objectAtIndex:i] z:7 tag:i%12];
-			//[self addChild:itemButton z:7 tag:i%12];
 			
 		}
 		
@@ -215,8 +203,6 @@
 
 		[eggSourceArray removeAllObjects];
 		[eggSourceArray release];
-		
-
 		
 	}
 			
@@ -321,6 +307,22 @@
 	[self initView];
 	
 }
+
+
+-(void) dealloc
+{
+	[self removeAllChildrenWithCleanup:YES];
+	[totalPriceLab release];
+	[eggSourceArray release];
+	[itemNumArray release];
+	[parentTarget release];
+	[super dealloc];
+}
+
+
+
+
+
 
 
 
