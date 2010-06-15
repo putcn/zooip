@@ -11,10 +11,6 @@
 @implementation EggHatchInfoPane
 
 
-
-
-
-
 -(id) initWithItem:(NSString *)farmerid farmID:(NSString *) farmid storageZyID:(NSString *) storageZyId setTarget:(id)target; 
 {
 	if ((self = [super init])) {
@@ -277,21 +273,23 @@
 	
 }
 
-
-
-
-
-
-
-
-
-
 -(void) faultCallback:(NSObject *)value
 {
 	NSLog(@"Server Connection Fail");
 }
 
 
+-(void) dealloc
+{
+	
+	[lab_hatchEggInfo1 release];
+	[lab_hatchEggInfo2 release];
+	[lab_hatchEggInfo3 release];
+	[lab_notice release];
+	[myTarget release];
+	
+	[super dealloc];
+}
 
 
 

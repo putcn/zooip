@@ -11,8 +11,9 @@
 
 @implementation FriendInfoBut
 
-@synthesize friendFarmId, friendFarmerId,fId;
+@synthesize friendFarmId, friendFarmerId,fId,friendNames;
 
+//@synthesize friendFarmId, friendFarmerId,fId,friendNames,friendExperience;
 
 -(id) initFirendInfo:(NSString *)farmId setFarmerId:(NSString *)farmerid  setFriendId:(NSString *)friendId 
 		setFriendName:(NSString *)friendName setFirendIco:(NSString*) friendIco setExperience:(int) experience  
@@ -34,7 +35,8 @@
 		selector = handler;
 		pri = priorityValue;
 		
-		//[self setImg:imagePath setBuyType:buyType setPrice:price];
+		
+		[ self setFriendIco:friendIco setFriendName:friendName  setExperience:experience];
 	}
 	self.scale = 1.5f;
 	return self;

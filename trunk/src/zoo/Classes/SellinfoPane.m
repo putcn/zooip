@@ -26,6 +26,7 @@
 		self.title = @"出 售";
 		priceLbl = [[CCLabel alloc] retain];
 		
+		[self addTitle];
 		
 		[self updateInfo:itId type:itType setTarget:target];
 
@@ -35,7 +36,7 @@
 }
 -(void)addTitle
 {
-	NSLog(@"%@",title);
+	
 	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:30];
 	[titleLbl setColor:ccc3(255, 255, 255)];
 	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - titleLbl.contentSize.height/2);
@@ -48,7 +49,7 @@
 {
 	
 	[self removeAllChildrenWithCleanup:YES];
-	[self addTitle];
+	
 	itemId = itId;
 	itemType = itType;
 	itemPrice = 0;
@@ -98,11 +99,10 @@
 		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0];
 		scalerPane.position = ccp(200,200);
 		[self addChild:scalerPane z:5];
+
 		
-		
-		
-		[storageEggs release];
 	}
+	
 	
 	if (itemType == @"zygoteegg") {
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs retain];
@@ -116,9 +116,6 @@
 		NSArray *eNameArr = [picName componentsSeparatedByString:@" "];
 		
 		NSString *picFileName = [NSString stringWithFormat:@"zygote%@.png",picName];
-		
-		//NSString *picFileName = [NSString stringWithFormat:@"%@Egg.png",[eNameArr objectAtIndex:0]];
-		///=========
 		
 		NSString *price = [NSString stringWithFormat:@"%d",itemPrice]; 
 		NSString *priceStr = [NSString stringWithFormat:@"受精卵售价 : %d 金蛋",itemPrice];
@@ -169,9 +166,11 @@
 		[modelZygoteEggs release];
 	}
 	
+	 
 	
 	[dic release];
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"出售" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"TabButton2.png" setTarget:target setSelector:@selector(buyItem:) setPriority:0 offsetX:0 offsetY:0 scale:2.0f];
+	
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"出售" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"TabButton2.png" setTarget:target setSelector:@selector(sellEggItem:) setPriority:0 offsetX:0 offsetY:0 scale:2.0f];
 	
 	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"TabButton2.png" setTarget:target setSelector:@selector(cancel:) setPriority:0 offsetX:0 offsetY:0 scale:2.0f];
 	
@@ -186,12 +185,14 @@
 	[self addChild:cancelBtn z:10];
 	
 
-
-	
 	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:5];
 	transBackground.scale = 17.0f;
 	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 	[self addChild:transBackground z:5];
+	
+	[transBackground release];
+
+	
 	 
 	 
 }
@@ -226,15 +227,13 @@
 	
 	count = [[values objectForKey:@"count"] intValue];
 	[priceLbl setString:[NSString stringWithFormat:@"总计收入 :  %d  金蛋", count * itemPrice]];
-	
-	NSLog(@"vvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvvv   %d",count);
-	 
 	 
 }
 
 -(void) dealloc
 {
 	[self removeAllChildrenWithCleanup:YES];
+	[priceLbl release];
 	[super dealloc];
 }
 

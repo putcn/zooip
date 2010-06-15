@@ -72,15 +72,9 @@
 
 -(void)upData
 {
-	
-	NSLog(@"＝＝＝＝＝＝＝＝＝＝＝ 删除在根目录＝＝＝＝＝＝＝＝＝＝");
-	NSLog(@"＝＝＝＝＝＝＝＝＝＝＝ 删除在根目录＝＝＝＝＝＝＝＝＝＝");
-	NSLog(@"＝＝＝＝＝＝＝＝＝＝＝ 删除在根目录＝＝＝＝＝＝＝＝＝＝");
-	NSLog(@"＝＝＝＝＝＝＝＝＝＝＝ 删除在根目录＝＝＝＝＝＝＝＝＝＝");
-	//itemImg.scale = 0;
 	item.scale = 0;
-	//[self removeChild: item cleanup:YES];
-	//[item release];
+	[self removeChild: item cleanup:YES];
+	[item release];
 	
 }
 
@@ -126,6 +120,8 @@
 -(void) dealloc
 {
 	[targetCallBack release];
+	[itemImg release];
+	[item release];
 	[super dealloc];
 }
 

@@ -11,9 +11,6 @@
 #import "StorageContainer.h"
 #import "FeedbackDialog.h";
 
-
-
-
 @implementation StorageContainer
 
 @synthesize title;
@@ -30,17 +27,15 @@
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
 		[self setTextureRect: rect];
+		[bg release];
 		self.position = ccp(240,160);
 		self.scale = 300.0f/1024.0f;
 		self.title = @"仓库";
 		
-		//NSMutableArray *mutable = [[NSMutableArray alloc] init];
 		num_paneNum = [ [NSMutableArray alloc] init];
 		
 		[self addTitle];
 		[self addMainPanel];
-		
-		//testType = @"egg";
 		
 		//设置一层半透明背景,点击事件的优先级为50,屏蔽下面图层的点击事件
 		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:50];
@@ -48,8 +43,7 @@
 		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 		[self addChild:transBackground z:-1];
 		
-		
-		
+		[num_paneNum release];
 		
 	}
 	return self;
@@ -62,9 +56,6 @@
 	
 	NSArray *tabArray = [[NSArray alloc] initWithObjects:@"egg",@"zygoteegg",nil];
 	[self addTab:tabArray];		
-	
-			 
-	
 	
 	if (onePane == nil || twoPane == nil) {
 		NSString *tab1 = [tabArray objectAtIndex:0];
@@ -87,10 +78,8 @@
 		twoPane.scale = 0;
 		[self removeChild:onePane cleanup:YES];
 		[self removeChild:twoPane cleanup:YES];
-		//[onePane release];
-		//[twoPane release];
-		
-		
+		[onePane release];
+		[twoPane release];
 		
 		NSString *tab1 = [tabArray objectAtIndex:0];
 		NSString *tab2 = [tabArray objectAtIndex:1];
@@ -124,7 +113,6 @@
 
 -(void)addTitle
 {
-	NSLog(@"%@",title);
 	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:30];
 	[titleLbl setColor:ccc3(255, 255, 255)];
 	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - titleLbl.contentSize.height/2);
@@ -135,7 +123,6 @@
 {
 	CGRect rect = CGRectZero;
 	rect.size = tabEnable.contentSize;
-	
 	
 	for (int i = 0; i < [tabArray count]; i++) {
 		NSString *tempString = [tabArray objectAtIndex:i];
@@ -181,11 +168,11 @@
 -(void) itemInfoHandler:(SellitemButton *) itemButton
 {
 	
+	curr_itemId   = itemButton.itemId;
+	curr_itemType = itemButton.itemType;
+	curr_target   = self;
+	
 	if (itemInfoPane == nil) {
-		
-		 curr_itemId   = itemButton.itemId;
-		 curr_itemType = itemButton.itemType;
-		 curr_target   = self;
 		
 		itemInfoPane = [[SellinfoPane alloc] initWithItem:itemButton.itemId type:itemButton.itemType setTarget:self];
 		itemInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2);
@@ -202,12 +189,10 @@
 
 
 
--(void) buyItem:(Button *)button
+-(void) sellEggItem:(Button *)button
 {
 	
-	
 	SellinfoPane *itemInfo = (SellinfoPane *)button.target; 
-
 	
 	if (itemInfo.itemType == @"egg") {
 		
@@ -216,10 +201,7 @@
 			
 			DataModelStorageEgg *storageEgg = (DataModelStorageEgg *)[[DataEnvironment sharedDataEnvironment].storageEggs objectForKey:itemInfo.itemId];
 
-	
-		
 			if (itemInfo.count == 0) {
-				NSLog(@"Hggggggggggggggg-----------------------------------------    %d",itemInfo.count);
 				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",storageEgg.eggId,@"eggId",[NSString stringWithFormat:@"%d",1],@"amount",nil];
 				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellProduct WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 				
@@ -274,15 +256,14 @@
 		eggHatchInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2 - 50);
 		[self addChild:eggHatchInfoPane z:20];
 		
-		
+		[itemInfo release];
 }
 
 
 -(void) cancelHandler:(Button *)button
 {
 	//刷新孵化界面
-	[self addMainPanel];
-	
+	[self updadaPane];
 	eggHatchInfoPane.position = ccp(10000, eggHatchInfoPane.contentSize.height/2);
 	
 }
@@ -293,7 +274,7 @@
 -(void) cancel:(Button *)button
 {
 	itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
-	NSLog(@"取消");
+
 }
 
 
@@ -362,22 +343,29 @@
 	}
 	
 	
-
-	
-	
 }
+
 
 
 -(void) faultCallback:(NSObject *)value
 {
-	NSLog(@"Server Connection Fail");
+	[[FeedbackDialog sharedFeedbackDialog] addMessage:@"Server Connection Fail!"];
 }
 
 
 -(void) dealloc
 {
 	[self removeAllChildrenWithCleanup:YES];
-	[super dealloc];
+	
+	 [tabEnable release];
+	 [curr_target release];
+	 [tabDisable release];
+	 [itemInfoPane release];
+	 [eggHatchInfoPane release];
+	 [buttonContainer release];
+	 [onePane release];
+	 [twoPane release];
+	 [super dealloc];
 }
 
 
