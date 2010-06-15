@@ -9,7 +9,9 @@
 #import "Button.h"
 #import "SellitemButton.h"
 #import "StorageContainer.h"
-#import "FeedbackDialog.h";
+#import "FeedbackDialog.h"
+
+#import "GameMainScene.h"
 
 @implementation StorageContainer
 

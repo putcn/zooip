@@ -14,7 +14,6 @@
 #import "EggHatchInfoPane.h"
 #import "TransBackground.h"
 #import "StoButtonContainer.h"
-#import "GameMainScene.h"
 
 
 
