@@ -75,7 +75,7 @@
 -(void) gotoFriendHandler:(FriendInfoBut *) friendButton
 {
 	
-	[[GameMainScene sharedGameMainScene] switchZoo:NO uid:friendButton.uId];
+	[[GameMainScene sharedGameMainScene] switchZoo:friendButton.uId];
 	
 	self.position = ccp(1000,160);
 	

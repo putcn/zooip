@@ -112,6 +112,10 @@ storageAuctionAnimals;
 		[friendInfos setValue:friendInfo_2 forKey:@"1166553155"];
 		
 		friendIDs = [[NSMutableArray alloc] init];
+		[friendIDs addObject:@"1122334455"];
+		[friendIDs addObject:@"1122554455"];
+		[friendIDs addObject:@"1188334455"];
+		[friendIDs addObject:@"1166553155"];
 	}
 	return sharedInst;
 }

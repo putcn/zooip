@@ -9,9 +9,10 @@
 #import "LoginScence.h"
 #import "ASIHTTPRequest.h"
 #import "GameMainScene.h"
+#import "DataEnvironment.h"
 
-static NSString* kApiKey = @"b856de458be342f4a80a4e2cc824f146";
-static NSString* kApiSecret = @"8426c76e6db84d70bb6516fdf3a4ec34";
+static NSString* kApiKey = @"6783ae2a188f4367b101a8a669c9f088";
+static NSString* kApiSecret = @"204df2c367e148839f33fb2b1e56fcc5";
 
 @implementation LoginScence
 
@@ -59,9 +60,11 @@ static NSString* kApiSecret = @"8426c76e6db84d70bb6516fdf3a4ec34";
 
 - (void)session:(Session*)session didLogin:(RRUID)uid
 {
-	
-	[[CCDirector sharedDirector] replaceScene:[GameMainScene scene]];
-	//[[Request requestWithDelegate:self] call:@"users.getInfo" params:nil];
+	if (uid > 0)
+	{
+		[DataEnvironment sharedDataEnvironment].playerUid = [NSString stringWithFormat:@"%d", uid];
+		[[Request requestWithDelegate:self] call:@"users.getInfo" params:nil];
+	}
 }
 
 - (void)request:(Request*)request didLoad:(id)result
@@ -72,7 +75,17 @@ static NSString* kApiSecret = @"8426c76e6db84d70bb6516fdf3a4ec34";
 		NSDictionary* user = [users objectAtIndex:0];
 		NSString* name = [user objectForKey:@"name"];
 		NSString* originheadUrl = [user objectForKey:@"tinyurl"];
-		NSMutableString* headUrl = [NSMutableString string];
+		
+		[[Request requestWithDelegate:self] call:@"friends.getAppFriends" params:nil];
+	}
+	if([request.method isEqualToString:@"friends.getAppFriends"])
+	{
+		NSArray *friendIDs = result;
+		
+		for (NSString *friendID in friendIDs)
+		{
+			[[DataEnvironment sharedDataEnvironment].friendIDs addObject:friendID];
+		}
 		
 		//[[CCDirector sharedDirector] popScene];
 		[[CCDirector sharedDirector] replaceScene:[GameMainScene scene]];

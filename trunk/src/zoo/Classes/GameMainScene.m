@@ -155,9 +155,20 @@ static GameMainScene *_sharedGameMainScene = nil;
 	[uiLayer updateUserInfo];
 }
 
--(void) switchZoo:(Boolean)isSelfZoo uid:(NSString *)playerUid
+-(void) switchZoo:(NSString *)playerUid
 {
 	[self clearAll];
+	
+	BOOL isSelfZoo = NO;
+	
+	if ([playerUid isEqual:[DataEnvironment sharedDataEnvironment].playerUid] || playerUid == nil)
+	{
+		isSelfZoo = YES;
+	}
+	else
+	{
+		isSelfZoo = NO;
+	}
 	
 	if (isSelfZoo)
 	{
