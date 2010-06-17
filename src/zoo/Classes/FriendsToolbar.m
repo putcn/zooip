@@ -43,21 +43,38 @@
 		friendView = [[FriendMangePanel alloc] init];
 		friendView.position = ccp(-200,160);
 		[self addChild:friendView];
+				
+		[self popUpHandler];
+		
 		}else {
 		
 		[friendView resetPostion];
 		
 		if (friendView.position.x != -200) {
+			[self popUpHandler];
 			friendView.position = ccp(-200,160);
 			
 		}else {
 			friendView.position = ccp(1000,160);	
 		}
 
-		
 	}
 		 
 }
+
+
+-(void)popUpHandler
+{
+	friendView.scale = 0.1f;
+	id actionScaling = [CCScaleTo actionWithDuration:0.6  scale:300.0f/1024.0f];
+	
+	id ease = [CCEaseBackOut actionWithAction: actionScaling];
+	[ease setDuration:0.3];
+	
+	[friendView runAction:ease];
+}
+
+
 
 
 @end

@@ -11,12 +11,12 @@
 
 @implementation FriendInfoBut
 
-@synthesize friendFarmId, friendFarmerId,uId,friendNames;
+@synthesize friendFarmId, friendFarmerId,uId,friendNames,icoUrl;
 
 //@synthesize friendFarmId, friendFarmerId,fId,friendNames,friendExperience;
 
 -(id) initFirendInfo:(NSString *)farmId setFarmerId:(NSString *)farmerid  setFriendId:(NSString *)friendId 
-		setFriendName:(NSString *)friendName setFirendIco:(NSString*) friendIco setExperience:(int) experience  
+		setFriendName:(NSString *)friendName setFirendIcoUrl:(NSString*) friendIcoUrl setExperience:(int) experience  
 		setTarget:(id) target setSelector:(SEL) handler setPriority:(int) priorityValue 
 		offsetX:(int) offsetXValue offsetY:(int) offsetYValue
 {
@@ -25,8 +25,15 @@
 		friendFarmId   = farmId;
 		friendFarmerId = farmerid;
 		uId = friendId;
+		icoUrl = friendIcoUrl;
+		
+		
+		
+		
+		
 		
 		CCTexture2D *bgImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"itemButtonBack.png" ofType:nil] ] ];
+		
 		CGRect rect = CGRectZero;
 		rect.size = bgImg.contentSize;
 		[self setTexture: bgImg];
@@ -37,7 +44,7 @@
 		pri = priorityValue;
 		
 		
-		[ self setFriendIco:friendIco setFriendName:friendName  setExperience:experience];
+		[ self setFriendIco:icoUrl setFriendName:friendName  setExperience:experience];
 	}
 	self.scale = 1.5f;
 	return self;
@@ -47,13 +54,22 @@
 //设置好友的头像，姓名，经验值
 -(void) setFriendIco: (NSString *) icoPath setFriendName: (NSString *) friendName setExperience:(int) exprience;
 {
+	
+	NSLog(@"---------------ico  -------     %@",icoPath);
+	NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif"]];
+	
 	CCSprite *icoNode = [CCSprite node];
-	CCTexture2D *icoImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:icoPath ofType:nil] ] ];
+	
+	CCTexture2D *icoImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithData:imageData ] ];
+	
+	
 	CGRect rect = CGRectZero;
 	rect.size = icoImg.contentSize;
 	[icoNode setTexture: icoImg];
 	[icoNode setTextureRect: rect];
 	[icoImg release];
+	[imageData release];
+	
 	
 	
 	NSString *friendInfoStr = [NSString stringWithFormat:@"%@   %d",friendName,exprience];
