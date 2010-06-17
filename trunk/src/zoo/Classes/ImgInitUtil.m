@@ -10,20 +10,41 @@
 
 
 @implementation ImgInitUtil
-@synthesize animation;
--(id)initWithImage:(NSString *)fileName width:(NSInteger)w height:(NSInteger)h index:(NSInteger)index number:(NSInteger)number
+
+-(CCAnimation *)getAnimate:(NSString *)fileName setOriginX:(float)originx setOriginY:(float)originy setWidth:(float)w setHeight:(float)h setNumber:(NSInteger)number setMaxOneline:(NSInteger)max
 {
-	if ((self = [super init])) {
-		animation = [CCAnimation animationWithName:@"animal" delay:0.04f];
-		CCTexture2D *image = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:fileName ofType:nil]]];
-		NSInteger itemsOneLine = image.contentSize.width / w;
-		for (int i = index; i<= index + number; i++) {
-			NSInteger startX = (index - 1) % itemsOneLine;
-			NSInteger startY = index / itemsOneLine;
-			[animation addFrameWithTexture:image rect:CGRectMake(startX, startY, w, h)];
-		}
+	CCAnimation *animation = [CCAnimation alloc];
+	animation = [CCAnimation animationWithName:@"animal" delay:0.1f];
+	CCTexture2D *image = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:fileName ofType:nil]]];
+	NSInteger containOneLine = max;
+	for (int i = 0; i < number; i++) {
+		[animation addFrameWithTexture:image rect:CGRectMake((i % containOneLine) * w, (i/containOneLine) * h, w, h)];
+		NSLog(@"second x.....%f, y.....%f", (i % containOneLine) * w, (i/containOneLine) * h);
 	}
-	return self;
+	return animation;
+}
+
+-(NSDictionary *)getSprite:(NSString *)fileName setOriginX:(float)originx setOriginY:(float)originy setWidth:(float)w setHeight:(float)h setNumber:(NSInteger)number
+{
+	NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithCapacity:0];
+	CCTexture2D *image = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:fileName ofType:nil]]];
+	if (number == 5) {
+		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(0, originy, w, h)] forKey:@"down"];
+		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(w, originy, w, h)] forKey:@"left"];
+		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(2*w, originy, w, h)] forKey:@"leftDown"];
+		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(3*w, originy, w, h)] forKey:@"leftUp"];
+		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(4*w, originy, w, h)] forKey:@"up"];
+	}
+	else if(number == 2)
+	{
+		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(0, originy, w, h)] forKey:@"down"];
+		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(w, originy, w, h)] forKey:@"left"];
+	}
+	else if(number == 1)
+	{
+		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(0, originy, w, h)] forKey:@"left"];
+	}
+	return [NSDictionary dictionaryWithDictionary:dictionary];
 }
 
 @end
