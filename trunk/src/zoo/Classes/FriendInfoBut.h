@@ -21,6 +21,7 @@
 	NSString* friendFarmerId;
 	NSString* uId;
 	NSString* friendNames;
+	NSString* icoUrl;
 		
 
 }
@@ -29,9 +30,10 @@
 @property (nonatomic, retain)NSString *friendFarmerId;
 @property (nonatomic, retain)NSString *uId;
 @property (nonatomic, retain)NSString *friendNames;
+@property (nonatomic, retain)NSString *icoUrl;
 
 -(id) initFirendInfo:(NSString *)farmId setFarmerId:(NSString *)farmerid  setFriendId:(NSString *)friendId 
-			setFriendName:(NSString *)friendName setFirendIco:(NSString*) friendIco setExperience:(int) experience  
+			setFriendName:(NSString *)friendName setFirendIcoUrl:(NSString*) friendIcoUrl setExperience:(int) experience  
 			setTarget:(id) target setSelector:(SEL) handler setPriority:(int) priorityValue 
 			offsetX:(int) offsetXValue offsetY:(int) offsetYValue;
 

@@ -93,9 +93,8 @@
 		
 		//生成朋友列表
 		//头像
-		NSString *picFileName = [NSString stringWithFormat:@"mandarinduck.png"];
 		FriendInfoBut *friendIcoButton = [[FriendInfoBut alloc] initFirendInfo:dataModelfriend.farmId setFarmerId:dataModelfriend.farmerId  setFriendId:dataModelfriend.uid setFriendName:dataModelfriend.userName 
-																setFirendIco:picFileName setExperience:dataModelfriend.experience setTarget:parentTarget setSelector:@selector(gotoFriendHandler:) 
+															   setFirendIcoUrl:dataModelfriend.tinyurl setExperience:dataModelfriend.experience setTarget:parentTarget setSelector:@selector(gotoFriendHandler:) 
 															    setPriority:49 offsetX:1 offsetY:1];	
 	
 		friendIcoButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 10 * ((i-12*(currentPageNum-1))/4) - 100);
