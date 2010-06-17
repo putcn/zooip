@@ -18,6 +18,7 @@
 #import "GetAntOfFarmController.h"
 #import "GetFarmerDogController.h"
 #import "GetAllOriginalAnimalController.h"
+#import "GetFriendsInfoController.h"
 #import "AnimalController.h"
 #import "ItemController.h"
 #import "EggController.h"
@@ -37,6 +38,7 @@ static NSString *STEP_GET_DEJECTA = @"6";
 static NSString *STEP_GET_ANT = @"7";
 static NSString *STEP_GET_DOG = @"8";
 static NSString *STEP_GET_ALL_ORIGINAL_ANIMAL = @"9";
+static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 
 @implementation PlayerInitWorkFlowController
 
@@ -62,6 +64,8 @@ static NSString *STEP_GET_ALL_ORIGINAL_ANIMAL = @"9";
 	[self addController:getFarmerDogController andStep:STEP_GET_DOG];
 	GetAllOriginalAnimalController *getAllOriginalAnimalController = [[GetAllOriginalAnimalController alloc] initWithWorkFlowController:self];
 	[self addController:getAllOriginalAnimalController andStep:STEP_GET_ALL_ORIGINAL_ANIMAL];
+	GetFriendsInfoController *getFriendsInfoController = [[GetFriendsInfoController alloc] initWithWorkFlowController:self];
+	[self addController:getFriendsInfoController andStep:STEP_GET_ALL_FRIENDS_INFO];
 }
 
 -(void) startStep
@@ -155,6 +159,15 @@ static NSString *STEP_GET_ALL_ORIGINAL_ANIMAL = @"9";
 		return;
 	}
 	else if (curStep == STEP_GET_ALL_ORIGINAL_ANIMAL)
+	{
+		curStep = STEP_GET_ALL_FRIENDS_INFO;
+		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
+		NSString *uids = [[DataEnvironment sharedDataEnvironment].friendIDs componentsJoinedByString:@","];
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:uids,@"uids",nil];
+		[tempController execute:params];
+		return;
+	}
+	else if (curStep == STEP_GET_ALL_FRIENDS_INFO)
 	{
 		[self endStep];
 		return;

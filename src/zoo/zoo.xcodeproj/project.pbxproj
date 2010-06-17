@@ -279,10 +279,6 @@
 		3EB1B31C11A43DF500927E2F /* AntController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1B31B11A43DF500927E2F /* AntController.m */; };
 		3EB9E4FA11A52A3800BD9847 /* operationEnd.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB9E4F911A52A3800BD9847 /* operationEnd.png */; };
 		3EB9E4FD11A52D3F00BD9847 /* OperationEndView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9E4FC11A52D3F00BD9847 /* OperationEndView.m */; };
-		3EBA5B7711C9B58100B9EC84 /* rooster1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EBA5B7611C9B58100B9EC84 /* rooster1.png */; };
-		3EBA5C2211C9FC1100B9EC84 /* peacock1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EBA5C2111C9FC1100B9EC84 /* peacock1.png */; };
-		3EBA5C3211C9FCE800B9EC84 /* duck1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EBA5C3111C9FCE800B9EC84 /* duck1.png */; };
-		3EC6142B11C772EA004CB48F /* duck-big.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC6142A11C772EA004CB48F /* duck-big.png */; };
 		3EC7E343119A3B6400791BAD /* EggViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7E342119A3B6400791BAD /* EggViewFactory.m */; };
 		3EC7E441119AA2E200791BAD /* cleaning_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7E3FD119AA2E200791BAD /* cleaning_01.png */; };
 		3EC7E442119AA2E200791BAD /* cleaning_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7E3FE119AA2E200791BAD /* cleaning_02.png */; };
@@ -6721,10 +6717,6 @@
 		3EB9E4F911A52A3800BD9847 /* operationEnd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = operationEnd.png; sourceTree = "<group>"; };
 		3EB9E4FB11A52D3F00BD9847 /* OperationEndView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationEndView.h; sourceTree = "<group>"; };
 		3EB9E4FC11A52D3F00BD9847 /* OperationEndView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationEndView.m; sourceTree = "<group>"; };
-		3EBA5B7611C9B58100B9EC84 /* rooster1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rooster1.png; sourceTree = "<group>"; };
-		3EBA5C2111C9FC1100B9EC84 /* peacock1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peacock1.png; sourceTree = "<group>"; };
-		3EBA5C3111C9FCE800B9EC84 /* duck1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duck1.png; sourceTree = "<group>"; };
-		3EC6142A11C772EA004CB48F /* duck-big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "duck-big.png"; sourceTree = "<group>"; };
 		3EC7E341119A3B6400791BAD /* EggViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggViewFactory.h; sourceTree = "<group>"; };
 		3EC7E342119A3B6400791BAD /* EggViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggViewFactory.m; sourceTree = "<group>"; };
 		3EC7E3FD119AA2E200791BAD /* cleaning_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleaning_01.png; sourceTree = "<group>"; };
@@ -22977,10 +22969,6 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				3EBA5C3111C9FCE800B9EC84 /* duck1.png */,
-				3EBA5C2111C9FC1100B9EC84 /* peacock1.png */,
-				3EBA5B7611C9B58100B9EC84 /* rooster1.png */,
-				3EC6142A11C772EA004CB48F /* duck-big.png */,
 				3ECBBB2D11AFB63B00A7ADFA /* collision */,
 				3E4B1FB411AE7E840044D43E /* ButtonContainer.png */,
 				3E4B1FB511AE7E840044D43E /* goldant.png */,
@@ -29875,10 +29863,6 @@
 				6074904F11B515E1002D8922 /* 婚姻管理.png in Resources */,
 				3EA9E0A711BC7B2E00EF4ECB /* msgPopup.png in Resources */,
 				C39CFC1E11BFC6A90063B01E /* Doxyfile in Resources */,
-				3EC6142B11C772EA004CB48F /* duck-big.png in Resources */,
-				3EBA5B7711C9B58100B9EC84 /* rooster1.png in Resources */,
-				3EBA5C2211C9FC1100B9EC84 /* peacock1.png in Resources */,
-				3EBA5C3211C9FCE800B9EC84 /* duck1.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

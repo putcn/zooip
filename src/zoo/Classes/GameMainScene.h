@@ -30,7 +30,7 @@
 -(void) removeDialogFromScreen:(CCSprite *)sprite;
 
 -(void) updateUserInfo;
--(void) switchZoo:(Boolean)isSelfZoo uid:(NSString *)playerUid;
+-(void) switchZoo:(NSString *)playerUid;
 -(void) clearAll;
 
 @end
