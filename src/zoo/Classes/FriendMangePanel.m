@@ -10,15 +10,20 @@
 
 #import "Button.h"
 #import "FeedbackDialog.h"
+#import "GameMainScene.h"
+#import "FriendsToolbar.h"
 
 
 @implementation FriendMangePanel
 
 @synthesize title;
+@synthesize scaleFlag;
 
 -(id) init
 {
 	if ((self = [super init])) {
+		
+		
 		tabDic = [[NSMutableDictionary alloc] initWithCapacity:0];
 		tabContentDic = [[NSMutableDictionary alloc] initWithCapacity:0];
 		tabEnable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"TabButton2.png" ofType:nil] ] ];
@@ -35,7 +40,7 @@
 		[self addTitle];
 	
 
-		FriendList *friendContainer = [[FriendList alloc] initWithTab:self];
+		friendContainer = [[FriendList alloc] initWithTab:self];
 		
 		friendContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
 		
@@ -47,6 +52,8 @@
 		transBackground.scale = 17.0f;
 		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 		[self addChild:transBackground z:-1];
+		
+		
 		
 	}
 	return self;
@@ -68,13 +75,22 @@
 -(void) gotoFriendHandler:(FriendInfoBut *) friendButton
 {
 	
-	NSLog(@"oooooooooooooooo   friendFarmId  oooooooooooooooooooo   %@",friendButton.friendFarmId);
-	NSLog(@"ooooooooooooooooo   friendFarmerId      oooooooooooooo    %@",friendButton.friendFarmerId);
-	NSLog(@"ooooooooooooooooooooooooooooooooooooooooo");
-	NSLog(@"ooooooooooooooooooooooooooooooooooooooooo");
+	[[GameMainScene sharedGameMainScene] switchZoo:NO uid:friendButton.uId];
 	
+	self.position = ccp(1000,160);
 	
 };
+
+
+-(void) resetPostion
+{
+
+	self.position = ccp(240,160);
+
+}
+
+
+
 
 -(void) dealloc
 {
