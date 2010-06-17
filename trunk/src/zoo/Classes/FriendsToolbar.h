@@ -10,9 +10,11 @@
 #import "cocos2d.h"
 #import "Button.h"
 #import "MessageDialog.h"
+#import "FriendMangePanel.h"
 
 @interface FriendsToolbar : CCSprite
 {
+	FriendMangePanel *friendView;
 	
 }
 

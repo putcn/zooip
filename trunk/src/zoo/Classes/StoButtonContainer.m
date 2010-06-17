@@ -89,12 +89,6 @@
 	
 	NSString *totalStrPrice = [NSString stringWithFormat:@"当前总计收入 ：%d  金蛋",totalPrice];
 	[totalPriceLab	setString:totalStrPrice];
-		
-	//[itemDic release];
-	//[itemArray release];
-	
-
-
 	
 }
 
@@ -225,8 +219,7 @@
 			NSString *eggZnName = [NSString stringWithFormat:@"%@",dataModelStorageZygoteEggs.eggName];
 
 			NSString *eggTotal = [NSString stringWithFormat:@""];
-             //分割字符串
-			//NSArray *eNameArr = [picName componentsSeparatedByString:@" "];
+
 			
 			totalPrice += dataModelStorageZygoteEggs.eggPrice;
 			
@@ -237,12 +230,10 @@
 			[itemNumArray addObject:itemButton];
 			
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
-			
-			[self addChild:itemButton z:7 tag:i%12];
-		
 	
 	
 	}
+		[self addEggToStage];
 				
 		zygoteEggsArray = nil;
 		[zygoteEggsArray release];
@@ -288,7 +279,7 @@
 	
 	imgIco.scale = 0;
 	[self removeChild:imgIco cleanup:YES];
-	[imgIco release];
+	
 }
 
 
@@ -304,19 +295,21 @@
 		
 		[itemNumArray removeAllObjects];	
 	
-	[self initView];
+	  [self initView];
 	
 }
 
 
 -(void) dealloc
 {
+	
 	[self removeAllChildrenWithCleanup:YES];
 	[totalPriceLab release];
 	[eggSourceArray release];
 	[itemNumArray release];
 	[parentTarget release];
 	[super dealloc];
+	 
 }
 
 

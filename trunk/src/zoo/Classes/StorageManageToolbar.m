@@ -72,9 +72,6 @@
 
 -(void) btnStorageButtonHandler
 {
-	//storageContainer
-	
-	
 	
 	if (storageContainer == nil) {
 		storageContainer = [[StorageContainer alloc] init];
@@ -83,19 +80,18 @@
 	}
 	else {
 		
-	
 		if (storageContainer.position.x == 240) {
-			storageContainer.scale = 0;
-			storageContainer = [[StorageContainer alloc] init];
+			
 			storageContainer.position = ccp(1000,0);
-			[[GameMainScene sharedGameMainScene] addDialogToScreen:storageContainer z:10];
+			
 			
 		}
 		else {
+			[storageContainer updadaPane];
 			storageContainer.position = ccp(240,160);
+			
 		}
-		
-		
+				
 	}
 	
 	

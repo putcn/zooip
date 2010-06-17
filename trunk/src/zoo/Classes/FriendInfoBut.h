@@ -19,7 +19,7 @@
 	
 	NSString* friendFarmId;
 	NSString* friendFarmerId;
-	NSString* fId;
+	NSString* uId;
 	NSString* friendNames;
 		
 
@@ -27,7 +27,7 @@
 
 @property (nonatomic, retain)NSString *friendFarmId;
 @property (nonatomic, retain)NSString *friendFarmerId;
-@property (nonatomic, retain)NSString *fId;
+@property (nonatomic, retain)NSString *uId;
 @property (nonatomic, retain)NSString *friendNames;
 
 -(id) initFirendInfo:(NSString *)farmId setFarmerId:(NSString *)farmerid  setFriendId:(NSString *)friendId 

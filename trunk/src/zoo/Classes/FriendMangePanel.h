@@ -15,18 +15,22 @@
 #import "FriendList.h"
 
 @interface FriendMangePanel : CCSprite {
+	
 	NSString *title;
 	NSMutableDictionary *tabDic;
 	NSMutableDictionary *tabContentDic;
+	FriendList *friendContainer;
 	
 	CCTexture2D *tabEnable;
 	CCTexture2D *tabDisable;
 	ItemInfoPane *itemInfoPane;
+	NSString *scaleFlag;
 	
 	
 
 }
 @property (nonatomic,retain) NSString *title;
+@property (nonatomic,retain) NSString *scaleFlag;
 
 
 -(void)addTitle;

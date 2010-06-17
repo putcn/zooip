@@ -11,7 +11,7 @@
 
 @implementation FriendInfoBut
 
-@synthesize friendFarmId, friendFarmerId,fId,friendNames;
+@synthesize friendFarmId, friendFarmerId,uId,friendNames;
 
 //@synthesize friendFarmId, friendFarmerId,fId,friendNames,friendExperience;
 
@@ -24,6 +24,7 @@
 	{
 		friendFarmId   = farmId;
 		friendFarmerId = farmerid;
+		uId = friendId;
 		
 		CCTexture2D *bgImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"itemButtonBack.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
@@ -54,7 +55,9 @@
 	[icoNode setTextureRect: rect];
 	[icoImg release];
 	
-	CCLabel *friendNameLab = [CCLabel labelWithString:friendName fontName:@"Arial" fontSize:20];
+	
+	NSString *friendInfoStr = [NSString stringWithFormat:@"%@   %d",friendName,exprience];
+	CCLabel *friendNameLab = [CCLabel labelWithString:friendInfoStr fontName:@"Arial" fontSize:20];
 	[friendNameLab setColor:ccc3(255, 0, 255)];
 	
 	icoNode.position = ccp(self.contentSize.width/2, self.contentSize.height - icoNode.contentSize.height /2);
