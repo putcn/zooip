@@ -7,6 +7,7 @@
 //
 
 #import "DuckView.h"
+#import "ImgInitUtil.h"
 
 
 @implementation DuckView
@@ -15,33 +16,21 @@
 {	
 	if ((self = [super init])) {
 		//walk animations
-		CCAnimation* walkUpAnimation = [CCAnimation animationWithName:@"walkUp" delay:0.04f];
-		CCAnimation* walkDownAnimation = [CCAnimation animationWithName:@"walkRightUp" delay:0.04f];
-		CCAnimation* walkLeftUpAnimation = [CCAnimation animationWithName:@"walkRight" delay:0.04f];
-		CCAnimation* walkLeftDownAnimation = [CCAnimation animationWithName:@"walkRightDown" delay:0.04f];
-		CCAnimation* walkLeftAnimation = [CCAnimation animationWithName:@"walkDown" delay:0.04f];
+		CCAnimation* walkUpAnimation = [[ImgInitUtil sharedImgInitUtil] getAnimate:@"duck1.png" setOriginX:1120 setOriginY:186 setWidth:30 setHeight:75 setNumber:16 setMaxOneline:20];
+		CCAnimation* walkDownAnimation = [[ImgInitUtil sharedImgInitUtil] getAnimate:@"duck1.png" setOriginX:1040 setOriginY:261 setWidth:30 setHeight:82 setNumber:16 setMaxOneline:20];
+		CCAnimation* walkLeftUpAnimation = [[ImgInitUtil sharedImgInitUtil] getAnimate:@"duck1.png" setOriginX:0 setOriginY:343 setWidth:55 setHeight:73 setNumber:16 setMaxOneline:20];
+		CCAnimation* walkLeftDownAnimation = [[ImgInitUtil sharedImgInitUtil] getAnimate:@"duck1.png" setOriginX:0 setOriginY:261 setWidth:65 setHeight:68 setNumber:16 setMaxOneline:20];
+		CCAnimation* walkLeftAnimation = [[ImgInitUtil sharedImgInitUtil] getAnimate:@"duck1.png" setOriginX:0 setOriginY:186 setWidth:70 setHeight:55 setNumber:16 setMaxOneline:20];
 		
 		//eat animation
-		CCAnimation* eatAnimation = [CCAnimation animationWithName:@"eat" delay:0.04f];
+		CCAnimation* eatAnimation = [[ImgInitUtil sharedImgInitUtil] getAnimate:@"duck1.png" setOriginX:0 setOriginY:0 setWidth:85 setHeight:62 setNumber:60 setMaxOneline:20];
 		
 		//add walk animations to animationTable
-		for (int i = 1; i<=16; i++) {
-			[walkUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"duck_walk_up_%02d.png", i]];
-			[walkDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"duck_walk_down_%02d.png", i]];
-			[walkLeftUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"duck_walk_leftUp_%02d.png", i]];
-			[walkLeftDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"duck_walk_leftDown_%02d.png", i]];
-			[walkLeftAnimation addFrameWithFilename:[NSString stringWithFormat:@"duck_walk_left_%02d.png", i]];
-		}
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkUpAnimation]] forKey:@"walk_up"];
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkDownAnimation]] forKey:@"walk_down"];
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkLeftUpAnimation]] forKey:@"walk_leftUp"];
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkLeftDownAnimation]] forKey:@"walk_leftDown"];
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkLeftAnimation]] forKey:@"walk_left"];
-		
-		//add eat animation
-		for (int i = 1; i<=60; i++) {
-			[eatAnimation addFrameWithFilename:[NSString stringWithFormat:@"duck_eat_left_%02d.png",i]];
-		}
 		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:eatAnimation]] forKey:@"eat_left"];
 		
 		
