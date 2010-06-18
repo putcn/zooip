@@ -11,6 +11,19 @@
 
 @implementation ImgInitUtil
 
+static ImgInitUtil *_sharedImgInitUtil;
+
++(ImgInitUtil *)sharedImgInitUtil{
+	@synchronized([ImgInitUtil class])
+	{
+		if(!_sharedImgInitUtil)
+		{
+			_sharedImgInitUtil = [[ImgInitUtil alloc] init];
+		}
+		return _sharedImgInitUtil;
+	}
+	return nil;
+}
 -(CCAnimation *)getAnimate:(NSString *)fileName setOriginX:(float)originx setOriginY:(float)originy setWidth:(float)w setHeight:(float)h setNumber:(NSInteger)number setMaxOneline:(NSInteger)max
 {
 	CCAnimation *animation = [CCAnimation alloc];
@@ -18,8 +31,8 @@
 	CCTexture2D *image = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:fileName ofType:nil]]];
 	NSInteger containOneLine = max;
 	for (int i = 0; i < number; i++) {
-		[animation addFrameWithTexture:image rect:CGRectMake((i % containOneLine) * w, (i/containOneLine) * h, w, h)];
-		NSLog(@"second x.....%f, y.....%f", (i % containOneLine) * w, (i/containOneLine) * h);
+		[animation addFrameWithTexture:image rect:CGRectMake(originx + (i % containOneLine) * w, originy + (i/containOneLine) * h, w, h)];
+		NSLog(@"second x.....%f, y.....%f",originx + (i % containOneLine) * w, originy + (i/containOneLine) * h);
 	}
 	return animation;
 }
