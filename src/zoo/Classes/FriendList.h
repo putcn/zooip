@@ -30,4 +30,6 @@
 -(void) nextPage:(Button *)button;
 -(void) forwardPage:(Button *)button;
 -(void) generatePage;
+
+NSInteger compareFriendArrayExpSelector(id f1, id f2, void *context);
 @end

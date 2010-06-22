@@ -86,12 +86,20 @@
 	
 		currentNum = endNumber - (currentPageNum -1 ) *4 ;
 	
-			
+	
+	
+	
+	NSArray *friendInfoArray = [friendInfoDic allValues];
+	
+	NSArray *sortedFriendInfoArray = [friendInfoArray sortedArrayUsingFunction:compareFriendArrayExpSelector context:nil];
+	
+	//int i = (currentPageNum -1)*12; i < endNumber; i ++
 	for (int i=0; i< friendsInfoArray.count; i++) {
+	//for (int i = (currentPageNum -1)*4; i < endNumber; i++) {
+
 		
-		dataModelfriend = [ friendInfoDic objectForKey:[friendsInfoArray objectAtIndex:i] ];
-		
-		//生成朋友列表
+		dataModelfriend = [sortedFriendInfoArray objectAtIndex:i];
+			//生成朋友列表
 		//头像
 		FriendInfoBut *friendIcoButton = [[FriendInfoBut alloc] initFirendInfo:dataModelfriend.farmId setFarmerId:dataModelfriend.farmerId  setFriendId:dataModelfriend.uid setFriendName:dataModelfriend.userName 
 															   setFirendIcoUrl:dataModelfriend.tinyurl setExperience:dataModelfriend.experience setTarget:parentTarget setSelector:@selector(gotoFriendHandler:) 
@@ -106,8 +114,26 @@
 	
 		
 	
-	
 }
+
+NSInteger compareFriendArrayExpSelector(id f1, id f2, void *context)
+{
+	int e1 = [(DataModelFriendInfo *)f1 experience];
+    int e2 = [(DataModelFriendInfo *)f2 experience];
+    if (e1 < e2)
+	{
+		return NSOrderedDescending;
+	}
+    else if (e1 > e2)
+	{
+		return NSOrderedAscending;
+	}
+    else
+	{
+		return NSOrderedSame;
+	}
+}
+
 
 -(void) dealloc
 {
