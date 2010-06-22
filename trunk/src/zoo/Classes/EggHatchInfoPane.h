@@ -27,6 +27,7 @@
 	NSString *STORAGEZY_ID;
 	
 	NSString *infoStr;
+	NSString *payType;
 	
 	id myTarget;
 	

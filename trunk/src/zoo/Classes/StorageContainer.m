@@ -75,6 +75,10 @@
 		[self addChild:twoPane z:7];
 	}else {
 		
+		[self updadaPane];
+		
+		
+		/*
 		onePane.scale = 0;
 		twoPane.scale = 0;
 		[self removeChild:onePane cleanup:YES];
@@ -96,7 +100,7 @@
 		
 		[self addChild:onePane z:7];
 		[self addChild:twoPane z:7];
-		
+		*/
 		
 	}
 
@@ -271,7 +275,6 @@
 
 
 
-
 -(void) cancel:(Button *)button
 {
 	itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
@@ -354,6 +357,16 @@
 }
 
 
+
+-(void) updadaPane
+{
+	
+	[onePane upData];
+	[twoPane upData];		
+	
+}
+
+
 -(void) dealloc
 {
 	[self removeAllChildrenWithCleanup:YES];
@@ -370,14 +383,6 @@
 }
 
 
-
--(void) updadaPane
-{
-
-	[onePane upData];
-	[twoPane upData];		
-	
-}
 
 
 
