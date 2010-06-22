@@ -447,37 +447,39 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 
 			break;
 		case ZooNetworkRequestgetFriendsInfo:
-			switch (code) {
-				case 0:
-					// TODO 无任何好友信息
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何好友信息"];
-					break;
-				case 1:
+		{
+			if (response == nil)
+			{
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何好友信息"];
+			}
+			else
+			{
+				NSArray *friendInfos = [response JSONValue];
+				NSDictionary* friendInfosDic= [[DataEnvironment sharedDataEnvironment] friendInfos];
+				
+				for (NSDictionary *friendInfoDic in friendInfos)
 				{
-					NSDictionary* friendInfosDic= [[DataEnvironment sharedDataEnvironment] friendInfos];
-					NSArray* friendInfosArray = [result objectForKey:@"usersInfo"];
-					for (int i = 0; i < [friendInfosArray count]; i++) {
-						NSDictionary* friendInfoDic = [friendInfosArray objectAtIndex:i];
-						DataModelFriendInfo* friendInfo = [[DataModelFriendInfo alloc] init];
-						
+					NSString *friendUid = [[friendInfoDic objectForKey:@"uid"] isKindOfClass:[NSNull class]]  ? nil : [friendInfoDic objectForKey:@"uid"];
+					
+					DataModelFriendInfo* friendInfo = [friendInfosDic objectForKey:friendUid];
+					if (friendInfo != nil)
+					{
 						friendInfo.farmId = [[friendInfoDic objectForKey:@"farmId"] isKindOfClass:[NSNull class]]  ? nil : [friendInfoDic objectForKey:@"farmId"];
 						friendInfo.farmerId = [[friendInfoDic objectForKey:@"farmerId"] isKindOfClass:[NSNull class]]  ? nil : [friendInfoDic objectForKey:@"farmerId"];
-						friendInfo.userName = [[friendInfoDic objectForKey:@"userName"] isKindOfClass:[NSNull class]]  ? nil : [friendInfoDic objectForKey:@"userName"];
-						friendInfo.tinyurl = [[friendInfoDic objectForKey:@"tinyurl"] isKindOfClass:[NSNull class]]  ? nil : [friendInfoDic objectForKey:@"tinyurl"];
-						friendInfo.uid = [[friendInfoDic objectForKey:@"uid"] isKindOfClass:[NSNull class]]  ? nil : [friendInfoDic objectForKey:@"uid"];
 						
 						friendInfo.experience = [[friendInfoDic objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[friendInfoDic objectForKey:@"experience"] intValue];
-						
-						[friendInfosDic setValue:friendInfo forKey:friendInfo.farmerId];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取好友信息"];
+					else
+					{
+						continue;
+					}
 				}
-					break;
-				default:
-					// TODO
-					break;
+				
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取好友信息"];
 			}
+			
 			break;
+		}
 		case ZooNetworkRequestgetUserTips:
 		{
 			NSDictionary* userTipsesDic = [[DataEnvironment sharedDataEnvironment] userTipses];
