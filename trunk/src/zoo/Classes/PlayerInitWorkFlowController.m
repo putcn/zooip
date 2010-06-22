@@ -82,7 +82,6 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 	{
 		load = [[LoadView alloc] init];
 		[load LoadingView];
-		
 		[load SetLabelString:curStep];
 		
 		curStep = STEP_GET_FARM_INFO;
@@ -161,6 +160,7 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 	}
 	else if (curStep == STEP_GET_ANT)
 	{
+		[load SetLabelString:curStep];
 		curStep = STEP_GET_DOG;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",nil];
