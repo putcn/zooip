@@ -13,8 +13,6 @@
 
 @synthesize friendFarmId, friendFarmerId,uId,friendNames,icoUrl;
 
-//@synthesize friendFarmId, friendFarmerId,fId,friendNames,friendExperience;
-
 -(id) initFirendInfo:(NSString *)farmId setFarmerId:(NSString *)farmerid  setFriendId:(NSString *)friendId 
 		setFriendName:(NSString *)friendName setFirendIcoUrl:(NSString*) friendIcoUrl setExperience:(int) experience  
 		setTarget:(id) target setSelector:(SEL) handler setPriority:(int) priorityValue 
@@ -26,11 +24,6 @@
 		friendFarmerId = farmerid;
 		uId = friendId;
 		icoUrl = friendIcoUrl;
-		
-		
-		
-		
-		
 		
 		CCTexture2D *bgImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"itemButtonBack.png" ofType:nil] ] ];
 		
@@ -58,10 +51,17 @@
 	NSLog(@"---------------ico  -------     %@",icoPath);
 	NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif"]];
 	
+	if (imageData == nil) {
+		
+		 NSLog(@" 头像读取失败，使用默认头像   ");
+		imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.com"]];
+		
+	}
+	
+	
 	CCSprite *icoNode = [CCSprite node];
 	
 	CCTexture2D *icoImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithData:imageData ] ];
-	
 	
 	CGRect rect = CGRectZero;
 	rect.size = icoImg.contentSize;
@@ -70,14 +70,12 @@
 	[icoImg release];
 	[imageData release];
 	
-	
-	
 	NSString *friendInfoStr = [NSString stringWithFormat:@"%@   %d",friendName,exprience];
 	CCLabel *friendNameLab = [CCLabel labelWithString:friendInfoStr fontName:@"Arial" fontSize:20];
 	[friendNameLab setColor:ccc3(255, 0, 255)];
 	
 	icoNode.position = ccp(self.contentSize.width/2, self.contentSize.height - icoNode.contentSize.height /2);
-	
+	icoNode.scale = 40/(icoImg.contentSize.width);
 	friendNameLab.position = ccp(50 , self.contentSize.height - 80);
 	
 	[self addChild:icoNode z:7];

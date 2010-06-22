@@ -15,6 +15,7 @@
 @interface FriendsToolbar : CCSprite
 {
 	FriendMangePanel *friendView;
+	NSString *localMark;
 	
 }
 

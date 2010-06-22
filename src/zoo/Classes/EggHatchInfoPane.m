@@ -34,15 +34,12 @@
 		[self addHatchInfo];
 		[self addButton];
 
-		//[self updateInfo:itId type:itType setTarget:target];
-		
 		
 	}
 	return self;
 }
 -(void)addTitle
 {
-	
 	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:30];
 	[titleLbl setColor:ccc3(255, 255, 255)];
 	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - titleLbl.contentSize.height/2);
@@ -57,7 +54,6 @@
 	NSString *infoHatchStr1 = @"母受精卵孵化需要4356个金蛋，或者9个蚂蚁币。";
 	NSString *infoHatchStr2 = @"公受精卵孵化需要8712个金蛋，或者17个蚂蚁币。";
 	NSString *infoHatchStr3 = @"您确定要孵化吗？";
-	
 	
 	lab_hatchEggInfo1 = [CCLabel labelWithString:infoHatchStr1 fontName:@"Arial" fontSize:30];
 	[lab_hatchEggInfo1 setColor:ccc3(0, 0, 0)];
@@ -75,20 +71,12 @@
 	[self addChild:lab_hatchEggInfo3 z:10];
 	
 	
-	//lab_notice
-	
-	//[lab_notice setString:timeString];
-	
 	lab_notice = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:30];
 	[lab_notice setColor:ccc3(0, 0, 0)];
 	lab_notice.position = ccp(self.contentSize.width/2 + 100, self.contentSize.height - 300);
 	[self addChild:lab_notice z:10];
 	
 }
-
-
-
-
 
 
 
@@ -118,151 +106,109 @@
 }
 
 
-
--(void) cancelHandler:(Button *)button
-{
-	
-	
-}
-
-
-
-
 -(void) hatChEggHandler:(Button *)button
 {
-	NSLog(@"hatch egg info------");
-	
-	//payment
+
 	NSString *pay = [NSString stringWithFormat:@"goldenEgg"];
+	
+	payType = @"goldenEgg";
 	
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:FARMER_ID,@"farmerId",FARM_ID,@"farmId",STORAGEZY_ID,@"zygoteStorageId",pay,@"payment",nil];
 	
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoIncubatingEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		
-	
 }
 
 -(void) anthatChEggHandler:(Button *)button
 {
-	NSLog(@"hatch egg info------");
-	
-	//payment
+
 	NSString *pay = [NSString stringWithFormat:@"ant"];
+	
+	payType = @"ant";
 	
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:FARMER_ID,@"farmerId",FARM_ID,@"farmId",STORAGEZY_ID,@"zygoteStorageId",pay,@"payment",nil];
 	
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoIncubatingEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultAntHatchCallback:" AndFailedSel:@"faultCallback:"];
 	
-	
 }
-
-
-
-
-
 
 
 
 -(void) resultCallback:(NSObject *)value
 {
-	//[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你孵化成功!"];
-	
+
 	NSDictionary *result = (NSDictionary *)value;
 	
 	NSInteger code = [[result objectForKey:@"code"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"code"] intValue];
 	
-	if (code == 0) {
-		infoStr = [NSString stringWithFormat:@"没有受精卵或受精卵已经孵出"];
-		
-	}
-	
-	if (code == 1) {
-		infoStr = [NSString stringWithFormat:@"孵化成功"];
-	}
-	
-	if (code == 2) {
-		infoStr = [NSString stringWithFormat:@"受精卵在拍卖"];
-	}
-	
-	if (code == 3) {
-		infoStr = [NSString stringWithFormat:@"孵化不成功"];
-	}
-	
-	if (code == 4) {
-		infoStr = [NSString stringWithFormat:@"农场容量不够"];
-	}
-	
-	
-	if (code == 5) {
-		infoStr = [NSString stringWithFormat:@"没有可以用来孵化的母鸡"];
-	}
-	
-	if (code == 6) {
-		infoStr = [NSString stringWithFormat:@"余额不足"];
-	}
-	
-	if (code == 7) {
-		infoStr = [NSString stringWithFormat:@"已喂过"];
-	}
-	
-	if (code == 8) {
-		infoStr = [NSString stringWithFormat:@"公动物不能喂食物"];
-	}
-	
-	[[FeedbackDialog sharedFeedbackDialog] addMessage:infoStr];
-	
-	[lab_notice setString:infoStr];
-	
-		
+	[self selectResultInfo:code setPayType:payType ];	
 	
 }
-
 
 
 
 -(void) resultAntHatchCallback:(NSObject *)value
 {
-	//[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你孵化成功!"];
 	
 	NSDictionary *result = (NSDictionary *)value;
 	
 	NSInteger code = [[result objectForKey:@"code"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"code"] intValue];
 	
-	if (code == 0) {
-		infoStr = [NSString stringWithFormat:@"没有受精卵或受精卵已经孵出"];
-	}
+	[self selectResultInfo:code setPayType:payType ];
 	
-	if (code == 1) {
-		infoStr = [NSString stringWithFormat:@"孵化成功"];
-	}
+}
+
+
+
+-(void)selectResultInfo:(NSInteger) code  setPayType:(NSString *)  payType
+{
 	
-	if (code == 2) {
-		infoStr = [NSString stringWithFormat:@"受精卵在拍卖"];
-	}
-	
-	if (code == 3) {
-		infoStr = [NSString stringWithFormat:@"孵化不成功"];
-	}
-	
-	if (code == 4) {
-		infoStr = [NSString stringWithFormat:@"农场容量不够"];
-	}
-	
-	
-	if (code == 5) {
-		infoStr = [NSString stringWithFormat:@"没有可以用来孵化的母鸡"];
-	}
-	
-	if (code == 6) {
-		infoStr = [NSString stringWithFormat:@"没有足够的蚂蚁"];
-	}
-	
-	if (code == 7) {
-		infoStr = [NSString stringWithFormat:@"已喂过"];
-	}
-	
-	if (code == 8) {
-		infoStr = [NSString stringWithFormat:@"公动物不能喂食物"];
+	switch (code) {
+		case 0:
+			infoStr = [NSString stringWithFormat:@"没有受精卵或受精卵已经孵出"];
+			break;
+		case 1:
+			infoStr = [NSString stringWithFormat:@"孵化成功"];
+			break;	
+			
+		case 2:
+			infoStr = [NSString stringWithFormat:@"受精卵在拍卖"];
+			
+			break;
+		case 3:
+			infoStr = [NSString stringWithFormat:@"孵化不成功"];
+			break;
+			
+		case 4:
+			infoStr = [NSString stringWithFormat:@"农场容量不够"];
+			break;
+			
+		case 5:
+			infoStr = [NSString stringWithFormat:@"没有可以用来孵化的母鸡"];
+			break;
+			
+		case 6:
+			
+			if (payType == @"goldenEgg") {
+				infoStr = [NSString stringWithFormat:@"没有足够的金币"];
+			}else {
+				infoStr = [NSString stringWithFormat:@"没有足够的蚂蚁"];
+			}
+			
+			
+			break;
+			
+		case 7:
+			infoStr = [NSString stringWithFormat:@"已喂过"];
+			break;
+			
+		case 8:
+			infoStr = [NSString stringWithFormat:@"公动物不能喂食物"];
+			break;
+			
+			
+		default:
+			break;
 	}
 	
 	[[FeedbackDialog sharedFeedbackDialog] addMessage:infoStr];
@@ -270,8 +216,8 @@
 	[lab_notice setString:infoStr];
 	
 	
-	
 }
+
 
 -(void) faultCallback:(NSObject *)value
 {

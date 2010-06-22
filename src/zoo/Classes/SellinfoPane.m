@@ -192,8 +192,6 @@
 	
 	[transBackground release];
 
-	
-	 
 	 
 }
 

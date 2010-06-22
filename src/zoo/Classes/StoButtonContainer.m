@@ -220,7 +220,6 @@
 
 			NSString *eggTotal = [NSString stringWithFormat:@""];
 
-			
 			totalPrice += dataModelStorageZygoteEggs.eggPrice;
 			
 			NSString *picFileName = [NSString stringWithFormat:@"zygote%@.png",picName];

@@ -40,25 +40,26 @@
 {
 	
 	if (friendView == nil) {
+		localMark = @"local";
 		friendView = [[FriendMangePanel alloc] init];
 		friendView.position = ccp(-200,160);
 		[self addChild:friendView];
-				
 		[self popUpHandler];
 		
 		}else {
 		
 		[friendView resetPostion];
 		
-		if (friendView.position.x != -200) {
-			[self popUpHandler];
+		if (localMark == @"otherlocal") {
+			localMark = @"local";
 			friendView.position = ccp(-200,160);
-			
+			[self popUpHandler];
 		}else {
-			friendView.position = ccp(1000,160);	
+			localMark = @"otherlocal";
+			friendView.position = ccp(1000,160);
 		}
 
-	}
+			}
 		 
 }
 
