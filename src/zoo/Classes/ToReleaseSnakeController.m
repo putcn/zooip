@@ -35,9 +35,41 @@
 		dataModelSnake.releaseSnakeId = snakeId;
 		[[DataEnvironment sharedDataEnvironment].snakes setObject:dataModelSnake forKey:snakeId];
 		[[SnakeController sharedSnakeController] addSnakes:[NSArray arrayWithObject:snakeId]];
+	
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"放蛇成功"];
 	}
-	if (code == 3) {
+	if(code == 2)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"今天放蛇数量超标"];
+	}
+	if(code == 3)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蛇没放成功，逃跑了"];
 		[self fleeAnimation];
+	}
+	if(code == 4)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不能在自己农场放蛇"];
+	}
+	if(code == 5)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"掉金币"];
+	}
+	if(code == 6)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"偷窃者无金蛋"];
+	}
+	if(code == 7)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蛇吃了一个蛋，跑掉了"];
+	}
+	if(code == 8)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蛇数量超过农场最大量"];
+	}
+	if(code == 0)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场蛇数量超标"];
 	}
 	[super resultCallback:value];
 }

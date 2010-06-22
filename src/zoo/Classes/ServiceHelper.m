@@ -27,7 +27,7 @@
 #import "DataModelGood.h"
 #import "DataModelStorageAnimal.h"
 #import "DataModelStorageAuctionAnimal.h"
-
+#import "FeedbackDialog.h"
 @implementation ServiceHelper
 static ServiceHelper *sharedInst = nil;
 static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/php/remoteService.php";//
@@ -215,13 +215,17 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[eggsDic setValue:egg forKey:[egg birdEggId]];
 					}
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"下蛋成功"];
 				}
 					break;
 				case 1:
 					// TODO 动物处于饥饿状态
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"动物处于饥饿状态"];
 					break;
 				case 2:
 				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"未到下蛋时间"];
+					
 					// 动物下蛋时间未到
 					NSString* animalId = [[request postData] valueForKey:@"animalId"];
 					DataModelAnimal* animal = [[[DataEnvironment sharedDataEnvironment] animals] objectForKey:animalId];
@@ -230,13 +234,16 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 				}
 					break;
 				case 3:
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不存在该动物"];
 					// TODO 不存在该动物
 					break;
 				case 4:
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"下蛋失败"];
 					// TODO 下蛋失败
 					break;
 				case 5:
 					// TODO 公动物不能下蛋
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物不能下蛋"];
 					break;
 					
 				default:
@@ -272,8 +279,14 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[eggsDic setValue:egg forKey:[egg birdEggId]];
 					}
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取各种蛋类信息"];
 				}
 					break;
+				case 0:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"获取蛋类信息失败"];
+				}
+					break ;
 				default:
 					// TODO
 					break;
@@ -295,17 +308,24 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[snakesDic setValue:snake forKey:snake.releaseSnakeId];
 					}
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取蛇信息"];
+				}
+					break;
+				case 0:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场无蛇"];
 				}
 					break;
 				default:
 					// TODO
-					break;
+				break;
 			}
 			break;
 		case ZooNetworkRequestgetAntsOfFarm:
 			switch (code) {
 				case 0:
 					// TODO 农场无蚂蚁
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场无蚂蚁"];
 					break;
 				case 1:
 				{
@@ -321,6 +341,7 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						[antsDic setValue:ant forKey:ant.releaseAntsId];
 					}
 					
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取蚂蚁信息"];
 				}
 					break;
 				default:
@@ -332,6 +353,7 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 			switch (code) {
 				case 0:
 					// TODO 农场无便便
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场无粪便"];
 					break;
 				case 1:
 				{
@@ -348,7 +370,7 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[dejectasDic setValue:dejecta forKey:dejecta.dejectaId];
 					}
-					
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取粪便信息"];
 				}
 					break;
 				default:
@@ -359,6 +381,7 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 			switch (code) {
 				case 0:
 					// TODO 无狗
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"该农场没有狗"];
 					break;
 				case 1:
 				{
@@ -388,6 +411,7 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[dogsDic setValue:dog forKey:dog.farmerDogId];
 					}
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取狗狗信息"];
 				}
 					break;
 				default:
@@ -403,12 +427,15 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 			switch (code) {
 				case 0:
 					// TODO 无动态信息
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无动态信息"];
 					break;
 				case 1:
 					// TODO
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取信息"];
 					break;
 				case 2:
 					// TODO 该用户不存在
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"该用户不存在"];
 					break;
 				default:
 					// TODO
@@ -420,6 +447,7 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 			switch (code) {
 				case 0:
 					// TODO 无任何好友信息
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何好友信息"];
 					break;
 				case 1:
 				{
@@ -439,6 +467,7 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[friendInfosDic setValue:friendInfo forKey:friendInfo.farmerId];
 					}
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取好友信息"];
 				}
 					break;
 				default:
@@ -465,6 +494,7 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 			switch (code) {
 				case 0:
 					// TODO 仓库无任何饲料
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"仓库无任何饲料"];
 					break;
 				case 1:
 				{
@@ -484,7 +514,7 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[storageFoodsDic setValue:storageFood forKey:storageFood.foodStorageId];
 					}
-					
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取仓库饲料信息"];
 				}
 					break;
 				default:
@@ -498,11 +528,38 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 				{
 					DataModelFarmerInfo* playerFarmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];
 					playerFarmerInfo.goldenEgg -= [[result objectForKey:@"goldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"goldenEgg"] intValue];
+					
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"掉金币"];
+				}
+					break;
+				case 2:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"所剩无几"];
+				}
+					break;
+				case 3:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"已偷过"];
+				}
+					break;
+				case 4:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不能连续偷"];
+				}
+					break;
+				case 6:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"偷窃者无金蛋"];
+				}
+					break;
+				case 0:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"偷窃者无金蛋"];
 				}
 					break;
 				default:
 					// TODO
-					break;
+				break;
 			}
 			break;
 		case ZooNetworkRequesttoReleaseSnake:
@@ -589,8 +646,14 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[storageAnimals setValue:obj forKey:obj.originalAnimalId];
 					}
-					break;
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"获取所有购买动物"];
 				}
+					break;
+				case 0:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何购买动物"];
+				}
+					break;
 				default:
 				{
 					break;
@@ -615,8 +678,14 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[storageAuctionAnimals setValue:obj forKey:obj.animalId];
 					}
-					break;
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取动物库存信息"];
 				}
+					break;
+				case 0:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何库存"];
+				}
+					break;
 				default:
 				{
 					break;
@@ -632,6 +701,13 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 					DataModelFarmerInfo* playerFarmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];
 					
 					playerFarmerInfo.goldenEgg += [[result objectForKey:@"goldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"goldenEgg"] intValue];
+					
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"删除动物成功"];
+				}
+					break;
+				case 0:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无该动物"];
 				}
 					break;
 				default:
@@ -667,6 +743,12 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[sDic setValue:obj forKey:obj.eggStorageId];
 					}
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取蛋堆信息"];
+				}
+					break;
+				case 0:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何蛋堆信息"];
 				}
 					break;
 				default:
@@ -700,6 +782,12 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[sDic setValue:obj forKey:obj.zygoteStorageId];
 					}
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取所有受精蛋信息"];
+				}
+					break;
+				case 0:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何受精蛋信息"];
 				}
 					break;
 				default:
@@ -749,6 +837,12 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[sDic setValue:obj forKey:obj.originalAnimalId];
 					}
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取原始动物信息"];
+				}
+					break;
+				case 0:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何原始动物信息"];
 				}
 					break;
 				default:
@@ -777,6 +871,12 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[sDic setObject:obj forKey:obj.foodId];
 					}
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取饲料信息"];
+				}
+					break;
+				case 0:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无饲料"];
 				}
 					break;
 				default:
@@ -809,6 +909,12 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 						
 						[sDic setValue:obj forKey:obj.goodsId];
 					}
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取商店信息"];
+				}
+					break;
+				case 0:
+				{
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何商店信息"];
 				}
 					break;
 				default:

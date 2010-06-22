@@ -7,7 +7,7 @@
 //
 
 #import "FeedPowerFoodsController.h"
-
+#import "FeedbackDialog.h"
 
 @implementation FeedPowerFoodsController
 
@@ -19,6 +19,36 @@
 
 -(void) resultCallback:(NSObject *)value
 {
+	NSDictionary *result = (NSDictionary *)value;
+	NSInteger code = [[result objectForKey:@"code"] intValue];	
+	if (code == 0) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"饲料不足"];
+	}
+	if (code == 1) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"喂食成功"];
+	}
+	if (code == 2) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"已喂食"];
+	}
+	if (code == 3) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"动物不存在"];
+	}
+	if (code == 4) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"动物处于饥饿状态，不能喂食"];
+	}
+	if (code == 5) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物不能喂食"];
+	}
+	if (code == 7) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"喂多只动物成功"];
+	}
 	[super resultCallback:value];
 }
 

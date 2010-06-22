@@ -35,6 +35,7 @@
 		dataModelEgg.remain = dataModelEgg.remain - stolenNum;
 		[[OperationEndView alloc] initWithExperience:0 setPosition: ccp(eggPos.x, eggPos.y+50) setNumber:stolenNum];
 
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"偷蛋成功"];
 	}
 	[super resultCallback:value];
 }
