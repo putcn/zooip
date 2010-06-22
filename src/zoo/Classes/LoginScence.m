@@ -119,6 +119,8 @@ static NSString* kApiSecret = @"204df2c367e148839f33fb2b1e56fcc5";
 		}
 		
 		//Add player to friend list...
+		[[DataEnvironment sharedDataEnvironment].friendIDs addObject:[DataEnvironment sharedDataEnvironment].playerUid];
+		
 		DataModelFriendInfo *playerInfo = [[DataModelFriendInfo alloc] init];
 		playerInfo.uid = [DataEnvironment sharedDataEnvironment].playerUid;
 		[[DataEnvironment sharedDataEnvironment].friendInfos setValue:playerInfo forKey:playerInfo.uid];

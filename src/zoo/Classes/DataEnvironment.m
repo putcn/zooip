@@ -63,7 +63,9 @@ storageAuctionAnimals;
 		
 		playerUid = @"1177553155";
 		friendUid = @"1122334455";
-		pid = @"11";
+		
+		//Mixi:11, RenRen:5
+		pid = @"5";
 		
 		playerFarmerInfo = [[DataModelFarmerInfo alloc] init];
 		friendFarmerInfo = [[DataModelFarmerInfo alloc] init];
@@ -89,27 +91,6 @@ storageAuctionAnimals;
 		storageAuctionAnimals = [[NSMutableDictionary alloc] init];
 		
 		//self.playerFarmerInfo.platformId = 11;
-		
-		//TEST
-		DataModelFriendInfo *friendInfo = [[DataModelFriendInfo alloc] init];
-		friendInfo.userName = @"test1";
-		friendInfo.uid = @"1177553155";
-		friendInfo.tinyurl = @"http://www.google.com";
-		friendInfo.farmId = @"ASDASASSADAASASQWEWQWEQWQWQWEWEWEQWQWEWEQWQA";
-		friendInfo.farmerId = @"ASDASASSADAASASQWEWQWEQWQWQWEWEWEQWQWEWEQWQA";
-		friendInfo.experience = 100;
-		
-		[friendInfos setValue:friendInfo forKey:@"1177553155"];
-		
-		DataModelFriendInfo *friendInfo_2 = [[DataModelFriendInfo alloc] init];
-		friendInfo_2.userName = @"test2";
-		friendInfo_2.uid = @"1166553155";
-		friendInfo_2.tinyurl = @"http://www.google.com";
-		friendInfo_2.farmId = @"ASDASASSADAASASQWEWQWEQWQWQWEWEWEQWQWEWEQWQA";
-		friendInfo_2.farmerId = @"ASDASASSADAASASQWEWQWEQWQWQWEWEWEQWQWEWEQWQA";
-		friendInfo_2.experience = 100;
-		
-		[friendInfos setValue:friendInfo_2 forKey:@"1166553155"];
 		
 		friendIDs = [[NSMutableArray alloc] init];
 	}
