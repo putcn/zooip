@@ -126,6 +126,12 @@
 
 -(void) dealloc
 {
+	
+	[friendFarmId   release];
+	[friendFarmerId release];
+	[uId            release];
+	[friendNames    release];
+	[icoUrl         release];
 	[targetCallBack release];
 	[super dealloc];
 }

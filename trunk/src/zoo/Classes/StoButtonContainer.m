@@ -303,10 +303,13 @@
 {
 	
 	[self removeAllChildrenWithCleanup:YES];
-	[totalPriceLab release];
+	
+	[tabFlag        release];
+	[totalPriceLab  release];
+	[totalPriceLab  release];
 	[eggSourceArray release];
-	[itemNumArray release];
-	[parentTarget release];
+	[itemNumArray   release];
+	[parentTarget   release];
 	[super dealloc];
 	 
 }

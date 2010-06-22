@@ -119,9 +119,12 @@
 
 -(void) dealloc
 {
+	
+	[itemId         release];
+	[itemType       release];
+	[item           release];
+	[itemImg        release];
 	[targetCallBack release];
-	[itemImg release];
-	[item release];
 	[super dealloc];
 }
 
