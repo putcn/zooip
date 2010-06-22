@@ -6216,6 +6216,7 @@
 		6092141511BF33DB00D50ABE /* AnimalFeedButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6092141411BF33DB00D50ABE /* AnimalFeedButtonContainer.m */; };
 		6098BB0811BDD38B00F0DB3B /* AnimalExpansionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098BB0711BDD38B00F0DB3B /* AnimalExpansionPanel.m */; };
 		60A0CDBE11B78066001AF9BD /* AnimalManageToMateAntsChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */; };
+		6BCE3CEA11D059320006A430 /* LoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE3CE911D059320006A430 /* LoadView.m */; };
 		8408914511B49FBC001C29CA /* SellitemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8408914411B49FBC001C29CA /* SellitemButton.m */; };
 		8432CD8111B346CF0093DA32 /* StoButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */; };
 		8432CD8611B3471F0093DA32 /* SellinfoPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8511B3471F0093DA32 /* SellinfoPane.m */; };
@@ -12702,6 +12703,8 @@
 		6098BB0711BDD38B00F0DB3B /* AnimalExpansionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalExpansionPanel.m; sourceTree = "<group>"; };
 		60A0CDBC11B78066001AF9BD /* AnimalManageToMateAntsChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageToMateAntsChoose.h; sourceTree = "<group>"; };
 		60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageToMateAntsChoose.m; sourceTree = "<group>"; };
+		6BCE3CE811D059320006A430 /* LoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadView.h; sourceTree = "<group>"; };
+		6BCE3CE911D059320006A430 /* LoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadView.m; sourceTree = "<group>"; };
 		8408914311B49FBC001C29CA /* SellitemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellitemButton.h; sourceTree = "<group>"; };
 		8408914411B49FBC001C29CA /* SellitemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellitemButton.m; sourceTree = "<group>"; };
 		8432CD7F11B346CF0093DA32 /* StoButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoButtonContainer.h; sourceTree = "<group>"; };
@@ -23594,6 +23597,8 @@
 		C3B66DFE1197FA0F00AFDE8D /* WorkFlowController */ = {
 			isa = PBXGroup;
 			children = (
+				6BCE3CE811D059320006A430 /* LoadView.h */,
+				6BCE3CE911D059320006A430 /* LoadView.m */,
 				C330DD72119D134E0062753F /* BaseWorkFlowController.h */,
 				C330DD73119D134E0062753F /* BaseWorkFlowController.m */,
 				C39CFBED11BFC58F0063B01E /* PlayerInitWorkFlowController.h */,
@@ -30073,6 +30078,7 @@
 				84BE15FD11C75EC20065A080 /* StorageManageToolbar.m in Sources */,
 				84BE160211C75ED50065A080 /* FriendList.m in Sources */,
 				84BE160311C75ED50065A080 /* FriendMangePanel.m in Sources */,
+				6BCE3CEA11D059320006A430 /* LoadView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

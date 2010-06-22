@@ -68,6 +68,11 @@ static NSString *STEP_GET_DOG = @"7";
 {
 	if (curStep == STEP_GET_FARMER_INFO)
 	{
+		load = [[LoadView alloc] init];
+		[load LoadingView];
+		
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_FARM_INFO;
 		
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
@@ -79,6 +84,8 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 	else if (curStep == STEP_GET_FARM_INFO)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_ALL_ANIMAL_INFO;
 		
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
@@ -90,6 +97,8 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 	else if (curStep == STEP_GET_ALL_ANIMAL_INFO)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_ALL_EGG_INFO;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmId,@"farmId",
@@ -99,6 +108,8 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 	else if (curStep == STEP_GET_ALL_EGG_INFO)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_SNAKE;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmId,@"farmId",nil];
@@ -107,6 +118,8 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 	else if (curStep == STEP_GET_SNAKE)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_DEJECTA;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmId,@"farmId",nil];
@@ -115,6 +128,8 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 	else if (curStep == STEP_GET_DEJECTA)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_ANT;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmId,@"farmId",nil];
@@ -124,6 +139,8 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 	else if (curStep == STEP_GET_ANT)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_DOG;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].friendFarmInfo.farmerId,@"farmerId",nil];
@@ -134,6 +151,10 @@ static NSString *STEP_GET_DOG = @"7";
 	else if (curStep == STEP_GET_DOG)
 	{
 		[self endStep];
+		
+		[load RemoveView];
+		[load release];
+		
 		return;
 	}
 }

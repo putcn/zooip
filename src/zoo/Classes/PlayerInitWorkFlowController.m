@@ -80,6 +80,11 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 {
 	if (curStep == STEP_GET_FARMER_INFO)
 	{
+		load = [[LoadView alloc] init];
+		[load LoadingView];
+		
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_FARM_INFO;
 		
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
@@ -91,6 +96,8 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 	}
 	else if (curStep == STEP_GET_FARM_INFO)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_ALL_ANIMAL_INFO;
 		
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
@@ -102,6 +109,8 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 	}
 	else if (curStep == STEP_GET_ALL_ANIMAL_INFO)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_LAY_EGG;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		[tempController execute:nil];
@@ -110,6 +119,8 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 	}
 	else if (curStep == STEP_LAY_EGG)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_ALL_EGG_INFO;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",
@@ -119,6 +130,8 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 	}
 	else if (curStep == STEP_GET_ALL_EGG_INFO)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_SNAKE;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
@@ -127,6 +140,8 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 	}
 	else if (curStep == STEP_GET_SNAKE)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_DEJECTA;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
@@ -135,6 +150,8 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 	}
 	else if (curStep == STEP_GET_DEJECTA)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_ANT;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
@@ -153,6 +170,8 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 	}
 	else if (curStep == STEP_GET_DOG)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_ALL_ORIGINAL_ANIMAL;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		[tempController execute:nil];
@@ -160,6 +179,8 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 	}
 	else if (curStep == STEP_GET_ALL_ORIGINAL_ANIMAL)
 	{
+		[load SetLabelString:curStep];
+		
 		curStep = STEP_GET_ALL_FRIENDS_INFO;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
 		NSString *uids = [[DataEnvironment sharedDataEnvironment].friendIDs componentsJoinedByString:@","];
@@ -170,6 +191,10 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 	else if (curStep == STEP_GET_ALL_FRIENDS_INFO)
 	{
 		[self endStep];
+		
+		[load RemoveView];
+		[load release];
+		
 		return;
 	}
 }
