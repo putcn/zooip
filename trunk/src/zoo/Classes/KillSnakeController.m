@@ -28,7 +28,17 @@
 	{
 		NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
 		[[SnakeController sharedSnakeController] removeSnake:snakeId setExperience:experience];
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"灭蛇成功"];
 	}
+	if (code == 2) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"证据不能销毁"];
+	}
+	if (code == 0) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有蛇"];
+	}
+	
 	[super resultCallback:value];
 }
 

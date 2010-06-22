@@ -7,7 +7,7 @@
 //
 
 #import "GetFarmInfoController.h"
-
+#import "FeedbackDialog.h"
 
 @implementation GetFarmInfoController
 
@@ -19,6 +19,16 @@
 
 -(void) resultCallback:(NSObject *)value
 {
+	NSDictionary *result = (NSDictionary *)value;
+	NSInteger code = [[result objectForKey:@"code"] intValue];
+	if(code == 1)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获得农场信息"];
+	}
+	else if(code == 0)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"获得农场信息失败"];
+	}
 	[super resultCallback:value];
 }
 

@@ -28,6 +28,11 @@
 	{
 		NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
 		[[DejectaController sharedDejectaController] removeDejecta:self.dejectaId setExperience:experience];
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功清除粪便"];
+	}
+	if(code == 0)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"粪便已经清除"];
 	}
 	[super resultCallback:value];
 }

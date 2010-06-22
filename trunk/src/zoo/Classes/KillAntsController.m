@@ -28,6 +28,15 @@
 	{
 		NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
 		[[AntController sharedAntController] removeAnt:antId setExperience:experience];
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"杀蚂蚁成功"];
+	}
+	if (code == 2) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"证据不能销毁"];
+	}
+	if (code == 0) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有蚂蚁"];
 	}
 	[super resultCallback:value];
 }

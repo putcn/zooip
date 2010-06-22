@@ -24,6 +24,19 @@
 	NSInteger code = [[result objectForKey:@"code"] intValue];
 	if (code == 1) {		
 		[[AnimalController sharedAnimalController] cureAnimal:animalId];
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"治疗成功"];
+	}
+	if (code == 2) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"证据不能销毁"];
+	}
+	if (code == 3) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"动物不存在"];
+	}
+	if (code == 0) 
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不需要治疗"];
 	}
 	
 	[super resultCallback:value];

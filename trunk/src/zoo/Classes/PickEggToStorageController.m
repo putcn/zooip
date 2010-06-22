@@ -28,6 +28,19 @@
 	{
 		NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
 		[[EggController sharedEggController] removeEgg:eggId setExperience:experience];
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"收蛋成功"];
+	}
+	if(code == 2)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"该蛋不属于你"];
+	}
+	if(code == 3)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"收蛋不成功"];
+	}
+	if(code == 0)
+	{
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"该蛋不存在"];
 	}
 	[super resultCallback:value];
 }
