@@ -76,7 +76,7 @@ static NSString* kApiSecret = @"204df2c367e148839f33fb2b1e56fcc5";
 		NSMutableDictionary *friendInfosDic = [DataEnvironment sharedDataEnvironment].friendInfos;
 		for (NSDictionary *user in users)
 		{
-			NSString *uid = [user objectForKey:@"uid"];
+			NSString *uid = [[user objectForKey:@"uid"] stringValue];
 			NSString *name = [user objectForKey:@"name"];
 			NSString *tinyHeadUrl = [user objectForKey:@"tinyurl"];
 			
@@ -109,13 +109,13 @@ static NSString* kApiSecret = @"204df2c367e148839f33fb2b1e56fcc5";
 	{
 		NSArray *friendIDs = result;
 		
-		for (NSString *friendID in friendIDs)
+		for (NSNumber *friendID in friendIDs)
 		{
-			[[DataEnvironment sharedDataEnvironment].friendIDs addObject:friendID];
+			[[DataEnvironment sharedDataEnvironment].friendIDs addObject:[friendID stringValue]];
 			
 			DataModelFriendInfo *friendInfo = [[DataModelFriendInfo alloc] init];
-			friendInfo.uid = friendID;
-			[[DataEnvironment sharedDataEnvironment].friendInfos setValue:friendInfo forKey:friendID];
+			friendInfo.uid = [friendID stringValue];
+			[[DataEnvironment sharedDataEnvironment].friendInfos setValue:friendInfo forKey:[friendID stringValue]];
 		}
 		
 		//Add player to friend list...
@@ -123,7 +123,7 @@ static NSString* kApiSecret = @"204df2c367e148839f33fb2b1e56fcc5";
 		
 		DataModelFriendInfo *playerInfo = [[DataModelFriendInfo alloc] init];
 		playerInfo.uid = [DataEnvironment sharedDataEnvironment].playerUid;
-		[[DataEnvironment sharedDataEnvironment].friendInfos setValue:playerInfo forKey:playerInfo.uid];
+		[[DataEnvironment sharedDataEnvironment].friendInfos setValue:playerInfo forKey:[DataEnvironment sharedDataEnvironment].playerUid];
 		
 		NSString *uids = [[DataEnvironment sharedDataEnvironment].friendIDs componentsJoinedByString:@","];
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:uids,@"uids",nil];
