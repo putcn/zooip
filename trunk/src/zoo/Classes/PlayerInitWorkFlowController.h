@@ -8,10 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import "BaseWorkFlowController.h"
-
+#import "LoadView.h"
 @interface PlayerInitWorkFlowController : BaseWorkFlowController
 {
-	
+	LoadView *load;
 }
 
 @end
