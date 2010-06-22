@@ -63,7 +63,7 @@ static NSString* kApiSecret = @"204df2c367e148839f33fb2b1e56fcc5";
 	if (uid > 0)
 	{
 		[DataEnvironment sharedDataEnvironment].playerUid = [NSString stringWithFormat:@"%d", uid];
-		[[Request requestWithDelegate:self] call:@"users.getInfo" params:nil];
+		[[Request requestWithDelegate:self] call:@"friends.getAppFriends" params:nil];
 	}
 }
 
@@ -71,12 +71,39 @@ static NSString* kApiSecret = @"204df2c367e148839f33fb2b1e56fcc5";
 {
 	if([request.method isEqualToString:@"users.getInfo"])
 	{
-		NSArray* users = result;
-		NSDictionary* user = [users objectAtIndex:0];
-		NSString* name = [user objectForKey:@"name"];
-		NSString* originheadUrl = [user objectForKey:@"tinyurl"];
+		NSArray *users = result;
 		
-		[[Request requestWithDelegate:self] call:@"friends.getAppFriends" params:nil];
+		NSMutableDictionary *friendInfosDic = [DataEnvironment sharedDataEnvironment].friendInfos;
+		for (NSDictionary *user in users)
+		{
+			NSString *uid = [user objectForKey:@"uid"];
+			NSString *name = [user objectForKey:@"name"];
+			NSString *tinyHeadUrl = [user objectForKey:@"tinyurl"];
+			
+			DataModelFriendInfo *friendInfo = [friendInfosDic objectForKey:uid];
+			
+			if (friendInfo != nil)
+			{
+				friendInfo.userName = name;
+				friendInfo.tinyurl = tinyHeadUrl;
+			}
+			else
+			{
+				continue;
+			}
+			
+//			if ([uid isEqualToString:[DataEnvironment sharedDataEnvironment].playerUid])
+//			{
+//				
+//			}
+//			else
+//			{
+//				
+//			}
+		}
+		
+		//[[CCDirector sharedDirector] popScene];
+		[[CCDirector sharedDirector] replaceScene:[GameMainScene scene]];
 	}
 	if([request.method isEqualToString:@"friends.getAppFriends"])
 	{
@@ -85,10 +112,21 @@ static NSString* kApiSecret = @"204df2c367e148839f33fb2b1e56fcc5";
 		for (NSString *friendID in friendIDs)
 		{
 			[[DataEnvironment sharedDataEnvironment].friendIDs addObject:friendID];
+			
+			DataModelFriendInfo *friendInfo = [[DataModelFriendInfo alloc] init];
+			friendInfo.uid = friendID;
+			[[DataEnvironment sharedDataEnvironment].friendInfos setValue:friendInfo forKey:friendID];
 		}
 		
-		//[[CCDirector sharedDirector] popScene];
-		[[CCDirector sharedDirector] replaceScene:[GameMainScene scene]];
+		//Add player to friend list...
+		DataModelFriendInfo *playerInfo = [[DataModelFriendInfo alloc] init];
+		playerInfo.uid = [DataEnvironment sharedDataEnvironment].playerUid;
+		[[DataEnvironment sharedDataEnvironment].friendInfos setValue:playerInfo forKey:playerInfo.uid];
+		
+		NSString *uids = [[DataEnvironment sharedDataEnvironment].friendIDs componentsJoinedByString:@","];
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:uids,@"uids",nil];
+		
+		[[Request requestWithDelegate:self] call:@"users.getInfo" params:params];
 	}
 }
 

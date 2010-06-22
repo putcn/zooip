@@ -632,7 +632,8 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 			{
 				case 1:
 				{
-					NSDictionary* storageAnimals= [DataEnvironment sharedDataEnvironment].storageAnimals;
+					NSMutableDictionary* storageAnimals= [DataEnvironment sharedDataEnvironment].storageAnimals;
+					[storageAnimals removeAllObjects];
 					NSArray* sArray = [result objectForKey:@"storageAnimals"];
 					for (int i = 0; i < [sArray count]; i++)
 					{
@@ -665,7 +666,8 @@ static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/p
 			{
 				case 1:
 				{
-					NSDictionary* storageAuctionAnimals= [DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
+					NSMutableDictionary* storageAuctionAnimals= [DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
+					[storageAuctionAnimals removeAllObjects];
 					NSArray* sArray = [result objectForKey:@"storageAnimals"];
 					for (int i = 0; i < [sArray count]; i++)
 					{
