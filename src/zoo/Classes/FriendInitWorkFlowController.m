@@ -70,7 +70,6 @@ static NSString *STEP_GET_DOG = @"7";
 	{
 		load = [[LoadView alloc] init];
 		[load LoadingView];
-		
 		[load SetLabelString:curStep];
 		
 		curStep = STEP_GET_FARM_INFO;
