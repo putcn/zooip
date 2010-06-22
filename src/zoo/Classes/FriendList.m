@@ -79,12 +79,12 @@
 	
 	
 
-		int endNumber = currentPageNum * 12;
+		int endNumber = currentPageNum * 4;
 		if (endNumber >= friendsInfoArray.count) {
 			endNumber = friendsInfoArray.count;
 		}
 	
-		currentNum = endNumber - (currentPageNum -1 ) *12 ;
+		currentNum = endNumber - (currentPageNum -1 ) *4 ;
 	
 			
 	for (int i=0; i< friendsInfoArray.count; i++) {
@@ -96,9 +96,12 @@
 		FriendInfoBut *friendIcoButton = [[FriendInfoBut alloc] initFirendInfo:dataModelfriend.farmId setFarmerId:dataModelfriend.farmerId  setFriendId:dataModelfriend.uid setFriendName:dataModelfriend.userName 
 															   setFirendIcoUrl:dataModelfriend.tinyurl setExperience:dataModelfriend.experience setTarget:parentTarget setSelector:@selector(gotoFriendHandler:) 
 															    setPriority:49 offsetX:1 offsetY:1];	
-	
-		friendIcoButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 10 * ((i-12*(currentPageNum-1))/4) - 100);
-		[self addChild:friendIcoButton z:7 tag:i%12];
+		
+		friendIcoButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 120* ((i-4*(currentPageNum-1))/4) - 50);
+		[self addChild:friendIcoButton z:7 tag:i%4];
+		
+		
+		
 	}
 	
 		

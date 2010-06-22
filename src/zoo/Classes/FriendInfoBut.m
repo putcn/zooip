@@ -49,12 +49,15 @@
 {
 	
 	NSLog(@"---------------ico  -------     %@",icoPath);
-	NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif"]];
+	if (icoPath == nil) {
+		icoPath = @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif";
+	}
+	NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: icoPath]];
 	
 	if (imageData == nil) {
 		
 		 NSLog(@" 头像读取失败，使用默认头像   ");
-		imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.com"]];
+		imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif"]];
 		
 	}
 	
@@ -75,8 +78,8 @@
 	[friendNameLab setColor:ccc3(255, 0, 255)];
 	
 	icoNode.position = ccp(self.contentSize.width/2, self.contentSize.height - icoNode.contentSize.height /2);
-	icoNode.scale = 40/(icoImg.contentSize.width);
-	friendNameLab.position = ccp(50 , self.contentSize.height - 80);
+	icoNode.scale = 50/(icoImg.contentSize.width);
+	friendNameLab.position = ccp(80 , self.contentSize.height - 70);
 	
 	[self addChild:icoNode z:7];
 	[self addChild:friendNameLab z:7];
