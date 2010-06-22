@@ -99,6 +99,7 @@
 		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0];
 		scalerPane.position = ccp(200,200);
 		[self addChild:scalerPane z:5];
+		
 
 		
 	}
@@ -231,7 +232,12 @@
 -(void) dealloc
 {
 	[self removeAllChildrenWithCleanup:YES];
-	[priceLbl release];
+	
+	[title       release];
+	[itemId      release];
+	[itemType    release];
+	[itemBuyType release];
+	[priceLbl    release];
 	[super dealloc];
 }
 

@@ -95,11 +95,15 @@
 -(void) dealloc
 {
 		
-	[tabContentDic release];
-	[itemInfoPane release];
-	[tabDisable release];
-	[tabEnable release];
-	[tabDic release];
+	[title           release];
+	[friendContainer release];
+	[itemInfoPane    release];
+	[scaleFlag       release];
+	[tabContentDic   release];
+	[itemInfoPane    release];
+	[tabDisable      release];
+	[tabEnable       release];
+	[tabDic          release];
 	[super dealloc];
 }
 

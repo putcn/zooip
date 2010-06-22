@@ -73,44 +73,11 @@
 		
 		[self addChild:onePane z:7];
 		[self addChild:twoPane z:7];
-	}else {
-		
-		[self updadaPane];
-		
-		
-		/*
-		onePane.scale = 0;
-		twoPane.scale = 0;
-		[self removeChild:onePane cleanup:YES];
-		[self removeChild:twoPane cleanup:YES];
-		[onePane release];
-		[twoPane release];
-		
-		NSString *tab1 = [tabArray objectAtIndex:0];
-		NSString *tab2 = [tabArray objectAtIndex:1];
-		onePane = [[StoButtonContainer alloc] initWithTab:tab1 setTarget:self];
-		onePane.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
-		
-		
-		twoPane = [[StoButtonContainer alloc] initWithTab:tab2 setTarget:self];
-		twoPane.position = ccp(2000, self.contentSize.height/2 - 50);
-		
-		[tabContentDic setObject:onePane forKey:[NSString stringWithFormat:@"tabContent_%d",0]];
-		[tabContentDic setObject:twoPane forKey:[NSString stringWithFormat:@"tabContent_%d",1]];
-		
-		[self addChild:onePane z:7];
-		[self addChild:twoPane z:7];
-		*/
-		
 	}
-
-	
 	
 	Button *sellAllBtn = [[Button alloc] initWithLabel:@"全部卖出" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:18 setBackground:@"TabButton2.png" setTarget:self setSelector:@selector(sellAllEggsHandler:) setPriority:1 offsetX:0 offsetY:0 scale:2.0f];
 	sellAllBtn.position = ccp(self.contentSize.width/2 +400, 80);
 	[self addChild:sellAllBtn z:7];
-	
-	
 	
 }
 
@@ -245,7 +212,6 @@
 
 //hatch egg handler
 
-
 -(void) hatchHandler:(Button *)button
 {
 		SellinfoPane *itemInfo = (SellinfoPane *)button.target; 
@@ -371,15 +337,23 @@
 {
 	[self removeAllChildrenWithCleanup:YES];
 	
-	 [tabEnable release];
-	 [curr_target release];
-	 [tabDisable release];
-	 [itemInfoPane release];
-	 [eggHatchInfoPane release];
-	 [buttonContainer release];
-	 [onePane release];
-	 [twoPane release];
-	 [super dealloc];
+	[title            release];
+	[tabDic           release];
+	[tabContentDic    release];
+	[tabEnable        release];
+	[tabDisable       release];
+	[itemInfoPane     release];
+	[eggHatchInfoPane release];
+	[buttonContainer  release];
+	[onePane          release];
+	[twoPane          release];
+	[curr_itemId      release];
+	[curr_itemType    release];
+	[testType         release];
+	[isEggEmpty       release];
+	[num_paneNum      release];
+	[curr_target      release];
+	[super dealloc];
 }
 
 
