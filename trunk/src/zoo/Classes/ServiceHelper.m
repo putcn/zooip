@@ -28,9 +28,12 @@
 #import "DataModelStorageAnimal.h"
 #import "DataModelStorageAuctionAnimal.h"
 #import "FeedbackDialog.h"
+
 @implementation ServiceHelper
+
 static ServiceHelper *sharedInst = nil;
-static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/php/remoteService.php";//
+//static NSString *ServiceBaseURL = @"http://zoo.hotpod.jp/fplatform/farmv4/mixi/php/remoteService.php";
+static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaonei/php/remoteServiceiPhone.php";
 //static NSString *testingFarmerId = @"A6215BF61A3AF50A8F72F043A1A6A85C";
 //static NSString *testingFarmId = @"163D7A78682082B36872659C7A9DA8F9";
 
