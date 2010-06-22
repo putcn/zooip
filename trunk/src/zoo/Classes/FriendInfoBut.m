@@ -73,6 +73,7 @@
 	[icoImg release];
 	[imageData release];
 	
+		
 	NSString *friendInfoStr = [NSString stringWithFormat:@"%@   %d",friendName,exprience];
 	CCLabel *friendNameLab = [CCLabel labelWithString:friendInfoStr fontName:@"Arial" fontSize:20];
 	[friendNameLab setColor:ccc3(255, 0, 255)];
