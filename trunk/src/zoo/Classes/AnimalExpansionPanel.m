@@ -50,6 +50,11 @@ paramsDict;
 		priceLbl = [[CCLabel alloc] retain];
 		
 		//****[self updateInfo:itId type:itType setTarget:target];
+		
+		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:2];
+		transBackground.scale = 17.0f;
+		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+		[self addChild:transBackground z:5];
 	}
 	return self;
 }
@@ -147,8 +152,8 @@ paramsDict;
 	[self addChild:requireLevelLbl z:10];
 	[self addChild:requireGoldenEggLbl z:10];
 	
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Confirm.png" setTarget:thisTarget setSelector:@selector(levelupConfirm:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Cancel.png" setTarget:thisTarget setSelector:@selector(levelCancle:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Confirm.png" setTarget:thisTarget setSelector:@selector(levelupConfirm:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
+	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Cancel.png" setTarget:thisTarget setSelector:@selector(levelCancle:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
 	
 	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
 	confirmBtn.target = self;
@@ -156,11 +161,6 @@ paramsDict;
 	cancelBtn.position = ccp(self.contentSize.width/2 + 200, 100);
 	[self addChild:confirmBtn z:10];
 	[self addChild:cancelBtn z:10];
-
-	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:1];
-	transBackground.scale = 17.0f;
-	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-	[self addChild:transBackground z:5];
 	
 	//[self setImg:@"" setBuyType:@"" setPrice:@"1"];
 }
@@ -195,7 +195,6 @@ paramsDict;
 	//[self addChild:buyImg z:7];
 	[self addChild:priceLbl z:7];
 }							  
-
 
 -(void) dealloc
 {
