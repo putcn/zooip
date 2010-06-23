@@ -571,15 +571,15 @@
 		}
 		else if (currStatus == 5)
 		{
-			speed = animalData.speed / 60.0f;
+			speed = animalData.speed / 90.0f;
 		}
 		else if (currStatus == 7)
 		{
-			speed = animalData.swimmingSpeed / 60.0f;
+			speed = animalData.swimmingSpeed / 90.0f;
 		}
 		else if (currStatus == 6 || currStatus == 10 || currStatus == 11)
 		{
-			speed = animalData.flyingSpeed / 15.0f;
+			speed = animalData.flyingSpeed / 22.5f;
 		}
 		else
 		{
@@ -590,11 +590,11 @@
 	{
 		if (currStatus == 6 || currStatus == 10 || currStatus == 11)
 		{
-			speed = animalData.flyingSpeed / 20.0f;
+			speed = animalData.flyingSpeed / 30.0f;
 		}
 		else
 		{
-			speed = animalData.walkToEatSpeed / 30.0f;
+			speed = animalData.walkToEatSpeed / 45.0f;
 		}
 	}
 }
