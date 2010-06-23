@@ -40,20 +40,35 @@ static NSString *STEP_GET_DOG = @"7";
 {
 	GetFarmerInfoController *getFarmerInfoController = [[GetFarmerInfoController alloc] initWithWorkFlowController:self];
 	[self addController:getFarmerInfoController andStep:STEP_GET_FARMER_INFO];
+	[getFarmerInfoController release];
+
 	GetFarmInfoController *getFarmInfoController = [[GetFarmInfoController alloc] initWithWorkFlowController:self];
 	[self addController:getFarmInfoController andStep:STEP_GET_FARM_INFO];
+	[getFarmInfoController release];
+	
 	GetAllBirdFarmAnimalInfoController *getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:self];
 	[self addController:getAllBirdFarmAnimalInfoController andStep:STEP_GET_ALL_ANIMAL_INFO];
+	[getAllBirdFarmAnimalInfoController release];
+	
 	AllLayEggController *allLayEggController = [[AllLayEggController alloc] initWithWorkFlowController: self];
 	[self addController:allLayEggController andStep:STEP_GET_ALL_EGG_INFO];
+	[allLayEggController release];
+	
 	GetSnakeOfFarmController *getSnakeOfFarmController = [[GetSnakeOfFarmController alloc]  initWithWorkFlowController:self];
 	[self addController:getSnakeOfFarmController andStep:STEP_GET_SNAKE];
+	[getSnakeOfFarmController release];
+	
 	GetDejectaOfFarmController *getDejectaOfFarmController = [[GetDejectaOfFarmController alloc] initWithWorkFlowController:self];
 	[self addController:getDejectaOfFarmController andStep:STEP_GET_DEJECTA];
+	[getDejectaOfFarmController release];
+	
 	GetAntOfFarmController *getAntOfFarmController = [[GetAntOfFarmController alloc] initWithWorkFlowController:self];
 	[self addController:getAntOfFarmController andStep:STEP_GET_ANT];
+	[getAntOfFarmController release];
+	
 	GetFarmerDogController *getFarmerDogController = [[GetFarmerDogController alloc] initWithWorkFlowController:self];
 	[self addController:getFarmerDogController andStep:STEP_GET_DOG];
+	[getFarmerDogController release];
 }
 
 -(void) startStep

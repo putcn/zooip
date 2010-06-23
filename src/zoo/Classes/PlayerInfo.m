@@ -37,13 +37,13 @@
 		levelLbl.position = ccp(170,30);
 		animalNumLbl = [[CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12] retain];
 		animalNumLbl.position = ccp(220,30);
-		CCSprite *antIcon = [CCSprite spriteWithFile:@"goldant.png"];
+		CCSprite *antIcon = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
 		[antIcon setContentSize:CGSizeMake(10, 10)];
 		antIcon.position = ccp(50,10);
 		antIcon.scale = 0.5f;
 		antsNumLbl = [[CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12] retain];
 		antsNumLbl.position = ccp(80,10);
-		CCSprite *eggIcon = [CCSprite spriteWithFile:@"goldegg.png"];
+		CCSprite *eggIcon = [CCSprite spriteWithFile:@"金蛋ico.png"];
 		[eggIcon setContentSize:CGSizeMake(10, 10)];
 		eggIcon.position = ccp(100,10);
 		eggIcon.scale =0.5f;

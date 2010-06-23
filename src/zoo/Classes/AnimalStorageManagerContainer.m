@@ -20,16 +20,18 @@
 	if ((self = [super init])) {
 		tabDic = [[NSMutableDictionary alloc] initWithCapacity:0];
 		tabContentDic = [[NSMutableDictionary alloc] initWithCapacity:0];
-		tabEnable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"TabButton2.png" ofType:nil] ] ];
-		tabDisable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"TabButton1.png" ofType:nil] ] ];
-		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ManageContainer.png" ofType:nil] ] ];
+		
+		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_ButtonContainer.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
 		[self setTextureRect: rect];
 		[bg release];
+		tabEnable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"TabButton2.png" ofType:nil] ] ];
+		tabDisable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"TabButton1.png" ofType:nil] ] ];
+
 		self.position = ccp(240,160);
-		self.scale = 300.0f/1024.0f;
+//		self.scale = 300.0f/1024.0f;
 		self.title = @"仓库";
 		[self addTitle];
 		

@@ -11,7 +11,7 @@
 #import "Button.h"
 #import "ButtonContainer.h"
 #import "FeedbackDialog.h"
-
+#import "Button.h"
 
 @implementation ManageContainer
 
@@ -22,18 +22,29 @@
 	if ((self = [super init])) {
 		tabDic = [[NSMutableDictionary alloc] initWithCapacity:0];
 		tabContentDic = [[NSMutableDictionary alloc] initWithCapacity:0];
-		tabEnable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"TabButton2.png" ofType:nil] ] ];
-		tabDisable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"TabButton1.png" ofType:nil] ] ];
-		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ManageContainer.png" ofType:nil] ] ];
+		tabEnable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"tab_press.png" ofType:nil] ] ];
+		tabDisable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"tab.png" ofType:nil] ] ];
+		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_2.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
 		[self setTextureRect: rect];
 		[bg release];
+		
+		CCSprite* bg_2 = [CCSprite spriteWithFile:@"store_logo.png"];
+		bg_2.position = ccp(60,205);
+		[self addChild:bg_2 z:5 ];
+		
+		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
+											   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
+		statusIcon.position = ccp(350, 0);
+		[self addChild:statusIcon z:5 ];
+		[statusIcon release];
+		
 		self.position = ccp(240,160);
-		self.scale = 300.0f/1024.0f;
-		self.title = @"商店";
-		[self addTitle];
+//		self.scale = 300.0f/1024.0f;
+//		self.title = @"商店";
+//		[self addTitle];
 		
 		//根据Tab的名称加载商店信息
 		NSArray *tabArray = [[NSArray alloc] initWithObjects:@"animal",@"food",@"goods",nil];
@@ -42,7 +53,7 @@
 			NSString *tab = [tabArray objectAtIndex:i];
 			ButtonContainer *buttonContainer = [[ButtonContainer alloc] initWithTab:tab setTarget:self];
 			if (i == 0) {
-				buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
+				buttonContainer.position = ccp(40, 170);
 			}
 			else {
 				buttonContainer.position = ccp(2000, self.contentSize.height/2 - 50);
@@ -53,10 +64,10 @@
 		}
 		
 		//设置一层半透明背景,点击事件的优先级为50,屏蔽下面图层的点击事件
-		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:50];
-		transBackground.scale = 17.0f;
-		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-		[self addChild:transBackground z:-1];
+//		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:50];
+//		transBackground.scale = 17.0f;
+//		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+//		[self addChild:transBackground z:-1];
 		
 	}
 	return self;
@@ -81,12 +92,12 @@
 		NSString *tempString = [tabArray objectAtIndex:i];
 		CCSprite *tempTab;
 		if (i == 0) {
-			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:30 setBackground:@"TabButton2.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
+			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"tab_press.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
 		}
 		else {
-			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:30 setBackground:@"TabButton1.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
+			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"tab.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
 		}
-		tempTab.position = ccp((rect.size.width + 10) * i + tempTab.contentSize.width/2 + 5 , self.contentSize.height - 90);
+		tempTab.position = ccp((rect.size.width) * i + tempTab.contentSize.width + 70 , self.contentSize.height+5);
 		tempTab.tag = i;
 		[self addChild:tempTab];
 		[tabDic setValue:tempTab forKey:[NSString stringWithFormat:@"tab_%d",i]];
@@ -99,7 +110,7 @@
 	tabIndex = button.tag;
 	[button setTexture:tabEnable];
 	ButtonContainer	*buttonContainer = [tabContentDic objectForKey:[NSString stringWithFormat:@"tabContent_%d",tabIndex]];
-	buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
+	buttonContainer.position = ccp(40, 170);
 	int tabCount = [tabDic count];
 	for (int i = 0; i < tabCount; i++) {
 		if (i != tabIndex) {
@@ -196,6 +207,13 @@
 {
 	NSLog(@"Server Connection Fail");
 }
+
+
+-(void) OverIconHandler
+{
+	self.position = ccp(1000,160);
+}
+
 
 @end
 

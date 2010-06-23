@@ -16,12 +16,13 @@
 {
 	if ((self = [super init])) {
 		parentTarget = target;
-		CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ButtonContainer.png" ofType:nil] ] ];
-		CGRect rect = CGRectZero;
-		rect.size = bg.contentSize;
-		[self setTexture: bg];
-		[self setTextureRect: rect];
-		[bg release];
+//		CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_2.png" ofType:nil] ] ];
+//		CGRect rect = CGRectZero;
+//		bg.scale = 1024.0/300.0f;
+//		rect.size = CGSizeMake(900,400);
+//		[self setTexture: bg];
+//		[self setTextureRect: rect];
+//		[bg release];
 		tabFlag = tabName;
 		if (tabFlag == @"animal") {
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
@@ -32,15 +33,18 @@
 		else if(tabFlag == @"goods"){
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllGoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
+		self.scale = 300.0f/1024.0f;
+		
+		
 		
 		//实现翻页按钮
-		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
-		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
-		forwardPageBtn.flipX = YES;
-		nextPageBtn.position = ccp(self.contentSize.width/2 + 100, 0);
-		forwardPageBtn.position = ccp(self.contentSize.width/2 - 100, 0);
-		[self addChild:nextPageBtn z:7];
-		[self addChild:forwardPageBtn z:7];
+//		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
+//		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
+//		forwardPageBtn.flipX = YES;
+//		nextPageBtn.position = ccp(self.contentSize.width/2 + 100, 0);
+//		forwardPageBtn.position = ccp(self.contentSize.width/2 - 100, 0);
+//		[self addChild:nextPageBtn z:7];
+//		[self addChild:forwardPageBtn z:7];
 	}
 	return self;
 }
@@ -75,8 +79,10 @@
 
 -(void) nextPage:(Button *)button
 {
-	if ( currentPageNum + 1 <= totalPage) {
-		for (int i = 0; i< currentNum; i ++) {
+	if ( currentPageNum + 1 <= totalPage) 
+	{
+		for (int i = 0; i< currentNum; i ++) 
+		{
 			[self removeChildByTag:i cleanup:YES];
 		}
 		
@@ -104,12 +110,12 @@
 		NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 		DataModelOriginalAnimal *originAnimal;
 		NSArray *animalArray = [originAnimalDic allKeys];
-		int endNumber = currentPageNum * 12;
+		int endNumber = currentPageNum * 8;
 		if (endNumber >= animalArray.count) {
 			endNumber = animalArray.count;
 		}
-		currentNum = endNumber - (currentPageNum -1 ) *12 ;
-		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
+		currentNum = endNumber - (currentPageNum -1 ) *8 ;
+		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
 			originAnimal = [originAnimalDic objectForKey:[animalArray objectAtIndex:i]];
 			
 			int buyType = 0;
@@ -122,20 +128,25 @@
 			//根据动物的originalAnimalId生成ItemButton
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",originAnimal.picturePrefix];
 			ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:49 offsetX:1 offsetY:1];
-			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
-			[self addChild:itemButton z:7 tag:i%12];
+			itemButton.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
+			[self addChild:itemButton z:7 tag:i%8];
+			
+			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
+			kuang.scale = 1024.0/400.0f;
+			[self addChild:kuang z:6];
 		}
 	}
 	else if (tabFlag == @"food"){
 		NSDictionary *foodDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].foods;
 		DataModelFood *dataModelFood;
 		NSArray *foodArray = [foodDic allKeys];
-		int endNumber = currentPageNum * 12;
+		int endNumber = currentPageNum * 8;
 		if (endNumber >= foodArray.count) {
 			endNumber = foodArray.count;
 		}
-		currentNum = endNumber - (currentPageNum -1 ) *12 ;
-		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
+		currentNum = endNumber - (currentPageNum -1 ) *8 ;
+		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
 			dataModelFood = [foodDic objectForKey:[foodArray objectAtIndex:i]];
 			
 			int buyType = 0;
@@ -146,20 +157,25 @@
 			}
 			NSString *picFileName = [NSString stringWithFormat:@"food_%@.png",dataModelFood.foodImg];
 			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelFood.foodId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:49 offsetX:1 offsetY:1];
-			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
-			[self addChild:itemButton z:7 tag:i%12];
+			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
+			[self addChild:itemButton z:7 tag:i%8];
+			
+			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
+			kuang.scale = 1024.0/400.0f;
+			[self addChild:kuang z:6];
 		}
 	}
 	else if (tabFlag == @"goods"){
 		NSDictionary *goodsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].goods;
 		DataModelGood *dataModelGood;
 		NSArray *goodsArray = [goodsDic allKeys];
-		int endNumber = currentPageNum * 12;
+		int endNumber = currentPageNum * 8;
 		if (endNumber >= goodsArray.count) {
 			endNumber = goodsArray.count;
 		}
-		currentNum = endNumber - (currentPageNum -1 ) *12 ;
-		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
+		currentNum = endNumber - (currentPageNum -1 ) *8 ;
+		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
 			dataModelGood = [goodsDic objectForKey:[goodsArray objectAtIndex:i]];
 			int buyType = 0;
 			NSString *price = [NSString stringWithFormat:@"%d",dataModelGood.goodsGoldenPrice];
@@ -176,8 +192,13 @@
 				picFileName = @"chinemy_walk_left_01.png";
 			}
 			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelGood.goodsId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:49 offsetX:1 offsetY:1];
-			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
-			[self addChild:itemButton z:7 tag:i%12];
+			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
+			[self addChild:itemButton z:7 tag:i%8];
+			
+			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
+			kuang.scale = 1024.0/400.0f;
+			[self addChild:kuang z:6];
 		}
 	}
 

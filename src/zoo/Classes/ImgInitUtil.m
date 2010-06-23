@@ -34,6 +34,7 @@ static ImgInitUtil *_sharedImgInitUtil;
 		[animation addFrameWithTexture:image rect:CGRectMake(originx + (i % containOneLine) * w, originy + (i/containOneLine) * h, w, h)];
 		NSLog(@"second x.....%f, y.....%f",originx + (i % containOneLine) * w, originy + (i/containOneLine) * h);
 	}
+	[image release];
 	return animation;
 }
 
@@ -57,6 +58,7 @@ static ImgInitUtil *_sharedImgInitUtil;
 	{
 		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(0, originy, w, h)] forKey:@"left"];
 	}
+	[image release];
 	return [NSDictionary dictionaryWithDictionary:dictionary];
 }
 
