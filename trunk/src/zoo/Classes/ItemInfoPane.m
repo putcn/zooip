@@ -21,7 +21,7 @@ count;
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget:(id)target
 {
 	if ((self = [super init])) {
-		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ItemInfoPane.png" ofType:nil] ] ];
+		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_2.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
@@ -202,14 +202,14 @@ count;
 	rect.size = itemImg.contentSize;
 	[item setTexture: itemImg];
 	[item setTextureRect: rect];
-	item.scale = 2.0f;
+//	item.scale = 2.0f;
 	[itemImg release];
 	CCSprite *buyImg;
 	if (buyType == @"goldEgg") {
-		buyImg = [CCSprite spriteWithFile:@"goldegg.png"];
+		buyImg = [CCSprite spriteWithFile:@"金蛋ico.png"];
 	}
 	else {
-		buyImg = [CCSprite spriteWithFile:@"goldant.png"];
+		buyImg = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
 	}
 	priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:20];
 	[priceLbl setColor:ccc3(255, 0, 255)];
@@ -217,8 +217,8 @@ count;
 	item.position = ccp(item.contentSize.width/2 + 150, self.contentSize.height  - item.contentSize.height /2 - 150);
 	buyImg.position = ccp(item.position.x - 60, 300);
 	priceLbl.position = ccp(item.position.x + 20 , 300);
-	buyImg.scale = 1.5f;
-	priceLbl.scale = 1.5f;
+//	buyImg.scale = 1.5f;
+//	priceLbl.scale = 1.5f;
 	
 	[self addChild:item z:7];
 	[self addChild:buyImg z:7];

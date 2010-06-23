@@ -49,10 +49,10 @@
 	[itemImg release];
 	CCSprite *buyImg;
 	if (buyType == 0) {
-		buyImg = [CCSprite spriteWithFile:@"goldegg.png"];
+		buyImg = [CCSprite spriteWithFile:@"金蛋ico.png"];
 	}
 	else {
-		buyImg = [CCSprite spriteWithFile:@"goldant.png"];
+		buyImg = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
 	}
 	CCLabel *priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:20];
 	[priceLbl setColor:ccc3(255, 0, 255)];

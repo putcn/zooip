@@ -958,6 +958,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 	
 	[CallBacks setObject:tempDic forKey:request.requestFlagMark];
 	
+	[tempDic release];
 	[request setDelegate:self];
 	[request setDidFinishSelector:@selector(requestDone:)];
 	[request setDidFailSelector:@selector(requestWentWrong:)];

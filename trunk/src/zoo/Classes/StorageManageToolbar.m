@@ -83,8 +83,6 @@
 		if (storageContainer.position.x == 240) {
 			
 			storageContainer.position = ccp(1000,0);
-			
-			
 		}
 		else {
 			[storageContainer updadaPane];
