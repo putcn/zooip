@@ -152,9 +152,6 @@ infoMessagePanelTest;
 	//TODO: Imp the mate func
 	//Pop up the panel which need to choose ants count and present the persent of success rate.
 	
-	
-	NSString *action = @"marry";
-	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
 	NSString *maleId;
 	NSString *femaleId;
 	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID];
@@ -167,9 +164,6 @@ infoMessagePanelTest;
 		maleId = rightAnimalID;
 		femaleId = leftAnimalID;
 	}
-	
-	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",femaleId,@"maleId",maleId,@"femaleId",action,@"action",nil];
-	//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 	
 	//TODO: add the service handler for to mate.
 	
