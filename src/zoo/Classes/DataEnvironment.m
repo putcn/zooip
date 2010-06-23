@@ -61,8 +61,8 @@ storageAuctionAnimals;
 		sharedInst = self;
 		[self restore];
 		
-		playerUid = @"1177553155";
-		friendUid = @"1122334455";
+		playerUid = @"327535525";
+		friendUid = @"327535525";
 		
 		//Mixi:11, RenRen:5
 		pid = @"5";
