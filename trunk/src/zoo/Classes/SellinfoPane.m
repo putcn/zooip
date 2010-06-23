@@ -16,13 +16,17 @@
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget:(id)target
 {
 	if ((self = [super init])) {
-				
+		/*		
+		
 		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ItemInfoPane.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
+		 
+		 
 		[self setTextureRect: rect];
 		[bg release];
+		 */
 		self.title = @"出 售";
 		priceLbl = [[CCLabel alloc] retain];
 		

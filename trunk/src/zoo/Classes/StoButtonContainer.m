@@ -27,6 +27,8 @@
 	 [self setTextureRect: rect];
 	 [bg release];
 	 
+	 eggEnNameArray = [[NSArray alloc] initWithObjects:@"craneEgg.png",@"duckEgg.png",@"gooseEgg.png",@"henEgg.png",@"magpieEgg.png",@"mallardEgg.png",@"mandarinduckEgg.png",@"parrotEgg.png",@"peahenEgg.png",@"pheasantEgg.png",@"pigeonEgg.png",@"swanEgg.png",@"turkeyEgg.png",@"wildgooseEgg.png",@"mallardEgg.png",@"pigeonEgg.png",nil];
+	 
 	 [self initView];
 	 
  }
@@ -38,6 +40,8 @@
 {
 	
 	 [self removeAllChildrenWithCleanup:YES];
+	
+	
 	
 	NSString *par = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:par,@"farmerId",nil];
@@ -171,15 +175,18 @@
 			[eggSourceArray addObject:storageEgg];
 			
 			
-			NSString *picName = [NSString stringWithFormat:@"%@",storageEgg.eggNameEN];
+			
+			int eggImgId = [storageEgg.eggImgId intValue];
+			
+			
+			NSString *picName = [NSString stringWithFormat:@"%@", [eggEnNameArray objectAtIndex:eggImgId] ];
 			NSString *eggName = [NSString stringWithFormat:@"%@",storageEgg.eggNameEN];
 			NSString *eggTotal = [NSString stringWithFormat:@"%d",(storageEgg.numOfProduct + storageEgg.numOfStolen)];
 			NSArray *eNameArr = [picName componentsSeparatedByString:@" "];
-			NSString *picFileName = [NSString stringWithFormat:@"%@Egg.png",[eNameArr objectAtIndex:0] ];
 			
 			totalPrice += (storageEgg.numOfProduct + storageEgg.numOfStolen) * storageEgg.eggPrice;
 							
-			SellitemButton *itemButton = [[SellitemButton alloc] initWithItem:storageEgg.eggStorageId setitType:tabFlag setImagePath:picFileName setEggTotal:eggTotal setEggName:storageEgg.eggName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			SellitemButton *itemButton = [[SellitemButton alloc] initWithItem:storageEgg.eggStorageId setitType:tabFlag setImagePath:picName setEggTotal:eggTotal setEggName:storageEgg.eggName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 	
 			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
 			
@@ -221,6 +228,7 @@
 			NSString *eggTotal = [NSString stringWithFormat:@""];
 
 			totalPrice += dataModelStorageZygoteEggs.eggPrice;
+			
 			
 			NSString *picFileName = [NSString stringWithFormat:@"zygote%@.png",picName];
 						

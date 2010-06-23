@@ -31,6 +31,7 @@
 	
 	NSMutableArray *itemNumArray;
 	NSMutableArray *eggSourceArray;
+	NSArray *eggEnNameArray;
 }
 -(id) initWithTab:(NSString *)tabName setTarget:(id)target;
 
