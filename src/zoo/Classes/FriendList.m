@@ -93,10 +93,10 @@
 	
 	NSArray *sortedFriendInfoArray = [friendInfoArray sortedArrayUsingFunction:compareFriendArrayExpSelector context:nil];
 	
-	//int i = (currentPageNum -1)*12; i < endNumber; i ++
+	
+	//for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
+	
 	for (int i=0; i< friendsInfoArray.count; i++) {
-	//for (int i = (currentPageNum -1)*4; i < endNumber; i++) {
-
 		
 		dataModelfriend = [sortedFriendInfoArray objectAtIndex:i];
 			//生成朋友列表
