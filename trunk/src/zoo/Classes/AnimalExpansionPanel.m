@@ -165,9 +165,6 @@ paramsDict;
 	//[self setImg:@"" setBuyType:@"" setPrice:@"1"];
 }
 
-
-
-
 -(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price
 {
 	CCSprite *item = [CCSprite node];
