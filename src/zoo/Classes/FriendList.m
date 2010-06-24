@@ -15,23 +15,15 @@
 {
 	if ((self = [super init])) {
 		parentTarget = target;
-		CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_ButtonContainer.png" ofType:nil] ] ];
-		CGRect rect = CGRectZero;
-		rect.size = bg.contentSize;
-		[self setTexture: bg];
-		[self setTextureRect: rect];
-		[bg release];
-
 				
-		
 		[self generatePage];
 		
 		//实现翻页按钮
-		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
-		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
+		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:49 offsetX:0 offsetY:0 scale:0.5f];
+		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:49 offsetX:0 offsetY:0 scale:0.5f];
 		forwardPageBtn.flipX = YES;
-		nextPageBtn.position = ccp(self.contentSize.width/2 + 100, 0);
-		forwardPageBtn.position = ccp(self.contentSize.width/2 - 100, 0);
+		nextPageBtn.position = ccp(170, -160);
+		forwardPageBtn.position = ccp(150, -160);
 		[self addChild:nextPageBtn z:7];
 		[self addChild:forwardPageBtn z:7];
 	}
@@ -105,7 +97,7 @@
 															   setFirendIcoUrl:dataModelfriend.tinyurl setExperience:dataModelfriend.experience setTarget:parentTarget setSelector:@selector(gotoFriendHandler:) 
 															    setPriority:49 offsetX:1 offsetY:1];	
 		
-		friendIcoButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 120* ((i-4*(currentPageNum-1))/4) - 50);
+		friendIcoButton.position = ccp(80 * i, -110);
 		[self addChild:friendIcoButton z:7 tag:i%4];
 		
 		
