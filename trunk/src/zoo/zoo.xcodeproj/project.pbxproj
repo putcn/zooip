@@ -6247,8 +6247,6 @@
 		6BD28EA311D3000E00BE2859 /* 母.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1311D3000E00BE2859 /* 母.png */; };
 		6BD28EA411D3000E00BE2859 /* 取消.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1511D3000E00BE2859 /* 取消.png */; };
 		6BD28EA511D3000E00BE2859 /* 取消_按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1611D3000E00BE2859 /* 取消_按下.png */; };
-		6BD28EA611D3000E00BE2859 /* 确定.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1711D3000E00BE2859 /* 确定.png */; };
-		6BD28EA711D3000E00BE2859 /* 确定_按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1811D3000E00BE2859 /* 确定_按下.png */; };
 		6BD28EA811D3000E00BE2859 /* 红色按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1911D3000E00BE2859 /* 红色按钮.png */; };
 		6BD28EA911D3000E00BE2859 /* 红色按钮_按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1A11D3000E00BE2859 /* 红色按钮_按下.png */; };
 		6BD28EAA11D3000E00BE2859 /* 黄色按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1B11D3000E00BE2859 /* 黄色按钮.png */; };
@@ -12814,8 +12812,6 @@
 		6BD28E1311D3000E00BE2859 /* 母.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "母.png"; sourceTree = "<group>"; };
 		6BD28E1511D3000E00BE2859 /* 取消.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "取消.png"; sourceTree = "<group>"; };
 		6BD28E1611D3000E00BE2859 /* 取消_按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "取消_按下.png"; sourceTree = "<group>"; };
-		6BD28E1711D3000E00BE2859 /* 确定.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "确定.png"; sourceTree = "<group>"; };
-		6BD28E1811D3000E00BE2859 /* 确定_按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "确定_按下.png"; sourceTree = "<group>"; };
 		6BD28E1911D3000E00BE2859 /* 红色按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "红色按钮.png"; sourceTree = "<group>"; };
 		6BD28E1A11D3000E00BE2859 /* 红色按钮_按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "红色按钮_按下.png"; sourceTree = "<group>"; };
 		6BD28E1B11D3000E00BE2859 /* 黄色按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "黄色按钮.png"; sourceTree = "<group>"; };
@@ -23259,8 +23255,6 @@
 			children = (
 				6BD28E1511D3000E00BE2859 /* 取消.png */,
 				6BD28E1611D3000E00BE2859 /* 取消_按下.png */,
-				6BD28E1711D3000E00BE2859 /* 确定.png */,
-				6BD28E1811D3000E00BE2859 /* 确定_按下.png */,
 				6BD28E1911D3000E00BE2859 /* 红色按钮.png */,
 				6BD28E1A11D3000E00BE2859 /* 红色按钮_按下.png */,
 				6BD28E1B11D3000E00BE2859 /* 黄色按钮.png */,
@@ -30309,8 +30303,6 @@
 				6BD28EA311D3000E00BE2859 /* 母.png in Resources */,
 				6BD28EA411D3000E00BE2859 /* 取消.png in Resources */,
 				6BD28EA511D3000E00BE2859 /* 取消_按下.png in Resources */,
-				6BD28EA611D3000E00BE2859 /* 确定.png in Resources */,
-				6BD28EA711D3000E00BE2859 /* 确定_按下.png in Resources */,
 				6BD28EA811D3000E00BE2859 /* 红色按钮.png in Resources */,
 				6BD28EA911D3000E00BE2859 /* 红色按钮_按下.png in Resources */,
 				6BD28EAA11D3000E00BE2859 /* 黄色按钮.png in Resources */,
