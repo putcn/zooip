@@ -23,29 +23,35 @@
 {
 	if ((self = [super init])) {
 		
+		//背景
 		
-		tabDic = [[NSMutableDictionary alloc] initWithCapacity:0];
-		tabContentDic = [[NSMutableDictionary alloc] initWithCapacity:0];
-		tabEnable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"TabButton2.png" ofType:nil] ] ];
-		tabDisable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"TabButton1.png" ofType:nil] ] ];
-		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ManageContainer.png" ofType:nil] ] ];
+		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bg_friend.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
 		[self setTextureRect: rect];
+		self.position = ccp(-180,100);
 		[bg release];
-		self.position = ccp(240,160);
-		self.scale = 300.0f/1024.0f;
-		self.title = @"朋友信息";
-		[self addTitle];
+		 
+		
+		//动物园logo
+		CCSprite *logo = [CCSprite spriteWithFile:@"LOGO.png"];
+		logo.position = ccp(200,145);
+		[self addChild:logo z:7];
+		
+		
 	
-
 		friendContainer = [[FriendList alloc] initWithTab:self];
-		
-		friendContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
-		
+		friendContainer.position = ccp(50, 190);
 		[self addChild:friendContainer z:7];
 			
+		
+		
+		Button *exitButton = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"exitButton.png" setTarget:self setSelector:@selector(exitHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
+		exitButton.position = ccp(400, 135);
+		[self addChild:exitButton z:7];
+		
+		
 		
 		//设置一层半透明背景,点击事件的优先级为50,屏蔽下面图层的点击事件
 		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:50];
@@ -54,19 +60,8 @@
 		[self addChild:transBackground z:-1];
 		
 		
-		
 	}
 	return self;
-}
-
-//设置标题
--(void)addTitle
-{
-	NSLog(@"%@",title);
-	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:30];
-	[titleLbl setColor:ccc3(255, 255, 255)];
-	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - titleLbl.contentSize.height/2);
-	[self addChild:titleLbl z:10];
 }
 
 
@@ -77,15 +72,59 @@
 	
 	[[GameMainScene sharedGameMainScene] switchZoo:friendButton.uId];
 	
-	self.position = ccp(1000,160);
+	self.position = ccp(-2000,100);
 	
 };
 
 
+
+
+-(void) exitHandler:(Button *)button
+{
+	
+	[self disableFriendView];
+	
+}
+
+
+-(void) disableFriendView
+{
+	self.position = ccp(-2000,100);
+}
+
+
+
+
+
+/*
+
+-(void)popUpHandler
+{
+	friendView.scale = 0.1f;
+	id actionScaling = [CCScaleTo actionWithDuration:0.6  scale:300.0f/1024.0f];
+	
+	id ease = [CCEaseBackOut actionWithAction: actionScaling];
+	[ease setDuration:0.3];
+	
+	[friendView runAction:ease];
+}
+
+
+*/
+
+
+
+
 -(void) resetPostion
 {
+	if (self.position.x == -180) {
+		self.position = ccp(-2000,100);
+	}else {
+		
+		self.position = ccp(-180,100);
+	}
 
-	self.position = ccp(240,160);
+	
 
 }
 

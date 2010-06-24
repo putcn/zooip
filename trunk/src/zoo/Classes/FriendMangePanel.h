@@ -33,7 +33,6 @@
 @property (nonatomic,retain) NSString *scaleFlag;
 
 
--(void)addTitle;
 
 @end
 
