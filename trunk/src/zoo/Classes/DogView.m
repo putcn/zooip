@@ -101,7 +101,7 @@
 
 - (void)onEnter
 {
-	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:0 swallowsTouches:YES];
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:60 swallowsTouches:YES];
 	[super onEnter];
 }
 

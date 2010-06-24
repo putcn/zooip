@@ -56,8 +56,8 @@ animalID;
 //生成结婚和交配按钮
 -(void)generateButtons
 {
-	Button *toMateBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMate:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
-	Button *toMarryBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMarry:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
+	Button *toMateBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMate:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
+	Button *toMarryBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMarry:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
 	//toMarryBtn.flipX = YES;
 	toMateBtn.position = ccp(self.contentSize.width/2 + 50, 440);
 	toMarryBtn.position = ccp(self.contentSize.width/2 - 50, 440);
@@ -78,7 +78,7 @@ animalID;
 		leftAnimalID = animalID;
 		//For Test
 		NSString *tabFlag = @"animals";
-		AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:leftAnimalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:2 offsetX:1 offsetY:1];
+		AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:leftAnimalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:30 offsetX:1 offsetY:1];
 		itemButton.position = ccp(150,440);
 		[self addChild:itemButton z:7 tag:1%12];
 	}
@@ -86,7 +86,7 @@ animalID;
 		rightAnimalID = animalID;
 		//For Test
 		NSString *tabFlag = @"animals";
-		AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:rightAnimalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:2 offsetX:1 offsetY:1];
+		AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:rightAnimalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:30 offsetX:1 offsetY:1];
 		itemButton.position = ccp(630,440);
 		[self addChild:itemButton z:7 tag:1%12];
 	}
@@ -110,7 +110,7 @@ animalID;
 	NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalDataAnother.originalAnimalId];
 	
 	NSString *tabFlag = @"animals";
-	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:2 offsetX:1 offsetY:1];
+	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:30 offsetX:1 offsetY:1];
 	if(serverAnimalDataAnother.gender == 1)
 	{
 		itemButton.position = ccp(150,440);
@@ -148,7 +148,7 @@ animalID;
 			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalList.originalAnimalId];
 			//For Test
 			NSString *tabFlag = @"animals";
-			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(updateInfoPanel:) setPriority:2 offsetX:1 offsetY:1];
+			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(updateInfoPanel:) setPriority:30 offsetX:1 offsetY:1];
 			itemButton.position = ccp(225 * (i%4) + 240/**this uesed to be 120 pixel***/, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100 - 300);
 			[self addChild:itemButton z:7 tag:i%12];
 		}
@@ -325,7 +325,7 @@ animalID;
 		scalerPane.position = ccp(200,200);
 		[self addChild:scalerPane z:5];
 	}
-	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:40];
+	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
 	transBackground.scale = 17.0f;
 	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 	[self addChild:transBackground z:5];

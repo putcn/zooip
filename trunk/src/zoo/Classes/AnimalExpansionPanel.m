@@ -51,7 +51,7 @@ paramsDict;
 		
 		//****[self updateInfo:itId type:itType setTarget:target];
 		
-		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:2];
+		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
 		transBackground.scale = 17.0f;
 		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 		[self addChild:transBackground z:5];
@@ -152,8 +152,8 @@ paramsDict;
 	[self addChild:requireLevelLbl z:10];
 	[self addChild:requireGoldenEggLbl z:10];
 	
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Confirm.png" setTarget:thisTarget setSelector:@selector(levelupConfirm:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Cancel.png" setTarget:thisTarget setSelector:@selector(levelCancle:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Confirm.png" setTarget:thisTarget setSelector:@selector(levelupConfirm:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Cancel.png" setTarget:thisTarget setSelector:@selector(levelCancle:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 	
 	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
 	confirmBtn.target = self;

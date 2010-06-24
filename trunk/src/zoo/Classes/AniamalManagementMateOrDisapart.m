@@ -338,7 +338,7 @@ infoMessagePanelTest;
 		scalerPane.position = ccp(200,200);
 		[self addChild:scalerPane z:5];
 	}
-	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:40];
+	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
 	transBackground.scale = 17.0f;
 	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 	[self addChild:transBackground z:5];
