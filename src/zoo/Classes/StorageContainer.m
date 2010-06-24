@@ -33,6 +33,16 @@
 //		self.scale = 300.0f/1024.0f;
 //		self.title = @"仓库";
 		
+		CCSprite* bg_2 = [CCSprite spriteWithFile:@"depot_logo.png"];
+		bg_2.position = ccp(75,205);
+		[self addChild:bg_2 z:5 ];
+		
+		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
+											   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
+		statusIcon.position = ccp(350, 6);
+		[self addChild:statusIcon z:5 ];
+		[statusIcon release];
+		
 		num_paneNum = [ [NSMutableArray alloc] init];
 		
 		[self addTitle];
@@ -62,9 +72,11 @@
 		NSString *tab1 = [tabArray objectAtIndex:0];
 		NSString *tab2 = [tabArray objectAtIndex:1];
 		onePane = [[StoButtonContainer alloc] initWithTab:tab1 setTarget:self];
-		onePane.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
+//		onePane.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
+
 		
-		
+		onePane.position = ccp(40, 170);
+
 		twoPane = [[StoButtonContainer alloc] initWithTab:tab2 setTarget:self];
 		twoPane.position = ccp(2000, self.contentSize.height/2 - 50);
 		
@@ -103,9 +115,9 @@
 			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"tab_press.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:2 offsetX:0 offsetY:0 scale:1.0f];
 		}
 		else {
-			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:30 setBackground:@"tab.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:2 offsetX:0 offsetY:0 scale:1.0f];
+			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setBackground:@"tab.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:2 offsetX:0 offsetY:0 scale:1.0f];
 		}
-		tempTab.position = ccp((rect.size.width) * i + tempTab.contentSize.width + 70 , self.contentSize.height+5);
+		tempTab.position = ccp((rect.size.width) * i + tempTab.contentSize.width + 110 , self.contentSize.height+5);
 		tempTab.tag = i;
 		[self addChild:tempTab];
 		[tabDic setValue:tempTab forKey:[NSString stringWithFormat:@"tab_%d",i]];
@@ -357,7 +369,10 @@
 }
 
 
-
+-(void) OverIconHandler
+{
+	self.position = ccp(1000,160);
+}
 
 
 

@@ -21,7 +21,7 @@ count;
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget:(id)target
 {
 	if ((self = [super init])) {
-		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_2.png" ofType:nil] ] ];
+		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_1.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
@@ -30,14 +30,15 @@ count;
 		self.title = @"购买动物";
 		priceLbl = [[CCLabel alloc] retain];
 		[self updateInfo:itId type:itType setTarget:target];
+//		self.scale = 300.0f/1024.0f;
 	}
 	return self;
 }
 -(void)addTitle
 {
-	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:30];
+	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:20];
 	[titleLbl setColor:ccc3(255, 255, 255)];
-	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - titleLbl.contentSize.height/2);
+	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 	[self addChild:titleLbl z:10];
 }
 
@@ -169,8 +170,8 @@ count;
 	[dic release];
 	
 	//添加确认和取消按钮,回调函数分别为[ManageContainer buyItem] 和[ManageContainer Cancel]
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(buyItem:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancel:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(buyItem:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
+	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancel:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
 	
 	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
 	confirmBtn.target = self;
@@ -188,10 +189,10 @@ count;
 		scalerPane.position = ccp(200,200);
 		[self addChild:scalerPane z:5];
 	}
-	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:40];
-	transBackground.scale = 17.0f;
-	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-	[self addChild:transBackground z:5];
+//	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:40];
+//	transBackground.scale = 17.0f;
+//	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+//	[self addChild:transBackground z:5];
 }
 
 -(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price
