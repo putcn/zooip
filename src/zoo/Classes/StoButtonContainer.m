@@ -20,15 +20,15 @@
 	 tabFlag = tabName;
 	 itemNumArray = [ [NSMutableArray alloc] init];
 	 
-	 CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ButtonContainer.png" ofType:nil] ] ];
-	 CGRect rect = CGRectZero;
-	 rect.size = bg.contentSize;
-	 [self setTexture: bg];
-	 [self setTextureRect: rect];
-	 [bg release];
+//	 CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ButtonContainer.png" ofType:nil] ] ];
+//	 CGRect rect = CGRectZero;
+//	 rect.size = bg.contentSize;
+//	 [self setTexture: bg];
+//	 [self setTextureRect: rect];
+//	 [bg release];
 	 
 	 eggEnNameArray = [[NSArray alloc] initWithObjects:@"craneEgg.png",@"duckEgg.png",@"gooseEgg.png",@"henEgg.png",@"magpieEgg.png",@"mallardEgg.png",@"mandarinduckEgg.png",@"parrotEgg.png",@"peahenEgg.png",@"pheasantEgg.png",@"pigeonEgg.png",@"swanEgg.png",@"turkeyEgg.png",@"wildgooseEgg.png",@"mallardEgg.png",@"pigeonEgg.png",nil];
-	 
+	 self.scale = 300.0f/1024.0f;
 	 [self initView];
 	 
  }
@@ -66,7 +66,7 @@
 	NSDictionary *itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
 	NSArray *itemArray = [itemDic allKeys];
 
-	totalPage = itemArray.count/12 + 1;
+	totalPage = itemArray.count/8 + 1;
 	
 	currentPageNum = 1;
 	[self generatePage];
@@ -87,7 +87,7 @@
 	NSDictionary *itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs;
 	NSArray *itemArray = [itemDic allKeys];
 	
-	totalPage = itemArray.count/12 + 1;
+	totalPage = itemArray.count/8 + 1;
 	currentPageNum = 1;
 	[self generatePage];
 	
@@ -159,16 +159,16 @@
 		
 		NSArray *eggsArray = [storageEggDic allKeys];
 		
-		int endNumber = currentPageNum * 12;
+		int endNumber = currentPageNum * 8;
 		
 		if (endNumber >= eggsArray.count) {
 			endNumber = eggsArray.count;
 			
 		}
 		
-		currentNum = endNumber - (currentPageNum -1 ) *12 ;
+		currentNum = endNumber - (currentPageNum -1 ) *8 ;
 		
-		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
+		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
 			
 			storageEgg = [storageEggDic objectForKey:[eggsArray objectAtIndex:i]];
 			
@@ -188,11 +188,14 @@
 							
 			SellitemButton *itemButton = [[SellitemButton alloc] initWithItem:storageEgg.eggStorageId setitType:tabFlag setImagePath:picName setEggTotal:eggTotal setEggName:storageEgg.eggName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 	
-			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
+			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
 			
 			[itemNumArray addObject:itemButton];
 			
-			
+			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
+			kuang.scale = 1024.0/400.0f;
+			[self addChild:kuang z:6];
 		}
 		
 		
@@ -213,13 +216,13 @@
 		DataModelStorageZygoteEgg *dataModelStorageZygoteEggs;
 		NSArray *zygoteEggsArray = [storageZygoteEggsDic allKeys];
 		
-		int endNumber = currentPageNum * 12;
+		int endNumber = currentPageNum * 8;
 		if (endNumber >= zygoteEggsArray.count) {
 			endNumber = zygoteEggsArray.count;
 		}
-		currentNum = endNumber - (currentPageNum -1 ) *12 ;
+		currentNum = endNumber - (currentPageNum -1 ) *8 ;
 		
-		for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
+		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
 			dataModelStorageZygoteEggs = [storageZygoteEggsDic objectForKey:[zygoteEggsArray objectAtIndex:i]];
 
 			NSString *picName = [NSString stringWithFormat:@"%@",dataModelStorageZygoteEggs.eggId];
@@ -236,9 +239,13 @@
 	
 			[itemNumArray addObject:itemButton];
 			
-			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100);
+			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
 	
 	
+			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
+			kuang.scale = 1024.0/400.0f;
+			[self addChild:kuang z:6];
 	}
 		[self addEggToStage];
 				
