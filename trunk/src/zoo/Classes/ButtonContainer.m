@@ -67,7 +67,7 @@
 		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].goods;
 		itemArray = [itemDic allKeys];
 	}
-	totalPage = itemArray.count/12 + 1;
+	totalPage = itemArray.count/8 + 1;
 	currentPageNum = 1;
 	[self generatePage];
 }
