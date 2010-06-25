@@ -27,20 +27,26 @@
 		[counterLbl setString:[NSString stringWithFormat:@"%d",count]];
 		totalPrice = uPrice * count;
 //		counterLbl.position = self.position;
-		counterLbl.position = ccp(100,100);
+		counterLbl.position = ccp(70,50);
 		
-//		CCSprite* bg_2 = [CCSprite spriteWithFile:@"加减显示器.png"];
-//		bg_2.position = ccp(60,205);
-//		[self addChild:bg_2 z:5 ];
-//		[bg_2 release];
+		CCSprite* bg_2 = [CCSprite spriteWithFile:@"加减显示器.png"];
+		bg_2.position = ccp(70,50);
+		[self addChild:bg_2 z:7 ];
 		
-		Button *addBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确加减器_右.png" setTarget:self setSelector:@selector(counterReduce:) setPriority:priorityValue offsetX:0 offsetY:0 scale:1.0f];
-		Button *reduceBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(counterAdd:) setPriority:priorityValue offsetX:0 offsetY:0 scale:1.0f];
-		addBtn.flipX = YES;
-		reduceBtn.position = ccp(self.contentSize.width/2 + 100, 0);
-		addBtn.position = ccp(self.contentSize.width/2 - 100, 0);
+		
+		Button *reduceBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(counterReduce:) setPriority:priorityValue offsetX:0 offsetY:0 scale:1.0f];
+		
+		Button *reduceLeftBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(counterAdd:) setPriority:priorityValue offsetX:0 offsetY:0 scale:1.0f];
+		
+
+		
+		//		addBtn.flipX = YES;
+//		reduceBtn.flipX = YES;
+		reduceBtn.position = ccp(35,50);
+		reduceLeftBtn.position = ccp(105,50);
+		
 		[self addChild:counterLbl z:z];
-		[self addChild:addBtn z:z];
+		[self addChild:reduceLeftBtn z:z];
 		[self addChild:reduceBtn z:z];
 	}
 	return self;

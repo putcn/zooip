@@ -93,6 +93,9 @@
 			//button.tag = OPERATION_MARRY;
 			[playerButtonContainer addChild: button];
 			[playerOperationButtons addObject:button];
+			
+			// Add by Hunk on 2010-06-24 for memory leak
+			//[button release];
 		}
 	}
 }

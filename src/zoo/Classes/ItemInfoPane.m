@@ -21,7 +21,7 @@ count;
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget:(id)target
 {
 	if ((self = [super init])) {
-		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_1.png" ofType:nil] ] ];
+		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_buy.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
@@ -37,8 +37,8 @@ count;
 -(void)addTitle
 {
 	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:20];
-	[titleLbl setColor:ccc3(255, 255, 255)];
-	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+	[titleLbl setColor:ccc3(0, 0, 0)];
+	titleLbl.position = ccp(self.contentSize.width/2-80, self.contentSize.height/2+80);
 	[self addChild:titleLbl z:10];
 }
 
@@ -122,7 +122,7 @@ count;
 		
 		CCLabel *nameLbl = [CCLabel labelWithString:originalAnimal.scientificNameCN fontName:@"Arial" fontSize:30];
 		[nameLbl setColor:ccc3(0, 0, 0)];
-		nameLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 100);
+		nameLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 50);
 		[self addChild:nameLbl z:10];
 		[originalAnimal release];
 	}
@@ -139,7 +139,7 @@ count;
 		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
 		CCLabel *nameLbl = [CCLabel labelWithString:food.foodName fontName:@"Arial" fontSize:30];
 		[nameLbl setColor:ccc3(0, 0, 0)];
-		nameLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 100);
+		nameLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 50);
 		[self addChild:nameLbl z:10];
 		[food release];
 	}
@@ -163,20 +163,25 @@ count;
 		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
 		CCLabel *nameLbl = [CCLabel labelWithString:goods.goodsName	fontName:@"Arial" fontSize:30];
 		[nameLbl setColor:ccc3(0, 0, 0)];
-		nameLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 100);
+		nameLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 50);
 		[self addChild:nameLbl z:10];
 		[goods release];
 	}
 	[dic release];
 	
+	CCLabel *nameLbl = [CCLabel labelWithString:@"输入购买数量(1－500)" fontName:@"Arial" fontSize:13];
+	[nameLbl setColor:ccc3(0, 0, 0)];
+	nameLbl.position = ccp(self.contentSize.width/2 - 70, 25);
+	[self addChild:nameLbl z:10];
+	
 	//添加确认和取消按钮,回调函数分别为[ManageContainer buyItem] 和[ManageContainer Cancel]
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(buyItem:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancel:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"确定" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"确定.png" setTarget:target setSelector:@selector(buyItem:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
+	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancel:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
 	
 	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
 	confirmBtn.target = self;
-	confirmBtn.position = ccp(self.contentSize.width/2 - 200, 50);
-	cancelBtn.position = ccp(self.contentSize.height/2 + 200, 50);
+	confirmBtn.position = ccp(self.contentSize.width/2 + 30, 35);
+	cancelBtn.position = ccp(self.contentSize.height/2 + 170, 35);
 	[self addChild:confirmBtn z:10];
 	[self addChild:cancelBtn z:10];
 	if(itemType != @"goods")
@@ -186,8 +191,8 @@ count;
 			scalerPane = [[ScalerPane alloc] initWithCounter:1 max:10 delta:1 target:self price:itemPrice z:39 Priority:0];
 		else if(itemType == @"food")
 			scalerPane = [[ScalerPane alloc] initWithCounter:500 max:10000 delta:500 target:self price:itemPrice z:39 Priority:0];
-		scalerPane.position = ccp(200,200);
-		[self addChild:scalerPane z:5];
+		scalerPane.position = ccp(0,0);
+		[self addChild:scalerPane z:10];
 	}
 //	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:40];
 //	transBackground.scale = 17.0f;
@@ -215,9 +220,9 @@ count;
 	priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:20];
 	[priceLbl setColor:ccc3(255, 0, 255)];
 	
-	item.position = ccp(item.contentSize.width/2 + 150, self.contentSize.height  - item.contentSize.height /2 - 150);
-	buyImg.position = ccp(item.position.x - 60, 300);
-	priceLbl.position = ccp(item.position.x + 20 , 300);
+	item.position = ccp(item.contentSize.width/2 +40, self.contentSize.height  - item.contentSize.height /2-40);
+	buyImg.position = ccp(item.position.x - 40, self.contentSize.height  - item.contentSize.height /2-80);
+	priceLbl.position = ccp(item.position.x + 20 , self.contentSize.height  - item.contentSize.height /2-80);
 //	buyImg.scale = 1.5f;
 //	priceLbl.scale = 1.5f;
 	
