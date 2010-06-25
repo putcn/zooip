@@ -91,6 +91,9 @@
 	sellAllBtn.position = ccp(self.contentSize.width/2 +400, 80);
 	[self addChild:sellAllBtn z:7];
 	
+	// Add by Hunk on 2010-06-24 for memory leak
+	[tabArray release];
+	
 }
 
 

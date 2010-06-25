@@ -14,38 +14,44 @@
 
 -(id) initWithID: (NSString *)sId
 {
-	if ((self = [super init])) {
+	if ((self = [super init])) 
+	{
 		killAntsController = [[KillAntsController alloc] init];
 		antId = sId;
 		NSArray *dirkeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",nil];
 		NSArray *dirvalues = [NSArray arrayWithObjects:@"up",@"rightUp",@"right",@"rightDown",@"down",@"leftDown",@"left",@"leftUp",nil];
 		dirctions = [[NSDictionary dictionaryWithObjects:dirvalues forKeys:dirkeys] retain];
 		animation = [CCAnimation animationWithName:@"animal" delay:0.5];
-		for (int i = 1; i <= 4; i++) {
+		for (int i = 1; i <= 4; i++) 
+		{
 			[animation addFrameWithFilename:[NSString stringWithFormat:@"ant_%02d.png", i]];
 		}
 	}
 	return self;
 }
 
--(void) update:(int)currDirectionValue status:(int)currStatusValue
+-(void)update:(int)currDirectionValue status:(int)currStatusValue
 {
 	NSString *direction= [dirctions objectForKey: [NSString stringWithFormat:@"%d",currDirectionValue]];
 	CCRepeatForever *repeatAction = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]];
 	[self stopAllActions];
 	self.rotation = 0;
-	if (direction == @"left" || direction == @"leftUp") {
+	if (direction == @"left" || direction == @"leftUp") 
+	{
 		[self runAction:repeatAction];
 	}
-	else if(direction == @"up" || direction == @"rightUp"){
+	else if(direction == @"up" || direction == @"rightUp")
+	{
 		self.rotation = 90;
 		[self runAction:repeatAction];
 	}
-	else if(direction == @"right" || direction == @"rightDown"){
+	else if(direction == @"right" || direction == @"rightDown")
+	{
 		self.rotation = 180;
 		[self runAction:repeatAction];
 	}
-	else if(direction == @"down" || direction == @"leftDown"){
+	else if(direction == @"down" || direction == @"leftDown")
+	{
 		self.rotation = 270;
 		[self runAction:repeatAction];
 	}
