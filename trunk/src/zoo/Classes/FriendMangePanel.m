@@ -47,7 +47,7 @@
 			
 		
 		
-		Button *exitButton = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"exitButton.png" setTarget:self setSelector:@selector(exitHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
+		Button *exitButton = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"exitButton.png" setTarget:self setSelector:@selector(exitHandler:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 		exitButton.position = ccp(400, 135);
 		[self addChild:exitButton z:7];
 		
