@@ -15,12 +15,14 @@
 {
 	if ((self = [super init])) {
 		parentTarget = target;
-				
+		
+		currentPageNum = 1;
+
 		[self generatePage];
 		
 		//实现翻页按钮
-		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:49 offsetX:0 offsetY:0 scale:0.5f];
-		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:49 offsetX:0 offsetY:0 scale:0.5f];
+		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:40 offsetX:0 offsetY:0 scale:0.5f];
+		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:40 offsetX:0 offsetY:0 scale:0.5f];
 		forwardPageBtn.flipX = YES;
 		nextPageBtn.position = ccp(170, -160);
 		forwardPageBtn.position = ccp(150, -160);
@@ -68,43 +70,39 @@
 	
 	NSArray *friendsInfoArray =  [friendInfoDic allKeys];
 	
+	//==================
 	
+	totalPage = friendsInfoArray.count/5 + 1;
 	
-
-		int endNumber = currentPageNum * 4;
-		if (endNumber >= friendsInfoArray.count) {
-			endNumber = friendsInfoArray.count;
-		}
+	int endNumber = currentPageNum * 5;
+	if (endNumber >= friendsInfoArray.count) {
+		endNumber = friendsInfoArray.count;
+	}
+	currentNum = endNumber - (currentPageNum -1 ) *5 ;
 	
-		currentNum = endNumber - (currentPageNum -1 ) *4 ;
-	
-	
-	
+	//=====================
 	
 	NSArray *friendInfoArray = [friendInfoDic allValues];
 	
 	NSArray *sortedFriendInfoArray = [friendInfoArray sortedArrayUsingFunction:compareFriendArrayExpSelector context:nil];
-	
-	
-	//for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
-	
-	for (int i=0; i< friendsInfoArray.count; i++) {
+
+	//for (int i=0; i< friendsInfoArray.count; i++) {
+	for (int i = (currentPageNum -1)*5; i < endNumber; i ++) {
 		
 		dataModelfriend = [sortedFriendInfoArray objectAtIndex:i];
 			//生成朋友列表
 		//头像
 		FriendInfoBut *friendIcoButton = [[FriendInfoBut alloc] initFirendInfo:dataModelfriend.farmId setFarmerId:dataModelfriend.farmerId  setFriendId:dataModelfriend.uid setFriendName:dataModelfriend.userName 
 															   setFirendIcoUrl:dataModelfriend.tinyurl setExperience:dataModelfriend.experience setTarget:parentTarget setSelector:@selector(gotoFriendHandler:) 
-															    setPriority:49 offsetX:1 offsetY:1];	
+															    setPriority:40 offsetX:1 offsetY:1];	
 		
-		friendIcoButton.position = ccp(80 * i, -110);
+		
+		friendIcoButton.position = ccp(20 +(i%5)*70, -110);
 		[self addChild:friendIcoButton z:7 tag:i%4];
-		
-		
 		
 	}
 	
-		
+
 	
 }
 
@@ -125,6 +123,13 @@ NSInteger compareFriendArrayExpSelector(id f1, id f2, void *context)
 		return NSOrderedSame;
 	}
 }
+
+
+
+
+
+
+
 
 
 -(void) dealloc

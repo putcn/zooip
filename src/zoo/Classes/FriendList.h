@@ -20,8 +20,11 @@
 @interface FriendList : CCSprite {
 	int currentPageNum;
 	int totalPage;
+	int currentPage;
+	int displayNum;
 	int currentNum;
 	id parentTarget;
+	NSMutableArray *friendListArray;
 }
 -(id) initWithTab:(id)target;
 
