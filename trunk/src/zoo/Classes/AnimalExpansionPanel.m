@@ -30,7 +30,7 @@ paramsDict;
 	if((self =[super init]))
 	{
 		thisTarget = target;
-		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ItemInfoPane.png" ofType:nil] ] ];
+		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_buy.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
@@ -38,7 +38,7 @@ paramsDict;
 		[bg release];
 		
 		self.position = ccp(240,160);
-		self.scale = 300.0f/1024.0f;
+//		self.scale = 300.0f/1024.0f;
 		self.title = @"扩容";
 		[self addTitle];
 		//self.title = @"动物配对";
@@ -51,17 +51,17 @@ paramsDict;
 		
 		//****[self updateInfo:itId type:itType setTarget:target];
 		
-		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
-		transBackground.scale = 17.0f;
-		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-		[self addChild:transBackground z:5];
+//		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
+//		transBackground.scale = 17.0f;
+//		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+//		[self addChild:transBackground z:5];
 	}
 	return self;
 }
 -(void)addTitle
 {
 	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:30];
-	[titleLbl setColor:ccc3(255, 255, 255)];
+	[titleLbl setColor:ccc3(0, 0, 0)];
 	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - titleLbl.contentSize.height/2);
 	[self addChild:titleLbl z:10];
 }
@@ -121,28 +121,28 @@ paramsDict;
 		goldenEggNum = @"unknown";
 	}
 	levelLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"%@ 级",level] fontName:@"Arial" fontSize:12];
-	levelLbl.position = ccp(self.contentSize.width/2, 400);
+	levelLbl.position = ccp(self.contentSize.width/2, 150);
 	[levelLbl setColor:ccc3(255, 0, 255)];
 	levelLbl.scale = 1.5f;
 
 	
 	goldenEggNumLbl = [CCLabel labelWithString:goldenEggNum fontName:@"Arial" fontSize:12];
-	goldenEggNumLbl.position = ccp(self.contentSize.width/2,340);
+	goldenEggNumLbl.position = ccp(self.contentSize.width/2,125);
 	[goldenEggNumLbl setColor:ccc3(255, 0, 255)];
 	goldenEggNumLbl.scale = 1.5f;
 	
 	capacity = [CCLabel labelWithString:[NSString stringWithFormat:@"容量: %@",maxNumOfBirds] fontName:@"Arial" fontSize:12];
-	capacity.position = ccp(self.contentSize.width/2 ,280);
+	capacity.position = ccp(self.contentSize.width/2 ,100);
 	[capacity setColor:ccc3(255, 0, 255)];
 	capacity.scale = 1.5f;
 	
 	requireGoldenEggLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"扩容需要金蛋数量:%d",goldenEgg] fontName:@"Arial" fontSize:12];
-	requireGoldenEggLbl.position = ccp(self.contentSize.width/2,220);
+	requireGoldenEggLbl.position = ccp(self.contentSize.width/2,75);
 	[requireGoldenEggLbl setColor:ccc3(255, 0, 255)];
 	requireGoldenEggLbl.scale = 1.5f;
 	
 	requireLevelLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"扩容需要等级:%d",levelRequire] fontName:@"Arial" fontSize:12];
-	requireLevelLbl.position = ccp(self.contentSize.width/2, 160);
+	requireLevelLbl.position = ccp(self.contentSize.width/2, 50);
 	[requireLevelLbl setColor:ccc3(255, 0, 255)];
 	requireLevelLbl.scale = 1.5f;
 	
@@ -152,13 +152,13 @@ paramsDict;
 	[self addChild:requireLevelLbl z:10];
 	[self addChild:requireGoldenEggLbl z:10];
 	
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Confirm.png" setTarget:thisTarget setSelector:@selector(levelupConfirm:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Cancel.png" setTarget:thisTarget setSelector:@selector(levelCancle:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"确定" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"确定.png" setTarget:thisTarget setSelector:@selector(levelupConfirm:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"取消.png" setTarget:thisTarget setSelector:@selector(levelCancle:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 	
 	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
 	confirmBtn.target = self;
-	confirmBtn.position = ccp(self.contentSize.width/2 - 200, 100);
-	cancelBtn.position = ccp(self.contentSize.width/2 + 200, 100);
+	confirmBtn.position = ccp(self.contentSize.width/2 - 100, 25);
+	cancelBtn.position = ccp(self.contentSize.width/2 + 100, 25);
 	[self addChild:confirmBtn z:10];
 	[self addChild:cancelBtn z:10];
 	

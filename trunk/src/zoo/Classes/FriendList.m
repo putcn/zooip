@@ -96,7 +96,7 @@
 															   setFirendIcoUrl:dataModelfriend.tinyurl setExperience:dataModelfriend.experience setTarget:parentTarget setSelector:@selector(gotoFriendHandler:) 
 															    setPriority:40 offsetX:1 offsetY:1];	
 		
-		
+		//头像坐标、翻页
 		friendIcoButton.position = ccp(20 +(i%5)*70, -110);
 		[self addChild:friendIcoButton z:7 tag:i%4];
 		

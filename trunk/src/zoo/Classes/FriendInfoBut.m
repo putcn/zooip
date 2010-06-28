@@ -18,6 +18,7 @@
 		setTarget:(id) target setSelector:(SEL) handler setPriority:(int) priorityValue 
 		offsetX:(int) offsetXValue offsetY:(int) offsetYValue
 {
+	//单个头像信息
 	if( (self=[super init] ))
 	{
 		friendFarmId   = farmId;

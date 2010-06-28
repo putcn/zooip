@@ -26,13 +26,17 @@
 		tabDic = [[NSMutableDictionary alloc] initWithCapacity:0];
 		tabContentDic = [[NSMutableDictionary alloc] initWithCapacity:0];
 		//tabDisable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"TabButton1.png" ofType:nil] ] ];
-		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ManageContainer.png" ofType:nil] ] ];
+		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_buy.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
 		[self setTextureRect: rect];
 		self.position = ccp(240,160);
-		self.scale = 300.0f/1024.0f;
+		
+		
+//		self.scale = 300.0f/1024.0f;
+		
+		
 		if ([manageType isEqualToString:@"animalMarry"]) {
 			self.title = @"动物结婚";
 			
@@ -43,7 +47,7 @@
 				AnimalManageButtonContainer *buttonContainer = [[AnimalManageButtonContainer alloc]initWithTab:tab setTarget:self];
 				//StoButtonContainer *buttonContainer = [[StoButtonContainer alloc] initWithTab:tab setTarget:self];
 				if (i == 0) {
-					buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
+					buttonContainer.position = ccp(30,155);
 				}
 				else {
 					buttonContainer.position = ccp(2000, self.contentSize.height/2 - 50);
@@ -63,7 +67,7 @@
 				NSString *tab = [eggNameArray objectAtIndex:i];
 				AnimalManagementMateOrDisList *buttonContainer = [[AnimalManagementMateOrDisList alloc]initWithTab:tab setTarget:self];
 				if (i == 0) {
-					buttonContainer.position = ccp(self.contentSize.width/2, self.contentSize.height/2 - 50);
+					buttonContainer.position = ccp(30,155);
 				}
 				else {
 					buttonContainer.position = ccp(2000, self.contentSize.height/2 - 50);
@@ -84,8 +88,8 @@
 -(void)addTitle
 {
 	NSLog(@"%@",title);
-	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:40];
-	[titleLbl setColor:ccc3(255, 255, 255)];
+	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:25];
+	[titleLbl setColor:ccc3(0, 0, 0)];
 	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - titleLbl.contentSize.height/2);
 	[self addChild:titleLbl z:10];
 }

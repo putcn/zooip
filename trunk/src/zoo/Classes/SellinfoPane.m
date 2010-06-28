@@ -106,9 +106,9 @@
 		
 		
 		//数目选择孔件
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0];
-		scalerPane.position = ccp(self.contentSize.width/2, self.contentSize.height - 80);
-		[self addChild:scalerPane z:5];
+//		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0];
+//		scalerPane.position = ccp(self.contentSize.width/2, self.contentSize.height - 80);
+//		[self addChild:scalerPane z:5];
 	}
 	
 	if (itemType == @"zygoteegg") {
@@ -127,26 +127,26 @@
 		NSString *price = [NSString stringWithFormat:@"%d",itemPrice]; 
 		NSString *priceStr = [NSString stringWithFormat:@"受精卵售价 : %d 金蛋",itemPrice];
 		
-		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
+//		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
 		
 		CCLabel *nameLbl = [CCLabel labelWithString:modelZygoteEggs.eggName fontName:@"Arial" fontSize:20];
 		[nameLbl setColor:ccc3(0, 0, 0)];
-		nameLbl.position = ccp(self.contentSize.width/2 , self.contentSize.height );
+		nameLbl.position = ccp(self.contentSize.width/2 , self.contentSize.height-20 );
 		[self addChild:nameLbl z:10];
 		
-		CCLabel *eggPriLbl = [CCLabel labelWithString:priceStr fontName:@"Arial" fontSize:20];
-		[eggPriLbl setColor:ccc3(0, 0, 0)];
-		eggPriLbl.position = ccp(self.contentSize.width/2, self.contentSize.height );
-		[self addChild:eggPriLbl z:10];
+//		CCLabel *eggPriLbl = [CCLabel labelWithString:priceStr fontName:@"Arial" fontSize:20];
+//		[eggPriLbl setColor:ccc3(0, 0, 0)];
+//		eggPriLbl.position = ccp(self.contentSize.width/2, self.contentSize.height-20 );
+//		[self addChild:eggPriLbl z:10];
 		
 		CCLabel *zygoteEggPriLbl = [CCLabel labelWithString:priceStr fontName:@"Arial" fontSize:20];
 		[zygoteEggPriLbl setColor:ccc3(0, 0, 0)];
-		zygoteEggPriLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 30);
+		zygoteEggPriLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 60);
 		[self addChild:zygoteEggPriLbl z:10];
 		
 		CCLabel *eggProduceLbl = [CCLabel labelWithString:@"普通动物产量 ：33" fontName:@"Arial" fontSize:20];
 		[eggProduceLbl setColor:ccc3(0, 0, 0)];
-		eggProduceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 60);
+		eggProduceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height -90);
 		[self addChild:eggProduceLbl z:10];
 		
 		//modelZygoteEggs
@@ -154,7 +154,7 @@
 	
 		CCLabel *zygoteEggProduceLbl = [CCLabel labelWithString:zygoYield fontName:@"Arial" fontSize:20];
 		[zygoteEggProduceLbl setColor:ccc3(0, 0, 0)];
-		zygoteEggProduceLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 90);
+		zygoteEggProduceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 120);
 		[self addChild:zygoteEggProduceLbl z:10];
 		
 		CCLabel *sexLbl = [CCLabel labelWithString:modelZygoteEggs.zygoteGender fontName:@"Arial" fontSize:20];
@@ -164,17 +164,14 @@
 		
 		
 		//孵化按钮
-		Button *hatchBtn = [[Button alloc] initWithLabel:@"孵化" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"TabButton2.png" setTarget:target setSelector:@selector(hatchHandler:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+		Button *hatchBtn = [[Button alloc] initWithLabel:@"孵化" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(hatchHandler:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
 		hatchBtn.target = self;
-		hatchBtn.position = ccp(self.contentSize.height/2 + 100, 50);
+		hatchBtn.position = ccp(self.contentSize.height/2 , 35);
 		[self addChild:hatchBtn z:10];
 		
 		
 		[modelZygoteEggs release];
 	}
-	
-	 
-	
 	[dic release];
 	
 	Button *confirmBtn = [[Button alloc] initWithLabel:@"出售" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(sellEggItem:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
@@ -218,7 +215,7 @@
 	[priceLbl setColor:ccc3(255, 0, 255)];
 	
 	item.position = ccp(item.contentSize.width/2 + 150, self.contentSize.height  - item.contentSize.height /2 - 150);
-	priceLbl.position = ccp(item.position.x + 20 , 300);
+	priceLbl.position = ccp(item.position.x + 20 , 200);
 //	priceLbl.scale = 1.5f;
 	
 	[self addChild:item z:7];

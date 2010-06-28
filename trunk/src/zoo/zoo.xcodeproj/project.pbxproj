@@ -6302,9 +6302,6 @@
 		8432CF4111B3BC8A0093DA32 /* zygote7.png in Resources */ = {isa = PBXBuildFile; fileRef = 8432CF3711B3BC8A0093DA32 /* zygote7.png */; };
 		847210A311D1ED70008AC4CB /* exitButton.png in Resources */ = {isa = PBXBuildFile; fileRef = 8472109B11D1ED70008AC4CB /* exitButton.png */; };
 		847210A411D1ED70008AC4CB /* friendIcoRim.png in Resources */ = {isa = PBXBuildFile; fileRef = 8472109C11D1ED70008AC4CB /* friendIcoRim.png */; };
-		847210A511D1ED70008AC4CB /* X_press.png in Resources */ = {isa = PBXBuildFile; fileRef = 8472109D11D1ED70008AC4CB /* X_press.png */; };
-		847210A611D1ED70008AC4CB /* 分页_普通状态.png in Resources */ = {isa = PBXBuildFile; fileRef = 8472109E11D1ED70008AC4CB /* 分页_普通状态.png */; };
-		847210A711D1ED70008AC4CB /* 分页_选中状态.png in Resources */ = {isa = PBXBuildFile; fileRef = 8472109F11D1ED70008AC4CB /* 分页_选中状态.png */; };
 		847210A811D1ED70008AC4CB /* 好友图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 847210A011D1ED70008AC4CB /* 好友图标.png */; };
 		847210A911D1ED70008AC4CB /* LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 847210A111D1ED70008AC4CB /* LOGO.png */; };
 		8484D4A111D3400300232B09 /* bg_friend.png in Resources */ = {isa = PBXBuildFile; fileRef = 8484D4A011D3400300232B09 /* bg_friend.png */; };
@@ -12870,9 +12867,6 @@
 		8432CF3711B3BC8A0093DA32 /* zygote7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zygote7.png; sourceTree = "<group>"; };
 		8472109B11D1ED70008AC4CB /* exitButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exitButton.png; sourceTree = "<group>"; };
 		8472109C11D1ED70008AC4CB /* friendIcoRim.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friendIcoRim.png; sourceTree = "<group>"; };
-		8472109D11D1ED70008AC4CB /* X_press.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = X_press.png; sourceTree = "<group>"; };
-		8472109E11D1ED70008AC4CB /* 分页_普通状态.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分页_普通状态.png"; sourceTree = "<group>"; };
-		8472109F11D1ED70008AC4CB /* 分页_选中状态.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "分页_选中状态.png"; sourceTree = "<group>"; };
 		847210A011D1ED70008AC4CB /* 好友图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "好友图标.png"; sourceTree = "<group>"; };
 		847210A111D1ED70008AC4CB /* LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LOGO.png; sourceTree = "<group>"; };
 		8474A84D11BCE31700696BB3 /* zygote8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zygote8.png; sourceTree = "<group>"; };
@@ -23415,9 +23409,6 @@
 				8484D4A011D3400300232B09 /* bg_friend.png */,
 				8472109B11D1ED70008AC4CB /* exitButton.png */,
 				8472109C11D1ED70008AC4CB /* friendIcoRim.png */,
-				8472109D11D1ED70008AC4CB /* X_press.png */,
-				8472109E11D1ED70008AC4CB /* 分页_普通状态.png */,
-				8472109F11D1ED70008AC4CB /* 分页_选中状态.png */,
 				847210A011D1ED70008AC4CB /* 好友图标.png */,
 				847210A111D1ED70008AC4CB /* LOGO.png */,
 			);
@@ -23699,24 +23690,26 @@
 				C3B6313A11B8A09C00695343 /* AnimalStorageManagerButtonItem.m */,
 				3EAD8FDA11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.h */,
 				3EAD8FDB11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.m */,
+				6074900411B50DF3002D8922 /* AnimalMangementButtonContainer.h */,
+				6074900511B50DF3002D8922 /* AnimalMangementButtonContainer.m */,
 				607BF4F311B7DD3100326E47 /* AnimalManagementMateOrDisList.h */,
 				607BF4F411B7DD3100326E47 /* AnimalManagementMateOrDisList.m */,
 				60A0CDBC11B78066001AF9BD /* AnimalManageToMateAntsChoose.h */,
 				60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */,
 				608EC6E111B643E100160062 /* AnimalManageInfoPanel.h */,
 				608EC6E211B643E100160062 /* AnimalManageInfoPanel.m */,
-				608EC6E811B645E200160062 /* AnimalManageToMateInfoPanel.h */,
-				608EC6E911B645E200160062 /* AnimalManageToMateInfoPanel.m */,
+				6074900211B50DF3002D8922 /* AnimalManagerContainer.h */,
+				6074900311B50DF3002D8922 /* AnimalManagerContainer.m */,
 				60748FFE11B50DF3002D8922 /* AnimalManageButtonContainer.h */,
 				60748FFF11B50DF3002D8922 /* AnimalManageButtonContainer.m */,
 				6074900011B50DF3002D8922 /* AnimalManagementButtonItem.h */,
 				6074900111B50DF3002D8922 /* AnimalManagementButtonItem.m */,
-				6074900211B50DF3002D8922 /* AnimalManagerContainer.h */,
-				6074900311B50DF3002D8922 /* AnimalManagerContainer.m */,
-				6074900411B50DF3002D8922 /* AnimalMangementButtonContainer.h */,
-				6074900511B50DF3002D8922 /* AnimalMangementButtonContainer.m */,
+				608EC6E811B645E200160062 /* AnimalManageToMateInfoPanel.h */,
+				608EC6E911B645E200160062 /* AnimalManageToMateInfoPanel.m */,
 				84BE15FE11C75ED50065A080 /* FriendList.h */,
 				84BE15FF11C75ED50065A080 /* FriendList.m */,
+				849E038311C1DF39002056FC /* FriendInfoBut.h */,
+				849E038411C1DF39002056FC /* FriendInfoBut.m */,
 				84BE160011C75ED50065A080 /* FriendMangePanel.h */,
 				84BE160111C75ED50065A080 /* FriendMangePanel.m */,
 				84BE15FB11C75EC20065A080 /* StorageManageToolbar.h */,
@@ -23763,8 +23756,6 @@
 				8408914411B49FBC001C29CA /* SellitemButton.m */,
 				3EA9E0A311BC73D000EF4ECB /* FeedbackDialog.h */,
 				3EA9E0A411BC73D000EF4ECB /* FeedbackDialog.m */,
-				849E038311C1DF39002056FC /* FriendInfoBut.h */,
-				849E038411C1DF39002056FC /* FriendInfoBut.m */,
 			);
 			name = UIControls;
 			sourceTree = "<group>";
@@ -30267,9 +30258,6 @@
 				84979C1A11CF0E4700A0F048 /* duck1.png in Resources */,
 				847210A311D1ED70008AC4CB /* exitButton.png in Resources */,
 				847210A411D1ED70008AC4CB /* friendIcoRim.png in Resources */,
-				847210A511D1ED70008AC4CB /* X_press.png in Resources */,
-				847210A611D1ED70008AC4CB /* 分页_普通状态.png in Resources */,
-				847210A711D1ED70008AC4CB /* 分页_选中状态.png in Resources */,
 				847210A811D1ED70008AC4CB /* 好友图标.png in Resources */,
 				847210A911D1ED70008AC4CB /* LOGO.png in Resources */,
 				6BD28E6811D3000E00BE2859 /* loading_中间.png in Resources */,
