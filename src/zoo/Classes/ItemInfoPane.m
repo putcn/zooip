@@ -171,7 +171,7 @@ count;
 	
 	CCLabel *nameLbl = [CCLabel labelWithString:@"输入购买数量(1－500)" fontName:@"Arial" fontSize:13];
 	[nameLbl setColor:ccc3(0, 0, 0)];
-	nameLbl.position = ccp(self.contentSize.width/2 - 70, 25);
+	nameLbl.position = ccp(self.contentSize.width/2 - 75, 25);
 	[self addChild:nameLbl z:10];
 	
 	//添加确认和取消按钮,回调函数分别为[ManageContainer buyItem] 和[ManageContainer Cancel]

@@ -74,7 +74,7 @@
 	NSString *totalStrPrice = [NSString stringWithFormat:@"当前总计收入 ：%d  金蛋",totalPrice];
 	totalPriceLab = [CCLabel labelWithString:totalStrPrice fontName:@"Arial" fontSize:40];
 	
-	totalPriceLab.position = ccp(self.contentSize.width/2 - 100, 20);
+	totalPriceLab.position = ccp(300, 20);
 	[totalPriceLab setColor:ccc3(0, 0, 0)];
 	[self addChild:totalPriceLab z:7 tag:10];
 	
@@ -156,28 +156,17 @@
 		NSDictionary *storageEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
 
 		DataModelStorageEgg *storageEgg;
-		
 		NSArray *eggsArray = [storageEggDic allKeys];
-		
-		int endNumber = currentPageNum * 8;
-		
+		int endNumber = currentPageNum * 8;		
 		if (endNumber >= eggsArray.count) {
 			endNumber = eggsArray.count;
-			
 		}
 		
 		currentNum = endNumber - (currentPageNum -1 ) *8 ;
-		
 		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
-			
 			storageEgg = [storageEggDic objectForKey:[eggsArray objectAtIndex:i]];
-			
 			[eggSourceArray addObject:storageEgg];
-			
-			
-			
 			int eggImgId = [storageEgg.eggImgId intValue];
-			
 			
 			NSString *picName = [NSString stringWithFormat:@"%@", [eggEnNameArray objectAtIndex:eggImgId] ];
 			NSString *eggName = [NSString stringWithFormat:@"%@",storageEgg.eggNameEN];
@@ -187,30 +176,22 @@
 			totalPrice += (storageEgg.numOfProduct + storageEgg.numOfStolen) * storageEgg.eggPrice;
 							
 			SellitemButton *itemButton = [[SellitemButton alloc] initWithItem:storageEgg.eggStorageId setitType:tabFlag setImagePath:picName setEggTotal:eggTotal setEggName:storageEgg.eggName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-	
-			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
-			
+			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);			
 			[itemNumArray addObject:itemButton];
 			
 			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
 			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
 			kuang.scale = 1024.0/400.0f;
 			[self addChild:kuang z:6];
-		}
-		
-		
+		}	
 		[self addEggToStage];
 		
 		for (int m=0; m<eggSourceArray.count; m++) {
 			[[eggSourceArray objectAtIndex:m] release];
 		}
-
 		[eggSourceArray removeAllObjects];
-		[eggSourceArray release];
-		
+		[eggSourceArray release];		
 	}
-			
-
 	else if (tabFlag == @"zygoteegg"){
 		NSDictionary *storageZygoteEggsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs;
 		DataModelStorageZygoteEgg *dataModelStorageZygoteEggs;

@@ -29,7 +29,7 @@ animalID;
 		itemId = itId;
 		parentTarget = target;
 		animalID = aniID;
-		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ItemInfoPane.png" ofType:nil] ] ];
+		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_buy.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
@@ -56,13 +56,13 @@ animalID;
 //生成结婚和交配按钮
 -(void)generateButtons
 {
-	Button *toMateBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMate:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
-	Button *toMarryBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(toMarry:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
+	Button *toMateBtn = [[Button alloc] initWithLabel:@"结婚" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"红色按钮.png" setTarget:self setSelector:@selector(toMate:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
+	Button *toMarryBtn = [[Button alloc] initWithLabel:@"交配" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"黄色按钮.png" setTarget:self setSelector:@selector(toMarry:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
 	//toMarryBtn.flipX = YES;
-	toMateBtn.position = ccp(self.contentSize.width/2 + 50, 440);
-	toMarryBtn.position = ccp(self.contentSize.width/2 - 50, 440);
-	[self addChild:toMateBtn z:7];
-	[self addChild:toMarryBtn z:7];
+	toMateBtn.position = ccp(self.contentSize.width/2 + 100, 25);
+	toMarryBtn.position = ccp(self.contentSize.width/2 - 100, 25);
+	[self addChild:toMateBtn z:8];
+	[self addChild:toMarryBtn z:8];
 }
 
 //生成左边的动物，公的
@@ -80,15 +80,15 @@ animalID;
 		NSString *tabFlag = @"animals";
 		AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:leftAnimalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:30 offsetX:1 offsetY:1];
 		itemButton.position = ccp(150,440);
-		[self addChild:itemButton z:7 tag:1%12];
+		[self addChild:itemButton z:8 tag:1%8];
 	}
 	else {
 		rightAnimalID = animalID;
 		//For Test
 		NSString *tabFlag = @"animals";
 		AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:rightAnimalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:30 offsetX:1 offsetY:1];
-		itemButton.position = ccp(630,440);
-		[self addChild:itemButton z:7 tag:1%12];
+		itemButton.position = ccp(130,440);
+		[self addChild:itemButton z:8 tag:1%8];
 	}
 
 	
@@ -116,10 +116,10 @@ animalID;
 		itemButton.position = ccp(150,440);
 	}
 	else {
-		itemButton.position = ccp(630,440);
+		itemButton.position = ccp(130,440);
 	}
 	
-	[self addChild:itemButton z:7 tag:1%12];
+	[self addChild:itemButton z:8 tag:1%12];
 }
 
 //生成下面的可选列表
@@ -129,15 +129,15 @@ animalID;
 	NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
 	DataModelOriginalAnimal *originAnimal;
 	NSString *aniID;
-	int endNumber = currentPageNum * 12;
+	int endNumber = currentPageNum * 8;
 	if (endNumber >= [[DataEnvironment sharedDataEnvironment].animalIDs count]) {
 		endNumber = [[DataEnvironment sharedDataEnvironment].animalIDs count];
 	}
 	
 	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:animalID];
 	
-	currentNum = endNumber - (currentPageNum -1 ) *12 ;
-	for (int i = (currentPageNum -1)*12; i < endNumber; i ++) {
+	currentNum = endNumber - (currentPageNum -1 ) *8 ;
+	for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
 		originAnimal = [animalIDs objectAtIndex:i];
 		aniID = [animalIDs objectAtIndex:i];
 		DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
@@ -149,9 +149,15 @@ animalID;
 			//For Test
 			NSString *tabFlag = @"animals";
 			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(updateInfoPanel:) setPriority:30 offsetX:1 offsetY:1];
-			itemButton.position = ccp(225 * (i%4) + 240/**this uesed to be 120 pixel***/, self.contentSize.height - 180 * ((i-12*(currentPageNum-1))/4) - 100 - 300);
-			[self addChild:itemButton z:7 tag:i%12];
+			itemButton.position = ccp(20 * (i%4) + 10/**this uesed to be 120 pixel***/, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
+			itemButton.scale = 300.0f/1024.0f;
+			[self addChild:itemButton z:8 tag:i%8];
 		}
+		
+		CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+		kuang.position = ccp(20 * (i%4) + 10,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
+		kuang.scale = 0.75f;
+		[self addChild:kuang z:8];
 	}
 }
 

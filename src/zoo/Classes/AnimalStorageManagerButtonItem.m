@@ -35,7 +35,8 @@
 		
 		[self setImg:imagePath setName:animalName];
 	}
-	self.scale = 1.5f;
+//	self.scale = 300.0f/1024.0f;
+//	self.scale = 1.5f;
 	return self;
 }
 
@@ -77,7 +78,9 @@
 		}
 	}
 	//设置位置
-	buyImg.position = ccp(buyImg.contentSize.width +30, buyImg.contentSize.width + 20);
+//	buyImg.position = ccp(buyImg.contentSize.width +30, buyImg.contentSize.width + 20);
+	buyImg.position = ccp(100, buyImg.contentSize.width + 20);
+
 	priceLbl.position = ccp(buyImg.contentSize.width + 50 , buyImg.position.y);
 	[self addChild:buyImg z:7];
 	[self addChild:priceLbl z:7];
@@ -109,13 +112,13 @@
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
-	self.scale = 1.8f;
+//	self.scale = 1.8f;
 	return YES;
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	self.scale = 1.5f;
+//	self.scale = 1.5f;
 	if (selector != nil && [self containsTouchLocation:touch])
 	{
 		[targetCallBack performSelector:selector withObject:self];

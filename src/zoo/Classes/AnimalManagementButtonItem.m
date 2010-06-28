@@ -31,13 +31,13 @@ setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetY
 		selector = handler;
 		pri = priorityValue;
 
-		[self setImg:imagePath setName:animalName];
+		[self setImg:imagePath setName:animalName ];
 	}
-	self.scale = 1.5f;
+	self.scale = 2.0f;
 	return self;
 }
 
--(void) setImg: (NSString *) imagePath setName:(NSString *) animalName
+-(void) setImg: (NSString *) imagePath setName:(NSString *) animalName 
 {
 	CCSprite *item = [CCSprite node];
 	CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:imagePath ofType:nil] ] ];
@@ -53,6 +53,16 @@ setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetY
 	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
 	
 	[self addChild:item z:7];
+	
+	CCSprite *gongImg;
+	if (itemId.intValue >= 30) {
+		gongImg = [CCSprite spriteWithFile:@"公.png"];
+	}
+	else {
+		gongImg = [CCSprite spriteWithFile:@"母.png"];
+	}
+	gongImg.position = ccp(gongImg.contentSize.width/2 +35, self.contentSize.height + 5);
+	[self addChild:gongImg z:7];
 	//TODO: add name and gender image
 	//***[self addChild:animalNameLable z:7];
 }
