@@ -6216,6 +6216,15 @@
 		6092141511BF33DB00D50ABE /* AnimalFeedButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6092141411BF33DB00D50ABE /* AnimalFeedButtonContainer.m */; };
 		6098BB0811BDD38B00F0DB3B /* AnimalExpansionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098BB0711BDD38B00F0DB3B /* AnimalExpansionPanel.m */; };
 		60A0CDBE11B78066001AF9BD /* AnimalManageToMateAntsChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */; };
+		6BBC379711D83E3F0081CB4D /* 搜索_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC378C11D83E3F0081CB4D /* 搜索_bg.png */; };
+		6BBC379811D83E3F0081CB4D /* 搜索_弹起.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC378D11D83E3F0081CB4D /* 搜索_弹起.png */; };
+		6BBC379911D83E3F0081CB4D /* 搜索_按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC378E11D83E3F0081CB4D /* 搜索_按下.png */; };
+		6BBC379A11D83E3F0081CB4D /* 不可用_右.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC379011D83E3F0081CB4D /* 不可用_右.png */; };
+		6BBC379B11D83E3F0081CB4D /* 不可用_左.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC379111D83E3F0081CB4D /* 不可用_左.png */; };
+		6BBC379C11D83E3F0081CB4D /* 翻页_右_弹起.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC379211D83E3F0081CB4D /* 翻页_右_弹起.png */; };
+		6BBC379D11D83E3F0081CB4D /* 翻页_右_按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC379311D83E3F0081CB4D /* 翻页_右_按下.png */; };
+		6BBC379E11D83E3F0081CB4D /* 翻页_左_弹起.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC379411D83E3F0081CB4D /* 翻页_左_弹起.png */; };
+		6BBC379F11D83E3F0081CB4D /* 翻页_左_按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC379511D83E3F0081CB4D /* 翻页_左_按下.png */; };
 		6BCE3CEA11D059320006A430 /* LoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE3CE911D059320006A430 /* LoadView.m */; };
 		6BD28E6811D3000E00BE2859 /* loading_中间.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28DD211D3000D00BE2859 /* loading_中间.png */; };
 		6BD28E6911D3000E00BE2859 /* loading_右圆角.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28DD311D3000D00BE2859 /* loading_右圆角.png */; };
@@ -12777,6 +12786,15 @@
 		6098BB0711BDD38B00F0DB3B /* AnimalExpansionPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalExpansionPanel.m; sourceTree = "<group>"; };
 		60A0CDBC11B78066001AF9BD /* AnimalManageToMateAntsChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageToMateAntsChoose.h; sourceTree = "<group>"; };
 		60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageToMateAntsChoose.m; sourceTree = "<group>"; };
+		6BBC378C11D83E3F0081CB4D /* 搜索_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索_bg.png"; sourceTree = "<group>"; };
+		6BBC378D11D83E3F0081CB4D /* 搜索_弹起.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索_弹起.png"; sourceTree = "<group>"; };
+		6BBC378E11D83E3F0081CB4D /* 搜索_按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索_按下.png"; sourceTree = "<group>"; };
+		6BBC379011D83E3F0081CB4D /* 不可用_右.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "不可用_右.png"; sourceTree = "<group>"; };
+		6BBC379111D83E3F0081CB4D /* 不可用_左.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "不可用_左.png"; sourceTree = "<group>"; };
+		6BBC379211D83E3F0081CB4D /* 翻页_右_弹起.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "翻页_右_弹起.png"; sourceTree = "<group>"; };
+		6BBC379311D83E3F0081CB4D /* 翻页_右_按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "翻页_右_按下.png"; sourceTree = "<group>"; };
+		6BBC379411D83E3F0081CB4D /* 翻页_左_弹起.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "翻页_左_弹起.png"; sourceTree = "<group>"; };
+		6BBC379511D83E3F0081CB4D /* 翻页_左_按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "翻页_左_按下.png"; sourceTree = "<group>"; };
 		6BCE3CE811D059320006A430 /* LoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadView.h; sourceTree = "<group>"; };
 		6BCE3CE911D059320006A430 /* LoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadView.m; sourceTree = "<group>"; };
 		6BD28DD211D3000D00BE2859 /* loading_中间.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_中间.png"; sourceTree = "<group>"; };
@@ -23154,9 +23172,34 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		6BBC378B11D83E3F0081CB4D /* 好友列表搜索 */ = {
+			isa = PBXGroup;
+			children = (
+				6BBC378C11D83E3F0081CB4D /* 搜索_bg.png */,
+				6BBC378D11D83E3F0081CB4D /* 搜索_弹起.png */,
+				6BBC378E11D83E3F0081CB4D /* 搜索_按下.png */,
+			);
+			path = "好友列表搜索";
+			sourceTree = "<group>";
+		};
+		6BBC378F11D83E3F0081CB4D /* 左右翻页 */ = {
+			isa = PBXGroup;
+			children = (
+				6BBC379011D83E3F0081CB4D /* 不可用_右.png */,
+				6BBC379111D83E3F0081CB4D /* 不可用_左.png */,
+				6BBC379211D83E3F0081CB4D /* 翻页_右_弹起.png */,
+				6BBC379311D83E3F0081CB4D /* 翻页_右_按下.png */,
+				6BBC379411D83E3F0081CB4D /* 翻页_左_弹起.png */,
+				6BBC379511D83E3F0081CB4D /* 翻页_左_按下.png */,
+			);
+			path = "左右翻页";
+			sourceTree = "<group>";
+		};
 		6BD28DCF11D3000D00BE2859 /* 动物园切图 */ = {
 			isa = PBXGroup;
 			children = (
+				6BBC378B11D83E3F0081CB4D /* 好友列表搜索 */,
+				6BBC378F11D83E3F0081CB4D /* 左右翻页 */,
 				6BD28DD811D3000D00BE2859 /* 仓库 */,
 				6BD28DE411D3000D00BE2859 /* 动物仓库 */,
 				6BD28DF111D3000D00BE2859 /* 动物管理 */,
@@ -30330,6 +30373,15 @@
 				6BD28EE811D3000E00BE2859 /* 确定.png in Resources */,
 				6BD28EE911D3000E00BE2859 /* 确定_按下.png in Resources */,
 				8484D4A111D3400300232B09 /* bg_friend.png in Resources */,
+				6BBC379711D83E3F0081CB4D /* 搜索_bg.png in Resources */,
+				6BBC379811D83E3F0081CB4D /* 搜索_弹起.png in Resources */,
+				6BBC379911D83E3F0081CB4D /* 搜索_按下.png in Resources */,
+				6BBC379A11D83E3F0081CB4D /* 不可用_右.png in Resources */,
+				6BBC379B11D83E3F0081CB4D /* 不可用_左.png in Resources */,
+				6BBC379C11D83E3F0081CB4D /* 翻页_右_弹起.png in Resources */,
+				6BBC379D11D83E3F0081CB4D /* 翻页_右_按下.png in Resources */,
+				6BBC379E11D83E3F0081CB4D /* 翻页_左_弹起.png in Resources */,
+				6BBC379F11D83E3F0081CB4D /* 翻页_左_按下.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
