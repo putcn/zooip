@@ -16,6 +16,7 @@
 }
 
 
--(void) LoadingView:(NSString*) nStep;
+-(void) LoadingView;
+-(void) SetLabelString:(NSString*) nStep;
 -(void) RemoveView;
 @end
