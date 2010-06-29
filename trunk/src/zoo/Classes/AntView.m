@@ -130,6 +130,13 @@
 
 -(void) dealloc
 {
+	// Add by Hunk on 2010-06-29
+	[dirctions release];
+	[animation release];
+	[antId release];
+	[killAntsController release];
+	
+	
 	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }

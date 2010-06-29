@@ -29,5 +29,11 @@
 	
 	[self runAction:operationAnimate];
 }
-
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[operationAnimate release];
+	
+	[super dealloc];
+}
 @end
