@@ -60,9 +60,9 @@ paramsDict;
 }
 -(void)addTitle
 {
-	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:30];
+	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:20];
 	[titleLbl setColor:ccc3(0, 0, 0)];
-	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - titleLbl.contentSize.height/2);
+	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - titleLbl.contentSize.height/2-5);
 	[self addChild:titleLbl z:10];
 }
 
@@ -120,28 +120,28 @@ paramsDict;
 		maxNumOfBirds = @"unknown";
 		goldenEggNum = @"unknown";
 	}
-	levelLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"%@ 级",level] fontName:@"Arial" fontSize:12];
+	levelLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"%@ 级",level] fontName:@"Arial" fontSize:10];
 	levelLbl.position = ccp(self.contentSize.width/2, 150);
 	[levelLbl setColor:ccc3(255, 0, 255)];
 	levelLbl.scale = 1.5f;
 
 	
-	goldenEggNumLbl = [CCLabel labelWithString:goldenEggNum fontName:@"Arial" fontSize:12];
+	goldenEggNumLbl = [CCLabel labelWithString:goldenEggNum fontName:@"Arial" fontSize:10];
 	goldenEggNumLbl.position = ccp(self.contentSize.width/2,125);
 	[goldenEggNumLbl setColor:ccc3(255, 0, 255)];
 	goldenEggNumLbl.scale = 1.5f;
 	
-	capacity = [CCLabel labelWithString:[NSString stringWithFormat:@"容量: %@",maxNumOfBirds] fontName:@"Arial" fontSize:12];
+	capacity = [CCLabel labelWithString:[NSString stringWithFormat:@"容量: %@",maxNumOfBirds] fontName:@"Arial" fontSize:10];
 	capacity.position = ccp(self.contentSize.width/2 ,100);
 	[capacity setColor:ccc3(255, 0, 255)];
 	capacity.scale = 1.5f;
 	
-	requireGoldenEggLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"扩容需要金蛋数量:%d",goldenEgg] fontName:@"Arial" fontSize:12];
+	requireGoldenEggLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"扩容需要金蛋数量:%d",goldenEgg] fontName:@"Arial" fontSize:10];
 	requireGoldenEggLbl.position = ccp(self.contentSize.width/2,75);
 	[requireGoldenEggLbl setColor:ccc3(255, 0, 255)];
 	requireGoldenEggLbl.scale = 1.5f;
 	
-	requireLevelLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"扩容需要等级:%d",levelRequire] fontName:@"Arial" fontSize:12];
+	requireLevelLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"扩容需要等级:%d",levelRequire] fontName:@"Arial" fontSize:10];
 	requireLevelLbl.position = ccp(self.contentSize.width/2, 50);
 	[requireLevelLbl setColor:ccc3(255, 0, 255)];
 	requireLevelLbl.scale = 1.5f;
@@ -152,8 +152,8 @@ paramsDict;
 	[self addChild:requireLevelLbl z:10];
 	[self addChild:requireGoldenEggLbl z:10];
 	
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"确定" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"确定.png" setTarget:thisTarget setSelector:@selector(levelupConfirm:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"取消.png" setTarget:thisTarget setSelector:@selector(levelCancle:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"确定" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setBackground:@"确定.png" setTarget:thisTarget setSelector:@selector(levelupConfirm:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:15 setBackground:@"取消.png" setTarget:thisTarget setSelector:@selector(levelCancle:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 	
 	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
 	confirmBtn.target = self;

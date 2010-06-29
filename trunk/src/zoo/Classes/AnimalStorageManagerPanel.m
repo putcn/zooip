@@ -27,7 +27,7 @@
 		tabFlag = tabName;
 		currentPageNum = 1;
 		
-		if (tabFlag == @"stoAnimals") {
+		if (tabFlag == @"动物") {
 
 			//TODO: modify the current Page Number;
 		}
@@ -35,14 +35,22 @@
 		
 		NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
-		if (tabFlag == @"stoAnimals") {
+		if (tabFlag == @"动物") {
 			
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
-		else if(tabFlag == @"auctionAnimals"){
+		else if(tabFlag == @"拍来动物"){
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
 		
+		//实现翻页按钮
+		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:49 offsetX:0 offsetY:0 scale:3.0f];
+		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:49 offsetX:0 offsetY:0 scale:3.0f];
+		//		forwardPageBtn.flipX = YES;
+		nextPageBtn.position = ccp( 770, -480);
+		forwardPageBtn.position = ccp(200, -480);
+		[self addChild:nextPageBtn z:7];
+		[self addChild:forwardPageBtn z:7];
 		
 	}
 	return self;
@@ -53,11 +61,11 @@
 {
 	NSDictionary *itemDic;
 	NSArray *itemArray;
-	if (tabFlag == @"stoAnimals") {
+	if (tabFlag == @"动物") {
 		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
 		itemArray = [itemDic allKeys];
 	}
-	else if(tabFlag == @"auctionAnimals")
+	else if(tabFlag == @"拍来动物")
 	{
 		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
 		itemArray = [itemDic allKeys];
@@ -99,7 +107,7 @@
 
 -(void) generatePage
 {
-	if (tabFlag == @"stoAnimals") {
+	if (tabFlag == @"动物") {
 		NSDictionary *storageAnimal = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
 		DataModelStorageAnimal *stoAnimals;
 		NSArray *animalArray = [storageAnimal allKeys];
@@ -132,7 +140,7 @@
 			[self addChild:kuang z:6];
 		}
 	}
-	if (tabFlag == @"auctionAnimals") {
+	if (tabFlag == @"拍来动物") {
 		NSDictionary *auctionAnimals = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
 		DataModelStorageAuctionAnimal *stoauAnimals;
 		NSArray *animalArray = [auctionAnimals allKeys];

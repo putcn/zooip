@@ -64,7 +64,7 @@
 	itemType = itType;
 	itemPrice = 0;
 	NSDictionary *dic;
-	if (itemType == @"egg") {
+	if (itemType == @"普通蛋") {
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs retain];
 		DataModelStorageEgg *storageEggs = [dic objectForKey:itemId];
 		itemPrice = storageEggs.eggPrice;
@@ -111,7 +111,7 @@
 //		[self addChild:scalerPane z:5];
 	}
 	
-	if (itemType == @"zygoteegg") {
+	if (itemType == @"受精蛋") {
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs retain];
 		DataModelStorageZygoteEgg *modelZygoteEggs = [dic objectForKey:itemId];
 		itemPrice = modelZygoteEggs.eggPrice;

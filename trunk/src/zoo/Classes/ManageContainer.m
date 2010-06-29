@@ -47,7 +47,7 @@
 //		[self addTitle];
 		
 		//根据Tab的名称加载商店信息
-		NSArray *tabArray = [[NSArray alloc] initWithObjects:@"animal",@"food",@"goods",nil];
+		NSArray *tabArray = [[NSArray alloc] initWithObjects:@"动物",@"饲料",@"道具",nil];
 		[self addTab:tabArray];
 		for (int i = 0; i< tabArray.count; i++) {
 			NSString *tab = [tabArray objectAtIndex:i];
@@ -92,10 +92,10 @@
 		NSString *tempString = [tabArray objectAtIndex:i];
 		CCSprite *tempTab;
 		if (i == 0) {
-			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"tab_press.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
+			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:16 setBackground:@"tab_press.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
 		}
 		else {
-			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"tab.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
+			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:16 setBackground:@"tab.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
 		}
 		tempTab.position = ccp((rect.size.width) * i + tempTab.contentSize.width + 70 , self.contentSize.height+5);
 		tempTab.tag = i;
@@ -112,8 +112,10 @@
 	ButtonContainer	*buttonContainer = [tabContentDic objectForKey:[NSString stringWithFormat:@"tabContent_%d",tabIndex]];
 	buttonContainer.position = ccp(40, 170);
 	int tabCount = [tabDic count];
-	for (int i = 0; i < tabCount; i++) {
-		if (i != tabIndex) {
+	for (int i = 0; i < tabCount; i++) 
+	{
+		if (i != tabIndex) 
+		{
 			ButtonContainer	*buttonContainer = [tabContentDic objectForKey:[NSString stringWithFormat:@"tabContent_%d",i]];
 			buttonContainer.position = ccp(2000, self.contentSize.height/2 - 50);
 			Button *disableButton = [tabDic objectForKey:[NSString stringWithFormat:@"tab_%d",i]];
@@ -144,7 +146,7 @@
 {
 	//获取从Button回调的参数,强制转换为ItemInfoPane对象,改对象携带了购买物品所需要的所有参数
 	ItemInfoPane *itemInfo = (ItemInfoPane *)button.target; 
-	if (itemInfo.itemType == @"animal") {
+	if (itemInfo.itemType == @"动物") {
 		if (itemInfo.itemBuyType == @"goldEgg") {
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"originalAnimalId",[NSString stringWithFormat:@"%d",itemInfo.count],@"amount",nil];
@@ -159,7 +161,7 @@
 						
 		}
 	}
-	else if(itemInfo.itemType == @"food"){
+	else if(itemInfo.itemType == @"饲料"){
 		if (itemInfo.itemBuyType == @"goldEgg") {
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 			NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
@@ -173,7 +175,7 @@
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyFoodByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
 	}
-	else if(itemInfo.itemType == @"goods"){
+	else if(itemInfo.itemType == @"道具"){
 		if (itemInfo.itemId = @"1") {
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",itemInfo.itemId,@"goodsId",nil];

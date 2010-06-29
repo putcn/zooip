@@ -131,7 +131,8 @@
 			}
 		}
 	}
-	else {
+	else 
+	{
 		if (animalToMateOrDisapart == nil) {
 			animalToMateOrDisapart = [[AniamalManagementMateOrDisapart alloc] initWithItem:itemButton.itemId type:itemButton.itemType animalID:itemButton.animalID setTarget:self];
 			animalToMateOrDisapart.position = ccp(self.contentSize.width/2, animalToMateOrDisapart.contentSize.height/2);

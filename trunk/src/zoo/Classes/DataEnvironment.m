@@ -63,7 +63,8 @@ storageAuctionAnimals;
 		
 		//playerUid = @"248726533";
 		//playerUid = @"248725655";
-		playerUid = @"46565162";
+		
+		playerUid = @"248725655";
 		friendUid = @"327535525";
 		
 		//Mixi:11, RenRen:5
