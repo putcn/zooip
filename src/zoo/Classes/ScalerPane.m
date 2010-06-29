@@ -12,7 +12,7 @@
 @implementation ScalerPane
 @synthesize count, totalPrice;
 
--(id) initWithCounter:(NSInteger)countMin max:(NSInteger)countMax delta:(NSInteger)countdDelta target:(id)parentTarget price:(float)unitPrice z:(NSInteger) z Priority:(int) priorityValue
+-(id) initWithCounter:(NSInteger)countMin max:(NSInteger)countMax delta:(NSInteger)countdDelta target:(id)parentTarget price:(float)unitPrice z:(NSInteger) z Priority:(int) priorityValue setPathname:(NSString*) path setlength:(int )length
 {
 	if ((self = [super init])) {
 		min = countMin;
@@ -29,7 +29,8 @@
 //		counterLbl.position = self.position;
 		counterLbl.position = ccp(70,50);
 		
-		CCSprite* bg_2 = [CCSprite spriteWithFile:@"加减显示器.png"];
+//		NSString *path = @"加减显示器.png";
+		CCSprite* bg_2 = [CCSprite spriteWithFile:path];
 		bg_2.position = ccp(70,50);
 		[self addChild:bg_2 z:7 ];
 		
@@ -42,8 +43,8 @@
 		
 		//		addBtn.flipX = YES;
 //		reduceBtn.flipX = YES;
-		reduceBtn.position = ccp(35,50);
-		reduceLeftBtn.position = ccp(105,50);
+		reduceBtn.position = ccp(35 - length,50);
+		reduceLeftBtn.position = ccp(105 + length,50);
 		
 		[self addChild:counterLbl z:z];
 		[self addChild:reduceLeftBtn z:z];

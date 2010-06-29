@@ -14,7 +14,7 @@
 @synthesize itemId,itemType,animalID;
 
 -(id) initWithItem:(NSString *)itId setitType:(NSString *)itType setAnimalID:(NSString *)animalIDP setImagePath:(NSString*) imagePath setAnimalName:(NSString *) animalName setTarget:(id) target setSelector:(SEL) handler
-setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue
+	   setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue setPictureScale:(float) fScale
 {
 	if( (self=[super init] ))
 	{
@@ -33,7 +33,7 @@ setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetY
 
 		[self setImg:imagePath setName:animalName ];
 	}
-	self.scale = 2.0f;
+	self.scale = fScale;
 	return self;
 }
 
@@ -93,13 +93,13 @@ setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetY
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
-	self.scale = 1.8f;
+//	self.scale = 1.8f;
 	return YES;
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	self.scale = 1.5f;
+//	self.scale = 1.5f;
 	if (selector != nil && [self containsTouchLocation:touch])
 	{
 		[targetCallBack performSelector:selector withObject:self];

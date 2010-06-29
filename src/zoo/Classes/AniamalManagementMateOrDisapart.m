@@ -78,7 +78,7 @@ infoMessagePanelTest;
 	NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
 	//For Test
 	NSString *tabFlag = @"animals";
-	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:serverAnimalData2.animalId setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:2 offsetX:1 offsetY:1];
+	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:serverAnimalData2.animalId setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:2 offsetX:1 offsetY:1 setPictureScale:2.0];
 	if (serverAnimalData2.gender == 1) {
 		itemButton.position = ccp(self.contentSize.width/2 - 200,self.contentSize.height/2 +150);
 		//itemButton.position = ccp(150,440);
@@ -97,7 +97,7 @@ infoMessagePanelTest;
 	NSString *orgidAnother = [NSString stringWithFormat:@"%d",serverAnimalDataAnother.originalAnimalId];
 	
 	//NSString *tabFlag = @"animals";
-	AnimalManagementButtonItem *itemButtonAnother = [[AnimalManagementButtonItem alloc] initWithItem:orgidAnother setitType:tabFlag setAnimalID:serverAnimalDataAnother.animalId setImagePath:picFileNameAnother setAnimalName:animalNameAnother setTarget:self setSelector:nil setPriority:2 offsetX:1 offsetY:1];
+	AnimalManagementButtonItem *itemButtonAnother = [[AnimalManagementButtonItem alloc] initWithItem:orgidAnother setitType:tabFlag setAnimalID:serverAnimalDataAnother.animalId setImagePath:picFileNameAnother setAnimalName:animalNameAnother setTarget:self setSelector:nil setPriority:2 offsetX:1 offsetY:1 setPictureScale:2.0];
 	if (serverAnimalDataAnother .gender ==1) {
 		leftAnimalID = serverAnimalDataAnother.animalId;
 		itemButtonAnother.position = ccp(self.contentSize.width/2 - 200,self.contentSize.height/2 +150);		
@@ -126,7 +126,7 @@ infoMessagePanelTest;
 	NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalDataAnother.originalAnimalId];
 	
 	NSString *tabFlag = @"animals";
-	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1 setPictureScale:2.0];
 	itemButton.position = ccp(400,30);
 	[self addChild:itemButton z:7 tag:1%12];
 }
@@ -334,7 +334,7 @@ infoMessagePanelTest;
 	[self addChild:cancelBtn z:10];
 	if(itemType != @"goods")
 	{
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:0];
+		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:0 setPathname:@"加减显示器.png" setlength:0];
 		scalerPane.position = ccp(200,200);
 		[self addChild:scalerPane z:5];
 	}

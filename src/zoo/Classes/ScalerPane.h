@@ -23,5 +23,5 @@
 
 @property (nonatomic,assign)NSInteger count;
 @property (nonatomic,assign)NSInteger totalPrice;
--(id) initWithCounter:(NSInteger)countMin max:(NSInteger)countMax delta:(NSInteger)countdDelta target:(id)parentTarget price:(float)unitPrice z:(NSInteger) z Priority:(int) priorityValue;
+-(id) initWithCounter:(NSInteger)countMin max:(NSInteger)countMax delta:(NSInteger)countdDelta target:(id)parentTarget price:(float)unitPrice z:(NSInteger) z Priority:(int) priorityValue setPathname:(NSString*) path setlength:(int )length;
 @end
