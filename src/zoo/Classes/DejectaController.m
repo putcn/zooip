@@ -72,4 +72,13 @@ static DejectaController *_sharedDejectaController = nil;
 	}
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[allDejectas release];
+	
+	[super dealloc];
+}
+
+
 @end

@@ -78,4 +78,28 @@
 @synthesize speedFlag;
 @synthesize virusReleaserId;
 
+
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[animalId release];
+	[birthday release];
+	[description release];
+	[eggDescription release];
+	[eggName release];
+	[eggNameEN release];
+	[farmId release];
+	[lastFeedTime release];
+	[marriageDate release];
+	[picturePrefix release];
+	[scientificNameCN release];
+	[scientificNameEN release];
+	[sickStartTime release];
+	[speedFlag release];
+	[virusReleaserId release];
+	
+	[super dealloc];
+}
+
+
 @end

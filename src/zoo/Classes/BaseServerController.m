@@ -40,4 +40,13 @@
 	NSLog(@"Server Connection Fail");
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[workFlowController release];
+	
+	[super dealloc];
+}
+
+
 @end

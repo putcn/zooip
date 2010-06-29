@@ -41,4 +41,18 @@ walkToEatStep,
 walkToEatSpeed,
 description;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[originalAnimalId release];
+	[scientificNameCN release];
+	[scientificNameEN release];
+	[productId release];
+	[picturePrefix release];
+	[description release];
+	
+	[super dealloc];
+}
+
+
 @end

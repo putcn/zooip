@@ -22,4 +22,18 @@ numOfProduct,
 numOfStolen,
 eggPrice;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[eggStorageId release];
+	[eggId release];
+	[eggName release];
+	[eggNameEN release];
+	[eggImgId release];
+	[eggDescription release];
+	
+	[super dealloc];
+}
+
+
 @end

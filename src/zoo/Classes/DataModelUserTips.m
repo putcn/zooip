@@ -18,4 +18,13 @@ shit,
 snake,
 ant;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[snsUserId release];
+	
+	[super dealloc];
+}
+
+
 @end

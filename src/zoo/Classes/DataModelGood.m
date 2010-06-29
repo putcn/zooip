@@ -25,4 +25,18 @@ goodsPicture,
 goodsName,
 goodsDescription;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[goodsId release];
+	[capability1 release];
+	[capability2 release];
+	[goodsPicture release];
+	[goodsName release];
+	[goodsDescription release];
+	
+	[super dealloc];
+}
+
+
 @end

@@ -39,4 +39,13 @@ static Boolean isSelfZoo = YES;
 	return isSelfZoo;
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	
+	
+	[super dealloc];
+}
+
+
 @end

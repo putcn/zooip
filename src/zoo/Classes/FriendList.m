@@ -134,6 +134,9 @@ NSInteger compareFriendArrayExpSelector(id f1, id f2, void *context)
 
 -(void) dealloc
 {
+	// Add by Hunk on 2010-06-29
+	[friendListArray release];
+	
 	[parentTarget release];
 	[super dealloc];
 }

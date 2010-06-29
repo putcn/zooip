@@ -19,4 +19,16 @@ foodPower,
 foodName,
 foodImg;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[foodStorageId release];
+	[foodId release];
+	[foodName release];
+	[foodImg release];
+	
+	[super dealloc];
+}
+
+
 @end

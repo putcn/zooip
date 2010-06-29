@@ -81,4 +81,13 @@ static EggController *_sharedEggController = nil;
 	}
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[allEggs release];
+	
+	[super dealloc];
+}
+
+
 @end

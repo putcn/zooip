@@ -29,4 +29,21 @@ goodsPicture,
 goodsName,
 goodsDescription;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[farmerDogId release];
+	[goodsId release];
+	[statusEndTime release];
+	[endTime release];
+	[goodsDuration release];
+	[picturePrefix release];
+	[goodsPicture release];
+	[goodsName release];
+	[goodsDescription release];
+	
+	[super dealloc];
+}
+
+
 @end

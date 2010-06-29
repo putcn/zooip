@@ -16,4 +16,14 @@ adultBirdStorageId,
 originalAnimalId,
 amount;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[adultBirdStorageId release];
+	[originalAnimalId release];
+	
+	[super dealloc];
+}
+
+
 @end

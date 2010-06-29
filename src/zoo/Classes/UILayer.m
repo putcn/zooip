@@ -64,4 +64,19 @@
 	[playerInfo updateUserInfo];
 }
 
+
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[friendsPopupList release];
+	[shopPopupList release];
+	[playerInfo release];
+	[storageManageToolbar release];
+	[zooManageToolbar release];
+	[friendsToolbar release];
+	
+	[super dealloc];
+}
+
+
 @end

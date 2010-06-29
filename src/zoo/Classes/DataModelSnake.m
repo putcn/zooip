@@ -16,4 +16,15 @@ releaseSnakeId,
 snakeReleaser,
 eggId;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[releaseSnakeId release];
+	[snakeReleaser release];
+	[eggId release];
+	
+	[super dealloc];
+}
+
+
 @end
