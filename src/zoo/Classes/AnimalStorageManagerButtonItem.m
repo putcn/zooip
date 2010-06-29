@@ -36,7 +36,7 @@
 		[self setImg:imagePath setName:animalName];
 	}
 //	self.scale = 300.0f/1024.0f;
-//	self.scale = 1.5f;
+	self.scale = 1.5f;
 	return self;
 }
 
@@ -58,7 +58,7 @@
 	
 	//存储的是仓库里面动物的数量
 	CCLabel *buyImg;
-	if (itemType == @"stoAnimals") {
+	if (itemType == @"拍来动物") {
 		buyImg = [CCLabel labelWithString:[NSString stringWithFormat: @"%d", amount] fontName:@"Arial" fontSize:20];
 	}
 	else {
@@ -72,7 +72,7 @@
 	//动物Gender 字体和显示颜色
 	CCLabel *priceLbl = [CCLabel labelWithString:genDer fontName:@"Arial" fontSize:20];
 	[priceLbl setColor:ccc3(255, 0, 255)];
-	if (itemType == @"animal") {
+	if (itemType == @"动物") {
 		if ([itemId intValue] >= 50) {
 			item.flipX = YES;
 		}

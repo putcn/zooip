@@ -49,10 +49,10 @@
 		[self addMainPanel];
 		
 		//设置一层半透明背景,点击事件的优先级为50,屏蔽下面图层的点击事件
-//		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:50];
-//		transBackground.scale = 17.0f;
-//		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-//		[self addChild:transBackground z:-1];
+		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:50];
+		transBackground.scale = 5.0f;
+		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+		[self addChild:transBackground z:-1];
 		
 		[num_paneNum release];
 		
@@ -65,7 +65,7 @@
 -(void)addMainPanel
 {
 	
-	NSArray *tabArray = [[NSArray alloc] initWithObjects:@"egg",@"zygoteegg",nil];
+	NSArray *tabArray = [[NSArray alloc] initWithObjects:@"普通蛋",@"受精蛋",nil];
 	[self addTab:tabArray];		
 	
 	if (onePane == nil || twoPane == nil) {
@@ -115,7 +115,7 @@
 		NSString *tempString = [tabArray objectAtIndex:i];
 		CCSprite *tempTab;
 		if (i == 0) {
-			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"tab_press.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:2 offsetX:0 offsetY:0 scale:1.0f];
+			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setBackground:@"tab_press.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:2 offsetX:0 offsetY:0 scale:1.0f];
 		}
 		else {
 			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setBackground:@"tab.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:2 offsetX:0 offsetY:0 scale:1.0f];
@@ -134,9 +134,9 @@
 	[button setTexture:tabEnable];
 	
 	if (tabIndex == 0) {
-		testType = @"egg";
+		testType = @"普通蛋";
 	}else {
-		testType = @"zygoteegg";
+		testType = @"受精蛋";
 	}
 
 	SellitemButton	*buttonContainer = [tabContentDic objectForKey:[NSString stringWithFormat:@"tabContent_%d",tabIndex]];
@@ -181,7 +181,7 @@
 	
 	SellinfoPane *itemInfo = (SellinfoPane *)button.target; 
 	
-	if (itemInfo.itemType == @"egg") {
+	if (itemInfo.itemType == @"普通蛋") {
 		
 		
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
@@ -202,7 +202,7 @@
 	}//end if
 	
 	
-	if(itemInfo.itemType == @"zygoteegg"){
+	if(itemInfo.itemType == @"受精蛋"){
 		
 		NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 		
@@ -281,11 +281,11 @@
 	
 		
 	if (testType==nil) {
-		testType = @"egg";
+		testType = @"普通蛋";
 	}
 	
 	
-	if (testType == @"egg") {
+	if (testType == @"普通蛋") {
 		
 		NSString *par = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 
@@ -294,7 +294,7 @@
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellAllProducts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultAllEggCallback:" AndFailedSel:@"faultCallback:"];
 		
 	}
-	if(testType == @"zygoteegg")
+	if(testType == @"受精蛋")
 	{
 		
 		NSString *par = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;

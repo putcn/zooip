@@ -40,7 +40,7 @@
 //		[self addTitle];
 		
 		//根据Tab的名称加载仓库信息
-		NSArray *tabArray = [[NSArray alloc] initWithObjects:@"stoAnimals",@"auctionAnimals",nil];
+		NSArray *tabArray = [[NSArray alloc] initWithObjects:@"动物",@"拍来动物",nil];
 		[self addTab:tabArray];
 		for (int i = 0; i< tabArray.count; i++) {
 			NSString *tab = [tabArray objectAtIndex:i];
@@ -58,13 +58,13 @@
 		}
 		
 		
-		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
-		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
-		//		forwardPageBtn.flipX = YES;
-		nextPageBtn.position = ccp(self.contentSize.width/2 + 100, 25);
-		forwardPageBtn.position = ccp(self.contentSize.width/2 - 100, 25);
-		[self addChild:nextPageBtn z:7];
-		[self addChild:forwardPageBtn z:7];
+		//Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+//		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+//		//		forwardPageBtn.flipX = YES;
+//		nextPageBtn.position = ccp(self.contentSize.width/2 + 100, 25);
+//		forwardPageBtn.position = ccp(self.contentSize.width/2 - 100, 25);
+//		[self addChild:nextPageBtn z:7];
+//		[self addChild:forwardPageBtn z:7];
 		
 		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
 											   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:1];
@@ -143,7 +143,7 @@
 	
 	if(itemButton.itemType ==@"auctionAnimals")
 	{
-		currentTagFlag = @"auctionAnimals";
+		currentTagFlag = @"拍来动物";
 		NSString *auctionBirdStorageId = itemButton.itemId;
 		
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",auctionBirdStorageId,@"auctionBirdStorageId",nil];
@@ -153,7 +153,7 @@
 	}
 	else if (itemButton.itemType == @"stoAnimals")
 	{
-		currentTagFlag = @"stoAnimals";
+		currentTagFlag = @"动物";
 		NSString *adultBirdStorageId = itemButton.itemId;
 		
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",adultBirdStorageId,@"adultBirdStorageId",nil];
@@ -174,7 +174,7 @@
 {
 	NSDictionary* dic = (NSDictionary*)value;
  	NSInteger code = [[dic objectForKey:@"code"] intValue];
-	if(currentTagFlag == @"auctionAnimals")
+	if(currentTagFlag == @"拍来动物")
 	{
 		switch (code) {
 			case 0:
@@ -194,7 +194,7 @@
 				break;
 		}
 	}
-	else if(currentTagFlag == @"stoAnimals")
+	else if(currentTagFlag == @"动物")
 	{
 		switch (code) {
 			case 1:

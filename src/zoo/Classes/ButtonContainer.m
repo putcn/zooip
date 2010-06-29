@@ -24,13 +24,13 @@
 //		[self setTextureRect: rect];
 //		[bg release];
 		tabFlag = tabName;
-		if (tabFlag == @"animal") {
+		if (tabFlag == @"动物") {
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
-		else if(tabFlag == @"food"){
+		else if(tabFlag == @"饲料"){
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllFoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
-		else if(tabFlag == @"goods"){
+		else if(tabFlag == @"道具"){
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllGoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
 		self.scale = 300.0f/1024.0f;
@@ -38,13 +38,13 @@
 		
 		
 		//实现翻页按钮
-//		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
-//		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
+		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:49 offsetX:0 offsetY:0 scale:3.0f];
+		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:49 offsetX:0 offsetY:0 scale:3.0f];
 //		forwardPageBtn.flipX = YES;
-//		nextPageBtn.position = ccp(self.contentSize.width/2 + 100, 0);
-//		forwardPageBtn.position = ccp(self.contentSize.width/2 - 100, 0);
-//		[self addChild:nextPageBtn z:7];
-//		[self addChild:forwardPageBtn z:7];
+		nextPageBtn.position = ccp( 770, -480);
+		forwardPageBtn.position = ccp(200, -480);
+		[self addChild:nextPageBtn z:7];
+		[self addChild:forwardPageBtn z:7];
 	}
 	return self;
 }
@@ -53,16 +53,16 @@
 {
 	NSDictionary *itemDic;
 	NSArray *itemArray;
-	if (tabFlag == @"animal") {
+	if (tabFlag == @"动物") {
 		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 		itemArray = [itemDic allKeys];
 	}
-	else if(tabFlag == @"food")
+	else if(tabFlag == @"饲料")
 	{
 		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].foods;
 		itemArray = [itemDic allKeys];
 	}
-	else if(tabFlag == @"goods")
+	else if(tabFlag == @"道具")
 	{
 		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].goods;
 		itemArray = [itemDic allKeys];
@@ -106,7 +106,7 @@
 //生成商品页面
 -(void) generatePage
 {
-	if (tabFlag == @"animal") {
+	if (tabFlag == @"动物") {
 		NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 		DataModelOriginalAnimal *originAnimal;
 		NSArray *animalArray = [originAnimalDic allKeys];
@@ -137,7 +137,7 @@
 			[self addChild:kuang z:6];
 		}
 	}
-	else if (tabFlag == @"food"){
+	else if (tabFlag == @"饲料"){
 		NSDictionary *foodDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].foods;
 		DataModelFood *dataModelFood;
 		NSArray *foodArray = [foodDic allKeys];
@@ -166,7 +166,7 @@
 			[self addChild:kuang z:6];
 		}
 	}
-	else if (tabFlag == @"goods"){
+	else if (tabFlag == @"道具"){
 		NSDictionary *goodsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].goods;
 		DataModelGood *dataModelGood;
 		NSArray *goodsArray = [goodsDic allKeys];

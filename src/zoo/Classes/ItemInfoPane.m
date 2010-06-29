@@ -108,7 +108,7 @@ count;
 	itemPrice = 0;
 	NSDictionary *dic;	
 	//判断商品的类型,显示不同的物品信息到不同的信息框中
-	if (itemType == @"animal") {
+	if (itemType == @"动物") {
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals retain];
 		DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemId];
 		itemPrice = originalAnimal.basePrice;
@@ -126,7 +126,7 @@ count;
 		[self addChild:nameLbl z:10];
 		[originalAnimal release];
 	}
-	if (itemType == @"food") {
+	if (itemType == @"饲料") {
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].foods retain];
 		DataModelFood *food = [dic objectForKey:itemId];
 		itemPrice = food.foodPrice;
@@ -143,7 +143,7 @@ count;
 		[self addChild:nameLbl z:10];
 		[food release];
 	}
-	if (itemType == @"goods") {
+	if (itemType == @"道具") {
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].goods retain];
 		DataModelGood *goods = [dic objectForKey:itemId];
 		itemPrice = goods.goodsGoldenPrice;
@@ -184,12 +184,12 @@ count;
 	cancelBtn.position = ccp(self.contentSize.height/2 + 170, 35);
 	[self addChild:confirmBtn z:10];
 	[self addChild:cancelBtn z:10];
-	if(itemType != @"goods")
+	if(itemType != @"道具")
 	{
 		ScalerPane *scalerPane;
-		if(itemType == @"animal")
+		if(itemType == @"动物")
 			scalerPane = [[ScalerPane alloc] initWithCounter:1 max:10 delta:1 target:self price:itemPrice z:39 Priority:0 setPathname:@"加减显示器.png" setlength:0];
-		else if(itemType == @"food")
+		else if(itemType == @"饲料")
 			scalerPane = [[ScalerPane alloc] initWithCounter:500 max:10000 delta:500 target:self price:itemPrice z:39 Priority:0 setPathname:@"加减显示器.png" setlength:0];
 		scalerPane.position = ccp(0,0);
 		[self addChild:scalerPane z:10];

@@ -27,8 +27,13 @@
 //	 [self setTextureRect: rect];
 //	 [bg release];
 	 
-	 eggEnNameArray = [[NSArray alloc] initWithObjects:@"craneEgg.png",@"duckEgg.png",@"gooseEgg.png",@"henEgg.png",@"magpieEgg.png",@"mallardEgg.png",@"mandarinduckEgg.png",@"parrotEgg.png",@"peahenEgg.png",@"pheasantEgg.png",@"pigeonEgg.png",@"swanEgg.png",@"turkeyEgg.png",@"wildgooseEgg.png",@"mallardEgg.png",@"pigeonEgg.png",nil];
+	 
+	 
 	 self.scale = 300.0f/1024.0f;
+	 
+	 [self addChangePageButton];
+	 eggEnNameArray = [[NSArray alloc] initWithObjects:@"craneEgg.png",@"duckEgg.png",@"gooseEgg.png",@"henEgg.png",@"magpieEgg.png",@"mallardEgg.png",@"mandarinduckEgg.png",@"parrotEgg.png",@"peahenEgg.png",@"pheasantEgg.png",@"pigeonEgg.png",@"swanEgg.png",@"turkeyEgg.png",@"wildgooseEgg.png",@"mallardEgg.png",@"pigeonEgg.png",nil];
+	 
 	 [self initView];
 	 
  }
@@ -39,21 +44,19 @@
 -(void) initView
 {
 	
-	 [self removeAllChildrenWithCleanup:YES];
+	[self removeAllChildrenWithCleanup:YES];
 	
-	
+	[self addChangePageButton];
 	
 	NSString *par = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:par,@"farmerId",nil];
-	if (tabFlag == @"egg") {
+	if (tabFlag == @"普通蛋") {
 		
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageProducts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 	}
-	else if(tabFlag == @"zygoteegg"){
+	else if(tabFlag == @"受精蛋"){
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultZygCallback:" AndFailedSel:@"faultCallback:"];
 	}
-	
-		
 }
 	
 	
@@ -61,8 +64,6 @@
 
 -(void) resultCallback:(NSObject *)value
 {
-	
-	
 	NSDictionary *itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
 	NSArray *itemArray = [itemDic allKeys];
 
@@ -106,18 +107,15 @@
 
 -(void) addChangePageButton
 {
-	
-	Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
-	Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
-	
-	forwardPageBtn.flipX = YES;
-	nextPageBtn.position = ccp(self.contentSize.width/2 + 100, 0);
-	forwardPageBtn.position = ccp(self.contentSize.width/2 - 100, 0);
+	//实现翻页按钮
+	Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:49 offsetX:0 offsetY:0 scale:3.0f];
+	Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:49 offsetX:0 offsetY:0 scale:3.0f];
+	//		forwardPageBtn.flipX = YES;
+	nextPageBtn.position = ccp( 770, -480);
+	forwardPageBtn.position = ccp(200, -480);
 	
 	[self addChild:nextPageBtn z:7];
 	[self addChild:forwardPageBtn z:7];
-	
-	
 }
 
 
@@ -152,7 +150,7 @@
 -(void) generatePage
 {
 	
-	if (tabFlag == @"egg") {
+	if (tabFlag == @"普通蛋") {
 		NSDictionary *storageEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
 
 		DataModelStorageEgg *storageEgg;
@@ -192,7 +190,7 @@
 		[eggSourceArray removeAllObjects];
 		[eggSourceArray release];		
 	}
-	else if (tabFlag == @"zygoteegg"){
+	else if (tabFlag == @"受精蛋"){
 		NSDictionary *storageZygoteEggsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs;
 		DataModelStorageZygoteEgg *dataModelStorageZygoteEggs;
 		NSArray *zygoteEggsArray = [storageZygoteEggsDic allKeys];

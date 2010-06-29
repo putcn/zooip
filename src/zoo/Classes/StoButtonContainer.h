@@ -34,6 +34,8 @@
 	NSArray *eggEnNameArray;
 }
 -(id) initWithTab:(NSString *)tabName setTarget:(id)target;
+-(void) initView;
+-(void) addChangePageButton;
 
 -(void) resultCallback:(NSObject *)value;
 -(void) faultCallback:(NSObject *)value;
