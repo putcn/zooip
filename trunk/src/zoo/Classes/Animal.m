@@ -601,6 +601,9 @@
 
 -(void) dealloc
 {
+	// Add by Hunk on 2010-06-29
+	[animalData release];
+	
 	//TODO: Remove view from the stage
 	[view dealloc];
 	[view release];

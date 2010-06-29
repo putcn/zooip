@@ -565,4 +565,23 @@
 	animalExpansionPanel.position = ccp(10000,5000);
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[aniManagementBtnCtrl release];
+	[animalManagerContainer release];
+	[animalExpansionPanel release];
+	[feed release];
+	[playerStatusIconTextures release];
+	[friendStatusIconTextures release];
+	[playerOperationButtons release];
+	[friendOperationButtons release];
+	[playerButtonContainer release];
+	[friendButtonContainer release];
+	[statusIcon release];
+	
+	[super dealloc];
+}
+
+
 @end

@@ -211,6 +211,10 @@ static GameMainScene *_sharedGameMainScene = nil;
 
 -(void) dealloc
 {
+	[baseContainer release];
+	[background release];
+	[uiLayer release];
+	
 	[super removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }

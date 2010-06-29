@@ -139,4 +139,38 @@ storageAuctionAnimals;
 	friendFarmInfo = nil;
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[playerUid release];
+	[friendUid release];
+	[pid release];
+	[playerFarmerInfo release];
+	[friendFarmerInfo release];
+	[playerFarmInfo release];
+	[friendFarmInfo release];
+	[animalIDs release];
+	[animals release];
+	[eggs release];
+	[snakes release];
+	[ants release];
+	[dejectas release];
+	[dogs release];
+	[friendIDs release];
+	[friendInfos release];
+	[userTipses release];
+	[storageFoods release];
+	[storageEggs release];
+	[storageZygoteEggs release];
+	[originalAnimals release];
+	[foods release];
+	[goods release];
+	[storageAnimals release];
+	[storageAuctionAnimals release];
+	
+	[super dealloc];
+}
+
+
+
 @end

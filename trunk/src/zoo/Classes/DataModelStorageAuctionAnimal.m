@@ -16,4 +16,15 @@ auctionBirdStorageId,
 animalId,
 originalAnimalId;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[auctionBirdStorageId release];
+	[animalId release];
+	[originalAnimalId release];
+	
+	[super dealloc];
+}
+
+
 @end

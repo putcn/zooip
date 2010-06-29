@@ -197,4 +197,13 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[load release];
+	
+	[super dealloc];
+}
+
+
 @end

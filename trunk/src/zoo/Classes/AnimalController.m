@@ -150,4 +150,14 @@ static AnimalController *_sharedAnimalController = nil;
 	
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[animals release];
+	
+	[super dealloc];
+}
+
+
+
 @end

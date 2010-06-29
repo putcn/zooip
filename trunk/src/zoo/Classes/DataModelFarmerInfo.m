@@ -27,4 +27,15 @@ nextLevelExp,
 goldenEgg,
 haveTurtle;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[farmerId release];
+	[userName release];
+	[userImg release];
+	
+	[super dealloc];
+}
+
+
 @end

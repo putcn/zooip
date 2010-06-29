@@ -1239,4 +1239,14 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 	return request;
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[CallBacks release];
+	
+	[super dealloc];
+}
+
+
+
 @end

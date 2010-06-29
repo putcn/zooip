@@ -215,6 +215,20 @@
 }
 
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[title release];
+	[tabDic release];
+	[tabContentDic release];
+	[tabEnable release];
+	[tabDisable release];
+	[itemInfoPane release];
+	
+	[super dealloc];
+}
+
+
 @end
 
 

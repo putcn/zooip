@@ -204,6 +204,16 @@
 
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[tabFlag release];
+	[parentTarget release];
+	
+	[super dealloc];
+}
+
+
 
 
 @end

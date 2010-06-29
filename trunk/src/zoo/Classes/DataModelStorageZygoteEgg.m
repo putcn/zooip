@@ -24,4 +24,18 @@ eggName,
 eggNameEN,
 eggPrice;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[zygoteStorageId release];
+	[eggId release];
+	[originalAnimalId release];
+	[eggName release];
+	[eggNameEN release];
+	[zygoteBirthday release];
+	
+	[super dealloc];
+}
+
+
 @end

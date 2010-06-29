@@ -37,4 +37,15 @@
 	[[GameMainScene sharedGameMainScene] removeDialogFromScreen:numberLbl ];
 	[[GameMainScene sharedGameMainScene] removeDialogFromScreen:load ];
 }
+
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+//	[numberLbl release];
+//	[load release];
+	
+	[super dealloc];
+}
+
+
 @end

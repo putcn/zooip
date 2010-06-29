@@ -19,4 +19,16 @@ foodPrice,
 antsRequired,
 foodImg;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[foodId release];
+	[foodPower release];
+	[foodName release];
+	[foodImg release];
+	
+	[super dealloc];
+}
+
+
 @end

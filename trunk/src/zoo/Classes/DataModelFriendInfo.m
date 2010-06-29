@@ -19,4 +19,17 @@ tinyurl,
 experience,
 uid;
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[farmId release];
+	[farmerId release];
+	[userName release];
+	[tinyurl release];
+	[uid release];
+	
+	[super dealloc];
+}
+
+
 @end

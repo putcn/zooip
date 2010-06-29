@@ -111,4 +111,14 @@
 	[super faultCallback:value];
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[allLayEggController release];
+	[animalId release];
+	
+	[super dealloc];
+}
+
+
 @end

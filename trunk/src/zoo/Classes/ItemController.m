@@ -75,5 +75,14 @@ static ItemController *_itemController = nil;
 	}
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[allItems release];
+	
+	[super dealloc];
+}
+
+
 
 @end

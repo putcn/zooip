@@ -105,4 +105,33 @@
 	[capacity setString:[NSString stringWithFormat:@"容量: %@/%@",maxNumOfBirds,topMaxNumOfBirds]];
 	
 }
+
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[userName release];
+	[userImg release];
+	[currentExperience release];
+	[nextLevelExperience release];
+	[level release];
+	[maxNumOfBirds release];
+	[topMaxNumOfBirds release];
+	[animalNum release];
+	[antsNum release];
+	[goldenEggNum release];
+	[userNameLbl release];
+	[experienceLbl release];
+	[experienceBar release];
+	[levelLbl release];
+	[capacity release];
+	[antsNumLbl release];
+	[goldenEggNumLbl release];
+	[animalNumLbl release];
+	[userImgSprite release];
+	
+
+	[super dealloc];
+}
+
+
 @end

@@ -24,4 +24,15 @@ farm_nextLevelExp,
 farm_currentExp,
 farm_topMaxNumOfBirds;
 
+
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[farmId release];
+	[farmerId release];
+	
+	[super dealloc];
+}
+
+
 @end

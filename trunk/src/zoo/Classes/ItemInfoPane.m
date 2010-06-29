@@ -241,6 +241,12 @@ count;
 
 -(void) dealloc
 {
+	[title release];
+	[itemId release];
+	[itemType release];
+	[itemBuyType release];
+	[priceLbl release];
+	
 	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }
