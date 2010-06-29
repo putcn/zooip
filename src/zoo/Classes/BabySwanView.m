@@ -105,6 +105,15 @@
 	
 }
 
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	
+	
+	[super dealloc];
+}
+
+
 
 
 

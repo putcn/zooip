@@ -194,4 +194,27 @@ static OperationViewController *_sharedOperationViewController = nil;
 	}
 
 }
+
+
+// Add by Hunk on 2010-06-29
+-(void)dealloc
+{
+	[netview release];
+	[normalFoodView release];
+	[pesticideView release];
+	[pickupView release];
+	[powerFoodView release];
+	[productYieldFoodView release];
+	[putAntView release];
+	[putSnakeView release];
+	[specialFoodView release];
+	[summonView release];
+	[cleaningView release];
+	[efficientFoodView release];
+	[firecrackerView release];
+	[infusionView release];
+	
+	[super dealloc];
+}
+
 @end

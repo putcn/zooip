@@ -104,6 +104,11 @@
 
 -(void) dealloc
 {
+	// Add by Hunk on 2010-06-29
+	[dejectaId release];	
+	[clearDejectaController release];
+	
+	
 	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }

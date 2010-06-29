@@ -148,6 +148,13 @@
 								   
 -(void) dealloc
 {
+	// Add by Hunk on 2010-06-29
+	[animationTable release];
+	[dirctions release];
+	[statuses release];
+	[dogId release];
+	
+	
 	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }

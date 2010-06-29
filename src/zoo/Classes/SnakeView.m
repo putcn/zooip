@@ -106,6 +106,11 @@
 
 -(void) dealloc
 {
+	// Add by Hunk on 2010-06-29
+	[snakeId release];
+	[killSnakeController release];
+	
+	
 	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }
