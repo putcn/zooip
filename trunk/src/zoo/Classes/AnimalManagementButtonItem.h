@@ -25,7 +25,7 @@
 @property (nonatomic, retain)NSString *animalID;
 
 -(id) initWithItem:(NSString *)itId setitType:(NSString *)itType setAnimalID:(NSString *)animalIDP setImagePath:(NSString*) imagePath setAnimalName:(NSString *) animalName setTarget:(id) target setSelector:(SEL) handler
-	   setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue;
+	   setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue setPictureScale:(float) fScale;
 
 -(void) setImg: (NSString *) itemImg setName:(NSString *) animalName;
 @end

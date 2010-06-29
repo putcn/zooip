@@ -116,7 +116,7 @@
 			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
 			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
-			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
+			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1 setPictureScale:2.0];
 			itemButton.position = ccp(230 * (i%4) + 120, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%8];
 			}

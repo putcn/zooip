@@ -33,7 +33,7 @@ antsCount;
 		[self setTexture:bg];
 		[self setTextureRect: rect];
 		[bg release];
-		self.title = @"购买动物";
+		self.title = @"配种";
 		priceLbl = [[CCLabel alloc] retain];
 		//***[self updateInfo:itId type:itType setTarget:target];
 	}
@@ -50,13 +50,13 @@ antsCount;
 		femaledIdBeforeMarry = rightAnimalID;
 		animalIDAfterMarry = rightAnimalID;
 		
-		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"ItemInfoPane.png" ofType:nil] ] ];
+		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_buy.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
 		[self setTextureRect: rect];
 		[bg release];
-		self.title = @"动物配对";
+		self.title = @"配种";
 		priceLbl = [[CCLabel alloc] retain];
 		[self updateButtonsAndRates:target];
 		//****[self updateInfo:itId type:itType setTarget:target];
@@ -65,9 +65,9 @@ antsCount;
 }
 -(void)addTitle
 {
-	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:30];
-	[titleLbl setColor:ccc3(255, 255, 255)];
-	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - titleLbl.contentSize.height/2);
+	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:25];
+	[titleLbl setColor:ccc3(0, 0, 0)];
+	titleLbl.position = ccp(self.contentSize.width/2-100, self.contentSize.height - titleLbl.contentSize.height/2);
 	[self addChild:titleLbl z:10];
 }
 -(void)updateButtonsAndRates:(id)target
@@ -75,82 +75,96 @@ antsCount;
 	[self removeAllChildrenWithCleanup:YES];
 	[self addTitle];
 	
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(MateAnimals:) setPriority:25 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancleMate:) setPriority:25 offsetX:0 offsetY:0 scale:1.0f];
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"确定" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"确定.png" setTarget:target setSelector:@selector(MateAnimals:) setPriority:25 offsetX:0 offsetY:0 scale:1.0f];
+//	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancleMate:) setPriority:25 offsetX:0 offsetY:0 scale:1.0f];
 	
 	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
-	confirmBtn.target = self;
-	confirmBtn.position = ccp(self.contentSize.width/2 - 200, 350);
-	cancelBtn.position = ccp(self.contentSize.height/2 + 200, 350);
+//	confirmBtn.target = self;
+	confirmBtn.position = ccp(self.contentSize.width/2 , 25);
+//	cancelBtn.position = ccp(self.contentSize.height/2 , 50);
 	[self addChild:confirmBtn z:10];
-	[self addChild:cancelBtn z:10];
+//	[self addChild:cancelBtn z:10];
+	
+	//
+	CCLabel *titleLbl = [CCLabel labelWithString:@"选择当前产蛋周期下公蛋的概率：" fontName:@"Arial" fontSize:15];
+	[titleLbl setColor:ccc3(0, 0, 0)];
+	titleLbl.position = ccp(self.contentSize.width/2-20, self.contentSize.height - titleLbl.contentSize.height/2 -40);
+	[self addChild:titleLbl z:10];
+	
+	
 	if(itemType != @"goods")
 	{
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:25];
-		scalerPane.position = ccp(200,200);
-		[self addChild:scalerPane z:5];
+		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:25 setPathname:@"加减显示框_2.png" setlength:40];
+		scalerPane.position = ccp(self.contentSize.width/2-70, self.contentSize.height/2-30);
+		[self addChild:scalerPane z:10];
 	}
-	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:25];
-	transBackground.scale = 17.0f;
-	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-	[self addChild:transBackground z:5];
+	
+	CCLabel *titleLbl_2 = [CCLabel labelWithString:@"生公蛋的概率：" fontName:@"Arial" fontSize:15];
+	[titleLbl_2 setColor:ccc3(0, 0, 0)];
+	titleLbl_2.position = ccp(self.contentSize.width/2-50, self.contentSize.height - titleLbl_2.contentSize.height/2 -100);
+	[self addChild:titleLbl_2 z:10];
+	
+//	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:25];
+//	transBackground.scale = 17.0f;
+//	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+//	[self addChild:transBackground z:5];
 	
 	[self setImg:@"" setBuyType:@"" setPrice:@"1"];
 }
 
 
--(void)updateInfo:(NSString *) itId type: (NSString *) itType setTarget:(id)target
-{
-	[self removeAllChildrenWithCleanup:YES];
-	[self addTitle];
-	itemId = itId;
-	itemType = itType;
-	itemBuyType = @"goldEgg";
-	itemPrice = 0;
-	NSDictionary *dic;	
-	//判断商品的类型,显示不同的物品信息到不同的信息框中
-	if (itemType == @"animal") {
-		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals retain];
-		DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemId];
-		itemPrice = originalAnimal.basePrice;
-		if (originalAnimal.antsPrice > 0) {
-			itemBuyType = @"ant";
-			itemPrice = originalAnimal.antsPrice;
-		}
-		NSString *price = [NSString stringWithFormat:@"%d",itemPrice]; 
-		NSString *picFileName = [NSString stringWithFormat:@"%@.png",originalAnimal.picturePrefix];
-		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
-		
-		CCLabel *nameLbl = [CCLabel labelWithString:originalAnimal.scientificNameCN fontName:@"Arial" fontSize:30];
-		[nameLbl setColor:ccc3(0, 0, 0)];
-		nameLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 100);
-		[self addChild:nameLbl z:10];
-		[originalAnimal release];
-	}
-
-	[dic release];
-	
-	//添加确认和取消按钮,回调函数分别为[ManageContainer buyItem] 和[ManageContainer Cancel]
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(MateAnimals:) setPriority:25 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancelMate:) setPriority:25 offsetX:0 offsetY:0 scale:1.0f];
-	
-	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
-	confirmBtn.target = self;
-	confirmBtn.position = ccp(self.contentSize.width/2 - 200, 50);
-	cancelBtn.position = ccp(self.contentSize.height/2 + 200, 50);
-	[self addChild:confirmBtn z:10];
-	[self addChild:cancelBtn z:10];
-	if(itemType != @"goods")
-	{
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:25];
-		scalerPane.position = ccp(200,200);
-		[self addChild:scalerPane z:5];
-	}
-	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:25];
-	transBackground.scale = 17.0f;
-	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-	[self addChild:transBackground z:5];
-}
+//-(void)updateInfo:(NSString *) itId type: (NSString *) itType setTarget:(id)target
+//{
+//	[self removeAllChildrenWithCleanup:YES];
+//	[self addTitle];
+//	itemId = itId;
+//	itemType = itType;
+//	itemBuyType = @"goldEgg";
+//	itemPrice = 0;
+//	NSDictionary *dic;	
+//	//判断商品的类型,显示不同的物品信息到不同的信息框中
+//	if (itemType == @"animal") {
+//		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals retain];
+//		DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemId];
+//		itemPrice = originalAnimal.basePrice;
+//		if (originalAnimal.antsPrice > 0) {
+//			itemBuyType = @"ant";
+//			itemPrice = originalAnimal.antsPrice;
+//		}
+//		NSString *price = [NSString stringWithFormat:@"%d",itemPrice]; 
+//		NSString *picFileName = [NSString stringWithFormat:@"%@.png",originalAnimal.picturePrefix];
+//		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
+//		
+//		CCLabel *nameLbl = [CCLabel labelWithString:originalAnimal.scientificNameCN fontName:@"Arial" fontSize:30];
+//		[nameLbl setColor:ccc3(0, 0, 0)];
+//		nameLbl.position = ccp(self.contentSize.width/2 , self.contentSize.height - 100);
+//		[self addChild:nameLbl z:10];
+//		[originalAnimal release];
+//	}
+//
+//	[dic release];
+//	
+//	//添加确认和取消按钮,回调函数分别为[ManageContainer buyItem] 和[ManageContainer Cancel]
+//	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(MateAnimals:) setPriority:25 offsetX:0 offsetY:0 scale:1.0f];
+//	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancelMate:) setPriority:25 offsetX:0 offsetY:0 scale:1.0f];
+//	
+//	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
+//	confirmBtn.target = self;
+//	confirmBtn.position = ccp(self.contentSize.width/2 - 200, 50);
+//	cancelBtn.position = ccp(self.contentSize.height/2 + 200, 50);
+//	[self addChild:confirmBtn z:10];
+//	[self addChild:cancelBtn z:10];
+//	if(itemType != @"goods")
+//	{
+//		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:25];
+//		scalerPane.position = ccp(200,200);
+//		[self addChild:scalerPane z:5];
+//	}
+//	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:25];
+//	transBackground.scale = 17.0f;
+//	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+//	[self addChild:transBackground z:5];
+//}
 
 -(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price
 {
