@@ -9,7 +9,8 @@
 #import "EggView.h"
 
 
-@interface DuckEggView : EggView {
+@interface DuckEggView : EggView 
+{
 
 }
 

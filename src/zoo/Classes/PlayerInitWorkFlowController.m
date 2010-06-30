@@ -44,7 +44,7 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 
 -(void) setupStep
 {
-	GetFarmerInfoController *getFarmerInfoController =(GetFarmerInfoController *) [[GetFarmerInfoController alloc] initWithWorkFlowController:self];
+	GetFarmerInfoController *getFarmerInfoController =(GetFarmerInfoController *)[[GetFarmerInfoController alloc] initWithWorkFlowController:self];
 	[self addController:getFarmerInfoController andStep:STEP_GET_FARMER_INFO];
 	[getFarmerInfoController release];
 	
