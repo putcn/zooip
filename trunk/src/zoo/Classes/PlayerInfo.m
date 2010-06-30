@@ -25,31 +25,35 @@
 		self.scale = 0.8f;
 		[self setContentSize:CGSizeMake(300, 40)];
 		CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"tibentanmastiff_rest_01.png" ofType:nil] ] ];
-		userImgSprite = [[CCSprite node] retain];
+		userImgSprite = [CCSprite node];/// retain];
 		[userImgSprite setTexture:useImgTexture];
+		
+		// 
+		[useImgTexture release];
+		
 		[userImgSprite setContentSize:CGSizeMake(40, 40)];
 		userImgSprite.position = ccp(20,20);
-		userNameLbl = [[CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12] retain];
+		userNameLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];//retain];
 		userNameLbl.position = ccp(60,30);
-		experienceBar = [[CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12] retain];
+		experienceBar = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];// retain];
 		experienceBar.position = ccp(120,30);
-		levelLbl = [[CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12] retain];
+		levelLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];// retain];
 		levelLbl.position = ccp(170,30);
-		animalNumLbl = [[CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12] retain];
+		animalNumLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];// retain];
 		animalNumLbl.position = ccp(220,30);
 		CCSprite *antIcon = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
 		[antIcon setContentSize:CGSizeMake(10, 10)];
 		antIcon.position = ccp(50,10);
 		antIcon.scale = 0.5f;
-		antsNumLbl = [[CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12] retain];
+		antsNumLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];// retain];
 		antsNumLbl.position = ccp(80,10);
 		CCSprite *eggIcon = [CCSprite spriteWithFile:@"金蛋ico.png"];
 		[eggIcon setContentSize:CGSizeMake(10, 10)];
 		eggIcon.position = ccp(100,10);
 		eggIcon.scale =0.5f;
-		goldenEggNumLbl = [[CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12] retain];
+		goldenEggNumLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];// retain];
 		goldenEggNumLbl.position = ccp(140,10);
-		capacity = [[CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12] retain];
+		capacity = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];// retain];
 		capacity.position = ccp(200,10);
 		[self addChild:userImgSprite z:1];
 		[self addChild:userNameLbl z:1];
@@ -96,6 +100,10 @@
 	}
 	CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:userImg ofType:nil] ] ];
 	[userImgSprite setTexture:useImgTexture];
+	
+	//
+	[useImgTexture release];
+	
 	[userNameLbl setString:userName];
 	[experienceBar setString:[NSString stringWithFormat:@"%@/%@",currentExperience,nextLevelExperience]];
 	[levelLbl setString:[NSString stringWithFormat:@"%@ 级",level]];
@@ -129,6 +137,16 @@
 	[animalNumLbl release];
 	[userImgSprite release];
 	
+	// For retain
+	[userImgSprite release];
+	[userNameLbl release];
+	[experienceBar release];
+	[levelLbl release];
+	[animalNumLbl release];
+	[antsNumLbl release];
+	[goldenEggNumLbl release];
+	[capacity release];
+
 
 	[super dealloc];
 }

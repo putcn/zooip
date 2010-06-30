@@ -83,6 +83,9 @@ static AnimalController *_sharedAnimalController = nil;
 		serverAnimalData = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:serverAnimalID];
 		Animal *newAnimal = [[Animal alloc] initWithAnimalData:serverAnimalData];
 		[animals setObject:newAnimal forKey:serverAnimalID];
+		
+		// Add by Hunk on 2010-06-30
+		[newAnimal release];
 //		}
 	}
 	

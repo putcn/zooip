@@ -91,8 +91,15 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[self addChild:scaleContainer];
 		ScaleControlLayer *scaler = [[ScaleControlLayer alloc] initWithTarget:scaleContainer];
 		[self addChild:scaler];
+		
+		// Add by Hunk on 2010-06-30
+		[scaler release];
+		
 		DragControlLayer *drager = [[DragControlLayer alloc] initWithTarget:scaleContainer];
 		[self addChild:drager];
+		
+		// Add by Hunk on 2010-06-30
+		[drager release];
 		
 //		PigeonView *pigeonView = [[PigeonView alloc] init];
 //		pigeonView.position = ccp(200,200);
@@ -102,6 +109,9 @@ static GameMainScene *_sharedGameMainScene = nil;
 		PlayerInitWorkFlowController *playerInitFlowController = [[PlayerInitWorkFlowController alloc] init];
 		[playerInitFlowController setupStep];
 		[playerInitFlowController startStep];
+		
+		// Add by Hunk on 2010-06-30
+		//[playerInitFlowController release];
 		
 		uiLayer = [[UILayer alloc] init];
 		[self addChild:uiLayer z:10];
@@ -177,6 +187,10 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[playerInitFlowController setupStep];
 		[playerInitFlowController startStep];
 		
+		// Add by Hunk on 2010-06-30
+		[playerInitFlowController release];
+		
+		
 		[uiLayer switchPlayerZoo];
 	}
 	else
@@ -189,6 +203,9 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[friendInitFlowController startStep];
 		
 		[uiLayer switchFriendZoo];
+		
+		// Add by Hunk on 2010-06-30
+		[friendInitFlowController release];
 	}
 }
 
