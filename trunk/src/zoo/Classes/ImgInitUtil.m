@@ -31,7 +31,8 @@ static ImgInitUtil *_sharedImgInitUtil;
 	CCTexture2D *image = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:fileName ofType:nil]]];
 	NSInteger containOneLine = max;
 	for (int i = 0; i < number; i++) {
-		[animation addFrameWithTexture:image rect:CGRectMake(originx + (i % containOneLine) * w, originy + (i/containOneLine) * h, w, h)];
+		CCSpriteFrame *tempSpriteFrame = [CCSpriteFrame frameWithTexture:image rect:CGRectMake(originx + (i % containOneLine) * w, originy + (i/containOneLine) * h, w, h) offset:ccp(0,0)];
+		[animation addFrame:tempSpriteFrame];
 		NSLog(@"second x.....%f, y.....%f",originx + (i % containOneLine) * w, originy + (i/containOneLine) * h);
 	}
 	[image release];
