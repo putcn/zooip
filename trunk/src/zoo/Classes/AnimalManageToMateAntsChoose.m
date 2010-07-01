@@ -10,7 +10,7 @@
 #import "TransBackground.h"
 #import "ScalerPane.h"
 #import "RandomHelper.h"
-
+#import "LoadingBar.h"
 @implementation AnimalManageToMateAntsChoose
 @synthesize 
 title,
@@ -65,7 +65,7 @@ antsCount;
 }
 -(void)addTitle
 {
-	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:25];
+	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:20];
 	[titleLbl setColor:ccc3(0, 0, 0)];
 	titleLbl.position = ccp(self.contentSize.width/2-100, self.contentSize.height - titleLbl.contentSize.height/2);
 	[self addChild:titleLbl z:10];
@@ -94,7 +94,7 @@ antsCount;
 	
 	if(itemType != @"goods")
 	{
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:25 setPathname:@"加减显示框_2.png" setlength:40];
+		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:20 setPathname:@"加减显示框_2.png" setlength:40];
 		scalerPane.position = ccp(self.contentSize.width/2-70, self.contentSize.height/2-30);
 		[self addChild:scalerPane z:10];
 	}
@@ -104,10 +104,44 @@ antsCount;
 	titleLbl_2.position = ccp(self.contentSize.width/2-50, self.contentSize.height - titleLbl_2.contentSize.height/2 -100);
 	[self addChild:titleLbl_2 z:10];
 	
-//	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:25];
-//	transBackground.scale = 17.0f;
-//	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-//	[self addChild:transBackground z:5];
+//	CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+//	kuang.position = ccp(60 * (kTemp%4) + 70,  self.contentSize.height - 55 * ((kTemp-8*(currentPageNum-1))/4) - 120);
+//	kuang.scale = 0.7f;
+//	[self addChild:kuang z:8];
+	
+	CCSprite *load_left = [CCSprite spriteWithFile:@"进度条_橙_左圆角.png"];
+	CCSprite *load_middle = [CCSprite spriteWithFile:@"进度条_橙_中间.png"];
+	CCSprite *load_right = [CCSprite spriteWithFile:@"进度条_橙_右圆角.png"];
+	CCSprite *load_Cololeft = [CCSprite spriteWithFile:@"进度条_橙_进度_左圆角.png"];
+	CCSprite *load_Colomiddle = [CCSprite spriteWithFile:@"进度条_橙_进度_中间.png"];
+	CCSprite *load_Coloright = [CCSprite spriteWithFile:@"进度条_橙_进度_右圆角.png"];
+	
+	float nCent = itemPrice/1.0;
+	NSString *spercent = [NSString stringWithFormat:@"%0.1f\%%", nCent];
+	
+	int nlong = 1;
+	if(itemPrice <= 1)
+	{
+		nlong = 0;
+	}
+	else if(itemPrice >= 10)
+	{
+		nlong = 2;
+	}
+
+	
+	LoadingBar *load = [[LoadingBar alloc] initWithCCSprite:spercent setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setTarget:target 
+			setSpriteLeft:load_left setSpriteMidele: load_middle setSpriteRight: load_right
+			setSpriteColoLeft: load_Cololeft setSpriteColoMidele: load_Colomiddle setSpriteColoRight: load_Coloright
+			offsetX:70 offsetY:0 setpercent:nlong];
+	load.position = ccp(self.contentSize.width/2-70 , 50);
+	[self addChild:load z:10];
+	
+	
+	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:25];
+	transBackground.scale = 5.0f;
+	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+	[self addChild:transBackground z:5];
 	
 	[self setImg:@"" setBuyType:@"" setPrice:@"1"];
 }

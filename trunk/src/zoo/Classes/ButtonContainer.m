@@ -81,7 +81,7 @@
 {
 	if ( currentPageNum + 1 <= totalPage) 
 	{
-		for (int i = 0; i< currentNum; i ++) 
+		for (int i = 0; i< currentNum * 2; i ++) 
 		{
 			[self removeChildByTag:i cleanup:YES];
 		}
@@ -94,7 +94,7 @@
 -(void) forwardPage:(Button *)button
 {
 	if (currentPageNum - 1 > 0) {
-		for (int i = 0; i< currentNum; i ++) {
+		for (int i = 0; i< currentNum * 2; i ++) {
 			[self removeChildByTag:i cleanup:YES];
 		}
 		
@@ -115,7 +115,9 @@
 			endNumber = animalArray.count;
 		}
 		currentNum = endNumber - (currentPageNum -1 ) *8 ;
-		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
+		
+		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) 
+		{
 			originAnimal = [originAnimalDic objectForKey:[animalArray objectAtIndex:i]];
 			
 			int buyType = 0;
@@ -124,7 +126,8 @@
 				buyType = 1;
 				price = [NSString stringWithFormat:@"%d",originAnimal.antsPrice];
 			}
-			
+//			if (originAnimal.originalAnimalId > 0) 
+			{
 			//根据动物的originalAnimalId生成ItemButton
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",originAnimal.picturePrefix];
 			ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:49 offsetX:1 offsetY:1];
@@ -134,7 +137,8 @@
 			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
 			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
 			kuang.scale = 1024.0/400.0f;
-			[self addChild:kuang z:6];
+			[self addChild:kuang z:6 tag:i%8 + 8];
+			}
 		}
 	}
 	else if (tabFlag == @"饲料"){
@@ -163,7 +167,7 @@
 			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
 			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
 			kuang.scale = 1024.0/400.0f;
-			[self addChild:kuang z:6];
+			[self addChild:kuang z:6 tag:i%8 + 8];
 		}
 	}
 	else if (tabFlag == @"道具"){
@@ -198,7 +202,7 @@
 			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
 			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
 			kuang.scale = 1024.0/400.0f;
-			[self addChild:kuang z:6];
+			[self addChild:kuang z:6 tag:i%8 + 8];
 		}
 	}
 

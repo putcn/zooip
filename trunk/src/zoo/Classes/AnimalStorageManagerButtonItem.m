@@ -13,7 +13,7 @@
 
 @synthesize itemId,itemType,storageID;
 
--(id) initWithItems:(NSString *)itId setitType:(NSString *)itType setAmount:(NSInteger) Amount setGender:(NSString *)gender setAnimalID:(NSString *)animalIDP setImagePath:(NSString*) imagePath setAnimalName:(NSString *) animalName setTarget:(id) target setSelector:(SEL) handler
+-(id) initWithItems:(NSString *)itId setitType:(NSString *)itType setAmount:(NSInteger) Amount setGender:(CCSprite *)gender setAnimalID:(NSString *)animalIDP setImagePath:(NSString*) imagePath setAnimalName:(NSString *) animalName setTarget:(id) target setSelector:(SEL) handler
 	   setPriority:(int) priorityValue offsetX:(int) offsetXValue offsetY:(int) offsetYValue
 {
 	if( (self=[super init] ))
@@ -23,12 +23,12 @@
 		storageID = animalIDP;
 		amount = Amount;
 		genDer = gender;
-		CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"itemButtonBack.png" ofType:nil] ] ];
-		CGRect rect = CGRectZero;
-		rect.size = itemImg.contentSize;
-		[self setTexture: itemImg];
-		[self setTextureRect: rect];
-		[itemImg release];
+//		CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"itemButtonBack.png" ofType:nil] ] ];
+//		CGRect rect = CGRectZero;
+//		rect.size = itemImg.contentSize;
+//		[self setTexture: itemImg];
+//		[self setTextureRect: rect];
+//		[itemImg release];
 		targetCallBack = [target retain];
 		selector = handler;
 		pri = priorityValue;
@@ -36,7 +36,7 @@
 		[self setImg:imagePath setName:animalName];
 	}
 //	self.scale = 300.0f/1024.0f;
-	self.scale = 1.5f;
+	self.scale = 2.0f;
 	return self;
 }
 
@@ -70,8 +70,12 @@
 	
 	
 	//动物Gender 字体和显示颜色
-	CCLabel *priceLbl = [CCLabel labelWithString:genDer fontName:@"Arial" fontSize:20];
-	[priceLbl setColor:ccc3(255, 0, 255)];
+//	CCLabel *priceLbl = [CCLabel labelWithString:genDer fontName:@"Arial" fontSize:20];
+//	[priceLbl setColor:ccc3(255, 0, 255)];
+	
+	genDer.position = ccp(genDer.contentSize.width/2 +35, self.contentSize.height + 5);
+	[self addChild:genDer z:7];
+	
 	if (itemType == @"动物") {
 		if ([itemId intValue] >= 50) {
 			item.flipX = YES;
@@ -81,9 +85,9 @@
 //	buyImg.position = ccp(buyImg.contentSize.width +30, buyImg.contentSize.width + 20);
 	buyImg.position = ccp(100, buyImg.contentSize.width + 20);
 
-	priceLbl.position = ccp(buyImg.contentSize.width + 50 , buyImg.position.y);
+//	priceLbl.position = ccp(buyImg.contentSize.width + 50 , buyImg.position.y);
 	[self addChild:buyImg z:7];
-	[self addChild:priceLbl z:7];
+//	[self addChild:priceLbl z:7];
 }
 
 - (CGRect)rect

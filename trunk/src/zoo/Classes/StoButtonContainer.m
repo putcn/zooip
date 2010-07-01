@@ -67,9 +67,9 @@
 	NSDictionary *itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
 	NSArray *itemArray = [itemDic allKeys];
 
-	totalPage = itemArray.count/8 + 1;
+	totalPageOne = (itemArray.count-1)/8+1;
 	
-	currentPageNum = 1;
+	currentPageNumOne = 1;
 	[self generatePage];
 	
 	NSString *totalStrPrice = [NSString stringWithFormat:@"当前总计收入 ：%d  金蛋",totalPrice];
@@ -88,8 +88,9 @@
 	NSDictionary *itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs;
 	NSArray *itemArray = [itemDic allKeys];
 	
-	totalPage = itemArray.count/8 + 1;
-	currentPageNum = 1;
+	totalPageTwo = (itemArray.count-1)/8+1;
+
+	currentPageNumTwo = 1;
 	[self generatePage];
 	
 	NSString *totalStrPrice = [NSString stringWithFormat:@"当前总计收入 ：%d  金蛋",totalPrice];
@@ -121,31 +122,63 @@
 
 -(void) nextPage:(Button *)button
 {
-	if ( currentPageNum + 1 <= totalPage) {
-		for (int i = 0; i< currentNum; i ++) {
-			[self removeChildByTag:i cleanup:YES];
+	if (tabFlag == @"普通蛋")
+	{
+		if ( currentPageNumOne + 1 <= totalPageOne) 
+		{
+			for (int i = 0; i< currentNumOne; i ++) {
+				[self removeChildByTag:i cleanup:YES];
+				[self removeChildByTag:i+100 cleanup:YES];
+				
+			}
+			
+			currentPageNumOne = currentPageNumOne + 1;
+			[self generatePage];
 		}
-		
-		currentPageNum = currentPageNum + 1;
-		[self generatePage];
 	}
+	else 
+	{
+		if ( currentPageNumTwo + 1 <= totalPageTwo) 
+		{
+			for (int i = 0; i< currentNumTwo; i ++) {
+				[self removeChildByTag:i cleanup:YES];
+				[self removeChildByTag:i+100 cleanup:YES];
+			}
+			
+			currentPageNumTwo = currentPageNumTwo + 1;
+			[self generatePage];
+		}
+	}
+
+	
 }
 
 -(void) forwardPage:(Button *)button
 {
-	if (currentPageNum - 1 > 0) {
-		for (int i = 0; i< currentNum; i ++) {
-			[self removeChildByTag:i cleanup:YES];
+	if (tabFlag == @"普通蛋")
+	{
+		if (currentPageNumOne - 1 > 0) {
+			for (int i = 0; i< currentNumOne; i ++) {
+				[self removeChildByTag:i cleanup:YES];
+			}
+			
+			currentPageNumOne = currentPageNumOne - 1;
+			[self generatePage];
 		}
-		
-		currentPageNum = currentPageNum - 1;
-		[self generatePage];
 	}
+	else 
+	{
+		if (currentPageNumTwo - 1 > 0) {
+			for (int i = 0; i< currentNumTwo; i ++) {
+				[self removeChildByTag:i cleanup:YES];
+			}
+			
+			currentPageNumTwo = currentPageNumTwo - 1;
+			[self generatePage];
+		}
+	}
+	
 }
-
-
-
-
 
 -(void) generatePage
 {
@@ -155,13 +188,13 @@
 
 		DataModelStorageEgg *storageEgg;
 		NSArray *eggsArray = [storageEggDic allKeys];
-		int endNumber = currentPageNum * 8;		
+		int endNumber = currentPageNumOne * 8;		
 		if (endNumber >= eggsArray.count) {
 			endNumber = eggsArray.count;
 		}
-		
-		currentNum = endNumber - (currentPageNum -1 ) *8 ;
-		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
+		neggOne = 0;
+		currentNumOne = endNumber - (currentPageNumOne -1 ) *8 ;
+		for (int i = (currentPageNumOne -1)*8; i < endNumber; i ++) {
 			storageEgg = [storageEggDic objectForKey:[eggsArray objectAtIndex:i]];
 			[eggSourceArray addObject:storageEgg];
 			int eggImgId = [storageEgg.eggImgId intValue];
@@ -174,13 +207,14 @@
 			totalPrice += (storageEgg.numOfProduct + storageEgg.numOfStolen) * storageEgg.eggPrice;
 							
 			SellitemButton *itemButton = [[SellitemButton alloc] initWithItem:storageEgg.eggStorageId setitType:tabFlag setImagePath:picName setEggTotal:eggTotal setEggName:storageEgg.eggName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);			
+			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNumOne-1))/4) - 100);			
 			[itemNumArray addObject:itemButton];
 			
 			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
+			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNumOne-1))/4) - 100);
 			kuang.scale = 1024.0/400.0f;
-			[self addChild:kuang z:6];
+			[self addChild:kuang z:6 tag:i%8+100];
+			neggOne ++;
 		}	
 		[self addEggToStage];
 		
@@ -195,36 +229,31 @@
 		DataModelStorageZygoteEgg *dataModelStorageZygoteEggs;
 		NSArray *zygoteEggsArray = [storageZygoteEggsDic allKeys];
 		
-		int endNumber = currentPageNum * 8;
+		int endNumber = currentPageNumTwo * 8;
 		if (endNumber >= zygoteEggsArray.count) {
 			endNumber = zygoteEggsArray.count;
 		}
-		currentNum = endNumber - (currentPageNum -1 ) *8 ;
-		
-		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
+		currentNumTwo = endNumber - (currentPageNumTwo -1 ) *8 ;
+		neggTwo = 0;
+		for (int i = (currentPageNumTwo -1)*8; i < endNumber; i ++) {
 			dataModelStorageZygoteEggs = [storageZygoteEggsDic objectForKey:[zygoteEggsArray objectAtIndex:i]];
 
 			NSString *picName = [NSString stringWithFormat:@"%@",dataModelStorageZygoteEggs.eggId];
 			NSString *eggZnName = [NSString stringWithFormat:@"%@",dataModelStorageZygoteEggs.eggName];
-
 			NSString *eggTotal = [NSString stringWithFormat:@""];
-
 			totalPrice += dataModelStorageZygoteEggs.eggPrice;
 			
-			
 			NSString *picFileName = [NSString stringWithFormat:@"zygote%@.png",picName];
-						
 			SellitemButton *itemButton = [[SellitemButton alloc] initWithItem:dataModelStorageZygoteEggs.zygoteStorageId setitType:tabFlag setImagePath:picFileName setEggTotal:eggTotal setEggName:eggZnName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-	
 			[itemNumArray addObject:itemButton];
-			
-			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
-	
+			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNumTwo-1))/4) - 100);
 	
 			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
+			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNumTwo-1))/4) - 100);
 			kuang.scale = 1024.0/400.0f;
-			[self addChild:kuang z:6];
+			[self addChild:kuang z:6 tag:i%8+100];
+			
+			neggTwo++;
 	}
 		[self addEggToStage];
 				
@@ -242,44 +271,46 @@
 
 -(void) addEggToStage
 {
-	for (int i=0; i<itemNumArray.count; i++) {
-		
-		[self addChild:[itemNumArray objectAtIndex:i] z:7 tag:i%12];
-		
+	if (tabFlag == @"普通蛋") {
+		for (int i=0 + (currentPageNumOne-1)*8; i<(currentPageNumOne-1)*8 +neggOne; i++) {
+			
+			[self addChild:[itemNumArray objectAtIndex:i] z:7 tag:i%8];
+			
+		}
 	}
-	
-	
+	else 
+	{
+		for (int i=0 + (currentPageNumTwo-1)*8; i<(currentPageNumTwo-1)*8 +neggTwo; i++) {
+			
+			[self addChild:[itemNumArray objectAtIndex:i] z:7 tag:i%8];
+			
+		}
+	}	
 }
 
 
 -(void) clearToStage
 {
-	
 	for (int i=0; i<itemNumArray.count; i++) {
 		
 		[self  removeChild:[itemNumArray objectAtIndex:i] cleanup:YES];
 		[[itemNumArray objectAtIndex:i] release];
 		
 	}
-	
-	
 }
 
 
 
 -(void) releaseImg:(SellitemButton *)imgIco
-{
-	
+{	
 	imgIco.scale = 0;
-	[self removeChild:imgIco cleanup:YES];
-	
+	[self removeChild:imgIco cleanup:YES];	
 }
 
 
 
 -(void) upData
 {
-	
 		for (int j=0; j<itemNumArray.count; j++) {
 			
 			[self releaseImg:[itemNumArray objectAtIndex:j] ];
@@ -287,9 +318,7 @@
 		}
 		
 		[itemNumArray removeAllObjects];	
-	
-	  [self initView];
-	
+	  [self initView];	
 }
 
 
@@ -307,12 +336,6 @@
 	[super dealloc];
 	 
 }
-
-
-
-
-
-
 
 
 @end

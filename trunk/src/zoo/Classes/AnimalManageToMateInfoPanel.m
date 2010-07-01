@@ -164,7 +164,10 @@ animalID;
 	currentNum = endNumber - (currentPageNum -1 ) *8 ;
 //	if(endNumber > 4)
 //		endNumber = 4;
-	for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
+	
+	int kTemp = 0;
+	for (int i = (currentPageNum -1)*8; i < endNumber; i ++) 
+	{
 		originAnimal = [animalIDs objectAtIndex:i];
 		aniID = [animalIDs objectAtIndex:i];
 		DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
@@ -176,15 +179,18 @@ animalID;
 			//For Test
 			NSString *tabFlag = @"animals";
 			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(updateInfoPanel:) setPriority:30 offsetX:1 offsetY:1 setPictureScale:0.4f];
-			itemButton.position = ccp(60 * (i%4) + 70/**this uesed to be 120 pixel***/, self.contentSize.height - 55 * ((i-8*(currentPageNum-1))/4) - 140);
+			itemButton.position = ccp(60 * (kTemp%4) + 70/**this uesed to be 120 pixel***/, self.contentSize.height - 55 * ((kTemp-8*(currentPageNum-1))/4) - 140);
 //			itemButton.scale = 200.0f/1024.0f;
-			[self addChild:itemButton z:8 tag:i%8];
+			[self addChild:itemButton z:8 tag:kTemp%8];
+			
+			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+			kuang.position = ccp(60 * (kTemp%4) + 70,  self.contentSize.height - 55 * ((kTemp-8*(currentPageNum-1))/4) - 120);
+			kuang.scale = 0.7f;
+			[self addChild:kuang z:8];
+			
+			kTemp++;
 		}
-		
-		CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-		kuang.position = ccp(60 * (i%4) + 70,  self.contentSize.height - 55 * ((i-8*(currentPageNum-1))/4) - 120);
-		kuang.scale = 0.7f;
-		[self addChild:kuang z:8];
+
 	}
 }
 
