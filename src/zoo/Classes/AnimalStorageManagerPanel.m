@@ -44,8 +44,8 @@
 		}
 		
 		//实现翻页按钮
-		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:49 offsetX:0 offsetY:0 scale:3.0f];
-		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:49 offsetX:0 offsetY:0 scale:3.0f];
+		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:40 offsetX:0 offsetY:0 scale:3.0f];
+		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:40 offsetX:0 offsetY:0 scale:3.0f];
 		//		forwardPageBtn.flipX = YES;
 		nextPageBtn.position = ccp( 770, -480);
 		forwardPageBtn.position = ccp(200, -480);
@@ -120,23 +120,23 @@
 		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
 			stoAnimals = [storageAnimal objectForKey:[animalArray objectAtIndex:i]];
 			DataModelOriginalAnimal *serverAnimalToshow = (DataModelOriginalAnimal *)[[DataEnvironment sharedDataEnvironment].originalAnimals objectForKey:stoAnimals.originalAnimalId];			
-			NSString *gender;
+			CCSprite *gender;
 			if ([serverAnimalToshow.originalAnimalId intValue] > 50) {
-				gender = @"母";
+				gender = [CCSprite spriteWithFile:@"公.png"];
 			}
 			else {
-				gender = @"公";
+				gender = [CCSprite spriteWithFile:@"母.png"];
 			}
 
 			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalToshow.scientificNameCN];
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalToshow.picturePrefix];
-			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItems:stoAnimals.adultBirdStorageId setitType:tabFlag setAmount:stoAnimals.amount setGender:gender setAnimalID:stoAnimals.originalAnimalId setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:40 offsetX:1 offsetY:1];
-			itemButton.position = ccp(250 * (i%4) + 120, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
+			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItems:stoAnimals.adultBirdStorageId setitType:tabFlag setAmount:stoAnimals.amount setGender:gender setAnimalID:stoAnimals.originalAnimalId setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:30 offsetX:1 offsetY:1];
+			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 80);
 			[self addChild:itemButton z:7 tag:i%8];
 			
 			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
-			kuang.scale = 1024.0/400.0f;
+			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
+			kuang.scale = 1024.0/370.0f;
 			[self addChild:kuang z:6];
 		}
 	}
@@ -155,24 +155,24 @@
 			DataModelOriginalAnimal *serverAnimalShow = (DataModelOriginalAnimal *)[[DataEnvironment sharedDataEnvironment].originalAnimals objectForKey:stoauAnimals.originalAnimalId];			
 
 			NSInteger n = 0;
-			NSString *localGender;
+			CCSprite *localGender;
 			if ([serverAnimalShow.originalAnimalId intValue] > 50) {
-				localGender = @"母";
+				localGender = [CCSprite spriteWithFile:@"公.png"];
 			}
 			else {
-				localGender = @"公";
+				localGender = [CCSprite spriteWithFile:@"母.png"];
 			}
 
 			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalShow.scientificNameCN];
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalShow.picturePrefix];
-			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItems:stoauAnimals.auctionBirdStorageId setitType:tabFlag setAmount:n setGender:localGender setAnimalID:serverAnimalShow.originalAnimalId setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:40 offsetX:1 offsetY:1];
+			AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItems:stoauAnimals.auctionBirdStorageId setitType:tabFlag setAmount:n setGender:localGender setAnimalID:serverAnimalShow.originalAnimalId setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:30 offsetX:1 offsetY:1];
 			//AnimalStorageManagerButtonItem *itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItems:stoauAnimals.auctionBirdStorageId setitType:tabFlag setAmount:n setGender:serverAnimalShow.gender setAnimalID:serverAnimalShow.animalId setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
-			itemButton.position = ccp(225 * (i%4) + 120, self.contentSize.height - 180 * ((i-8*(currentPageNum-1))/4) - 100);
+			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 80);
 			[self addChild:itemButton z:7 tag:i%8];
 			
 			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
 			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
-			kuang.scale = 1024.0/400.0f;
+			kuang.scale = 1024.0/370.0f;
 			[self addChild:kuang z:6];
 		}
 		

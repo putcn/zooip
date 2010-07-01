@@ -34,7 +34,7 @@ static FeedbackDialog *_feedbackDialog;
 	if ((self = [super init])) {
 		isShowing = NO;
 		msgQuence = [[NSMutableArray alloc] init];
-		CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"msgPopup.png" ofType:nil] ] ];
+		CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"条形_bg.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture: bg];

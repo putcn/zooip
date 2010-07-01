@@ -17,9 +17,15 @@
 #import "FeedbackDialog.h"
 
 @interface StoButtonContainer : CCSprite {
-	int currentPageNum;
-	int totalPage;
-	int currentNum;
+	int currentPageNumOne;
+	int totalPageOne;
+	int currentNumOne;
+	int neggOne;
+	
+	int currentPageNumTwo;
+	int totalPageTwo;
+	int currentNumTwo;
+	int neggTwo;
 	
 	NSString *tabFlag;
 	id parentTarget;
@@ -36,6 +42,7 @@
 -(id) initWithTab:(NSString *)tabName setTarget:(id)target;
 -(void) initView;
 -(void) addChangePageButton;
+-(void) addEggToStage;
 
 -(void) resultCallback:(NSObject *)value;
 -(void) faultCallback:(NSObject *)value;

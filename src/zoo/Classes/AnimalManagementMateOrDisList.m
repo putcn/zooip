@@ -107,24 +107,30 @@
 			endNumber = [[DataEnvironment sharedDataEnvironment].animalIDs count];
 		}
 		currentNum = endNumber - (currentPageNum -1 ) *8 ;
-		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
+		int kTemp = 0;
+		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) 
+		{
 			originAnimal = [animalIDs objectAtIndex:i];
 			aniID = [animalIDs objectAtIndex:i];
 			DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
 			if(serverAnimalData2.coupleAnimalId != nil)
 			{
-			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
-			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
-			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
-			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1 setPictureScale:2.0];
-			itemButton.position = ccp(230 * (i%4) + 120, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 140);
-			[self addChild:itemButton z:7 tag:i%8];
+				NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
+				NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
+				NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
+				AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1 setPictureScale:2.0];
+				itemButton.position = ccp(230 * (kTemp%4) + 120, self.contentSize.height - 220 * ((kTemp-8*(currentPageNum-1))/4) - 140);
+				[self addChild:itemButton z:7 tag:kTemp%8];
+				
+				CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+				kuang.position = ccp(230 * (kTemp%4) + 110,  self.contentSize.height - 215 * ((kTemp-8*(currentPageNum-1))/4) - 100);
+				kuang.scale = 1024.0/400.0f;
+				[self addChild:kuang z:6];
+				
+				kTemp++;
 			}
 			
-			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-			kuang.position = ccp(230 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
-			kuang.scale = 1024.0/400.0f;
-			[self addChild:kuang z:6];
+			
 		}
 	}
 	
