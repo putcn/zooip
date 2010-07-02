@@ -188,7 +188,7 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[playerInitFlowController startStep];
 		
 		// Add by Hunk on 2010-06-30
-		[playerInitFlowController release];
+		//[playerInitFlowController release];
 		
 		
 		[uiLayer switchPlayerZoo];
