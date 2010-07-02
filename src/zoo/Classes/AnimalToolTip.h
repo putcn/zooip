@@ -12,14 +12,16 @@
 
 
 
-@interface AnimalToolTip : ToolTip{
+@interface AnimalToolTip : ToolTip{ 
 	CCLabel *nameLbl;
 	CCLabel *timeLbl;
-	CCSprite *processorBar;
-	CCSprite *processorFrame;
+//	CCSprite *processorBar;
+//	CCSprite *processorFrame;
 	float remainTime;
 	float totalTime;
 	NSString *animalId;
+	
+	int nRemainTime;
 }
 
 -(id) initWithAnimalId: (NSString *) aniId;

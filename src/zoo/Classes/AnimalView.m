@@ -27,11 +27,6 @@
 		statuses = [[NSDictionary dictionaryWithObjects:stavalues forKeys:stakeys] retain];
 		
 		animationTable = [[[NSMutableDictionary alloc] init] retain];
-		toolTip = [[AnimalToolTip alloc] initWithAnimalId:animalId];
-		toolTip.position = ccp(toolTip.contentSize.width/2, 80);
-		NSLog(@"toolTip x:%d, y:%d", self.position.x, self.position.y);
-		
-		[self addChild:toolTip z:5];
 		// 在子类中实现这个方法
 		// 根据传入的prefix初始化8个方向的动画，
 		// 比如prefix是bird，向上走的动画第一帧图片可能就是bird_walk_up_001
@@ -157,7 +152,16 @@
 {
 	int type = [[UIController sharedUIController] getOperation];
 	if (type == OPERATION_DEFAULT) {
+		if(toolTip == nil)
+		{
+			toolTip = [[AnimalToolTip alloc] initWithAnimalId:animalId];
+			toolTip.position = ccp(toolTip.contentSize.width/2-20, 130);
+			NSLog(@"toolTip x:%d, y:%d", self.position.x, self.position.y);
+			
+			[self addChild:toolTip z:5];
+		}
 		toolTip.visible = true;
+		
 		[self schedule:@selector(tick:) interval:4.0];
 	}
 	else 

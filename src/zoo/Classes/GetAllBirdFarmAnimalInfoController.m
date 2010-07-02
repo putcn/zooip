@@ -101,14 +101,14 @@
 	}
 	
 	NSInteger code = [[result objectForKey:@"code"] intValue];
-	if(code == 1)
-	{
-		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获得各种动物信息"];
-	}
-	else if(code == 0)
-	{
-		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"获得动物信息失败"];
-	}
+//	if(code == 1)
+//	{
+//		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获得各种动物信息"];
+//	}
+//	else if(code == 0)
+//	{
+//		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"获得动物信息失败"];
+//	}
 	
 	[super resultCallback:value];
 }

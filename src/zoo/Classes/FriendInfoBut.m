@@ -55,10 +55,7 @@
 	NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: icoPath]];
 	
 	if (imageData == nil) {
-		
-
-		imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif"]];
-		
+		imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif"]];		
 	}
 	
 	
@@ -84,8 +81,7 @@
 	
 	[self addChild:icoNode z:7];
 	[self addChild:friendNameLab z:7];
-	
-	
+
 }
 
 
