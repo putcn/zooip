@@ -28,39 +28,21 @@ static ImgInitUtil *_sharedImgInitUtil;
 {
 	CCAnimation *animation = [CCAnimation alloc];
 	animation = [CCAnimation animationWithName:@"animal" delay:0.1f];
-	CCTexture2D *image = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:fileName ofType:nil]]];
+	CCSpriteSheet *image = [CCSpriteSheet spriteSheetWithFile:fileName];
+
 	NSInteger containOneLine = max;
 	for (int i = 0; i < number; i++) {
-		CCSpriteFrame *tempSpriteFrame = [CCSpriteFrame frameWithTexture:image rect:CGRectMake(originx + (i % containOneLine) * w, originy + (i/containOneLine) * h, w, h) offset:ccp(0,0)];
-		[animation addFrame:tempSpriteFrame];
-		NSLog(@"second x.....%f, y.....%f",originx + (i % containOneLine) * w, originy + (i/containOneLine) * h);
+		CCSpriteFrame *frame = [CCSpriteFrame frameWithTexture:image.texture rect:CGRectMake(originx + (i % containOneLine) * w, originy + (i/containOneLine) * h, w, h) offset:ccp(0,0)];
+		[animation addFrame:frame];
 	}
-	[image release];
 	return animation;
 }
 
--(NSDictionary *)getSprite:(NSString *)fileName setOriginX:(float)originx setOriginY:(float)originy setWidth:(float)w setHeight:(float)h setNumber:(NSInteger)number
+-(CCSprite *)getSprite:(NSString *)fileName setOriginX:(float)originx setOriginY:(float)originy setWidth:(float)w setHeight:(float)h setNumber:(NSInteger)number
 {
-	NSMutableDictionary *dictionary = [NSMutableDictionary dictionaryWithCapacity:0];
-	CCTexture2D *image = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:fileName ofType:nil]]];
-	if (number == 5) {
-		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(0, originy, w, h)] forKey:@"down"];
-		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(w, originy, w, h)] forKey:@"left"];
-		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(2*w, originy, w, h)] forKey:@"leftDown"];
-		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(3*w, originy, w, h)] forKey:@"leftUp"];
-		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(4*w, originy, w, h)] forKey:@"up"];
-	}
-	else if(number == 2)
-	{
-		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(0, originy, w, h)] forKey:@"down"];
-		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(w, originy, w, h)] forKey:@"left"];
-	}
-	else if(number == 1)
-	{
-		[dictionary setObject:[CCSprite spriteWithTexture:image rect:CGRectMake(0, originy, w, h)] forKey:@"left"];
-	}
-	[image release];
-	return [NSDictionary dictionaryWithDictionary:dictionary];
+	CCSpriteSheet *image = [CCSpriteSheet spriteSheetWithFile:fileName];
+	CCSprite *tempSprite = [CCSprite spriteWithTexture:image.texture rect:CGRectMake(originx, originy, w, h)];
+	return tempSprite;
 }
 
 // Add by Hunk on 2010-06-29
