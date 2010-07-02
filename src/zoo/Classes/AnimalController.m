@@ -85,7 +85,7 @@ static AnimalController *_sharedAnimalController = nil;
 		[animals setObject:newAnimal forKey:serverAnimalID];
 		
 		// Add by Hunk on 2010-06-30
-		[newAnimal release];
+		//[newAnimal release];
 //		}
 	}
 	

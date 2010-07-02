@@ -23,7 +23,7 @@
 		Button *button;
 		
 		button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"好友图标.png" setTarget:self
-								   setSelector:@selector(btnButtonHandler) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
+								   setSelector:@selector(btnButtonHandler) setPriority:50 offsetX:-1 offsetY:2 scale:0.75];
 		button.position = ccp(20, 20);
 		[self addChild:button];
 	}
