@@ -55,7 +55,7 @@
 		
 		//设置一层半透明背景,点击事件的优先级为50,屏蔽下面图层的点击事件
 		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
-		transBackground.scale = 17.0f;
+		transBackground.scale = 5.0f;
 		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 		[self addChild:transBackground z:-1];
 		

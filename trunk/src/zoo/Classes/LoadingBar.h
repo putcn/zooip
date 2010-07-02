@@ -26,7 +26,7 @@
 			   setSize:(int) labelSize setTarget:(id) targetValue
 		 setSpriteLeft:(CCSprite*) load_left setSpriteMidele:(CCSprite*) load_middle setSpriteRight:(CCSprite*) load_right
 	 setSpriteColoLeft:(CCSprite*) load_Cololeft setSpriteColoMidele:(CCSprite*) load_Colomiddle setSpriteColoRight:(CCSprite*) load_Coloright
-			   offsetX:(int) offsetXValue offsetY:(int) offsetYValue setpercent:(int) cent;
+			   offsetX:(int) offsetXValue offsetY:(int) offsetYValue setpercent:(int) cent setLength:(int)length setTextLegth:(int)textlength setTextHight:(int)texthight;
 
 
 @end

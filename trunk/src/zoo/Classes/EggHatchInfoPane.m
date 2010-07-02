@@ -188,14 +188,11 @@
 			break;
 			
 		case 6:
-			
 			if (payType == @"goldenEgg") {
 				infoStr = [NSString stringWithFormat:@"没有足够的金币"];
 			}else {
 				infoStr = [NSString stringWithFormat:@"没有足够的蚂蚁"];
 			}
-			
-			
 			break;
 			
 		case 7:

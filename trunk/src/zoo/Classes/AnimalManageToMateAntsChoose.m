@@ -133,7 +133,7 @@ antsCount;
 	LoadingBar *load = [[LoadingBar alloc] initWithCCSprite:spercent setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setTarget:target 
 			setSpriteLeft:load_left setSpriteMidele: load_middle setSpriteRight: load_right
 			setSpriteColoLeft: load_Cololeft setSpriteColoMidele: load_Colomiddle setSpriteColoRight: load_Coloright
-			offsetX:70 offsetY:0 setpercent:nlong];
+			offsetX:70 offsetY:0 setpercent:nlong setLength:2 setTextLegth:15 setTextHight:-2];
 	load.position = ccp(self.contentSize.width/2-70 , 50);
 	[self addChild:load z:10];
 	

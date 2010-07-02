@@ -16,7 +16,7 @@
 			setSize:(int) labelSize setTarget:(id) targetValue
 		 setSpriteLeft:(CCSprite*) load_left setSpriteMidele:(CCSprite*) load_middle setSpriteRight:(CCSprite*) load_right
 		setSpriteColoLeft:(CCSprite*) load_Cololeft setSpriteColoMidele:(CCSprite*) load_Colomiddle setSpriteColoRight:(CCSprite*) load_Coloright
-		offsetX:(int) offsetXValue offsetY:(int) offsetYValue setpercent:(int) cent
+			   offsetX:(int) offsetXValue offsetY:(int) offsetYValue setpercent:(int) cent setLength:(int)length setTextLegth:(int)textlength setTextHight:(int)texthight
 {
 	if( (self=[super init] ))
 	{		
@@ -27,18 +27,18 @@
 		[load_middle setAnchorPoint:ccp(0, 0)];
 		load_middle.scaleX = offsetXValue;
 		
-		load_right.position = ccp(offsetXValue*2,0);
+		load_right.position = ccp(offsetXValue*length,0);
 		[load_right setAnchorPoint:ccp(0, 0)];
 		
 		
 		load_Cololeft.position = ccp(-7,2);
 		[load_Cololeft setAnchorPoint:ccp(0, 0)];
 		
-		load_Colomiddle.position = ccp(-2,2);
+		load_Colomiddle.position = ccp(-length,2);
 		[load_Colomiddle setAnchorPoint:ccp(0, 0)];
-		load_Colomiddle.scaleX = offsetYValue*2+4;
+		load_Colomiddle.scaleX = offsetYValue*length+4;
 		
-		load_Coloright.position = ccp(offsetXValue*2+2,2);
+		load_Coloright.position = ccp(offsetXValue*length+2,2);
 		[load_Coloright setAnchorPoint:ccp(0, 0)];
 		
 		
@@ -60,7 +60,7 @@
 		
 		text = [CCLabel labelWithString:labelText fontName:labelFont fontSize:labelSize];
 		[text setAnchorPoint:ccp(0, 0)];
-		text.position = ccp( offsetXValue*2+15 , -2 );
+		text.position = ccp( offsetXValue*2+textlength , texthight );
 		text.color = labelColor;
 		[self addChild:text];
 

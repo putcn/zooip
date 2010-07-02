@@ -282,14 +282,14 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[eggsDic setValue:egg forKey:[egg birdEggId]];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取各种蛋类信息"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取各种蛋类信息"];
 				}
 					break;
-				case 0:
-				{
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"获取蛋类信息失败"];
-				}
-					break ;
+//				case 0:
+//				{
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"获取蛋类信息失败"];
+//				}
+//					break ;
 				default:
 					// TODO
 					break;
@@ -311,14 +311,14 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[snakesDic setValue:snake forKey:snake.releaseSnakeId];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取蛇信息"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取蛇信息"];
 				}
 					break;
-				case 0:
-				{
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场无蛇"];
-				}
-					break;
+//				case 0:
+//				{
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场无蛇"];
+//				}
+//					break;
 				default:
 					// TODO
 				break;
@@ -326,10 +326,10 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 			break;
 		case ZooNetworkRequestgetAntsOfFarm:
 			switch (code) {
-				case 0:
-					// TODO 农场无蚂蚁
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场无蚂蚁"];
-					break;
+//				case 0:
+//					// TODO 农场无蚂蚁
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场无蚂蚁"];
+//					break;
 				case 1:
 				{
 					NSDictionary* antsDic= [[DataEnvironment sharedDataEnvironment] ants];
@@ -344,7 +344,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						[antsDic setValue:ant forKey:ant.releaseAntsId];
 					}
 					
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取蚂蚁信息"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取蚂蚁信息"];
 				}
 					break;
 				default:
@@ -354,10 +354,10 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 			break;
 		case ZooNetworkRequestgetDejectaOfFarm:
 			switch (code) {
-				case 0:
-					// TODO 农场无便便
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场无粪便"];
-					break;
+//				case 0:
+//					// TODO 农场无便便
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场无粪便"];
+//					break;
 				case 1:
 				{
 					NSDictionary* dejectasDic= [[DataEnvironment sharedDataEnvironment] dejectas];
@@ -373,7 +373,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[dejectasDic setValue:dejecta forKey:dejecta.dejectaId];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取粪便信息"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取粪便信息"];
 				}
 					break;
 				default:
@@ -382,10 +382,10 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 			break;
 		case ZooNetworkRequestgetFarmerDog:
 			switch (code) {
-				case 0:
-					// TODO 无狗
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"该农场没有狗"];
-					break;
+//				case 0:
+//					// TODO 无狗
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"该农场没有狗"];
+//					break;
 				case 1:
 				{
 					NSDictionary* dogsDic= [[DataEnvironment sharedDataEnvironment] dogs];
@@ -414,7 +414,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[dogsDic setValue:dog forKey:dog.farmerDogId];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取狗狗信息"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取狗狗信息"];
 				}
 					break;
 				default:
@@ -427,25 +427,25 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 			//"code:1 + message + farmer + farmerId + snsUserId + platformId + userName + userImg + farmPref + fighter + expirationDate + newUser + antsCurrency + goldenEgg
 			//code:0 无动态信息
 			//code:2 该用户不存在"
-			switch (code) {
-				case 0:
-					// TODO 无动态信息
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无动态信息"];
-					break;
-				case 1:
-					// TODO
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取信息"];
-					break;
-				case 2:
-					// TODO 该用户不存在
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"该用户不存在"];
-					break;
-				default:
-					// TODO
-					break;
-			}
-
-			break;
+//			switch (code) {
+//				case 0:
+//					// TODO 无动态信息
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无动态信息"];
+//					break;
+//				case 1:
+//					// TODO
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取信息"];
+//					break;
+//				case 2:
+//					// TODO 该用户不存在
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"该用户不存在"];
+//					break;
+//				default:
+//					// TODO
+//					break;
+//			}
+//
+//			break;
 		case ZooNetworkRequestgetFriendsInfo:
 		{
 			if (response == nil)
@@ -652,14 +652,14 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[storageAnimals setValue:obj forKey:obj.originalAnimalId];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"获取所有购买动物"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"获取所有购买动物"];
 				}
 					break;
-				case 0:
-				{
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何购买动物"];
-				}
-					break;
+//				case 0:
+//				{
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何购买动物"];
+//				}
+//					break;
 				default:
 				{
 					break;
@@ -685,14 +685,14 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[storageAuctionAnimals setValue:obj forKey:obj.animalId];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取动物库存信息"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取动物库存信息"];
 				}
 					break;
-				case 0:
-				{
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何库存"];
-				}
-					break;
+//				case 0:
+//				{
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何库存"];
+//				}
+//					break;
 				default:
 				{
 					break;
@@ -750,14 +750,14 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[sDic setValue:obj forKey:obj.eggStorageId];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取蛋堆信息"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取蛋堆信息"];
 				}
 					break;
-				case 0:
-				{
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何蛋堆信息"];
-				}
-					break;
+//				case 0:
+//				{
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何蛋堆信息"];
+//				}
+//					break;
 				default:
 					break;
 			}
@@ -789,14 +789,14 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[sDic setValue:obj forKey:obj.zygoteStorageId];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取所有受精蛋信息"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取所有受精蛋信息"];
 				}
 					break;
-				case 0:
-				{
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何受精蛋信息"];
-				}
-					break;
+//				case 0:
+//				{
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何受精蛋信息"];
+//				}
+//					break;
 				default:
 					break;
 			}
@@ -844,14 +844,14 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[sDic setValue:obj forKey:obj.originalAnimalId];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取原始动物信息"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取原始动物信息"];
 				}
 					break;
-				case 0:
-				{
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何原始动物信息"];
-				}
-					break;
+//				case 0:
+//				{
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何原始动物信息"];
+//				}
+//					break;
 				default:
 					break;
 			}
@@ -916,14 +916,14 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[sDic setValue:obj forKey:obj.goodsId];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取商店信息"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取商店信息"];
 				}
 					break;
-				case 0:
-				{
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何商店信息"];
-				}
-					break;
+//				case 0:
+//				{
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何商店信息"];
+//				}
+//					break;
 				default:
 					break;
 			}
