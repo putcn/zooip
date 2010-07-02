@@ -16,7 +16,7 @@
 {	
 	if ((self = [super init])) {
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
-		animationTable = [imageProp animationTable:@"duck.png" plistName:@"duck.plist"];
+		animationTable = [imageProp animationTable:@"_duck.png" plistName:@"_duck.plist"];
 		NSLog(@"------------%@", animationTable);
 //		//walk animations
 //		CCAnimation* walkUpAnimation = [CCAnimation animationWithName:@"walkUp" delay:0.04f];
