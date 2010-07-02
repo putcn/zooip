@@ -38,8 +38,8 @@
 		
 		
 		//实现翻页按钮
-		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:49 offsetX:0 offsetY:0 scale:3.0f];
-		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:49 offsetX:0 offsetY:0 scale:3.0f];
+		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:40 offsetX:0 offsetY:0 scale:3.0f];
+		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:40 offsetX:0 offsetY:0 scale:3.0f];
 //		forwardPageBtn.flipX = YES;
 		nextPageBtn.position = ccp( 770, -480);
 		forwardPageBtn.position = ccp(200, -480);
@@ -130,7 +130,7 @@
 			{
 			//根据动物的originalAnimalId生成ItemButton
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",originAnimal.picturePrefix];
-			ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:49 offsetX:1 offsetY:1];
+			ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:40 offsetX:1 offsetY:1];
 			itemButton.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%8];
 			
@@ -160,7 +160,7 @@
 				price = [NSString stringWithFormat:@"%d",dataModelFood.antsRequired];
 			}
 			NSString *picFileName = [NSString stringWithFormat:@"food_%@.png",dataModelFood.foodImg];
-			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelFood.foodId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:49 offsetX:1 offsetY:1];
+			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelFood.foodId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:40 offsetX:1 offsetY:1];
 			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%8];
 			
@@ -195,7 +195,7 @@
 			{	
 				picFileName = @"chinemy_walk_left_01.png";
 			}
-			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelGood.goodsId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:49 offsetX:1 offsetY:1];
+			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelGood.goodsId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:40 offsetX:1 offsetY:1];
 			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%8];
 			
