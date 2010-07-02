@@ -28,13 +28,24 @@
 	NSString* strBaseKey = [plistName substringWithRange:pathForResourceRange];
 	
 	// path of .plist
-	NSString *strPath = [[NSBundle mainBundle] pathForResource:plistName ofType:nil];
+	NSString *strPath = [[NSBundle mainBundle] pathForResource:[plistName lowercaseString] ofType:nil];
 	
 	// Base dictionary
 	NSDictionary* baseDictionary = [NSDictionary dictionaryWithContentsOfFile:strPath];
 	
+	
+	// strBaseKey
+//	NSRange baseKeyFlag = [strBaseKey rangeOfString:@"_"];
+	NSRange pathForBaseKey;
+	pathForBaseKey.location = 1;
+	pathForBaseKey.length = [strBaseKey length] - 1;
+	NSString* newBaseKey = [[strBaseKey substringWithRange:pathForBaseKey] lowercaseString];
+	
+	
+
+	
 	// Get all keys
-	NSDictionary* allKeysDictionary = [baseDictionary objectForKey:strBaseKey];
+	NSDictionary* allKeysDictionary = [baseDictionary objectForKey:newBaseKey];
 	
 	// Get max items
 	NSString* strMaxItems = [allKeysDictionary objectForKey:@"maxItems"];
