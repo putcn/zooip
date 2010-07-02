@@ -81,12 +81,12 @@
 			NSInteger nHeight = [strHeight intValue];
 			
 			if (nNumber == 1) {
-				CCSprite* sprite = [[ImgInitUtil sharedImgInitUtil] getSprite:imageName setOriginX:nOriginX setOriginY:nOriginY setWidth:nWidth setHeight:nHeight setNumber:nNumber];
+				CCSprite* sprite = [[ImgInitUtil sharedImgInitUtil] getSprite:[imageName lowercaseString] setOriginX:nOriginX setOriginY:nOriginY setWidth:nWidth setHeight:nHeight setNumber:nNumber];
 				[aniTable setObject:sprite forKey:key];
 			}
 			else if(nNumber > 1)
 			{
-				CCAnimation* animation = [[ImgInitUtil sharedImgInitUtil] getAnimate:imageName setOriginX:nOriginX setOriginY:nOriginY setWidth:nWidth setHeight:nHeight setNumber:nNumber setMaxOneline:nMaxItems];
+				CCAnimation* animation = [[ImgInitUtil sharedImgInitUtil] getAnimate:[imageName lowercaseString] setOriginX:nOriginX setOriginY:nOriginY setWidth:nWidth setHeight:nHeight setNumber:nNumber setMaxOneline:nMaxItems];
 				
 				// Put animation into table
 				[aniTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]] forKey:key];						
