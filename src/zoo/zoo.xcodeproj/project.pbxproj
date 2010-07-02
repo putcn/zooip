@@ -40,6 +40,8 @@
 		3EA9E0A511BC73D000EF4ECB /* FeedbackDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9E0A411BC73D000EF4ECB /* FeedbackDialog.m */; };
 		3EA9E0A711BC7B2E00EF4ECB /* msgPopup.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EA9E0A611BC7B2E00EF4ECB /* msgPopup.png */; };
 		3EA9E23E11BCB67100EF4ECB /* GetAllOriginalAnimalController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EA9E23D11BCB67100EF4ECB /* GetAllOriginalAnimalController.m */; };
+		3EAA842A11DCBECA00E64409 /* duck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3EAA842811DCBECA00E64409 /* duck.plist */; };
+		3EAA842B11DCBECA00E64409 /* duck.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAA842911DCBECA00E64409 /* duck.png */; };
 		3EAD8A9F11AEC0F700CE397E /* transimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EAD8A9E11AEC0F700CE397E /* transimg.png */; };
 		3EAD8B0011AEC76D00CE397E /* TransBackground.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD8AFF11AEC76D00CE397E /* TransBackground.m */; };
 		3EAD8FDC11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EAD8FDB11B8E6F1005AA92B /* AniamalManagementMateOrDisapart.m */; };
@@ -5645,6 +5647,7 @@
 		3EE5BE7311AFC2050009EF17 /* mandarinDuck_walk_leftDown_16.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE5BDF811AFC2050009EF17 /* mandarinDuck_walk_leftDown_16.png */; };
 		3EE5BE7411AFC2050009EF17 /* mandarinDuck_walk_leftDown_17.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EE5BDF911AFC2050009EF17 /* mandarinDuck_walk_leftDown_17.png */; };
 		3EE7531611B4E665002475B0 /* ScalerPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE7531511B4E665002475B0 /* ScalerPane.m */; };
+		3EE9C8D211DCA1BB00376116 /* AnimalImageProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9C8D111DCA1BB00376116 /* AnimalImageProperty.m */; };
 		3EEACF1E119D68BD00158FB0 /* ant_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEACF17119D68BD00158FB0 /* ant_01.png */; };
 		3EEACF1F119D68BD00158FB0 /* ant_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEACF18119D68BD00158FB0 /* ant_02.png */; };
 		3EEACF20119D68BD00158FB0 /* ant_03.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EEACF19119D68BD00158FB0 /* ant_03.png */; };
@@ -6329,7 +6332,6 @@
 		847210A811D1ED70008AC4CB /* 好友图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 847210A011D1ED70008AC4CB /* 好友图标.png */; };
 		847210A911D1ED70008AC4CB /* LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 847210A111D1ED70008AC4CB /* LOGO.png */; };
 		8484D4A111D3400300232B09 /* bg_friend.png in Resources */ = {isa = PBXBuildFile; fileRef = 8484D4A011D3400300232B09 /* bg_friend.png */; };
-		84979C1A11CF0E4700A0F048 /* duck1.png in Resources */ = {isa = PBXBuildFile; fileRef = 84979C1911CF0E4700A0F048 /* duck1.png */; };
 		849AAE3F11BE715100B97CD4 /* EggHatchInfoPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 849AAE3E11BE715100B97CD4 /* EggHatchInfoPane.m */; };
 		849E038511C1DF39002056FC /* FriendInfoBut.m in Sources */ = {isa = PBXBuildFile; fileRef = 849E038411C1DF39002056FC /* FriendInfoBut.m */; };
 		84BAE6A5138DDEF300E6F7D3 /* babyRCC.png in Resources */ = {isa = PBXBuildFile; fileRef = 84BAE6A4138DDEF300E6F7D3 /* babyRCC.png */; };
@@ -6564,6 +6566,8 @@
 		3EA9E0A611BC7B2E00EF4ECB /* msgPopup.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = msgPopup.png; sourceTree = "<group>"; };
 		3EA9E23C11BCB67100EF4ECB /* GetAllOriginalAnimalController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetAllOriginalAnimalController.h; sourceTree = "<group>"; };
 		3EA9E23D11BCB67100EF4ECB /* GetAllOriginalAnimalController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GetAllOriginalAnimalController.m; sourceTree = "<group>"; };
+		3EAA842811DCBECA00E64409 /* duck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = duck.plist; sourceTree = "<group>"; };
+		3EAA842911DCBECA00E64409 /* duck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duck.png; sourceTree = "<group>"; };
 		3EAD8A9E11AEC0F700CE397E /* transimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = transimg.png; sourceTree = "<group>"; };
 		3EAD8AFE11AEC76D00CE397E /* TransBackground.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TransBackground.h; sourceTree = "<group>"; };
 		3EAD8AFF11AEC76D00CE397E /* TransBackground.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TransBackground.m; sourceTree = "<group>"; };
@@ -12202,6 +12206,8 @@
 		3EE5BDF911AFC2050009EF17 /* mandarinDuck_walk_leftDown_17.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mandarinDuck_walk_leftDown_17.png; sourceTree = "<group>"; };
 		3EE7531411B4E665002475B0 /* ScalerPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalerPane.h; sourceTree = "<group>"; };
 		3EE7531511B4E665002475B0 /* ScalerPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScalerPane.m; sourceTree = "<group>"; };
+		3EE9C8D011DCA1BB00376116 /* AnimalImageProperty.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalImageProperty.h; sourceTree = "<group>"; };
+		3EE9C8D111DCA1BB00376116 /* AnimalImageProperty.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalImageProperty.m; sourceTree = "<group>"; };
 		3EEACF17119D68BD00158FB0 /* ant_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ant_01.png; sourceTree = "<group>"; };
 		3EEACF18119D68BD00158FB0 /* ant_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ant_02.png; sourceTree = "<group>"; };
 		3EEACF19119D68BD00158FB0 /* ant_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ant_03.png; sourceTree = "<group>"; };
@@ -12922,7 +12928,6 @@
 		8474A84E11BCE31700696BB3 /* zygote9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zygote9.png; sourceTree = "<group>"; };
 		8474A84F11BCE31700696BB3 /* zygote11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = zygote11.png; sourceTree = "<group>"; };
 		8484D4A011D3400300232B09 /* bg_friend.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bg_friend.png; sourceTree = "<group>"; };
-		84979C1911CF0E4700A0F048 /* duck1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duck1.png; sourceTree = "<group>"; };
 		849AAE3D11BE715100B97CD4 /* EggHatchInfoPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggHatchInfoPane.h; sourceTree = "<group>"; };
 		849AAE3E11BE715100B97CD4 /* EggHatchInfoPane.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggHatchInfoPane.m; sourceTree = "<group>"; };
 		849E038311C1DF39002056FC /* FriendInfoBut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendInfoBut.h; sourceTree = "<group>"; };
@@ -23171,10 +23176,11 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3EAA842811DCBECA00E64409 /* duck.plist */,
+				3EAA842911DCBECA00E64409 /* duck.png */,
 				6BD28EEB11D3001D00BE2859 /* Common */,
 				6BD28DCF11D3000D00BE2859 /* 动物园切图 */,
 				8472109911D1ED70008AC4CB /* friendImage */,
-				84979C1911CF0E4700A0F048 /* duck1.png */,
 				3ECBBB2D11AFB63B00A7ADFA /* collision */,
 				3E4B1FB411AE7E840044D43E /* ButtonContainer.png */,
 				3E4B1FB511AE7E840044D43E /* goldant.png */,
@@ -23759,6 +23765,8 @@
 		BF0074841159E88E0003B411 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				3EE9C8D011DCA1BB00376116 /* AnimalImageProperty.h */,
+				3EE9C8D111DCA1BB00376116 /* AnimalImageProperty.m */,
 				3EC7E39B119A90FF00791BAD /* OperationView */,
 				3EC7E392119A8C6C00791BAD /* Animals */,
 				3EED46B4119673430093FF6E /* Items */,
@@ -30353,7 +30361,6 @@
 				6074904F11B515E1002D8922 /* 婚姻管理.png in Resources */,
 				3EA9E0A711BC7B2E00EF4ECB /* msgPopup.png in Resources */,
 				C39CFC1E11BFC6A90063B01E /* Doxyfile in Resources */,
-				84979C1A11CF0E4700A0F048 /* duck1.png in Resources */,
 				847210A311D1ED70008AC4CB /* exitButton.png in Resources */,
 				847210A411D1ED70008AC4CB /* friendIcoRim.png in Resources */,
 				847210A811D1ED70008AC4CB /* 好友图标.png in Resources */,
@@ -30437,6 +30444,8 @@
 				6BBC379D11D83E3F0081CB4D /* 翻页_右_按下.png in Resources */,
 				6BBC379E11D83E3F0081CB4D /* 翻页_左_弹起.png in Resources */,
 				6BBC379F11D83E3F0081CB4D /* 翻页_左_按下.png in Resources */,
+				3EAA842A11DCBECA00E64409 /* duck.plist in Resources */,
+				3EAA842B11DCBECA00E64409 /* duck.png in Resources */,
 				6B03D7FB11DC74D0000F2201 /* blueBg.png in Resources */,
 				6B03D7FC11DC74D0000F2201 /* demo.png in Resources */,
 				6B03D7FD11DC74D0000F2201 /* leftBlue.png in Resources */,
@@ -30659,6 +30668,7 @@
 				84BE160311C75ED50065A080 /* FriendMangePanel.m in Sources */,
 				6BCE3CEA11D059320006A430 /* LoadView.m in Sources */,
 				6BC5C16E11DB3DE700644D52 /* LoadingBar.m in Sources */,
+				3EE9C8D211DCA1BB00376116 /* AnimalImageProperty.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
