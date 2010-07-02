@@ -36,7 +36,7 @@
 		[self addChild:bg_2 z:5 ];
 		
 		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
-											   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:0.75];
+											   setSelector:@selector(OverIconHandler) setPriority:40 offsetX:-1 offsetY:2 scale:0.75];
 		statusIcon.position = ccp(350, 6);
 		[self addChild:statusIcon z:5 ];
 		[statusIcon release];
@@ -64,7 +64,7 @@
 		}
 		
 		//设置一层半透明背景,点击事件的优先级为50,屏蔽下面图层的点击事件
-		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:50];
+		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
 		transBackground.scale = 5.0f;
 		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 		[self addChild:transBackground z:-1];
@@ -92,10 +92,10 @@
 		NSString *tempString = [tabArray objectAtIndex:i];
 		CCSprite *tempTab;
 		if (i == 0) {
-			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:16 setBackground:@"tab_press.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
+			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:16 setBackground:@"tab_press.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 		}
 		else {
-			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:16 setBackground:@"tab.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:49 offsetX:0 offsetY:0 scale:1.0f];
+			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:16 setBackground:@"tab.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 		}
 		tempTab.position = ccp((rect.size.width) * i + tempTab.contentSize.width + 70 , self.contentSize.height+5);
 		tempTab.tag = i;

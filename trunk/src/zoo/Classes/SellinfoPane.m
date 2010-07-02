@@ -164,7 +164,7 @@
 		
 		
 		//孵化按钮
-		Button *hatchBtn = [[Button alloc] initWithLabel:@"孵化" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(hatchHandler:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+		Button *hatchBtn = [[Button alloc] initWithLabel:@"孵化" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(hatchHandler:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
 		hatchBtn.target = self;
 		hatchBtn.position = ccp(self.contentSize.height/2 , 35);
 		[self addChild:hatchBtn z:10];
@@ -174,9 +174,9 @@
 	}
 	[dic release];
 	
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"出售" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(sellEggItem:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"出售" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(sellEggItem:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
 	
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancel:) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
+	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancel:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
 	
 	//为Button添加绑定的参数列表
 	confirmBtn.target = self;
