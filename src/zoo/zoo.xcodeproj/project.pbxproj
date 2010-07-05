@@ -740,16 +740,12 @@
 		609F842911DDE83C00839DA8 /* _babyWildgoose.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F83EB11DDE83B00839DA8 /* _babyWildgoose.png */; };
 		609F842A11DDE83C00839DA8 /* _chinemy.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F83EC11DDE83B00839DA8 /* _chinemy.plist */; };
 		609F842B11DDE83C00839DA8 /* _chinemy.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F83ED11DDE83B00839DA8 /* _chinemy.png */; };
-		609F842C11DDE83C00839DA8 /* _crane.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F83EE11DDE83B00839DA8 /* _crane.plist */; };
-		609F842D11DDE83C00839DA8 /* _crane.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F83EF11DDE83B00839DA8 /* _crane.png */; };
 		609F842E11DDE83C00839DA8 /* _dog.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F83F011DDE83B00839DA8 /* _dog.plist */; };
 		609F842F11DDE83C00839DA8 /* _dog.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F83F111DDE83B00839DA8 /* _dog.png */; };
 		609F843011DDE83C00839DA8 /* _goose.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F83F211DDE83B00839DA8 /* _goose.plist */; };
 		609F843111DDE83C00839DA8 /* _goose.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F83F311DDE83B00839DA8 /* _goose.png */; };
 		609F843211DDE83C00839DA8 /* _hen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F83F411DDE83B00839DA8 /* _hen.plist */; };
 		609F843311DDE83C00839DA8 /* _hen.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F83F511DDE83B00839DA8 /* _hen.png */; };
-		609F843411DDE83C00839DA8 /* _magpie.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F83F611DDE83B00839DA8 /* _magpie.plist */; };
-		609F843511DDE83C00839DA8 /* _magpie.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F83F711DDE83C00839DA8 /* _magpie.png */; };
 		609F843611DDE83C00839DA8 /* _maleMandarinDuck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F83F811DDE83C00839DA8 /* _maleMandarinDuck.plist */; };
 		609F843711DDE83C00839DA8 /* _maleMandarinDuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F83F911DDE83C00839DA8 /* _maleMandarinDuck.png */; };
 		609F843811DDE83C00839DA8 /* _malePheasant.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F83FA11DDE83C00839DA8 /* _malePheasant.plist */; };
@@ -760,10 +756,6 @@
 		609F843D11DDE83C00839DA8 /* _mandarinDuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F83FF11DDE83C00839DA8 /* _mandarinDuck.png */; };
 		609F843E11DDE83C00839DA8 /* _nest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F840011DDE83C00839DA8 /* _nest.plist */; };
 		609F843F11DDE83C00839DA8 /* _nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F840111DDE83C00839DA8 /* _nest.png */; };
-		609F844011DDE83C00839DA8 /* _parrot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F840211DDE83C00839DA8 /* _parrot.plist */; };
-		609F844111DDE83C00839DA8 /* _parrot.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F840311DDE83C00839DA8 /* _parrot.png */; };
-		609F844211DDE83C00839DA8 /* _peacock.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F840411DDE83C00839DA8 /* _peacock.plist */; };
-		609F844311DDE83C00839DA8 /* _peacock.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F840511DDE83C00839DA8 /* _peacock.png */; };
 		609F844411DDE83C00839DA8 /* _peahen.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F840611DDE83C00839DA8 /* _peahen.plist */; };
 		609F844511DDE83C00839DA8 /* _peahen.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F840711DDE83C00839DA8 /* _peahen.png */; };
 		609F844611DDE83C00839DA8 /* _pheasant.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F840811DDE83C00839DA8 /* _pheasant.plist */; };
@@ -774,8 +766,6 @@
 		609F844B11DDE83C00839DA8 /* _rooster.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F840D11DDE83C00839DA8 /* _rooster.png */; };
 		609F844C11DDE83C00839DA8 /* _snake.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F840E11DDE83C00839DA8 /* _snake.plist */; };
 		609F844D11DDE83C00839DA8 /* _snake.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F840F11DDE83C00839DA8 /* _snake.png */; };
-		609F844E11DDE83C00839DA8 /* _swan.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F841011DDE83C00839DA8 /* _swan.plist */; };
-		609F844F11DDE83C00839DA8 /* _swan.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F841111DDE83C00839DA8 /* _swan.png */; };
 		609F845011DDE83C00839DA8 /* _turkey.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F841211DDE83C00839DA8 /* _turkey.plist */; };
 		609F845111DDE83C00839DA8 /* _turkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F841311DDE83C00839DA8 /* _turkey.png */; };
 		609F845211DDE83C00839DA8 /* _turkeycock.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F841411DDE83C00839DA8 /* _turkeycock.plist */; };
@@ -785,6 +775,24 @@
 		609F849511DDEA9D00839DA8 /* _duck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F849311DDEA9D00839DA8 /* _duck.plist */; };
 		609F849611DDEA9D00839DA8 /* _duck.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F849411DDEA9D00839DA8 /* _duck.png */; };
 		60A0CDBE11B78066001AF9BD /* AnimalManageToMateAntsChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */; };
+		60AA1D9A11E171D1009CA603 /* _crane_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1D9611E171D1009CA603 /* _crane_1.plist */; };
+		60AA1D9B11E171D1009CA603 /* _crane_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1D9711E171D1009CA603 /* _crane_1.png */; };
+		60AA1D9C11E171D1009CA603 /* _crane_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1D9811E171D1009CA603 /* _crane_2.plist */; };
+		60AA1D9D11E171D1009CA603 /* _crane_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1D9911E171D1009CA603 /* _crane_2.png */; };
+		60AA1DA211E171F8009CA603 /* _magpie_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1D9E11E171F8009CA603 /* _magpie_1.plist */; };
+		60AA1DA311E171F8009CA603 /* _magpie_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1D9F11E171F8009CA603 /* _magpie_1.png */; };
+		60AA1DA411E171F8009CA603 /* _magpie_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DA011E171F8009CA603 /* _magpie_2.plist */; };
+		60AA1DA511E171F8009CA603 /* _magpie_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DA111E171F8009CA603 /* _magpie_2.png */; };
+		60AA1DAC11E17217009CA603 /* _parrot_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DA611E17216009CA603 /* _parrot_1.plist */; };
+		60AA1DAD11E17217009CA603 /* _parrot_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DA711E17216009CA603 /* _parrot_1.png */; };
+		60AA1DAE11E17217009CA603 /* _parrot_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DA811E17216009CA603 /* _parrot_2.plist */; };
+		60AA1DAF11E17217009CA603 /* _parrot_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DA911E17217009CA603 /* _parrot_2.png */; };
+		60AA1DB011E17217009CA603 /* _peacock.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DAA11E17217009CA603 /* _peacock.plist */; };
+		60AA1DB111E17217009CA603 /* _peacock.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DAB11E17217009CA603 /* _peacock.png */; };
+		60AA1DB611E1725A009CA603 /* _swan_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DB211E1725A009CA603 /* _swan_1.plist */; };
+		60AA1DB711E1725A009CA603 /* _swan_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DB311E1725A009CA603 /* _swan_1.png */; };
+		60AA1DB811E1725A009CA603 /* _swan_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DB411E1725A009CA603 /* _swan_2.plist */; };
+		60AA1DB911E1725A009CA603 /* _swan_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DB511E1725A009CA603 /* _swan_2.png */; };
 		6B03D7FB11DC74D0000F2201 /* blueBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7ED11DC74D0000F2201 /* blueBg.png */; };
 		6B03D7FC11DC74D0000F2201 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7EE11DC74D0000F2201 /* demo.png */; };
 		6B03D7FD11DC74D0000F2201 /* leftBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7EF11DC74D0000F2201 /* leftBlue.png */; };
@@ -1868,16 +1876,12 @@
 		609F83EB11DDE83B00839DA8 /* _babyWildgoose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _babyWildgoose.png; sourceTree = "<group>"; };
 		609F83EC11DDE83B00839DA8 /* _chinemy.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _chinemy.plist; sourceTree = "<group>"; };
 		609F83ED11DDE83B00839DA8 /* _chinemy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _chinemy.png; sourceTree = "<group>"; };
-		609F83EE11DDE83B00839DA8 /* _crane.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _crane.plist; sourceTree = "<group>"; };
-		609F83EF11DDE83B00839DA8 /* _crane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _crane.png; sourceTree = "<group>"; };
 		609F83F011DDE83B00839DA8 /* _dog.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _dog.plist; sourceTree = "<group>"; };
 		609F83F111DDE83B00839DA8 /* _dog.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _dog.png; sourceTree = "<group>"; };
 		609F83F211DDE83B00839DA8 /* _goose.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _goose.plist; sourceTree = "<group>"; };
 		609F83F311DDE83B00839DA8 /* _goose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _goose.png; sourceTree = "<group>"; };
 		609F83F411DDE83B00839DA8 /* _hen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _hen.plist; sourceTree = "<group>"; };
 		609F83F511DDE83B00839DA8 /* _hen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _hen.png; sourceTree = "<group>"; };
-		609F83F611DDE83B00839DA8 /* _magpie.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _magpie.plist; sourceTree = "<group>"; };
-		609F83F711DDE83C00839DA8 /* _magpie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _magpie.png; sourceTree = "<group>"; };
 		609F83F811DDE83C00839DA8 /* _maleMandarinDuck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _maleMandarinDuck.plist; sourceTree = "<group>"; };
 		609F83F911DDE83C00839DA8 /* _maleMandarinDuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _maleMandarinDuck.png; sourceTree = "<group>"; };
 		609F83FA11DDE83C00839DA8 /* _malePheasant.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _malePheasant.plist; sourceTree = "<group>"; };
@@ -1888,10 +1892,6 @@
 		609F83FF11DDE83C00839DA8 /* _mandarinDuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _mandarinDuck.png; sourceTree = "<group>"; };
 		609F840011DDE83C00839DA8 /* _nest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _nest.plist; sourceTree = "<group>"; };
 		609F840111DDE83C00839DA8 /* _nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _nest.png; sourceTree = "<group>"; };
-		609F840211DDE83C00839DA8 /* _parrot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _parrot.plist; sourceTree = "<group>"; };
-		609F840311DDE83C00839DA8 /* _parrot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _parrot.png; sourceTree = "<group>"; };
-		609F840411DDE83C00839DA8 /* _peacock.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _peacock.plist; sourceTree = "<group>"; };
-		609F840511DDE83C00839DA8 /* _peacock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _peacock.png; sourceTree = "<group>"; };
 		609F840611DDE83C00839DA8 /* _peahen.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _peahen.plist; sourceTree = "<group>"; };
 		609F840711DDE83C00839DA8 /* _peahen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _peahen.png; sourceTree = "<group>"; };
 		609F840811DDE83C00839DA8 /* _pheasant.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _pheasant.plist; sourceTree = "<group>"; };
@@ -1902,8 +1902,6 @@
 		609F840D11DDE83C00839DA8 /* _rooster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _rooster.png; sourceTree = "<group>"; };
 		609F840E11DDE83C00839DA8 /* _snake.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _snake.plist; sourceTree = "<group>"; };
 		609F840F11DDE83C00839DA8 /* _snake.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _snake.png; sourceTree = "<group>"; };
-		609F841011DDE83C00839DA8 /* _swan.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _swan.plist; sourceTree = "<group>"; };
-		609F841111DDE83C00839DA8 /* _swan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _swan.png; sourceTree = "<group>"; };
 		609F841211DDE83C00839DA8 /* _turkey.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _turkey.plist; sourceTree = "<group>"; };
 		609F841311DDE83C00839DA8 /* _turkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _turkey.png; sourceTree = "<group>"; };
 		609F841411DDE83C00839DA8 /* _turkeycock.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _turkeycock.plist; sourceTree = "<group>"; };
@@ -1914,6 +1912,24 @@
 		609F849411DDEA9D00839DA8 /* _duck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _duck.png; sourceTree = "<group>"; };
 		60A0CDBC11B78066001AF9BD /* AnimalManageToMateAntsChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageToMateAntsChoose.h; sourceTree = "<group>"; };
 		60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageToMateAntsChoose.m; sourceTree = "<group>"; };
+		60AA1D9611E171D1009CA603 /* _crane_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _crane_1.plist; path = Sunday/_crane_1.plist; sourceTree = "<group>"; };
+		60AA1D9711E171D1009CA603 /* _crane_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _crane_1.png; path = Sunday/_crane_1.png; sourceTree = "<group>"; };
+		60AA1D9811E171D1009CA603 /* _crane_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _crane_2.plist; path = Sunday/_crane_2.plist; sourceTree = "<group>"; };
+		60AA1D9911E171D1009CA603 /* _crane_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _crane_2.png; path = Sunday/_crane_2.png; sourceTree = "<group>"; };
+		60AA1D9E11E171F8009CA603 /* _magpie_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _magpie_1.plist; path = Sunday/_magpie_1.plist; sourceTree = "<group>"; };
+		60AA1D9F11E171F8009CA603 /* _magpie_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _magpie_1.png; path = Sunday/_magpie_1.png; sourceTree = "<group>"; };
+		60AA1DA011E171F8009CA603 /* _magpie_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _magpie_2.plist; path = Sunday/_magpie_2.plist; sourceTree = "<group>"; };
+		60AA1DA111E171F8009CA603 /* _magpie_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _magpie_2.png; path = Sunday/_magpie_2.png; sourceTree = "<group>"; };
+		60AA1DA611E17216009CA603 /* _parrot_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _parrot_1.plist; path = Sunday/_parrot_1.plist; sourceTree = "<group>"; };
+		60AA1DA711E17216009CA603 /* _parrot_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _parrot_1.png; path = Sunday/_parrot_1.png; sourceTree = "<group>"; };
+		60AA1DA811E17216009CA603 /* _parrot_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _parrot_2.plist; path = Sunday/_parrot_2.plist; sourceTree = "<group>"; };
+		60AA1DA911E17217009CA603 /* _parrot_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _parrot_2.png; path = Sunday/_parrot_2.png; sourceTree = "<group>"; };
+		60AA1DAA11E17217009CA603 /* _peacock.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _peacock.plist; path = Sunday/_peacock.plist; sourceTree = "<group>"; };
+		60AA1DAB11E17217009CA603 /* _peacock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _peacock.png; path = Sunday/_peacock.png; sourceTree = "<group>"; };
+		60AA1DB211E1725A009CA603 /* _swan_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _swan_1.plist; path = Sunday/_swan_1.plist; sourceTree = "<group>"; };
+		60AA1DB311E1725A009CA603 /* _swan_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _swan_1.png; path = Sunday/_swan_1.png; sourceTree = "<group>"; };
+		60AA1DB411E1725A009CA603 /* _swan_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _swan_2.plist; path = Sunday/_swan_2.plist; sourceTree = "<group>"; };
+		60AA1DB511E1725A009CA603 /* _swan_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _swan_2.png; path = Sunday/_swan_2.png; sourceTree = "<group>"; };
 		6B03D7ED11DC74D0000F2201 /* blueBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBg.png; sourceTree = "<group>"; };
 		6B03D7EE11DC74D0000F2201 /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
 		6B03D7EF11DC74D0000F2201 /* leftBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftBlue.png; sourceTree = "<group>"; };
@@ -3457,6 +3473,24 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				60AA1DB211E1725A009CA603 /* _swan_1.plist */,
+				60AA1DB311E1725A009CA603 /* _swan_1.png */,
+				60AA1DB411E1725A009CA603 /* _swan_2.plist */,
+				60AA1DB511E1725A009CA603 /* _swan_2.png */,
+				60AA1DA611E17216009CA603 /* _parrot_1.plist */,
+				60AA1DA711E17216009CA603 /* _parrot_1.png */,
+				60AA1DA811E17216009CA603 /* _parrot_2.plist */,
+				60AA1DA911E17217009CA603 /* _parrot_2.png */,
+				60AA1DAA11E17217009CA603 /* _peacock.plist */,
+				60AA1DAB11E17217009CA603 /* _peacock.png */,
+				60AA1D9E11E171F8009CA603 /* _magpie_1.plist */,
+				60AA1D9F11E171F8009CA603 /* _magpie_1.png */,
+				60AA1DA011E171F8009CA603 /* _magpie_2.plist */,
+				60AA1DA111E171F8009CA603 /* _magpie_2.png */,
+				60AA1D9611E171D1009CA603 /* _crane_1.plist */,
+				60AA1D9711E171D1009CA603 /* _crane_1.png */,
+				60AA1D9811E171D1009CA603 /* _crane_2.plist */,
+				60AA1D9911E171D1009CA603 /* _crane_2.png */,
 				609F849311DDEA9D00839DA8 /* _duck.plist */,
 				609F849411DDEA9D00839DA8 /* _duck.png */,
 				609F83DA11DDE83B00839DA8 /* _babyCrane.plist */,
@@ -3479,16 +3513,12 @@
 				609F83EB11DDE83B00839DA8 /* _babyWildgoose.png */,
 				609F83EC11DDE83B00839DA8 /* _chinemy.plist */,
 				609F83ED11DDE83B00839DA8 /* _chinemy.png */,
-				609F83EE11DDE83B00839DA8 /* _crane.plist */,
-				609F83EF11DDE83B00839DA8 /* _crane.png */,
 				609F83F011DDE83B00839DA8 /* _dog.plist */,
 				609F83F111DDE83B00839DA8 /* _dog.png */,
 				609F83F211DDE83B00839DA8 /* _goose.plist */,
 				609F83F311DDE83B00839DA8 /* _goose.png */,
 				609F83F411DDE83B00839DA8 /* _hen.plist */,
 				609F83F511DDE83B00839DA8 /* _hen.png */,
-				609F83F611DDE83B00839DA8 /* _magpie.plist */,
-				609F83F711DDE83C00839DA8 /* _magpie.png */,
 				609F83F811DDE83C00839DA8 /* _maleMandarinDuck.plist */,
 				609F83F911DDE83C00839DA8 /* _maleMandarinDuck.png */,
 				609F83FA11DDE83C00839DA8 /* _malePheasant.plist */,
@@ -3499,10 +3529,6 @@
 				609F83FF11DDE83C00839DA8 /* _mandarinDuck.png */,
 				609F840011DDE83C00839DA8 /* _nest.plist */,
 				609F840111DDE83C00839DA8 /* _nest.png */,
-				609F840211DDE83C00839DA8 /* _parrot.plist */,
-				609F840311DDE83C00839DA8 /* _parrot.png */,
-				609F840411DDE83C00839DA8 /* _peacock.plist */,
-				609F840511DDE83C00839DA8 /* _peacock.png */,
 				609F840611DDE83C00839DA8 /* _peahen.plist */,
 				609F840711DDE83C00839DA8 /* _peahen.png */,
 				609F840811DDE83C00839DA8 /* _pheasant.plist */,
@@ -3513,8 +3539,6 @@
 				609F840D11DDE83C00839DA8 /* _rooster.png */,
 				609F840E11DDE83C00839DA8 /* _snake.plist */,
 				609F840F11DDE83C00839DA8 /* _snake.png */,
-				609F841011DDE83C00839DA8 /* _swan.plist */,
-				609F841111DDE83C00839DA8 /* _swan.png */,
 				609F841211DDE83C00839DA8 /* _turkey.plist */,
 				609F841311DDE83C00839DA8 /* _turkey.png */,
 				609F841411DDE83C00839DA8 /* _turkeycock.plist */,
@@ -5047,16 +5071,12 @@
 				609F842911DDE83C00839DA8 /* _babyWildgoose.png in Resources */,
 				609F842A11DDE83C00839DA8 /* _chinemy.plist in Resources */,
 				609F842B11DDE83C00839DA8 /* _chinemy.png in Resources */,
-				609F842C11DDE83C00839DA8 /* _crane.plist in Resources */,
-				609F842D11DDE83C00839DA8 /* _crane.png in Resources */,
 				609F842E11DDE83C00839DA8 /* _dog.plist in Resources */,
 				609F842F11DDE83C00839DA8 /* _dog.png in Resources */,
 				609F843011DDE83C00839DA8 /* _goose.plist in Resources */,
 				609F843111DDE83C00839DA8 /* _goose.png in Resources */,
 				609F843211DDE83C00839DA8 /* _hen.plist in Resources */,
 				609F843311DDE83C00839DA8 /* _hen.png in Resources */,
-				609F843411DDE83C00839DA8 /* _magpie.plist in Resources */,
-				609F843511DDE83C00839DA8 /* _magpie.png in Resources */,
 				609F843611DDE83C00839DA8 /* _maleMandarinDuck.plist in Resources */,
 				609F843711DDE83C00839DA8 /* _maleMandarinDuck.png in Resources */,
 				609F843811DDE83C00839DA8 /* _malePheasant.plist in Resources */,
@@ -5067,10 +5087,6 @@
 				609F843D11DDE83C00839DA8 /* _mandarinDuck.png in Resources */,
 				609F843E11DDE83C00839DA8 /* _nest.plist in Resources */,
 				609F843F11DDE83C00839DA8 /* _nest.png in Resources */,
-				609F844011DDE83C00839DA8 /* _parrot.plist in Resources */,
-				609F844111DDE83C00839DA8 /* _parrot.png in Resources */,
-				609F844211DDE83C00839DA8 /* _peacock.plist in Resources */,
-				609F844311DDE83C00839DA8 /* _peacock.png in Resources */,
 				609F844411DDE83C00839DA8 /* _peahen.plist in Resources */,
 				609F844511DDE83C00839DA8 /* _peahen.png in Resources */,
 				609F844611DDE83C00839DA8 /* _pheasant.plist in Resources */,
@@ -5081,8 +5097,6 @@
 				609F844B11DDE83C00839DA8 /* _rooster.png in Resources */,
 				609F844C11DDE83C00839DA8 /* _snake.plist in Resources */,
 				609F844D11DDE83C00839DA8 /* _snake.png in Resources */,
-				609F844E11DDE83C00839DA8 /* _swan.plist in Resources */,
-				609F844F11DDE83C00839DA8 /* _swan.png in Resources */,
 				609F845011DDE83C00839DA8 /* _turkey.plist in Resources */,
 				609F845111DDE83C00839DA8 /* _turkey.png in Resources */,
 				609F845211DDE83C00839DA8 /* _turkeycock.plist in Resources */,
@@ -5091,6 +5105,24 @@
 				609F845511DDE83C00839DA8 /* _wildgoose.png in Resources */,
 				609F849511DDEA9D00839DA8 /* _duck.plist in Resources */,
 				609F849611DDEA9D00839DA8 /* _duck.png in Resources */,
+				60AA1D9A11E171D1009CA603 /* _crane_1.plist in Resources */,
+				60AA1D9B11E171D1009CA603 /* _crane_1.png in Resources */,
+				60AA1D9C11E171D1009CA603 /* _crane_2.plist in Resources */,
+				60AA1D9D11E171D1009CA603 /* _crane_2.png in Resources */,
+				60AA1DA211E171F8009CA603 /* _magpie_1.plist in Resources */,
+				60AA1DA311E171F8009CA603 /* _magpie_1.png in Resources */,
+				60AA1DA411E171F8009CA603 /* _magpie_2.plist in Resources */,
+				60AA1DA511E171F8009CA603 /* _magpie_2.png in Resources */,
+				60AA1DAC11E17217009CA603 /* _parrot_1.plist in Resources */,
+				60AA1DAD11E17217009CA603 /* _parrot_1.png in Resources */,
+				60AA1DAE11E17217009CA603 /* _parrot_2.plist in Resources */,
+				60AA1DAF11E17217009CA603 /* _parrot_2.png in Resources */,
+				60AA1DB011E17217009CA603 /* _peacock.plist in Resources */,
+				60AA1DB111E17217009CA603 /* _peacock.png in Resources */,
+				60AA1DB611E1725A009CA603 /* _swan_1.plist in Resources */,
+				60AA1DB711E1725A009CA603 /* _swan_1.png in Resources */,
+				60AA1DB811E1725A009CA603 /* _swan_2.plist in Resources */,
+				60AA1DB911E1725A009CA603 /* _swan_2.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5410,7 +5442,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5428,7 +5460,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "20751554-1ED4-4A00-BF12-0747EC26E4C4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
@@ -5437,7 +5469,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -5452,7 +5484,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "20751554-1ED4-4A00-BF12-0747EC26E4C4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Release;
@@ -5492,13 +5524,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -5507,14 +5540,15 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_UNROLL_LOOPS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = iphoneos3.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
+				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
 		};
