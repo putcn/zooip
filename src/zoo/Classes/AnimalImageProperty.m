@@ -42,8 +42,6 @@
 	NSString* newBaseKey = [[strBaseKey substringWithRange:pathForBaseKey] lowercaseString];
 	
 	
-
-	
 	// Get all keys
 	NSDictionary* allKeysDictionary = [baseDictionary objectForKey:newBaseKey];
 	
