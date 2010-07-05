@@ -11,6 +11,7 @@
 #import "HelloWorldScene.h"
 #import "GameMainScene.h"
 #import "LoginScence.h"
+#import "Reachability.h"
 
 @implementation zooAppDelegate
 
@@ -51,12 +52,15 @@
 	// create an openGL view inside a window
 	[[CCDirector sharedDirector] attachInView:window];	
 	[window makeKeyAndVisible];		
-		
+
 	
 //	[[CCDirector sharedDirector] runWithScene: [HelloWorld scene]];
 	[[CCDirector sharedDirector] runWithScene: [GameMainScene scene]];
 
 	//[[CCDirector sharedDirector] runWithScene: [LoginScence scene]];
+	
+	
+	[self checkNetwork];
 }
 
 
@@ -79,6 +83,24 @@
 - (void)applicationSignificantTimeChange:(UIApplication *)application {
 	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
 }
+
+-(BOOL)checkNetwork
+{
+	Reachability *reachability = [Reachability sharedReachability];
+	NetworkStatus connectionStatus = [reachability internetConnectionStatus];
+
+	if( connectionStatus == NotReachable )
+	{
+
+//			NSString *message = @"没有可选网络！";
+//			UIAlertView *m_musicAlertView = [[UIAlertView alloc] initWithTitle:@"NetWork" message:message delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil];
+//			[m_musicAlertView show];
+
+		return FALSE;
+	}
+	return TRUE;
+}
+
 
 - (void)dealloc {
 	[[CCDirector sharedDirector] release];

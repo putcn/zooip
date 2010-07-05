@@ -74,9 +74,9 @@
 		
 		NSString *price = [NSString stringWithFormat:@"%d",itemPrice]; 
 		NSString *picFileName = [NSString stringWithFormat:@"%@Egg.png",[eggNameArr objectAtIndex:0] ];
-		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
+//		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
 		
-		CCLabel *nameLbl = [CCLabel labelWithString:storageEggs.eggName fontName:@"Arial" fontSize:30];
+		CCLabel *nameLbl = [CCLabel labelWithString:storageEggs.eggName fontName:@"Arial" fontSize:25];
 		[nameLbl setColor:ccc3(0, 0, 0)];
 		nameLbl.position = ccp(self.contentSize.width/2, self.contentSize.height -20);
 		[self addChild:nameLbl z:10];
@@ -103,7 +103,15 @@
 		sumPriceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 120);
 		[self addChild:sumPriceLbl z:10];
 		
+		Button *confirmBtn = [[Button alloc] initWithLabel:@"出售" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(sellEggItem:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
+		Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancel:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
 		
+		//为Button添加绑定的参数列表
+		confirmBtn.target = self;
+		confirmBtn.position = ccp(self.contentSize.width/2 - 60, 35);
+		cancelBtn.position = ccp(self.contentSize.height/2 + 120, 35);
+		[self addChild:confirmBtn z:10];
+		[self addChild:cancelBtn z:10];
 		
 		//数目选择孔件
 //		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0];
@@ -166,35 +174,32 @@
 		//孵化按钮
 		Button *hatchBtn = [[Button alloc] initWithLabel:@"孵化" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(hatchHandler:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
 		hatchBtn.target = self;
-		hatchBtn.position = ccp(self.contentSize.height/2 , 35);
+		hatchBtn.position = ccp(self.contentSize.height/2-30 , 35);
 		[self addChild:hatchBtn z:10];
 		
+		Button *confirmBtn = [[Button alloc] initWithLabel:@"出售" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(sellEggItem:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
+		Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancel:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
+		
+		//为Button添加绑定的参数列表
+		confirmBtn.target = self;
+		confirmBtn.position = ccp(self.contentSize.width/2, 35);
+		cancelBtn.position = ccp(self.contentSize.height/2 + 150, 35);
+		[self addChild:confirmBtn z:10];
+		[self addChild:cancelBtn z:10];
 		
 		[modelZygoteEggs release];
 	}
 	[dic release];
 	
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"出售" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(sellEggItem:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
 	
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancel:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
-	
-	//为Button添加绑定的参数列表
-	confirmBtn.target = self;
-	
-	confirmBtn.position = ccp(self.contentSize.width/2 + 30, 35);
-	
-	cancelBtn.position = ccp(self.contentSize.height/2 + 170, 35);
-
-	[self addChild:confirmBtn z:10];
-	[self addChild:cancelBtn z:10];
 	
 
-//	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:5];
-//	transBackground.scale = 17.0f;
-//	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-//	[self addChild:transBackground z:5];
+	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:35];
+	transBackground.scale = 5.0f;
+	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+	[self addChild:transBackground z:5];
 	
-//	[transBackground release];
+	[transBackground release];
 
 	 
 }

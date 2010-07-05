@@ -31,29 +31,38 @@
 		// 
 		[useImgTexture release];
 		
+		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"用户_bg.png" ofType:nil] ] ];
+		CGRect rect = CGRectZero;
+		rect.size = bg.contentSize;
+		[self setTexture:bg];		
+		
+		[self setTextureRect: rect];
+		[bg release];
+		
+		
 		[userImgSprite setContentSize:CGSizeMake(40, 40)];
 		userImgSprite.position = ccp(20,20);
-		userNameLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];//retain];
+		userNameLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:15];//retain];
 		userNameLbl.position = ccp(60,30);
-		experienceBar = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];// retain];
+		experienceBar = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:15];// retain];
 		experienceBar.position = ccp(120,30);
-		levelLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];// retain];
+		levelLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:15];// retain];
 		levelLbl.position = ccp(170,30);
-		animalNumLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];// retain];
+		animalNumLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:15];// retain];
 		animalNumLbl.position = ccp(220,30);
 		CCSprite *antIcon = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
 		[antIcon setContentSize:CGSizeMake(10, 10)];
 		antIcon.position = ccp(50,10);
-		antIcon.scale = 0.5f;
-		antsNumLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];// retain];
+//		antIcon.scale = 0.5f;
+		antsNumLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:15];// retain];
 		antsNumLbl.position = ccp(80,10);
 		CCSprite *eggIcon = [CCSprite spriteWithFile:@"金蛋ico.png"];
 		[eggIcon setContentSize:CGSizeMake(10, 10)];
 		eggIcon.position = ccp(100,10);
-		eggIcon.scale =0.5f;
-		goldenEggNumLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];// retain];
+//		eggIcon.scale =0.5f;
+		goldenEggNumLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:15];// retain];
 		goldenEggNumLbl.position = ccp(140,10);
-		capacity = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];// retain];
+		capacity = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:15];// retain];
 		capacity.position = ccp(200,10);
 		[self addChild:userImgSprite z:1];
 		[self addChild:userNameLbl z:1];

@@ -25,6 +25,7 @@
 	NSString *FARMER_ID;
 	NSString *FARM_ID;
 	NSString *STORAGEZY_ID;
+	int m_gender;
 	
 	NSString *infoStr;
 	NSString *payType;
@@ -34,7 +35,7 @@
 
 
 }
--(id) initWithItem:(NSString *) farmerid farmID:(NSString *) farmid storageZyID:(NSString *) storageZyId setTarget:(id)target; 
+-(id) initWithItem:(NSString *) farmerid farmID:(NSString *) farmid storageZyID:(NSString *) storageZyId storageZyGender: (int)gender setTarget:(id)target; 
 
 -(void) hatChEggHandler:(Button *)button;
 

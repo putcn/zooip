@@ -55,7 +55,14 @@
 				
 				[self addChild:buttonContainer z:7];
 				[tabContentDic setObject:buttonContainer forKey:[NSString stringWithFormat:@"tabContent_%d",i]];
+			
+				
 			}
+			Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
+												   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:1.0f];
+			statusIcon.position = ccp(300, 190);
+			[self addChild:statusIcon z:7 ];
+			[statusIcon release];
 		}
 		else {
 			self.title = @"婚姻管理";
@@ -76,7 +83,11 @@
 				[self addChild:buttonContainer z:7];
 				[tabContentDic setObject:buttonContainer forKey:[NSString stringWithFormat:@"tabContent_%d",i]];
 			}
-			
+			Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
+												   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:1.0f];
+			statusIcon.position = ccp(300, 190);
+			[self addChild:statusIcon z:7 ];
+			[statusIcon release];
 		}
 
 		[self addTitle];
@@ -166,6 +177,12 @@
 {
 	NSLog(@"Server Connection Fail");
 }
+
+-(void)OverIconHandler
+{
+	self.position = ccp(1000, 188);
+}
+
 
 -(void)dealloc
 {

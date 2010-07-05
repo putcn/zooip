@@ -14,6 +14,7 @@
 
 @interface AnimalToolTip : ToolTip{ 
 	CCLabel *nameLbl;
+	CCLabel *sexLbl;
 	CCLabel *timeLbl;
 //	CCSprite *processorBar;
 //	CCSprite *processorFrame;
@@ -22,6 +23,10 @@
 	NSString *animalId;
 	
 	int nRemainTime;
+	NSString *animalStatus;
+	NSString *animalTop;
+	NSString *animalUp;
+	NSString *animalDown;
 }
 
 -(id) initWithAnimalId: (NSString *) aniId;

@@ -14,4 +14,6 @@
 
 @property (nonatomic, retain) UIWindow *window;
 
+- (BOOL)checkNetwork;
+
 @end

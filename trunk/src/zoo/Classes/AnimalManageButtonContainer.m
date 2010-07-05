@@ -26,7 +26,7 @@
 		if (tabFlag == @"animal") {
 			NSDictionary *itemDic;
 			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].animalIDs;
-			totalPage = [[DataEnvironment sharedDataEnvironment].animalIDs count] + 1;
+			totalPage = ([[DataEnvironment sharedDataEnvironment].animalIDs count]-1)/8 + 1;
 			currentPageNum = 1;
 			[self generatePage];
 			
@@ -53,7 +53,7 @@
 		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 		itemArray = [itemDic allKeys];
 	}
-	totalPage = itemArray.count/8 + 1;
+	totalPage = (itemArray.count-1)/8 + 1;
 	currentPageNum = 1;
 	[self generatePage];
 }
@@ -65,8 +65,10 @@
 
 -(void) nextPage:(Button *)button
 {
-	if ( currentPageNum + 1 <= totalPage) {
-		for (int i = 0; i< currentNum; i ++) {
+	if ( currentPageNum + 1 <= totalPage) 
+	{
+		for (int i = 0; i< currentNum*2; i ++) 
+		{
 			[self removeChildByTag:i cleanup:YES];
 		}
 		
@@ -77,8 +79,10 @@
 
 -(void) forwardPage:(Button *)button
 {
-	if (currentPageNum - 1 > 0) {
-		for (int i = 0; i< currentNum; i ++) {
+	if (currentPageNum - 1 > 0) 
+	{
+		for (int i = 0; i< currentNum*2; i ++) 
+		{
 			[self removeChildByTag:i cleanup:YES];
 		}
 		
@@ -113,11 +117,13 @@
 			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
 			kuang.position = ccp(230 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
 			kuang.scale = 1024.0/400.0f;
-			[self addChild:kuang z:6];
+			[self addChild:kuang z:6 tag:i%8+8];
 		}
 	}
 	
 }
+
+
 
 -(void)dealloc
 {

@@ -96,13 +96,13 @@
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
-	self.scale = 1.8f;
+//	self.scale = 1.8f;
 	return YES;
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	self.scale = 1.5f;
+//	self.scale = 1.5f;
 	if (selector != nil && [self containsTouchLocation:touch])
 	{
 		[targetCallBack performSelector:selector withObject:self];
