@@ -80,14 +80,14 @@
 			
 			if (nNumber == 1) {
 				CCSprite* sprite = [[ImgInitUtil sharedImgInitUtil] getSprite:[imageName lowercaseString] setOriginX:nOriginX setOriginY:nOriginY setWidth:nWidth setHeight:nHeight setNumber:nNumber];
-				[aniTable setObject:sprite forKey:key];
+				[aniTable setObject:sprite forKey:[key lowercaseString]];
 			}
 			else if(nNumber > 1)
 			{
 				CCAnimation* animation = [[ImgInitUtil sharedImgInitUtil] getAnimate:[imageName lowercaseString] setOriginX:nOriginX setOriginY:nOriginY setWidth:nWidth setHeight:nHeight setNumber:nNumber setMaxOneline:nMaxItems];
 				
 				// Put animation into table
-				[aniTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]] forKey:key];						
+				[aniTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]] forKey:[key lowercaseString]];						
 			}
 		}
 	}
