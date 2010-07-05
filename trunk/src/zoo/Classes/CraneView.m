@@ -18,7 +18,8 @@
 	if ((self = [super init])) {
 		
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
-		animationTable = [imageProp animationTable:@"_Crane.png" plistName:@"_Crane.plist"];
+		animationTable = [imageProp animationTable:@"_Crane_1.png" plistName:@"_Crane_1.plist"];
+		animationTable = [imageProp animationTable:@"_Crane_2.png" plistName:@"_Crane_2.plist"];
 		NSLog(@"------------%@", animationTable);
 		
 		
