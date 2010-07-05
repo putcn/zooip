@@ -12,11 +12,23 @@
 @implementation LoadingBar
 
 
--(id) initWithCCSprite:(NSString*) labelText setColor:(ccColor3B) labelColor setFont:(NSString*) labelFont
-			setSize:(int) labelSize setTarget:(id) targetValue
-		 setSpriteLeft:(CCSprite*) load_left setSpriteMidele:(CCSprite*) load_middle setSpriteRight:(CCSprite*) load_right
-		setSpriteColoLeft:(CCSprite*) load_Cololeft setSpriteColoMidele:(CCSprite*) load_Colomiddle setSpriteColoRight:(CCSprite*) load_Coloright
-			   offsetX:(int) offsetXValue offsetY:(int) offsetYValue setpercent:(int) cent setLength:(int)length setTextLegth:(int)textlength setTextHight:(int)texthight
+-(id) initWithCCSprite:(NSString*) labelText		//文字
+			  setColor:(ccColor3B) labelColor		//颜色
+			   setFont:(NSString*) labelFont		//字体
+			   setSize:(int) labelSize				//大小
+			 setTarget:(id) targetValue				//优先级
+		 setSpriteLeft:(CCSprite*) load_left		//左空条
+	   setSpriteMidele:(CCSprite*) load_middle		//中空条
+		setSpriteRight:(CCSprite*) load_right		//右空条
+	 setSpriteColoLeft:(CCSprite*) load_Cololeft	//左实条
+   setSpriteColoMidele:(CCSprite*) load_Colomiddle	//中实条
+	setSpriteColoRight:(CCSprite*) load_Coloright	//右实条
+			   offsetX:(int) offsetXValue			//横向放大
+			   offsetY:(int) offsetYValue			//纵向放大
+			setpercent:(int) cent					//显示头尾
+			 setLength:(int)length					//中条宽度
+		  setTextLegth:(int)textlength				//控制字体横坐标
+		  setTextHight:(int)texthight				//控制字体纵坐标
 {
 	if( (self=[super init] ))
 	{		

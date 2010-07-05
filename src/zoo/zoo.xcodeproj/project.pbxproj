@@ -3470,7 +3470,6 @@
 			isa = PBXGroup;
 			children = (
 				60C18B8411E1A58E00248E87 /* AnimalAnimation */,
-				6BD28EEB11D3001D00BE2859 /* Common */,
 				6BD28DCF11D3000D00BE2859 /* 动物园切图 */,
 				8472109911D1ED70008AC4CB /* friendImage */,
 				3ECBBB2D11AFB63B00A7ADFA /* collision */,
@@ -3620,6 +3619,7 @@
 		6BD28DCF11D3000D00BE2859 /* 动物园切图 */ = {
 			isa = PBXGroup;
 			children = (
+				6BD28EEB11D3001D00BE2859 /* Common */,
 				6B03D7EC11DC74D0000F2201 /* ToolTip */,
 				6BBC378B11D83E3F0081CB4D /* 好友列表搜索 */,
 				6BBC378F11D83E3F0081CB4D /* 左右翻页 */,
@@ -3839,6 +3839,7 @@
 				6BD28DD011D3000D00BE2859 /* loading */,
 			);
 			name = Common;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		8432CF2D11B3BC890093DA32 /* zygegg */ = {
@@ -5450,6 +5451,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -5457,6 +5459,7 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
+				SDKROOT = iphonesimulator4.0;
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
@@ -5474,6 +5477,7 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
@@ -5481,6 +5485,7 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
+				SDKROOT = iphonesimulator4.0;
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Release;

@@ -218,16 +218,16 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[eggsDic setValue:egg forKey:[egg birdEggId]];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"下蛋成功"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"下蛋成功"];
 				}
 					break;
 				case 1:
 					// TODO 动物处于饥饿状态
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"动物处于饥饿状态"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"动物处于饥饿状态"];
 					break;
 				case 2:
 				{
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"未到下蛋时间"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"未到下蛋时间"];
 					
 					// 动物下蛋时间未到
 					NSString* animalId = [[request postData] valueForKey:@"animalId"];
@@ -237,16 +237,16 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 				}
 					break;
 				case 3:
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不存在该动物"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不存在该动物"];
 					// TODO 不存在该动物
 					break;
 				case 4:
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"下蛋失败"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"下蛋失败"];
 					// TODO 下蛋失败
 					break;
 				case 5:
 					// TODO 公动物不能下蛋
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物不能下蛋"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物不能下蛋"];
 					break;
 					
 				default:
@@ -948,7 +948,11 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 	NSLog(@"request %@ went wrong with status code %d, and feedback body %@",request.requestFlagMark, [request responseStatusCode], [request responseString]);
 }
 
--(ASIFormDataRequest *)requestServerForMethod:(ZooNetworkRequestType)methodType WithParameters:(NSDictionary *)parameters AndCallBackScope:(id)callBackDelegate AndSuccessSel:(NSString *)successSelector AndFailedSel:(NSString *)failedSelector{
+-(ASIFormDataRequest *)requestServerForMethod:(ZooNetworkRequestType)methodType
+							   WithParameters:(NSDictionary *)parameters 
+							 AndCallBackScope:(id)callBackDelegate 
+								AndSuccessSel:(NSString *)successSelector
+								 AndFailedSel:(NSString *)failedSelector{
 	NSDictionary *tempDic = [NSDictionary dictionaryWithObjectsAndKeys:callBackDelegate, @"delegate", successSelector, @"onsuccess", failedSelector, @"onfailed", nil];
 	[tempDic retain];
 	
@@ -1235,6 +1239,10 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 		}
 	}
 	[request startAsynchronous];
+//	int statusCode = [request responseStatusCode];
+//	NSString *statusMessage = [request responseStatusMessage];
+//	NSLog(@"%d",statusCode);
+//	NSLog(@"%@",statusMessage);
 	NSLog(@"%@",parameters);
 	return request;
 }

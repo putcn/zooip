@@ -50,10 +50,23 @@ animalID;
 		[self generateOne];
 		[self generateOthers];
 		
+		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
+											   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:1.0f];
+		statusIcon.position = ccp(300, 190);
+		[self addChild:statusIcon z:7 ];
+		[statusIcon release];
+		
 //		self.scale = 300.0f/1024.0f;
 	}
 	return self;
 }
+
+-(void)OverIconHandler
+{
+	self.position = ccp(1000, 188);
+}
+
+
 
 //生成结婚和交配按钮
 -(void)generateButtons
@@ -365,7 +378,7 @@ animalID;
 		[self addChild:scalerPane z:5];
 	}
 //	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
-//	transBackground.scale = 17.0f;
+//	transBackground.scale = 5.0f;
 //	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 //	[self addChild:transBackground z:5];
 }

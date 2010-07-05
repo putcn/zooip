@@ -245,7 +245,7 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 // Add by Hunk on 2010-06-29
 -(void)dealloc
 {
-	[load release];
+//	[load release];
 	
 	[super dealloc];
 }

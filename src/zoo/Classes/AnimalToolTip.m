@@ -26,19 +26,85 @@
 		
 		DataModelAnimal *animal = [[[DataEnvironment sharedDataEnvironment] animals] objectForKey:aniId];
 		NSString *animalName = animal.scientificNameCN;
+		NSInteger animalSex = animal.gender;
 		nRemainTime = animal.remain;
+		NSInteger nAllTime = animal.stageEndTime;
+		
+		NSInteger nStatus = animal.birdStage;
+		NSInteger nlevel = animal.level;
 		[animal release];
 		
-		nameLbl = [CCLabel labelWithString:animalName fontName:@"Arial" fontSize:15];
+		if(animalSex == 0)
+		{
+			animalTop = [animalName stringByAppendingString:@"  母"];
+		}
+		else if(animalSex == 1)
+		{
+			animalTop = [animalName stringByAppendingString:@"  公"];
+		}
+				
+		nameLbl = [CCLabel labelWithString:animalTop fontName:@"Arial" fontSize:15];
 		[nameLbl setColor:ccc3(0, 0, 0)];
-//		NSString *currentDate = [NSString stringWithFormat:@"%@",[NSDate date]];
-		NSString *currentDate = [NSString stringWithFormat:@"%d",nRemainTime];
+		nameLbl.position = ccp(nameLbl.contentSize.width/2+17, self.contentSize.height-15);
+		[self addChild:nameLbl z:6];
 		
-		timeLbl = [CCLabel labelWithString:currentDate fontName:@"Arial" fontSize:15];
-		[timeLbl setColor:ccc3(255, 0, 0)];
-		nameLbl.position = ccp(nameLbl.contentSize.width/2, self.contentSize.height);
-		timeLbl.position = ccp(timeLbl.contentSize.width/2, self.contentSize.height - nameLbl.contentSize.height);
 		
+		animalUp = [NSString stringWithFormat:@"%d",nAllTime];
+		
+		//0＝受精蛋；1＝幼年；2＝青年；3＝成年；4＝老年；
+		NSString *strLevel = [NSString stringWithFormat:@"%d",nlevel];
+		if(nStatus == 0)
+		{
+			animalDown = @"受精蛋";
+		}
+		else if(nStatus == 1)
+		{
+			animalDown = @"幼年";
+		}
+		else if(nStatus == 2)
+		{
+			animalDown = @"青年";
+		}
+		else if(nStatus == 3)
+		{
+			if(animalSex == 0)
+			{
+				NSString *animalName = @"成年 产蛋数:";
+				animalDown = [animalName stringByAppendingString:strLevel];
+			}
+			else if(animalSex == 1)
+			{
+				animalDown = @"成年";
+			}
+		}
+		else if(nStatus == 4)
+		{
+			animalDown = @"老年";
+		}
+//
+//		if(animalSex == 0)
+//		{
+//			sexLbl = [CCLabel labelWithString:@"公" fontName:@"Arial" fontSize:15];
+//		}
+//		else if(animalSex == 1)
+//		{
+//			sexLbl = [CCLabel labelWithString:@"母" fontName:@"Arial" fontSize:15];
+//		}
+//		[sexLbl setColor:ccc3(0, 0, 0)];
+//		sexLbl.position = ccp(sexLbl.contentSize.width/2+30, self.contentSize.height);
+//		
+//		
+////		NSString *currentDate = [NSString stringWithFormat:@"%@",[NSDate date]];
+//		NSString *currentDate = [NSString stringWithFormat:@"%d",nRemainTime];
+//		
+//		timeLbl = [CCLabel labelWithString:currentDate fontName:@"Arial" fontSize:15];
+//		[timeLbl setColor:ccc3(255, 0, 0)];
+//		timeLbl.position = ccp(timeLbl.contentSize.width/2, self.contentSize.height - nameLbl.contentSize.height);
+//		
+		
+//		
+//		[self addChild:sexLbl z:6];
+//		[self addChild:timeLbl z:6];
 		//黄色进度条
 		CCSprite *load_yellow_left = [CCSprite spriteWithFile:@"LeftOrgBla.png"];
 		CCSprite *load_yellow_middle = [CCSprite spriteWithFile:@"processORG2.png"];
@@ -47,11 +113,11 @@
 		CCSprite *load_yellow_Colomiddle = [CCSprite spriteWithFile:@"processOrg.png"];
 		CCSprite *load_yellow_Coloright = [CCSprite spriteWithFile:@"rightOrg.png"];
 		
-		LoadingBar *load_yellow = [[LoadingBar alloc] initWithCCSprite:@"hehe" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setTarget:self 
+		LoadingBar *load_yellow = [[LoadingBar alloc] initWithCCSprite:animalUp setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setTarget:self 
 														 setSpriteLeft:load_yellow_left setSpriteMidele: load_yellow_middle setSpriteRight: load_yellow_right
 													 setSpriteColoLeft: load_yellow_Cololeft setSpriteColoMidele: load_yellow_Colomiddle setSpriteColoRight: load_yellow_Coloright
-															   offsetX:80 offsetY:0 setpercent:0 setLength:1 setTextLegth:-5 - 80*2 setTextHight:12];
-		load_yellow.position = ccp(self.contentSize.width/2-40 , 70);
+															   offsetX:80 offsetY:0 setpercent:0 setLength:1 setTextLegth:-5 - 80*2 setTextHight:14];
+		load_yellow.position = ccp(self.contentSize.width/2-40 , 60);
 		[self addChild:load_yellow z:10];
 		
 		//蓝色进度条
@@ -62,11 +128,11 @@
 		CCSprite *load_Colomiddle = [CCSprite spriteWithFile:@"processBlue.png"];
 		CCSprite *load_Coloright = [CCSprite spriteWithFile:@"rightBlue.png"];
 		
-		LoadingBar *load = [[LoadingBar alloc] initWithCCSprite:@"hehe" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setTarget:self 
+		LoadingBar *load = [[LoadingBar alloc] initWithCCSprite:animalDown setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setTarget:self 
 												  setSpriteLeft:load_left setSpriteMidele: load_middle setSpriteRight: load_right
 											  setSpriteColoLeft: load_Cololeft setSpriteColoMidele: load_Colomiddle setSpriteColoRight: load_Coloright
-														offsetX:80 offsetY:0 setpercent:0 setLength:1 setTextLegth:-5 - 80*2 setTextHight:12];
-		load.position = ccp(self.contentSize.width/2-40 , 25);
+														offsetX:80 offsetY:0 setpercent:0 setLength:1 setTextLegth:-5 - 80*2 setTextHight:14];
+		load.position = ccp(self.contentSize.width/2-40 , 20);
 		[self addChild:load z:10];
 		
 		
@@ -78,8 +144,7 @@
 //		NSLog(@"-----%d",remainTime/totalTime);
 //		processorFrame.position = ccp(processorFrame.contentSize.width/2 , self.contentSize.height - nameLbl.contentSize.height-timeLbl.contentSize.height);
 //		processorBar.position = ccp(processorBar.contentSize.width/2 * remainTime/totalTime, self.contentSize.height - nameLbl.contentSize.height-timeLbl.contentSize.height);
-		[self addChild:nameLbl z:6];
-		[self addChild:timeLbl z:6];
+		
 //		[self addChild:processorBar z:6];
 //		[self addChild:processorFrame z:6];
 		[[CCScheduler sharedScheduler] scheduleTimer: [CCTimer timerWithTarget:self selector:@selector(tick:) interval:1.0]];
