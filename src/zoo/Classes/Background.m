@@ -15,7 +15,7 @@
 -(id) init
 {
 	if ((self = [super init])) {	
-		CCTexture2D *eggImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bgimg.jpg" ofType:nil]]];
+		CCTexture2D *eggImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"bgimg.png" ofType:nil]]];
 		CGRect rect = CGRectZero;
 		rect.size = eggImg.contentSize;
 		[self setTexture: eggImg];

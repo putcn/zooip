@@ -30,7 +30,6 @@
 		3E85CDB311A10CBE00ED9250 /* ItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E85CDB211A10CBE00ED9250 /* ItemController.m */; };
 		3E85CE0A11A1277500ED9250 /* ToolTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E85CE0911A1277500ED9250 /* ToolTip.m */; };
 		3E87160411801BB200EBA2E8 /* RandomHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E87160311801BB200EBA2E8 /* RandomHelper.m */; };
-		3E87160A11801F3300EBA2E8 /* bgimg.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160611801F3300EBA2E8 /* bgimg.jpg */; };
 		3E87160B11801F3300EBA2E8 /* house.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160711801F3300EBA2E8 /* house.png */; };
 		3E87160C11801F3300EBA2E8 /* tree.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160811801F3300EBA2E8 /* tree.png */; };
 		3E87160D11801F3300EBA2E8 /* waterbox.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E87160911801F3300EBA2E8 /* waterbox.png */; };
@@ -772,8 +771,6 @@
 		609F845111DDE83C00839DA8 /* _turkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F841311DDE83C00839DA8 /* _turkey.png */; };
 		609F845211DDE83C00839DA8 /* _turkeycock.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F841411DDE83C00839DA8 /* _turkeycock.plist */; };
 		609F845311DDE83C00839DA8 /* _turkeycock.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F841511DDE83C00839DA8 /* _turkeycock.png */; };
-		609F845411DDE83C00839DA8 /* _wildgoose.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F841611DDE83C00839DA8 /* _wildgoose.plist */; };
-		609F845511DDE83C00839DA8 /* _wildgoose.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F841711DDE83C00839DA8 /* _wildgoose.png */; };
 		609F849511DDEA9D00839DA8 /* _duck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 609F849311DDEA9D00839DA8 /* _duck.plist */; };
 		609F849611DDEA9D00839DA8 /* _duck.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F849411DDEA9D00839DA8 /* _duck.png */; };
 		60A0CDBE11B78066001AF9BD /* AnimalManageToMateAntsChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */; };
@@ -791,6 +788,7 @@
 		60AA1DB711E1725A009CA603 /* _swan_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DB311E1725A009CA603 /* _swan_1.png */; };
 		60AA1DB811E1725A009CA603 /* _swan_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DB411E1725A009CA603 /* _swan_2.plist */; };
 		60AA1DB911E1725A009CA603 /* _swan_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DB511E1725A009CA603 /* _swan_2.png */; };
+		60C18BA511E1A6D800248E87 /* bgimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18BA411E1A6D800248E87 /* bgimg.png */; };
 		6B03D7FB11DC74D0000F2201 /* blueBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7ED11DC74D0000F2201 /* blueBg.png */; };
 		6B03D7FC11DC74D0000F2201 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7EE11DC74D0000F2201 /* demo.png */; };
 		6B03D7FD11DC74D0000F2201 /* leftBlue.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7EF11DC74D0000F2201 /* leftBlue.png */; };
@@ -1100,7 +1098,6 @@
 		3E85CE0911A1277500ED9250 /* ToolTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ToolTip.m; sourceTree = "<group>"; };
 		3E87160211801BB200EBA2E8 /* RandomHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RandomHelper.h; sourceTree = "<group>"; };
 		3E87160311801BB200EBA2E8 /* RandomHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RandomHelper.m; sourceTree = "<group>"; };
-		3E87160611801F3300EBA2E8 /* bgimg.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = bgimg.jpg; sourceTree = "<group>"; };
 		3E87160711801F3300EBA2E8 /* house.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = house.png; sourceTree = "<group>"; };
 		3E87160811801F3300EBA2E8 /* tree.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tree.png; sourceTree = "<group>"; };
 		3E87160911801F3300EBA2E8 /* waterbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = waterbox.png; sourceTree = "<group>"; };
@@ -1908,8 +1905,6 @@
 		609F841311DDE83C00839DA8 /* _turkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _turkey.png; sourceTree = "<group>"; };
 		609F841411DDE83C00839DA8 /* _turkeycock.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _turkeycock.plist; sourceTree = "<group>"; };
 		609F841511DDE83C00839DA8 /* _turkeycock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _turkeycock.png; sourceTree = "<group>"; };
-		609F841611DDE83C00839DA8 /* _wildgoose.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _wildgoose.plist; sourceTree = "<group>"; };
-		609F841711DDE83C00839DA8 /* _wildgoose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _wildgoose.png; sourceTree = "<group>"; };
 		609F849311DDEA9D00839DA8 /* _duck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _duck.plist; sourceTree = "<group>"; };
 		609F849411DDEA9D00839DA8 /* _duck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _duck.png; sourceTree = "<group>"; };
 		60A0CDBC11B78066001AF9BD /* AnimalManageToMateAntsChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageToMateAntsChoose.h; sourceTree = "<group>"; };
@@ -1928,6 +1923,7 @@
 		60AA1DB311E1725A009CA603 /* _swan_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _swan_1.png; path = Sunday/_swan_1.png; sourceTree = "<group>"; };
 		60AA1DB411E1725A009CA603 /* _swan_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _swan_2.plist; path = Sunday/_swan_2.plist; sourceTree = "<group>"; };
 		60AA1DB511E1725A009CA603 /* _swan_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _swan_2.png; path = Sunday/_swan_2.png; sourceTree = "<group>"; };
+		60C18BA411E1A6D800248E87 /* bgimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgimg.png; sourceTree = "<group>"; };
 		6B03D7ED11DC74D0000F2201 /* blueBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBg.png; sourceTree = "<group>"; };
 		6B03D7EE11DC74D0000F2201 /* demo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = demo.png; sourceTree = "<group>"; };
 		6B03D7EF11DC74D0000F2201 /* leftBlue.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = leftBlue.png; sourceTree = "<group>"; };
@@ -2429,7 +2425,7 @@
 		3E87160511801F3300EBA2E8 /* background */ = {
 			isa = PBXGroup;
 			children = (
-				3E87160611801F3300EBA2E8 /* bgimg.jpg */,
+				60C18BA411E1A6D800248E87 /* bgimg.png */,
 				3E87160711801F3300EBA2E8 /* house.png */,
 				3E87160811801F3300EBA2E8 /* tree.png */,
 				3E87160911801F3300EBA2E8 /* waterbox.png */,
@@ -3473,6 +3469,40 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				60C18B8411E1A58E00248E87 /* AnimalAnimation */,
+				6BD28EEB11D3001D00BE2859 /* Common */,
+				6BD28DCF11D3000D00BE2859 /* 动物园切图 */,
+				8472109911D1ED70008AC4CB /* friendImage */,
+				3ECBBB2D11AFB63B00A7ADFA /* collision */,
+				3E4B1FB411AE7E840044D43E /* ButtonContainer.png */,
+				3E4B1FB511AE7E840044D43E /* goldant.png */,
+				3E4B1FB611AE7E840044D43E /* goldegg.png */,
+				3E4B1FB711AE7E840044D43E /* itemButtonBack.png */,
+				3E4B1FB811AE7E840044D43E /* ManageContainer.png */,
+				3E4B1FB911AE7E840044D43E /* nextpage.png */,
+				3E4B1FBA11AE7E840044D43E /* TabButton1.png */,
+				3E4B1FBB11AE7E840044D43E /* TabButton2.png */,
+				3EAE655F11AD5C8B004BA790 /* foods */,
+				3EB9E4F911A52A3800BD9847 /* operationEnd.png */,
+				3EC7E3FC119AA2E200791BAD /* operations */,
+				3EED46C411967DAB0093FF6E /* items */,
+				3EED460F1196669C0093FF6E /* eggs */,
+				3E4CDACE119032C400222173 /* inner.png */,
+				3E4CDACF119032C400222173 /* outer.png */,
+				3E022E9A118E847D00D2A6E6 /* AnimalInfo.png */,
+				C3A9E8BB1186C78300CEBDFC /* icons */,
+				3E87160511801F3300EBA2E8 /* background */,
+				50F414EC1069373D002A0D5E /* Default.png */,
+				50F414ED1069373D002A0D5E /* fps_images.png */,
+				50F414EE1069373D002A0D5E /* Icon.png */,
+				50F414EF1069373D002A0D5E /* Info.plist */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		60C18B8411E1A58E00248E87 /* AnimalAnimation */ = {
+			isa = PBXGroup;
+			children = (
 				60AA1DB211E1725A009CA603 /* _swan_1.plist */,
 				60AA1DB311E1725A009CA603 /* _swan_1.png */,
 				60AA1DB411E1725A009CA603 /* _swan_2.plist */,
@@ -3539,36 +3569,8 @@
 				609F841311DDE83C00839DA8 /* _turkey.png */,
 				609F841411DDE83C00839DA8 /* _turkeycock.plist */,
 				609F841511DDE83C00839DA8 /* _turkeycock.png */,
-				609F841611DDE83C00839DA8 /* _wildgoose.plist */,
-				609F841711DDE83C00839DA8 /* _wildgoose.png */,
-				6BD28EEB11D3001D00BE2859 /* Common */,
-				6BD28DCF11D3000D00BE2859 /* 动物园切图 */,
-				8472109911D1ED70008AC4CB /* friendImage */,
-				3ECBBB2D11AFB63B00A7ADFA /* collision */,
-				3E4B1FB411AE7E840044D43E /* ButtonContainer.png */,
-				3E4B1FB511AE7E840044D43E /* goldant.png */,
-				3E4B1FB611AE7E840044D43E /* goldegg.png */,
-				3E4B1FB711AE7E840044D43E /* itemButtonBack.png */,
-				3E4B1FB811AE7E840044D43E /* ManageContainer.png */,
-				3E4B1FB911AE7E840044D43E /* nextpage.png */,
-				3E4B1FBA11AE7E840044D43E /* TabButton1.png */,
-				3E4B1FBB11AE7E840044D43E /* TabButton2.png */,
-				3EAE655F11AD5C8B004BA790 /* foods */,
-				3EB9E4F911A52A3800BD9847 /* operationEnd.png */,
-				3EC7E3FC119AA2E200791BAD /* operations */,
-				3EED46C411967DAB0093FF6E /* items */,
-				3EED460F1196669C0093FF6E /* eggs */,
-				3E4CDACE119032C400222173 /* inner.png */,
-				3E4CDACF119032C400222173 /* outer.png */,
-				3E022E9A118E847D00D2A6E6 /* AnimalInfo.png */,
-				C3A9E8BB1186C78300CEBDFC /* icons */,
-				3E87160511801F3300EBA2E8 /* background */,
-				50F414EC1069373D002A0D5E /* Default.png */,
-				50F414ED1069373D002A0D5E /* fps_images.png */,
-				50F414EE1069373D002A0D5E /* Icon.png */,
-				50F414EF1069373D002A0D5E /* Info.plist */,
 			);
-			path = Resources;
+			name = AnimalAnimation;
 			sourceTree = "<group>";
 		};
 		6B03D7EC11DC74D0000F2201 /* ToolTip */ = {
@@ -4477,7 +4479,6 @@
 				50F414F01069373D002A0D5E /* Default.png in Resources */,
 				50F414F11069373D002A0D5E /* fps_images.png in Resources */,
 				50F414F21069373D002A0D5E /* Icon.png in Resources */,
-				3E87160A11801F3300EBA2E8 /* bgimg.jpg in Resources */,
 				3E87160B11801F3300EBA2E8 /* house.png in Resources */,
 				3E87160C11801F3300EBA2E8 /* tree.png in Resources */,
 				3E87160D11801F3300EBA2E8 /* waterbox.png in Resources */,
@@ -5099,8 +5100,6 @@
 				609F845111DDE83C00839DA8 /* _turkey.png in Resources */,
 				609F845211DDE83C00839DA8 /* _turkeycock.plist in Resources */,
 				609F845311DDE83C00839DA8 /* _turkeycock.png in Resources */,
-				609F845411DDE83C00839DA8 /* _wildgoose.plist in Resources */,
-				609F845511DDE83C00839DA8 /* _wildgoose.png in Resources */,
 				609F849511DDEA9D00839DA8 /* _duck.plist in Resources */,
 				609F849611DDEA9D00839DA8 /* _duck.png in Resources */,
 				60AA1D9A11E171D1009CA603 /* _crane_1.plist in Resources */,
@@ -5117,6 +5116,7 @@
 				60AA1DB711E1725A009CA603 /* _swan_1.png in Resources */,
 				60AA1DB811E1725A009CA603 /* _swan_2.plist in Resources */,
 				60AA1DB911E1725A009CA603 /* _swan_2.png in Resources */,
+				60C18BA511E1A6D800248E87 /* bgimg.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

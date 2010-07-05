@@ -17,7 +17,8 @@
 	if ((self = [super init])) {
 		
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
-		animationTable = [imageProp animationTable:@"_Wildgoose.png" plistName:@"_Wildgoose.plist"];
+		animationTable = [imageProp animationTable:@"_wildgoose_1.png" plistName:@"_wildgoose_1.plist"];
+		animationTable = [imageProp animationTable:@"_wildgoose_2.png" plistName:@"_wildgoose_2.plist"];
 		NSLog(@"------------%@", animationTable);
 		
 //		//walk animations
