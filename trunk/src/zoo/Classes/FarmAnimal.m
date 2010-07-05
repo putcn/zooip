@@ -21,7 +21,7 @@
 		targetPosition = ccp(view.position.x, view.position.y);
 		currSpeed = ccp(0 ,0);
 		currStatus = 0;
-		
+		standRemain = 0;
 		limitRect = limitRectValue;
 		
 		[[CCScheduler sharedScheduler] scheduleTimer: [CCTimer timerWithTarget:self selector:@selector(tick:)]];
@@ -36,18 +36,37 @@
 -(void) tick: (ccTime) dt
 {
 	CGPoint point = view.position;
-	
-	if ((fabs(point.x - targetPosition.x) <= speed) &&
-		(fabs(point.y - targetPosition.y) <= speed))
-	{
-		[self findTarget];
-		[view update:currDirection status:currStatus];
-		//NSLog(@"当前方向: %d", currDirection);
+	int randowInt = [RandomHelper getRandomNum:1 to:100];
+	if (randowInt > 5) {
+		currStatus = 5;
 	}
-	else
-	{
-		view.position = ccpAdd(point, currSpeed);
-	}	
+	else {
+		currStatus = 4;
+	}
+
+	if(standRemain <= 0){
+		if (currStatus == 5) {
+			if ((fabs(point.x - targetPosition.x) <= speed) &&
+				(fabs(point.y - targetPosition.y) <= speed))
+			{
+				[self findTarget];
+				[view update:currDirection status:currStatus];
+				//NSLog(@"当前方向: %d", currDirection);
+			}
+			else
+			{
+				view.position = ccpAdd(point, currSpeed);
+			}	
+		}
+		else if(currStatus == 4){
+			[view stopAllActions];
+			standRemain = [RandomHelper getRandomNum:50 to:100];
+		}
+	}
+	else {
+		standRemain--;
+	}
+
 }
 
 -(void) findTarget
@@ -65,7 +84,6 @@
 		targetPosition.y = [RandomHelper getRandomNum:currY - 50 to:currY + 50];
 		
 		if (CGRectContainsPoint(limitRect, targetPosition)) isFound = YES;
-		NSLog(@"===Loop Find===");
 	}
 	
 	[self calculateSpeed];

@@ -20,6 +20,7 @@
 	
 	int currDirection;
 	int currStatus;
+	int standRemain;
 	
 	CGPoint targetPosition;
 	CGPoint currSpeed;

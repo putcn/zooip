@@ -7,7 +7,8 @@
 //
 
 #import "AntView.h"
-
+#import "GameMainScene.h"
+#import "RandomHelper.h"
 
 @implementation AntView
 @synthesize antId;
@@ -16,16 +17,18 @@
 {
 	if ((self = [super init])) 
 	{
+		self.position = ccp([RandomHelper getRandomNum:300 to:400],[RandomHelper getRandomNum:100 to:200]);
 		killAntsController = [[KillAntsController alloc] init];
 		antId = sId;
 		NSArray *dirkeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",nil];
 		NSArray *dirvalues = [NSArray arrayWithObjects:@"up",@"rightUp",@"right",@"rightDown",@"down",@"leftDown",@"left",@"leftUp",nil];
 		dirctions = [[NSDictionary dictionaryWithObjects:dirvalues forKeys:dirkeys] retain];
-		animation = [CCAnimation animationWithName:@"animal" delay:0.5];
+		animation = [[CCAnimation animationWithName:@"animal" delay:0.5] retain];
 		for (int i = 1; i <= 4; i++) 
 		{
 			[animation addFrameWithFilename:[NSString stringWithFormat:@"ant_%02d.png", i]];
 		}
+		[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:5];
 	}
 	return self;
 }
@@ -36,23 +39,42 @@
 	CCRepeatForever *repeatAction = [CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:animation]];
 	[self stopAllActions];
 	self.rotation = 0;
-	if (direction == @"left" || direction == @"leftUp") 
+	if (direction == @"left") 
 	{
 		[self runAction:repeatAction];
 	}
-	else if(direction == @"up" || direction == @"rightUp")
+	if (direction == @"leftUp") 
+	{
+		[self runAction:repeatAction];
+	}
+	else if(direction == @"up")
 	{
 		self.rotation = 90;
 		[self runAction:repeatAction];
 	}
-	else if(direction == @"right" || direction == @"rightDown")
+	else if(direction == @"rightUp")
+	{
+		self.rotation = 135;
+		[self runAction:repeatAction];
+	}
+	else if(direction == @"right")
 	{
 		self.rotation = 180;
 		[self runAction:repeatAction];
 	}
-	else if(direction == @"down" || direction == @"leftDown")
+	else if(direction == @"rightDown")
+	{
+		self.rotation = 225;
+		[self runAction:repeatAction];
+	}
+	else if(direction == @"down")
 	{
 		self.rotation = 270;
+		[self runAction:repeatAction];
+	}
+	else if(direction == @"leftDown")
+	{
+		self.rotation = 325;
 		[self runAction:repeatAction];
 	}
 }
