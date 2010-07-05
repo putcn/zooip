@@ -4,121 +4,56 @@
 <dict>
 	<key>wildgoose_2</key>
 	<dict>
-		<key>maxItems</key><string>16</string>
-		<key>landing_down</key>
-		<dict>
-			<key>originX</key>
-			<string>0</string>
-			<key>originY</key>
-			<string>0</string>
-			<key>width</key>
-			<string>145</string>
-			<key>height</key>
-			<string>71</string>
-			<key>number</key>
-			<string>6</string>
-		</dict>
-		<key>landing_leftUp</key>
-		<dict>
-			<key>originX</key>
-			<string>0</string>
-			<key>originY</key>
-			<string>71</string>
-			<key>width</key>
-			<string>140</string>
-			<key>height</key>
-			<string>97</string>
-			<key>number</key>
-			<string>6</string>
-		</dict>
-		<key>landing_leftDown</key>
-		<dict>
-			<key>originX</key>
-			<string>0</string>
-			<key>originY</key>
-			<string>168</string>
-			<key>width</key>
-			<string>137</string>
-			<key>height</key>
-			<string>104</string>
-			<key>number</key>
-			<string>6</string>
-		</dict>
-		<key>landing_up</key>
-		<dict>
-			<key>originX</key>
-			<string>0</string>
-			<key>originY</key>
-			<string>272</string>
-			<key>width</key>
-			<string>132</string>
-			<key>height</key>
-			<string>65</string>
-			<key>number</key>
-			<string>6</string>
-		</dict>
+		<key>maxItems</key><string>8</string>
 		<key>transition_down</key>
 		<dict>
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
-			<string>337</string>
+			<string>0</string>
 			<key>width</key>
 			<string>153</string>
 			<key>height</key>
 			<string>95</string>
 			<key>number</key>
-			<string>5</string>
+			<string>6</string>
 		</dict>
 		<key>transition_up</key>
 		<dict>
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
-			<string>432</string>
+			<string>95</string>
 			<key>width</key>
 			<string>152</string>
 			<key>height</key>
 			<string>93</string>
 			<key>number</key>
-			<string>5</string>
+			<string>6</string>
 		</dict>
 		<key>transition_leftDown</key>
 		<dict>
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
-			<string>525</string>
+			<string>188</string>
 			<key>width</key>
 			<string>137</string>
 			<key>height</key>
 			<string>117</string>
 			<key>number</key>
-			<string>5</string>
+			<string>6</string>
 		</dict>
 		<key>transition_leftUp</key>
 		<dict>
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
-			<string>642</string>
+			<string>305</string>
 			<key>width</key>
 			<string>126</string>
 			<key>height</key>
 			<string>119</string>
-			<key>number</key>
-			<string>5</string>
-		</dict>
-		<key>landing_left</key>
-		<dict>
-			<key>originX</key>
-			<string>0</string>
-			<key>originY</key>
-			<string>761</string>
-			<key>width</key>
-			<string>105</string>
-			<key>height</key>
-			<string>114</string>
 			<key>number</key>
 			<string>6</string>
 		</dict>
@@ -127,13 +62,91 @@
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
-			<string>875</string>
+			<string>424</string>
 			<key>width</key>
 			<string>110</string>
 			<key>height</key>
 			<string>123</string>
 			<key>number</key>
-			<string>5</string>
+			<string>6</string>
+		</dict>
+		<key>walk_down</key>
+		<dict>
+			<key>originX</key>
+			<string>660</string>
+			<key>originY</key>
+			<string>424</string>
+			<key>width</key>
+			<string>36</string>
+			<key>height</key>
+			<string>90</string>
+			<key>number</key>
+			<string>6</string>
+		</dict>
+		<key>eat</key>
+		<dict>
+			<key>originX</key>
+			<string>0</string>
+			<key>originY</key>
+			<string>547</string>
+			<key>width</key>
+			<string>98</string>
+			<key>height</key>
+			<string>69</string>
+			<key>number</key>
+			<string>6</string>
+		</dict>
+		<key>walk_leftDown</key>
+		<dict>
+			<key>originX</key>
+			<string>588</string>
+			<key>originY</key>
+			<string>547</string>
+			<key>width</key>
+			<string>52</string>
+			<key>height</key>
+			<string>82</string>
+			<key>number</key>
+			<string>6</string>
+		</dict>
+		<key>walk_left</key>
+		<dict>
+			<key>originX</key>
+			<string>0</string>
+			<key>originY</key>
+			<string>629</string>
+			<key>width</key>
+			<string>73</string>
+			<key>height</key>
+			<string>80</string>
+			<key>number</key>
+			<string>6</string>
+		</dict>
+		<key>walk_leftUp</key>
+		<dict>
+			<key>originX</key>
+			<string>438</string>
+			<key>originY</key>
+			<string>629</string>
+			<key>width</key>
+			<string>60</string>
+			<key>height</key>
+			<string>88</string>
+			<key>number</key>
+			<string>6</string>
+		</dict>
+		<key>walk_up</key>
+		<dict>
+			<key>originX</key>
+			<string>0</string>
+			<key>originY</key>
+			<string>717</string>
+			<key>width</key>
+			<string>34</string>
+			<key>height</key>
+			<string>90</string>
+			<key>number</key>
+			<string>6</string>
 		</dict>
 	</dict>
 </dict>
