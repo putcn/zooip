@@ -9,9 +9,10 @@
 #import "Cocos2d.h"
 #import "OperationViewController.h"
 #import "KillAntsController.h"
+#import "FarmAnimalView.h"
 
 
-@interface AntView : CCSprite <CCTargetedTouchDelegate>{
+@interface AntView : FarmAnimalView{
 	NSDictionary *dirctions;
 	CCAnimation *animation;
 	NSString *antId;
@@ -22,7 +23,6 @@
 @property (nonatomic, retain)NSString *antId;
 
 -(id) initWithID: (NSString *)sId;
--(void) update:(int)currDirectionValue status:(int)currStatusValue;
 
 -(CGPoint)countCoordinate: (CGPoint)clickPoint;
 -(void) optAnimationPlay;

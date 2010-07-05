@@ -8,9 +8,10 @@
 
 #import "cocos2d.h"
 #import "OperationViewController.h"
+#import "FarmAnimalView.h"
 
 
-@interface DogView : CCSprite<CCTargetedTouchDelegate> {
+@interface DogView : FarmAnimalView {
 	NSMutableDictionary *animationTable;
 	NSDictionary *dirctions;
 	NSDictionary *statuses;

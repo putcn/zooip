@@ -147,6 +147,8 @@
 		3ECDFAA7119AE7E5008FBE22 /* PutSnakeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDFAA6119AE7E5008FBE22 /* PutSnakeView.m */; };
 		3ECDFAAA119AE7F0008FBE22 /* SpecialFoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDFAA9119AE7F0008FBE22 /* SpecialFoodView.m */; };
 		3ECDFAAD119AE7F9008FBE22 /* SummonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDFAAC119AE7F9008FBE22 /* SummonView.m */; };
+		3ED4F0ED11E1657C00652FBD /* FarmAnimal.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4F0EC11E1657C00652FBD /* FarmAnimal.m */; };
+		3ED4F15111E1698300652FBD /* FarmAnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ED4F15011E1698300652FBD /* FarmAnimalView.m */; };
 		3EE2B4421197BD2600E278E5 /* DejectaView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE2B4411197BD2600E278E5 /* DejectaView.m */; };
 		3EE7531611B4E665002475B0 /* ScalerPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE7531511B4E665002475B0 /* ScalerPane.m */; };
 		3EE9C8D211DCA1BB00376116 /* AnimalImageProperty.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EE9C8D111DCA1BB00376116 /* AnimalImageProperty.m */; };
@@ -776,19 +778,15 @@
 		609F849611DDEA9D00839DA8 /* _duck.png in Resources */ = {isa = PBXBuildFile; fileRef = 609F849411DDEA9D00839DA8 /* _duck.png */; };
 		60A0CDBE11B78066001AF9BD /* AnimalManageToMateAntsChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */; };
 		60AA1D9A11E171D1009CA603 /* _crane_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1D9611E171D1009CA603 /* _crane_1.plist */; };
-		60AA1D9B11E171D1009CA603 /* _crane_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1D9711E171D1009CA603 /* _crane_1.png */; };
 		60AA1D9C11E171D1009CA603 /* _crane_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1D9811E171D1009CA603 /* _crane_2.plist */; };
-		60AA1D9D11E171D1009CA603 /* _crane_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1D9911E171D1009CA603 /* _crane_2.png */; };
 		60AA1DA211E171F8009CA603 /* _magpie_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1D9E11E171F8009CA603 /* _magpie_1.plist */; };
 		60AA1DA311E171F8009CA603 /* _magpie_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1D9F11E171F8009CA603 /* _magpie_1.png */; };
 		60AA1DA411E171F8009CA603 /* _magpie_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DA011E171F8009CA603 /* _magpie_2.plist */; };
 		60AA1DA511E171F8009CA603 /* _magpie_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DA111E171F8009CA603 /* _magpie_2.png */; };
 		60AA1DAC11E17217009CA603 /* _parrot_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DA611E17216009CA603 /* _parrot_1.plist */; };
 		60AA1DAD11E17217009CA603 /* _parrot_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DA711E17216009CA603 /* _parrot_1.png */; };
-		60AA1DAE11E17217009CA603 /* _parrot_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DA811E17216009CA603 /* _parrot_2.plist */; };
 		60AA1DAF11E17217009CA603 /* _parrot_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DA911E17217009CA603 /* _parrot_2.png */; };
 		60AA1DB011E17217009CA603 /* _peacock.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DAA11E17217009CA603 /* _peacock.plist */; };
-		60AA1DB111E17217009CA603 /* _peacock.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DAB11E17217009CA603 /* _peacock.png */; };
 		60AA1DB611E1725A009CA603 /* _swan_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DB211E1725A009CA603 /* _swan_1.plist */; };
 		60AA1DB711E1725A009CA603 /* _swan_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DB311E1725A009CA603 /* _swan_1.png */; };
 		60AA1DB811E1725A009CA603 /* _swan_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60AA1DB411E1725A009CA603 /* _swan_2.plist */; };
@@ -1253,6 +1251,10 @@
 		3ECDFAAB119AE7F9008FBE22 /* SummonView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SummonView.h; sourceTree = "<group>"; };
 		3ECDFAAC119AE7F9008FBE22 /* SummonView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SummonView.m; sourceTree = "<group>"; };
 		3ECDFAAE119AE8E7008FBE22 /* OperationView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationView.h; sourceTree = "<group>"; };
+		3ED4F0EB11E1657C00652FBD /* FarmAnimal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FarmAnimal.h; sourceTree = "<group>"; };
+		3ED4F0EC11E1657C00652FBD /* FarmAnimal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FarmAnimal.m; sourceTree = "<group>"; };
+		3ED4F14F11E1698300652FBD /* FarmAnimalView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FarmAnimalView.h; sourceTree = "<group>"; };
+		3ED4F15011E1698300652FBD /* FarmAnimalView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FarmAnimalView.m; sourceTree = "<group>"; };
 		3EE2B4401197BD2600E278E5 /* DejectaView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DejectaView.h; sourceTree = "<group>"; };
 		3EE2B4411197BD2600E278E5 /* DejectaView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DejectaView.m; sourceTree = "<group>"; };
 		3EE7531411B4E665002475B0 /* ScalerPane.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScalerPane.h; sourceTree = "<group>"; };
@@ -1913,19 +1915,15 @@
 		60A0CDBC11B78066001AF9BD /* AnimalManageToMateAntsChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageToMateAntsChoose.h; sourceTree = "<group>"; };
 		60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageToMateAntsChoose.m; sourceTree = "<group>"; };
 		60AA1D9611E171D1009CA603 /* _crane_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _crane_1.plist; path = Sunday/_crane_1.plist; sourceTree = "<group>"; };
-		60AA1D9711E171D1009CA603 /* _crane_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _crane_1.png; path = Sunday/_crane_1.png; sourceTree = "<group>"; };
 		60AA1D9811E171D1009CA603 /* _crane_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _crane_2.plist; path = Sunday/_crane_2.plist; sourceTree = "<group>"; };
-		60AA1D9911E171D1009CA603 /* _crane_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _crane_2.png; path = Sunday/_crane_2.png; sourceTree = "<group>"; };
 		60AA1D9E11E171F8009CA603 /* _magpie_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _magpie_1.plist; path = Sunday/_magpie_1.plist; sourceTree = "<group>"; };
 		60AA1D9F11E171F8009CA603 /* _magpie_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _magpie_1.png; path = Sunday/_magpie_1.png; sourceTree = "<group>"; };
 		60AA1DA011E171F8009CA603 /* _magpie_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _magpie_2.plist; path = Sunday/_magpie_2.plist; sourceTree = "<group>"; };
 		60AA1DA111E171F8009CA603 /* _magpie_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _magpie_2.png; path = Sunday/_magpie_2.png; sourceTree = "<group>"; };
 		60AA1DA611E17216009CA603 /* _parrot_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _parrot_1.plist; path = Sunday/_parrot_1.plist; sourceTree = "<group>"; };
 		60AA1DA711E17216009CA603 /* _parrot_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _parrot_1.png; path = Sunday/_parrot_1.png; sourceTree = "<group>"; };
-		60AA1DA811E17216009CA603 /* _parrot_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _parrot_2.plist; path = Sunday/_parrot_2.plist; sourceTree = "<group>"; };
 		60AA1DA911E17217009CA603 /* _parrot_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _parrot_2.png; path = Sunday/_parrot_2.png; sourceTree = "<group>"; };
 		60AA1DAA11E17217009CA603 /* _peacock.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _peacock.plist; path = Sunday/_peacock.plist; sourceTree = "<group>"; };
-		60AA1DAB11E17217009CA603 /* _peacock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _peacock.png; path = Sunday/_peacock.png; sourceTree = "<group>"; };
 		60AA1DB211E1725A009CA603 /* _swan_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _swan_1.plist; path = Sunday/_swan_1.plist; sourceTree = "<group>"; };
 		60AA1DB311E1725A009CA603 /* _swan_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = _swan_1.png; path = Sunday/_swan_1.png; sourceTree = "<group>"; };
 		60AA1DB411E1725A009CA603 /* _swan_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = _swan_2.plist; path = Sunday/_swan_2.plist; sourceTree = "<group>"; };
@@ -2721,6 +2719,8 @@
 				3EED46C2119674340093FF6E /* BowlsView.m */,
 				3EE2B4401197BD2600E278E5 /* DejectaView.h */,
 				3EE2B4411197BD2600E278E5 /* DejectaView.m */,
+				3ED4F14F11E1698300652FBD /* FarmAnimalView.h */,
+				3ED4F15011E1698300652FBD /* FarmAnimalView.m */,
 			);
 			name = Items;
 			sourceTree = "<group>";
@@ -3479,18 +3479,14 @@
 				60AA1DB511E1725A009CA603 /* _swan_2.png */,
 				60AA1DA611E17216009CA603 /* _parrot_1.plist */,
 				60AA1DA711E17216009CA603 /* _parrot_1.png */,
-				60AA1DA811E17216009CA603 /* _parrot_2.plist */,
 				60AA1DA911E17217009CA603 /* _parrot_2.png */,
 				60AA1DAA11E17217009CA603 /* _peacock.plist */,
-				60AA1DAB11E17217009CA603 /* _peacock.png */,
 				60AA1D9E11E171F8009CA603 /* _magpie_1.plist */,
 				60AA1D9F11E171F8009CA603 /* _magpie_1.png */,
 				60AA1DA011E171F8009CA603 /* _magpie_2.plist */,
 				60AA1DA111E171F8009CA603 /* _magpie_2.png */,
 				60AA1D9611E171D1009CA603 /* _crane_1.plist */,
-				60AA1D9711E171D1009CA603 /* _crane_1.png */,
 				60AA1D9811E171D1009CA603 /* _crane_2.plist */,
-				60AA1D9911E171D1009CA603 /* _crane_2.png */,
 				609F849311DDEA9D00839DA8 /* _duck.plist */,
 				609F849411DDEA9D00839DA8 /* _duck.png */,
 				609F83DA11DDE83B00839DA8 /* _babyCrane.plist */,
@@ -4032,6 +4028,8 @@
 			children = (
 				C3C528D1117EA48600343D7F /* Animal.h */,
 				C3C528D2117EA48600343D7F /* Animal.m */,
+				3ED4F0EB11E1657C00652FBD /* FarmAnimal.h */,
+				3ED4F0EC11E1657C00652FBD /* FarmAnimal.m */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -5106,19 +5104,15 @@
 				609F849511DDEA9D00839DA8 /* _duck.plist in Resources */,
 				609F849611DDEA9D00839DA8 /* _duck.png in Resources */,
 				60AA1D9A11E171D1009CA603 /* _crane_1.plist in Resources */,
-				60AA1D9B11E171D1009CA603 /* _crane_1.png in Resources */,
 				60AA1D9C11E171D1009CA603 /* _crane_2.plist in Resources */,
-				60AA1D9D11E171D1009CA603 /* _crane_2.png in Resources */,
 				60AA1DA211E171F8009CA603 /* _magpie_1.plist in Resources */,
 				60AA1DA311E171F8009CA603 /* _magpie_1.png in Resources */,
 				60AA1DA411E171F8009CA603 /* _magpie_2.plist in Resources */,
 				60AA1DA511E171F8009CA603 /* _magpie_2.png in Resources */,
 				60AA1DAC11E17217009CA603 /* _parrot_1.plist in Resources */,
 				60AA1DAD11E17217009CA603 /* _parrot_1.png in Resources */,
-				60AA1DAE11E17217009CA603 /* _parrot_2.plist in Resources */,
 				60AA1DAF11E17217009CA603 /* _parrot_2.png in Resources */,
 				60AA1DB011E17217009CA603 /* _peacock.plist in Resources */,
-				60AA1DB111E17217009CA603 /* _peacock.png in Resources */,
 				60AA1DB611E1725A009CA603 /* _swan_1.plist in Resources */,
 				60AA1DB711E1725A009CA603 /* _swan_1.png in Resources */,
 				60AA1DB811E1725A009CA603 /* _swan_2.plist in Resources */,
@@ -5332,6 +5326,8 @@
 				6BCE3CEA11D059320006A430 /* LoadView.m in Sources */,
 				6BC5C16E11DB3DE700644D52 /* LoadingBar.m in Sources */,
 				3EE9C8D211DCA1BB00376116 /* AnimalImageProperty.m in Sources */,
+				3ED4F0ED11E1657C00652FBD /* FarmAnimal.m in Sources */,
+				3ED4F15111E1698300652FBD /* FarmAnimalView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
