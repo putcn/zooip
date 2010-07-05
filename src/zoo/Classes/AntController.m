@@ -43,7 +43,7 @@ static AntController *_sharedAntController = nil;
 {
 	for (NSString *anId in antIds) {
 		AntView * antView = [[AntView alloc] initWithID:anId];
-		[[FarmAnimal alloc] initWithView:antView setSpeed:0.5f setLimitRect:CGRectMake(100, 100, 100, 100)];
+		[[FarmAnimal alloc] initWithView:antView setSpeed:0.5f setLimitRect:CGRectMake(300, 100, 100, 100)];
 		[allAnts setObject:antView forKey:anId];
 	}
 }

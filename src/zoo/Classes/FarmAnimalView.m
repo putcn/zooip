@@ -10,5 +10,9 @@
 
 
 @implementation FarmAnimalView
+-(void) update:(int)currDirectionValue status:(int)currStatusValue
+{
+	
+}
 
 @end
