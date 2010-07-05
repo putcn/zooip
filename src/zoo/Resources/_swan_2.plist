@@ -292,7 +292,7 @@
 			<key>width</key>
 			<string>32</string>
 		</dict>
-		<key>walk_down</key>
+		<key>walk_up</key>
 		<dict>
 			<key>height</key>
 			<string>90</string>
@@ -305,7 +305,7 @@
 			<key>width</key>
 			<string>34</string>
 		</dict>
-		<key>walk_front</key>
+		<key>walk_down</key>
 		<dict>
 			<key>height</key>
 			<string>89</string>
