@@ -7,6 +7,7 @@
 //
 
 #import "ItemController.h"
+#import "FarmAnimal.h"
 
 
 @implementation ItemController
@@ -45,11 +46,13 @@ static ItemController *_itemController = nil;
 	if(itemType == @"chinemy"){
 		ChinemyView *chinemyView = [[ChinemyView alloc] init];
 		chinemyView.position = ccp(850, 400);
+		[[FarmAnimal alloc] initWithView:chinemyView setSpeed:0.5f setLimitRect:CGRectMake(800, 350, 100, 100)];
 		[allItems setObject:chinemyView forKey:@"chinemy"];
 	}
 	else if(itemType == @"dog"){
 		DogView *dogView = [[DogView alloc] init];
 		dogView.position = ccp(650,450);
+		[[FarmAnimal alloc] initWithView:dogView setSpeed:0.5f setLimitRect:CGRectMake(550, 400, 100, 100)];
 		[allItems setObject:dogView forKey:@"dog"];
 	}
 	else if(itemType == @"bowls"){
