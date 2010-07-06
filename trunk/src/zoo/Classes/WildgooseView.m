@@ -19,6 +19,7 @@
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
 		animationTable = [imageProp animationTable:@"_wildgoose_1.png" plistName:@"_wildgoose_1.plist"];
 		animationTable = [imageProp animationTable:@"_wildgoose_2.png" plistName:@"_wildgoose_2.plist"];
+		animationTable = [imageProp animationTable:@"_wildgoose_3.png" plistName:@"_wildgoose_3.plist"];
 		NSLog(@"------------%@", animationTable);
 		
 //		//walk animations
