@@ -76,7 +76,9 @@
 			scaleIncreament = 0;
 			isReset = NO;
 		}
-			
+		if (target.scale >= 3 && scaleIncreament > 0) {
+			return;
+		}	
 		target.scale += scaleIncreament;
 		
 		if (target.scale < 1) target.scale = 1;

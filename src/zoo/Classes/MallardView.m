@@ -19,7 +19,7 @@
 		
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
 		animationTable = [imageProp animationTable:@"_Mallard_1.png" plistName:@"_Mallard_1.plist"];
-		animationTable = [imageProp animationTable:@"_Mallard_2.png" plistName:@"_Mallard_2.plist"];
+		[animationTable addEntriesFromDictionary:[imageProp animationTable:@"_Mallard_2.png" plistName:@"_Mallard_2.plist"]];
 		NSLog(@"------------%@", animationTable);
 		
 		
