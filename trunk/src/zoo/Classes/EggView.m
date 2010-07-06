@@ -72,10 +72,10 @@
 -(void)optAnimationPlay
 {
 	int type = [[UIController sharedUIController] getOperation];
-//	if (type == OPERATION_DEFAULT) {
-//		[self schedule:@selector(tick:) interval:4.0];
-//	}
-//	else 
+	if (type == OPERATION_DEFAULT) {
+		return;
+	}
+	else 
 	if(type == OPERATION_PICK_EGG || type == OPERATION_STEAL_EGG){
 		CGPoint location = ccp(self.position.x, self.position.y);
 		[[OperationViewController sharedOperationViewController] play:@"pickup" setPosition:location];

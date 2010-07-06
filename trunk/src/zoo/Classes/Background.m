@@ -53,10 +53,15 @@
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	int type = [[UIController sharedUIController] getOperation];
-	if(type == OPERATION_DEFAULT)
+	if(type == OPERATION_RELEASE_ANTS || type == OPERATION_CALL || type == OPERATION_THROW_FIREWORK)
+	{
+		click = [self convertTouchToNodeSpaceAR:touch];
+		return YES;
+	}
+	else {
 		return NO;
-	click = [self convertTouchToNodeSpaceAR:touch];
-	return YES;
+	}
+
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
