@@ -31,6 +31,8 @@
 	CCLabel *animalNumLbl;
 	CCSprite *userImgSprite;
 	
+	float  nColorBar;
+	
 }
 
 -(void) updateUserInfo;
