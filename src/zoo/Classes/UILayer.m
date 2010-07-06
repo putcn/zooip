@@ -90,20 +90,20 @@
 	[playerInfo runAction:[CCSequence actions:ease, actionMoveDone, nil]];
 	
 	
-	id actionMove = [CCMoveTo actionWithDuration:0.6  position:ccp(0, playerButtonContainer.position.y)];
-	id actionMoveDone = [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveInFinished)];
-	
-	id ease = [CCEaseBackOut actionWithAction: actionMove];
-	[ease setDuration:0.3];
-	
-	if ([[ModelLocator sharedModelLocator] getIsSelfZoo])
-	{
-		[playerButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
-	}
-	else
-	{
-		[friendButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
-	}
+//	id actionMove = [CCMoveTo actionWithDuration:0.6  position:ccp(0, playerButtonContainer.position.y)];
+//	id actionMoveDone = [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveInFinished)];
+//	
+//	id ease = [CCEaseBackOut actionWithAction: actionMove];
+//	[ease setDuration:0.3];
+//	
+//	if ([[ModelLocator sharedModelLocator] getIsSelfZoo])
+//	{
+//		[playerButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
+//	}
+//	else
+//	{
+//		[friendButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
+//	}
 	
 	
 }
