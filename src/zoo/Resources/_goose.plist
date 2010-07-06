@@ -4,7 +4,7 @@
 <dict>
 	<key>goose</key>
 	<dict>
-		<key>maxItems</key><string>10</string>
+		<key>maxItems</key><string>12</string>
 		<key>eat</key>
 		<dict>
 			<key>originX</key>
@@ -96,23 +96,10 @@
 			<key>number</key>
 			<string>10</string>
 		</dict>
-		<key>swimming</key>
-		<dict>
-			<key>originX</key>
-			<string>500</string>
-			<key>originY</key>
-			<string>257</string>
-			<key>width</key>
-			<string>60</string>
-			<key>height</key>
-			<string>60</string>
-			<key>number</key>
-			<string>5</string>
-		</dict>
 		<key>ill_left</key>
 		<dict>
 			<key>originX</key>
-			<string>800</string>
+			<string>500</string>
 			<key>originY</key>
 			<string>257</string>
 			<key>width</key>
@@ -122,25 +109,25 @@
 			<key>number</key>
 			<string>1</string>
 		</dict>
-		<key>sleep_up</key>
+		<key>swimming_left</key>
 		<dict>
 			<key>originX</key>
-			<string>865</string>
+			<string>565</string>
 			<key>originY</key>
 			<string>257</string>
 			<key>width</key>
-			<string>30</string>
+			<string>60</string>
 			<key>height</key>
-			<string>63</string>
+			<string>51</string>
 			<key>number</key>
 			<string>1</string>
 		</dict>
 		<key>ill_leftUp</key>
 		<dict>
 			<key>originX</key>
-			<string>0</string>
+			<string>625</string>
 			<key>originY</key>
-			<string>337</string>
+			<string>257</string>
 			<key>width</key>
 			<string>55</string>
 			<key>height</key>
@@ -151,9 +138,9 @@
 		<key>pose</key>
 		<dict>
 			<key>originX</key>
-			<string>55</string>
+			<string>680</string>
 			<key>originY</key>
-			<string>337</string>
+			<string>257</string>
 			<key>width</key>
 			<string>50</string>
 			<key>height</key>
@@ -164,9 +151,9 @@
 		<key>ill_leftDown</key>
 		<dict>
 			<key>originX</key>
-			<string>105</string>
+			<string>730</string>
 			<key>originY</key>
-			<string>337</string>
+			<string>257</string>
 			<key>width</key>
 			<string>50</string>
 			<key>height</key>
@@ -174,10 +161,49 @@
 			<key>number</key>
 			<string>1</string>
 		</dict>
+		<key>swimming_leftUp</key>
+		<dict>
+			<key>originX</key>
+			<string>780</string>
+			<key>originY</key>
+			<string>257</string>
+			<key>width</key>
+			<string>45</string>
+			<key>height</key>
+			<string>56</string>
+			<key>number</key>
+			<string>1</string>
+		</dict>
+		<key>swimming_leftDown</key>
+		<dict>
+			<key>originX</key>
+			<string>825</string>
+			<key>originY</key>
+			<string>257</string>
+			<key>width</key>
+			<string>45</string>
+			<key>height</key>
+			<string>49</string>
+			<key>number</key>
+			<string>1</string>
+		</dict>
+		<key>swimming_up</key>
+		<dict>
+			<key>originX</key>
+			<string>870</string>
+			<key>originY</key>
+			<string>257</string>
+			<key>width</key>
+			<string>30</string>
+			<key>height</key>
+			<string>60</string>
+			<key>number</key>
+			<string>1</string>
+		</dict>
 		<key>sleep_leftUp</key>
 		<dict>
 			<key>originX</key>
-			<string>155</string>
+			<string>0</string>
 			<key>originY</key>
 			<string>337</string>
 			<key>width</key>
@@ -190,7 +216,7 @@
 		<key>sleep_leftDown</key>
 		<dict>
 			<key>originX</key>
-			<string>200</string>
+			<string>45</string>
 			<key>originY</key>
 			<string>337</string>
 			<key>width</key>
@@ -203,7 +229,7 @@
 		<key>ill_down</key>
 		<dict>
 			<key>originX</key>
-			<string>240</string>
+			<string>85</string>
 			<key>originY</key>
 			<string>337</string>
 			<key>width</key>
@@ -216,7 +242,7 @@
 		<key>ill_up</key>
 		<dict>
 			<key>originX</key>
-			<string>280</string>
+			<string>125</string>
 			<key>originY</key>
 			<string>337</string>
 			<key>width</key>
@@ -226,16 +252,42 @@
 			<key>number</key>
 			<string>1</string>
 		</dict>
+		<key>sleep_up</key>
+		<dict>
+			<key>originX</key>
+			<string>163</string>
+			<key>originY</key>
+			<string>337</string>
+			<key>width</key>
+			<string>30</string>
+			<key>height</key>
+			<string>63</string>
+			<key>number</key>
+			<string>1</string>
+		</dict>
 		<key>sleep_down</key>
 		<dict>
 			<key>originX</key>
-			<string>318</string>
+			<string>193</string>
 			<key>originY</key>
 			<string>337</string>
 			<key>width</key>
 			<string>30</string>
 			<key>height</key>
 			<string>50</string>
+			<key>number</key>
+			<string>1</string>
+		</dict>
+		<key>swimming_down</key>
+		<dict>
+			<key>originX</key>
+			<string>223</string>
+			<key>originY</key>
+			<string>337</string>
+			<key>width</key>
+			<string>27</string>
+			<key>height</key>
+			<string>54</string>
 			<key>number</key>
 			<string>1</string>
 		</dict>
