@@ -5487,7 +5487,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5506,7 +5506,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
 				SDKROOT = iphonesimulator4.0;
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -5516,7 +5515,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -5532,7 +5531,6 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
 				SDKROOT = iphonesimulator4.0;
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -5573,13 +5571,13 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "20751554-1ED4-4A00-BF12-0747EC26E4C4";
 				SDKROOT = iphoneos3.2;
 			};
 			name = Debug;
@@ -5589,14 +5587,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_UNROLL_LOOPS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "20751554-1ED4-4A00-BF12-0747EC26E4C4";
 				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
