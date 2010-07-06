@@ -227,7 +227,7 @@
 			<key>width</key>
 			<string>120</string>
 		</dict>
-		<key>swim_down</key>
+		<key>swimming_down</key>
 		<dict>
 			<key>height</key>
 			<string>61</string>
@@ -240,7 +240,7 @@
 			<key>width</key>
 			<string>30</string>
 		</dict>
-		<key>swim_left</key>
+		<key>swimming_left</key>
 		<dict>
 			<key>height</key>
 			<string>55</string>
@@ -253,7 +253,7 @@
 			<key>width</key>
 			<string>71</string>
 		</dict>
-		<key>swim_leftDown</key>
+		<key>swimming_leftDown</key>
 		<dict>
 			<key>height</key>
 			<string>59</string>
@@ -266,7 +266,7 @@
 			<key>width</key>
 			<string>51</string>
 		</dict>
-		<key>swim_leftUp</key>
+		<key>swimming_leftUp</key>
 		<dict>
 			<key>height</key>
 			<string>67</string>
@@ -279,7 +279,7 @@
 			<key>width</key>
 			<string>57</string>
 		</dict>
-		<key>swim_up</key>
+		<key>swimming_up</key>
 		<dict>
 			<key>height</key>
 			<string>74</string>
