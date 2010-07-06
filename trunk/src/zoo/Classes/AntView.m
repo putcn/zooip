@@ -123,17 +123,13 @@
 -(void)optAnimationPlay
 {
 	int type = [[UIController sharedUIController] getOperation];
-	if (type == OPERATION_DEFAULT) {
-		[self schedule:@selector(tick:) interval:4.0];
+	if(type == OPERATION_KILL_ANTS){
+		CGPoint location = ccp(self.position.x, self.position.y);
+		[[OperationViewController sharedOperationViewController] play:@"pesticide" setPosition:location];
 	}
-	else 
-		if(type == OPERATION_KILL_ANTS){
-			CGPoint location = ccp(self.position.x, self.position.y);
-			[[OperationViewController sharedOperationViewController] play:@"pesticide" setPosition:location];
-		}
-		else {
-			return;
-		}
+	else {
+		return;
+	}
 	
 }
 
@@ -144,8 +140,9 @@
 	if (type == OPERATION_KILL_ANTS)
 	{
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:antId,@"releaseAntsId",
-								[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"killerId ",
+								[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"killerId",
 								[DataEnvironment sharedDataEnvironment].friendFarmerInfo.farmerId,@"farmerId",nil];
+		killAntsController.antId = self.antId;
 		[killAntsController execute:params];
 	}
 }
