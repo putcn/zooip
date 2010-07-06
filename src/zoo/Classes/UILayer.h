@@ -23,8 +23,7 @@
 	ZooManageToolbar *zooManageToolbar;
 	FriendsToolbar *friendsToolbar;
 	
-	NSString *pFile;
-	Button *nextPageBtn;
+	
 }
 
 -(void) updateUserInfo;

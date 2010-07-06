@@ -49,7 +49,9 @@
 
 	CCLabel *animalNameLable = [CCLabel labelWithString:animalName fontName:@"Arial" fontSize:20];
 	[animalNameLable setColor:ccc3(255, 0, 255)];
-	
+	if (itemId.intValue >= 30) {
+		[item setFlipX:YES];
+	}
 	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
 	
 	[self addChild:item z:7];

@@ -64,53 +64,8 @@
 -(void) updateUserInfo
 {
 	[playerInfo updateUserInfo];
-	
-	pFile = @"返回.png"; 
-	nextPageBtn = [[Button alloc] initWithLabel:@"" 
-									   setColor:ccc3(255, 255, 255) 
-										setFont:@"Arial" setSize:12 
-								  setBackground:pFile 
-									  setTarget:self 
-									setSelector:@selector(btnPlayerOperationButtonHandler:) 
-									setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
-	nextPageBtn.position = ccp(270,295);
-	[self addChild:nextPageBtn z:3];
 }
 
--(void) btnPlayerOperationButtonHandler:(Button *)button
-{	
-//	pFile = @"返回1.png"; 
-//	nextPageBtn.position = ccp(10,295);
-	id actionMove = [CCMoveTo actionWithDuration:0.6  position:ccp(-120, playerInfo.position.y)];
-	id actionMoveDone = [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveOutFinished)];
-	
-	id ease = [CCEaseBackIn actionWithAction: actionMove];
-	[ease setDuration:0.3];
-	
-	[playerInfo runAction:[CCSequence actions:ease, actionMoveDone, nil]];
-	
-	
-//	id actionMove = [CCMoveTo actionWithDuration:0.6  position:ccp(0, playerButtonContainer.position.y)];
-//	id actionMoveDone = [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveInFinished)];
-//	
-//	id ease = [CCEaseBackOut actionWithAction: actionMove];
-//	[ease setDuration:0.3];
-//	
-//	if ([[ModelLocator sharedModelLocator] getIsSelfZoo])
-//	{
-//		[playerButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
-//	}
-//	else
-//	{
-//		[friendButtonContainer runAction:[CCSequence actions:ease, actionMoveDone, nil]];
-//	}
-	
-	
-}
--(void)spriteMoveOutFinished
-{
-	nextPageBtn.position = ccp(10,295);
-}
 
 // Add by Hunk on 2010-06-29
 -(void)dealloc

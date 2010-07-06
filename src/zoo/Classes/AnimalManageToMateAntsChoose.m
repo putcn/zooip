@@ -67,7 +67,7 @@ antsCount;
 {
 	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:20];
 	[titleLbl setColor:ccc3(0, 0, 0)];
-	titleLbl.position = ccp(self.contentSize.width/2-100, self.contentSize.height - titleLbl.contentSize.height/2);
+	titleLbl.position = ccp(self.contentSize.width/2-100, self.contentSize.height - titleLbl.contentSize.height/2-7);
 	[self addChild:titleLbl z:10];
 }
 -(void)updateButtonsAndRates:(id)target

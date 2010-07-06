@@ -450,7 +450,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 		{
 			if (response == nil)
 			{
-				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何好友信息"];
+//				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何好友信息"];
 			}
 			else
 			{
@@ -475,7 +475,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 					}
 				}
 				
-				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取好友信息"];
+//				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取好友信息"];
 			}
 			
 			break;
@@ -499,7 +499,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 			switch (code) {
 				case 0:
 					// TODO 仓库无任何饲料
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"仓库无任何饲料"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"仓库无任何饲料"];
 					break;
 				case 1:
 				{
@@ -519,7 +519,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[storageFoodsDic setValue:storageFood forKey:storageFood.foodStorageId];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取仓库饲料信息"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取仓库饲料信息"];
 				}
 					break;
 				default:
@@ -625,6 +625,8 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						playerFarmerInfo.nextLevelExp = [[result objectForKey:@"nextLevelExp"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"nextLevelExp"] intValue];
 						playerFarmerInfo.experience = [[result objectForKey:@"currentExp"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"currentExp"] intValue];
 					}
+					
+					
 				}
 					break;
 				default:
@@ -878,12 +880,12 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						
 						[sDic setObject:obj forKey:obj.foodId];
 					}
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取饲料信息"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取饲料信息"];
 				}
 					break;
 				case 0:
 				{
-					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无饲料"];
+//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无饲料"];
 				}
 					break;
 				default:

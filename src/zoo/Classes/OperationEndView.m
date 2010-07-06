@@ -16,16 +16,28 @@
 	[self initWithFile:@"operationEnd.png"];
 	self.position = position;
 	[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:6];
-	CCLabel *experienceLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"Experience: %d",experience] fontName:@"Arial" fontSize:15];
-	[experienceLbl setColor:ccc3(255, 0, 0)];
+	
+//	CCLabel *experienceLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"Experience: %d",experience] fontName:@"Arial" fontSize:15];
+//	[experienceLbl setColor:ccc3(255, 0, 0)];
+//	experienceLbl.position = ccp(experienceLbl.contentSize.width/2, self.contentSize.height);
+//	[self addChild:experienceLbl z:7];
+//	if (number != 0) {
+//		CCLabel *numberLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"Number: %d",number] fontName:@"Arial" fontSize:15];
+//		[numberLbl setColor:ccc3(255, 0, 0)];
+//		numberLbl.position = ccp(numberLbl.contentSize.width/2, self.contentSize.height - experienceLbl.contentSize.height);
+//		[self addChild:numberLbl z:7];
+//	}
+	
+	
+	CCLabel *experienceLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"+%d 经验值",experience] fontName:@"Arial" fontSize:20];
+	[experienceLbl setColor:ccc3(0, 0, 0)];
 	experienceLbl.position = ccp(experienceLbl.contentSize.width/2, self.contentSize.height);
 	[self addChild:experienceLbl z:7];
-	if (number != 0) {
-		CCLabel *numberLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"Number: %d",number] fontName:@"Arial" fontSize:15];
-		[numberLbl setColor:ccc3(255, 0, 0)];
-		numberLbl.position = ccp(numberLbl.contentSize.width/2, self.contentSize.height - experienceLbl.contentSize.height);
-		[self addChild:numberLbl z:7];
-	}
+	
+	CCSprite *tree = [CCSprite spriteWithFile:@"操作提示(经验,蛋).png"];
+	tree.position = ccp(experienceLbl.position.x - 70,experienceLbl.position.y);
+	[self addChild:tree z:7];
+	
 	CCMoveTo *moveTo = [CCMoveTo actionWithDuration:1.0 position:ccp(position.x, position.y + 50)];
 	CCFadeOut *fadeOut = [CCFadeOut actionWithDuration:1.0];
 	CCSpawn *spawn = [CCSpawn actions:moveTo,fadeOut,nil];

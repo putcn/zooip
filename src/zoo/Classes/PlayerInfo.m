@@ -38,8 +38,8 @@
 		[bg release];
 		
 		//头像
-		[userImgSprite setContentSize:CGSizeMake(40, 40)];
-		userImgSprite.position = ccp(60,130);
+//		[userImgSprite setContentSize:CGSizeMake(40, 40)];
+		userImgSprite.position = ccp(110,110);
 		//名字
 		userNameLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:18];//retain];
 		[userNameLbl setColor:ccc3(0, 0, 0)];
@@ -61,7 +61,6 @@
 		
 		CCSprite *animalIcon = [CCSprite spriteWithFile:@"信息背景.png"];
 		animalIcon.position = ccp(274,29);
-//		animalIcon.scaleX = 1.1;
 		[self addChild:animalIcon z:0];
 		//动物数量
 		animalNumLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:15];// retain];
@@ -72,8 +71,6 @@
 		[capacity setColor:ccc3(0, 0, 0)];
 		capacity.position = ccp(275,16);
 		
-		
-		
 		experienceBar = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:14];// retain];
 		[experienceBar setColor:ccc3(0, 0, 0)];
 		experienceBar.position = ccp(125,15);
@@ -82,9 +79,7 @@
 		[levelLbl setColor:ccc3(0, 0, 0)];
 		levelLbl.position = ccp(210,16);
 		
-		
-		
-		[self addChild:userImgSprite z:1];
+		[self addChild:userImgSprite z:3];
 		[self addChild:userNameLbl z:1];
 		[self addChild:experienceBar z:2];
 		[self addChild:levelLbl z:1];
@@ -160,10 +155,21 @@
 	[self addChild:load_yellow z:1];
 	
 	
+	
+//	pFile = @"返回.png"; 
+	nextPageBtn = [[Button alloc] initWithLabel:@"" 
+									   setColor:ccc3(255, 255, 255) 
+										setFont:@"Arial" setSize:12 
+								  setBackground:@"返回.png" 
+									  setTarget:self 
+									setSelector:@selector(btnPlayerOperationButtonHandler:) 
+									setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+	nextPageBtn.position = ccp(332,30);
+	[self addChild:nextPageBtn z:3];
+	
+	
 	CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:userImg ofType:nil] ] ];
 	[userImgSprite setTexture:useImgTexture];
-	
-	//
 	[useImgTexture release];
 	
 	[userNameLbl setString:userName];
@@ -173,8 +179,62 @@
 	[antsNumLbl setString:antsNum];
 	[goldenEggNumLbl setString:goldenEggNum];
 	[capacity setString:[NSString stringWithFormat:@"容量:%@/%@",maxNumOfBirds,topMaxNumOfBirds]];
-	
 }
+
+
+-(void) btnPlayerOperationButtonHandler:(Button *)button
+{	
+	if(self.position.x > 0)
+	{
+		id actionMove = [CCMoveTo actionWithDuration:0.6  position:ccp(-120, self.position.y)];
+		id actionMoveDone = [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveOutFinished)];
+		
+		id ease = [CCEaseBackIn actionWithAction: actionMove];
+		[ease setDuration:0.3];
+		
+		[self runAction:[CCSequence actions:ease, actionMoveDone, nil]];
+
+	}
+	else 
+	{
+		id actionMove = [CCMoveTo actionWithDuration:0.6  position:ccp(130, self.position.y)];
+		id actionMoveDone = [CCCallFuncN actionWithTarget:self selector:@selector(spriteMoveInFinished)];
+		
+		id ease = [CCEaseBackOut actionWithAction: actionMove];
+		[ease setDuration:0.3];
+		
+		[self runAction:[CCSequence actions:ease, actionMoveDone, nil]];
+		
+		
+	}
+}
+-(void)spriteMoveOutFinished
+{
+	nextPageBtn = [[Button alloc] initWithLabel:@"" 
+									   setColor:ccc3(255, 255, 255) 
+										setFont:@"Arial" setSize:12 
+								  setBackground:@"返回1.png" 
+									  setTarget:self 
+									setSelector:@selector(btnPlayerOperationButtonHandler:) 
+									setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+	nextPageBtn.position = ccp(332,30);
+	[self addChild:nextPageBtn z:3];
+}
+
+-(void)spriteMoveInFinished
+{
+	nextPageBtn = [[Button alloc] initWithLabel:@"" 
+									   setColor:ccc3(255, 255, 255) 
+										setFont:@"Arial" setSize:12 
+								  setBackground:@"返回.png" 
+									  setTarget:self 
+									setSelector:@selector(btnPlayerOperationButtonHandler:) 
+									setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+	nextPageBtn.position = ccp(332,30);
+	[self addChild:nextPageBtn z:3];
+}
+
+
 
 // Add by Hunk on 2010-06-29
 -(void)dealloc

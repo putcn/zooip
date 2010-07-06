@@ -44,6 +44,9 @@
 	CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:imagePath ofType:nil] ] ];
 	CGRect rect = CGRectZero;
 	rect.size = itemImg.contentSize;
+	if (buyType != 0) {
+		[item setFlipX:YES];
+	};
 	[item setTexture: itemImg];
 	[item setTextureRect: rect];
 	[itemImg release];
@@ -54,16 +57,17 @@
 	else {
 		buyImg = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
 	}
-	CCLabel *priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:20];
-	[priceLbl setColor:ccc3(255, 0, 255)];
+	buyImg.scale = 1.2f;
+	CCLabel *priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:22];
+	[priceLbl setColor:ccc3(0, 0, 0)];
 	if (itemType == @"animal") {
 		if ([itemId intValue] >= 50) {
 			item.flipX = YES;
 		}
 	}
-	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
-	buyImg.position = ccp(buyImg.contentSize.width/2 +20, self.contentSize.height - 80);
-	priceLbl.position = ccp(buyImg.contentSize.width + 50 , buyImg.position.y);
+	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2-5);
+	buyImg.position = ccp(buyImg.contentSize.width/2 +25, self.contentSize.height - 80-10);
+	priceLbl.position = ccp(buyImg.contentSize.width + 60 , buyImg.position.y);
 	
 	[self addChild:item z:7];
 	[self addChild:buyImg z:7];

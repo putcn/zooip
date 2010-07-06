@@ -194,10 +194,10 @@ count;
 		scalerPane.position = ccp(0,0);
 		[self addChild:scalerPane z:10];
 	}
-//	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:40];
-//	transBackground.scale = 17.0f;
-//	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-//	[self addChild:transBackground z:5];
+	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:40];
+	transBackground.scale = 5.0f;
+	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+	[self addChild:transBackground z:5];
 }
 
 -(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price

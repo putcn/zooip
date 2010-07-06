@@ -79,6 +79,8 @@
 	if(type == OPERATION_PICK_EGG || type == OPERATION_STEAL_EGG){
 		CGPoint location = ccp(self.position.x, self.position.y);
 		[[OperationViewController sharedOperationViewController] play:@"pickup" setPosition:location];
+		
+		
 	}
 	else if(type == OPERATION_RELEASE_SNAKE)
 	{
