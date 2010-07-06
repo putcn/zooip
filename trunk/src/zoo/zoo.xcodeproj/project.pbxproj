@@ -4109,6 +4109,8 @@
 				8432CD8011B346CF0093DA32 /* StoButtonContainer.m */,
 				84DB49B611AF5656005E5E71 /* StorageContainer.h */,
 				84DB49B711AF5656005E5E71 /* StorageContainer.m */,
+				8408914311B49FBC001C29CA /* SellitemButton.h */,
+				8408914411B49FBC001C29CA /* SellitemButton.m */,
 				3EB0713111AD084900F31A7F /* ManageContainer.h */,
 				3EB0713211AD084900F31A7F /* ManageContainer.m */,
 				3EB0712D11AD084900F31A7F /* ButtonContainer.h */,
@@ -4135,8 +4137,6 @@
 				C3C525E4117C321800343D7F /* Button.m */,
 				3EAD8AFE11AEC76D00CE397E /* TransBackground.h */,
 				3EAD8AFF11AEC76D00CE397E /* TransBackground.m */,
-				8408914311B49FBC001C29CA /* SellitemButton.h */,
-				8408914411B49FBC001C29CA /* SellitemButton.m */,
 				3EA9E0A311BC73D000EF4ECB /* FeedbackDialog.h */,
 				3EA9E0A411BC73D000EF4ECB /* FeedbackDialog.m */,
 			);

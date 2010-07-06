@@ -22,7 +22,8 @@
 {
 	NSDictionary *result = (NSDictionary *)value;
 	NSInteger code = [[result objectForKey:@"code"] intValue];
-	if (code == 1) {		
+	if (code == 1) {	
+				
 		[[AnimalController sharedAnimalController] cureAnimal:animalId];
 		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"治疗成功"];
 	}

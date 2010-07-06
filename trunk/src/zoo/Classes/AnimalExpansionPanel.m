@@ -51,10 +51,10 @@ paramsDict;
 		
 		//****[self updateInfo:itId type:itType setTarget:target];
 		
-//		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
-//		transBackground.scale = 17.0f;
-//		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-//		[self addChild:transBackground z:5];
+		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
+		transBackground.scale = 5.0f;
+		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+		[self addChild:transBackground z:5];
 	}
 	return self;
 }

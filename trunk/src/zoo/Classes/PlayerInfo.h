@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
-
+#import "Button.h"
 @interface PlayerInfo : CCSprite
 {
 	NSString *userName;
@@ -32,6 +32,8 @@
 	CCSprite *userImgSprite;
 	
 	float  nColorBar;
+	NSString *pFile;
+	Button *nextPageBtn;
 	
 }
 

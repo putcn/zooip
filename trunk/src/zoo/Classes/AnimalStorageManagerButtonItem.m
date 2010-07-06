@@ -52,7 +52,7 @@
 	
 	//****[animalNameLable setColor:ccc3(255, 0, 255)];
 	
-	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
+	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2+20);
 	[self addChild:item z:7];
 	//[self addChild:animalNameLable z:7];
 	
@@ -73,7 +73,7 @@
 //	CCLabel *priceLbl = [CCLabel labelWithString:genDer fontName:@"Arial" fontSize:20];
 //	[priceLbl setColor:ccc3(255, 0, 255)];
 	
-	genDer.position = ccp(genDer.contentSize.width/2 +35, self.contentSize.height + 5);
+	genDer.position = ccp(genDer.contentSize.width/2 +30, self.contentSize.height + 25);
 	[self addChild:genDer z:7];
 	
 	if (itemType == @"动物") {

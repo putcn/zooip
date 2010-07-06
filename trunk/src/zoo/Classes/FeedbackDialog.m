@@ -43,13 +43,13 @@ static FeedbackDialog *_feedbackDialog;
 		msgLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:12];
 		[msgLbl setColor:ccc3(0, 0, 0)];
 		msgLbl.position = ccp(self.contentSize.width/2,self.contentSize.height/2);
-		id moveTo = [CCMoveTo actionWithDuration:0.5 position:ccp(self.contentSize.width/2,280)];
+		id moveTo = [CCMoveTo actionWithDuration:0.5 position:ccp(self.contentSize.width/2,280-25)];
 		id delay = [CCDelayTime actionWithDuration:2];
-		id moveBack = [CCMoveTo actionWithDuration:0.5 position:ccp(-self.contentSize.width/2,280)];
+		id moveBack = [CCMoveTo actionWithDuration:0.5 position:ccp(-self.contentSize.width/2,280-25)];
 		id finishAction = [CCCallFunc actionWithTarget:self selector:@selector(msgFinish:)];
 		actionSequence = [[CCSequence actions:moveTo, delay, moveBack, finishAction,nil] retain];
 		[self addChild:msgLbl z:10];
-		self.position = ccp(-self.contentSize.width/2,280);
+		self.position = ccp(-self.contentSize.width/2,280-25);
 		[[GameMainScene sharedGameMainScene] addDialogToScreen:self z:100];
 	}
 	return self;
