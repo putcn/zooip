@@ -715,6 +715,34 @@
 		60444DEB11E2CA5C00B6AF66 /* _mallard_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60444DE711E2CA5C00B6AF66 /* _mallard_1.png */; };
 		60444DEC11E2CA5C00B6AF66 /* _mallard_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60444DE811E2CA5C00B6AF66 /* _mallard_2.plist */; };
 		60444DED11E2CA5C00B6AF66 /* _mallard_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60444DE911E2CA5C00B6AF66 /* _mallard_2.png */; };
+		6069590611E309F6007AE16E /* babyDuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958EA11E309F6007AE16E /* babyDuck.png */; };
+		6069590711E309F6007AE16E /* babyHen.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958EB11E309F6007AE16E /* babyHen.png */; };
+		6069590811E309F6007AE16E /* babyMagpie.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958EC11E309F6007AE16E /* babyMagpie.png */; };
+		6069590911E309F6007AE16E /* babyMallard.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958ED11E309F6007AE16E /* babyMallard.png */; };
+		6069590A11E309F6007AE16E /* babyPeacock.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958EE11E309F6007AE16E /* babyPeacock.png */; };
+		6069590B11E309F6007AE16E /* babyPiegon.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958EF11E309F6007AE16E /* babyPiegon.png */; };
+		6069590C11E309F6007AE16E /* babyRCC.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958F011E309F6007AE16E /* babyRCC.png */; };
+		6069590D11E309F6007AE16E /* babySwan.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958F111E309F6007AE16E /* babySwan.png */; };
+		6069590E11E309F6007AE16E /* babyWildgoose.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958F211E309F6007AE16E /* babyWildgoose.png */; };
+		6069590F11E309F6007AE16E /* crane.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958F311E309F6007AE16E /* crane.png */; };
+		6069591011E309F6007AE16E /* duck.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958F411E309F6007AE16E /* duck.png */; };
+		6069591111E309F6007AE16E /* goose.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958F511E309F6007AE16E /* goose.png */; };
+		6069591211E309F6007AE16E /* hen.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958F611E309F6007AE16E /* hen.png */; };
+		6069591311E309F6007AE16E /* magpie.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958F711E309F6007AE16E /* magpie.png */; };
+		6069591411E309F6007AE16E /* malemandarinduck.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958F811E309F6007AE16E /* malemandarinduck.png */; };
+		6069591511E309F6007AE16E /* malepheasant.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958F911E309F6007AE16E /* malepheasant.png */; };
+		6069591611E309F6007AE16E /* mallard.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958FA11E309F6007AE16E /* mallard.png */; };
+		6069591711E309F6007AE16E /* mandarinduck.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958FB11E309F6007AE16E /* mandarinduck.png */; };
+		6069591811E309F6007AE16E /* parrot.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958FC11E309F6007AE16E /* parrot.png */; };
+		6069591911E309F6007AE16E /* peacock.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958FD11E309F6007AE16E /* peacock.png */; };
+		6069591A11E309F6007AE16E /* peahen.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958FE11E309F6007AE16E /* peahen.png */; };
+		6069591B11E309F6007AE16E /* pheasant.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958FF11E309F6007AE16E /* pheasant.png */; };
+		6069591C11E309F6007AE16E /* pigeon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6069590011E309F6007AE16E /* pigeon.png */; };
+		6069591D11E309F6007AE16E /* rooster.png in Resources */ = {isa = PBXBuildFile; fileRef = 6069590111E309F6007AE16E /* rooster.png */; };
+		6069591E11E309F6007AE16E /* swan.png in Resources */ = {isa = PBXBuildFile; fileRef = 6069590211E309F6007AE16E /* swan.png */; };
+		6069591F11E309F6007AE16E /* turkey.png in Resources */ = {isa = PBXBuildFile; fileRef = 6069590311E309F6007AE16E /* turkey.png */; };
+		6069592011E309F6007AE16E /* turkeycock.png in Resources */ = {isa = PBXBuildFile; fileRef = 6069590411E309F6007AE16E /* turkeycock.png */; };
+		6069592111E309F6007AE16E /* wildgoose.png in Resources */ = {isa = PBXBuildFile; fileRef = 6069590511E309F6007AE16E /* wildgoose.png */; };
 		6074900611B50DF3002D8922 /* AnimalManageButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 60748FFF11B50DF3002D8922 /* AnimalManageButtonContainer.m */; };
 		6074900711B50DF3002D8922 /* AnimalManagementButtonItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 6074900111B50DF3002D8922 /* AnimalManagementButtonItem.m */; };
 		6074900811B50DF3002D8922 /* AnimalManagerContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 6074900311B50DF3002D8922 /* AnimalManagerContainer.m */; };
@@ -1851,6 +1879,34 @@
 		60444DE711E2CA5C00B6AF66 /* _mallard_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _mallard_1.png; sourceTree = "<group>"; };
 		60444DE811E2CA5C00B6AF66 /* _mallard_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _mallard_2.plist; sourceTree = "<group>"; };
 		60444DE911E2CA5C00B6AF66 /* _mallard_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _mallard_2.png; sourceTree = "<group>"; };
+		606958EA11E309F6007AE16E /* babyDuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babyDuck.png; path = AnimalPost/babyDuck.png; sourceTree = "<group>"; };
+		606958EB11E309F6007AE16E /* babyHen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babyHen.png; path = AnimalPost/babyHen.png; sourceTree = "<group>"; };
+		606958EC11E309F6007AE16E /* babyMagpie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babyMagpie.png; path = AnimalPost/babyMagpie.png; sourceTree = "<group>"; };
+		606958ED11E309F6007AE16E /* babyMallard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babyMallard.png; path = AnimalPost/babyMallard.png; sourceTree = "<group>"; };
+		606958EE11E309F6007AE16E /* babyPeacock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babyPeacock.png; path = AnimalPost/babyPeacock.png; sourceTree = "<group>"; };
+		606958EF11E309F6007AE16E /* babyPiegon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babyPiegon.png; path = AnimalPost/babyPiegon.png; sourceTree = "<group>"; };
+		606958F011E309F6007AE16E /* babyRCC.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babyRCC.png; path = AnimalPost/babyRCC.png; sourceTree = "<group>"; };
+		606958F111E309F6007AE16E /* babySwan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babySwan.png; path = AnimalPost/babySwan.png; sourceTree = "<group>"; };
+		606958F211E309F6007AE16E /* babyWildgoose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babyWildgoose.png; path = AnimalPost/babyWildgoose.png; sourceTree = "<group>"; };
+		606958F311E309F6007AE16E /* crane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = crane.png; path = AnimalPost/crane.png; sourceTree = "<group>"; };
+		606958F411E309F6007AE16E /* duck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = duck.png; path = AnimalPost/duck.png; sourceTree = "<group>"; };
+		606958F511E309F6007AE16E /* goose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = goose.png; path = AnimalPost/goose.png; sourceTree = "<group>"; };
+		606958F611E309F6007AE16E /* hen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = hen.png; path = AnimalPost/hen.png; sourceTree = "<group>"; };
+		606958F711E309F6007AE16E /* magpie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = magpie.png; path = AnimalPost/magpie.png; sourceTree = "<group>"; };
+		606958F811E309F6007AE16E /* malemandarinduck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = malemandarinduck.png; path = AnimalPost/malemandarinduck.png; sourceTree = "<group>"; };
+		606958F911E309F6007AE16E /* malepheasant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = malepheasant.png; path = AnimalPost/malepheasant.png; sourceTree = "<group>"; };
+		606958FA11E309F6007AE16E /* mallard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mallard.png; path = AnimalPost/mallard.png; sourceTree = "<group>"; };
+		606958FB11E309F6007AE16E /* mandarinduck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = mandarinduck.png; path = AnimalPost/mandarinduck.png; sourceTree = "<group>"; };
+		606958FC11E309F6007AE16E /* parrot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = parrot.png; path = AnimalPost/parrot.png; sourceTree = "<group>"; };
+		606958FD11E309F6007AE16E /* peacock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = peacock.png; path = AnimalPost/peacock.png; sourceTree = "<group>"; };
+		606958FE11E309F6007AE16E /* peahen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = peahen.png; path = AnimalPost/peahen.png; sourceTree = "<group>"; };
+		606958FF11E309F6007AE16E /* pheasant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pheasant.png; path = AnimalPost/pheasant.png; sourceTree = "<group>"; };
+		6069590011E309F6007AE16E /* pigeon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = pigeon.png; path = AnimalPost/pigeon.png; sourceTree = "<group>"; };
+		6069590111E309F6007AE16E /* rooster.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = rooster.png; path = AnimalPost/rooster.png; sourceTree = "<group>"; };
+		6069590211E309F6007AE16E /* swan.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = swan.png; path = AnimalPost/swan.png; sourceTree = "<group>"; };
+		6069590311E309F6007AE16E /* turkey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = turkey.png; path = AnimalPost/turkey.png; sourceTree = "<group>"; };
+		6069590411E309F6007AE16E /* turkeycock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = turkeycock.png; path = AnimalPost/turkeycock.png; sourceTree = "<group>"; };
+		6069590511E309F6007AE16E /* wildgoose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = wildgoose.png; path = AnimalPost/wildgoose.png; sourceTree = "<group>"; };
 		60748FFE11B50DF3002D8922 /* AnimalManageButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageButtonContainer.h; sourceTree = "<group>"; };
 		60748FFF11B50DF3002D8922 /* AnimalManageButtonContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageButtonContainer.m; sourceTree = "<group>"; };
 		6074900011B50DF3002D8922 /* AnimalManagementButtonItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManagementButtonItem.h; sourceTree = "<group>"; };
@@ -3493,6 +3549,7 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				606958E911E309E2007AE16E /* Pose */,
 				60C18B8411E1A58E00248E87 /* AnimalAnimation */,
 				6BD28DCF11D3000D00BE2859 /* 动物园切图 */,
 				8472109911D1ED70008AC4CB /* friendImage */,
@@ -3521,6 +3578,41 @@
 				50F414EF1069373D002A0D5E /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		606958E911E309E2007AE16E /* Pose */ = {
+			isa = PBXGroup;
+			children = (
+				606958EA11E309F6007AE16E /* babyDuck.png */,
+				606958EB11E309F6007AE16E /* babyHen.png */,
+				606958EC11E309F6007AE16E /* babyMagpie.png */,
+				606958ED11E309F6007AE16E /* babyMallard.png */,
+				606958EE11E309F6007AE16E /* babyPeacock.png */,
+				606958EF11E309F6007AE16E /* babyPiegon.png */,
+				606958F011E309F6007AE16E /* babyRCC.png */,
+				606958F111E309F6007AE16E /* babySwan.png */,
+				606958F211E309F6007AE16E /* babyWildgoose.png */,
+				606958F311E309F6007AE16E /* crane.png */,
+				606958F411E309F6007AE16E /* duck.png */,
+				606958F511E309F6007AE16E /* goose.png */,
+				606958F611E309F6007AE16E /* hen.png */,
+				606958F711E309F6007AE16E /* magpie.png */,
+				606958F811E309F6007AE16E /* malemandarinduck.png */,
+				606958F911E309F6007AE16E /* malepheasant.png */,
+				606958FA11E309F6007AE16E /* mallard.png */,
+				606958FB11E309F6007AE16E /* mandarinduck.png */,
+				606958FC11E309F6007AE16E /* parrot.png */,
+				606958FD11E309F6007AE16E /* peacock.png */,
+				606958FE11E309F6007AE16E /* peahen.png */,
+				606958FF11E309F6007AE16E /* pheasant.png */,
+				6069590011E309F6007AE16E /* pigeon.png */,
+				6069590111E309F6007AE16E /* rooster.png */,
+				6069590211E309F6007AE16E /* swan.png */,
+				6069590311E309F6007AE16E /* turkey.png */,
+				6069590411E309F6007AE16E /* turkeycock.png */,
+				6069590511E309F6007AE16E /* wildgoose.png */,
+			);
+			name = Pose;
 			sourceTree = "<group>";
 		};
 		60C18B8411E1A58E00248E87 /* AnimalAnimation */ = {
@@ -5166,6 +5258,34 @@
 				60444DEB11E2CA5C00B6AF66 /* _mallard_1.png in Resources */,
 				60444DEC11E2CA5C00B6AF66 /* _mallard_2.plist in Resources */,
 				60444DED11E2CA5C00B6AF66 /* _mallard_2.png in Resources */,
+				6069590611E309F6007AE16E /* babyDuck.png in Resources */,
+				6069590711E309F6007AE16E /* babyHen.png in Resources */,
+				6069590811E309F6007AE16E /* babyMagpie.png in Resources */,
+				6069590911E309F6007AE16E /* babyMallard.png in Resources */,
+				6069590A11E309F6007AE16E /* babyPeacock.png in Resources */,
+				6069590B11E309F6007AE16E /* babyPiegon.png in Resources */,
+				6069590C11E309F6007AE16E /* babyRCC.png in Resources */,
+				6069590D11E309F6007AE16E /* babySwan.png in Resources */,
+				6069590E11E309F6007AE16E /* babyWildgoose.png in Resources */,
+				6069590F11E309F6007AE16E /* crane.png in Resources */,
+				6069591011E309F6007AE16E /* duck.png in Resources */,
+				6069591111E309F6007AE16E /* goose.png in Resources */,
+				6069591211E309F6007AE16E /* hen.png in Resources */,
+				6069591311E309F6007AE16E /* magpie.png in Resources */,
+				6069591411E309F6007AE16E /* malemandarinduck.png in Resources */,
+				6069591511E309F6007AE16E /* malepheasant.png in Resources */,
+				6069591611E309F6007AE16E /* mallard.png in Resources */,
+				6069591711E309F6007AE16E /* mandarinduck.png in Resources */,
+				6069591811E309F6007AE16E /* parrot.png in Resources */,
+				6069591911E309F6007AE16E /* peacock.png in Resources */,
+				6069591A11E309F6007AE16E /* peahen.png in Resources */,
+				6069591B11E309F6007AE16E /* pheasant.png in Resources */,
+				6069591C11E309F6007AE16E /* pigeon.png in Resources */,
+				6069591D11E309F6007AE16E /* rooster.png in Resources */,
+				6069591E11E309F6007AE16E /* swan.png in Resources */,
+				6069591F11E309F6007AE16E /* turkey.png in Resources */,
+				6069592011E309F6007AE16E /* turkeycock.png in Resources */,
+				6069592111E309F6007AE16E /* wildgoose.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5487,7 +5607,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5499,14 +5619,15 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
-				SDKROOT = iphonesimulator4.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
+				SDKROOT = iphoneos4.0;
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
@@ -5515,7 +5636,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -5524,14 +5645,15 @@
 				GCC_THUMB_SUPPORT = NO;
 				GCC_TREAT_WARNINGS_AS_ERRORS = NO;
 				INFOPLIST_FILE = Resources/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 3.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
 				OTHER_LDFLAGS = (
 					"-all_load",
 					"-ObjC",
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
-				SDKROOT = iphonesimulator4.0;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
+				SDKROOT = iphoneos4.0;
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Release;
@@ -5571,14 +5693,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "20751554-1ED4-4A00-BF12-0747EC26E4C4";
-				SDKROOT = iphoneos3.2;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
+				SDKROOT = iphoneos4.0;
 			};
 			name = Debug;
 		};
@@ -5587,14 +5709,14 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_THUMB_SUPPORT = NO;
 				GCC_UNROLL_LOOPS = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "20751554-1ED4-4A00-BF12-0747EC26E4C4";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
 				SDKROOT = iphoneos4.0;
 			};
 			name = Release;
