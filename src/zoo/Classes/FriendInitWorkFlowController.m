@@ -84,7 +84,7 @@ static NSString *STEP_GET_DOG = @"7";
 	if (curStep == STEP_GET_FARMER_INFO)
 	{
 		load = [[LoadView alloc] init];
-		[load LoadingView];
+		[load MyLoadingView];
 		[load SetLabelString:curStep];
 		
 		curStep = STEP_GET_FARM_INFO;

@@ -23,6 +23,7 @@
 	NSInteger zygoteGender;
 	NSInteger status;
 	NSInteger eggPrice;
+	NSInteger zygotePrice;
 }
 
 @property (nonatomic, retain) NSString* zygoteStorageId;
@@ -37,5 +38,6 @@
 @property (nonatomic, assign) NSInteger zygoteGender;
 @property (nonatomic, assign) NSInteger status;
 @property (nonatomic, assign) NSInteger eggPrice;
+@property (nonatomic, assign) NSInteger zygotePrice;
 
 @end

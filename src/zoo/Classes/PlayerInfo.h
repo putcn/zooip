@@ -12,7 +12,7 @@
 @interface PlayerInfo : CCSprite
 {
 	NSString *userName;
-	NSString *userImg;
+	NSString *userImgNow;
 	NSString *currentExperience;
 	NSString *nextLevelExperience;
 	NSString *level;

@@ -788,6 +788,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						obj.zygoteGender = [[dic objectForKey:@"zygoteGender"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"zygoteGender"] intValue];
 						obj.status = [[dic objectForKey:@"status"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"status"] intValue];
 						obj.eggPrice = [[dic objectForKey:@"eggPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"eggPrice"] intValue];
+						obj.zygotePrice = [[dic objectForKey:@"zygotePrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"zygotePrice"] intValue];
 						
 						[sDic setValue:obj forKey:obj.zygoteStorageId];
 					}
