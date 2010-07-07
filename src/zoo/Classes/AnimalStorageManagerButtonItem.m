@@ -9,6 +9,8 @@
 #import "AnimalStorageManagerButtonItem.h"
 
 
+
+//仓库里面的每一个动物按钮
 @implementation AnimalStorageManagerButtonItem
 
 @synthesize itemId,itemType,storageID;

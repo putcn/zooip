@@ -12,6 +12,8 @@
 #import "ModelLocator.h"
 
 
+//动物喂饲料。
+//TODO: 弹出来的按钮需要修改。
 @implementation AnimalFeedButtonContainer
 
 
@@ -68,7 +70,7 @@
 
 -(void) faultCallback:(NSObject *)value
 {
-	[super faultCallback:value];
+	NSLog(@"%@",@"Fail call back!");
 }
 
 

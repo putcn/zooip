@@ -35,9 +35,25 @@
 
 -(void) resultCallback:(NSObject *)value
 {
-	//NSDictionary* dic = (NSDictionary*)value;
-//	NSInteger code = [[dic objectForKey:@"code"] intValue];
-//	switch (code) {
+	NSDictionary* dic = (NSDictionary*)value;
+	NSInteger code = [[dic objectForKey:@"code"] intValue];
+	switch (code) {
+			case 0:
+			NSLog(@"%@",@"动物处于饥饿状态");
+				break;
+		case 1:
+			NSLog(@"%@",@"动物下蛋时间未到");
+			break;
+		case 2:
+			NSLog(@"%@",@"不存在该动物");
+			break;
+		case 3:
+			NSLog(@"%@",@"下蛋失败");
+			break;
+		case 4:
+			NSLog(@"%@",@"公动物不能下蛋");
+			break;
+	}
 //			// TODO DELETE
 //			//"code:1 动物处于饥饿状态 + animal + eggs + birdEggId + farmId + eggId + quantity + remain + lastStoleTime + numOfZygote + coordinate + eggId
 //			//code:2 动物下蛋时间未到 + 下次下蛋剩余时间:remain

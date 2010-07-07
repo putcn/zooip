@@ -29,6 +29,8 @@
 	
 	id parentTarget;
 }
+
+-(void)setStatusIcon:(int)index;
 -(id) initWithTarget:(id)target;
 -(void) addButton;
 
