@@ -87,7 +87,7 @@
 				animalUp = [NSString stringWithFormat:@"距产蛋:%d秒",nSecond];
 			}
 			
-			fTime = 80.0*nRemainTime/nMiddleTime;
+			fTime = 80 - 80.0*nRemainTime/nMiddleTime;
 			if(fTime != 0)
 			{
 				nyellowChoose = 1;
