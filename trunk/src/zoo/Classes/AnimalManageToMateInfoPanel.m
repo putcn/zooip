@@ -64,6 +64,7 @@ animalID;
 
 -(void)OverIconHandler
 {
+	
 	self.position = ccp(1000, 188);
 }
 
@@ -171,18 +172,18 @@ animalID;
 	DataModelOriginalAnimal *originAnimal;
 	NSString *aniID;
 	int endNumber = currentPageNum * 8;
-	if (endNumber >= [[DataEnvironment sharedDataEnvironment].animalIDs count]) {
+//	if (endNumber >= [[DataEnvironment sharedDataEnvironment].animalIDs count]) {
 		endNumber = [[DataEnvironment sharedDataEnvironment].animalIDs count];
-	}
+//	}
 	
 	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:animalID];
 	
-	currentNum = endNumber - (currentPageNum -1 ) *8 ;
-//	if(endNumber > 4)
-//		endNumber = 4;
+//	currentNum = endNumber - (currentPageNum -1 ) *8 ;
+
 	
 	int kTemp = 0;
-	for (int i = (currentPageNum -1)*8; i < endNumber; i ++) 
+//	for (int i = (currentPageNum -1)*8; i < endNumber; i ++)
+	for (int i = 0; i < endNumber; i ++)
 	{
 		originAnimal = [animalIDs objectAtIndex:i];
 		aniID = [animalIDs objectAtIndex:i];

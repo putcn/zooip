@@ -53,10 +53,10 @@ paramsDict;
 		
 		//****[self updateInfo:itId type:itType setTarget:target];
 		
-		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
-		transBackground.scale = 5.0f;
-		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-		[self addChild:transBackground z:5];
+		//TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
+//		transBackground.scale = 5.0f;
+//		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+//		[self addChild:transBackground z:5];
 	}
 	return self;
 }
@@ -124,28 +124,28 @@ paramsDict;
 	}
 	levelLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"%@ 级",level] fontName:@"Arial" fontSize:10];
 	levelLbl.position = ccp(self.contentSize.width/2, 150);
-	[levelLbl setColor:ccc3(255, 0, 255)];
+	[levelLbl setColor:ccc3(0, 0, 0)];
 	levelLbl.scale = 1.5f;
 
 	
 	goldenEggNumLbl = [CCLabel labelWithString:goldenEggNum fontName:@"Arial" fontSize:10];
 	goldenEggNumLbl.position = ccp(self.contentSize.width/2,125);
-	[goldenEggNumLbl setColor:ccc3(255, 0, 255)];
+	[goldenEggNumLbl setColor:ccc3(0, 0, 0)];
 	goldenEggNumLbl.scale = 1.5f;
 	
 	capacity = [CCLabel labelWithString:[NSString stringWithFormat:@"容量: %@",maxNumOfBirds] fontName:@"Arial" fontSize:10];
 	capacity.position = ccp(self.contentSize.width/2 ,100);
-	[capacity setColor:ccc3(255, 0, 255)];
+	[capacity setColor:ccc3(0, 0, 0)];
 	capacity.scale = 1.5f;
 	
 	requireGoldenEggLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"扩容需要金蛋数量:%d",goldenEgg] fontName:@"Arial" fontSize:10];
 	requireGoldenEggLbl.position = ccp(self.contentSize.width/2,75);
-	[requireGoldenEggLbl setColor:ccc3(255, 0, 255)];
+	[requireGoldenEggLbl setColor:ccc3(0, 0, 0)];
 	requireGoldenEggLbl.scale = 1.5f;
 	
 	requireLevelLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"扩容需要等级:%d",levelRequire] fontName:@"Arial" fontSize:10];
 	requireLevelLbl.position = ccp(self.contentSize.width/2, 50);
-	[requireLevelLbl setColor:ccc3(255, 0, 255)];
+	[requireLevelLbl setColor:ccc3(0, 0, 0)];
 	requireLevelLbl.scale = 1.5f;
 	
 	[self addChild:levelLbl z:10];
@@ -163,6 +163,11 @@ paramsDict;
 	cancelBtn.position = ccp(self.contentSize.width/2 + 100, 25);
 	[self addChild:confirmBtn z:10];
 	[self addChild:cancelBtn z:10];
+	
+	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
+	transBackground.scale = 5.0f;
+	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+	[self addChild:transBackground z:9];
 	
 	//[self setImg:@"" setBuyType:@"" setPrice:@"1"];
 }
@@ -185,7 +190,7 @@ paramsDict;
 		buyImg = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
 	}
 	priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:20];
-	[priceLbl setColor:ccc3(255, 0, 255)];
+	[priceLbl setColor:ccc3(0, 0, 0)];
 	
 	item.position = ccp(item.contentSize.width/2 + 150, self.contentSize.height  - item.contentSize.height /2 - 150);
 	buyImg.position = ccp(item.position.x - 60, 300);

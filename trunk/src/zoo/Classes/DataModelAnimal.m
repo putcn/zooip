@@ -82,6 +82,7 @@
 // Add by Hunk on 2010-06-29
 -(void)dealloc
 {
+	[animalName release];
 	[animalId release];
 	[birthday release];
 	[description release];

@@ -19,6 +19,7 @@
 	[self setTexture: loadImg];
 	[self setTextureRect: rect];
 	[loadImg release];
+	
 	self.position = ccp(100,100);
 	numberLbl = [CCLabel labelWithString:[NSString stringWithFormat:@" "] fontName:@"Arial" fontSize:20];
 //	[numberLbl setString:[NSString stringWithFormat:@"%@", nStep]];

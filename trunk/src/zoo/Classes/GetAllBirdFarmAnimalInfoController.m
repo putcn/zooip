@@ -33,7 +33,7 @@
 		
 		aAnimail.adultStage = [[aAnimalDic objectForKey:@"adultStage"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[aAnimalDic objectForKey:@"adultStage"] intValue];
 		aAnimail.aliveEdge = [[aAnimalDic objectForKey:@"aliveEdge"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[aAnimalDic objectForKey:@"aliveEdge"] intValue];
-		aAnimail.animalName = [[aAnimalDic objectForKey:@"animalName"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[aAnimalDic objectForKey:@"animalName"] intValue];
+//		aAnimail.animalName = [[aAnimalDic objectForKey:@"animalName"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[aAnimalDic objectForKey:@"animalName"] intValue];
 		aAnimail.animalType = [[aAnimalDic objectForKey:@"animalType"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[aAnimalDic objectForKey:@"animalType"] intValue];
 		aAnimail.antsPrice = [[aAnimalDic objectForKey:@"antsPrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[aAnimalDic objectForKey:@"antsPrice"] intValue];
 		aAnimail.babyStage = [[aAnimalDic objectForKey:@"babyStage"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[aAnimalDic objectForKey:@"babyStage"] intValue];
@@ -79,6 +79,7 @@
 		aAnimail.youthStage = [[aAnimalDic objectForKey:@"youthStage"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[aAnimalDic objectForKey:@"youthStage"] intValue];
 		aAnimail.zygotePrice = [[aAnimalDic objectForKey:@"zygotePrice"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[aAnimalDic objectForKey:@"zygotePrice"] intValue];
 		
+		aAnimail.animalName = [[aAnimalDic objectForKey:@"animalName"] isKindOfClass:[NSNull class]]  ? @"" :[aAnimalDic objectForKey:@"animalName"];
 		aAnimail.animalId = [[aAnimalDic objectForKey:@"animalId"] isKindOfClass:[NSNull class]]  ? nil : [aAnimalDic objectForKey:@"animalId"];
 		aAnimail.birthday = [[aAnimalDic objectForKey:@"birthday"] isKindOfClass:[NSNull class]]  ? nil : [aAnimalDic objectForKey:@"birthday"];
 		aAnimail.coupleAnimalId = [[aAnimalDic objectForKey:@"coupleAnimalId"] isKindOfClass:[NSNull class]]  ? nil : [aAnimalDic objectForKey:@"coupleAnimalId"];
