@@ -106,10 +106,13 @@ static GameMainScene *_sharedGameMainScene = nil;
 //		[[Animal alloc] initWithView:pigeonView setSpeed:0.5f setLimitRect:CGRectMake(100, 100, 500, 500)];
 //		[baseContainer addChild:pigeonView z:4];
 		
+		loadView = [[LoadView alloc] init];
+		[loadView MyLoadingView];
+		[self addChild:loadView z:4];
+		[loadView SetLabelString:@"Loading"];
 		PlayerInitWorkFlowController *playerInitFlowController = [[PlayerInitWorkFlowController alloc] init];
 		[playerInitFlowController setupStep];
 		[playerInitFlowController startStep];
-		
 		// Add by Hunk on 2010-06-30
 		//[playerInitFlowController release];
 		
@@ -209,6 +212,16 @@ static GameMainScene *_sharedGameMainScene = nil;
 	}
 }
 
+-(void) loading:(NSString *)info
+{
+	[loadView SetLabelString:info];
+}
+
+-(void) finishLoading
+{
+	[self removeChild:loadView cleanup:YES];
+}
+
 -(void) clearAll
 {
 	[[EggController sharedEggController] clearEgg];
@@ -231,7 +244,6 @@ static GameMainScene *_sharedGameMainScene = nil;
 	[baseContainer release];
 	[background release];
 	[uiLayer release];
-	
 	[super removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }

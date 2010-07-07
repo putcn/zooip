@@ -20,7 +20,7 @@
 -(void) resultCallback:(NSObject *)value
 {
 	NSDictionary *result = (NSDictionary *)value;
-	NSInteger code = [[result objectForKey:@"code"] intValue];
+//	NSInteger code = [[result objectForKey:@"code"] intValue];
 //	if(code == 1)
 //	{
 //		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获得用户信息"];
@@ -35,6 +35,7 @@
 -(void) faultCallback:(NSObject *)value
 {
 	[super faultCallback:value];
+	
 }
 
 // Add by Hunk on 2010-06-29

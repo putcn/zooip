@@ -11,7 +11,7 @@
 #import "ScaleControlLayer.h"
 #import "DragControlLayer.h"
 #import "PlayerInitWorkFlowController.h"
-
+#import "LoadView.h"
 
 @interface GameMainScene : CCLayer
 {
@@ -19,6 +19,7 @@
 	CCSprite *background;
 	
 	UILayer *uiLayer;
+	LoadView *loadView;
 }
 
 +(GameMainScene *) sharedGameMainScene;
@@ -28,7 +29,8 @@
 -(void) removeSpriteFromStage:(CCSprite *) sprite;
 -(void) addDialogToScreen:(CCSprite *)sprite z:(int) zIndex;
 -(void) removeDialogFromScreen:(CCSprite *)sprite;
-
+-(void) loading:(NSString *)info;
+-(void) finishLoading;
 -(void) updateUserInfo;
 -(void) switchZoo:(NSString *)playerUid;
 -(void) clearAll;
