@@ -28,8 +28,10 @@
 		DataModelAnimal *animal = [[[DataEnvironment sharedDataEnvironment] animals] objectForKey:aniId];
 		NSString *animalName = animal.scientificNameCN;//动物类别
 		NSInteger animalSex = animal.gender;//动物性别
-		nRemainTime = animal.remain;
-		NSInteger nMiddleTime = animal.baseInterval*3600;
+		nRemainTime = animal.remain;//剩余时间
+		NSInteger nMiddleTime = animal.baseInterval*3600;//孵化周期
+		
+		NSString * name = animal.animalName;//名字
 		
 		NSInteger nStatus = animal.birdStage;//动物状态
 		NSInteger nlevel = animal.level;//动物现在产蛋次数
@@ -38,22 +40,26 @@
 		
 		if(animalSex == 0)
 		{
-			animalTop = [animalName stringByAppendingString:@"(母)"];
+			animalTop = [animalName stringByAppendingString:@":"];
+			animalTop = [animalTop stringByAppendingString:name];
+			animalTop = [animalTop stringByAppendingString:@"(母)"];
 		}
 		else if(animalSex == 1)
 		{
-			animalTop = [animalName stringByAppendingString:@"(公)"];
+			animalTop = [animalName stringByAppendingString:@":"];
+			animalTop = [animalTop stringByAppendingString:name];
+			animalTop = [animalTop stringByAppendingString:@"(公)"];
 		}
 				
 		nameLbl = [CCLabel labelWithString:animalTop fontName:@"Arial" fontSize:15];
 		[nameLbl setColor:ccc3(0, 0, 0)];
 		if(animalSex == 0)
 		{
-			nameLbl.position = ccp(nameLbl.contentSize.width/2+17, self.contentSize.height-15);
+			nameLbl.position = ccp(nameLbl.contentSize.width/2+15, self.contentSize.height-15);
 		}
 		else if(animalSex == 1)
 		{
-			nameLbl.position = ccp(nameLbl.contentSize.width/2+17, self.contentSize.height-40);
+			nameLbl.position = ccp(nameLbl.contentSize.width/2+15, self.contentSize.height-40);
 		}
 		
 		[self addChild:nameLbl z:6];

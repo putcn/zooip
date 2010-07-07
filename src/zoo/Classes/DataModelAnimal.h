@@ -13,7 +13,8 @@
 	NSInteger adultStage; //240
 	NSInteger aliveEdge; //6
 	NSString *animalId; //4F00A3DB79CE6712DCF99E8B2BCEF84F
-	NSInteger animalName; //1
+//	NSInteger animalName; //1
+	NSString *animalName;
 	NSInteger animalType; //5
 	NSInteger antsPrice; //0
 	NSInteger babyStage; //18
@@ -79,7 +80,8 @@
 
 @property (nonatomic,assign) NSInteger adultStage;
 @property (nonatomic,assign) NSInteger aliveEdge;
-@property (nonatomic,assign) NSInteger animalName;
+//@property (nonatomic,assign) NSInteger animalName;
+@property (nonatomic,retain) NSString *animalName;
 @property (nonatomic,assign) NSInteger animalType;
 @property (nonatomic,assign) NSInteger antsPrice;
 @property (nonatomic,assign) NSInteger babyStage;
