@@ -266,7 +266,28 @@
 //出售单个卵成功
 -(void) resultCallback:(NSObject *)value
 {
-	[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你出售成功!"];
+	NSDictionary *result = (NSDictionary *)value;
+	NSInteger code = [[result objectForKey:@"code"] intValue];
+	switch (code) {
+		case 0:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有蛋可卖"];
+			break;
+		case 1:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你出售成功!"];
+			break;
+		case 2:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"卖蛋不成功!"];
+			break;
+		case 3:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蛋已经拍卖!"];
+			break;
+		case 4:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蛋已经孵化!"];
+			break;
+		default:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作异常!"];
+			break;
+	}
 	
 	//刷新界面
 	[self updadaPane];

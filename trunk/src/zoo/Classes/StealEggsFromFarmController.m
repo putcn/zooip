@@ -27,15 +27,40 @@
 {
 	NSDictionary *result = (NSDictionary *)value;
 	NSInteger code = [[result objectForKey:@"code"] intValue];
-	if (code == 1) {		
-		DataModelEgg *dataModelEgg = (DataModelEgg*)[[DataEnvironment sharedDataEnvironment].eggs objectForKey:eggId];
-		EggView *eggView = [[EggController sharedEggController].allEggs objectForKey:eggId];
-		CGPoint eggPos = eggView.position;
-		NSInteger stolenNum = [[result objectForKey:@"numOfStolen"] intValue];
-		dataModelEgg.remain = dataModelEgg.remain - stolenNum;
-		[[OperationEndView alloc] initWithExperience:0 setPosition: ccp(eggPos.x, eggPos.y+50) setNumber:stolenNum];
-
-		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"偷蛋成功"];
+	switch (code) {
+		case 1:
+		{
+			DataModelEgg *dataModelEgg = (DataModelEgg*)[[DataEnvironment sharedDataEnvironment].eggs objectForKey:eggId];
+			EggView *eggView = [[EggController sharedEggController].allEggs objectForKey:eggId];
+			CGPoint eggPos = eggView.position;
+			NSInteger stolenNum = [[result objectForKey:@"numOfStolen"] intValue];
+			dataModelEgg.remain = dataModelEgg.remain - stolenNum;
+			[[OperationEndView alloc] initWithExperience:0 setPosition: ccp(eggPos.x, eggPos.y+50) setNumber:stolenNum];
+			
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"偷蛋成功"];
+		}
+			break;
+		case 2:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蛋堆所剩无几"];
+			break;
+		case 3:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"已偷过"];
+			break;
+		case 4:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不能连续偷窃"];
+			break;
+		case 5:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"偷蛋成功"];
+			break;
+		case 6:
+			//code:5 + 掉金币:goldenEgg
+			//[[FeedbackDialog sharedFeedbackDialog] addMessage:@"偷蛋成功"];
+			break;
+		case 0:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"偷窃者无金蛋了"];
+			break;
+		default:
+			break;
 	}
 	[super resultCallback:value];
 }
