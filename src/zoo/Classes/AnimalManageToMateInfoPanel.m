@@ -266,6 +266,18 @@ animalID;
 			case 1:
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"结婚成功"];
 				break;
+			case 2:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"结婚成功"];
+				break;
+			case 4:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不是自己的公动物，不能配对"];
+				break;
+			case 5:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不是自己的母动物，不能配对"];
+				break;
+			case 8:
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"近亲不能结婚"];
+				break;
 			default:
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"结婚失败"];
 				break;

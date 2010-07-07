@@ -66,6 +66,13 @@
 	[self addButton];
 }
 
+-(void) faultCallback:(NSObject *)value
+{
+	[super faultCallback:value];
+}
+
+
+
 - (void) addButton
 {
 	NSDictionary *storageFood = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageFoods;
