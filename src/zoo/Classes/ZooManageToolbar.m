@@ -530,23 +530,23 @@
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场不存在"];
 			break;
 		case 1:
-			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"金蛋余额不足！"];
-			break;
-		case 2:
-			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"级别不够！"];
-			break;
-		case 3:
-			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"扩容失败！"];
-			break;
-		case 4:
-			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"级别不足！"];
-			break;
-		case 5:
-			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蚂蚁余额不足！"];
-			break;
-		case 6:
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"扩容成功！"];
 			break;
+		case 2:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"金蛋余额不足！"];
+			break;
+		case 3:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"级别不够！"];
+			break;
+		case 4:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"扩容失败！"];
+			break;
+		case 5:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"级别不足！"];
+			break;
+		case 6:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蚂蚁余额不足！"];
+			break;		
 		case 7:
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"上一次操作正在进行！"];
 			break;
