@@ -329,7 +329,7 @@
 }
 
 
-
+//出售所有的仓库里面的蛋，回复的数值
 -(void) resultAllEggCallback:(NSObject *)value
 {
 	
@@ -347,8 +347,6 @@
 		
 		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功卖出所有蛋!"];
 	}
-	
-	
 }
 
 

@@ -202,7 +202,28 @@
 
 -(void) resultCallback:(NSObject *)value
 {
-	[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你购买物品成功!"];
+	NSDictionary* dic = (NSDictionary*)value;
+ 	NSInteger code = [[dic objectForKey:@"code"] intValue];
+	switch (code) {
+		case 0:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无道具信息!"];
+			break;
+		case 1:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你购买物品成功!"];
+			break;
+		case 2:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"余额不足!"];
+			break;
+		case 3:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作正在进行，不能短时间连续购买!"];
+			break;
+		case 4:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不能再买了!"];
+			break;
+		default:
+			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作失败"];
+			break;
+	}
 }
 
 -(void) faultCallback:(NSObject *)value

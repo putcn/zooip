@@ -12,6 +12,7 @@
 #import "AnimalStorageManagerPanel.h"
 #import "FeedbackDialog.h"
 
+//动物面板容器
 @implementation AnimalStorageManagerContainer
 @synthesize title;
 

@@ -60,10 +60,13 @@
 }
 	
 	
-
+//没有蛋的状态下是否需要弹出窗口！
 
 -(void) resultCallback:(NSObject *)value
 {
+//	NSDictionary *result = (NSDictionary *)value;
+//	NSInteger code = [[result objectForKey:@"code"] intValue];
+	
 	NSDictionary *itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
 	NSArray *itemArray = [itemDic allKeys];
 
