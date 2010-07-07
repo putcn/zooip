@@ -8,7 +8,7 @@
 
 #import "BaseServerController.h"
 #import "BaseWorkFlowController.h"
-
+#import "GameMainScene.h"
 @implementation BaseServerController
 
 -(BaseServerController *) initWithWorkFlowController:(BaseWorkFlowController *)controller
@@ -37,7 +37,7 @@
 
 -(void) faultCallback:(NSObject *)value
 {
-	NSLog(@"Server Connection Fail");
+	[[GameMainScene sharedGameMainScene] loading:@"connect to internet faild!"];
 }
 
 // Add by Hunk on 2010-06-29
