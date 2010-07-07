@@ -7,7 +7,8 @@
 //
 
 #import "SnakeView.h"
-
+#import "RandomHelper.h"
+#import "GameMainScene.h"
 
 @implementation SnakeView
 @synthesize snakeId;
@@ -21,14 +22,8 @@
 		rect.size = snake.contentSize;
 		[self setTexture: snake];
 		[self setTextureRect: rect]; 
-		DataModelSnake *dataModelSnake =  (DataModelSnake *)[[DataEnvironment sharedDataEnvironment].snakes objectForKey:snakeId];
-		NSString *eggId = dataModelSnake.eggId;
-		[dataModelSnake dealloc];
-		EggView *eggView = (EggView *)[[EggController sharedEggController].allEggs objectForKey:eggId];
-		[self setAnchorPoint:CGPointMake(0, 0.5)];
-		CGPoint eggPos = ccp(eggView.position.x+50, eggView.position.y);
-		[eggView dealloc];
-		self.position = eggPos;
+		self.position = ccp([RandomHelper getRandomNum:500 to:700],[RandomHelper getRandomNum:100 to:300]);
+		[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:5];
 	}
 	return self;
 }
@@ -77,17 +72,13 @@
 -(void)optAnimationPlay
 {
 	int type = [[UIController sharedUIController] getOperation];
-	if (type == OPERATION_DEFAULT) {
-		[self schedule:@selector(tick:) interval:4.0];
+	if(type == OPERATION_KILL_SNAKE){
+		CGPoint location = ccp(self.position.x, self.position.y);
+		[[OperationViewController sharedOperationViewController] play:@"net" setPosition:location];
 	}
-	else 
-		if(type == OPERATION_KILL_SNAKE){
-			CGPoint location = ccp(self.position.x, self.position.y);
-			[[OperationViewController sharedOperationViewController] play:@"net" setPosition:location];
-		}
-		else {
-			return;
-		}
+	else {
+		return;
+	}
 	
 }
 
