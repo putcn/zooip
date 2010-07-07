@@ -25,7 +25,7 @@
 	{
 		self.scale = 0.8f;
 //		[self setContentSize:CGSizeMake(300, 40)];
-		CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"Icon.png" ofType:nil] ] ];
+		CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif" ofType:nil] ] ];
 		userImgSprite = [CCSprite node];/// retain];
 		[userImgSprite setTexture:useImgTexture];
 		[useImgTexture release];
@@ -38,8 +38,8 @@
 		[bg release];
 		
 		//头像
-//		[userImgSprite setContentSize:CGSizeMake(40, 40)];
-		userImgSprite.position = ccp(110,110);
+		[userImgSprite setContentSize:CGSizeMake(40, 40)];
+		userImgSprite.position = ccp(110,0);
 		//名字
 		userNameLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:18];//retain];
 		[userNameLbl setColor:ccc3(0, 0, 0)];
@@ -103,7 +103,7 @@
 	animalNum = [NSString stringWithFormat:@"%d",[[DataEnvironment sharedDataEnvironment].animalIDs count]];
 	if ([[ModelLocator sharedModelLocator] getIsSelfZoo]) {
 		userName = farmerInfo.userName;
-		userImg = farmerInfo.userImg;
+		userImgNow = farmerInfo.userImg;
 		currentExperience = [NSString stringWithFormat:@"%d",farmInfo.farm_currentExp];
 		nextLevelExperience = [NSString stringWithFormat:@"%d", farmInfo.farm_nextLevelExp];
 		level = [NSString stringWithFormat:@"%d", farmInfo.farm_level];
@@ -117,7 +117,7 @@
 		nColorBar = nNowExperience/nAllExperience*120.0;
 	}else {
 		userName = friendInfo.userName;
-		userImg = friendInfo.userImg;
+		userImgNow = friendInfo.userImg;
 		currentExperience = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_currentExp];
 		nextLevelExperience = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_nextLevelExp];
 		level = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_level];
@@ -168,7 +168,7 @@
 	[self addChild:nextPageBtn z:3];
 	
 	
-	CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:userImg ofType:nil] ] ];
+	CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:userImgNow ofType:nil] ] ];
 	[userImgSprite setTexture:useImgTexture];
 	[useImgTexture release];
 	
@@ -240,7 +240,7 @@
 -(void)dealloc
 {
 	[userName release];
-	[userImg release];
+	[userImgNow release];
 	[currentExperience release];
 	[nextLevelExperience release];
 	[level release];

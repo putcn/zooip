@@ -31,11 +31,11 @@
 	NSString *payType;
 	
 	id myTarget;
-	
+	int nPrice;
 
 
 }
--(id) initWithItem:(NSString *) farmerid farmID:(NSString *) farmid storageZyID:(NSString *) storageZyId storageZyGender: (int)gender setTarget:(id)target; 
+-(id) initWithItem:(NSString *) farmerid farmID:(NSString *) farmid storageZyID:(NSString *) storageZyId storageZyGender: (int)gender storageZyPrice: (int)price setTarget:(id)target; 
 
 -(void) hatChEggHandler:(Button *)button;
 

@@ -7,11 +7,11 @@
 //
 
 #import "EggHatchInfoPane.h"
-
+#import "DataModelEgg.h"
 @implementation EggHatchInfoPane
 
 
--(id) initWithItem:(NSString *)farmerid farmID:(NSString *) farmid storageZyID:(NSString *) storageZyId  storageZyGender: (int)gender setTarget:(id)target; 
+-(id) initWithItem:(NSString *)farmerid farmID:(NSString *) farmid storageZyID:(NSString *) storageZyId  storageZyGender: (int)gender storageZyPrice: (int)price setTarget:(id)target; 
 {
 	if ((self = [super init])) {
 		
@@ -20,6 +20,7 @@
 		FARM_ID = farmid;
 		STORAGEZY_ID = storageZyId;
 		m_gender = gender;
+		nPrice = price;
 		myTarget = target;
 				
 		
@@ -58,13 +59,20 @@
 	//discribe
 	if(m_gender < 50)
 	{
-		NSString *infoHatchStr1 = @"母受精卵孵化需要4356个金蛋，";
+		NSInteger nGoldEgg = nPrice*3;
+		NSString *infoHatchStr1 = [NSString stringWithFormat: @"母受精卵孵化需要%d个金蛋,",nGoldEgg];
+//		NSString *infoHatchStr1 = @"母受精卵孵化需要4356个金蛋，";
 		lab_hatchEggInfo1 = [CCLabel labelWithString:infoHatchStr1 fontName:@"Arial" fontSize:15];
 		[lab_hatchEggInfo1 setColor:ccc3(0, 0, 0)];
 		lab_hatchEggInfo1.position = ccp(self.contentSize.width/2 , self.contentSize.height - 90);
 		[self addChild:lab_hatchEggInfo1 z:10];
 		
-		NSString *infoHatchStr2 = @"或者9个蚂蚁币。";
+		
+		float new = [[NSString stringWithFormat:@"%1.0f", nGoldEgg/500.0] floatValue];
+//		NSLog(@"%f",new);
+		NSInteger nAntEgg = new;
+		NSString *infoHatchStr2 = [NSString stringWithFormat: @"或者%d个蚂蚁币。",nAntEgg];
+//		NSString *infoHatchStr2 = @"或者9个蚂蚁币。";
 		lab_hatchEggInfo2 = [CCLabel labelWithString:infoHatchStr2 fontName:@"Arial" fontSize:15];
 		[lab_hatchEggInfo2 setColor:ccc3(0, 0, 0)];
 		lab_hatchEggInfo2.position = ccp(self.contentSize.width/2 , self.contentSize.height - 110);
@@ -72,13 +80,19 @@
 	}
 	else 
 	{
-		NSString *infoHatchStr1 = @"公受精卵孵化需要8712个金蛋，";
+		NSInteger nGoldEgg = nPrice*6;
+		NSString *infoHatchStr1 = [NSString stringWithFormat: @"公受精卵孵化需要%d个金蛋,",nGoldEgg];
+//		NSString *infoHatchStr1 = @"公受精卵孵化需要8712个金蛋，";
 		lab_hatchEggInfo1 = [CCLabel labelWithString:infoHatchStr1 fontName:@"Arial" fontSize:15];
 		[lab_hatchEggInfo1 setColor:ccc3(0, 0, 0)];
 		lab_hatchEggInfo1.position = ccp(self.contentSize.width/2 , self.contentSize.height - 90);
 		[self addChild:lab_hatchEggInfo1 z:10];
-		
-		NSString *infoHatchStr2 = @"或者17个蚂蚁币。";
+
+		float new = [[NSString stringWithFormat:@"%1.0f", nGoldEgg/500.0] floatValue];
+//		NSLog(@"%f",new);
+		NSInteger nAntEgg = new;
+		NSString *infoHatchStr2 = [NSString stringWithFormat: @"或者%d个蚂蚁币。",nAntEgg];
+//		NSString *infoHatchStr2 = @"或者17个蚂蚁币。";
 		lab_hatchEggInfo2 = [CCLabel labelWithString:infoHatchStr2 fontName:@"Arial" fontSize:15];
 		[lab_hatchEggInfo2 setColor:ccc3(0, 0, 0)];
 		lab_hatchEggInfo2.position = ccp(self.contentSize.width/2 , self.contentSize.height - 110);
@@ -229,11 +243,5 @@
 	
 	[super dealloc];
 }
-
-
-
-
-
-
 
 @end

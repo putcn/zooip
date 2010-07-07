@@ -11,7 +11,7 @@
 
 @implementation LoadView
 
--(void) LoadingView
+-(void) MyLoadingView
 {
 	numberLbl = [CCLabel labelWithString:[NSString stringWithFormat:@" "] fontName:@"Arial" fontSize:20];
 //	[numberLbl setString:[NSString stringWithFormat:@"%@", nStep]];
