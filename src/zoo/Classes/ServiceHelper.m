@@ -86,7 +86,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 }
 
 -(void)requestDone:(ASIFormDataRequest *)request{
-	//NSLog(@"feed back for action : %@, is : %@",request.requestFlagMark,[request responseString]);
+	NSLog(@"feed back for action : %@, is : %@",request.requestFlagMark,[request responseString]);
 	
 	NSString* response = [request responseString]; 
 	NSData *jsonData = [response dataUsingEncoding:NSUTF8StringEncoding];
@@ -947,8 +947,10 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 }
 
 -(void)requestWentWrong:(ASIFormDataRequest *)request{ //http error, TBD
-	[CallBacks removeObjectForKey:request.requestFlagMark];
+	NSDictionary *targetCallBack = [CallBacks objectForKey:request.requestFlagMark];
 	NSLog(@"request %@ went wrong with status code %d, and feedback body %@",request.requestFlagMark, [request responseStatusCode], [request responseString]);
+	[[targetCallBack objectForKey:@"delegate"] performSelector:NSSelectorFromString([targetCallBack objectForKey:@"onfailed"]) withObject:@"connection error"];
+	[CallBacks removeObjectForKey:request.requestFlagMark];
 }
 
 -(ASIFormDataRequest *)requestServerForMethod:(ZooNetworkRequestType)methodType

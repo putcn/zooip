@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 
-@interface LoadView : NSObject {
+@interface LoadView : CCSprite {
 
 	CCLabel *numberLbl;
 	CCSprite *load;

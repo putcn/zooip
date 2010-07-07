@@ -11,7 +11,7 @@
 #import "LoadView.h"
 @interface PlayerInitWorkFlowController : BaseWorkFlowController
 {
-	LoadView *load;
+	
 }
 
 @end
