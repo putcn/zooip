@@ -38,7 +38,7 @@
 		[self addChild:bg_2 z:5 ];
 		
 		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
-											   setSelector:@selector(OverIconHandler) setPriority:40 offsetX:-1 offsetY:2 scale:0.75];
+											   setSelector:@selector(OverIconHandler) setPriority:40 offsetX:-1 offsetY:2 scale:1.0];// Modify by Hunk on 2010-07-07
 		statusIcon.position = ccp(350, 6);
 		[self addChild:statusIcon z:5 ];
 		[statusIcon release];

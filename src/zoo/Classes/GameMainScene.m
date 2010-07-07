@@ -208,7 +208,7 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[uiLayer switchFriendZoo];
 		
 		// Add by Hunk on 2010-06-30
-		[friendInitFlowController release];
+		//[friendInitFlowController release];
 	}
 }
 
@@ -244,7 +244,7 @@ static GameMainScene *_sharedGameMainScene = nil;
 	[baseContainer release];
 	[background release];
 	[uiLayer release];
-	[super removeAllChildrenWithCleanup:YES];
+//	[super removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }
 
