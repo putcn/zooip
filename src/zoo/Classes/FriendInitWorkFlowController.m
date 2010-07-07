@@ -81,6 +81,7 @@ static NSString *STEP_GET_DOG = @"7";
 
 -(void) nextStep
 {
+	[[GameMainScene sharedGameMainScene] loading:curStep];
 	if (curStep == STEP_GET_FARMER_INFO)
 	{
 		load = [[LoadView alloc] init];
