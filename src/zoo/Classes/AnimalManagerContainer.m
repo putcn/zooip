@@ -118,8 +118,10 @@
 	[self addChild:titleLbl z:10];
 }
 
+//此函数是，对离婚列表/结婚列表里面，点击其中的一个动物所做出的点击响应。
 -(void) itemInfoHandler:(AnimalManagementButtonItem *) itemButton
 {
+	//结婚的响应
 	if(managementType == @"animalMarry")
 	{
 		BOOL ret = NO;
@@ -149,12 +151,14 @@
 				animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
 				[self addChild:animalToMateInfoPanel z:20];
 			}
-			else {//TODO: 第二次加载需要完善		
+			else {//TODO: 第二次加载需要完善
+				//[animalToMateInfoPanel updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
 				//***[animalToMateInfoPanel updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
 				animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
 			}
 		}
 	}
+			//离婚的响应
 	else 
 	{
 		if (animalToMateOrDisapart == nil) {
@@ -163,8 +167,9 @@
 			[self addChild:animalToMateOrDisapart z:20];
 		}
 		else {	//TODO: 第二次加载需要完善	
-			//***[animalToMateInfoPanel updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
-			animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
+			//[animalToMateInfoPanel updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
+			[animalToMateOrDisapart updateInfoPanel:itemButton];
+			animalToMateOrDisapart.position = ccp(self.contentSize.width/2, animalToMateOrDisapart.contentSize.height/2);
 		}
 	}
 }

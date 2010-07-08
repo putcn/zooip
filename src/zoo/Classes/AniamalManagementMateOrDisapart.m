@@ -101,7 +101,7 @@ infoMessagePanelTest;
 		itemButton.position = ccp(self.contentSize.width/2 + 70,self.contentSize.height/2 );
 	}
 	
-	[self addChild:itemButton z:10 tag:1%8];
+	[self addChild:itemButton z:10 tag:1%9];
 	
 	DataModelAnimal *serverAnimalDataAnother = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:serverAnimalData2.coupleAnimalId];
 	
@@ -121,7 +121,7 @@ infoMessagePanelTest;
 	}
 	
 	
-	[self addChild:itemButtonAnother z:10 tag:1%8];
+	[self addChild:itemButtonAnother z:10 tag:1%9];
 }
 
 //-(void)generateAnother
@@ -179,7 +179,7 @@ infoMessagePanelTest;
 	}
 	
 	//TODO: add the service handler for to mate.
-	
+	//TOOD: 二次加载需要调整一下。
 	//判断是否首次加载
 	if (toMateRateChoose == nil) {
 		toMateRateChoose = [[AnimalManageToMateAntsChoose alloc] initWithParam:nil setTarget:self setLeftAnimalId:leftAnimalID setRightAnimalId:rightAnimalID];
@@ -285,24 +285,35 @@ infoMessagePanelTest;
 //Move the clicked one to the right position and re-generate the list.
 //List all and remove the one just clicked.
 
+//二次点击的时候进行更新。
+//移调左边和右边两个动物，重新生成即可。
 -(void)updateInfoPanel:(AnimalManagementButtonItem *)buttonItem
 {
-	[self removeAllChildrenWithCleanup:YES];
-	[self addTitle];
+	[self removeChildByTag:1%8 cleanup:YES];
+	[self removeChildByTag:1%9 cleanup:YES];
 	
-	DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:buttonItem.animalID];
-	if(serverAnimalList.gender == 1)
-	{
-		leftAnimalID = buttonItem.animalID;
-		rightAnimalID = animalID;
-	}
-	else {
-		leftAnimalID = animalID;
-		rightAnimalID = buttonItem.animalID;
-	}
+//	itemId = itId;
+//	parentTarget = target;
+//	animalID = aniID;
 	
+	
+	itemId = buttonItem.itemId;
+	animalID = buttonItem.animalID;
+//	[self addTitle];
+//	
+//	DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:buttonItem.animalID];
+//	if(serverAnimalList.gender == 1)
+//	{
+//		leftAnimalID = buttonItem.animalID;
+//		rightAnimalID = animalID;
+//	}
+//	else {
+//		leftAnimalID = animalID;
+//		rightAnimalID = buttonItem.animalID;
+//	}
+//	
 	[self generateOne];
-	[self generateButtons];
+//	[self generateButtons];
 }
 
 //-(void)updateInfo:(NSString *) itId type: (NSString *) itType setTarget:(id)target
