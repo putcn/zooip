@@ -16,7 +16,7 @@
 {	
 	if ((self = [super init])) {
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
-		animationTable = [imageProp animationTable:@"_babyDuck.png" plistName:@"_babyDuck.plist"];
+		animationTable = [imageProp animationTable:@"_babyduck.png" plistName:@"_babyduck.plist"];
 		NSLog(@"babyduck------------%@", animationTable);
 		
 //		//walk animations

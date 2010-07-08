@@ -122,6 +122,9 @@
 -(void) tick: (ccTime) dt
 {
 	//TODO: 判断是否已经进入水中或登陆，进入水中或登陆时，切换状态...
+	if (view.position.y > 400.0f) {
+		[view setScale:(400/view.position.y)];
+	}
 	if (isGotoEat == YES)
 	{
 		CGPoint point = view.position;
@@ -480,9 +483,16 @@
 	{
 		if (randomNumber > 0 && randomNumber < 10)
 		{
-			currStatus = 4;
-			waitRemain = [RandomHelper getRandomNum:300 to:600];
-			return;
+			if (currStatus == 5) {
+				currStatus = 4;
+				waitRemain = [RandomHelper getRandomNum:300 to:600];
+				return;
+			}
+			else {
+				currStatus = 7;
+				return;
+			}
+
 		}
 		else if (randomNumber >= 10 && randomNumber < 50)
 		{
