@@ -62,9 +62,22 @@ antsCount;
 		priceLbl = [[CCLabel alloc] retain];
 		[self updateButtonsAndRates:target];
 		//****[self updateInfo:itId type:itType setTarget:target];
+		
+		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
+											   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:1.0f];
+		statusIcon.position = ccp(300, 190);
+		[self addChild:statusIcon z:7 ];
+		[statusIcon release];
 	}
 	return self;
 }
+
+-(void)OverIconHandler
+{
+	
+	self.position = ccp(1000, 188);
+}
+
 -(void)addTitle
 {
 	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:20];
@@ -140,10 +153,10 @@ antsCount;
 	[self addChild:load z:10];
 	
 	
-	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:25];
-	transBackground.scale = 5.0f;
-	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-	[self addChild:transBackground z:5];
+//	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:25];
+//	transBackground.scale = 5.0f;
+//	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+//	[self addChild:transBackground z:-1];
 	
 	[self setImg:@"" setBuyType:@"" setPrice:@"1"];
 }

@@ -22,9 +22,9 @@
 	
 	self.anchorPoint = ccp(0,0);
 //	self.position = ccp(100,100);
-	numberLbl = [CCLabel labelWithString:[NSString stringWithFormat:@" "] fontName:@"Arial" fontSize:20];
+	numberLbl = [CCLabel labelWithString:[NSString stringWithFormat:@" "] fontName:@"fontType" fontSize:24];
 //	[numberLbl setString:[NSString stringWithFormat:@"%@", nStep]];
-	[numberLbl setColor:ccc3(255, 0, 0)];
+	[numberLbl setColor:ccc3(255, 255, 255)];
 	numberLbl.position = ccp(self.contentSize.width/2 , self.contentSize.height/2-32);
 	[self addChild:numberLbl z:14]; 	
 }

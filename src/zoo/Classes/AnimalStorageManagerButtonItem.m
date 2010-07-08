@@ -37,7 +37,7 @@
 		[self setImg:imagePath setName:animalName];
 	}
 //	self.scale = 300.0f/1024.0f;
-	self.scale = 2.0f;
+	self.scale = 2.5f;
 	return self;
 }
 
@@ -68,7 +68,7 @@
 	}
 	
 	//数量的显示颜色
-	[buyImg setColor:ccc3(255, 0, 255)];
+//	[buyImg setColor:ccc3(255, 0, 255)];
 	
 	
 	//动物Gender 字体和显示颜色

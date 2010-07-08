@@ -197,7 +197,7 @@
 	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:35];
 	transBackground.scale = 5.0f;
 	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-	[self addChild:transBackground z:5];
+	[self addChild:transBackground z:-1];
 	
 	[transBackground release];
 
