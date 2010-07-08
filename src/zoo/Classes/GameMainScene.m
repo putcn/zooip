@@ -108,7 +108,7 @@ static GameMainScene *_sharedGameMainScene = nil;
 		
 		loadView = [[LoadView alloc] init];
 		[loadView MyLoadingView];
-		[self addChild:loadView z:4];
+		[self addChild:loadView z:14];
 		[loadView SetLabelString:@"Loading"];
 		PlayerInitWorkFlowController *playerInitFlowController = [[PlayerInitWorkFlowController alloc] init];
 		[playerInitFlowController setupStep];

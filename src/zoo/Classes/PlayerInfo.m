@@ -155,8 +155,6 @@
 	[self addChild:load_yellow z:1];
 	
 	
-	
-//	pFile = @"返回.png"; 
 	nextPageBtn = [[Button alloc] initWithLabel:@"" 
 									   setColor:ccc3(255, 255, 255) 
 										setFont:@"Arial" setSize:12 

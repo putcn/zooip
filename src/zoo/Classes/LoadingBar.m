@@ -43,7 +43,7 @@
 		[load_right setAnchorPoint:ccp(0, 0)];
 		
 		
-		load_Cololeft.position = ccp(-7+length*2,2);
+		load_Cololeft.position = ccp(-8+length*2,2);
 		[load_Cololeft setAnchorPoint:ccp(0, 0)];
 		
 		load_Colomiddle.position = ccp(-length,2);

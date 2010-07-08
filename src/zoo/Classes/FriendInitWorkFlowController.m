@@ -84,9 +84,9 @@ static NSString *STEP_GET_DOG = @"7";
 	[[GameMainScene sharedGameMainScene] loading:curStep];
 	if (curStep == STEP_GET_FARMER_INFO)
 	{
-		load = [[LoadView alloc] init];
-		[load MyLoadingView];
-		[load SetLabelString:curStep];
+//		load = [[LoadView alloc] init];
+//		[load MyLoadingView];
+//		[load SetLabelString:curStep];
 		
 		curStep = STEP_GET_FARM_INFO;
 		
@@ -99,7 +99,7 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 	else if (curStep == STEP_GET_FARM_INFO)
 	{
-		[load SetLabelString:curStep];
+//		[load SetLabelString:curStep];
 		
 		curStep = STEP_GET_ALL_ANIMAL_INFO;
 		
@@ -112,7 +112,7 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 	else if (curStep == STEP_GET_ALL_ANIMAL_INFO)
 	{
-		[load SetLabelString:curStep];
+//		[load SetLabelString:curStep];
 		
 		curStep = STEP_GET_ALL_EGG_INFO;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
@@ -123,7 +123,7 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 	else if (curStep == STEP_GET_ALL_EGG_INFO)
 	{
-		[load SetLabelString:curStep];
+//		[load SetLabelString:curStep];
 		
 		curStep = STEP_GET_SNAKE;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
@@ -133,7 +133,7 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 	else if (curStep == STEP_GET_SNAKE)
 	{
-		[load SetLabelString:curStep];
+//		[load SetLabelString:curStep];
 		
 		curStep = STEP_GET_DEJECTA;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
@@ -143,7 +143,7 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 	else if (curStep == STEP_GET_DEJECTA)
 	{
-		[load SetLabelString:curStep];
+//		[load SetLabelString:curStep];
 		
 		curStep = STEP_GET_ANT;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
@@ -154,7 +154,7 @@ static NSString *STEP_GET_DOG = @"7";
 	}
 	else if (curStep == STEP_GET_ANT)
 	{
-		[load SetLabelString:curStep];
+//		[load SetLabelString:curStep];
 		
 		curStep = STEP_GET_DOG;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
@@ -167,8 +167,8 @@ static NSString *STEP_GET_DOG = @"7";
 	{
 		[self endStep];
 		
-		[load RemoveView];
-		[load release];
+//		[load RemoveView];
+//		[load release];
 		
 		return;
 	}

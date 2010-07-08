@@ -11,7 +11,7 @@
 #import "StoButtonContainer.h"
 #import "AnimalManageButtonContainer.h"
 #import "FeedbackDialog.h"
-
+#import "TransBackground.h"
 
 //从TOOLBAR 跳转过来，此containner 一共两个按钮，左边是动物结婚。右边是婚姻管理。
 @implementation AnimalManagerContainer
@@ -65,6 +65,12 @@
 			statusIcon.position = ccp(300, 190);
 			[self addChild:statusIcon z:7 ];
 			[statusIcon release];
+			
+			TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
+			transBackground.scale = 5.0f;
+			transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+			[self addChild:transBackground z:-1];
+			
 		}
 		else {
 			self.title = @"婚姻管理";
@@ -90,6 +96,11 @@
 			statusIcon.position = ccp(300, 190);
 			[self addChild:statusIcon z:7 ];
 			[statusIcon release];
+			
+			TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
+			transBackground.scale = 5.0f;
+			transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+			[self addChild:transBackground z:-1];
 		}
 
 		[self addTitle];
