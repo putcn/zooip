@@ -350,6 +350,11 @@
 
 -(void) btnPlayerOperationButtonHandler:(Button *)button
 {
+	if(feed != nil)
+	{
+		[self removeChild:feed cleanup:NO];
+	}
+	
 	[[UIController sharedUIController] switchOperation:button.tag];
 	
 	selectIndex = [playerOperationButtons indexOfObject:button];
@@ -427,6 +432,10 @@
 
 -(void) btnFriendOperationButtonHandler:(Button *)button
 {
+	if(feed != nil)
+	{
+		[self removeChild:feed cleanup:NO];
+	}
 	[[UIController sharedUIController] switchOperation:button.tag];
 	
 	selectIndex = [friendOperationButtons indexOfObject:button];

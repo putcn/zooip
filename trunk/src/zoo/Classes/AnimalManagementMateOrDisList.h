@@ -21,6 +21,7 @@
 	int currentNum;
 	NSString *tabFlag;
 	id parentTarget;
+	int totalMarriedAnimals;
 }
 -(id) initWithTab:(NSString *)tabName setTarget:(id)target;
 

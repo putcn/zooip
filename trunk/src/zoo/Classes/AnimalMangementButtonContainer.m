@@ -70,6 +70,8 @@
 
 -(void) btnPlayerOperationButtonHandler:(Button *)button
 {
+
+	
 	[[UIController sharedUIController] switchOperation:button.tag];
 	
 	selectIndex = [playerOperationButtons indexOfObject:button];

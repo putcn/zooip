@@ -94,7 +94,7 @@
 	return self;
 }
 
--(void) updateUserInfo
+-(void)updateUserInfo
 {
 	DataModelFarmerInfo *farmerInfo = (DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].playerFarmerInfo;
 	DataModelFarmerInfo *friendInfo = (DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].friendFarmerInfo;
