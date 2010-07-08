@@ -11,6 +11,7 @@
 #import "ServiceHelper.h"
 #import "AnimalStorageManagerPanel.h"
 #import "FeedbackDialog.h"
+#import "GetAllBirdFarmAnimalInfoController.h"
 
 //动物面板容器
 @implementation AnimalStorageManagerContainer
@@ -156,7 +157,7 @@
 	//AnimalStorageManagerPanel *itemInfo = (AnimalStorageManagerPanel *)itemButton.target; 
 	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
 	
-	if(itemButton.itemType ==@"auctionAnimals")
+	if(itemButton.itemType ==@"拍来动物")
 	{
 		currentTagFlag = @"拍来动物";
 		NSString *auctionBirdStorageId = itemButton.itemId;
@@ -164,9 +165,9 @@
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",auctionBirdStorageId,@"auctionBirdStorageId",nil];
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAuctionAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		//itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
-
+		
 	}
-	else if (itemButton.itemType == @"stoAnimals")
+	else if (itemButton.itemType == @"动物")
 	{
 		currentTagFlag = @"动物";
 		NSString *adultBirdStorageId = itemButton.itemId;
