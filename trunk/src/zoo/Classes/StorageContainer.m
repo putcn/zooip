@@ -21,21 +21,33 @@
 	if ((self = [super init])) {
 		tabDic = [[NSMutableDictionary alloc] initWithCapacity:0];
 		tabContentDic = [[NSMutableDictionary alloc] initWithCapacity:0];
+		CCTexture2D *bg_back = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_1.png" ofType:nil] ] ];
+		CGRect rect_back = CGRectZero;
+		rect_back.size = bg_back.contentSize;
+		[self setTexture:bg_back];
+		[self setTextureRect: rect_back];
+		[bg_back release];
+		
 		tabEnable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"tab_press.png" ofType:nil] ] ];
 		tabDisable = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"tab.png" ofType:nil] ] ];
-		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_2.png" ofType:nil] ] ];
-		CGRect rect = CGRectZero;
-		rect.size = bg.contentSize;
-		[self setTexture:bg];
-		[self setTextureRect: rect];
-		[bg release];
+
+		CCSprite* bg = [CCSprite spriteWithFile:@"BG_2.png"];
+		bg.position = ccp(self.contentSize.width/2,self.contentSize.height/2);
+		[self addChild:bg z:5 ];
+		
+//		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_2.png" ofType:nil] ] ];
+//		CGRect rect = CGRectZero;
+//		rect.size = bg.contentSize;
+//		[self setTexture:bg];
+//		[self setTextureRect: rect];
+//		[bg release];
 		self.position = ccp(240,160);
 //		self.scale = 300.0f/1024.0f;
 //		self.title = @"仓库";
 		
 		CCSprite* bg_2 = [CCSprite spriteWithFile:@"depot_logo.png"];
-		bg_2.position = ccp(75,205);
-		[self addChild:bg_2 z:5 ];
+		bg_2.position = ccp(75,210);
+		[self addChild:bg_2 z:4 ];
 		
 		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
 											   setSelector:@selector(OverIconHandler) setPriority:40 offsetX:-1 offsetY:2 scale:1.0];// Modify by Hunk on 2010-07-07
@@ -122,7 +134,7 @@
 		}
 		tempTab.position = ccp((rect.size.width) * i + tempTab.contentSize.width + 110 , self.contentSize.height+5);
 		tempTab.tag = i;
-		[self addChild:tempTab];
+		[self addChild:tempTab z:4];
 		[tabDic setValue:tempTab forKey:[NSString stringWithFormat:@"tab_%d",i]];
 	}
 }
