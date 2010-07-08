@@ -65,8 +65,8 @@ storageAuctionAnimals;
 		//playerUid = @"248725655";
 
 		//playerUid = @"223153878";
-		playerUid = @"160412891";//蒋紫薇
-//		playerUid = @"248725655";//黄老邪
+//		playerUid = @"160412891";//蒋紫薇
+		playerUid = @"248725655";//黄老邪
 		friendUid = @"327535525";
 		
 		//Mixi:11, RenRen:5
