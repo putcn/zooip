@@ -9,6 +9,7 @@
 #import "AnimalMangementButtonContainer.h"
 
 
+//动物结婚和结婚管理，两个按钮的Container。
 @implementation AnimalMangementButtonContainer
 
 

@@ -12,6 +12,8 @@
 #import "AnimalManageButtonContainer.h"
 #import "FeedbackDialog.h"
 
+
+//从TOOLBAR 跳转过来，此containner 一共两个按钮，左边是动物结婚。右边是婚姻管理。
 @implementation AnimalManagerContainer
 
 @synthesize title,managementType;

@@ -10,7 +10,7 @@
 #import "DataModelAnimal.h"
 
 
-
+//列出来所有结婚的动物，点了某个之后，弹出来AniamalManagementMateOrDisapart.m，选择散伙还是交配。
 @implementation AnimalManagementMateOrDisList
 
 

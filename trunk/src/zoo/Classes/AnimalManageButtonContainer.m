@@ -10,6 +10,7 @@
 #import "DataModelAnimal.h"
 
 
+//结婚时候，按钮Container，每一个按钮对应一个AnimalManagementButtonItem
 @implementation AnimalManageButtonContainer
 
 -(id) initWithTab: (NSString *)tabName setTarget:(id)target

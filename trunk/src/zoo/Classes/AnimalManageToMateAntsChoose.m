@@ -11,6 +11,8 @@
 #import "ScalerPane.h"
 #import "RandomHelper.h"
 #import "LoadingBar.h"
+
+//选择蚂蚁需要的弹出窗口
 @implementation AnimalManageToMateAntsChoose
 @synthesize 
 title,
