@@ -25,12 +25,12 @@
 		storageID = animalIDP;
 		amount = Amount;
 		genDer = gender;
-//		CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"itemButtonBack.png" ofType:nil] ] ];
-//		CGRect rect = CGRectZero;
-//		rect.size = itemImg.contentSize;
-//		[self setTexture: itemImg];
-//		[self setTextureRect: rect];
-//		[itemImg release];
+		CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"物品边框.png" ofType:nil] ] ];
+		CGRect rect = CGRectZero;
+		rect.size = itemImg.contentSize;
+		[self setTexture: itemImg];
+		[self setTextureRect: rect];
+		[itemImg release];
 		targetCallBack = [target retain];
 		selector = handler;
 		pri = priorityValue;

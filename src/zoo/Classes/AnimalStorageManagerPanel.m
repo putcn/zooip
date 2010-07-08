@@ -136,10 +136,10 @@
 			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 80);
 			[self addChild:itemButton z:7 tag:i%8];
 			
-			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
-			kuang.scale = 1024.0/370.0f;
-			[self addChild:kuang z:7];
+//			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+//			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
+//			kuang.scale = 1024.0/370.0f;
+//			[self addChild:kuang z:7];
 		}
 	}
 	if (tabFlag == @"拍来动物") {
@@ -172,10 +172,10 @@
 			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 80);
 			[self addChild:itemButton z:7 tag:i%8];
 			
-			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
-			kuang.scale = 1024.0/370.0f;
-			[self addChild:kuang z:7];
+//			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+//			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
+//			kuang.scale = 1024.0/370.0f;
+//			[self addChild:kuang z:7];
 		}
 		
 	}
