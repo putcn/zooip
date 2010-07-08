@@ -21,7 +21,7 @@
 		itemId = itId;
 		itemType = itType;
 		animalID = animalIDP;
-		CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"itemButtonBack.png" ofType:nil] ] ];
+		CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"物品边框.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = itemImg.contentSize;
 		[self setTexture: itemImg];
@@ -52,7 +52,7 @@
 	if (itemId.intValue >= 30) {
 		[item setFlipX:YES];
 	}
-	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
+	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2-10);
 	
 	[self addChild:item z:7];
 	
@@ -63,8 +63,9 @@
 	else {
 		gongImg = [CCSprite spriteWithFile:@"母.png"];
 	}
-	gongImg.position = ccp(gongImg.contentSize.width/2 +35, self.contentSize.height + 5);
+	gongImg.position = ccp(gongImg.contentSize.width/2 +55, self.contentSize.height-10);
 	[self addChild:gongImg z:7];
+	
 	//TODO: add name and gender image
 	//***[self addChild:animalNameLable z:7];
 }
@@ -95,13 +96,13 @@
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
-//	self.scale = 1.8f;
+	self.scale += 1;
 	return YES;
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-//	self.scale = 1.5f;
+	self.scale -= 1;
 	if (selector != nil && [self containsTouchLocation:touch])
 	{
 		[targetCallBack performSelector:selector withObject:self];

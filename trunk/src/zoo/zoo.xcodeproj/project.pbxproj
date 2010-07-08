@@ -861,6 +861,7 @@
 		6BC5C16E11DB3DE700644D52 /* LoadingBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC5C16D11DB3DE700644D52 /* LoadingBar.m */; };
 		6BCE3CEA11D059320006A430 /* LoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE3CE911D059320006A430 /* LoadView.m */; };
 		6BCEBE1B11E5664800503629 /* loading_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BCEBE1A11E5664800503629 /* loading_BG.png */; };
+		6BCEC0BB11E5B52A00503629 /* fontType.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BCEC0BA11E5B52A00503629 /* fontType.ttf */; };
 		6BD28E6811D3000E00BE2859 /* loading_中间.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28DD211D3000D00BE2859 /* loading_中间.png */; };
 		6BD28E6911D3000E00BE2859 /* loading_右圆角.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28DD311D3000D00BE2859 /* loading_右圆角.png */; };
 		6BD28E6A11D3000E00BE2859 /* loading_左圆角.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28DD411D3000D00BE2859 /* loading_左圆角.png */; };
@@ -2036,6 +2037,7 @@
 		6BCE3CE811D059320006A430 /* LoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadView.h; sourceTree = "<group>"; };
 		6BCE3CE911D059320006A430 /* LoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadView.m; sourceTree = "<group>"; };
 		6BCEBE1A11E5664800503629 /* loading_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_BG.png; sourceTree = "<group>"; };
+		6BCEC0BA11E5B52A00503629 /* fontType.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = fontType.ttf; sourceTree = "<group>"; };
 		6BD28DD211D3000D00BE2859 /* loading_中间.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_中间.png"; sourceTree = "<group>"; };
 		6BD28DD311D3000D00BE2859 /* loading_右圆角.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_右圆角.png"; sourceTree = "<group>"; };
 		6BD28DD411D3000D00BE2859 /* loading_左圆角.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "loading_左圆角.png"; sourceTree = "<group>"; };
@@ -3942,6 +3944,7 @@
 		6BD28EEB11D3001D00BE2859 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				6BCEC0BA11E5B52A00503629 /* fontType.ttf */,
 				6BCEBE1A11E5664800503629 /* loading_BG.png */,
 				6BA03F9611E486C300D0E667 /* BG_buy.png */,
 				6BA03F9711E486C300D0E667 /* 加减器_右.png */,
@@ -5275,6 +5278,7 @@
 				6BA03F9E11E486C300D0E667 /* 确定_按下.png in Resources */,
 				6BA03F9F11E486C300D0E667 /* 确定.png in Resources */,
 				6BCEBE1B11E5664800503629 /* loading_BG.png in Resources */,
+				6BCEC0BB11E5B52A00503629 /* fontType.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

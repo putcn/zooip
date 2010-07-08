@@ -47,8 +47,19 @@ infoMessagePanelTest;
 		
 		//generate one button. Generate other button list.
 		[self generateOne];
+		
+		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
+											   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:1.0f];
+		statusIcon.position = ccp(300, 190);
+		[self addChild:statusIcon z:7 ];
+		[statusIcon release];
 	}
 	return self;
+}
+
+-(void)OverIconHandler
+{
+	self.position = ccp(1000, 188);
 }
 
 -(void)generateButtons
