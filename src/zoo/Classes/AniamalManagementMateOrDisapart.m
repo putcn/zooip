@@ -11,7 +11,8 @@
 #import "ScalerPane.h"
 #import "FeedbackDialog.h"
 
-
+//显示的是，两个动物的配种或者是散伙，左，右，动物，然后按钮配种，散伙。
+//配种，跳转到AntsChoose 选择面板
 @implementation AniamalManagementMateOrDisapart
 
 @synthesize 

@@ -11,6 +11,10 @@
 #import "ScalerPane.h"
 #import "FeedbackDialog.h"
 
+
+
+//列出来一个主角，男左，女右。列出来下边可以选择的对象。点击县面的对象。配角进行变换。
+//还有结婚和交配按钮。
 @implementation AnimalManageToMateInfoPanel
 @synthesize 
 title,
