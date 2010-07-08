@@ -12,6 +12,7 @@
 #import "ItemInfoPane.h"
 #import "MessageDialog.h"
 #import "TransBackground.h"
+#import "PlayerInfo.h"
 
 
 @interface ManageContainer : CCSprite{
@@ -23,6 +24,10 @@
 	CCTexture2D *tabDisable;
 	ItemInfoPane *itemInfoPane;
 	
+	NSInteger tempPrice;
+	NSInteger tempCount;
+	NSString *tempType;
+	PlayerInfo *playerInfo;
 	
 	int tabIndex;
 }
@@ -31,4 +36,5 @@
 
 -(void)addTitle;
 -(void)addTab:(NSArray *)tabArray;
+
 @end

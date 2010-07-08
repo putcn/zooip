@@ -29,6 +29,7 @@
 @property (nonatomic, retain) NSString *itemId;
 @property (nonatomic, retain) NSString *itemType;
 @property (nonatomic, retain) NSString *itemBuyType;
+@property (nonatomic, assign) NSInteger itemPrice;
 @property (nonatomic, assign) NSInteger count;
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget: (id)target; 
 -(void)addTitle;

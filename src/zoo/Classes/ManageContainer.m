@@ -12,6 +12,10 @@
 #import "ButtonContainer.h"
 #import "FeedbackDialog.h"
 #import "Button.h"
+#import "DataEnvironment.h"
+#import "DataModelFarmerInfo.h"
+#import "GameMainScene.h"
+
 
 @implementation ManageContainer
 
@@ -160,6 +164,15 @@
 {
 	//获取从Button回调的参数,强制转换为ItemInfoPane对象,改对象携带了购买物品所需要的所有参数
 	ItemInfoPane *itemInfo = (ItemInfoPane *)button.target; 
+	
+	
+	NSDictionary *dic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+	DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemInfo.itemId];
+	tempPrice  = itemInfo.itemPrice;
+	tempCount = itemInfo.count;
+ 	tempType = itemInfo.itemType;
+	
+	
 	if (itemInfo.itemType == @"动物") {
 		if (itemInfo.itemBuyType == @"goldEgg") {
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
@@ -179,7 +192,7 @@
 		if (itemInfo.itemBuyType == @"goldEgg") {
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 			NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",farmId,@"farmId",itemInfo.itemId,@"foodId",@"10000",@"numOfFood",nil];
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",farmId,@"farmId",itemInfo.itemId,@"foodId",[NSString stringWithFormat:@"%d",itemInfo.count],@"numOfFood",nil];
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyFoodByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
 		else if(itemInfo.itemBuyType == @"ant"){
@@ -223,7 +236,17 @@
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无道具信息!"];
 			break;
 		case 1:
+		{
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你购买物品成功!"];
+			if(tempType ==@"ant")
+			{
+				((DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].playerFarmerInfo).antsCurrency -= tempPrice * tempCount;
+			}
+			else {
+				((DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].playerFarmerInfo).goldenEgg -= tempPrice * tempCount;
+			}
+			[[GameMainScene sharedGameMainScene] updateUserInfo];
+		}
 			break;
 		case 2:
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"余额不足!"];
@@ -261,6 +284,12 @@
 	[tabEnable release];
 	[tabDisable release];
 	[itemInfoPane release];
+	
+	
+	//Alex add the release methods.
+	
+	[tempType release];
+	[playerInfo release];
 	
 	[super dealloc];
 }

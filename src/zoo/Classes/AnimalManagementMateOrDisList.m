@@ -26,10 +26,22 @@
 //		[bg release];
 		tabFlag = tabName;
 		if (tabFlag == @"animal") {
-			
+			NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
 			NSDictionary *itemDic;
+			DataModelOriginalAnimal *originAnimal;
 			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].animalIDs;
-			totalPage = [[DataEnvironment sharedDataEnvironment].animalIDs count] + 1;
+			NSString *aniID;
+			for (int i = 0; i < [[DataEnvironment sharedDataEnvironment].animalIDs count]; i ++) 
+			{
+				originAnimal = [animalIDs objectAtIndex:i];
+				aniID = [animalIDs objectAtIndex:i];
+				DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
+				if(serverAnimalData2.coupleAnimalId != nil)
+				{
+					totalMarriedAnimals ++;
+				}
+			}
+			totalPage = (totalMarriedAnimals - 1) / 8 + 1;
 			currentPageNum = 1;
 			[self generatePage];
 		}

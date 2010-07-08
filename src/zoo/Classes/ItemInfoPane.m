@@ -16,6 +16,7 @@ title,
 itemId,
 itemType,
 itemBuyType,
+itemPrice,
 count;
 
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType setTarget:(id)target
@@ -188,9 +189,15 @@ count;
 	{
 		ScalerPane *scalerPane;
 		if(itemType == @"动物")
+		{
+			count = 1;
 			scalerPane = [[ScalerPane alloc] initWithCounter:1 max:10 delta:1 target:self price:itemPrice z:39 Priority:30 setPathname:@"加减显示器.png" setlength:0];
+		}
 		else if(itemType == @"饲料")
-			scalerPane = [[ScalerPane alloc] initWithCounter:500 max:10000 delta:500 target:self price:itemPrice z:39 Priority:30 setPathname:@"加减显示器.png" setlength:0];
+		{
+			count = 1;
+			scalerPane = [[ScalerPane alloc] initWithCounter:1 max:1000 delta:50 target:self price:itemPrice z:39 Priority:30 setPathname:@"加减显示器.png" setlength:0];
+		}
 		scalerPane.position = ccp(0,0);
 		[self addChild:scalerPane z:10];
 	}
