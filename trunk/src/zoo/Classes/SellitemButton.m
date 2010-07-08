@@ -20,7 +20,7 @@
 	{
 		itemId = itId;
 		itemType = itType;
-		CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"itemButtonBack.png" ofType:nil] ] ];
+		CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"物品边框.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = itemImg.contentSize;
 		[self setTexture: itemImg];
@@ -33,7 +33,7 @@
 		
 		[self setImg:imagePath setEggTotal:eggTotal setEggName:eggName];
 	}
-	self.scale = 1.5f;
+	self.scale = 2.8f;
 	return self;
 }
 
@@ -44,6 +44,7 @@
 	itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:imagePath ofType:nil] ] ];
 	CGRect rect = CGRectZero;
 	rect.size = itemImg.contentSize;
+	item.scale = 0.7;
 	[item setTexture: itemImg];
 	[item setTextureRect: rect];
 	[itemImg release];
@@ -56,9 +57,10 @@
 	
 	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
 	
-	eggNameLbl .position = ccp(50 , self.contentSize.height - 90);
-	eggTotalLab.position = ccp(eggNameLbl .position.x + 60 , self.contentSize.height - 90);
-	
+	eggNameLbl .position = ccp(25 , self.contentSize.height - 60);
+	eggTotalLab.position = ccp(eggNameLbl.position.x + 30 , self.contentSize.height - 60);
+	eggNameLbl.scale = 0.7;
+	eggTotalLab.scale = 0.7;
 	[self addChild:item z:7];
 	
 	[self addChild:eggNameLbl z:7];
@@ -100,14 +102,15 @@
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+//	self.scale += 1.0f;
 	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
-	self.scale = 1.8f;
+	
 	return YES;
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	self.scale = 1.5f;
+//	self.scale -= 1.0f;
 	if (selector != nil && [self containsTouchLocation:touch])
 	{
 		[targetCallBack performSelector:selector withObject:self];
