@@ -5599,7 +5599,7 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "20751554-1ED4-4A00-BF12-0747EC26E4C4";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphonesimulator3.0;
 				WARNING_CFLAGS = "-Wall";
 			};
 			name = Debug;
@@ -5672,7 +5672,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
-				SDKROOT = iphoneos4.0;
+				SDKROOT = iphoneos3.0;
 			};
 			name = Debug;
 		};

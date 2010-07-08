@@ -23,7 +23,7 @@
 		[self setTexture: snake];
 		[self setTextureRect: rect]; 
 		self.position = ccp([RandomHelper getRandomNum:500 to:700],[RandomHelper getRandomNum:100 to:300]);
-		[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:5];
+		[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:4];
 	}
 	return self;
 }
