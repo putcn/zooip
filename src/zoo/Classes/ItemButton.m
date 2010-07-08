@@ -21,7 +21,7 @@
 	{
 		itemId = itId;
 		itemType = itType;
-		CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"itemButtonBack.png" ofType:nil] ] ];
+		CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"物品边框.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = itemImg.contentSize;
 		[self setTexture: itemImg];
@@ -32,7 +32,7 @@
 		pri = priorityValue;
 		[self setImg:imagePath setBuyType:buyType setPrice:price];
 	}
-	self.scale = 1.5f;
+	self.scale = 2.8f;
 	return self;
 }
 
@@ -47,6 +47,7 @@
 	if (buyType != 0) {
 		[item setFlipX:YES];
 	};
+	item.scale = 0.7;
 	[item setTexture: itemImg];
 	[item setTextureRect: rect];
 	[itemImg release];
@@ -57,7 +58,7 @@
 	else {
 		buyImg = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
 	}
-	buyImg.scale = 1.2f;
+	buyImg.scale = 0.7f;
 	CCLabel *priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:22];
 	[priceLbl setColor:ccc3(0, 0, 0)];
 	if (itemType == @"animal") {
@@ -65,9 +66,10 @@
 			item.flipX = YES;
 		}
 	}
-	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2-5);
-	buyImg.position = ccp(buyImg.contentSize.width/2 +25, self.contentSize.height - 80-10);
-	priceLbl.position = ccp(buyImg.contentSize.width + 60 , buyImg.position.y);
+	priceLbl.scale = 0.7;
+	item.position = ccp(self.contentSize.width/2, self.contentSize.height - item.contentSize.height /2);
+	buyImg.position = ccp(buyImg.contentSize.width/2 +5, self.contentSize.height - 60);
+	priceLbl.position = ccp(buyImg.contentSize.width + 30 , buyImg.position.y);
 	
 	[self addChild:item z:7];
 	[self addChild:buyImg z:7];
@@ -99,14 +101,15 @@
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
+//	self.scale += 1.0f;
 	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
-//	self.scale = 1.8f;
+	
 	return YES;
 }
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
-//	self.scale = 1.5f;
+//	self.scale -= 1.0f;
 	if (selector != nil && [self containsTouchLocation:touch])
 	{
 		[targetCallBack performSelector:selector withObject:self];

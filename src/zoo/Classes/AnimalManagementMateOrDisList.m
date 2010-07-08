@@ -62,7 +62,7 @@
 		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 		itemArray = [itemDic allKeys];
 	}
-	totalPage = itemArray.count/8 + 1;
+	totalPage = (itemArray.count-1)/8 + 1;
 	currentPageNum = 1;
 	[self generatePage];
 }
@@ -74,7 +74,7 @@
 
 -(void) nextPage:(Button *)button
 {
-	if ( currentPageNum + 1 <= totalPage) {
+	if ( currentPageNum + 1 < totalPage) {
 		for (int i = 0; i< currentNum; i ++) {
 			[self removeChildByTag:i cleanup:YES];
 		}
@@ -102,13 +102,21 @@
 		NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
 		DataModelOriginalAnimal *originAnimal;
 		NSString *aniID;
+//		int endNumber = currentPageNum * 8;
+//		if (endNumber >= [[DataEnvironment sharedDataEnvironment].animalIDs count]) {
+//			endNumber = [[DataEnvironment sharedDataEnvironment].animalIDs count];
+//		}
+//		currentNum = endNumber - (currentPageNum -1 ) *8 ;
+		
 		int endNumber = currentPageNum * 8;
-		if (endNumber >= [[DataEnvironment sharedDataEnvironment].animalIDs count]) {
+//		if (endNumber >= [[DataEnvironment sharedDataEnvironment].animalIDs count]) {
 			endNumber = [[DataEnvironment sharedDataEnvironment].animalIDs count];
-		}
-		currentNum = endNumber - (currentPageNum -1 ) *8 ;
+//		}
+//		currentNum = endNumber - (currentPageNum -1 ) *8 ;
+		
 		int kTemp = 0;
-		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) 
+//		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) 
+		for(int i = 0 ;i <endNumber;i++)
 		{
 			originAnimal = [animalIDs objectAtIndex:i];
 			aniID = [animalIDs objectAtIndex:i];

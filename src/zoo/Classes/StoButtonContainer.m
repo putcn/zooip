@@ -213,10 +213,10 @@
 			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNumOne-1))/4) - 100);			
 			[itemNumArray addObject:itemButton];
 			
-			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNumOne-1))/4) - 100);
-			kuang.scale = 1024.0/400.0f;
-			[self addChild:kuang z:6 tag:i%8+100];
+//			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+//			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNumOne-1))/4) - 100);
+//			kuang.scale = 1024.0/400.0f;
+//			[self addChild:kuang z:6 tag:i%8+100];
 			neggOne ++;
 		}	
 		[self addEggToStage];
@@ -251,10 +251,10 @@
 			[itemNumArray addObject:itemButton];
 			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNumTwo-1))/4) - 100);
 	
-			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNumTwo-1))/4) - 100);
-			kuang.scale = 1024.0/400.0f;
-			[self addChild:kuang z:6 tag:i%8+100];
+//			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
+//			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNumTwo-1))/4) - 100);
+//			kuang.scale = 1024.0/400.0f;
+//			[self addChild:kuang z:6 tag:i%8+100];
 			
 			neggTwo++;
 	}
