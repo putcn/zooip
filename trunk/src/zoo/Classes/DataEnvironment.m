@@ -64,7 +64,7 @@ storageAuctionAnimals;
 		//playerUid = @"248726533";
 		//playerUid = @"248725655";
 
-		//playerUid = @"223153878";
+		//playerUid = @"248725655";
 //		playerUid = @"160412891";//蒋紫薇
 		playerUid = @"248725655";//黄老邪
 		friendUid = @"327535525";

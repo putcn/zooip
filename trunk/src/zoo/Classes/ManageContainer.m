@@ -146,13 +146,15 @@
 -(void) itemInfoHandler:(ItemButton *) itemButton
 {
 	//判断是否首次加载物品信息框
+	NSString *tempId = itemButton.itemId;
+	NSString *tempType = itemButton.itemType;
 	if (itemInfoPane == nil) {
-		itemInfoPane = [[ItemInfoPane alloc] initWithItem:itemButton.itemId type:itemButton.itemType setTarget:self];
+		itemInfoPane = [[ItemInfoPane alloc] initWithItem:tempId type:tempType setTarget:self];
 		itemInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2);
 		[self addChild:itemInfoPane z:20];
 	}
 	else {		
-		[itemInfoPane updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
+		[itemInfoPane updateInfo:tempId type:tempType setTarget:self];
 		itemInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2);
 	}
 
