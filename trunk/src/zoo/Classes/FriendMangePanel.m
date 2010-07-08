@@ -74,7 +74,7 @@
 	
 	self.position = ccp(-2000,100);
 	
-};
+}
 
 
 
@@ -123,9 +123,6 @@
 		
 		self.position = ccp(-180,100);
 	}
-
-	
-
 }
 
 
