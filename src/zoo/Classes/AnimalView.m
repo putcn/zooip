@@ -43,7 +43,7 @@
 	//映射动物的方向和状态参数
 	NSString *direction= [dirctions objectForKey: [NSString stringWithFormat:@"%d",currDirectionValue]];
 	NSString *status = [statuses objectForKey: [NSString stringWithFormat:@"%d", currStatusValue]];
-	//NSLog(@"当前的动物状态为 ***** %@ *****", [[status stringByAppendingString:@"_"] stringByAppendingFormat:direction]);	
+	NSLog(@"当前的动物状态为 ***** %@ *****", [[status stringByAppendingString:@"_"] stringByAppendingFormat:direction]);	
 	if ([direction isEqualToString:@"right"]) 
 	{
 		self.flipX =YES;
