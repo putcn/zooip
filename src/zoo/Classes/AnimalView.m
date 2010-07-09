@@ -91,7 +91,7 @@
 			showKey = @"eat";
 		}
 		[self stopAllActions];
-		[self runAction:(CCAnimate *)[animationTable objectForKey:showKey]];
+		[self runAction:[animationTable objectForKey:showKey]];
 	}
 
 }
