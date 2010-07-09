@@ -81,8 +81,15 @@ static AnimalController *_sharedAnimalController = nil;
 //		{
 			//TODO: Add Animal
 		serverAnimalData = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:serverAnimalID];
-		Animal *newAnimal = [[Animal alloc] initWithAnimalData:serverAnimalData];
-		[animals setObject:newAnimal forKey:serverAnimalID];
+		Animal *newAnimal;
+		if (serverAnimalData.birdStage == 0) {
+			NSLog(@"%@",@"有动物正在孵蛋!");
+		}
+		else {
+			newAnimal = [[Animal alloc] initWithAnimalData:serverAnimalData];
+			[animals setObject:newAnimal forKey:serverAnimalID];
+		}
+
 		
 		// Add by Hunk on 2010-06-30
 		//[newAnimal release];
