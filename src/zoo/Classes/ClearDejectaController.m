@@ -8,6 +8,7 @@
 
 #import "ClearDejectaController.h"
 #import "DejectaController.h"
+#import "DataEnvironment.h"
 
 
 @implementation ClearDejectaController
@@ -23,12 +24,21 @@
 -(void) resultCallback:(NSObject *)value
 {
 	NSDictionary *result = (NSDictionary *)value;
+	
 	NSInteger code = [[result objectForKey:@"code"] intValue];
 	if (code == 1)
 	{
 		NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
 		[[DejectaController sharedDejectaController] removeDejecta:self.dejectaId setExperience:experience];
 		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功清除粪便"];
+	
+		// Add by Hunk on 2010-07-09
+//		((DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo).farm_currentExp += experience;
+//		
+//		[[GameMainScene sharedGameMainScene] updateUserInfo];
+		
+		
+		
 	}
 	if(code == 0)
 	{

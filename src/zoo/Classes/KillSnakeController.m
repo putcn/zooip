@@ -27,8 +27,14 @@
 	if (code == 1)
 	{
 		NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
-		[[SnakeController sharedSnakeController] removeSnake:snakeId setExperience:experience];
+		[[SnakeController sharedSnakeController] removeSnake:self.snakeId setExperience:experience];
 		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"灭蛇成功"];
+		
+		// Add by Hunk on 2010-07-09
+		((DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo).farm_currentExp += experience;
+		
+		[[GameMainScene sharedGameMainScene] updateUserInfo];
+		
 	}
 	if (code == 2) 
 	{

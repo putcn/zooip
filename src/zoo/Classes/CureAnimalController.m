@@ -22,10 +22,17 @@
 {
 	NSDictionary *result = (NSDictionary *)value;
 	NSInteger code = [[result objectForKey:@"code"] intValue];
-	if (code == 1) {	
-				
+	if (code == 1) 
+	{
 		[[AnimalController sharedAnimalController] cureAnimal:animalId];
 		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"治疗成功"];
+		
+		// Add by Hunk on 2010-07-09
+		NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
+		
+		((DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo).farm_currentExp += experience;
+		
+		[[GameMainScene sharedGameMainScene] updateUserInfo];
 	}
 	if (code == 2) 
 	{
