@@ -93,7 +93,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 	// TODO DELETE
 	//NSLog(response);
 	NSDictionary *result = [[CJSONDeserializer deserializer] deserializeAsDictionary:jsonData error:nil];
-	NSLog(@"%@",result);
+	NSLog(@"result = %@",result);
 	NSDictionary *targetCallBack = [CallBacks objectForKey:request.requestFlagMark];
 	
 	BOOL shouldTriggerErrorHandler = NO;
@@ -615,6 +615,9 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 				case 1:
 					// 收蛋／杀蚂蚁／杀蛇／治疗动物／清理便便成功
 				{
+					NSLog(@"result = %@\n", result);
+					
+					
 					// TODO 需要返回code:1的例子
 					DataModelFarmerInfo* playerFarmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];
 					

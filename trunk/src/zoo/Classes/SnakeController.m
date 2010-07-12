@@ -54,9 +54,8 @@ static SnakeController *_sharedSnakeController = nil;
 	[[OperationEndView alloc] initWithExperience:experience setPosition: ccp(snakePos.x, snakePos.y+50) setNumber:0];
 	SnakeView *snakeView = [allSnakes objectForKey:snakeId];
 	[[GameMainScene sharedGameMainScene] removeSpriteFromStage:snakeView];
-	[[allSnakes objectForKey:snakeId] release];
-	[allSnakes removeObjectForKey:snakeId];
-	
+	[allSnakes objectForKey:snakeId];
+	[allSnakes removeObjectForKey:snakeId];	
 }
 
 -(void) clearSnakes

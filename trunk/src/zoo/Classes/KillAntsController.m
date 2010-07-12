@@ -29,6 +29,12 @@
 		NSInteger experience = [[result objectForKey:@"experience"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"experience"] intValue];
 		[[AntController sharedAntController] removeAnt:self.antId setExperience:experience];
 		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"杀蚂蚁成功"];
+		
+		// Add by Hunk on 2010-07-09
+		((DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo).farm_currentExp += experience;
+		
+		[[GameMainScene sharedGameMainScene] updateUserInfo];
+		
 	}
 	if (code == 2) 
 	{
