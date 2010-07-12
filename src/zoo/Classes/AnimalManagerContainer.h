@@ -25,6 +25,8 @@
 	AniamalManagementMateOrDisapart *animalToMateOrDisapart;
 	
 	int tabIndex;
+	NSInteger leftTag;
+	NSInteger rightTag;
 	NSString *managementType;
 }
 @property (nonatomic,retain) NSString *title;

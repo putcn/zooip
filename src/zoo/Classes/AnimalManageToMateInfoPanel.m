@@ -13,8 +13,16 @@
 
 
 
-//列出来一个主角，男左，女右。列出来下边可以选择的对象。点击县面的对象。配角进行变换。
+//列出来一个主角，男左，女右。列出来下边可以选择的对象。点击下面的对象。配角进行变换。
 //还有结婚和交配按钮。
+//实现逻辑:
+//generateButtons 生成点击按钮和事件。
+//generateOne 生成左侧的。
+//Another 生成右侧的。
+//Others 列出所有相关的。
+//关闭之后重新生成。
+//点左边右边的没有变化，点下边的，根据需要，替换到左边或者右边。
+
 @implementation AnimalManageToMateInfoPanel
 @synthesize 
 title,
@@ -41,12 +49,14 @@ animalID;
 		[bg release];
 		self.title = @"动物结婚";
 		[self addTitle];
-		priceLbl = [[CCLabel alloc] retain];
+		//priceLbl = [[CCLabel alloc] retain];
 		//****[self updateInfo:itId type:itType setTarget:target];
 		
 		//********
 		
 		currentPageNum = 1;
+		leftAnimalID = @"";
+		rightAnimalID = @"";
 		
 		// add button.
 		[self generateButtons];
@@ -54,12 +64,6 @@ animalID;
 		//generate one button. Generate other button list.
 		[self generateOne];
 		[self generateOthers];
-		
-		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
-											   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:1.0f];
-		statusIcon.position = ccp(300, 190);
-		[self addChild:statusIcon z:7 ];
-		[statusIcon release];
 		
 //		self.scale = 300.0f/1024.0f;
 	}
@@ -84,12 +88,30 @@ animalID;
 	toMarryBtn.position = ccp(self.contentSize.width/2 - 100, 25);
 	[self addChild:toMateBtn z:8];
 	[self addChild:toMarryBtn z:8];
+	
+	Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
+										   setSelector:@selector(OverIconHandler) setPriority:30 offsetX:-1 offsetY:2 scale:1.0f];
+	statusIcon.position = ccp(300, 190);
+	[self addChild:statusIcon z:7 ];
+	[statusIcon release];
+	
+	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:35];
+	transBackground.scale = 5.0f;
+	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+	[self addChild:transBackground z:-1];
 }
 
-//生成左边的动物，公的
+//生成左边的动物，公的 tag:1%8
 -(void)generateOne
 {
-	//Gen the one clicked at the right postion.
+	if(firstType == @"left")
+	{
+		//Gen the one clicked at the right postion.
+		[self removeChildByTag:oneTag cleanup:YES];
+	}
+	else {
+		[self removeChildByTag:anotherTag cleanup:YES];
+	}
 
 	DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:animalID];
 	NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
@@ -98,43 +120,45 @@ animalID;
 	
 	NSString *tabFlag = @"animals";
 	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:leftAnimalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:30 offsetX:1 offsetY:1 setPictureScale:0.7f];	
-	[self addChild:itemButton z:8 tag:1%8];
-	
+
+	//MALE
 	if (serverAnimalData2.gender == 1) {
 		leftAnimalID = animalID;
+		firstType = @"left";
 		//For Test
-		itemButton.position = ccp(220,130);
-		
-//		CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-//		kuang.position = ccp(220,135);
-//		kuang.scale = 0.7f;
-//		[self addChild:kuang z:8];
+		itemButton.position = ccp(130,130);
+	
+		oneTag = 888;
+		anotherTag = 999;
+
 	}
+	//FEMALE
 	else {
+		firstType = @"right";
 		rightAnimalID = animalID;
+			
+		itemButton.position = ccp(220,130);
+		oneTag = 888;
+		anotherTag = 999;
 		//For Test
 //		NSString *tabFlag = @"animals";
 //		AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:rightAnimalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:30 offsetX:1 offsetY:1 setPictureScale:0.5f];
-		itemButton.position = ccp(130,130);
-//		[self addChild:itemButton z:8 tag:1%8];
 		
-//		CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-//		kuang.position = ccp(130,135);
-//		kuang.scale = 0.7f;
-//		[self addChild:kuang z:8];
+//		[self addChild:itemButton z:8 tag:1%8];
 	}
-
-	
+		[self addChild:itemButton z:8 tag:oneTag];
 }
 
-//生成右边的动物，母的
+//生成右边的动物，母的 tag 1%9
 -(void)generateAnother
 {
 	DataModelAnimal *serverAnimalDataAnother;
-	if (leftAnimalID == animalID) {
+	if (firstType == @"left") {
+		[self removeChildByTag:anotherTag cleanup:YES];
 		serverAnimalDataAnother = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:rightAnimalID];
 	}
 	else {
+		[self removeChildByTag:anotherTag cleanup:YES];
 		serverAnimalDataAnother = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID];
 	}
 	
@@ -144,28 +168,17 @@ animalID;
 	
 	NSString *tabFlag = @"animals";
 	AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:animalID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:nil setPriority:30 offsetX:1 offsetY:1 setPictureScale:0.7f];
-	if(serverAnimalDataAnother.gender == 1)
+	if(firstType == @"right")
 	{
-		itemButton.position = ccp(220,130);
-		
-//		CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-//		kuang.position = ccp(220,135);
-//		kuang.scale = 0.7f;
-//		[self addChild:kuang z:8];
-		
+		//left
+		itemButton.position = ccp(130,130);
 	}
 	else {
-		itemButton.position = ccp(130,130);
+		//right
+		itemButton.position = ccp(220,130);
 		
-//		CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-//		kuang.position = ccp(100,135);
-//		kuang.scale = 0.7f;
-//		[self addChild:kuang z:8];
 	}
-	
-	[self addChild:itemButton z:8 tag:1%8];
-	
-	
+	[self addChild:itemButton z:8 tag:anotherTag];
 }
 
 //生成下面的可选列表
@@ -199,15 +212,10 @@ animalID;
 			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalList.originalAnimalId];
 			//For Test
 			NSString *tabFlag = @"animals";
-			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(updateInfoPanel:) setPriority:30 offsetX:1 offsetY:1 setPictureScale:0.7f];
+			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(updateThisPanel:) setPriority:30 offsetX:1 offsetY:1 setPictureScale:0.7f];
 			itemButton.position = ccp(60 * (kTemp%4) + 70/**this uesed to be 120 pixel***/, self.contentSize.height - 55 * ((kTemp-8*(currentPageNum-1))/4) - 130);
 //			itemButton.scale = 200.0f/1024.0f;
 			[self addChild:itemButton z:8 tag:kTemp%8];
-			
-			//CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-//			kuang.position = ccp(60 * (kTemp%4) + 70,  self.contentSize.height - 55 * ((kTemp-8*(currentPageNum-1))/4) - 120);
-//			kuang.scale = 0.7f;
-//			[self addChild:kuang z:8];
 			
 			kTemp++;
 		}
@@ -326,13 +334,36 @@ animalID;
 	[self addChild:titleLbl z:10];
 }
 
+-(void)updateThisPanel:(AnimalManagementButtonItem *)buttonItem
+{
+	DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:buttonItem.animalID];
+	if(firstType == @"right")
+	{
+		leftAnimalID = buttonItem.animalID;
+	}
+	else {
+		rightAnimalID = buttonItem.animalID;
+	}
+
+	[self generateAnother];
+}
+
 //This to update the panel. Re-generate the one to mate and all the list of its pair.
 //Move the clicked one to the right position and re-generate the list.
 //List all and remove the one just clicked.
 
 -(void)updateInfoPanel:(AnimalManagementButtonItem *)buttonItem
 {
-	[self removeAllChildrenWithCleanup:YES];
+	//[self removeAllChildrenWithCleanup:YES];
+	[self removeAllChildrenWithCleanup:NO];
+	animalID =  buttonItem.animalID;
+	CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_buy.png" ofType:nil] ] ];
+	CGRect rect = CGRectZero;
+	rect.size = bg.contentSize;
+	[self setTexture:bg];
+	[self setTextureRect: rect];
+	[bg release];
+	self.title = @"动物结婚";
 	[self addTitle];
 	
 	DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:buttonItem.animalID];
@@ -352,90 +383,90 @@ animalID;
 	[self generateButtons];
 }
 
--(void)updateInfo:(NSString *) itId type: (NSString *) itType setTarget:(id)target
-{
-	[self removeAllChildrenWithCleanup:YES];
-	[self addTitle];
-	itemId = itId;
-	itemType = itType;
-	itemBuyType = @"goldEgg";
-	itemPrice = 0;
-	NSDictionary *dic;	
-	//判断商品的类型,显示不同的物品信息到不同的信息框中
-	if (itemType == @"animal") {
-		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals retain];
-		DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemId];
-		itemPrice = originalAnimal.basePrice;
-		if (originalAnimal.antsPrice > 0) {
-			itemBuyType = @"ant";
-			itemPrice = originalAnimal.antsPrice;
-		}
-		NSString *price = [NSString stringWithFormat:@"%d",itemPrice]; 
-		NSString *picFileName = [NSString stringWithFormat:@"%@.png",originalAnimal.picturePrefix];
-		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
-		
-		CCLabel *nameLbl = [CCLabel labelWithString:originalAnimal.scientificNameCN fontName:@"Arial" fontSize:30];
-		[nameLbl setColor:ccc3(0, 0, 0)];
-		nameLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 100);
-		[self addChild:nameLbl z:10];
-		[originalAnimal release];
-	}
-	[dic release];
-	
-	//添加确认和取消按钮,回调函数分别为[ManageContainer buyItem] 和[ManageContainer Cancel]
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(buyItem:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancel:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
-	
-	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
-	confirmBtn.target = self;
-	confirmBtn.position = ccp(self.contentSize.width/2 - 200, 50);
-	cancelBtn.position = ccp(self.contentSize.height/2 + 200, 50);
-	[self addChild:confirmBtn z:10];
-	[self addChild:cancelBtn z:10];
-	if(itemType != @"goods")
-	{
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:0 setPathname:@"加减显示器.png" setlength:0];
-		scalerPane.position = ccp(200,200);
-		[self addChild:scalerPane z:5];
-	}
-	
-	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
-	transBackground.scale = 5.0f;
-	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-	[self addChild:transBackground z:10];
-}
-
--(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price
-{
-	CCSprite *item = [CCSprite node];
-	CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:imagePath ofType:nil] ] ];
-	CGRect rect = CGRectZero;
-	rect.size = itemImg.contentSize;
-
-	[item setTexture: itemImg];
-	[item setTextureRect: rect];
-	item.scale = 150.0/1024.0f;
-	[itemImg release];
-	CCSprite *buyImg;
-	if (buyType == @"goldEgg") {
-		buyImg = [CCSprite spriteWithFile:@"金蛋ico.png"];
-	}
-	else {
-		buyImg = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
-	}
-	priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:20];
-	[priceLbl setColor:ccc3(255, 0, 255)];
-	
-	item.position = ccp(item.contentSize.width/2 + 150, self.contentSize.height  - item.contentSize.height /2 - 150);
-	buyImg.position = ccp(item.position.x - 60, 300);
-	priceLbl.position = ccp(item.position.x + 20 , 300);
-//	buyImg.scale = 1.5f;
-//	priceLbl.scale = 1.5f;
-	
-	[self addChild:item z:7];
-	[self addChild:buyImg z:7];
-	[self addChild:priceLbl z:7];
-}							  
+//-(void)updateInfo:(NSString *) itId type: (NSString *) itType setTarget:(id)target
+//{
+//	[self removeAllChildrenWithCleanup:YES];
+//	[self addTitle];
+//	itemId = itId;
+//	itemType = itType;
+//	itemBuyType = @"goldEgg";
+//	itemPrice = 0;
+//	NSDictionary *dic;	
+//	//判断商品的类型,显示不同的物品信息到不同的信息框中
+//	if (itemType == @"animal") {
+//		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals retain];
+//		DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemId];
+//		itemPrice = originalAnimal.basePrice;
+//		if (originalAnimal.antsPrice > 0) {
+//			itemBuyType = @"ant";
+//			itemPrice = originalAnimal.antsPrice;
+//		}
+//		NSString *price = [NSString stringWithFormat:@"%d",itemPrice]; 
+//		NSString *picFileName = [NSString stringWithFormat:@"%@.png",originalAnimal.picturePrefix];
+//		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
+//		
+//		CCLabel *nameLbl = [CCLabel labelWithString:originalAnimal.scientificNameCN fontName:@"Arial" fontSize:30];
+//		[nameLbl setColor:ccc3(0, 0, 0)];
+//		nameLbl.position = ccp(self.contentSize.width/2 + 200, self.contentSize.height - 100);
+//		[self addChild:nameLbl z:10];
+//		[originalAnimal release];
+//	}
+//	[dic release];
+//	
+//	//添加确认和取消按钮,回调函数分别为[ManageContainer buyItem] 和[ManageContainer Cancel]
+//	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(buyItem:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
+//	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancel:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
+//	
+//	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
+//	confirmBtn.target = self;
+//	confirmBtn.position = ccp(self.contentSize.width/2 - 200, 50);
+//	cancelBtn.position = ccp(self.contentSize.height/2 + 200, 50);
+//	[self addChild:confirmBtn z:10];
+//	[self addChild:cancelBtn z:10];
+//	if(itemType != @"goods")
+//	{
+//		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:0 setPathname:@"加减显示器.png" setlength:0];
+//		scalerPane.position = ccp(200,200);
+//		[self addChild:scalerPane z:5];
+//	}
+//	
+//	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
+//	transBackground.scale = 5.0f;
+//	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+//	[self addChild:transBackground z:10];
+//}
+//
+//-(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price
+//{
+//	CCSprite *item = [CCSprite node];
+//	CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:imagePath ofType:nil] ] ];
+//	CGRect rect = CGRectZero;
+//	rect.size = itemImg.contentSize;
+//
+//	[item setTexture: itemImg];
+//	[item setTextureRect: rect];
+//	item.scale = 150.0/1024.0f;
+//	[itemImg release];
+//	CCSprite *buyImg;
+//	if (buyType == @"goldEgg") {
+//		buyImg = [CCSprite spriteWithFile:@"金蛋ico.png"];
+//	}
+//	else {
+//		buyImg = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
+//	}
+//	priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:20];
+//	[priceLbl setColor:ccc3(255, 0, 255)];
+//	
+//	item.position = ccp(item.contentSize.width/2 + 150, self.contentSize.height  - item.contentSize.height /2 - 150);
+//	buyImg.position = ccp(item.position.x - 60, 300);
+//	priceLbl.position = ccp(item.position.x + 20 , 300);
+////	buyImg.scale = 1.5f;
+////	priceLbl.scale = 1.5f;
+//	
+//	[self addChild:item z:7];
+//	[self addChild:buyImg z:7];
+//	[self addChild:priceLbl z:7];
+//}							  
 
 
 -(void) dealloc

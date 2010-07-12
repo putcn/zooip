@@ -29,4 +29,5 @@
 -(void) nextPage:(Button *)button;
 -(void) forwardPage:(Button *)button;
 -(void) generatePage;
+
 @end

@@ -101,7 +101,7 @@ infoMessagePanelTest;
 		itemButton.position = ccp(self.contentSize.width/2 + 70,self.contentSize.height/2 );
 	}
 	
-	[self addChild:itemButton z:10 tag:1%9];
+	[self addChild:itemButton z:10 tag:999];
 	
 	DataModelAnimal *serverAnimalDataAnother = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:serverAnimalData2.coupleAnimalId];
 	
@@ -121,7 +121,7 @@ infoMessagePanelTest;
 	}
 	
 	
-	[self addChild:itemButtonAnother z:10 tag:1%9];
+	[self addChild:itemButtonAnother z:10 tag:999];
 }
 
 //-(void)generateAnother
@@ -289,8 +289,8 @@ infoMessagePanelTest;
 //移调左边和右边两个动物，重新生成即可。
 -(void)updateInfoPanel:(AnimalManagementButtonItem *)buttonItem
 {
-	[self removeChildByTag:1%8 cleanup:YES];
-	[self removeChildByTag:1%9 cleanup:YES];
+	[self removeChildByTag:888 cleanup:YES];
+	[self removeChildByTag:999 cleanup:YES];
 	
 //	itemId = itId;
 //	parentTarget = target;

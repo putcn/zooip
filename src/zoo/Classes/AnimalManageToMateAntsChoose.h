@@ -56,5 +56,6 @@
 -(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price;
 -(void) updateInfo: (NSString *) itId type: (NSString *) itType setTarget:(id)target;
 -(void) updatePrice: (NSDictionary *)values;
+-(void)updateButtonsAndRates:(id)target;
 @end
 
