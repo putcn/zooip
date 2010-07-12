@@ -32,6 +32,17 @@
 		
 		((DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo).farm_currentExp += experience;
 		
+		if(((DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo).farm_currentExp >= ((DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo).farm_nextLevelExp)
+		{
+			// 1.当前经验处显示两经验之差
+			((DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo).farm_currentExp = (((DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo).farm_nextLevelExp - ((DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo).farm_currentExp);
+			
+			// 2.下一次升级所需经验处显示下一级升级所需经验值(需要从服务器获取)
+			
+			// 3.等级加1
+			((DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo).farm_level += 1;
+		}
+
 		[[GameMainScene sharedGameMainScene] updateUserInfo];
 	}
 	if (code == 2) 
