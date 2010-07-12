@@ -108,7 +108,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 		case ZooNetworkRequestgetFarmerInfo:
 		{
 			NSDictionary *farmerDic = [result objectForKey:@"farmer"];
-			NSString* uid = [[request postData] objectForKey:@"uid"];
+				NSString* uid = [[request postData] objectForKey:@"uid"];
 			NSString* playerUid = [[DataEnvironment sharedDataEnvironment] playerUid];
 			if (uid == playerUid) {
 				DataModelFarmerInfo *farmerInfo = [[DataEnvironment sharedDataEnvironment] playerFarmerInfo];

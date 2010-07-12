@@ -40,6 +40,10 @@
 	NSString *animalID;
 	AnimalManageToMateAntsChoose *toMateRateChoose;
 	AnimalManageInfoPanel *infoMessagePanelTest;
+	NSString *firstType;
+	
+	NSInteger oneTag;
+	NSInteger anotherTag;
 }
 
 @property (nonatomic, retain) NSString *title;
@@ -64,9 +68,8 @@
 -(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price;
 -(void) updateInfo: (NSString *) itId type: (NSString *) itType setTarget:(id)target;
 -(void) updatePrice: (NSDictionary *)values;
-
-
--(void)generateOne;
--(void)generateOthers;
--(void)generateButtons;
+-(void) updateInfoPanel:(AnimalManagementButtonItem *)buttonItem;
+-(void) generateOne;
+-(void) generateOthers;
+-(void) generateButtons;
 @end

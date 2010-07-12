@@ -60,17 +60,6 @@
 			
 				
 			}
-			Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
-												   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:1.0f];
-			statusIcon.position = ccp(300, 190);
-			[self addChild:statusIcon z:7 ];
-			[statusIcon release];
-			
-			TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
-			transBackground.scale = 5.0f;
-			transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-			[self addChild:transBackground z:-1];
-			
 		}
 		else {
 			self.title = @"婚姻管理";
@@ -91,18 +80,18 @@
 				[self addChild:buttonContainer z:7];
 				[tabContentDic setObject:buttonContainer forKey:[NSString stringWithFormat:@"tabContent_%d",i]];
 			}
-			Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
-												   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:1.0f];
-			statusIcon.position = ccp(300, 190);
-			[self addChild:statusIcon z:7 ];
-			[statusIcon release];
-			
-			TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
-			transBackground.scale = 5.0f;
-			transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-			[self addChild:transBackground z:-1];
 		}
-
+		
+		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
+											   setSelector:@selector(OverIconHandler) setPriority:40 offsetX:-1 offsetY:2 scale:1.0f];
+		statusIcon.position = ccp(300, 190);
+		[self addChild:statusIcon z:7 ];
+		[statusIcon release];
+		
+		TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
+		transBackground.scale = 5.0f;
+		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+		[self addChild:transBackground z:-1];
 		[self addTitle];
 	}	
 	return self;
@@ -152,13 +141,14 @@
 				[self addChild:animalToMateInfoPanel z:20];
 			}
 			else {//TODO: 第二次加载需要完善
+				[animalToMateInfoPanel updateInfoPanel:itemButton];
 				//[animalToMateInfoPanel updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
 				//***[animalToMateInfoPanel updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
 				animalToMateInfoPanel.position = ccp(self.contentSize.width/2, animalToMateInfoPanel.contentSize.height/2);
 			}
 		}
 	}
-			//离婚的响应
+	//离婚的响应
 	else 
 	{
 		if (animalToMateOrDisapart == nil) {
