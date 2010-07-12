@@ -20,6 +20,7 @@
 	
 	int currDirection;
 	int currStatus;
+	int forwardStatus;
 	int standRemain;
 	
 	CGPoint targetPosition;

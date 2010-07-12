@@ -10,7 +10,9 @@
 
 
 @interface FarmAnimalView : CCSprite <CCTargetedTouchDelegate> {
-	
+	NSMutableDictionary *animationTable;
+	NSDictionary *dirctions;
+	NSDictionary *statuses;
 }
 -(void) update:(int)currDirectionValue status:(int)currStatusValue;
 @end

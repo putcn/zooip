@@ -13,6 +13,7 @@
 #import "MessageDialog.h"
 #import "TransBackground.h"
 #import "PlayerInfo.h"
+#import "ItemButton.h"
 
 
 @interface ManageContainer : CCSprite{
@@ -26,14 +27,15 @@
 	
 	NSInteger tempPrice;
 	NSInteger tempCount;
-	NSString *tempType;
+	NSString *curr_itemId;
+	NSString *curr_itemType;
 	PlayerInfo *playerInfo;
 	
 	int tabIndex;
 }
 @property (nonatomic,retain) NSString *title;
 
-
+-(void) itemInfoHandler:(ItemButton *) itemButton;
 -(void)addTitle;
 -(void)addTab:(NSArray *)tabArray;
 

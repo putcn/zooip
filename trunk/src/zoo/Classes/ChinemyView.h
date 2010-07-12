@@ -12,8 +12,6 @@
 
 
 @interface ChinemyView :FarmAnimalView {
-	NSMutableDictionary *animationTable;
-	NSDictionary *dirctions;
 }
 -(void) update:(int)currDirectionValue status:(int)currStatusValue;
 

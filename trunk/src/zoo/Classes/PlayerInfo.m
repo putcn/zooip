@@ -39,7 +39,7 @@
 		
 		//头像
 		[userImgSprite setContentSize:CGSizeMake(40, 40)];
-		userImgSprite.position = ccp(110,0);
+		userImgSprite.position = ccp(30,30);
 		//名字
 		userNameLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:18];//retain];
 		[userNameLbl setColor:ccc3(0, 0, 0)];
@@ -165,10 +165,23 @@
 	nextPageBtn.position = ccp(332,30);
 	[self addChild:nextPageBtn z:3];
 	
+	if (userImgNow == nil) {
+		userImgNow = @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif";
+	}
+	NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: userImgNow]];
 	
-	CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:userImgNow ofType:nil] ] ];
-	[userImgSprite setTexture:useImgTexture];
+	if (imageData == nil) {
+		imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif"]];		
+	}	
+	CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithData:imageData] ];
+	CGRect rect = CGRectZero;
+	rect.size = useImgTexture.contentSize;
+	[userImgSprite setTexture: useImgTexture];
+	[userImgSprite setTextureRect: rect];
+	userImgSprite.scale = 40.0f/useImgTexture.contentSize.height;
 	[useImgTexture release];
+	[imageData release];
+	
 	
 	[userNameLbl setString:userName];
 	[experienceBar setString:[NSString stringWithFormat:@"%@/%@",currentExperience,nextLevelExperience]];
@@ -258,7 +271,6 @@
 	[userImgSprite release];
 	
 	// For retain
-	[userImgSprite release];
 	[userNameLbl release];
 	[experienceBar release];
 	[levelLbl release];
