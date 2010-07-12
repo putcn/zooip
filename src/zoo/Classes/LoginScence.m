@@ -130,6 +130,8 @@ static NSString* kApiSecret = @"204df2c367e148839f33fb2b1e56fcc5";
 		
 		[[Request requestWithDelegate:self] call:@"users.getInfo" params:params];
 	}
+	//[NSThread sleepForTimeInterval:100];
+	//sleep(1000);
 }
 
 // on "dealloc" you need to release all your retained objects

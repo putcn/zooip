@@ -51,7 +51,7 @@
 		
 		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
 											   setSelector:@selector(OverIconHandler) setPriority:40 offsetX:-1 offsetY:2 scale:1.0];// Modify by Hunk on 2010-07-07
-		statusIcon.position = ccp(350, 6);
+		statusIcon.position = ccp(345, self.contentSize.height-5);
 		[self addChild:statusIcon z:5 ];
 		[statusIcon release];
 		
@@ -99,8 +99,8 @@
 		[self addChild:twoPane z:7];
 	}
 	
-	Button *sellAllBtn = [[Button alloc] initWithLabel:@"全部卖出" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:18 setBackground:@"TabButton2.png" setTarget:self setSelector:@selector(sellAllEggsHandler:) setPriority:40 offsetX:0 offsetY:0 scale:2.0f];
-	sellAllBtn.position = ccp(self.contentSize.width/2 +400, 80);
+	Button *sellAllBtn = [[Button alloc] initWithLabel:@"全部卖出" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:self setSelector:@selector(sellAllEggsHandler:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+	sellAllBtn.position = ccp(self.contentSize.width/2 , 27);
 	[self addChild:sellAllBtn z:7];
 	
 	// Add by Hunk on 2010-06-24 for memory leak
