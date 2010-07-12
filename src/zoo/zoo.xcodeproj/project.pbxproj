@@ -870,8 +870,8 @@
 		6BD28E9D11D3000E00BE2859 /* 头像边框_变色.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E0C11D3000E00BE2859 /* 头像边框_变色.png */; };
 		6BD28E9F11D3000E00BE2859 /* 好友图标.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E0E11D3000E00BE2859 /* 好友图标.png */; };
 		6BD28EA011D3000E00BE2859 /* 好友的动物园_LOGO.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E0F11D3000E00BE2859 /* 好友的动物园_LOGO.png */; };
-		6BD28EA111D3000E00BE2859 /* 公.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1111D3000E00BE2859 /* 公.png */; };
-		6BD28EA311D3000E00BE2859 /* 母.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1311D3000E00BE2859 /* 母.png */; };
+		6BD28EA111D3000E00BE2859 /* 母.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1111D3000E00BE2859 /* 母.png */; };
+		6BD28EA311D3000E00BE2859 /* 公.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1311D3000E00BE2859 /* 公.png */; };
 		6BD28EA411D3000E00BE2859 /* 取消.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1511D3000E00BE2859 /* 取消.png */; };
 		6BD28EA511D3000E00BE2859 /* 取消_按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1611D3000E00BE2859 /* 取消_按下.png */; };
 		6BD28EA811D3000E00BE2859 /* 红色按钮.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E1911D3000E00BE2859 /* 红色按钮.png */; };
@@ -2046,8 +2046,8 @@
 		6BD28E0C11D3000E00BE2859 /* 头像边框_变色.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "头像边框_变色.png"; sourceTree = "<group>"; };
 		6BD28E0E11D3000E00BE2859 /* 好友图标.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "好友图标.png"; sourceTree = "<group>"; };
 		6BD28E0F11D3000E00BE2859 /* 好友的动物园_LOGO.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "好友的动物园_LOGO.png"; sourceTree = "<group>"; };
-		6BD28E1111D3000E00BE2859 /* 公.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "公.png"; sourceTree = "<group>"; };
-		6BD28E1311D3000E00BE2859 /* 母.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "母.png"; sourceTree = "<group>"; };
+		6BD28E1111D3000E00BE2859 /* 母.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "母.png"; sourceTree = "<group>"; };
+		6BD28E1311D3000E00BE2859 /* 公.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "公.png"; sourceTree = "<group>"; };
 		6BD28E1511D3000E00BE2859 /* 取消.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "取消.png"; sourceTree = "<group>"; };
 		6BD28E1611D3000E00BE2859 /* 取消_按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "取消_按下.png"; sourceTree = "<group>"; };
 		6BD28E1911D3000E00BE2859 /* 红色按钮.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "红色按钮.png"; sourceTree = "<group>"; };
@@ -3837,8 +3837,8 @@
 		6BD28E1011D3000E00BE2859 /* 性别 */ = {
 			isa = PBXGroup;
 			children = (
-				6BD28E1111D3000E00BE2859 /* 公.png */,
-				6BD28E1311D3000E00BE2859 /* 母.png */,
+				6BD28E1111D3000E00BE2859 /* 母.png */,
+				6BD28E1311D3000E00BE2859 /* 公.png */,
 			);
 			path = "性别";
 			sourceTree = "<group>";
@@ -5106,8 +5106,8 @@
 				6BD28E9D11D3000E00BE2859 /* 头像边框_变色.png in Resources */,
 				6BD28E9F11D3000E00BE2859 /* 好友图标.png in Resources */,
 				6BD28EA011D3000E00BE2859 /* 好友的动物园_LOGO.png in Resources */,
-				6BD28EA111D3000E00BE2859 /* 公.png in Resources */,
-				6BD28EA311D3000E00BE2859 /* 母.png in Resources */,
+				6BD28EA111D3000E00BE2859 /* 母.png in Resources */,
+				6BD28EA311D3000E00BE2859 /* 公.png in Resources */,
 				6BD28EA411D3000E00BE2859 /* 取消.png in Resources */,
 				6BD28EA511D3000E00BE2859 /* 取消_按下.png in Resources */,
 				6BD28EA811D3000E00BE2859 /* 红色按钮.png in Resources */,

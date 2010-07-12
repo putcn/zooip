@@ -64,13 +64,18 @@ infoMessagePanelTest;
 
 -(void)generateButtons
 {
-	Button *toMateBtn = [[Button alloc] initWithLabel:@"配种" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:self setSelector:@selector(toMate:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
-	Button *toMarryBtn = [[Button alloc] initWithLabel:@"散伙" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"取消.png" setTarget:self setSelector:@selector(toDisapart:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
+	Button *toMateBtn = [[Button alloc] initWithLabel:@"配种" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:self setSelector:@selector(toMate:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
+	Button *toMarryBtn = [[Button alloc] initWithLabel:@"散伙" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"取消.png" setTarget:self setSelector:@selector(toDisapart:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
 	//toMarryBtn.flipX = YES;
 	toMateBtn.position = ccp(self.contentSize.width/2 + 50, 25);
 	toMarryBtn.position = ccp(self.contentSize.width/2 - 50, 25);
 	[self addChild:toMateBtn z:10];
 	[self addChild:toMarryBtn z:10];
+	
+	////	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
+	////	transBackground.scale = 17.0f;
+	////	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
+	////	[self addChild:transBackground z:5];
 }
 
 -(void)generateOne
@@ -236,7 +241,11 @@ infoMessagePanelTest;
 	
 	switch (code) {
 		case 1:
+		{
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"离婚成功"];
+			((DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID]).coupleAnimalId = nil;
+			((DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:rightAnimalID]).coupleAnimalId = nil;
+		}
 			break;
 		case 0:
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不是自己的公动物，不能离婚"];
