@@ -14,7 +14,7 @@
 #import "DataModelGood.h"
 #import "Button.h"
 #import "AnimalManageInfoPanel.h"
-
+#import "LoadingBar.h"
 @interface AnimalManageToMateAntsChoose : CCSprite {
 	NSString *title;
 	NSString *itemId;
@@ -32,6 +32,17 @@
 	NSString *femaledIdBeforeMarry;
 	NSString *animalIDAfterMarry;
 	NSInteger antsCount;
+	
+//	CCSprite *load_left;
+//	CCSprite *load_middle;
+//	CCSprite *load_right;
+//	CCSprite *load_Cololeft;
+//	CCSprite *load_Colomiddle;
+//	CCSprite *load_Coloright;
+//	LoadingBar *load_1;
+	NSString *spercent;
+	
+	CCLabel *numberLbl;
 		
 }
 

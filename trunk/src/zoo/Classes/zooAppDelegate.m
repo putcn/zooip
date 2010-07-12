@@ -91,10 +91,9 @@
 
 	if( connectionStatus == NotReachable )
 	{
-
-//			NSString *message = @"没有可选网络！";
-//			UIAlertView *m_musicAlertView = [[UIAlertView alloc] initWithTitle:@"NetWork" message:message delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil];
-//			[m_musicAlertView show];
+			NSString *message = @"没有可选网络！";
+			UIAlertView *m_musicAlertView = [[UIAlertView alloc] initWithTitle:@"NetWork" message:message delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil];
+			[m_musicAlertView show];
 
 		return FALSE;
 	}
