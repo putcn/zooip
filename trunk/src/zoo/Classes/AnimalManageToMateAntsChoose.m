@@ -90,7 +90,7 @@ antsCount;
 	[self removeAllChildrenWithCleanup:YES];
 	[self addTitle];
 	
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"确定" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"确定.png" setTarget:target setSelector:@selector(MateAnimals:) setPriority:25 offsetX:0 offsetY:0 scale:1.0f];
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"确定" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"确定.png" setTarget:target setSelector:@selector(MateAnimals:) setPriority:20 offsetX:0 offsetY:0 scale:1.0f];
 //	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancleMate:) setPriority:25 offsetX:0 offsetY:0 scale:1.0f];
 	
 	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
@@ -109,7 +109,7 @@ antsCount;
 	
 	if(itemType != @"goods")
 	{
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:20 setPathname:@"加减显示框_2.png" setlength:40];
+		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:10 setPathname:@"加减显示框_2.png" setlength:40];
 		scalerPane.position = ccp(self.contentSize.width/2-70, self.contentSize.height/2-30);
 		[self addChild:scalerPane z:10];
 	}

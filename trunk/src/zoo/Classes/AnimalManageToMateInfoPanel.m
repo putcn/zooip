@@ -278,7 +278,11 @@ animalID;
 
 		switch (code) {
 			case 1:
+			{
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"结婚成功"];
+				((DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID]).coupleAnimalId = rightAnimalID;
+				((DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:rightAnimalID]).coupleAnimalId = leftAnimalID;
+			}
 				break;
 			case 2:
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"结婚成功"];
