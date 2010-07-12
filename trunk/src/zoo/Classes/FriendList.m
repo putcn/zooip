@@ -96,7 +96,7 @@
 		
 		//头像坐标、翻页
 		friendIcoButton.position = ccp(20 +(i%5)*70, -110);
-		[self addChild:friendIcoButton z:7 tag:i%4];
+		[self addChild:friendIcoButton z:7 tag:i%5];
 		
 	}
 	
