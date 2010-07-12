@@ -5,7 +5,7 @@
 //  Created by Darcy on 3/30/10.
 //  Copyright 2010 Apple Inc. All rights reserved.
 //
-
+#import "zooAppDelegate.h"
 #import "serviceHelper.h"
 #import "ModelLocator.h"
 #import "ASIFormDataRequest.h"
@@ -958,6 +958,10 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 							 AndCallBackScope:(id)callBackDelegate 
 								AndSuccessSel:(NSString *)successSelector
 								 AndFailedSel:(NSString *)failedSelector{
+	
+	zooAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+	[delegate checkNetwork];
+	
 	NSDictionary *tempDic = [NSDictionary dictionaryWithObjectsAndKeys:callBackDelegate, @"delegate", successSelector, @"onsuccess", failedSelector, @"onfailed", nil];
 	[tempDic retain];
 	

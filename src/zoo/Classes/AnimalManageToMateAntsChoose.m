@@ -10,7 +10,7 @@
 #import "TransBackground.h"
 #import "ScalerPane.h"
 #import "RandomHelper.h"
-#import "LoadingBar.h"
+
 
 //选择蚂蚁需要的弹出窗口
 @implementation AnimalManageToMateAntsChoose
@@ -131,26 +131,35 @@ antsCount;
 	CCSprite *load_Colomiddle = [CCSprite spriteWithFile:@"进度条_橙_进度_中间.png"];
 	CCSprite *load_Coloright = [CCSprite spriteWithFile:@"进度条_橙_进度_右圆角.png"];
 	
-	float nCent = itemPrice/1.0;
-	NSString *spercent = [NSString stringWithFormat:@"%0.1f\%%", nCent];
+	float nCent = 70.0*count/8;
+	if(nCent >= 70)
+	{
+		nCent = 70;
+	}
 	
+	numberLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"0.0%%"] fontName:@"Arial" fontSize:15];
+	[numberLbl setColor:ccc3(0, 0, 0)];
+	numberLbl.position = ccp(self.contentSize.width/2 +105, 60);
+	[self addChild:numberLbl z:10];
+//	NSString* temp = [NSString stringWithFormat:@"%0.1f\%%", nCent];
+//	spercent = temp;
 	int nlong = 1;
-	if(itemPrice <= 1)
+	if(nCent <= 1)
 	{
 		nlong = 0;
 	}
-	else if(itemPrice >= 10)
+	else if(nCent >= 70)
 	{
 		nlong = 2;
 	}
-
 	
-	LoadingBar *load = [[LoadingBar alloc] initWithCCSprite:spercent setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setTarget:target 
-			setSpriteLeft:load_left setSpriteMidele: load_middle setSpriteRight: load_right
-			setSpriteColoLeft: load_Cololeft setSpriteColoMidele: load_Colomiddle setSpriteColoRight: load_Coloright
-			offsetX:70 offsetY:0 setpercent:nlong setLength:2 setTextLegth:15 setTextHight:-2];
-	load.position = ccp(self.contentSize.width/2-70 , 50);
-	[self addChild:load z:10];
+	
+	LoadingBar *load_1 = [[LoadingBar alloc] initWithCCSprite:@"" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setTarget:self 
+											  setSpriteLeft:load_left setSpriteMidele: load_middle setSpriteRight: load_right
+										  setSpriteColoLeft: load_Cololeft setSpriteColoMidele: load_Colomiddle setSpriteColoRight: load_Coloright
+													offsetX:70 offsetY:nCent setpercent:nlong setLength:2 setTextLegth:15 setTextHight:-2];
+	load_1.position = ccp(self.contentSize.width/2-70 , 50);
+	[self addChild:load_1 z:10];
 	
 	
 //	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:25];
@@ -211,6 +220,40 @@ antsCount;
 	if(itemPrice > 50)
 		itemPrice = 50;
 	[priceLbl setString:[NSString stringWithFormat:@"%d", itemPrice]];
+	
+	
+	CCSprite *load_left = [CCSprite spriteWithFile:@"进度条_橙_左圆角.png"];
+	CCSprite *load_middle = [CCSprite spriteWithFile:@"进度条_橙_中间.png"];
+	CCSprite *load_right = [CCSprite spriteWithFile:@"进度条_橙_右圆角.png"];
+	CCSprite *load_Cololeft = [CCSprite spriteWithFile:@"进度条_橙_进度_左圆角.png"];
+	CCSprite *load_Colomiddle = [CCSprite spriteWithFile:@"进度条_橙_进度_中间.png"];
+	CCSprite *load_Coloright = [CCSprite spriteWithFile:@"进度条_橙_进度_右圆角.png"];
+	
+	
+	float nCent = 70.0*count/24;
+	if(nCent >= 35)
+	{
+		nCent = 35;
+	}
+	float fToWrite = 100.0*nCent/70;
+//	spercent = [NSString stringWithFormat:@"%0.1f\%%", nCent];
+	[numberLbl setString:[NSString stringWithFormat:@"%0.1f\%%", fToWrite]];
+	int nlong = 1;
+	if(nCent <= 1)
+	{
+		nlong = 0;
+	}
+	else if(nCent >= 70)
+	{
+		nlong = 2;
+	}
+	
+	LoadingBar* load = [[LoadingBar alloc] initWithCCSprite:spercent setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:15 setTarget:self 
+								  setSpriteLeft:load_left setSpriteMidele: load_middle setSpriteRight: load_right
+							  setSpriteColoLeft: load_Cololeft setSpriteColoMidele: load_Colomiddle setSpriteColoRight: load_Coloright
+										offsetX:70 offsetY:nCent setpercent:nlong setLength:2 setTextLegth:15 setTextHight:-2];
+	load.position = ccp(self.contentSize.width/2-70 , 50);
+	[self addChild:load z:10];
 }
 
 -(void) dealloc
