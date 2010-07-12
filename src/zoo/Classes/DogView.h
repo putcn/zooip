@@ -12,16 +12,12 @@
 
 
 @interface DogView : FarmAnimalView {
-	NSMutableDictionary *animationTable;
-	NSDictionary *dirctions;
-	NSDictionary *statuses;
 	NSString *dogId;
 }
 
 @property (nonatomic, retain)NSString *dogId;
--(id) init;
--(void) update:(int)currDirectionValue status:(int)currStatusValue;
 
+-(void) update:(int)currDirectionValue status:(int)currStatusValue;
 -(CGPoint)countCoordinate: (CGPoint)clickPoint;
 -(void) optAnimationPlay;
 -(void) callServerController;

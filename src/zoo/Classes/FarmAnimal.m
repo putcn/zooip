@@ -8,7 +8,7 @@
 
 #import "FarmAnimal.h"
 #import "RandomHelper.h"
-
+#import "GameMainScene.h"
 
 @implementation FarmAnimal
 
@@ -36,16 +36,11 @@
 -(void) tick: (ccTime) dt
 {
 	CGPoint point = view.position;
-	int randowInt = [RandomHelper getRandomNum:1 to:100];
-	if (randowInt > 5) {
-		currStatus = 5;
-	}
-	else {
-		currStatus = 4;
-	}
-
+	forwardStatus = currStatus;
 	if(standRemain <= 0){
-		if (currStatus == 5) {
+		int randomInt = [RandomHelper getRandomNum:1 to:100];
+		if (randomInt > 5) {
+			currStatus = 5;
 			if ((fabs(point.x - targetPosition.x) <= speed) &&
 				(fabs(point.y - targetPosition.y) <= speed))
 			{
@@ -55,12 +50,22 @@
 			}
 			else
 			{
+				if (forwardStatus != 5) {
+					[view update:currDirection status:currStatus];
+				}
 				view.position = ccpAdd(point, currSpeed);
-			}	
+			}
 		}
-		else if(currStatus == 4){
+		else if(randomInt == 5)
+		{
+			currStatus = 4;
+			[view update:currDirection status:currStatus];
+			standRemain = [RandomHelper getRandomNum:2000 to:10000];
+		}
+		else {
+			currStatus = 4;
 			[view stopAllActions];
-			standRemain = [RandomHelper getRandomNum:50 to:100];
+			standRemain = [RandomHelper getRandomNum:100 to:500];
 		}
 	}
 	else {

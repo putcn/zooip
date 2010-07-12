@@ -7,7 +7,7 @@
 //
 
 #import "ChinemyView.h"
-
+#import "AnimalImageProperty.h"
 
 @implementation ChinemyView
 
@@ -15,30 +15,10 @@
 {
 	if((self = [super init]))
 	{
-		NSArray *dirkeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",nil];
-		NSArray *dirvalues = [NSArray arrayWithObjects:@"up",@"rightUp",@"right",@"rightDown",@"down",@"leftDown",@"left",@"leftUp",nil];
-		dirctions = [[NSDictionary dictionaryWithObjects:dirvalues forKeys:dirkeys] retain];
-		//walk animations
-		CCAnimation* walkUpAnimation = [CCAnimation animationWithName:@"walkUp" delay:0.04f];
-		CCAnimation* walkDownAnimation = [CCAnimation animationWithName:@"walkRightUp" delay:0.04f];
-		CCAnimation* walkLeftUpAnimation = [CCAnimation animationWithName:@"walkRight" delay:0.04f];
-		CCAnimation* walkLeftDownAnimation = [CCAnimation animationWithName:@"walkRightDown" delay:0.04f];
-		CCAnimation* walkLeftAnimation = [CCAnimation animationWithName:@"walkDown" delay:0.04f];
-		
-		for (int i = 1; i<=29; i++) {
-			[walkUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"chinemy_walk_up_%02d.png", i]];
-			[walkDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"chinemy_walk_down_%02d.png", i]];
-			[walkLeftUpAnimation addFrameWithFilename:[NSString stringWithFormat:@"chinemy_walk_upLeft_%02d.png", i]];
-			[walkLeftDownAnimation addFrameWithFilename:[NSString stringWithFormat:@"chinemy_walk_downLeft_%02d.png", i]];
-			[walkLeftAnimation addFrameWithFilename:[NSString stringWithFormat:@"chinemy_walk_left_%02d.png", i]];
-		}
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkUpAnimation]] forKey:@"walk_up"];
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkDownAnimation]] forKey:@"walk_down"];
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkLeftUpAnimation]] forKey:@"walk_leftUp"];
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkLeftDownAnimation]] forKey:@"walk_leftDown"];
-		[animationTable setObject:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkLeftAnimation]] forKey:@"walk_left"];
-		[self runAction:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:walkLeftAnimation]]];
-		[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:4];
+		AnimalImageProperty *imageProperty = [[AnimalImageProperty alloc] init];
+		animationTable = [[imageProperty animationTable:@"_chinemy.png" plistName:@"_chinemy.plist"] retain];
+		NSLog(@"dog---%@", animationTable);
+		[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:5];
 	}
 	return self;
 }

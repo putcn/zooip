@@ -11,7 +11,6 @@
 #import "Button.h"
 #import "ButtonContainer.h"
 #import "FeedbackDialog.h"
-#import "Button.h"
 #import "DataEnvironment.h"
 #import "DataModelFarmerInfo.h"
 #import "GameMainScene.h"
@@ -146,15 +145,13 @@
 -(void) itemInfoHandler:(ItemButton *) itemButton
 {
 	//判断是否首次加载物品信息框
-	NSString *tempId = itemButton.itemId;
-	NSString *tempType = itemButton.itemType;
 	if (itemInfoPane == nil) {
-		itemInfoPane = [[ItemInfoPane alloc] initWithItem:tempId type:tempType setTarget:self];
+		itemInfoPane = [[ItemInfoPane alloc] initWithItem:itemButton.itemId type:itemButton.itemType setTarget:self];
 		itemInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2);
 		[self addChild:itemInfoPane z:20];
 	}
 	else {		
-		[itemInfoPane updateInfo:tempId type:tempType setTarget:self];
+		[itemInfoPane updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
 		itemInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2);
 	}
 
@@ -172,7 +169,7 @@
 	DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemInfo.itemId];
 	tempPrice  = itemInfo.itemPrice;
 	tempCount = itemInfo.count;
- 	tempType = itemInfo.itemType;
+ 	curr_itemType = itemInfo.itemType;
 	
 	
 	if (itemInfo.itemType == @"动物") {
@@ -240,7 +237,7 @@
 		case 1:
 		{
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你购买物品成功!"];
-			if(tempType ==@"ant")
+			if(curr_itemType ==@"ant")
 			{
 				((DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].playerFarmerInfo).antsCurrency -= tempPrice * tempCount;
 			}
@@ -289,8 +286,8 @@
 	
 	
 	//Alex add the release methods.
-	
-	[tempType release];
+	[curr_itemId release];
+	[curr_itemType release];
 	[playerInfo release];
 	
 	[super dealloc];

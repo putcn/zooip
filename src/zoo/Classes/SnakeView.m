@@ -91,6 +91,7 @@
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:snakeId,@"releaseSnakeId",
 								[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"killerId",
 								[DataEnvironment sharedDataEnvironment].friendFarmerInfo.farmerId,@"farmerId",nil];
+		killSnakeController.snakeId = snakeId;
 		[killSnakeController execute:params];
 	}
 }

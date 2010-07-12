@@ -20,9 +20,6 @@
 		self.position = ccp([RandomHelper getRandomNum:300 to:400],[RandomHelper getRandomNum:100 to:200]);
 		killAntsController = [[KillAntsController alloc] init];
 		antId = sId;
-		NSArray *dirkeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",nil];
-		NSArray *dirvalues = [NSArray arrayWithObjects:@"up",@"rightUp",@"right",@"rightDown",@"down",@"leftDown",@"left",@"leftUp",nil];
-		dirctions = [[NSDictionary dictionaryWithObjects:dirvalues forKeys:dirkeys] retain];
 		animation = [[CCAnimation animationWithName:@"animal" delay:0.5] retain];
 		for (int i = 1; i <= 4; i++) 
 		{
