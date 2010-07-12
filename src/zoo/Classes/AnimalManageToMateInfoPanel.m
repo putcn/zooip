@@ -33,7 +33,8 @@ count,
 infoMessagePanelTest,
 leftAnimalID,
 rightAnimalID,
-animalID;
+animalID,
+buttonsOfList;
 
 -(id) initWithItem: (NSString *) itId type: (NSString *) itType animalID:(NSString *) aniID setTarget:(id)target
 {
@@ -65,6 +66,7 @@ animalID;
 		[self generateOne];
 		[self generateOthers];
 		
+		
 //		self.scale = 300.0f/1024.0f;
 	}
 	return self;
@@ -73,7 +75,7 @@ animalID;
 -(void)OverIconHandler
 {
 	
-	self.position = ccp(1000, 188);
+	self.position = ccp(1000, 1880);
 }
 
 
@@ -86,19 +88,19 @@ animalID;
 	//toMarryBtn.flipX = YES;
 	toMateBtn.position = ccp(self.contentSize.width/2 + 100, 25);
 	toMarryBtn.position = ccp(self.contentSize.width/2 - 100, 25);
-	[self addChild:toMateBtn z:8];
-	[self addChild:toMarryBtn z:8];
+	[self addChild:toMateBtn z:8 tag:666];
+	[self addChild:toMarryBtn z:8 tag:777];
 	
 	Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
 										   setSelector:@selector(OverIconHandler) setPriority:30 offsetX:-1 offsetY:2 scale:1.0f];
 	statusIcon.position = ccp(300, 190);
-	[self addChild:statusIcon z:7 ];
-	[statusIcon release];
+	[self addChild:statusIcon z:7 tag:555];
+	//[statusIcon release];
 	
 	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:35];
 	transBackground.scale = 5.0f;
 	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-	[self addChild:transBackground z:-1];
+	[self addChild:transBackground z:-1 tag:444];
 }
 
 //生成左边的动物，公的 tag:1%8
@@ -215,14 +217,17 @@ animalID;
 			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(updateThisPanel:) setPriority:30 offsetX:1 offsetY:1 setPictureScale:0.7f];
 			itemButton.position = ccp(60 * (kTemp%4) + 70/**this uesed to be 120 pixel***/, self.contentSize.height - 55 * ((kTemp-8*(currentPageNum-1))/4) - 130);
 //			itemButton.scale = 200.0f/1024.0f;
-			[self addChild:itemButton z:8 tag:kTemp%8];
+			[self addChild:itemButton z:8 tag:(kTemp+100)%800];
+		
+			NSLog(@"***XXX*****XX***%d***XXX*****XX***%d",(kTemp+100),(kTemp+100)%800);
 			
+			doubleDigits[listCount] = (kTemp+100) % 800;
+			listCount ++;
 			kTemp++;
 		}
 
 	}
 }
-
 
 -(void) faultCallback:(NSObject *)value
 {
@@ -335,7 +340,7 @@ animalID;
 	CCLabel *titleLbl = [CCLabel labelWithString:title fontName:@"Arial" fontSize:25];
 	[titleLbl setColor:ccc3(0, 0, 0)];
 	titleLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - titleLbl.contentSize.height/2-4);
-	[self addChild:titleLbl z:10];
+	[self addChild:titleLbl z:10 tag:333];
 }
 
 -(void)updateThisPanel:(AnimalManagementButtonItem *)buttonItem
@@ -359,7 +364,22 @@ animalID;
 -(void)updateInfoPanel:(AnimalManagementButtonItem *)buttonItem
 {
 	//[self removeAllChildrenWithCleanup:YES];
-	[self removeAllChildrenWithCleanup:NO];
+	//[self removeAllChildrenWithCleanup:NO];
+	
+	for(int i =0 ;i<20;i++)
+	{
+		if(doubleDigits[i] !=0)
+		[self removeChildByTag:doubleDigits[i] cleanup:NO];
+		NSLog(@"***XXX*****XX***%d",doubleDigits[i]);
+	}
+	[self removeChildByTag:999 cleanup:NO];
+	[self removeChildByTag:888 cleanup:NO];
+	[self removeChildByTag:777 cleanup:NO];
+	[self removeChildByTag:666 cleanup:NO];
+	//[self removeChildByTag:555 cleanup:NO];
+	[self removeChildByTag:444 cleanup:NO];
+	[self removeChildByTag:333 cleanup:NO];
+
 	animalID =  buttonItem.animalID;
 	CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_buy.png" ofType:nil] ] ];
 	CGRect rect = CGRectZero;
@@ -382,7 +402,7 @@ animalID;
 	}
 	
 	[self generateOne];
-	[self generateAnother];
+	//[self generateAnother];
 	[self generateOthers];
 	[self generateButtons];
 }

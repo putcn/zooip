@@ -64,7 +64,7 @@ antsCount;
 		//****[self updateInfo:itId type:itType setTarget:target];
 		
 		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
-											   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:1.0f];
+											   setSelector:@selector(OverIconHandler) setPriority:20 offsetX:-1 offsetY:2 scale:1.0f];
 		statusIcon.position = ccp(300, 190);
 		[self addChild:statusIcon z:7 ];
 		[statusIcon release];
@@ -74,8 +74,7 @@ antsCount;
 
 -(void)OverIconHandler
 {
-	
-	self.position = ccp(1000, 188);
+	self.position = ccp(1000, 1880);
 }
 
 -(void)addTitle

@@ -247,7 +247,7 @@
 
 -(void) OverIconHandler
 {
-	self.position = ccp(1000,160);
+	self.position = ccp(1000,1600);
 }
 
 

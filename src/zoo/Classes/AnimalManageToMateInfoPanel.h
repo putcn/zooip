@@ -44,6 +44,11 @@
 	
 	NSInteger oneTag;
 	NSInteger anotherTag;
+	NSMutableArray *buttonsOfList;
+	
+	int doubleDigits[20];
+	int listCount;
+	
 }
 
 @property (nonatomic, retain) NSString *title;
@@ -58,6 +63,7 @@
 @property (nonatomic, retain) NSString *leftAnimalID;
 @property (nonatomic, retain) NSString *rightAnimalID;
 @property (nonatomic, retain) NSString *animalID;
+@property (nonatomic, retain) NSMutableArray *buttonsOfList;
 
 
 
