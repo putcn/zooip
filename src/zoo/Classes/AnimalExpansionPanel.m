@@ -16,6 +16,8 @@
 #import "ServiceHelper.h"
 #import "FeedbackDialog.h"
 
+#import "GameMainScene.h"
+
 
 //农场扩容窗口
 @implementation AnimalExpansionPanel

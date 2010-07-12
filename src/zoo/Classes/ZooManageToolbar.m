@@ -534,12 +534,23 @@
 	NSDictionary* dic = (NSDictionary*)value;
  	NSInteger code = [[dic objectForKey:@"code"] intValue];
 	
+	NSLog(@"%@\n", dic);
+	
 	switch (code) {
 		case 0:
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"农场不存在"];
 			break;
 		case 1:
+		{
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"扩容成功！"];
+			
+			// Add by Hunk on 2010-07-12
+//			NSInteger goldenEgg = [[dic objectForKey:@"goldenEgg"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"goldenEgg"] intValue];
+//			
+//			((DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].playerFarmerInfo).goldenEgg += goldenEgg;
+//			
+//			[[GameMainScene sharedGameMainScene] updateUserInfo];
+		}
 			break;
 		case 2:
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"金蛋余额不足！"];
