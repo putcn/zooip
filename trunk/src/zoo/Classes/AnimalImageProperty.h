@@ -11,6 +11,7 @@
 
 @interface AnimalImageProperty : NSObject 
 {
+	NSMutableDictionary* aniTable;
 }
 
 

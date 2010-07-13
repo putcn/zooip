@@ -61,17 +61,22 @@ storageAuctionAnimals;
 		sharedInst = self;
 		[self restore];
 		
+		// Player UID
 		playerUid = @"248726533";//黄老邪
 //		playerUid = @"248725655";
-
-		//playerUid = @"248725655";
+//		playerUid = @"46565162";// Hunk
 //		playerUid = @"160412891";//蒋紫薇
-//		playerUid = @"248725655";//
+		
+		// New test UID
+//		playerUid = @"248951837";
+//		playerUid = @"248951866";
+		
+		// Friend UID
 //		friendUid = @"327535525";
 		
-//		playerUid = @"46565162";// Hunk
+
 		
-		//Mixi:11, RenRen:5
+		//Mixi:11, RenRen:5 
 		pid = @"5";
 		
 		playerFarmerInfo = [[DataModelFarmerInfo alloc] init];

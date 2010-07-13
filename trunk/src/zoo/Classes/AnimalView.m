@@ -26,7 +26,7 @@
 		NSArray *stavalues = [NSArray arrayWithObjects:@"stop",@"eat",@"ill",@"sleep",@"stand",@"walk",@"fly",@"swimming",@"spread",@"crow",@"transition",@"landing",nil];
 		statuses = [[NSDictionary dictionaryWithObjects:stavalues forKeys:stakeys] retain];
 		
-		animationTable = [[[NSMutableDictionary alloc] init] retain];
+		animationTable = [[[NSMutableDictionary alloc] init]retain];
 		// 在子类中实现这个方法
 		// 根据传入的prefix初始化8个方向的动画，
 		// 比如prefix是bird，向上走的动画第一帧图片可能就是bird_walk_up_001

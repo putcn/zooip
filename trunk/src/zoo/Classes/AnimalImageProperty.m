@@ -16,7 +16,7 @@
 -(NSMutableDictionary*)animationTable:(NSString*)imageName plistName:(NSString*)plistName
 {
 	// Init animation table
-	NSMutableDictionary* aniTable = [[NSMutableDictionary alloc]init];
+	aniTable = [[NSMutableDictionary alloc]init];
 	
 	// Get Range Flag
 	NSRange rangeFlag = [plistName rangeOfString:@"."];
@@ -98,6 +98,8 @@
 
 -(void)dealloc
 {
+	[aniTable release];
+	
 	[super dealloc];
 }
 
