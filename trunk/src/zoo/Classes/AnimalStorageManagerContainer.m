@@ -44,11 +44,12 @@
 		
 		//根据Tab的名称加载仓库信息
 		NSArray *tabArray = [[NSArray alloc] initWithObjects:@"动物",@"拍来动物",nil];
+		AnimalStorageManagerPanel *buttonContainer;
 		[self addTab:tabArray];
 		for (int i = 0; i< tabArray.count; i++) {
 			NSString *tab = [tabArray objectAtIndex:i];
 			
-			AnimalStorageManagerPanel *buttonContainer = [[AnimalStorageManagerPanel alloc] initWithTab:tab setTarget:self];
+			buttonContainer = [[AnimalStorageManagerPanel alloc] initWithTab:tab setTarget:self];
 			if (i == 0) {
 				buttonContainer.position = ccp(40, 170);
 			}
@@ -59,7 +60,7 @@
 			[self addChild:buttonContainer z:7];
 			[tabContentDic setObject:buttonContainer forKey:[NSString stringWithFormat:@"tabContent_%d",i]];
 		}
-		
+		[buttonContainer release];
 		
 		//Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 //		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
@@ -80,7 +81,7 @@
 		transBackground.scale = 5.0f;
 		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 		[self addChild:transBackground z:-1];
-		
+		[transBackground release];
 	}
 	return self;
 }
@@ -100,9 +101,10 @@
 {
 	CGRect rect = CGRectZero;
 	rect.size = tabEnable.contentSize;
+	CCSprite *tempTab;
 	for (int i = 0; i < [tabArray count]; i++) {
 		NSString *tempString = [tabArray objectAtIndex:i];
-		CCSprite *tempTab;
+		
 		if (i == 0) {
 			tempTab = [[Button alloc] initWithLabel:tempString setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:10 setBackground:@"tab_press.png" setTarget:self setSelector:@selector(tabHandler:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 		}
@@ -115,6 +117,7 @@
 		[self addChild:tempTab];
 		[tabDic setValue:tempTab forKey:[NSString stringWithFormat:@"tab_%d",i]];
 	}
+	[tempTab release];
 }
 
 //根据点击不同的Tab切换仓库和拍卖来的

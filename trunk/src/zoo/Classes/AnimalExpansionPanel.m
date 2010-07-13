@@ -206,6 +206,7 @@ paramsDict;
 	//[self addChild:item z:7];
 	//[self addChild:buyImg z:7];
 	[self addChild:priceLbl z:7];
+	[buyImg release];
 }							  
 
 -(void) dealloc
