@@ -84,6 +84,10 @@
 	
 	[self disableFriendView];
 	
+	UIView *_xxxView = [[[CCDirector sharedDirector] openGLView] viewWithTag:9900];
+// 	NSLog(@"xxxView=%@",_xxxView);
+	[_xxxView removeFromSuperview];
+	
 }
 
 

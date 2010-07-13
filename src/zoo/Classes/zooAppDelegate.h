@@ -7,9 +7,12 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <UIKit/UITextInputTraits.h>
 
 @interface zooAppDelegate : NSObject <UIApplicationDelegate> {
 	UIWindow *window;
+	
+//	UITextField* levelEntryTextField;
 }
 
 @property (nonatomic, retain) UIWindow *window;
