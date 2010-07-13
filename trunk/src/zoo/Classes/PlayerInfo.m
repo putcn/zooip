@@ -23,6 +23,8 @@
 	
 	if (self)
 	{
+		nColorBar = 0;
+		
 		self.scale = 0.8f;
 //		[self setContentSize:CGSizeMake(300, 40)];
 		CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif" ofType:nil] ] ];

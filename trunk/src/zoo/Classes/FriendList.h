@@ -25,6 +25,12 @@
 	int currentNum;
 	id parentTarget;
 	NSMutableArray *friendListArray;
+	
+	UIView *_view;
+	UITextField* levelEntryTextField;
+	DataModelFriendInfo *dataModelfriend_search;
+	NSString *result;
+	BOOL searchDown;
 }
 -(id) initWithTab:(id)target;
 

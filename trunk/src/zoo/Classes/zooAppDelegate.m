@@ -12,6 +12,7 @@
 #import "GameMainScene.h"
 #import "LoginScence.h"
 #import "Reachability.h"
+#import "TextFieldController.h"
 
 @implementation zooAppDelegate
 
@@ -55,14 +56,12 @@
 
 	
 //	[[CCDirector sharedDirector] runWithScene: [HelloWorld scene]];
-	[[CCDirector sharedDirector] runWithScene: [GameMainScene scene]];
+//	[[CCDirector sharedDirector] runWithScene: [GameMainScene scene]];
 
-//	[[CCDirector sharedDirector] runWithScene: [LoginScence scene]];
-	
+	[[CCDirector sharedDirector] runWithScene: [LoginScence scene]];
 	
 	[self checkNetwork];
 }
-
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 	[[CCDirector sharedDirector] pause];
@@ -94,6 +93,7 @@
 			NSString *message = @"没有可选网络！";
 			UIAlertView *m_musicAlertView = [[UIAlertView alloc] initWithTitle:@"NetWork" message:message delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil];
 			[m_musicAlertView show];
+			[m_musicAlertView release];
 
 		return FALSE;
 	}
