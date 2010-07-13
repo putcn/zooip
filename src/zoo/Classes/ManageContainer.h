@@ -34,8 +34,6 @@
 	int tabIndex;
 }
 @property (nonatomic,retain) NSString *title;
-
--(void) itemInfoHandler:(ItemButton *) itemButton;
 -(void)addTitle;
 -(void)addTab:(NSArray *)tabArray;
 

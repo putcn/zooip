@@ -18,7 +18,7 @@
 	NSString *itemType;
 }
 
-@property (nonatomic, retain)NSString *itemId;
+@property (nonatomic, assign)NSString *itemId;
 @property (nonatomic, retain)NSString *itemType;
 
 -(id) initWithItem:(NSString *)itId setitType:(NSString *)itType setImagePath:(NSString*) imagePath setBuyType:(int) buyType setPrice:(NSString *) price setTarget:(id) target setSelector:(SEL) handler

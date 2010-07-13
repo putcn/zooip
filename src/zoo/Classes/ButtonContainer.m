@@ -127,18 +127,13 @@
 				price = [NSString stringWithFormat:@"%d",originAnimal.antsPrice];
 			}
 //			if (originAnimal.originalAnimalId > 0) 
-			{
+			
 			//根据动物的originalAnimalId生成ItemButton
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",originAnimal.picturePrefix];
 			ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:40 offsetX:1 offsetY:1];
 			itemButton.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%8];
-//			
-//			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-//			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
-//			kuang.scale = 1024.0/400.0f;
-//			[self addChild:kuang z:6 tag:i%8 + 8];
-			}
+			[itemButton release];
 		}
 	}
 	else if (tabFlag == @"饲料"){
@@ -163,11 +158,7 @@
 			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelFood.foodId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:40 offsetX:1 offsetY:1];
 			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%8];
-			
-//			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-//			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
-//			kuang.scale = 1024.0/400.0f;
-//			[self addChild:kuang z:6 tag:i%8 + 8];
+			[itemButton release];
 		}
 	}
 	else if (tabFlag == @"道具"){
@@ -198,7 +189,7 @@
 			ItemButton *itemButton = [[ItemButton alloc] initWithItem:dataModelGood.goodsId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:40 offsetX:1 offsetY:1];
 			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%8];
-			
+			[itemButton release];
 //			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
 //			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNum-1))/4) - 100);
 //			kuang.scale = 1024.0/400.0f;

@@ -117,7 +117,6 @@
 -(void) dealloc
 {
 	// Add by Hunk on 2010-06-29
-	[itemId release];
 	[itemType release];
 	
 	[targetCallBack release];

@@ -30,7 +30,7 @@
 		
 		[[CCScheduler sharedScheduler] scheduleTimer: [CCTimer timerWithTarget:self selector:@selector(tick:)]];
 		
-		//[[GameMainScene sharedGameMainScene] addSpriteToStage:view z:5];
+		[[GameMainScene sharedGameMainScene] addSpriteToStage:view z:5];
 	}
 	return self;
 }
@@ -65,6 +65,7 @@
 		[[CCScheduler sharedScheduler] scheduleTimer: [CCTimer timerWithTarget:self selector:@selector(tick:)]];
 		
 		[[GameMainScene sharedGameMainScene] addSpriteToStage:view z:5];
+		
 	}
 	return self;
 }
