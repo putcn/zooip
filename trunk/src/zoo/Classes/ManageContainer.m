@@ -145,13 +145,15 @@
 -(void) itemInfoHandler:(ItemButton *) itemButton
 {
 	//判断是否首次加载物品信息框
+	curr_itemId = itemButton.itemId;
+	curr_itemType = itemButton.itemType;
 	if (itemInfoPane == nil) {
-		itemInfoPane = [[ItemInfoPane alloc] initWithItem:itemButton.itemId type:itemButton.itemType setTarget:self];
+		itemInfoPane = [[ItemInfoPane alloc] initWithItem:curr_itemId type:curr_itemType setTarget:self];
 		itemInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2);
 		[self addChild:itemInfoPane z:20];
 	}
 	else {		
-		[itemInfoPane updateInfo:itemButton.itemId type:itemButton.itemType setTarget:self];
+		[itemInfoPane updateInfo:curr_itemId type:curr_itemType setTarget:self];
 		itemInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2);
 	}
 
@@ -164,9 +166,8 @@
 	//获取从Button回调的参数,强制转换为ItemInfoPane对象,改对象携带了购买物品所需要的所有参数
 	ItemInfoPane *itemInfo = (ItemInfoPane *)button.target; 
 	
-	
-	NSDictionary *dic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
-	DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemInfo.itemId];
+//	NSDictionary *dic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+//	DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemInfo.itemId];
 	tempPrice  = itemInfo.itemPrice;
 	tempCount = itemInfo.count;
  	curr_itemType = itemInfo.itemType;

@@ -25,7 +25,6 @@
 		NSArray *stakeys = [NSArray arrayWithObjects:@"0",@"1",@"2",@"3",@"4",@"5",@"6",@"7",@"8",@"9",@"10",@"11",nil];
 		NSArray *stavalues = [NSArray arrayWithObjects:@"stop",@"eat",@"ill",@"sleep",@"stand",@"walk",@"fly",@"swimming",@"spread",@"crow",@"transition",@"landing",nil];
 		statuses = [[NSDictionary dictionaryWithObjects:stavalues forKeys:stakeys] retain];
-		
 		animationTable = [[[NSMutableDictionary alloc] init]retain];
 		// 在子类中实现这个方法
 		// 根据传入的prefix初始化8个方向的动画，

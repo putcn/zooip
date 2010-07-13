@@ -107,7 +107,7 @@ count;
 	itemType = itType;
 	itemBuyType = @"goldEgg";
 	itemPrice = 0;
-	NSDictionary *dic;	
+	NSDictionary *dic;
 	//判断商品的类型,显示不同的物品信息到不同的信息框中
 	if (itemType == @"动物") {
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals retain];
@@ -125,7 +125,6 @@ count;
 		[nameLbl setColor:ccc3(0, 0, 0)];
 		nameLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 50);
 		[self addChild:nameLbl z:10];
-		[originalAnimal release];
 	}
 	if (itemType == @"饲料") {
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].foods retain];
@@ -142,7 +141,6 @@ count;
 		[nameLbl setColor:ccc3(0, 0, 0)];
 		nameLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 50);
 		[self addChild:nameLbl z:10];
-		[food release];
 	}
 	if (itemType == @"道具") {
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].goods retain];
@@ -166,7 +164,6 @@ count;
 		[nameLbl setColor:ccc3(0, 0, 0)];
 		nameLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 50);
 		[self addChild:nameLbl z:10];
-		[goods release];
 	}
 	[dic release];
 	

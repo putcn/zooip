@@ -187,7 +187,6 @@
 		[self addChild:confirmBtn z:10];
 		[self addChild:cancelBtn z:10];
 		
-		[modelZygoteEggs release];
 	}
 	[dic release];
 	
