@@ -20,6 +20,8 @@
 		animationTable = [imageProp animationTable:@"_MalePheasant.png" plistName:@"_MalePheasant.plist"];
 		NSLog(@"------------%@", animationTable);
 		
+		// Add by Hunk on 2010-07-13 for memory leak
+		[imageProp release];
 		
 //		//walk animations
 //		CCAnimation* walkUpAnimation = [CCAnimation animationWithName:@"walkUp" delay:0.04f];
