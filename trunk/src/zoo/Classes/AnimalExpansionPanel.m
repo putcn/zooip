@@ -59,6 +59,7 @@ paramsDict;
 		transBackground.scale = 5.0f;
 		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 		[self addChild:transBackground z:-1];
+		[transBackground release];
 	}
 	return self;
 }
@@ -165,6 +166,8 @@ paramsDict;
 	cancelBtn.position = ccp(self.contentSize.width/2 + 100, 25);
 	[self addChild:confirmBtn z:10];
 	[self addChild:cancelBtn z:10];
+	[confirmBtn release];
+	[cancelBtn release];
 	
 	//TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
 //	transBackground.scale = 5.0f;

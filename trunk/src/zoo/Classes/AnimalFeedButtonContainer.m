@@ -27,8 +27,8 @@
 		parentTarget = target;
 		
 		playerButtonContainer = [[CCSprite alloc] init];
-		[self addChild:playerButtonContainer];
 		playerButtonContainer.position = ccp(20, playerButtonContainer.position.y);
+		[self addChild:playerButtonContainer];
 		
 		NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId;
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];

@@ -85,7 +85,7 @@ antsCount;
 	[self addChild:titleLbl z:10];
 }
 -(void)updateButtonsAndRates:(id)target
-{
+{	
 	[self removeAllChildrenWithCleanup:YES];
 	[self addTitle];
 	

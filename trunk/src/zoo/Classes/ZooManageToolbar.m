@@ -329,23 +329,16 @@
 	[statusIcon setVisible:YES];
 }
 -(void)btnFarmExpansionButtionHandler:(Button *)button
-{
-	//-(id)initWithParam:(NSDictionary *)param setTarget:(id)target
-	//secondTouchFarmExpansion
-	
-	if(!secondTouchFarmExpansion)
+{	
+	if(animalExpansionPanel == nil)
 	{
 		animalExpansionPanel = [[AnimalExpansionPanel alloc] initWithParam:nil setTarget:self];
-		
-		//animalManagerContainer = [[AnimalStorageManagerPanel alloc] initWithName:@"animalMarry"];
 		[self addChild:animalExpansionPanel];
-		
 	}
 	else {
-		[self removeChild:animalExpansionPanel cleanup:YES];
+		animalExpansionPanel.position = ccp(240,160);
 	}
-	
-	secondTouchFarmExpansion = !secondTouchFarmExpansion;
+
 }
 
 -(void) btnPlayerOperationButtonHandler:(Button *)button
@@ -408,21 +401,15 @@
 }
 
 -(void) btnPlayerOperationAddAnimalsButtonHandler:(Button *)button
-{
-
-	if(!secondTouchFarmStorage)
+{	
+	if(animalManagerContainer == nil)
 	{
 		animalManagerContainer = [[AnimalStorageManagerContainer alloc] init];
-
-		//animalManagerContainer = [[AnimalStorageManagerPanel alloc] initWithName:@"animalMarry"];
 		[self addChild:animalManagerContainer];
-		
 	}
 	else {
-		[self removeChild:animalManagerContainer cleanup:YES];
+		animalManagerContainer.position = ccp(240,160);
 	}
-	
-	secondTouchFarmStorage = !secondTouchFarmStorage;
 }
 
 -(void)storageCancle
