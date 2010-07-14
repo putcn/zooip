@@ -39,6 +39,8 @@
 			[self addChild:nextPageBtn z:7];
 			[self addChild:forwardPageBtn z:7];
 			self.scale = 300.0f/1024.0f;
+			[nextPageBtn release];
+			[forwardPageBtn release];
 		}
 	
 		
@@ -102,22 +104,22 @@
 		if (endNumber >= [[DataEnvironment sharedDataEnvironment].animalIDs count]) {
 			endNumber = [[DataEnvironment sharedDataEnvironment].animalIDs count];
 		}
-		currentNum = endNumber - (currentPageNum -1 ) *8 ;
+		currentNum = endNumber - (currentPageNum -1 ) *8;
+		AnimalManagementButtonItem *itemButton;
+		DataModelAnimal *serverAnimalData2;
 		for (int i = (currentPageNum -1)*8; i < endNumber; i ++) {
 			originAnimal = [animalIDs objectAtIndex:i];
 			aniID = [animalIDs objectAtIndex:i];
-			DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
+			serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
 			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
 			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
 			
-			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:40 offsetX:1 offsetY:1 setPictureScale:2.5f];
+			itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:40 offsetX:1 offsetY:1 setPictureScale:2.5f];
 			itemButton.position = ccp(230 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 110);
 			[self addChild:itemButton z:7 tag:i%8];
-			
 		}
 	}
-	
 }
 
 

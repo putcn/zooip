@@ -202,11 +202,13 @@ buttonsOfList;
 	
 	int kTemp = 0;
 //	for (int i = (currentPageNum -1)*8; i < endNumber; i ++)
+	AnimalManagementButtonItem *itemButton;
+	DataModelAnimal *serverAnimalList;
 	for (int i = 0; i < endNumber; i ++)
 	{
 		originAnimal = [animalIDs objectAtIndex:i];
 		aniID = [animalIDs objectAtIndex:i];
-		DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
+		serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
 		if(serverAnimalDataOne.animalType == serverAnimalList.animalType && serverAnimalList.gender != serverAnimalDataOne.gender && aniID != leftAnimalID && aniID != rightAnimalID)
 		{
 			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalList.scientificNameCN];
@@ -214,7 +216,7 @@ buttonsOfList;
 			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalList.originalAnimalId];
 			//For Test
 			NSString *tabFlag = @"animals";
-			AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(updateThisPanel:) setPriority:30 offsetX:1 offsetY:1 setPictureScale:0.7f];
+			itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:self setSelector:@selector(updateThisPanel:) setPriority:30 offsetX:1 offsetY:1 setPictureScale:0.7f];
 			itemButton.position = ccp(60 * (kTemp%4) + 70/**this uesed to be 120 pixel***/, self.contentSize.height - 55 * ((kTemp-8*(currentPageNum-1))/4) - 130);
 //			itemButton.scale = 200.0f/1024.0f;
 			[self addChild:itemButton z:8 tag:(kTemp+100)%800];
