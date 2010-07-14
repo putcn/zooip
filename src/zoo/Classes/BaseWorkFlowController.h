@@ -16,6 +16,8 @@
 	NSMutableDictionary *stepControllers;
 }
 
+   
+
 -(void) addController:(BaseServerController *)controller andStep:(NSString *)step;
 -(void) setupStep;
 -(void) startStep;

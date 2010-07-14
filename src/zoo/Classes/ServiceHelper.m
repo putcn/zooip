@@ -1251,11 +1251,8 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 		}
 	}
 	[request startAsynchronous];
-//	int statusCode = [request responseStatusCode];
-//	NSString *statusMessage = [request responseStatusMessage];
-//	NSLog(@"%d",statusCode);
-//	NSLog(@"%@",statusMessage);
-	NSLog(@"%@",parameters);
+
+	
 	return request;
 }
 
