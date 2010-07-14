@@ -21,7 +21,7 @@
 		[self runAction:[CCRepeatForever actionWithAction:[CCAnimate actionWithAnimation:[animationTable objectForKey:@"stop"]]]];
 		
 		// Add by Hunk on 2010-07-13 for memory leak
-		[imageProp release];
+		//[imageProp release];
 	}
 	return self;
 	

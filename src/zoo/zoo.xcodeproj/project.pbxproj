@@ -26,6 +26,7 @@
 		3E4CD8E6118FD12C00222173 /* AnimalToolTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E4CD8E5118FD12C00222173 /* AnimalToolTip.m */; };
 		3E4CDAD0119032C400222173 /* inner.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4CDACE119032C400222173 /* inner.png */; };
 		3E4CDAD1119032C400222173 /* outer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4CDACF119032C400222173 /* outer.png */; };
+		3E7E61AE11ED87FE00601836 /* ImageResources.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E7E61AD11ED87FE00601836 /* ImageResources.m */; };
 		3E8559F011A02E2900AE6BC8 /* EggController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E8559EF11A02E2900AE6BC8 /* EggController.m */; };
 		3E85CDB311A10CBE00ED9250 /* ItemController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E85CDB211A10CBE00ED9250 /* ItemController.m */; };
 		3E85CE0A11A1277500ED9250 /* ToolTip.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E85CE0911A1277500ED9250 /* ToolTip.m */; };
@@ -61,6 +62,7 @@
 		3EB1B31C11A43DF500927E2F /* AntController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB1B31B11A43DF500927E2F /* AntController.m */; };
 		3EB9E4FA11A52A3800BD9847 /* operationEnd.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EB9E4F911A52A3800BD9847 /* operationEnd.png */; };
 		3EB9E4FD11A52D3F00BD9847 /* OperationEndView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EB9E4FC11A52D3F00BD9847 /* OperationEndView.m */; };
+		3EBBB64B11ECB0EC00011299 /* AnimalBehaviorUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EBBB64A11ECB0EC00011299 /* AnimalBehaviorUtil.m */; };
 		3EC7E343119A3B6400791BAD /* EggViewFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7E342119A3B6400791BAD /* EggViewFactory.m */; };
 		3EC7E441119AA2E200791BAD /* cleaning_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7E3FD119AA2E200791BAD /* cleaning_01.png */; };
 		3EC7E442119AA2E200791BAD /* cleaning_02.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7E3FE119AA2E200791BAD /* cleaning_02.png */; };
@@ -459,12 +461,12 @@
 		60C18C9C11E1CB9C00248E87 /* _magpie_1.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5211E1CB9B00248E87 /* _magpie_1.png */; };
 		60C18C9D11E1CB9C00248E87 /* _magpie_2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5311E1CB9B00248E87 /* _magpie_2.plist */; };
 		60C18C9E11E1CB9C00248E87 /* _magpie_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5411E1CB9B00248E87 /* _magpie_2.png */; };
-		60C18C9F11E1CB9C00248E87 /* _maleMandarinDuck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5511E1CB9B00248E87 /* _maleMandarinDuck.plist */; };
-		60C18CA011E1CB9C00248E87 /* _maleMandarinDuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5611E1CB9B00248E87 /* _maleMandarinDuck.png */; };
-		60C18CA111E1CB9C00248E87 /* _malePheasant.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5711E1CB9B00248E87 /* _malePheasant.plist */; };
-		60C18CA211E1CB9C00248E87 /* _malePheasant.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5811E1CB9B00248E87 /* _malePheasant.png */; };
-		60C18CA511E1CB9C00248E87 /* _mandarinDuck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5B11E1CB9B00248E87 /* _mandarinDuck.plist */; };
-		60C18CA611E1CB9C00248E87 /* _mandarinDuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5C11E1CB9B00248E87 /* _mandarinDuck.png */; };
+		60C18C9F11E1CB9C00248E87 /* _malemandarinduck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5511E1CB9B00248E87 /* _malemandarinduck.plist */; };
+		60C18CA011E1CB9C00248E87 /* _malemandarinduck.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5611E1CB9B00248E87 /* _malemandarinduck.png */; };
+		60C18CA111E1CB9C00248E87 /* _malepheasant.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5711E1CB9B00248E87 /* _malepheasant.plist */; };
+		60C18CA211E1CB9C00248E87 /* _malepheasant.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5811E1CB9B00248E87 /* _malepheasant.png */; };
+		60C18CA511E1CB9C00248E87 /* _mandarinduck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5B11E1CB9B00248E87 /* _mandarinduck.plist */; };
+		60C18CA611E1CB9C00248E87 /* _mandarinduck.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5C11E1CB9B00248E87 /* _mandarinduck.png */; };
 		60C18CA711E1CB9C00248E87 /* _nest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5D11E1CB9B00248E87 /* _nest.plist */; };
 		60C18CA811E1CB9C00248E87 /* _nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5E11E1CB9B00248E87 /* _nest.png */; };
 		60C18CA911E1CB9C00248E87 /* _parrot_1.plist in Resources */ = {isa = PBXBuildFile; fileRef = 60C18C5F11E1CB9B00248E87 /* _parrot_1.plist */; };
@@ -812,6 +814,8 @@
 		3E4CD8E5118FD12C00222173 /* AnimalToolTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalToolTip.m; sourceTree = "<group>"; };
 		3E4CDACE119032C400222173 /* inner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inner.png; sourceTree = "<group>"; };
 		3E4CDACF119032C400222173 /* outer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = outer.png; sourceTree = "<group>"; };
+		3E7E61AC11ED87FE00601836 /* ImageResources.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResources.h; sourceTree = "<group>"; };
+		3E7E61AD11ED87FE00601836 /* ImageResources.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResources.m; sourceTree = "<group>"; };
 		3E8559EE11A02E2900AE6BC8 /* EggController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggController.h; sourceTree = "<group>"; };
 		3E8559EF11A02E2900AE6BC8 /* EggController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggController.m; sourceTree = "<group>"; };
 		3E85CDB111A10CBE00ED9250 /* ItemController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ItemController.h; sourceTree = "<group>"; };
@@ -868,6 +872,8 @@
 		3EB9E4F911A52A3800BD9847 /* operationEnd.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = operationEnd.png; sourceTree = "<group>"; };
 		3EB9E4FB11A52D3F00BD9847 /* OperationEndView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OperationEndView.h; sourceTree = "<group>"; };
 		3EB9E4FC11A52D3F00BD9847 /* OperationEndView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OperationEndView.m; sourceTree = "<group>"; };
+		3EBBB64911ECB0EC00011299 /* AnimalBehaviorUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalBehaviorUtil.h; sourceTree = "<group>"; };
+		3EBBB64A11ECB0EC00011299 /* AnimalBehaviorUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalBehaviorUtil.m; sourceTree = "<group>"; };
 		3EC7E341119A3B6400791BAD /* EggViewFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EggViewFactory.h; sourceTree = "<group>"; };
 		3EC7E342119A3B6400791BAD /* EggViewFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EggViewFactory.m; sourceTree = "<group>"; };
 		3EC7E3FD119AA2E200791BAD /* cleaning_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cleaning_01.png; sourceTree = "<group>"; };
@@ -1632,12 +1638,12 @@
 		60C18C5211E1CB9B00248E87 /* _magpie_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _magpie_1.png; sourceTree = "<group>"; };
 		60C18C5311E1CB9B00248E87 /* _magpie_2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _magpie_2.plist; sourceTree = "<group>"; };
 		60C18C5411E1CB9B00248E87 /* _magpie_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _magpie_2.png; sourceTree = "<group>"; };
-		60C18C5511E1CB9B00248E87 /* _maleMandarinDuck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _maleMandarinDuck.plist; sourceTree = "<group>"; };
-		60C18C5611E1CB9B00248E87 /* _maleMandarinDuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _maleMandarinDuck.png; sourceTree = "<group>"; };
-		60C18C5711E1CB9B00248E87 /* _malePheasant.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _malePheasant.plist; sourceTree = "<group>"; };
-		60C18C5811E1CB9B00248E87 /* _malePheasant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _malePheasant.png; sourceTree = "<group>"; };
-		60C18C5B11E1CB9B00248E87 /* _mandarinDuck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _mandarinDuck.plist; sourceTree = "<group>"; };
-		60C18C5C11E1CB9B00248E87 /* _mandarinDuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _mandarinDuck.png; sourceTree = "<group>"; };
+		60C18C5511E1CB9B00248E87 /* _malemandarinduck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _malemandarinduck.plist; sourceTree = "<group>"; };
+		60C18C5611E1CB9B00248E87 /* _malemandarinduck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _malemandarinduck.png; sourceTree = "<group>"; };
+		60C18C5711E1CB9B00248E87 /* _malepheasant.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _malepheasant.plist; sourceTree = "<group>"; };
+		60C18C5811E1CB9B00248E87 /* _malepheasant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _malepheasant.png; sourceTree = "<group>"; };
+		60C18C5B11E1CB9B00248E87 /* _mandarinduck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _mandarinduck.plist; sourceTree = "<group>"; };
+		60C18C5C11E1CB9B00248E87 /* _mandarinduck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _mandarinduck.png; sourceTree = "<group>"; };
 		60C18C5D11E1CB9B00248E87 /* _nest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _nest.plist; sourceTree = "<group>"; };
 		60C18C5E11E1CB9B00248E87 /* _nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _nest.png; sourceTree = "<group>"; };
 		60C18C5F11E1CB9B00248E87 /* _parrot_1.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _parrot_1.plist; sourceTree = "<group>"; };
@@ -2209,6 +2215,23 @@
 				3EAE656711AD5C8B004BA790 /* ItemInfoPane.png */,
 			);
 			path = foods;
+			sourceTree = "<group>";
+		};
+		3EBBB63B11ECAC0E00011299 /* ViewUtil */ = {
+			isa = PBXGroup;
+			children = (
+				3EE9C8D011DCA1BB00376116 /* AnimalImageProperty.h */,
+				3EE9C8D111DCA1BB00376116 /* AnimalImageProperty.m */,
+				3E85CE0811A1277500ED9250 /* ToolTip.h */,
+				3E85CE0911A1277500ED9250 /* ToolTip.m */,
+				3E3007AF11C6721800A1C3B7 /* ImgInitUtil.h */,
+				3E3007B011C6721800A1C3B7 /* ImgInitUtil.m */,
+				3EBBB64911ECB0EC00011299 /* AnimalBehaviorUtil.h */,
+				3EBBB64A11ECB0EC00011299 /* AnimalBehaviorUtil.m */,
+				3E7E61AC11ED87FE00601836 /* ImageResources.h */,
+				3E7E61AD11ED87FE00601836 /* ImageResources.m */,
+			);
+			name = ViewUtil;
 			sourceTree = "<group>";
 		};
 		3EC7E392119A8C6C00791BAD /* Animals */ = {
@@ -3341,12 +3364,12 @@
 				60C18C5211E1CB9B00248E87 /* _magpie_1.png */,
 				60C18C5311E1CB9B00248E87 /* _magpie_2.plist */,
 				60C18C5411E1CB9B00248E87 /* _magpie_2.png */,
-				60C18C5511E1CB9B00248E87 /* _maleMandarinDuck.plist */,
-				60C18C5611E1CB9B00248E87 /* _maleMandarinDuck.png */,
-				60C18C5711E1CB9B00248E87 /* _malePheasant.plist */,
-				60C18C5811E1CB9B00248E87 /* _malePheasant.png */,
-				60C18C5B11E1CB9B00248E87 /* _mandarinDuck.plist */,
-				60C18C5C11E1CB9B00248E87 /* _mandarinDuck.png */,
+				60C18C5511E1CB9B00248E87 /* _malemandarinduck.plist */,
+				60C18C5611E1CB9B00248E87 /* _malemandarinduck.png */,
+				60C18C5711E1CB9B00248E87 /* _malepheasant.plist */,
+				60C18C5811E1CB9B00248E87 /* _malepheasant.png */,
+				60C18C5B11E1CB9B00248E87 /* _mandarinduck.plist */,
+				60C18C5C11E1CB9B00248E87 /* _mandarinduck.png */,
 				60C18C5D11E1CB9B00248E87 /* _nest.plist */,
 				60C18C5E11E1CB9B00248E87 /* _nest.png */,
 				60C18C5F11E1CB9B00248E87 /* _parrot_1.plist */,
@@ -3685,6 +3708,7 @@
 		BF00747F1159E86A0003B411 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				3EBBB63B11ECAC0E00011299 /* ViewUtil */,
 				BF0074861159E8D50003B411 /* Scenes */,
 				BF0074851159E89A0003B411 /* UIControls */,
 				BF0074841159E88E0003B411 /* Components */,
@@ -3722,16 +3746,10 @@
 		BF0074841159E88E0003B411 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				3EE9C8D011DCA1BB00376116 /* AnimalImageProperty.h */,
-				3EE9C8D111DCA1BB00376116 /* AnimalImageProperty.m */,
 				3EC7E39B119A90FF00791BAD /* OperationView */,
 				3EC7E392119A8C6C00791BAD /* Animals */,
 				3EED46B4119673430093FF6E /* Items */,
 				3EED45E911965A9A0093FF6E /* Eggs */,
-				3E85CE0811A1277500ED9250 /* ToolTip.h */,
-				3E85CE0911A1277500ED9250 /* ToolTip.m */,
-				3E3007AF11C6721800A1C3B7 /* ImgInitUtil.h */,
-				3E3007B011C6721800A1C3B7 /* ImgInitUtil.m */,
 			);
 			name = Components;
 			sourceTree = "<group>";
@@ -4552,12 +4570,12 @@
 				60C18C9C11E1CB9C00248E87 /* _magpie_1.png in Resources */,
 				60C18C9D11E1CB9C00248E87 /* _magpie_2.plist in Resources */,
 				60C18C9E11E1CB9C00248E87 /* _magpie_2.png in Resources */,
-				60C18C9F11E1CB9C00248E87 /* _maleMandarinDuck.plist in Resources */,
-				60C18CA011E1CB9C00248E87 /* _maleMandarinDuck.png in Resources */,
-				60C18CA111E1CB9C00248E87 /* _malePheasant.plist in Resources */,
-				60C18CA211E1CB9C00248E87 /* _malePheasant.png in Resources */,
-				60C18CA511E1CB9C00248E87 /* _mandarinDuck.plist in Resources */,
-				60C18CA611E1CB9C00248E87 /* _mandarinDuck.png in Resources */,
+				60C18C9F11E1CB9C00248E87 /* _malemandarinduck.plist in Resources */,
+				60C18CA011E1CB9C00248E87 /* _malemandarinduck.png in Resources */,
+				60C18CA111E1CB9C00248E87 /* _malepheasant.plist in Resources */,
+				60C18CA211E1CB9C00248E87 /* _malepheasant.png in Resources */,
+				60C18CA511E1CB9C00248E87 /* _mandarinduck.plist in Resources */,
+				60C18CA611E1CB9C00248E87 /* _mandarinduck.png in Resources */,
 				60C18CA711E1CB9C00248E87 /* _nest.plist in Resources */,
 				60C18CA811E1CB9C00248E87 /* _nest.png in Resources */,
 				60C18CA911E1CB9C00248E87 /* _parrot_1.plist in Resources */,
@@ -4859,6 +4877,8 @@
 				3ED4F0ED11E1657C00652FBD /* FarmAnimal.m in Sources */,
 				3ED4F15111E1698300652FBD /* FarmAnimalView.m in Sources */,
 				6BA03FD411E48A0800D0E667 /* TextFieldController.m in Sources */,
+				3EBBB64B11ECB0EC00011299 /* AnimalBehaviorUtil.m in Sources */,
+				3E7E61AE11ED87FE00601836 /* ImageResources.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

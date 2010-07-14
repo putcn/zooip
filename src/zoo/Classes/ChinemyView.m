@@ -46,6 +46,7 @@
 	}
 	
 	NSString *showKey = [[status stringByAppendingString:@"_"] stringByAppendingFormat:direction];
+	showKey = [showKey lowercaseString];
 	[self stopAllActions];
 	[self runAction:[animationTable objectForKey:showKey]];
 

@@ -7,7 +7,7 @@
 //
 
 #import "ImgInitUtil.h"
-
+#import "ImageResources.h"
 
 @implementation ImgInitUtil
 
@@ -26,9 +26,9 @@ static ImgInitUtil *_sharedImgInitUtil;
 }
 -(CCAnimation *)getAnimate:(NSString *)fileName setOriginX:(float)originx setOriginY:(float)originy setWidth:(float)w setHeight:(float)h setNumber:(NSInteger)number setMaxOneline:(NSInteger)max
 {
-	CCAnimation *animation = [CCAnimation animationWithName:@"animal" delay:0.1f];
-	CCSpriteSheet *image = [CCSpriteSheet spriteSheetWithFile:fileName];
-
+	CCAnimation *animation = [CCAnimation animationWithName:@"animal" delay:0.2f];
+	//CCSpriteSheet *image = [CCSpriteSheet spriteSheetWithFile:fileName];
+	CCSpriteSheet *image = [[ImageResources sharedImageResources] getImageResouce:fileName];
 	NSInteger containOneLine = max;
 	for (int i = 0; i < number; i++) {
 		CCSpriteFrame *frame = [CCSpriteFrame frameWithTexture:image.texture rect:CGRectMake(originx + (i % containOneLine) * w, originy + (i/containOneLine) * h, w, h) offset:ccp(0,0)];
@@ -39,7 +39,8 @@ static ImgInitUtil *_sharedImgInitUtil;
 
 -(CCSprite *)getSprite:(NSString *)fileName setOriginX:(float)originx setOriginY:(float)originy setWidth:(float)w setHeight:(float)h setNumber:(NSInteger)number
 {
-	CCSpriteSheet *image = [CCSpriteSheet spriteSheetWithFile:fileName];
+	//CCSpriteSheet *image = [CCSpriteSheet spriteSheetWithFile:fileName];
+	CCSpriteSheet *image = [[ImageResources sharedImageResources] getImageResouce:fileName];
 	CCSprite *tempSprite = [CCSprite spriteWithTexture:image.texture rect:CGRectMake(originx, originy, w, h)];
 	return tempSprite;
 }
