@@ -37,6 +37,7 @@
 		Button *btnClose = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:self setSelector:@selector(closeDialogHandler) setPriority:0 offsetX:0 offsetY:0 scale:1.0f];
 		btnClose.position = ccp( s.width - 5, 5 );
 		[self addChild:btnClose];
+		[btnClose release];
 		
 		self.position = ccp( -500 , -500 );
 		isOpen = NO;

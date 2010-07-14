@@ -120,6 +120,9 @@
 	
 	[self addChild:nextPageBtn z:7];
 	[self addChild:forwardPageBtn z:7];
+	
+//	[nextPageBtn release];
+//	[forwardPageBtn release];
 }
 
 
@@ -212,6 +215,7 @@
 			SellitemButton *itemButton = [[SellitemButton alloc] initWithItem:storageEgg.eggStorageId setitType:tabFlag setImagePath:picName setEggTotal:eggTotal setEggName:storageEgg.eggName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNumOne-1))/4) - 100);			
 			[itemNumArray addObject:itemButton];
+//			[itemButton release];
 			
 //			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
 //			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNumOne-1))/4) - 100);
@@ -250,7 +254,8 @@
 			SellitemButton *itemButton = [[SellitemButton alloc] initWithItem:dataModelStorageZygoteEggs.zygoteStorageId setitType:tabFlag setImagePath:picFileName setEggTotal:eggTotal setEggName:eggZnName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:2 offsetX:1 offsetY:1];
 			[itemNumArray addObject:itemButton];
 			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNumTwo-1))/4) - 100);
-	
+//			[itemButton release];
+			
 //			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
 //			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 215 * ((i-8*(currentPageNumTwo-1))/4) - 100);
 //			kuang.scale = 1024.0/400.0f;

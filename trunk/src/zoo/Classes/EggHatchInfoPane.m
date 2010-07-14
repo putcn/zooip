@@ -130,6 +130,10 @@
 	[self addChild:useMoneyBtn z:10];
 	[self addChild:useAntBtn z:10];
 	[self addChild:cancelBtn z:10];
+	
+	[useMoneyBtn release];
+	[useAntBtn release];
+	[cancelBtn release];
 }
 
 

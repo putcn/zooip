@@ -26,6 +26,7 @@
 								   setSelector:@selector(btnButtonHandler) setPriority:50 offsetX:-1 offsetY:2 scale:0.75];
 		button.position = ccp(20, 20);
 		[self addChild:button];
+		[button release];
 	}
 	
 	return self;

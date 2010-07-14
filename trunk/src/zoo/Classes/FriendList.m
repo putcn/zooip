@@ -28,6 +28,8 @@
 		forwardPageBtn.position = ccp(200, -160);
 		[self addChild:nextPageBtn z:8];
 		[self addChild:forwardPageBtn z:8];
+		[nextPageBtn release];
+		[forwardPageBtn release];
 		
 		//搜索框
 //		Button *search_bg = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"搜索_bg.png" setTarget:self setSelector:@selector(UseTextFieldView:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
@@ -39,6 +41,7 @@
 		Button *searchBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"搜索_弹起.png" setTarget:self setSelector:@selector(searchDown:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 		searchBtn.position = ccp(90, -160);
 		[self addChild:searchBtn z:8];
+		[searchBtn release];
 		
 //		zooAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
 //		[delegate UseTextFieldView];
@@ -60,7 +63,6 @@
 	[levelEntryTextField setDelegate:self];
 
     [_view addSubview:levelEntryTextField];
-//	[levelEntryTextField becomeFirstResponder];
 	[[[CCDirector sharedDirector] openGLView] addSubview:_view];
 }
 
@@ -73,7 +75,7 @@
 - (void)textFieldDidEndEditing:(UITextField*)textField {
     if (textField==levelEntryTextField) {
         [levelEntryTextField endEditing:YES];
-//        [levelEntryTextField removeFromSuperview];
+//        
         
 		result = levelEntryTextField.text;
     }
@@ -200,7 +202,7 @@ NSInteger compareFriendArrayExpSelector(id f1, id f2, void *context)
 {
 	// Add by Hunk on 2010-06-29
 //	[friendListArray release];
-	
+//	[levelEntryTextField removeFromSuperview];
 	[parentTarget release];
 	[super dealloc];
 }

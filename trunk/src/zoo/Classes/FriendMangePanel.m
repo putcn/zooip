@@ -50,7 +50,7 @@
 		Button *exitButton = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"exitButton.png" setTarget:self setSelector:@selector(exitHandler:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 		exitButton.position = ccp(400, 135);
 		[self addChild:exitButton z:7];
-		
+		[exitButton release];
 		
 		
 		//设置一层半透明背景,点击事件的优先级为50,屏蔽下面图层的点击事件
@@ -58,7 +58,7 @@
 		transBackground.scale = 6.0f;
 		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 		[self addChild:transBackground z:-1];
-		
+		[transBackground release];
 		
 	}
 	return self;
