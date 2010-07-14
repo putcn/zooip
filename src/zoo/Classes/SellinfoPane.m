@@ -113,6 +113,9 @@
 		[self addChild:confirmBtn z:10];
 		[self addChild:cancelBtn z:10];
 		
+//		[confirmBtn release];
+//		[cancelBtn release];
+		
 		//数目选择孔件
 //		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0];
 //		scalerPane.position = ccp(self.contentSize.width/2, self.contentSize.height - 80);
@@ -176,6 +179,7 @@
 		hatchBtn.target = self;
 		hatchBtn.position = ccp(self.contentSize.height/2-30 , 35);
 		[self addChild:hatchBtn z:10];
+//		[hatchBtn release];
 		
 		Button *confirmBtn = [[Button alloc] initWithLabel:@"出售" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(sellEggItem:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
 		Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancel:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
@@ -187,6 +191,9 @@
 		[self addChild:confirmBtn z:10];
 		[self addChild:cancelBtn z:10];
 		
+//		[confirmBtn release];
+//		[cancelBtn release];
+		
 	}
 	[dic release];
 	
@@ -196,10 +203,8 @@
 	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:35];
 	transBackground.scale = 5.0f;
 	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-	[self addChild:transBackground z:-1];
-	
+	[self addChild:transBackground z:-1];	
 	[transBackground release];
-
 	 
 }
 

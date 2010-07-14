@@ -85,7 +85,7 @@
 		transBackground.scale = 5.0f;
 		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 		[self addChild:transBackground z:-1];
-		
+		[transBackground release];
 	}
 	return self;
 }
@@ -118,6 +118,7 @@
 		tempTab.tag = i;
 		[self addChild:tempTab z:4];
 		[tabDic setValue:tempTab forKey:[NSString stringWithFormat:@"tab_%d",i]];
+		[tempTab release];
 	}
 }
  

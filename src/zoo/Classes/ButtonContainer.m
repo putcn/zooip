@@ -45,6 +45,9 @@
 		forwardPageBtn.position = ccp(200, -480);
 		[self addChild:nextPageBtn z:7];
 		[self addChild:forwardPageBtn z:7];
+		
+		[nextPageBtn release];
+		[forwardPageBtn release];
 	}
 	return self;
 }

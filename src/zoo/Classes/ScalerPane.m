@@ -49,6 +49,9 @@
 		[self addChild:counterLbl z:z];
 		[self addChild:reduceLeftBtn z:z];
 		[self addChild:reduceBtn z:z];
+		
+		[reduceBtn release];
+		[reduceLeftBtn release];
 	}
 	return self;
 }

@@ -65,7 +65,7 @@
 		transBackground.scale = 5.0f;
 		transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
 		[self addChild:transBackground z:-1];
-		
+		[transBackground release];
 		[num_paneNum release];
 		
 	}
@@ -102,7 +102,7 @@
 	Button *sellAllBtn = [[Button alloc] initWithLabel:@"全部卖出" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:self setSelector:@selector(sellAllEggsHandler:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 	sellAllBtn.position = ccp(self.contentSize.width/2 , 27);
 	[self addChild:sellAllBtn z:7];
-	
+//	[sellAllBtn release];
 	// Add by Hunk on 2010-06-24 for memory leak
 	[tabArray release];
 	
@@ -136,6 +136,7 @@
 		tempTab.tag = i;
 		[self addChild:tempTab z:4];
 		[tabDic setValue:tempTab forKey:[NSString stringWithFormat:@"tab_%d",i]];
+//		[tempTab release];
 	}
 }
 

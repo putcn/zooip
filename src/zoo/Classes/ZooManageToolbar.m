@@ -307,8 +307,6 @@
 	
 	bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"召唤.png" ofType:nil] ] ];
 	[friendStatusIconTextures addObject:bg];
-	
-	[bg release];
 }
 
 -(void) setStatusIcon: (int)index
@@ -329,7 +327,6 @@
 	[statusIcon setTextureRect: rect];
 	
 	[statusIcon setVisible:YES];
-	[bg release];
 }
 -(void)btnFarmExpansionButtionHandler:(Button *)button
 {	
