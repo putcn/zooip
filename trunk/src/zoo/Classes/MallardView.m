@@ -18,12 +18,13 @@
 	if ((self = [super init])) {
 		
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
-		animationTable = [imageProp animationTable:@"_Mallard_1.png" plistName:@"_Mallard_1.plist"];
-		[animationTable addEntriesFromDictionary:[imageProp animationTable:@"_Mallard_2.png" plistName:@"_Mallard_2.plist"]];
+		NSMutableDictionary *tempDic = [imageProp animationTable:@"_Mallard_1.png" plistName:@"_Mallard_1.plist"];
+		[tempDic addEntriesFromDictionary:[imageProp animationTable:@"_Mallard_2.png" plistName:@"_Mallard_2.plist"]];
+		animationTable = tempDic;
 		NSLog(@"------------%@", animationTable);
 		
 		// Add by Hunk on 2010-07-13 for memory leak
-		[imageProp release];
+		//[imageProp release];
 		
 //		//walk animations
 //		CCAnimation* walkUpAnimation = [CCAnimation animationWithName:@"walkUp" delay:0.04f];

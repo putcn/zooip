@@ -19,10 +19,10 @@
 		
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
 		animationTable = [imageProp animationTable:@"_Turkey.png" plistName:@"_Turkey.plist"];
-		NSLog(@"------------%@", animationTable);
+		NSLog(@"turkey------------%@", animationTable);
 		
 		// Add by Hunk on 2010-07-13 for memory leak
-		[imageProp release];
+		//[imageProp release];
 		
 //		//walk animations
 //		CCAnimation* walkUpAnimation = [CCAnimation animationWithName:@"walkUp" delay:0.04f];

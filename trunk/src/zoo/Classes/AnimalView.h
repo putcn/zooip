@@ -17,7 +17,7 @@
 
 @interface AnimalView : CCSprite <CCTargetedTouchDelegate>
 {	
-	NSMutableDictionary *animationTable;
+	NSDictionary *animationTable;
 	NSDictionary *dirctions;
 	NSDictionary *statuses;
 	CCSprite *toolTip;

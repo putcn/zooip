@@ -20,7 +20,7 @@
 		NSLog(@"babyduck------------%@", animationTable);
 		
 		// Add by Hunk on 2010-07-13 for memory leak
-		[imageProp release];	
+		//[imageProp release];	
 	}
 	return self;
 	
