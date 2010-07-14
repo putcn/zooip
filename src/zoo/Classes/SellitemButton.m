@@ -26,6 +26,7 @@
 		[self setTexture: itemImg];
 		[self setTextureRect: rect];
 		[itemImg release];
+		
 		targetCallBack = [target retain];
 		selector = handler;
 		pri = priorityValue;
