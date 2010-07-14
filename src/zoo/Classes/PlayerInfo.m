@@ -163,7 +163,7 @@
 								  setBackground:@"返回.png" 
 									  setTarget:self 
 									setSelector:@selector(btnPlayerOperationButtonHandler:) 
-									setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+									setPriority:50 offsetX:0 offsetY:0 scale:1.0f];
 	nextPageBtn.position = ccp(332,30);
 	[self addChild:nextPageBtn z:3];
 	
@@ -229,7 +229,7 @@
 								  setBackground:@"返回1.png" 
 									  setTarget:self 
 									setSelector:@selector(btnPlayerOperationButtonHandler:) 
-									setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+									setPriority:50 offsetX:0 offsetY:0 scale:1.0f];
 	nextPageBtn.position = ccp(332,30);
 	[self addChild:nextPageBtn z:3];
 }
@@ -242,7 +242,7 @@
 								  setBackground:@"返回.png" 
 									  setTarget:self 
 									setSelector:@selector(btnPlayerOperationButtonHandler:) 
-									setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
+									setPriority:50 offsetX:0 offsetY:0 scale:1.0f];
 	nextPageBtn.position = ccp(332,30);
 	[self addChild:nextPageBtn z:3];
 }
