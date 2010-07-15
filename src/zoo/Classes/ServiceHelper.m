@@ -656,6 +656,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						obj.amount = [[dic objectForKey:@"amount"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"amount"] intValue];
 						
 						[storageAnimals setValue:obj forKey:obj.originalAnimalId];
+						
 					}
 //					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"获取所有购买动物"];
 				}
