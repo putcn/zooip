@@ -93,7 +93,7 @@ typedef enum {
 + (ServiceHelper *)sharedService;
 - (void) restore;
 -(NSString *)getTimeStamp;
-
+- (BOOL)checkNetwork;
 
 -(ASIFormDataRequest *)requestServerForMethod:(ZooNetworkRequestType)methodType WithParameters:(NSDictionary *)parameters AndCallBackScope:(id)callBackDelegate AndSuccessSel:(NSString *)successSelector AndFailedSel:(NSString *)failedSelector;
 @end

@@ -24,7 +24,7 @@
 		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 //		forwardPageBtn.flipX = YES;
-		nextPageBtn.position = ccp(270, -160);
+		nextPageBtn.position = ccp(300, -160);
 		forwardPageBtn.position = ccp(200, -160);
 		[self addChild:nextPageBtn z:8];
 		[self addChild:forwardPageBtn z:8];
@@ -46,6 +46,12 @@
 //		zooAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
 //		[delegate UseTextFieldView];
 		[self UseTextFieldView];
+		
+		NSString* title = [NSString stringWithFormat:@"%d/%d",currentPageNum,totalPage];
+		pageLabel = [CCLabel labelWithString:title fontName:@"Arial" fontSize:20];
+		[pageLabel setColor:ccc3(0, 0, 0)];
+		pageLabel.position = ccp(250,-160);
+		[self addChild:pageLabel z:7];
 		
 	}
 	return self;
@@ -102,6 +108,8 @@
 		
 		currentPageNum = currentPageNum + 1;		
 		[self generatePage];
+		
+		[pageLabel setString:[NSString stringWithFormat:@"%d/%d",currentPageNum,totalPage]];
 	}
 }
 
@@ -114,6 +122,8 @@
 		
 		currentPageNum = currentPageNum - 1;
 		[self generatePage];
+		
+		[pageLabel setString:[NSString stringWithFormat:@"%d/%d",currentPageNum,totalPage]];
 	}
 }
 
@@ -125,8 +135,14 @@
 	NSArray *friendsInfoArray =  [friendInfoDic allKeys];
 	
 	//==================
-	
-	totalPage = friendsInfoArray.count/5 + 1;
+	if(friendsInfoArray.count == 0)
+	{
+		totalPage = 1;
+	}
+	else
+	{
+		totalPage = (friendsInfoArray.count-1)/5 + 1;
+	}
 	
 	int endNumber = currentPageNum * 5;
 	if (endNumber >= friendsInfoArray.count) {

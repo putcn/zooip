@@ -38,6 +38,8 @@
 	NSMutableArray *itemNumArray;
 	NSMutableArray *eggSourceArray;
 	NSArray *eggEnNameArray;
+	
+	CCLabel *pageLabel;
 }
 -(id) initWithTab:(NSString *)tabName setTarget:(id)target;
 -(void) initView;

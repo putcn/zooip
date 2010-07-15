@@ -31,6 +31,8 @@
 	DataModelFriendInfo *dataModelfriend_search;
 	NSString *result;
 	BOOL searchDown;
+	
+	CCLabel *pageLabel;
 }
 -(id) initWithTab:(id)target;
 

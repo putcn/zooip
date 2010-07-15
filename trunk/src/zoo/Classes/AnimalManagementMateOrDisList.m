@@ -41,9 +41,23 @@
 					totalMarriedAnimals ++;
 				}
 			}
-			totalPage = (totalMarriedAnimals - 1) / 8 + 1;
+			if(totalMarriedAnimals == 0)
+			{
+				totalPage = 1;
+			}
+			else 
+			{
+				totalPage = (totalMarriedAnimals - 1) / 8 + 1;
+			}
+			
 			currentPageNum = 1;
 			[self generatePage];
+			
+			NSString* title = [NSString stringWithFormat:@"%d/%d",currentPageNum,totalPage];
+			pageLabel = [CCLabel labelWithString:title fontName:@"Arial" fontSize:50];
+			[pageLabel setColor:ccc3(0, 0, 0)];
+			pageLabel.position = ccp(450,-450);
+			[self addChild:pageLabel z:7];
 		}
 		
 //		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
@@ -93,6 +107,8 @@
 		
 		currentPageNum = currentPageNum + 1;
 		[self generatePage];
+		
+		[pageLabel setString:[NSString stringWithFormat:@"%d/%d",currentPageNum,totalPage]];
 	}
 }
 
@@ -105,6 +121,8 @@
 		
 		currentPageNum = currentPageNum - 1;
 		[self generatePage];
+		
+		[pageLabel setString:[NSString stringWithFormat:@"%d/%d",currentPageNum,totalPage]];
 	}
 }
 

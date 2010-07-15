@@ -74,9 +74,24 @@
 		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
 		itemArray = [itemDic allKeys];
 	}
-	totalPage = itemArray.count/8 + 1;
+	
+	if(itemArray.count == 0)
+	{
+		totalPage = 1;
+	}
+	else 
+	{
+		totalPage = (itemArray.count-1)/8 + 1;
+	}
+
 	currentPageNum = 1;
 	[self generatePage];
+	
+	NSString* title = [NSString stringWithFormat:@"%d/%d",currentPageNum,totalPage];
+	pageLabel = [CCLabel labelWithString:title fontName:@"Arial" fontSize:50];
+	[pageLabel setColor:ccc3(0, 0, 0)];
+	pageLabel.position = ccp(500,-480);
+	[self addChild:pageLabel z:7];
 }
 
 -(void) faultCallback:(NSObject *)value
@@ -94,6 +109,8 @@
 		
 		currentPageNum = currentPageNum + 1;
 		[self generatePage];
+		
+		[pageLabel setString:[NSString stringWithFormat:@"%d/%d",currentPageNum,totalPage]];
 	}
 }
 
@@ -106,6 +123,8 @@
 		
 		currentPageNum = currentPageNum - 1;
 		[self generatePage];
+		
+		[pageLabel setString:[NSString stringWithFormat:@"%d/%d",currentPageNum,totalPage]];
 	}
 }
 
