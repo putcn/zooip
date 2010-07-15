@@ -5,135 +5,148 @@
 	<key>crane_1</key>
 	<dict>
 		<key>maxItems</key><string>12</string>
-		<key>landing_leftUp</key>
+		<key>flying_down</key>
 		<dict>
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
 			<string>0</string>
-			<key>width</key>
-			<string>163</string>
-			<key>height</key>
-			<string>122</string>
-			<key>number</key>
-			<string>4</string>
-		</dict>
-		<key>landing_down</key>
-		<dict>
-			<key>originX</key>
-			<string>0</string>
-			<key>originY</key>
-			<string>122</string>
 			<key>width</key>
 			<string>148</string>
 			<key>height</key>
-			<string>113</string>
+			<string>122</string>
 			<key>number</key>
 			<string>4</string>
 		</dict>
-		<key>landing_up</key>
+		<key>flying_up</key>
 		<dict>
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
-			<string>235</string>
+			<string>122</string>
 			<key>width</key>
-			<string>136</string>
+			<string>135</string>
 			<key>height</key>
-			<string>125</string>
+			<string>103</string>
 			<key>number</key>
 			<string>4</string>
 		</dict>
-		<key>walk_down</key>
+		<key>rest_up</key>
 		<dict>
 			<key>originX</key>
-			<string>544</string>
+			<string>540</string>
 			<key>originY</key>
-			<string>235</string>
+			<string>122</string>
 			<key>width</key>
-			<string>26</string>
-			<key>height</key>
-			<string>101</string>
-			<key>number</key>
-			<string>4</string>
-		</dict>
-		<key>landing_leftDown</key>
-		<dict>
-			<key>originX</key>
-			<string>0</string>
-			<key>originY</key>
-			<string>360</string>
-			<key>width</key>
-			<string>115</string>
-			<key>height</key>
-			<string>133</string>
-			<key>number</key>
-			<string>4</string>
-		</dict>
-		<key>walk_up</key>
-		<dict>
-			<key>originX</key>
-			<string>460</string>
-			<key>originY</key>
-			<string>360</string>
-			<key>width</key>
-			<string>25</string>
-			<key>height</key>
-			<string>101</string>
-			<key>number</key>
-			<string>4</string>
-		</dict>
-		<key>walk_left</key>
-		<dict>
-			<key>originX</key>
-			<string>0</string>
-			<key>originY</key>
-			<string>493</string>
-			<key>width</key>
-			<string>76</string>
+			<string>28</string>
 			<key>height</key>
 			<string>93</string>
 			<key>number</key>
-			<string>5</string>
+			<string>1</string>
 		</dict>
-		<key>walk_leftDown</key>
-		<dict>
-			<key>originX</key>
-			<string>380</string>
-			<key>originY</key>
-			<string>493</string>
-			<key>width</key>
-			<string>65</string>
-			<key>height</key>
-			<string>101</string>
-			<key>number</key>
-			<string>4</string>
-		</dict>
-		<key>landing_left</key>
+		<key>flying_leftUp</key>
 		<dict>
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
-			<string>594</string>
+			<string>225</string>
 			<key>width</key>
-			<string>89</string>
+			<string>120</string>
 			<key>height</key>
-			<string>132</string>
+			<string>122</string>
 			<key>number</key>
 			<string>4</string>
 		</dict>
-		<key>walk_leftUp</key>
+		<key>rest_left</key>
 		<dict>
 			<key>originX</key>
-			<string>356</string>
+			<string>480</string>
 			<key>originY</key>
-			<string>594</string>
+			<string>225</string>
 			<key>width</key>
-			<string>57</string>
+			<string>72</string>
 			<key>height</key>
-			<string>101</string>
+			<string>89</string>
+			<key>number</key>
+			<string>1</string>
+		</dict>
+		<key>rest_down</key>
+		<dict>
+			<key>originX</key>
+			<string>552</string>
+			<key>originY</key>
+			<string>225</string>
+			<key>width</key>
+			<string>28</string>
+			<key>height</key>
+			<string>94</string>
+			<key>number</key>
+			<string>1</string>
+		</dict>
+		<key>flying_leftDown</key>
+		<dict>
+			<key>originX</key>
+			<string>0</string>
+			<key>originY</key>
+			<string>347</string>
+			<key>width</key>
+			<string>114</string>
+			<key>height</key>
+			<string>126</string>
 			<key>number</key>
 			<string>4</string>
+		</dict>
+		<key>pose</key>
+		<dict>
+			<key>originX</key>
+			<string>456</string>
+			<key>originY</key>
+			<string>347</string>
+			<key>width</key>
+			<string>72</string>
+			<key>height</key>
+			<string>89</string>
+			<key>number</key>
+			<string>1</string>
+		</dict>
+		<key>rest_leftUp</key>
+		<dict>
+			<key>originX</key>
+			<string>528</string>
+			<key>originY</key>
+			<string>347</string>
+			<key>width</key>
+			<string>55</string>
+			<key>height</key>
+			<string>94</string>
+			<key>number</key>
+			<string>1</string>
+		</dict>
+		<key>flying_left</key>
+		<dict>
+			<key>originX</key>
+			<string>0</string>
+			<key>originY</key>
+			<string>473</string>
+			<key>width</key>
+			<string>108</string>
+			<key>height</key>
+			<string>136</string>
+			<key>number</key>
+			<string>4</string>
+		</dict>
+		<key>rest_leftDown</key>
+		<dict>
+			<key>originX</key>
+			<string>432</string>
+			<key>originY</key>
+			<string>473</string>
+			<key>width</key>
+			<string>54</string>
+			<key>height</key>
+			<string>86</string>
+			<key>number</key>
+			<string>1</string>
 		</dict>
 	</dict>
 </dict>
