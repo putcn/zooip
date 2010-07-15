@@ -62,6 +62,7 @@
 
 -(void) resultCallback:(NSObject *)value
 {
+	//NSLog(@"%@",value);
 	NSDictionary *itemDic;
 	NSArray *itemArray;
 	if (tabFlag == @"动物") {
