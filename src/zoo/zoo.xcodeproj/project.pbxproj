@@ -615,6 +615,8 @@
 		84BE160211C75ED50065A080 /* FriendList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE15FF11C75ED50065A080 /* FriendList.m */; };
 		84BE160311C75ED50065A080 /* FriendMangePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE160111C75ED50065A080 /* FriendMangePanel.m */; };
 		84DB49B811AF5656005E5E71 /* StorageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB49B711AF5656005E5E71 /* StorageContainer.m */; };
+		B43CDA4211EEE98E00450026 /* _crane_3.plist in Resources */ = {isa = PBXBuildFile; fileRef = B43CDA4011EEE98E00450026 /* _crane_3.plist */; };
+		B43CDA4311EEE98E00450026 /* _crane_3.png in Resources */ = {isa = PBXBuildFile; fileRef = B43CDA4111EEE98E00450026 /* _crane_3.png */; };
 		B4AFB99311E6B85B000E969F /* _babycrane.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4AFB98111E6B85B000E969F /* _babycrane.plist */; };
 		B4AFB99411E6B85B000E969F /* _babycrane.png in Resources */ = {isa = PBXBuildFile; fileRef = B4AFB98211E6B85B000E969F /* _babycrane.png */; };
 		B4AFB99511E6B85B000E969F /* _babyduck.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4AFB98311E6B85B000E969F /* _babyduck.plist */; };
@@ -1807,6 +1809,8 @@
 		84BE160111C75ED50065A080 /* FriendMangePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendMangePanel.m; sourceTree = "<group>"; };
 		84DB49B611AF5656005E5E71 /* StorageContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageContainer.h; sourceTree = "<group>"; };
 		84DB49B711AF5656005E5E71 /* StorageContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageContainer.m; sourceTree = "<group>"; };
+		B43CDA4011EEE98E00450026 /* _crane_3.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _crane_3.plist; sourceTree = "<group>"; };
+		B43CDA4111EEE98E00450026 /* _crane_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _crane_3.png; sourceTree = "<group>"; };
 		B4AFB98111E6B85B000E969F /* _babycrane.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _babycrane.plist; sourceTree = "<group>"; };
 		B4AFB98211E6B85B000E969F /* _babycrane.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _babycrane.png; sourceTree = "<group>"; };
 		B4AFB98311E6B85B000E969F /* _babyduck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _babyduck.plist; sourceTree = "<group>"; };
@@ -3322,6 +3326,8 @@
 		60C18B8411E1A58E00248E87 /* AnimalAnimation */ = {
 			isa = PBXGroup;
 			children = (
+				B43CDA4011EEE98E00450026 /* _crane_3.plist */,
+				B43CDA4111EEE98E00450026 /* _crane_3.png */,
 				B4AFB98111E6B85B000E969F /* _babycrane.plist */,
 				B4AFB98211E6B85B000E969F /* _babycrane.png */,
 				B4AFB98311E6B85B000E969F /* _babyduck.plist */,
@@ -4665,6 +4671,8 @@
 				B4AFB9A211E6B85B000E969F /* _babyswan.png in Resources */,
 				B4AFB9A311E6B85B000E969F /* _babywildgoose.plist in Resources */,
 				B4AFB9A411E6B85B000E969F /* _babywildgoose.png in Resources */,
+				B43CDA4211EEE98E00450026 /* _crane_3.plist in Resources */,
+				B43CDA4311EEE98E00450026 /* _crane_3.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
