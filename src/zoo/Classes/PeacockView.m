@@ -16,9 +16,7 @@
 	if ((self = [super init])) {
 		
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
-		NSMutableDictionary *tempDic = [imageProp animationTable:@"_Peacock_1.png" plistName:@"_Peacock_1.plist"];
-		[tempDic addEntriesFromDictionary:[imageProp animationTable:@"_Peacock_2.png" plistName:@"_Peacock_2.plist"]];
-		animationTable = tempDic;
+		animationTable = [imageProp animationTable:@"_Peacock.png" plistName:@"_Peacock.plist"];
 		
 		NSLog(@"------------%@", animationTable);
 		
