@@ -70,7 +70,14 @@
 	NSDictionary *itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
 	NSArray *itemArray = [itemDic allKeys];
 
-	totalPageOne = (itemArray.count-1)/8+1;
+	if(itemArray.count == 0)
+	{
+		totalPageOne = 1;
+	}
+	else 
+	{
+		totalPageOne = (itemArray.count-1)/8+1;
+	}
 	
 	currentPageNumOne = 1;
 	[self generatePage];
@@ -82,6 +89,12 @@
 	[totalPriceLab setColor:ccc3(0, 0, 0)];
 	[self addChild:totalPriceLab z:7 tag:10];
 	
+	NSString* title = [NSString stringWithFormat:@"%d/%d",currentPageNumOne,totalPageOne];
+	pageLabel = [CCLabel labelWithString:title fontName:@"Arial" fontSize:50];
+	[pageLabel setColor:ccc3(0, 0, 0)];
+	pageLabel.position = ccp(360,-480);
+	[self addChild:pageLabel z:7];
+	
 }
 
 
@@ -91,14 +104,26 @@
 	NSDictionary *itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs;
 	NSArray *itemArray = [itemDic allKeys];
 	
-	totalPageTwo = (itemArray.count-1)/8+1;
-
+	if(itemArray.count == 0)
+	{
+		totalPageTwo = 1;
+	}
+	else 
+	{
+		totalPageTwo = (itemArray.count-1)/8+1;
+	}
+	
 	currentPageNumTwo = 1;
 	[self generatePage];
 	
 	NSString *totalStrPrice = [NSString stringWithFormat:@"当前总计收入 ：%d  金蛋",totalPrice];
 	[totalPriceLab	setString:totalStrPrice];
 	
+	NSString* title = [NSString stringWithFormat:@"%d/%d",currentPageNumTwo,totalPageTwo];
+	pageLabel = [CCLabel labelWithString:title fontName:@"Arial" fontSize:50];
+	[pageLabel setColor:ccc3(0, 0, 0)];
+	pageLabel.position = ccp(360,-480);
+	[self addChild:pageLabel z:7];
 }
 
 
@@ -115,8 +140,8 @@
 	Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:40 offsetX:0 offsetY:0 scale:3.0f];
 	Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:40 offsetX:0 offsetY:0 scale:3.0f];
 	//		forwardPageBtn.flipX = YES;
-	nextPageBtn.position = ccp( 770, -480);
-	forwardPageBtn.position = ccp(200, -480);
+	nextPageBtn.position = ccp( 570, -480);
+	forwardPageBtn.position = ccp(150, -480);
 	
 	[self addChild:nextPageBtn z:7];
 	[self addChild:forwardPageBtn z:7];
@@ -140,6 +165,8 @@
 			
 			currentPageNumOne = currentPageNumOne + 1;
 			[self generatePage];
+			
+			[pageLabel setString:[NSString stringWithFormat:@"%d/%d",currentPageNumOne,totalPageOne]];
 		}
 	}
 	else 
@@ -153,6 +180,8 @@
 			
 			currentPageNumTwo = currentPageNumTwo + 1;
 			[self generatePage];
+			
+			[pageLabel setString:[NSString stringWithFormat:@"%d/%d",currentPageNumTwo,totalPageTwo]];
 		}
 	}
 
@@ -170,6 +199,8 @@
 			
 			currentPageNumOne = currentPageNumOne - 1;
 			[self generatePage];
+			
+			[pageLabel setString:[NSString stringWithFormat:@"%d/%d",currentPageNumOne,totalPageOne]];
 		}
 	}
 	else 
@@ -181,6 +212,8 @@
 			
 			currentPageNumTwo = currentPageNumTwo - 1;
 			[self generatePage];
+			
+			[pageLabel setString:[NSString stringWithFormat:@"%d/%d",currentPageNumTwo,totalPageTwo]];
 		}
 	}
 	

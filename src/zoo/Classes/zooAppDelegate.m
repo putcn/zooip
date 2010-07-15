@@ -11,8 +11,8 @@
 #import "HelloWorldScene.h"
 #import "GameMainScene.h"
 #import "LoginScence.h"
-#import "Reachability.h"
-#import "TextFieldController.h"
+
+
 
 @implementation zooAppDelegate
 
@@ -60,7 +60,7 @@
 
 //	[[CCDirector sharedDirector] runWithScene: [LoginScence scene]];
 	
-	[self checkNetwork];
+	
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -81,23 +81,6 @@
 
 - (void)applicationSignificantTimeChange:(UIApplication *)application {
 	[[CCDirector sharedDirector] setNextDeltaTimeZero:YES];
-}
-
--(BOOL)checkNetwork
-{
-	Reachability *reachability = [Reachability sharedReachability];
-	NetworkStatus connectionStatus = [reachability internetConnectionStatus];
-
-	if( connectionStatus == NotReachable )
-	{
-			NSString *message = @"没有可选网络！";
-			UIAlertView *m_musicAlertView = [[UIAlertView alloc] initWithTitle:@"NetWork" message:message delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil];
-			[m_musicAlertView show];
-			[m_musicAlertView release];
-
-		return FALSE;
-	}
-	return TRUE;
 }
 
 

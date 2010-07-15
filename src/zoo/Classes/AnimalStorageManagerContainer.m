@@ -24,7 +24,7 @@
 		tabDic = [[NSMutableDictionary alloc] initWithCapacity:0];
 		tabContentDic = [[NSMutableDictionary alloc] initWithCapacity:0];
 		
-		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_2.png" ofType:nil] ] ];
+		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_1.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
 		rect.size = bg.contentSize;
 		[self setTexture:bg];
@@ -36,6 +36,10 @@
 		CCSprite* bg_2 = [CCSprite spriteWithFile:@"仓库LOGO.png"];
 		bg_2.position = ccp(80,205);
 		[self addChild:bg_2 z:5 ];
+		
+		CCSprite* bg_3 = [CCSprite spriteWithFile:@"BG_2.png"];
+		bg_3.position = ccp(self.contentSize.width/2,self.contentSize.height/2);
+		[self addChild:bg_3 z:5 ];
 		
 		self.position = ccp(240,160);
 //		self.scale = 300.0f/1024.0f;

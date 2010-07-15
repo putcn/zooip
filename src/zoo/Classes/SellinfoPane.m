@@ -83,25 +83,37 @@
 		
 		
 		NSString *signPrice = [NSString stringWithFormat:@"单个售价 : %d  金蛋",itemPrice];
-		CCLabel *signPriceLbl = [CCLabel labelWithString:signPrice fontName:@"Arial" fontSize:20];
+		CCLabel *signPriceLbl = [CCLabel labelWithString:signPrice fontName:@"Arial" fontSize:18];
 		[signPriceLbl setColor:ccc3(0, 0, 0)];
-		signPriceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 60);
+		signPriceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 50);
 		[self addChild:signPriceLbl z:10];
 		
 		eggTotalNum  = storageEggs.numOfProduct + storageEggs.numOfStolen;
 		NSString *eggTotalNumStr = [NSString stringWithFormat:@" 总  数 :  %d",eggTotalNum];
 		
-		CCLabel *toalEggNumLbl = [CCLabel labelWithString:eggTotalNumStr fontName:@"Arial" fontSize:20];
+		CCLabel *toalEggNumLbl = [CCLabel labelWithString:eggTotalNumStr fontName:@"Arial" fontSize:18];
 		[toalEggNumLbl setColor:ccc3(0, 0, 0)];
-		toalEggNumLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 90);
+		toalEggNumLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 75);
 		[self addChild:toalEggNumLbl z:10];
 		
 		
-		NSString *sumPrice = [NSString stringWithFormat:@"总计收入 : %d  金蛋",itemPrice * eggTotalNum];
-		CCLabel *sumPriceLbl = [CCLabel labelWithString:sumPrice fontName:@"Arial" fontSize:20];
-		[sumPriceLbl setColor:ccc3(0, 0, 0)];
-		sumPriceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 120);
-		[self addChild:sumPriceLbl z:10];
+//		NSString *sumPrice = [NSString stringWithFormat:@"总计收入 : %d  金蛋",itemPrice * eggTotalNum];
+//		CCLabel *sumPriceLbl = [CCLabel labelWithString:sumPrice fontName:@"Arial" fontSize:20];
+//		[sumPriceLbl setColor:ccc3(0, 0, 0)];
+//		sumPriceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 120);
+//		[self addChild:sumPriceLbl z:10];
+		
+		CCLabel *ChooseNumLbl = [CCLabel labelWithString:@"选择个数 : " fontName:@"Arial" fontSize:18];
+		[ChooseNumLbl setColor:ccc3(0, 0, 0)];
+		ChooseNumLbl.position = ccp(self.contentSize.width/2-40, self.contentSize.height - 100);
+		[self addChild:ChooseNumLbl z:10];
+		
+		
+		NSString *ToTalprice = [NSString stringWithFormat:@"总计收入 : %d  金蛋",itemPrice ];
+		priceLbl = [CCLabel labelWithString:ToTalprice fontName:@"Arial" fontSize:18];
+		[priceLbl setColor:ccc3(0, 0, 0)];	
+		priceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 125);
+		[self addChild:priceLbl z:10];
 		
 		Button *confirmBtn = [[Button alloc] initWithLabel:@"出售" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(sellEggItem:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
 		Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancel:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
@@ -117,9 +129,11 @@
 //		[cancelBtn release];
 		
 		//数目选择孔件
-//		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0];
-//		scalerPane.position = ccp(self.contentSize.width/2, self.contentSize.height - 80);
-//		[self addChild:scalerPane z:5];
+		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0 setPathname:@"加减显示器.png" setlength:0];
+		scalerPane.position = ccp(self.contentSize.width/2-20, self.contentSize.height - 150);
+		[self addChild:scalerPane z:5];
+
+		
 	}
 	
 	if (itemType == @"受精蛋") {
@@ -197,8 +211,6 @@
 	}
 	[dic release];
 	
-	
-	
 
 	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:35];
 	transBackground.scale = 5.0f;
@@ -221,8 +233,7 @@
 	[itemImg release];
 	
 	priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:20];
-	[priceLbl setColor:ccc3(255, 0, 255)];
-	
+	[priceLbl setColor:ccc3(255, 0, 255)];	
 	item.position = ccp(item.contentSize.width/2 + 150, self.contentSize.height  - item.contentSize.height /2 - 150);
 	priceLbl.position = ccp(item.position.x + 20 , 200);
 //	priceLbl.scale = 1.5f;
@@ -235,7 +246,7 @@
 
 -(void) updatePrice:(NSDictionary *)values
 {
-	
+	NSLog(@"%d",itemPrice);
 	count = [[values objectForKey:@"count"] intValue];
 	[priceLbl setString:[NSString stringWithFormat:@"总计收入 :  %d  金蛋", count * itemPrice]];
 	 

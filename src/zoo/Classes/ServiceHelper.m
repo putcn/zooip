@@ -28,6 +28,7 @@
 #import "DataModelStorageAnimal.h"
 #import "DataModelStorageAuctionAnimal.h"
 #import "FeedbackDialog.h"
+#import "Reachability.h"
 
 @implementation ServiceHelper
 
@@ -450,7 +451,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 		{
 			if (response == nil)
 			{
-//				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何好友信息"];
+				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无任何好友信息"];
 			}
 			else
 			{
@@ -961,10 +962,12 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 							   WithParameters:(NSDictionary *)parameters 
 							 AndCallBackScope:(id)callBackDelegate 
 								AndSuccessSel:(NSString *)successSelector
-								 AndFailedSel:(NSString *)failedSelector{
+								 AndFailedSel:(NSString *)failedSelector
+{
+	[self checkNetwork];
 	
-	zooAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
-	[delegate checkNetwork];
+//	zooAppDelegate *delegate = [[UIApplication sharedApplication] delegate];
+//	[delegate checkNetwork];
 	
 	NSDictionary *tempDic = [NSDictionary dictionaryWithObjectsAndKeys:callBackDelegate, @"delegate", successSelector, @"onsuccess", failedSelector, @"onfailed", nil];
 	[tempDic retain];
@@ -1256,6 +1259,24 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 	
 	return request;
 }
+
+-(BOOL)checkNetwork
+{
+	Reachability *reachability = [Reachability sharedReachability];
+	NetworkStatus connectionStatus = [reachability internetConnectionStatus];
+	
+	if( connectionStatus == NotReachable )
+	{
+		NSString *message = @"没有可选网络！";
+		UIAlertView *m_musicAlertView = [[UIAlertView alloc] initWithTitle:@"NetWork" message:message delegate:self cancelButtonTitle:@"YES" otherButtonTitles:nil];
+		[m_musicAlertView show];
+		[m_musicAlertView release];
+		
+		return FALSE;
+	}
+	return TRUE;
+}
+
 
 // Add by Hunk on 2010-06-29
 -(void)dealloc

@@ -22,6 +22,8 @@
 	NSString *tabFlag;
 	id parentTarget;
 	int totalMarriedAnimals;
+	
+	CCLabel *pageLabel;
 }
 -(id) initWithTab:(NSString *)tabName setTarget:(id)target;
 

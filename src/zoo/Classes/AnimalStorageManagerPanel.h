@@ -23,6 +23,8 @@
 	int currentNum;
 	NSString *tabFlag;
 	id parentTarget;
+	
+	CCLabel *pageLabel;
 }
 -(id) initWithTab:(NSString *)tabName setTarget:(id)target;
 

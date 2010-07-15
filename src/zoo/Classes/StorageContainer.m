@@ -100,7 +100,7 @@
 	}
 	
 	Button *sellAllBtn = [[Button alloc] initWithLabel:@"全部卖出" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:self setSelector:@selector(sellAllEggsHandler:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
-	sellAllBtn.position = ccp(self.contentSize.width/2 , 27);
+	sellAllBtn.position = ccp(self.contentSize.width/2 + 100 , 27);
 	[self addChild:sellAllBtn z:7];
 //	[sellAllBtn release];
 	// Add by Hunk on 2010-06-24 for memory leak
