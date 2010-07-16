@@ -26,7 +26,7 @@ static ImgInitUtil *_sharedImgInitUtil;
 }
 -(CCAnimation *)getAnimate:(NSString *)fileName setOriginX:(float)originx setOriginY:(float)originy setWidth:(float)w setHeight:(float)h setNumber:(NSInteger)number setMaxOneline:(NSInteger)max
 {
-	CCAnimation *animation = [CCAnimation animationWithName:@"animal" delay:0.2f];
+	CCAnimation *animation = [CCAnimation animationWithName:@"animal" delay:0.1f];
 	//CCSpriteSheet *image = [CCSpriteSheet spriteSheetWithFile:fileName];
 	CCSpriteSheet *image = [[ImageResources sharedImageResources] getImageResouce:fileName];
 	NSInteger containOneLine = max;

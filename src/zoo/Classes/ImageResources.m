@@ -131,6 +131,12 @@ static ImageResources *_resource = nil;
 		}
 		return craneImg_2;
 	}
+	else if ([imagePath isEqualToString:@"_crane_3.png"]){
+		if (craneImg_3 == nil) {
+			craneImg_3= [CCSpriteSheet spriteSheetWithFile:imagePath];
+		}
+		return craneImg_3;
+	}
 	else if ([imagePath isEqualToString:@"_dog.png"]){
 		if (dogImg == nil) {
 			dogImg = [CCSpriteSheet spriteSheetWithFile:imagePath];
