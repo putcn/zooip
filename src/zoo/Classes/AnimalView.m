@@ -92,7 +92,6 @@
 		[self stopAllActions];
 		[self runAction:[animationTable objectForKey:showKey]];
 	}
-
 }
 
 - (CGRect)rect

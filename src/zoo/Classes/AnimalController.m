@@ -7,7 +7,7 @@
 //
 
 #import "AnimalController.h"
-
+#import "ImageResources.h"
 
 @implementation AnimalController
 
@@ -138,6 +138,7 @@ static AnimalController *_sharedAnimalController = nil;
 		[animal removeAnimalView];
 		[animal release];
 		[animals removeObjectForKey:clearAnimal];
+		[[ImageResources sharedImageResources] restore];
 	}
 }
 

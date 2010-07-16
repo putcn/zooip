@@ -13,7 +13,6 @@
 #import "FeedbackDialog.h"
 #import "GetAllBirdFarmAnimalInfoController.h"
 #import "AnimalController.h"
-
 //动物面板容器
 @implementation AnimalStorageManagerContainer
 @synthesize title;
@@ -173,10 +172,6 @@
 		
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",adultBirdStorageId,@"adultBirdStorageId",nil];
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-		BaseServerController *getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
-		[getAllBirdFarmAnimalInfoController execute:nil];
-		[[AnimalController sharedAnimalController] clearAnimal];
-		[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
 	}
 }
 
@@ -193,6 +188,7 @@
 {
 	NSDictionary* dic = (NSDictionary*)value;
  	NSInteger code = [[dic objectForKey:@"code"] intValue];
+	BaseServerController *getAllBirdFarmAnimalInfoController;
 	if(currentTagFlag == @"拍来动物")
 	{
 		switch (code) {
@@ -200,6 +196,10 @@
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"找不到拍卖所得动物"];
 				break;
 			case 1:
+				getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
+				[getAllBirdFarmAnimalInfoController execute:nil];
+				[[AnimalController sharedAnimalController] clearAnimal];
+				[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"添加动物到饲养场成功"];
 				break;
 			case 2:
@@ -217,6 +217,10 @@
 	{
 		switch (code) {
 			case 1:
+				getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
+				[getAllBirdFarmAnimalInfoController execute:nil];
+				[[AnimalController sharedAnimalController] clearAnimal];
+				[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"添加动物到饲养场成功"];
 				break;
 			case 2:
