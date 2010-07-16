@@ -19,7 +19,8 @@
 		
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
 		NSMutableDictionary * tempDic = [imageProp animationTable:@"_crane_1.png" plistName:@"_crane_1.plist"];
-		[tempDic addEntriesFromDictionary:[imageProp animationTable:@"_crane_2.png" plistName:@"_crane_2.plist"]];
+		[tempDic addEntriesFromDictionary:[imageProp animationTable:@"_crane_2.png" plistName:@"_crane_2.plist"]];		
+		[tempDic addEntriesFromDictionary:[imageProp animationTable:@"_crane_3.png" plistName:@"_crane_3.plist"]];
 		animationTable = tempDic;
 		NSLog(@"------------%@", animationTable);
 		

@@ -27,6 +27,7 @@
 	CCSpriteSheet *chinemyImg;
 	CCSpriteSheet *craneImg_1;
 	CCSpriteSheet *craneImg_2;
+	CCSpriteSheet *craneImg_3;
 	CCSpriteSheet *dogImg;
 	CCSpriteSheet *duckImg;
 	CCSpriteSheet *gooseImg;
