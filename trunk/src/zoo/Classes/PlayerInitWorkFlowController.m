@@ -205,7 +205,7 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 	[[GameMainScene sharedGameMainScene] updateUserInfo];
 	[[EggController sharedEggController] addEggs:[[DataEnvironment sharedDataEnvironment].eggs allKeys]];
 	[[ItemController sharedItemController] addItem:@"bowls"];
-	[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
+	//[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
 	if ([DataEnvironment sharedDataEnvironment].playerFarmerInfo.haveTurtle) {
 		[[ItemController sharedItemController] addItem:@"chinemy"];
 	}

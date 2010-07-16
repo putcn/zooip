@@ -27,9 +27,14 @@
 -(void) execute:(NSObject *)value
 {
 	acount = 0;
-	for (NSString *aniId in [DataEnvironment sharedDataEnvironment].animalIDs) {
-		NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:aniId, @"animalId" , nil];
-		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetLayEggsRemain WithParameters:param AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+	if ([[DataEnvironment sharedDataEnvironment].animalIDs count] == 0) {
+		[super resultCallback:nil];
+	}
+	else {
+		for (NSString *aniId in [DataEnvironment sharedDataEnvironment].animalIDs) {
+			NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:aniId, @"animalId" , nil];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetLayEggsRemain WithParameters:param AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		}		
 	}
 }
 

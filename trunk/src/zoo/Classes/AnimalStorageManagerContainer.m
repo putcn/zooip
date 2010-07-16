@@ -12,6 +12,7 @@
 #import "AnimalStorageManagerPanel.h"
 #import "FeedbackDialog.h"
 #import "GetAllBirdFarmAnimalInfoController.h"
+#import "DataEnvironment.h"
 #import "AnimalController.h"
 //动物面板容器
 @implementation AnimalStorageManagerContainer
@@ -196,10 +197,13 @@
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"找不到拍卖所得动物"];
 				break;
 			case 1:
-				getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
-				[getAllBirdFarmAnimalInfoController execute:nil];
 				[[AnimalController sharedAnimalController] clearAnimal];
-				[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
+				[[DataEnvironment sharedDataEnvironment].animals removeAllObjects];
+				[[DataEnvironment sharedDataEnvironment].animalIDs removeAllObjects];
+				getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
+				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+										[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+				[getAllBirdFarmAnimalInfoController execute:params];
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"添加动物到饲养场成功"];
 				break;
 			case 2:
@@ -217,10 +221,13 @@
 	{
 		switch (code) {
 			case 1:
-				getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
-				[getAllBirdFarmAnimalInfoController execute:nil];
 				[[AnimalController sharedAnimalController] clearAnimal];
-				[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
+				[[DataEnvironment sharedDataEnvironment].animals removeAllObjects];
+				[[DataEnvironment sharedDataEnvironment].animalIDs removeAllObjects];
+				getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
+				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+										[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+				[getAllBirdFarmAnimalInfoController execute:params];
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"添加动物到饲养场成功"];
 				break;
 			case 2:
