@@ -287,6 +287,7 @@ static ImageResources *_resource = nil;
 	chinemyImg = nil;
 	craneImg_1 = nil;
 	craneImg_2 = nil;
+	craneImg_3 = nil;
 	dogImg = nil;
 	duckImg = nil;
 	gooseImg = nil;
