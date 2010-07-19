@@ -17,7 +17,6 @@
 	AnimalView *view;
 	DataModelAnimal *animalData;
 	CGFloat speed;
-	
 	int currDirection;
 	int currStatus;
 	

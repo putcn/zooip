@@ -124,8 +124,9 @@
 {
 	//TODO: 判断是否已经进入水中或登陆，进入水中或登陆时，切换状态...
 	if (view.position.y > 400.0f) {
-		[view setScale:(400/view.position.y)];
+		[view setScale:(400.0f/view.position.y)];
 	}
+
 	if (isGotoEat == YES)
 	{
 		CGPoint point = view.position;
@@ -607,6 +608,9 @@
 		{
 			speed = animalData.walkToEatSpeed / 45.0f;
 		}
+	}
+	if (view.position.y > 400.0f) {
+		speed = (300.0f/view.position.y)*speed;
 	}
 }
 

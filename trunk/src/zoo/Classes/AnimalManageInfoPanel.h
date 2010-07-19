@@ -23,7 +23,7 @@
 
 
 -(void) popUp:(NSString*) msg;
--(void) closeDialogHandler;
+-(void) closeDialogHandler:(Button*)btn;
 -(void)addTitle:(NSString *) title;
 -(id) initDialog:(NSString*) filePath setTarget:(id) target setSelector:(SEL) handler withTitle:(NSString *)infoTitle withContent:(NSString *)infoContent;
 

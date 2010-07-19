@@ -66,7 +66,7 @@ static NSString* kLoginURL = @"http://login.api.renren.com/connect/touch_login.d
 // NSObject
 
 - (id)initWithSession:(Session*)session {
-  if (self = [super initWithSession:session]) {
+  if ((self = [super initWithSession:session])) {
     _getSessionRequest = nil;
   }
   return self;

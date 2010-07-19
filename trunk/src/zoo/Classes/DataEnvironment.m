@@ -69,7 +69,7 @@ storageAuctionAnimals;
 
 	//	playerUid = @"248951837"; renyingying
 		
-		playerUid = @"248951837";
+		playerUid = @"248726533";
 		// New test UID
 //		playerUid = @"248951837";
 //		playerUid = @"248951866";
