@@ -36,7 +36,7 @@ static NSString* kFeedURL = @"http://www.connect.renren.com/feed/iphone/iphonePr
 // NSObject
 
 - (id)initWithSession:(Session*)session {
-  if (self = [super initWithSession:session]) {
+  if ((self = [super initWithSession:session])) {
     _templateId = 0;
     _templateData = nil;
     _bodyGeneral = nil;

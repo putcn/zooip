@@ -29,7 +29,7 @@
 		CGSize s = [self.texture contentSize];
 		
 		lblMessage = [CCLabel labelWithString:@"操作已成功!" dimensions:CGSizeMake(s.width - 50, s.height - 70)
-								  alignment:UITextAlignmentCenter fontName:@"Microsoft YaHei" fontSize:12];
+								  alignment:UITextAlignmentCenter fontName:@"Arial" fontSize:12];
 		lblMessage.position = ccp( s.width / 2 , (s.height / 2) - 10 );
 		lblMessage.color = ccc3(0, 0, 0);
 		[self addChild:lblMessage];
