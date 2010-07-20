@@ -257,9 +257,9 @@
 	
 	[tabEnable  release];
 	[tabDisable release];
-	[itemInfoPane release];
+//	[itemInfoPane release];
 	
-	[currentTagFlag  release];	
+//	[currentTagFlag  release];	
 	[super dealloc];
 }
 

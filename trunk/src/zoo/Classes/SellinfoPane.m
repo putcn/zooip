@@ -260,7 +260,6 @@
 	[itemId      release];
 	[itemType    release];
 	[itemBuyType release];
-	[priceLbl    release];
 	[super dealloc];
 }
 

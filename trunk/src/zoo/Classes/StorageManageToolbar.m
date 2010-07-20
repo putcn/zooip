@@ -95,10 +95,7 @@
 
 // Add by Hunk on 2010-06-29
 -(void)dealloc
-{
-	[manageContainer release];
-	[storageContainer release];
-	
+{	
 	[super dealloc];
 }
 

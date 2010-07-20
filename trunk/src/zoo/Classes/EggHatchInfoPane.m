@@ -34,9 +34,7 @@
 		
 		[self addTitle];
 		[self addHatchInfo];
-		[self addButton];
-
-		
+		[self addButton];	
 	}
 	return self;
 }
@@ -230,21 +228,7 @@
 
 
 -(void) dealloc
-{
-	
-	[title             release];
-	[lab_notice        release];
-	[FARMER_ID         release];
-	[FARM_ID           release];
-	[STORAGEZY_ID	   release];
-	[infoStr           release];
-	[payType           release];
-	[lab_hatchEggInfo1 release];
-	[lab_hatchEggInfo2 release];
-	[lab_hatchEggInfo3 release];
-	[lab_notice        release];
-	[myTarget          release];
-	
+{	
 	[super dealloc];
 }
 

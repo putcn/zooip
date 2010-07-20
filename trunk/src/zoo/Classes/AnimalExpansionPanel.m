@@ -176,6 +176,7 @@ paramsDict;
 	[itemBuyType release];
 	[paramsDict release];
 	
+	/*
 	[level release];
 	[maxNumOfBirds release];
 	[goldenEggNum release];
@@ -185,6 +186,7 @@ paramsDict;
 	[requireLevelLbl release];
 	[requireGoldenEggLbl release];
 	[thisTarget release];
+	 */
 	[super dealloc];
 }
 

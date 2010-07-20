@@ -50,8 +50,8 @@
 
 - (void) dealloc
 {
-	[lblMessage release];
-	[self.texture release];
+//	[lblMessage release];
+//	[self.texture release];
 	[super dealloc];
 }
 

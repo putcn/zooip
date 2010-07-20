@@ -213,19 +213,10 @@
 -(void) dealloc
 {
 	// Add by Hunk on 2010-06-29
-	[statuses release];
 	[toolTip release];
-	[animalId release];
-	[operationViewController release];
-	[uiController release];
-	[cureAnimalController release];
-	[feedPowerFoodsController release];
-	[feedProductYieldFoodController release];
-	
+	[animalId release];	
 	[self removeAllChildrenWithCleanup:YES];
-//	[animationTable release];
-	[dirctions release];
-//	[animationTable release]; // Delete by Hunk on 2010-06-29
+
 	[super dealloc];
 }
 

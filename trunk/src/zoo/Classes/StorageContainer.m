@@ -10,6 +10,7 @@
 #import "SellitemButton.h"
 #import "StorageContainer.h"
 #import "FeedbackDialog.h"
+#import "GameMainScene.h"
 
 
 @implementation StorageContainer
@@ -309,6 +310,21 @@
 }
 
 
+// Add by Hunk on 2010-07-14 for updating farm information
+-(void)updateFarmInfoExeCute:(NSDictionary *)value
+{
+	NSDictionary *param = (NSDictionary *)value;
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmInfo WithParameters:param AndCallBackScope:self AndSuccessSel:@"updateFarmInfoResultCallback:" AndFailedSel:@"faultCallback:"];
+}
+
+// Add by Hunk on 2010-07-14 for updating farm information
+-(void)updateFarmInfoResultCallback:(NSObject*)value
+{
+	[[GameMainScene sharedGameMainScene] updateUserInfo];
+}
+
+
+
 //sell all eggs
 -(void) sellAllEggsHandler:(Button *)button
 {
@@ -359,6 +375,13 @@
 		[self updadaPane];
 		
 		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功卖出所有蛋!"];
+		
+		
+		// Add by Hunk on 2010-07-14 for updating farm information
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+		[self updateFarmInfoExeCute:params];
+		
 	}
 }
 
@@ -389,17 +412,17 @@
 	[tabContentDic    release];
 	[tabEnable        release];
 	[tabDisable       release];
-	[itemInfoPane     release];
+//	[itemInfoPane     release];
 	[eggHatchInfoPane release];
-	[buttonContainer  release];
+//	[buttonContainer  release];
 	[onePane          release];
 	[twoPane          release];
-	[curr_itemId      release];
-	[curr_itemType    release];
-	[testType         release];
-	[isEggEmpty       release];
-	[num_paneNum      release];
-	[curr_target      release];
+//	[curr_itemId      release];
+//	[curr_itemType    release];
+//	[testType         release];
+//	[isEggEmpty       release];
+//	[num_paneNum      release];
+//	[curr_target      release];
 	[super dealloc];
 }
 

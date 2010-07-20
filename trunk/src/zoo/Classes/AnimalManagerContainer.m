@@ -198,10 +198,10 @@
 	[tabDic release];
 	[tabContentDic release];
 	
-	[tabEnable release];
-	[tabDisable release];
-	[animalToMateInfoPanel release];
-	[animalToMateOrDisapart release];
+//	[tabEnable release];
+//	[tabDisable release];
+//	[animalToMateInfoPanel release];
+//	[animalToMateOrDisapart release];
 
 	[managementType release];
 	

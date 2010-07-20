@@ -44,7 +44,7 @@
 -(void) dealloc
 {
 	// Add by Hunk on 2010-06-29
-	[curStep release];
+	//[curStep release];
 	
 	[stepControllers removeAllObjects];
 	[stepControllers release];

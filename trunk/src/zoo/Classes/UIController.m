@@ -70,8 +70,7 @@ static UIController *_sharedUIController = nil;
 // Add by Hunk on 2010-06-29
 -(void)dealloc
 {
-	[selectFoodId release];
-	
+//	[selectFoodId release];	
 	[super dealloc];
 }
 

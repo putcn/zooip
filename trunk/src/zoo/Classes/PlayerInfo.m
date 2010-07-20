@@ -104,29 +104,29 @@
 	DataModelFarmInfo *friendFarmInfo = (DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].friendFarmInfo;
 	animalNum = [NSString stringWithFormat:@"%d",[[DataEnvironment sharedDataEnvironment].animalIDs count]];
 	if ([[ModelLocator sharedModelLocator] getIsSelfZoo]) {
-		userName = farmerInfo.userName;
-		userImgNow = farmerInfo.userImg;
-		currentExperience = [NSString stringWithFormat:@"%d",farmInfo.farm_currentExp];
-		nextLevelExperience = [NSString stringWithFormat:@"%d", farmInfo.farm_nextLevelExp];
-		level = [NSString stringWithFormat:@"%d", farmInfo.farm_level];
-		maxNumOfBirds = [NSString stringWithFormat:@"%d", farmInfo.farm_maxNumOfBirds];
-		topMaxNumOfBirds = [NSString stringWithFormat:@"%d", farmInfo.farm_topMaxNumOfBirds];
-		antsNum = [NSString stringWithFormat:@"%d", farmerInfo.antsCurrency];
-		goldenEggNum = [NSString stringWithFormat:@"%d", farmerInfo.goldenEgg];
+		userName = [farmerInfo.userName retain];
+		userImgNow = [farmerInfo.userImg retain];
+		currentExperience = [[NSString stringWithFormat:@"%d",farmInfo.farm_currentExp] retain];
+		nextLevelExperience = [[NSString stringWithFormat:@"%d", farmInfo.farm_nextLevelExp] retain];
+		level = [[NSString stringWithFormat:@"%d", farmInfo.farm_level] retain];
+		maxNumOfBirds = [[NSString stringWithFormat:@"%d", farmInfo.farm_maxNumOfBirds] retain];
+		topMaxNumOfBirds = [[NSString stringWithFormat:@"%d", farmInfo.farm_topMaxNumOfBirds] retain];
+		antsNum = [[NSString stringWithFormat:@"%d", farmerInfo.antsCurrency] retain];
+		goldenEggNum = [[NSString stringWithFormat:@"%d", farmerInfo.goldenEgg] retain];
 		
 		float nNowExperience = currentExperience.floatValue;
 		float nAllExperience = nextLevelExperience.floatValue;
 		nColorBar = nNowExperience/nAllExperience*120.0;
 	}else {
-		userName = friendInfo.userName;
-		userImgNow = friendInfo.userImg;
-		currentExperience = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_currentExp];
-		nextLevelExperience = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_nextLevelExp];
-		level = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_level];
-		maxNumOfBirds = [NSString stringWithFormat:@"%d", friendFarmInfo.farm_maxNumOfBirds];
-		topMaxNumOfBirds =[NSString stringWithFormat:@"%d", friendFarmInfo.farm_topMaxNumOfBirds];
-		antsNum = [NSString stringWithFormat:@"%d", friendInfo.antsCurrency];
-		goldenEggNum = [NSString stringWithFormat:@"%d", friendInfo.goldenEgg];
+		userName = [friendInfo.userName retain];
+		userImgNow = [friendInfo.userImg retain];
+		currentExperience = [[NSString stringWithFormat:@"%d", friendFarmInfo.farm_currentExp] retain];
+		nextLevelExperience = [[NSString stringWithFormat:@"%d", friendFarmInfo.farm_nextLevelExp] retain];
+		level = [[NSString stringWithFormat:@"%d", friendFarmInfo.farm_level] retain];
+		maxNumOfBirds = [[NSString stringWithFormat:@"%d", friendFarmInfo.farm_maxNumOfBirds] retain];
+		topMaxNumOfBirds = [[NSString stringWithFormat:@"%d", friendFarmInfo.farm_topMaxNumOfBirds] retain];
+		antsNum = [[NSString stringWithFormat:@"%d", friendInfo.antsCurrency] retain];
+		goldenEggNum = [[NSString stringWithFormat:@"%d", friendInfo.goldenEgg] retain];
 		
 		float nNowExperience = currentExperience.floatValue;
 		float nAllExperience = nextLevelExperience.floatValue;
@@ -262,23 +262,12 @@
 	[animalNum release];
 	[antsNum release];
 	[goldenEggNum release];
-	[userNameLbl release];
-	[experienceLbl release];
 	[experienceBar release];
-	[levelLbl release];
 	[capacity release];
-	[antsNumLbl release];
-	[goldenEggNumLbl release];
-	[animalNumLbl release];
 	[userImgSprite release];
 	
 	// For retain
-	[userNameLbl release];
 	[experienceBar release];
-	[levelLbl release];
-	[animalNumLbl release];
-	[antsNumLbl release];
-	[goldenEggNumLbl release];
 	[capacity release];
 
 

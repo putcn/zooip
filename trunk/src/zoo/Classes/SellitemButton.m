@@ -124,7 +124,7 @@
 	[itemId         release];
 	[itemType       release];
 	[item           release];
-	[itemImg        release];
+//	[itemImg        release];
 	[targetCallBack release];
 	[super dealloc];
 }

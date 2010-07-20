@@ -87,13 +87,13 @@
 
 -(void)dealloc
 {
-	[playerStatusIconTextures release];
+//	[playerStatusIconTextures release];
 	
 	[playerOperationButtons release];
 	
-	[playerButtonContainer  release];
+//	[playerButtonContainer  release];
 	
-	[animalManagerContainer release];
+//	[animalManagerContainer release];
 	
 	[super dealloc];
 }

@@ -219,7 +219,7 @@ NSInteger compareFriendArrayExpSelector(id f1, id f2, void *context)
 	// Add by Hunk on 2010-06-29
 //	[friendListArray release];
 //	[levelEntryTextField removeFromSuperview];
-	[parentTarget release];
+//	[parentTarget release];
 	[super dealloc];
 }
 

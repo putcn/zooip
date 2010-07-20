@@ -187,9 +187,7 @@
 	
 	[statusIcon release];
 	
-	[animalManagerContainer release];
-	
-	[parentTarget release];
+//	[parentTarget release];
 	
 	[super dealloc];
 }
