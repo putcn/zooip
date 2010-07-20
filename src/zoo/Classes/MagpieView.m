@@ -20,7 +20,7 @@
 		[tempDic addEntriesFromDictionary:[imageProp animationTable:@"_Magpie_2.png" plistName:@"_Magpie_2.plist"]];
 		animationTable = tempDic;
 		
-		NSLog(@"------------%@", animationTable);
+		NSLog(@"magpie------------%@", animationTable);
 		
 		// Add by Hunk on 2010-07-13 for memory leak
 		//[imageProp release];

@@ -138,8 +138,9 @@ static AnimalController *_sharedAnimalController = nil;
 		[animal removeAnimalView];
 		[animal release];
 		[animals removeObjectForKey:clearAnimal];
-		[[ImageResources sharedImageResources] restore];
 	}
+	[[ImageResources sharedImageResources] restore];
+
 }
 
 -(void) gotoEat
