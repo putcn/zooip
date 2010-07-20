@@ -62,14 +62,14 @@ storageAuctionAnimals;
 		[self restore];
 		
 		// Player UID
-//		playerUid = @"248726533";//黄老邪
+		playerUid = @"248726533";//黄老邪
 //		playerUid = @"248725655";
 //		playerUid = @"46565162";// Hunk
 //		playerUid = @"160412891";//蒋紫薇
 
 	//	playerUid = @"248951837"; renyingying
 		
-		playerUid = @"248726533";
+	//	playerUid = @"248726533";
 		// New test UID
 //		playerUid = @"248951837";
 //		playerUid = @"248951866";

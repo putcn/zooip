@@ -144,8 +144,8 @@
 
 -(void)dealloc
 {
-	[tabFlag release];
-	[parentTarget release];
+	//[tabFlag release];
+	//[parentTarget release];
 	[super dealloc];
 }
 

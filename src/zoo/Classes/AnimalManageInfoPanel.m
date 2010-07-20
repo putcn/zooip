@@ -64,8 +64,8 @@
 	// Add by Hunk on 2010-06-29
 	[targetCallBack release];
 	
-	[lblMessage release];
-	[self.texture release];
+//	[lblMessage release];
+//	[self.texture release];
 	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }

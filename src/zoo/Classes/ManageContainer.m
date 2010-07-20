@@ -288,9 +288,9 @@
 	
 	
 	//Alex add the release methods.
-	[curr_itemId release];
-	[curr_itemType release];
-	[playerInfo release];
+//	[curr_itemId release];
+//	[curr_itemType release];
+//	[playerInfo release];
 	
 	[super dealloc];
 }

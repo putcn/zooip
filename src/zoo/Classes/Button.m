@@ -46,8 +46,6 @@
 
 -(void) dealloc
 {
-	[label release];
-	[text release];
 	[targetCallBack release];
 	[super dealloc];
 }

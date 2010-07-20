@@ -420,10 +420,10 @@ infoMessagePanelTest;
 
 	[priceLbl release];
 
-	[leftAnimalID release];
-	[rightAnimalID release];
-	[animalID release];
-	[toMateRateChoose release];
+//	[leftAnimalID release];
+//	[rightAnimalID release];
+//	[animalID release];
+//	[toMateRateChoose release];
 	[infoMessagePanelTest release];
 	[super dealloc];
 }

@@ -25,8 +25,12 @@ static ImageResources *_resource = nil;
 
 -(id)init
 {
-	if (_resource != nil) {}
-	else if((self = [super init])){
+	if (_resource != nil) 
+	{
+	
+	}
+	else if((self = [super init]))
+	{
 		_resource = self;
 		[self restore];
 	}

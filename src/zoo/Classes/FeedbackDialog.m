@@ -94,7 +94,6 @@ static FeedbackDialog *_feedbackDialog;
 -(void)dealloc
 {
 	// Add by Hunk on 2010-06-29
-	[msgLbl release];
 	[actionSequence release];
 	
 	[msgQuence release];

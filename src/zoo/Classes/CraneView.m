@@ -18,9 +18,12 @@
 	if ((self = [super init])) {
 		
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
-		NSMutableDictionary * tempDic = [imageProp animationTable:@"_crane_1.png" plistName:@"_crane_1.plist"];
-		[tempDic addEntriesFromDictionary:[imageProp animationTable:@"_crane_2.png" plistName:@"_crane_2.plist"]];		
+		NSMutableDictionary * tempDic = [imageProp animationTable:@"_Crane_1.png" plistName:@"_Crane_1.plist"];
+		[tempDic addEntriesFromDictionary:[imageProp animationTable:@"_Crane_2.png" plistName:@"_Crane_2.plist"]];
+		
+		// Add by Hunk on 2010-07-15 for new image&plist files
 		[tempDic addEntriesFromDictionary:[imageProp animationTable:@"_crane_3.png" plistName:@"_crane_3.plist"]];
+
 		animationTable = tempDic;
 		NSLog(@"------------%@", animationTable);
 		

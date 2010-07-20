@@ -368,12 +368,7 @@
 	
 	[self removeAllChildrenWithCleanup:YES];
 	
-	[tabFlag        release];
-	[totalPriceLab  release];
-	[totalPriceLab  release];
-	[eggSourceArray release];
 	[itemNumArray   release];
-	[parentTarget   release];
 	[super dealloc];
 	 
 }

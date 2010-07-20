@@ -207,13 +207,6 @@
 
 -(void)dealloc
 {
-	[nameLbl release];
-	[timeLbl release];
-//	[processorBar release];
-//	[processorFrame release];
-	[animalId release];
-	
-	
 	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
 }

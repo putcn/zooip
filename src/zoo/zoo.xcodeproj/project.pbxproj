@@ -4997,7 +4997,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5016,6 +5016,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "14E08E4E-62D7-4201-ADCB-AE3F694D9F7C";
 				SDKROOT = iphoneos4.0;
 				WARNING_CFLAGS = "-Wall";
 			};

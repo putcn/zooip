@@ -137,7 +137,7 @@
 	[itemType release];
 	[storageID release];
 	
-	[genDer release];
+//	[genDer release];
 	[targetCallBack release];
 	[super dealloc];
 }

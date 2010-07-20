@@ -52,6 +52,8 @@
 
 -(void)addTitle;
 -(void)addTab:(NSArray *)tabArray;
+
+-(void)updadaPane;
 @end
 
 

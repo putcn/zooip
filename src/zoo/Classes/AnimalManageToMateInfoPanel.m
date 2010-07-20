@@ -505,12 +505,13 @@ buttonsOfList;
 	[itemBuyType release];
 	[priceLbl release];
 
-	[parentTarget release];
+//	[parentTarget release];
 	[leftAnimalID release];
 	[rightAnimalID release];
 	[animalID release];
-	[toMateRateChoose release];
 	[infoMessagePanelTest release];
+	
+	[buttonsOfList release];
 	[super dealloc];
 }
 
