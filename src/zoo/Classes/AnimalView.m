@@ -153,9 +153,9 @@
 		if(toolTip == nil)
 		{
 			toolTip = [[AnimalToolTip alloc] initWithAnimalId:animalId];
-			toolTip.position = ccp(toolTip.contentSize.width/2-20, 130);
+			toolTip.position = ccp(toolTip.contentSize.width/2*0.49-20, 80);
 			NSLog(@"toolTip x:%d, y:%d", self.position.x, self.position.y);
-			
+			toolTip.scale = 0.49f;
 			[self addChild:toolTip z:5];
 		}
 		toolTip.visible = true;
