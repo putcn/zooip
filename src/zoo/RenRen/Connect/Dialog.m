@@ -406,8 +406,10 @@ static CGFloat kBorderWidth = 10;
       }
     }
     
-    [[UIApplication sharedApplication] openURL:request.URL];
-    return NO;
+   // [[UIApplication sharedApplication] openURL:request.URL];
+    
+	  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://reg.renren.com"]];  
+	return NO;
   } else {
     return YES;
   }
