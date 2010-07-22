@@ -63,7 +63,7 @@
 		[self setupMoveArea:data.aliveEdge];
 		
 		[[CCScheduler sharedScheduler] scheduleTimer: [CCTimer timerWithTarget:self selector:@selector(tick:)]];
-		
+		view.scale = 1.0f/0.49f;
 		[[GameMainScene sharedGameMainScene] addSpriteToStage:view z:5];
 		
 	}
@@ -124,7 +124,10 @@
 {
 	//TODO: 判断是否已经进入水中或登陆，进入水中或登陆时，切换状态...
 	if (view.position.y > 400.0f) {
-		[view setScale:(400.0f/view.position.y)];
+		[view setScale:(400.0f/view.position.y)*(1.0f/0.49f)];
+	}
+	else {
+		view.scale = 1.0f/0.49f;
 	}
 
 	if (isGotoEat == YES)

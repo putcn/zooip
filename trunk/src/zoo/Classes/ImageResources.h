@@ -19,11 +19,8 @@
 	CCSpriteSheet *babyPiegonImg;
 	CCSpriteSheet *babySwanImg;
 	CCSpriteSheet *babyWildgooseImg;
-	CCSpriteSheet *mallardImg_1;
-	CCSpriteSheet *mallardImg_2;
-	CCSpriteSheet *wildgooseImg_1;
-	CCSpriteSheet *wildgooseImg_2;
-	CCSpriteSheet *wildgooseImg_3;
+	CCSpriteSheet *mallardImg;
+	CCSpriteSheet *wildgooseImg;
 	CCSpriteSheet *chinemyImg;
 	CCSpriteSheet *craneImg_1;
 	CCSpriteSheet *craneImg_2;
@@ -32,21 +29,18 @@
 	CCSpriteSheet *duckImg;
 	CCSpriteSheet *gooseImg;
 	CCSpriteSheet *henImg;
-	CCSpriteSheet *magpieImg_1;
-	CCSpriteSheet *magpieImg_2;
+	CCSpriteSheet *magpieImg;
 	CCSpriteSheet *maleMandarinDuckImg;
 	CCSpriteSheet *malePheasantImg;
 	CCSpriteSheet *mandarinDuckImg;
-	CCSpriteSheet *parrotImg_1;
-	CCSpriteSheet *parrotImg_2;
+	CCSpriteSheet *parrotImg;
 	CCSpriteSheet *peacockImg;
 	CCSpriteSheet *peahenImg;
 	CCSpriteSheet *pheasantImg;
 	CCSpriteSheet *pigeonImg;
 	CCSpriteSheet *roosterImg;
 	CCSpriteSheet *snakeImg;
-	CCSpriteSheet *swanImg_1;
-	CCSpriteSheet *swanImg_2;
+	CCSpriteSheet *swanImg;
 	CCSpriteSheet *turkeyImg;
 	CCSpriteSheet *turkeycockImg;
 }

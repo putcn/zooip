@@ -87,35 +87,17 @@ static ImageResources *_resource = nil;
 		}
 		return babyWildgooseImg;
 	}
-	else if ([imagePath isEqualToString:@"_mallard_1.png"]){
-		if (mallardImg_1 == nil) {
-			mallardImg_1 = [CCSpriteSheet spriteSheetWithFile:imagePath];
+	else if ([imagePath isEqualToString:@"_mallard.png"]){
+		if (mallardImg == nil) {
+			mallardImg = [CCSpriteSheet spriteSheetWithFile:imagePath];
 		}
-		return mallardImg_1;
+		return mallardImg;
 	}
-	else if ([imagePath isEqualToString:@"_mallard_2.png"]){
-		if (mallardImg_2 == nil) {
-			mallardImg_2 = [CCSpriteSheet spriteSheetWithFile:imagePath];
+	else if ([imagePath isEqualToString:@"_wildgoose.png"]){
+		if (wildgooseImg == nil) {
+			wildgooseImg = [CCSpriteSheet spriteSheetWithFile:imagePath];
 		}
-		return mallardImg_2;
-	}
-	else if ([imagePath isEqualToString:@"_wildgoose_1.png"]){
-		if (wildgooseImg_1 == nil) {
-			wildgooseImg_1 = [CCSpriteSheet spriteSheetWithFile:imagePath];
-		}
-		return wildgooseImg_1;
-	}
-	else if ([imagePath isEqualToString:@"_wildgoose_2.png"]){
-		if (wildgooseImg_2 == nil) {
-			wildgooseImg_2 = [CCSpriteSheet spriteSheetWithFile:imagePath];
-		}
-		return wildgooseImg_2;
-	}
-	else if ([imagePath isEqualToString:@"_wildgoose_3.png"]){
-		if (wildgooseImg_3 == nil) {
-			wildgooseImg_3 = [CCSpriteSheet spriteSheetWithFile:imagePath];
-		}
-		return wildgooseImg_3;
+		return wildgooseImg;
 	}
 	else if ([imagePath isEqualToString:@"_chinemy.png"]){
 		if (chinemyImg == nil) {
@@ -165,17 +147,11 @@ static ImageResources *_resource = nil;
 		}
 		return henImg;
 	}
-	else if ([imagePath isEqualToString:@"_magpie_1.png"]){
-		if (magpieImg_1 == nil) {
-			magpieImg_1 = [CCSpriteSheet spriteSheetWithFile:imagePath];
+	else if ([imagePath isEqualToString:@"_magpie.png"]){
+		if (magpieImg == nil) {
+			magpieImg = [CCSpriteSheet spriteSheetWithFile:imagePath];
 		}
-		return magpieImg_1;
-	}
-	else if ([imagePath isEqualToString:@"_magpie_2.png"]){
-		if (magpieImg_2 == nil) {
-			magpieImg_2 = [CCSpriteSheet spriteSheetWithFile:imagePath];
-		}
-		return magpieImg_2;
+		return magpieImg;
 	}
 	else if ([imagePath isEqualToString:@"_malemandarinduck.png"]){
 		if (maleMandarinDuckImg == nil) {
@@ -195,17 +171,11 @@ static ImageResources *_resource = nil;
 		}
 		return mandarinDuckImg;
 	}
-	else if ([imagePath isEqualToString:@"_parrot_1.png"]){
-		if (parrotImg_1 == nil) {
-			parrotImg_1 = [CCSpriteSheet spriteSheetWithFile:imagePath];
+	else if ([imagePath isEqualToString:@"_parrot.png"]){
+		if (parrotImg == nil) {
+			parrotImg = [CCSpriteSheet spriteSheetWithFile:imagePath];
 		}
-		return parrotImg_1;
-	}
-	else if ([imagePath isEqualToString:@"_parrot_2.png"]){
-		if (parrotImg_2 == nil) {
-			parrotImg_2 = [CCSpriteSheet spriteSheetWithFile:imagePath];
-		}
-		return parrotImg_2;
+		return parrotImg;
 	}
 	else if ([imagePath isEqualToString:@"_peacock.png"]){
 		if (peacockImg == nil) {
@@ -243,17 +213,11 @@ static ImageResources *_resource = nil;
 		}
 		return snakeImg;
 	}
-	else if ([imagePath isEqualToString:@"_swan_1.png"]){
-		if (swanImg_1 == nil) {
-			swanImg_1 = [CCSpriteSheet spriteSheetWithFile:imagePath];
+	else if ([imagePath isEqualToString:@"_swan.png"]){
+		if (swanImg == nil) {
+			swanImg = [CCSpriteSheet spriteSheetWithFile:imagePath];
 		}
-		return swanImg_1;
-	}
-	else if ([imagePath isEqualToString:@"_swan_2.png"]){
-		if (swanImg_2 == nil) {
-			swanImg_2 = [CCSpriteSheet spriteSheetWithFile:imagePath];
-		}
-		return swanImg_2;
+		return swanImg;
 	}
 	else if ([imagePath isEqualToString:@"_turkey.png"]){
 		if (turkeyImg == nil) {
@@ -283,11 +247,8 @@ static ImageResources *_resource = nil;
 	babyPiegonImg = nil;
 	babySwanImg = nil;
 	babyWildgooseImg = nil;
-	mallardImg_1 = nil;
-	mallardImg_2 = nil;
-	wildgooseImg_1 = nil;
-	wildgooseImg_2 = nil;
-	wildgooseImg_3 = nil;
+	mallardImg = nil;
+	wildgooseImg = nil;
 	chinemyImg = nil;
 	craneImg_1 = nil;
 	craneImg_2 = nil;
@@ -296,21 +257,18 @@ static ImageResources *_resource = nil;
 	duckImg = nil;
 	gooseImg = nil;
 	henImg = nil;
-	magpieImg_1 = nil;
-	magpieImg_2 = nil;
+	magpieImg = nil;
 	maleMandarinDuckImg = nil;
 	malePheasantImg = nil;
 	mandarinDuckImg = nil;
-	parrotImg_1 = nil;
-	parrotImg_2 = nil;
+	parrotImg = nil;
 	peacockImg = nil;
 	peahenImg = nil;
 	pheasantImg = nil;
 	pigeonImg = nil;
 	roosterImg = nil;
 	snakeImg = nil;
-	swanImg_1 = nil;
-	swanImg_2 = nil;
+	swanImg = nil;
 	turkeyImg = nil;
 	turkeycockImg = nil; 
 }
