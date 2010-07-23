@@ -4,7 +4,7 @@
 <dict>
 	<key>chinemy</key>
 	<dict>
-		<key>maxItems</key><string>20</string>
+		<key>maxItems</key><string>12</string>
 		<key>walk_left</key>
 		<dict>
 			<key>originX</key>
@@ -18,25 +18,12 @@
 			<key>number</key>
 			<string>18</string>
 		</dict>
-		<key>walk_downLeft</key>
-		<dict>
-			<key>originX</key>
-			<string>0</string>
-			<key>originY</key>
-			<string>19</string>
-			<key>width</key>
-			<string>34</string>
-			<key>height</key>
-			<string>20</string>
-			<key>number</key>
-			<string>18</string>
-		</dict>
 		<key>walk_upLeft</key>
 		<dict>
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
-			<string>39</string>
+			<string>38</string>
 			<key>width</key>
 			<string>34</string>
 			<key>height</key>
@@ -44,12 +31,25 @@
 			<key>number</key>
 			<string>16</string>
 		</dict>
+		<key>walk_downLeft</key>
+		<dict>
+			<key>originX</key>
+			<string>0</string>
+			<key>originY</key>
+			<string>78</string>
+			<key>width</key>
+			<string>34</string>
+			<key>height</key>
+			<string>20</string>
+			<key>number</key>
+			<string>18</string>
+		</dict>
 		<key>walk_up</key>
 		<dict>
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
-			<string>59</string>
+			<string>118</string>
 			<key>width</key>
 			<string>27</string>
 			<key>height</key>
@@ -62,7 +62,7 @@
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
-			<string>86</string>
+			<string>172</string>
 			<key>width</key>
 			<string>27</string>
 			<key>height</key>
