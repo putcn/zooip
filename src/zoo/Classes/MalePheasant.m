@@ -17,7 +17,7 @@
 	if ((self = [super init])) {
 		
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
-		animationTable = [imageProp animationTable:@"_MalePheasant.png" plistName:@"_MalePheasant.plist"];
+		animationTable = [imageProp animationTable:@"_malepheasant.png" plistName:@"_malepheasant.plist"];
 		NSLog(@"------------%@", animationTable);
 		
 		// Add by Hunk on 2010-07-13 for memory leak
