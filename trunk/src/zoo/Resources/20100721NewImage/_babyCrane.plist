@@ -1,230 +1,232 @@
-<?xml version="1.0" encoding="UTF-8"?> 
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd" 
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>babyCrane</key>
+	<key>babycrane</key>
 	<dict>
-		<key>maxItems</key><string>20</string>
-		<key>walk_left</key>
-		<dict>
-			<key>originX</key>
-			<string>0</string>
-			<key>originY</key>
-			<string>0</string>
-			<key>width</key>
-			<string>35</string>
-			<key>height</key>
-			<string>35</string>
-			<key>number</key>
-			<string>10</string>
-		</dict>
 		<key>eat</key>
 		<dict>
+			<key>height</key>
+			<string>24</string>
+			<key>number</key>
+			<string>10</string>
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
 			<string>35</string>
 			<key>width</key>
 			<string>34</string>
-			<key>height</key>
-			<string>24</string>
-			<key>number</key>
-			<string>10</string>
-		</dict>
-		<key>walk_leftDown</key>
-		<dict>
-			<key>originX</key>
-			<string>0</string>
-			<key>originY</key>
-			<string>59</string>
-			<key>width</key>
-			<string>29</string>
-			<key>height</key>
-			<string>36</string>
-			<key>number</key>
-			<string>10</string>
-		</dict>
-		<key>ill_left</key>
-		<dict>
-			<key>originX</key>
-			<string>290</string>
-			<key>originY</key>
-			<string>59</string>
-			<key>width</key>
-			<string>42</string>
-			<key>height</key>
-			<string>23</string>
-			<key>number</key>
-			<string>1</string>
 		</dict>
 		<key>ill_down</key>
 		<dict>
+			<key>height</key>
+			<string>36</string>
+			<key>number</key>
+			<string>1</string>
 			<key>originX</key>
 			<string>332</string>
 			<key>originY</key>
 			<string>59</string>
 			<key>width</key>
 			<string>18</string>
+		</dict>
+		<key>ill_left</key>
+		<dict>
 			<key>height</key>
-			<string>36</string>
+			<string>23</string>
 			<key>number</key>
 			<string>1</string>
-		</dict>
-		<key>walk_leftUp</key>
-		<dict>
 			<key>originX</key>
-			<string>0</string>
+			<string>290</string>
 			<key>originY</key>
-			<string>95</string>
+			<string>59</string>
 			<key>width</key>
-			<string>27</string>
-			<key>height</key>
-			<string>37</string>
-			<key>number</key>
-			<string>10</string>
-		</dict>
-		<key>rest_left</key>
-		<dict>
-			<key>originX</key>
-			<string>270</string>
-			<key>originY</key>
-			<string>95</string>
-			<key>width</key>
-			<string>40</string>
-			<key>height</key>
-			<string>36</string>
-			<key>number</key>
-			<string>1</string>
-		</dict>
-		<key>pose</key>
-		<dict>
-			<key>originX</key>
-			<string>310</string>
-			<key>originY</key>
-			<string>95</string>
-			<key>width</key>
-			<string>40</string>
-			<key>height</key>
-			<string>36</string>
-			<key>number</key>
-			<string>1</string>
-		</dict>
-		<key>walk_up</key>
-		<dict>
-			<key>originX</key>
-			<string>0</string>
-			<key>originY</key>
-			<string>132</string>
-			<key>width</key>
-			<string>15</string>
-			<key>height</key>
 			<string>42</string>
-			<key>number</key>
-			<string>10</string>
-		</dict>
-		<key>walk_down</key>
-		<dict>
-			<key>originX</key>
-			<string>150</string>
-			<key>originY</key>
-			<string>132</string>
-			<key>width</key>
-			<string>15</string>
-			<key>height</key>
-			<string>42</string>
-			<key>number</key>
-			<string>10</string>
 		</dict>
 		<key>ill_leftDown</key>
 		<dict>
+			<key>height</key>
+			<string>28</string>
+			<key>number</key>
+			<string>1</string>
 			<key>originX</key>
 			<string>300</string>
 			<key>originY</key>
 			<string>132</string>
 			<key>width</key>
 			<string>35</string>
-			<key>height</key>
-			<string>28</string>
-			<key>number</key>
-			<string>1</string>
 		</dict>
 		<key>ill_leftUp</key>
 		<dict>
+			<key>height</key>
+			<string>32</string>
+			<key>number</key>
+			<string>1</string>
 			<key>originX</key>
 			<string>0</string>
 			<key>originY</key>
 			<string>174</string>
 			<key>width</key>
 			<string>34</string>
-			<key>height</key>
-			<string>32</string>
-			<key>number</key>
-			<string>1</string>
-		</dict>
-		<key>rest_leftUp</key>
-		<dict>
-			<key>originX</key>
-			<string>34</string>
-			<key>originY</key>
-			<string>174</string>
-			<key>width</key>
-			<string>33</string>
-			<key>height</key>
-			<string>42</string>
-			<key>number</key>
-			<string>1</string>
-		</dict>
-		<key>rest_leftDown</key>
-		<dict>
-			<key>originX</key>
-			<string>67</string>
-			<key>originY</key>
-			<string>174</string>
-			<key>width</key>
-			<string>28</string>
-			<key>height</key>
-			<string>42</string>
-			<key>number</key>
-			<string>1</string>
 		</dict>
 		<key>ill_up</key>
 		<dict>
+			<key>height</key>
+			<string>38</string>
+			<key>number</key>
+			<string>1</string>
 			<key>originX</key>
 			<string>95</string>
 			<key>originY</key>
 			<string>174</string>
 			<key>width</key>
 			<string>21</string>
-			<key>height</key>
-			<string>38</string>
-			<key>number</key>
-			<string>1</string>
 		</dict>
-		<key>rest_up</key>
+		<key>maxItems</key>
+		<string>20</string>
+		<key>pose</key>
 		<dict>
-			<key>originX</key>
-			<string>116</string>
-			<key>originY</key>
-			<string>174</string>
-			<key>width</key>
-			<string>20</string>
 			<key>height</key>
-			<string>44</string>
+			<string>36</string>
 			<key>number</key>
 			<string>1</string>
+			<key>originX</key>
+			<string>310</string>
+			<key>originY</key>
+			<string>95</string>
+			<key>width</key>
+			<string>40</string>
 		</dict>
 		<key>rest_down</key>
 		<dict>
+			<key>height</key>
+			<string>46</string>
+			<key>number</key>
+			<string>1</string>
 			<key>originX</key>
 			<string>136</string>
 			<key>originY</key>
 			<string>174</string>
 			<key>width</key>
 			<string>17</string>
+		</dict>
+		<key>rest_left</key>
+		<dict>
 			<key>height</key>
-			<string>46</string>
+			<string>36</string>
 			<key>number</key>
 			<string>1</string>
+			<key>originX</key>
+			<string>270</string>
+			<key>originY</key>
+			<string>95</string>
+			<key>width</key>
+			<string>40</string>
+		</dict>
+		<key>rest_leftDown</key>
+		<dict>
+			<key>height</key>
+			<string>42</string>
+			<key>number</key>
+			<string>1</string>
+			<key>originX</key>
+			<string>67</string>
+			<key>originY</key>
+			<string>174</string>
+			<key>width</key>
+			<string>28</string>
+		</dict>
+		<key>rest_leftUp</key>
+		<dict>
+			<key>height</key>
+			<string>42</string>
+			<key>number</key>
+			<string>1</string>
+			<key>originX</key>
+			<string>34</string>
+			<key>originY</key>
+			<string>174</string>
+			<key>width</key>
+			<string>33</string>
+		</dict>
+		<key>rest_up</key>
+		<dict>
+			<key>height</key>
+			<string>44</string>
+			<key>number</key>
+			<string>1</string>
+			<key>originX</key>
+			<string>116</string>
+			<key>originY</key>
+			<string>174</string>
+			<key>width</key>
+			<string>20</string>
+		</dict>
+		<key>walk_down</key>
+		<dict>
+			<key>height</key>
+			<string>42</string>
+			<key>number</key>
+			<string>10</string>
+			<key>originX</key>
+			<string>150</string>
+			<key>originY</key>
+			<string>132</string>
+			<key>width</key>
+			<string>15</string>
+		</dict>
+		<key>walk_left</key>
+		<dict>
+			<key>height</key>
+			<string>35</string>
+			<key>number</key>
+			<string>10</string>
+			<key>originX</key>
+			<string>0</string>
+			<key>originY</key>
+			<string>0</string>
+			<key>width</key>
+			<string>35</string>
+		</dict>
+		<key>walk_leftDown</key>
+		<dict>
+			<key>height</key>
+			<string>36</string>
+			<key>number</key>
+			<string>10</string>
+			<key>originX</key>
+			<string>0</string>
+			<key>originY</key>
+			<string>59</string>
+			<key>width</key>
+			<string>29</string>
+		</dict>
+		<key>walk_leftUp</key>
+		<dict>
+			<key>height</key>
+			<string>37</string>
+			<key>number</key>
+			<string>10</string>
+			<key>originX</key>
+			<string>0</string>
+			<key>originY</key>
+			<string>95</string>
+			<key>width</key>
+			<string>27</string>
+		</dict>
+		<key>walk_up</key>
+		<dict>
+			<key>height</key>
+			<string>42</string>
+			<key>number</key>
+			<string>10</string>
+			<key>originX</key>
+			<string>0</string>
+			<key>originY</key>
+			<string>132</string>
+			<key>width</key>
+			<string>15</string>
 		</dict>
 	</dict>
 </dict>
+</plist>
