@@ -16,7 +16,7 @@
 	if ((self = [super init])) {
 		
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
-		NSMutableDictionary * tempDic = [imageProp animationTable:@"_Magpie_1.png" plistName:@"_Magpie_1.plist"];
+		NSMutableDictionary * tempDic = [imageProp animationTable:@"_Magpie.png" plistName:@"_Magpie.plist"];
 		//[tempDic addEntriesFromDictionary:[imageProp animationTable:@"_Magpie_2.png" plistName:@"_Magpie_2.plist"]];
 		animationTable = tempDic;
 		

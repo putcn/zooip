@@ -18,7 +18,7 @@
 	if ((self = [super init])) {
 		
 		AnimalImageProperty *imageProp = [[AnimalImageProperty alloc] init];
-		animationTable = [imageProp animationTable:@"_Swan_1.png" plistName:@"_Swan_1.plist"];
+		animationTable = [imageProp animationTable:@"_Swan.png" plistName:@"_Swan.plist"];
 		//[animationTable addEntriesFromDictionary:(NSDictionary *)[imageProp animationTable:@"_Swan_2.png" plistName:@"_Swan_2.plist"]];
 
 		
