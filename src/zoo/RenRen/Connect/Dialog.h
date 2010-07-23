@@ -16,22 +16,31 @@
  */
 
 #import "ConnectGlobal.h"
+#import "RegistorWebView.h"
 
 @protocol DialogDelegate;
 @class Session;
 
 @interface Dialog : UIView <UIWebViewDelegate> {
-  id<DialogDelegate> _delegate;
-  Session* _session;
-  NSURL* _loadingURL;
-  UIWebView* _webView;
-  UIActivityIndicatorView* _spinner;
-  UIImageView* _iconView;
-  UILabel* _titleLabel;
-  UIButton* _closeButton;
-  UIDeviceOrientation _orientation;
-  BOOL _showingKeyboard;
+	id<DialogDelegate> _delegate;
+	Session* _session;
+	NSURL* _loadingURL;
+	UIWebView* _webView;
+	UIActivityIndicatorView* _spinner;
+	UIImageView* _iconView;
+	UILabel* _titleLabel;
+	UIButton* _closeButton;
+	UIDeviceOrientation _orientation;
+	BOOL _showingKeyboard;
+	
+	UINavigationController *navigationController;
 }
+
+/**
+ * 用来处理推出一个注册页面
+ */
+
+@property (nonatomic, retain) UINavigationController *navigationController;
 
 /**
  * 委托(delegate)。

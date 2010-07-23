@@ -1,6 +1,7 @@
 #import "Dialog.h"
 #import "Session.h"
 
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // global
 
@@ -23,6 +24,8 @@ static CGFloat kBorderWidth = 10;
 @implementation Dialog
 
 @synthesize session = _session, delegate = _delegate;
+
+@synthesize navigationController;
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 // private
@@ -298,6 +301,10 @@ static CGFloat kBorderWidth = 10;
 
 - (id)initWithSession:(Session*)session {
   if (self = [super initWithFrame:CGRectZero]) {
+	  
+	  navigationController = [[UINavigationController alloc] initWithRootViewController:nil];
+	  
+	  
     _delegate = nil;
     _session = [session retain];
     _loadingURL = nil;
@@ -388,31 +395,51 @@ static CGFloat kBorderWidth = 10;
 
 - (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request
     navigationType:(UIWebViewNavigationType)navigationType {
-  NSURL* url = request.URL;
 	
-  if ([url.scheme isEqualToString:@"rrconnect"]) {
-    if ([url.resourceSpecifier hasPrefix:@"//cancel"]) {
+	NSURL* url = request.URL;
+	
+	if ([url.scheme isEqualToString:@"rrconnect"]) 
+	{
+		if ([url.resourceSpecifier hasPrefix:@"//cancel"]) 
+		{
 			[self dialogDidCancel:url];
-    } else {
-      [self dialogDidSucceed:url];
-    }
-    return NO;
-  } else if ([_loadingURL isEqual:url]) {
-    return YES;
-  } else if (navigationType == UIWebViewNavigationTypeLinkClicked) {
-    if ([_delegate respondsToSelector:@selector(dialog:shouldOpenURLInExternalBrowser:)]) {
-      if (![_delegate dialog:self shouldOpenURLInExternalBrowser:url]) {
-        return NO;
-      }
-    }
-    
-   // [[UIApplication sharedApplication] openURL:request.URL];
-    
-	  [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://reg.renren.com"]];  
-	return NO;
-  } else {
-    return YES;
-  }
+		} else 
+		{
+			[self dialogDidSucceed:url];
+		}
+		return NO;
+	} 
+	else if ([_loadingURL isEqual:url])
+	{
+		return YES;
+	} 
+	else if (navigationType == UIWebViewNavigationTypeLinkClicked)
+	{
+		if ([_delegate respondsToSelector:@selector(dialog:shouldOpenURLInExternalBrowser:)])
+		{
+			if (![_delegate dialog:self shouldOpenURLInExternalBrowser:url])
+			{
+				return NO;
+			}
+		}
+		
+		
+		
+		// [[UIApplication sharedApplication] openURL:request.URL];
+		
+		//[[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://reg.renren.com"]];
+		[[[UIApplication sharedApplication] keyWindow] addSubview:navigationController.view];
+		RegistorWebView *reg =[[[RegistorWebView alloc] initWithURL:url] autorelease];
+		
+		[navigationController pushViewController:reg animated:YES];
+		
+		
+		return NO;
+	} 
+	else
+	{
+		return YES;
+	}
 }
 
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
