@@ -25,8 +25,9 @@
 }
 
 //3 in viewDidload function:
+//- (void)viewDidload{
 - (void)loadView {
-    //[super viewDidLoad];
+//    [super viewDidLoad];
 	CGRect webFrame = [[UIScreen mainScreen] applicationFrame]; //web大小
 	webFrame.origin.y += 25;//向下移动为了留出输入网址的frame
 	//webFrame.size.height -= 80;
