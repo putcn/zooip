@@ -38,15 +38,12 @@
 		CCSprite *logo = [CCSprite spriteWithFile:@"LOGO.png"];
 		logo.position = ccp(200,145);
 		[self addChild:logo z:7];
-		
-		
-	
+			
 		friendContainer = [[FriendList alloc] initWithTab:self];
 		friendContainer.position = ccp(50, 190);
 		[self addChild:friendContainer z:7];
 			
-		
-		
+
 		Button *exitButton = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"exitButton.png" setTarget:self setSelector:@selector(exitHandler:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
 		exitButton.position = ccp(400, 135);
 		[self addChild:exitButton z:7];
@@ -134,7 +131,6 @@
 
 -(void) dealloc
 {
-		
 	[title           release];
 	[friendContainer release];
 	[scaleFlag       release];

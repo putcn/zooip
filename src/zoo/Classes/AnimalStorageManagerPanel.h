@@ -25,9 +25,12 @@
 	id parentTarget;
 	
 	CCLabel *pageLabel;
+	int m_nNumber;
 }
--(id) initWithTab:(NSString *)tabName setTarget:(id)target;
+-(id) initWithTab:(NSString *)tabName setTarget:(id)target setNumber:(int)_nNumber;
 
+
+-(void) clearPage: (NSString *)tabName setTarget:(id)target;
 -(void) resultCallback:(NSObject *)value;
 -(void) faultCallback:(NSObject *)value;
 -(void) nextPage:(Button *)button;

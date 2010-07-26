@@ -16,7 +16,7 @@
 //仓库里面的动物面板
 @implementation AnimalStorageManagerPanel
 
--(id) initWithTab: (NSString *)tabName setTarget:(id)target
+-(id) initWithTab: (NSString *)tabName setTarget:(id)target setNumber:(int)_nNumber
 {
 	if ((self = [super init])) {
 		parentTarget = target;
@@ -35,15 +35,26 @@
 		}
 		self.scale = 300.0f/1024.0f;
 		
-		NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
-		if (tabFlag == @"动物") {
-			
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		m_nNumber = _nNumber;
+		if( m_nNumber== 1)
+		{
+			[self removeAllChildrenWithCleanup:YES];
+//			[self clearPage: tabFlag setTarget:self];
 		}
-		else if(tabFlag == @"拍来动物"){
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+
+		{
+			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
+			if (tabFlag == @"动物") {
+				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			}
+			else if(tabFlag == @"拍来动物"){
+				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			}
 		}
+		
+		
+		
 		
 		//实现翻页按钮
 		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:40 offsetX:0 offsetY:0 scale:3.0f];
@@ -55,13 +66,53 @@
 		[self addChild:forwardPageBtn z:7];
 		[nextPageBtn release];
 		[forwardPageBtn release];
+		
 	}
 	return self;
 }
 
 
+//
+//-(void) resultCallback_End:(NSObject *)value
+//{
+//	//NSLog(@"%@",value);
+//	NSDictionary *itemDic;
+//	NSArray *itemArray;
+//	if (tabFlag == @"动物") {
+//		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
+//		itemArray = [itemDic allKeys];
+//	}
+//	else if(tabFlag == @"拍来动物")
+//	{
+//		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
+//		itemArray = [itemDic allKeys];
+//	}
+//	
+//	if(itemArray.count == 0)
+//	{
+//		totalPage = 1;
+//	}
+//	else 
+//	{
+//		totalPage = (itemArray.count-1)/8 + 1;
+//	}
+//
+//	currentPageNum = 1;
+//	
+//	[self generatePage];
+//	
+//	NSString* title = [NSString stringWithFormat:@"%d/%d",currentPageNum,totalPage];
+//	pageLabel = [CCLabel labelWithString:title fontName:@"Arial" fontSize:50];
+//	[pageLabel setColor:ccc3(0, 0, 0)];
+//	pageLabel.position = ccp(500,-480);
+//	[self addChild:pageLabel z:7];
+//}
+
+
 -(void) resultCallback:(NSObject *)value
 {
+//	[self clearPage: tabFlag setTarget:self];
+	
 	//NSLog(@"%@",value);
 	NSDictionary *itemDic;
 	NSArray *itemArray;
@@ -83,8 +134,9 @@
 	{
 		totalPage = (itemArray.count-1)/8 + 1;
 	}
-
+	
 	currentPageNum = 1;
+	if( m_nNumber!= 1)
 	[self generatePage];
 	
 	NSString* title = [NSString stringWithFormat:@"%d/%d",currentPageNum,totalPage];
@@ -93,6 +145,7 @@
 	pageLabel.position = ccp(500,-480);
 	[self addChild:pageLabel z:7];
 }
+
 
 -(void) faultCallback:(NSObject *)value
 {
@@ -128,8 +181,33 @@
 	}
 }
 
--(void) generatePage
+-(void) clearPage: (NSString *)tabName setTarget:(id)target
 {
+	NSDictionary *itemDic;
+	NSArray *itemArray;
+	if (tabFlag == @"动物") {
+		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
+		itemArray = [itemDic allKeys];
+	}
+	else if(tabFlag == @"拍来动物")
+	{
+		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
+		itemArray = [itemDic allKeys];
+	}
+	
+//	for (int j=0; j<itemArray.count; j++) {
+		
+		//[self removeChildByTag:j%8 cleanup:YES];
+//		[self removeAllChildrenWithCleanup:YES];
+//	}
+		
+//	[self initWithTab:tabName setTarget:target];
+//	[self generatePage];
+}
+
+
+-(void) generatePage
+{	
 	if (tabFlag == @"动物") {
 		NSDictionary *storageAnimal = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
 		DataModelStorageAnimal *stoAnimals;
