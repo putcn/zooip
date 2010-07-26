@@ -56,8 +56,8 @@
 		3E1A7A5411F6DD7E00159A14 /* _malepheasant.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A7A1011F6DD7E00159A14 /* _malepheasant.png */; };
 		3E1A7A5511F6DD7E00159A14 /* _mallard.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A7A1111F6DD7E00159A14 /* _mallard.plist */; };
 		3E1A7A5611F6DD7E00159A14 /* _mallard.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A7A1211F6DD7E00159A14 /* _mallard.png */; };
-		3E1A7A5711F6DD7E00159A14 /* _mandarinDuck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A7A1311F6DD7E00159A14 /* _mandarinDuck.plist */; };
-		3E1A7A5811F6DD7E00159A14 /* _mandarinDuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A7A1411F6DD7E00159A14 /* _mandarinDuck.png */; };
+		3E1A7A5711F6DD7E00159A14 /* _mandarinduck.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A7A1311F6DD7E00159A14 /* _mandarinduck.plist */; };
+		3E1A7A5811F6DD7E00159A14 /* _mandarinduck.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A7A1411F6DD7E00159A14 /* _mandarinduck.png */; };
 		3E1A7A5911F6DD7E00159A14 /* _nest.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A7A1511F6DD7E00159A14 /* _nest.plist */; };
 		3E1A7A5A11F6DD7E00159A14 /* _nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A7A1611F6DD7E00159A14 /* _nest.png */; };
 		3E1A7A5B11F6DD7E00159A14 /* _parrot.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A7A1711F6DD7E00159A14 /* _parrot.plist */; };
@@ -833,8 +833,8 @@
 		3E1A7A1011F6DD7E00159A14 /* _malepheasant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _malepheasant.png; sourceTree = "<group>"; };
 		3E1A7A1111F6DD7E00159A14 /* _mallard.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _mallard.plist; sourceTree = "<group>"; };
 		3E1A7A1211F6DD7E00159A14 /* _mallard.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _mallard.png; sourceTree = "<group>"; };
-		3E1A7A1311F6DD7E00159A14 /* _mandarinDuck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _mandarinDuck.plist; sourceTree = "<group>"; };
-		3E1A7A1411F6DD7E00159A14 /* _mandarinDuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _mandarinDuck.png; sourceTree = "<group>"; };
+		3E1A7A1311F6DD7E00159A14 /* _mandarinduck.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _mandarinduck.plist; sourceTree = "<group>"; };
+		3E1A7A1411F6DD7E00159A14 /* _mandarinduck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _mandarinduck.png; sourceTree = "<group>"; };
 		3E1A7A1511F6DD7E00159A14 /* _nest.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _nest.plist; sourceTree = "<group>"; };
 		3E1A7A1611F6DD7E00159A14 /* _nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _nest.png; sourceTree = "<group>"; };
 		3E1A7A1711F6DD7E00159A14 /* _parrot.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = _parrot.plist; sourceTree = "<group>"; };
@@ -2209,8 +2209,8 @@
 				3E1A7A1011F6DD7E00159A14 /* _malepheasant.png */,
 				3E1A7A1111F6DD7E00159A14 /* _mallard.plist */,
 				3E1A7A1211F6DD7E00159A14 /* _mallard.png */,
-				3E1A7A1311F6DD7E00159A14 /* _mandarinDuck.plist */,
-				3E1A7A1411F6DD7E00159A14 /* _mandarinDuck.png */,
+				3E1A7A1311F6DD7E00159A14 /* _mandarinduck.plist */,
+				3E1A7A1411F6DD7E00159A14 /* _mandarinduck.png */,
 				3E1A7A1511F6DD7E00159A14 /* _nest.plist */,
 				3E1A7A1611F6DD7E00159A14 /* _nest.png */,
 				3E1A7A1711F6DD7E00159A14 /* _parrot.plist */,
@@ -4604,8 +4604,8 @@
 				3E1A7A5411F6DD7E00159A14 /* _malepheasant.png in Resources */,
 				3E1A7A5511F6DD7E00159A14 /* _mallard.plist in Resources */,
 				3E1A7A5611F6DD7E00159A14 /* _mallard.png in Resources */,
-				3E1A7A5711F6DD7E00159A14 /* _mandarinDuck.plist in Resources */,
-				3E1A7A5811F6DD7E00159A14 /* _mandarinDuck.png in Resources */,
+				3E1A7A5711F6DD7E00159A14 /* _mandarinduck.plist in Resources */,
+				3E1A7A5811F6DD7E00159A14 /* _mandarinduck.png in Resources */,
 				3E1A7A5911F6DD7E00159A14 /* _nest.plist in Resources */,
 				3E1A7A5A11F6DD7E00159A14 /* _nest.png in Resources */,
 				3E1A7A5B11F6DD7E00159A14 /* _parrot.plist in Resources */,

@@ -8,6 +8,7 @@
 
 #import "FriendList.h"
 #import "zooAppDelegate.h"
+#import "GetFriendsInfoController.h"
 
 @implementation FriendList
 
