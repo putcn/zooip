@@ -83,6 +83,20 @@
 		3E1A7A6F11F6DD7E00159A14 /* _wildgoose.plist in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A7A2B11F6DD7E00159A14 /* _wildgoose.plist */; };
 		3E1A7A7011F6DD7E00159A14 /* _wildgoose.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E1A7A2C11F6DD7E00159A14 /* _wildgoose.png */; };
 		3E3007B111C6721800A1C3B7 /* ImgInitUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E3007B011C6721800A1C3B7 /* ImgInitUtil.m */; };
+		3E3E4EE011FD598D00AD964F /* crane_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4ED211FD598D00AD964F /* crane_nest.png */; };
+		3E3E4EE111FD598D00AD964F /* duck_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4ED311FD598D00AD964F /* duck_nest.png */; };
+		3E3E4EE211FD598D00AD964F /* goose_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4ED411FD598D00AD964F /* goose_nest.png */; };
+		3E3E4EE311FD598D00AD964F /* hen_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4ED511FD598D00AD964F /* hen_nest.png */; };
+		3E3E4EE411FD598D00AD964F /* magpie_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4ED611FD598D00AD964F /* magpie_nest.png */; };
+		3E3E4EE511FD598D00AD964F /* mallard_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4ED711FD598D00AD964F /* mallard_nest.png */; };
+		3E3E4EE611FD598D00AD964F /* mandarinduck_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4ED811FD598D00AD964F /* mandarinduck_nest.png */; };
+		3E3E4EE711FD598D00AD964F /* parrot_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4ED911FD598D00AD964F /* parrot_nest.png */; };
+		3E3E4EE811FD598D00AD964F /* peahen_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4EDA11FD598D00AD964F /* peahen_nest.png */; };
+		3E3E4EE911FD598D00AD964F /* pheasant_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4EDB11FD598D00AD964F /* pheasant_nest.png */; };
+		3E3E4EEA11FD598D00AD964F /* pigeon_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4EDC11FD598D00AD964F /* pigeon_nest.png */; };
+		3E3E4EEB11FD598D00AD964F /* swan_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4EDD11FD598D00AD964F /* swan_nest.png */; };
+		3E3E4EEC11FD598D00AD964F /* turkey_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4EDE11FD598D00AD964F /* turkey_nest.png */; };
+		3E3E4EED11FD598D00AD964F /* wildgoose_nest.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E3E4EDF11FD598D00AD964F /* wildgoose_nest.png */; };
 		3E4B1FBC11AE7E840044D43E /* ButtonContainer.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4B1FB411AE7E840044D43E /* ButtonContainer.png */; };
 		3E4B1FBD11AE7E840044D43E /* goldant.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4B1FB511AE7E840044D43E /* goldant.png */; };
 		3E4B1FBE11AE7E840044D43E /* goldegg.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E4B1FB611AE7E840044D43E /* goldegg.png */; };
@@ -861,6 +875,20 @@
 		3E1A7A2C11F6DD7E00159A14 /* _wildgoose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = _wildgoose.png; sourceTree = "<group>"; };
 		3E3007AF11C6721800A1C3B7 /* ImgInitUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImgInitUtil.h; sourceTree = "<group>"; };
 		3E3007B011C6721800A1C3B7 /* ImgInitUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImgInitUtil.m; sourceTree = "<group>"; };
+		3E3E4ED211FD598D00AD964F /* crane_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = crane_nest.png; sourceTree = "<group>"; };
+		3E3E4ED311FD598D00AD964F /* duck_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = duck_nest.png; sourceTree = "<group>"; };
+		3E3E4ED411FD598D00AD964F /* goose_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goose_nest.png; sourceTree = "<group>"; };
+		3E3E4ED511FD598D00AD964F /* hen_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hen_nest.png; sourceTree = "<group>"; };
+		3E3E4ED611FD598D00AD964F /* magpie_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = magpie_nest.png; sourceTree = "<group>"; };
+		3E3E4ED711FD598D00AD964F /* mallard_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mallard_nest.png; sourceTree = "<group>"; };
+		3E3E4ED811FD598D00AD964F /* mandarinduck_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mandarinduck_nest.png; sourceTree = "<group>"; };
+		3E3E4ED911FD598D00AD964F /* parrot_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = parrot_nest.png; sourceTree = "<group>"; };
+		3E3E4EDA11FD598D00AD964F /* peahen_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = peahen_nest.png; sourceTree = "<group>"; };
+		3E3E4EDB11FD598D00AD964F /* pheasant_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pheasant_nest.png; sourceTree = "<group>"; };
+		3E3E4EDC11FD598D00AD964F /* pigeon_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pigeon_nest.png; sourceTree = "<group>"; };
+		3E3E4EDD11FD598D00AD964F /* swan_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = swan_nest.png; sourceTree = "<group>"; };
+		3E3E4EDE11FD598D00AD964F /* turkey_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = turkey_nest.png; sourceTree = "<group>"; };
+		3E3E4EDF11FD598D00AD964F /* wildgoose_nest.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wildgoose_nest.png; sourceTree = "<group>"; };
 		3E4B1FB411AE7E840044D43E /* ButtonContainer.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ButtonContainer.png; sourceTree = "<group>"; };
 		3E4B1FB511AE7E840044D43E /* goldant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldant.png; sourceTree = "<group>"; };
 		3E4B1FB611AE7E840044D43E /* goldegg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = goldegg.png; sourceTree = "<group>"; };
@@ -2239,6 +2267,28 @@
 			path = 20100721NewImage;
 			sourceTree = "<group>";
 		};
+		3E3E4ED111FD598D00AD964F /* nest */ = {
+			isa = PBXGroup;
+			children = (
+				3E3E4ED211FD598D00AD964F /* crane_nest.png */,
+				3E3E4ED311FD598D00AD964F /* duck_nest.png */,
+				3E3E4ED411FD598D00AD964F /* goose_nest.png */,
+				3E3E4ED511FD598D00AD964F /* hen_nest.png */,
+				3E3E4ED611FD598D00AD964F /* magpie_nest.png */,
+				3E3E4ED711FD598D00AD964F /* mallard_nest.png */,
+				3E3E4ED811FD598D00AD964F /* mandarinduck_nest.png */,
+				3E3E4ED911FD598D00AD964F /* parrot_nest.png */,
+				3E3E4EDA11FD598D00AD964F /* peahen_nest.png */,
+				3E3E4EDB11FD598D00AD964F /* pheasant_nest.png */,
+				3E3E4EDC11FD598D00AD964F /* pigeon_nest.png */,
+				3E3E4EDD11FD598D00AD964F /* swan_nest.png */,
+				3E3E4EDE11FD598D00AD964F /* turkey_nest.png */,
+				3E3E4EDF11FD598D00AD964F /* wildgoose_nest.png */,
+			);
+			name = nest;
+			path = animals/nest;
+			sourceTree = "<group>";
+		};
 		3E83057311C61C9C00AB827E /* pose */ = {
 			isa = PBXGroup;
 			children = (
@@ -3311,6 +3361,7 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				3E3E4ED111FD598D00AD964F /* nest */,
 				3E1A79E811F6DD7E00159A14 /* 20100721NewImage */,
 				606958E911E309E2007AE16E /* Pose */,
 				6BD28DCF11D3000D00BE2859 /* 动物园切图 */,
@@ -4630,6 +4681,20 @@
 				3E1A7A6E11F6DD7E00159A14 /* _turkeycock.png in Resources */,
 				3E1A7A6F11F6DD7E00159A14 /* _wildgoose.plist in Resources */,
 				3E1A7A7011F6DD7E00159A14 /* _wildgoose.png in Resources */,
+				3E3E4EE011FD598D00AD964F /* crane_nest.png in Resources */,
+				3E3E4EE111FD598D00AD964F /* duck_nest.png in Resources */,
+				3E3E4EE211FD598D00AD964F /* goose_nest.png in Resources */,
+				3E3E4EE311FD598D00AD964F /* hen_nest.png in Resources */,
+				3E3E4EE411FD598D00AD964F /* magpie_nest.png in Resources */,
+				3E3E4EE511FD598D00AD964F /* mallard_nest.png in Resources */,
+				3E3E4EE611FD598D00AD964F /* mandarinduck_nest.png in Resources */,
+				3E3E4EE711FD598D00AD964F /* parrot_nest.png in Resources */,
+				3E3E4EE811FD598D00AD964F /* peahen_nest.png in Resources */,
+				3E3E4EE911FD598D00AD964F /* pheasant_nest.png in Resources */,
+				3E3E4EEA11FD598D00AD964F /* pigeon_nest.png in Resources */,
+				3E3E4EEB11FD598D00AD964F /* swan_nest.png in Resources */,
+				3E3E4EEC11FD598D00AD964F /* turkey_nest.png in Resources */,
+				3E3E4EED11FD598D00AD964F /* wildgoose_nest.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

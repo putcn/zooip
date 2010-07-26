@@ -8,6 +8,8 @@
 
 #import "AnimalController.h"
 #import "ImageResources.h"
+#import "GameMainScene.h"
+#import "RandomHelper.h"
 
 @implementation AnimalController
 
@@ -85,7 +87,10 @@ static AnimalController *_sharedAnimalController = nil;
 		if (serverAnimalData.birdStage == 0) {
 			NSLog(@"%@",@"有动物正在孵蛋!");
 		}
-		else {
+		else if(serverAnimalData.status == 3){
+			[self addBornAnimal:serverAnimalData.originalAnimalId];
+		}
+		else if(serverAnimalData.status == 0 || serverAnimalData.status == 1){
 			newAnimal = [[Animal alloc] initWithAnimalData:serverAnimalData];
 			[animals setObject:newAnimal forKey:serverAnimalID];
 		}
@@ -160,6 +165,76 @@ static AnimalController *_sharedAnimalController = nil;
 -(void) cureAnimal:(NSString *)cureAnimalId
 {
 	
+}
+
+-(void) addBornAnimal:(NSInteger)type
+{
+	CCSprite *sprite = [CCSprite node];
+	switch (type) {
+			//母鸭
+		case 1:
+			[sprite initWithFile:@"duck_nest.png"];
+			break;
+			//母鸡
+		case 2:
+			[sprite initWithFile:@"hen_nest.png"];
+			break;
+			//母鹅
+		case 3:
+			[sprite initWithFile:@"goose_nest.png"];
+			break;
+			
+		case 4:
+			[sprite initWithFile:@"pigeon_nest.png"];
+			break;
+			
+		case 5:
+			[sprite initWithFile:@"mallard_nest.png"];
+			break;
+			
+		case 6:
+			[sprite initWithFile:@"turkey_nest.png"];
+			break;
+			//母火鸡
+		case 7:
+			[sprite initWithFile:@"magpie_nest.png"];
+			break;
+			//母喜鹊
+		case 8:
+			[sprite initWithFile:@"swan_nest.png"];
+			break;
+			//母天鹅(资源未到位)
+		case 9:
+			[sprite initWithFile:@"parrot_nest.png"];
+			break;
+			//母鹦鹉(资源未到位)
+		case 10:
+			[sprite initWithFile:@"pheasant_nest.png"];
+			break;
+			//母雉鸡
+		case 11:
+			[sprite initWithFile:@"wildgoose_nest.png"];
+			break;
+			//公大雁(资源未到位)
+		case 12:
+			[sprite initWithFile:@"mandarinduck_nest.png"];
+			break;
+			//母鸳鸯
+		case 13:
+			[sprite initWithFile:@"peahen_nest.png"];
+			break;
+			//母孔雀
+		case 14:
+			[sprite initWithFile:@"crane_nest.png"];
+			break;
+			//母丹顶鹤
+			
+		default:
+			break;
+	}
+	CGPoint pos = CGPointMake([RandomHelper getRandomNum:300 to:600], [RandomHelper getRandomNum:100 to:300]);
+	sprite.position = pos;
+	[[GameMainScene sharedGameMainScene] addSpriteToStage:sprite z:5];
 }
 
 // Add by Hunk on 2010-06-29

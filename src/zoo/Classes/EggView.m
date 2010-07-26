@@ -36,7 +36,7 @@
 
 - (void)onEnter
 {
-	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:60 swallowsTouches:YES];
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:61 swallowsTouches:YES];
 	[super onEnter];
 }
 
@@ -49,7 +49,7 @@
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
-	self.scale = 1;
+//	self.scale = 1;
 	return YES;
 }
 
