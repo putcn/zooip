@@ -901,9 +901,15 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 				{
 					// 原始动物信息
 					NSDictionary* sDic= [[DataEnvironment sharedDataEnvironment] originalAnimals];
+					
+					NSLog(@"sDic = %@\n", sDic);
+					
 					NSArray* sArray = [result objectForKey:@"originalAnimals"];
 					for (int i = 0; i < [sArray count]; i++) {
 						NSDictionary* dic = [sArray objectAtIndex:i];
+						
+						NSLog(@"dic = %@\n", dic);
+						
 						DataModelOriginalAnimal* obj = [[DataModelOriginalAnimal alloc] init];
 						
 						obj.originalAnimalId = [[dic objectForKey:@"originalAnimalId"] isKindOfClass:[NSNull class]]  ? nil : [dic objectForKey:@"originalAnimalId"];
@@ -937,6 +943,8 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 						obj.walkToEatSpeed = [[dic objectForKey:@"walkToEatSpeed"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[dic objectForKey:@"walkToEatSpeed"] intValue];
 						
 						[sDic setValue:obj forKey:obj.originalAnimalId];
+						
+						NSLog(@"sDic = %@\n", sDic);
 					}
 //					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取原始动物信息"];
 				}
