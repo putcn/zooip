@@ -52,7 +52,7 @@ static ItemController *_itemController = nil;
 	else if(itemType == @"dog"){
 		DogView *dogView = [[DogView alloc] init];
 		dogView.position = ccp(650,450);
-		[[FarmAnimal alloc] initWithView:dogView setSpeed:1.0f setLimitRect:CGRectMake(600, 400, 100, 100)];
+		[[FarmAnimal alloc] initWithView:dogView setSpeed:0.1f setLimitRect:CGRectMake(300, 100, 400, 400)];
 		[allItems setObject:dogView forKey:@"dog"];
 	}
 	else if(itemType == @"bowls"){

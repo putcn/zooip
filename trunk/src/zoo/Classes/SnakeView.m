@@ -54,7 +54,7 @@
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
-	self.scale = 1;
+	//self.scale = 1;
 	return YES;
 }
 

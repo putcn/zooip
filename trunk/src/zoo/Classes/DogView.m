@@ -18,6 +18,7 @@
 		AnimalImageProperty *imageProperty = [[AnimalImageProperty alloc] init];
 		animationTable = [[imageProperty animationTable:@"_dog.png" plistName:@"_dog.plist"] retain];
 		NSLog(@"dog---%@", animationTable);
+		self.scale = 1.0f/0.49f;
 		[[GameMainScene sharedGameMainScene] addSpriteToStage:self z:5];
 	//	[self runAction:[animationTable objectForKey:@"rest"]];
 }
@@ -91,7 +92,7 @@
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
-	self.scale = 1;
+	//self.scale = 1;
 	return YES;
 }
 

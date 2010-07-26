@@ -61,8 +61,12 @@
 		bowlArea = CGRectMake(320, 140, 130, 80);
 		
 		[self setupMoveArea:data.aliveEdge];
-		
-		[[CCScheduler sharedScheduler] scheduleTimer: [CCTimer timerWithTarget:self selector:@selector(tick:)]];
+		if (data.status == 1) {
+			[view update:[RandomHelper getRandomNum:0 to:7] status:2];
+		}
+		else {
+			[[CCScheduler sharedScheduler] scheduleTimer: [CCTimer timerWithTarget:self selector:@selector(tick:)]];
+		}
 		view.scale = 1.0f/0.49f;
 		[[GameMainScene sharedGameMainScene] addSpriteToStage:view z:5];
 		

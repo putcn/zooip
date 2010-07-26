@@ -13,6 +13,7 @@
 #import "SnakeController.h"
 #import "EggController.h"
 #import "GameMainScene.h"
+#import "ImgInitUtil.h"
 
 
 @implementation ToReleaseSnakeController
@@ -104,16 +105,13 @@
 {
 	CCSprite *sprite = [CCSprite node];
 	[sprite setAnchorPoint:CGPointMake(0, 0.5)];
-	CCAnimation* animation = [CCAnimation animationWithName:@"releaseSanke" delay:0.1f];
-	for (int i = 1; i<=16; i++) {
-		[animation addFrameWithFilename:[NSString stringWithFormat:@"snake_walk_left_%02d.png", i]];		
-	}
-	CCAnimate *animate = [CCAnimate actionWithAnimation:animation];
 	sprite.position = [self eggPosition];
+	CCAnimation *animation = [[ImgInitUtil alloc] getAnimate:@"_snake.png" setOriginX:0 setOriginY:19 setWidth:59 setHeight:13 setNumber:6 setMaxOneline:20];  
+	CCAnimate *animate = [CCAnimate actionWithAnimation:animation];
 	CCMoveTo *moveTo = [CCMoveTo actionWithDuration:2.0f position:ccp(sprite.position.x + 50, sprite.position.y)];
 	[sprite runAction:[CCSpawn actions:animate, moveTo, nil]];
+	sprite.scale = 1.0f/0.49f;
 	[[GameMainScene sharedGameMainScene] addSpriteToStage:sprite z:10];
-	
 }
 
 // Add by Hunk on 2010-06-29

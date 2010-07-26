@@ -24,5 +24,6 @@
 -(void) gotoEat;
 -(void) scatterAll;
 -(void) cureAnimal:(NSString *)cureAnimalId;
+-(void) addBornAnimal:(NSInteger)type;
 
 @end
