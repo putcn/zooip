@@ -79,6 +79,14 @@
 			NSInteger nHeight = [strHeight intValue];
 			
 			if (nNumber == 1) {
+//				
+//				NSLog(@"%d\n",nOriginX);
+//				NSLog(@"%d\n",nOriginY);
+//				NSLog(@"%d\n",nWidth);
+//				NSLog(@"%d\n",nHeight);
+//				
+//				
+//				
 				CCSprite* sprite = [[ImgInitUtil sharedImgInitUtil] getSprite:[imageName lowercaseString] setOriginX:nOriginX setOriginY:nOriginY setWidth:nWidth setHeight:nHeight setNumber:nNumber];
 				[aniTable setObject:sprite forKey:[key lowercaseString]];
 			}

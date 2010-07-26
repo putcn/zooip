@@ -130,7 +130,8 @@ static ImageResources *_resource = nil;
 		return dogImg;
 	}
 	else if ([imagePath isEqualToString:@"_duck.png"]){
-		if (duckImg == nil) {
+		if (duckImg == nil) 
+		{
 			duckImg = [CCSpriteSheet spriteSheetWithFile:imagePath];
 		}
 		return duckImg;

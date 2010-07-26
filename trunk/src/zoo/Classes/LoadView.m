@@ -33,7 +33,7 @@
 -(void) SetLabelString:(NSString*) nStep
 {
 	int nPercent = nStep.intValue;
-	if(nPercent >= 0)
+	if(nPercent > 0)
 	{
 		[numberLbl setString:[NSString stringWithFormat:@"%d％", nPercent*10]];
 	}

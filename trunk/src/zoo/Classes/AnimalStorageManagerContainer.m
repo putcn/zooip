@@ -53,7 +53,7 @@
 		for (int i = 0; i< tabArray.count; i++) {
 			NSString *tab = [tabArray objectAtIndex:i];
 			
-			buttonContainer = [[AnimalStorageManagerPanel alloc] initWithTab:tab setTarget:self];
+			buttonContainer = [[AnimalStorageManagerPanel alloc] initWithTab:tab setTarget:self setNumber:0];
 			if (i == 0) {
 				buttonContainer.position = ccp(40, 170);
 			}
@@ -158,12 +158,12 @@
 		
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",auctionBirdStorageId,@"auctionBirdStorageId",nil];
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAuctionAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-		//itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
 		
 		BaseServerController *getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
 		[getAllBirdFarmAnimalInfoController execute:nil];
 		[[AnimalController sharedAnimalController] clearAnimal];
 		[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
+		
 		
 	}
 	else if (itemButton.itemType == @"动物")
@@ -173,6 +173,7 @@
 		
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",adultBirdStorageId,@"adultBirdStorageId",nil];
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+
 	}
 }
 
@@ -185,11 +186,27 @@
 }
 
 
+-(void)updateFarmInfoPutAnimal:(NSDictionary *)value
+{
+	NSDictionary *param = (NSDictionary *)value;
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmInfo WithParameters:param AndCallBackScope:self AndSuccessSel:@"updateFarmInfoResultCallback:" AndFailedSel:@"faultCallback:"];
+}
+
+-(void)updateFarmInfoResultCallback:(NSObject*)value
+{
+	[[GameMainScene sharedGameMainScene] updateUserInfo];
+}
+
+
 -(void) resultCallback:(NSObject *)value
 {
 	NSDictionary* dic = (NSDictionary*)value;
  	NSInteger code = [[dic objectForKey:@"code"] intValue];
 	BaseServerController *getAllBirdFarmAnimalInfoController;
+	
+	
+
+	
 	if(currentTagFlag == @"拍来动物")
 	{
 		switch (code) {
@@ -197,6 +214,7 @@
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"找不到拍卖所得动物"];
 				break;
 			case 1:
+			{
 				[[AnimalController sharedAnimalController] clearAnimal];
 				[[DataEnvironment sharedDataEnvironment].animals removeAllObjects];
 				[[DataEnvironment sharedDataEnvironment].animalIDs removeAllObjects];
@@ -204,7 +222,12 @@
 				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
 										[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
 				[getAllBirdFarmAnimalInfoController execute:params];
+				[self updateFarmInfoPutAnimal:params];
+				
+				AnimalStorageManagerPanel *buttonContainer = [[AnimalStorageManagerPanel alloc] initWithTab:currentTagFlag setTarget:self setNumber:1];
+				
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"添加动物到饲养场成功"];
+			}
 				break;
 			case 2:
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"仓库中没有该动物!"];
@@ -221,6 +244,7 @@
 	{
 		switch (code) {
 			case 1:
+			{
 				[[AnimalController sharedAnimalController] clearAnimal];
 				[[DataEnvironment sharedDataEnvironment].animals removeAllObjects];
 				[[DataEnvironment sharedDataEnvironment].animalIDs removeAllObjects];
@@ -228,7 +252,13 @@
 				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
 										[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
 				[getAllBirdFarmAnimalInfoController execute:params];
+				[self updateFarmInfoPutAnimal:params];
+				
+				AnimalStorageManagerPanel *buttonContainer = [[AnimalStorageManagerPanel alloc] initWithTab:currentTagFlag setTarget:self setNumber:1];
+
+				
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"添加动物到饲养场成功"];
+			}
 				break;
 			case 2:
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"仓库动物数量不足!"];
