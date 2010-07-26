@@ -132,10 +132,35 @@
 {
 	if (tabFlag == @"动物") {
 		NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+		
+		NSLog(@"originAnimalDic = %@\n",originAnimalDic);
+		
 		DataModelOriginalAnimal *originAnimal;
-		NSArray *animalArray = [originAnimalDic allKeys];
+		NSArray *animalArrayTemp = [originAnimalDic allKeys];
+		
+		for(int i = 0; i < [animalArrayTemp count]; i++)
+		{
+			NSLog(@"%@", [animalArrayTemp objectAtIndex:i]);
+		}
+		
+		NSArray* animalArray = [NSArray arrayWithObjects:
+								@"1", @"2", @"3", @"4", 
+								@"51", @"52", @"5", @"53",
+								@"6", @"54", @"7", @"55",
+								@"8", @"56", @"9", @"57",
+								@"10", @"58", @"11", @"59",
+								@"12", @"60", @"61", @"13",
+								@"62", @"14", @"63", @"64",
+								nil];
+		for(int i = 0; i < [animalArray count]; i++)
+		{
+			NSLog(@"%@", [animalArray objectAtIndex:i]);
+		}
+		
+		
 		int endNumber = currentPageNum * 8;
-		if (endNumber >= animalArray.count) {
+		if (endNumber >= animalArray.count) 
+		{
 			endNumber = animalArray.count;
 		}
 		currentNum = endNumber - (currentPageNum -1 ) *8 ;
@@ -155,6 +180,9 @@
 			//根据动物的originalAnimalId生成ItemButton
 			NSString *picFileName = [NSString stringWithFormat:@"%@.png",originAnimal.picturePrefix];
 			ItemButton *itemButton = [[ItemButton alloc] initWithItem:originAnimal.originalAnimalId setitType:tabFlag setImagePath:picFileName setBuyType:buyType setPrice:price setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:40 offsetX:1 offsetY:1];
+			
+		 	NSLog(@"%@\n",itemButton.itemId); 
+			
 			itemButton.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
 			[self addChild:itemButton z:7 tag:i%8];
 			[itemButton release];
