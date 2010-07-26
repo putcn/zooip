@@ -14,10 +14,7 @@
 #import "FriendsToolbar.h"
 
 @interface UILayer : CCLayer
-{
-	MessageDialog *friendsPopupList;
-	MessageDialog *shopPopupList;
-	
+{	
 	PlayerInfo *playerInfo;
 	StorageManageToolbar *storageManageToolbar;
 	ZooManageToolbar *zooManageToolbar;

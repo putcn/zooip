@@ -32,11 +32,11 @@
 		friendsToolbar.position = ccp(436, 6);
 		[self addChild:friendsToolbar];
 		
-		friendsPopupList = [[MessageDialog alloc] initDialog:@"FriendList.png" setTarget:self setSelector:@selector(switchFriendZoo)];
-		[self addChild:friendsPopupList];
-		
-		shopPopupList = [[MessageDialog alloc] initDialog:@"store_info.png" setTarget:nil setSelector:nil];
-		[self addChild:shopPopupList];
+//		friendsPopupList = [[MessageDialog alloc] initDialog:@"FriendList.png" setTarget:self setSelector:@selector(switchFriendZoo)];
+//		[self addChild:friendsPopupList];
+//		
+//		shopPopupList = [[MessageDialog alloc] initDialog:@"store_info.png" setTarget:nil setSelector:nil];
+//		[self addChild:shopPopupList];
 	}
 	
 	return self;
@@ -44,7 +44,7 @@
 
 -(void) popupFriendList
 {
-	[friendsPopupList popUp:@""];
+//	[friendsPopupList popUp:@""];
 }
 
 -(void) switchPlayerZoo
@@ -70,8 +70,8 @@
 // Add by Hunk on 2010-06-29
 -(void)dealloc
 {
-	[friendsPopupList release];
-	[shopPopupList release];
+//	[friendsPopupList release];
+//	[shopPopupList release];
 	[playerInfo release];
 	[storageManageToolbar release];
 	[zooManageToolbar release];
