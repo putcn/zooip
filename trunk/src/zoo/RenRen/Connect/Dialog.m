@@ -431,6 +431,7 @@ static CGFloat kBorderWidth = 10;
 		[[[UIApplication sharedApplication] keyWindow] addSubview:navigationController.view];
 		RegistorWebView *reg =[[[RegistorWebView alloc] initWithURL:url] autorelease];
 		
+		[[[UIApplication sharedApplication] keyWindow] addSubview:navigationController.view];
 		[navigationController pushViewController:reg animated:YES];
 		
 		

@@ -68,7 +68,7 @@ storageAuctionAnimals;
 //		playerUid = @"160412891";//蒋紫薇
 //		playerUid = @"221815086";//马天才
 
-	//	playerUid = @"248951837"; renyingying
+		playerUid = @"248951837"; //renyingying
 		
 	//	playerUid = @"248726533";
 		// New test UID
