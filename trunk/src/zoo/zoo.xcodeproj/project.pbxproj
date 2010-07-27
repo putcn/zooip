@@ -534,6 +534,10 @@
 		6B03D80611DC74D0000F2201 /* rightOrg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7F811DC74D0000F2201 /* rightOrg.png */; };
 		6B03D80711DC74D0000F2201 /* rightOrg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7F911DC74D0000F2201 /* rightOrg2.png */; };
 		6B03D80811DC74D0000F2201 /* Tooltip_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7FA11DC74D0000F2201 /* Tooltip_BG.png */; };
+		6B46CE7911FE6AA800681656 /* NumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46CE7811FE6AA800681656 /* NumberField.m */; };
+		6B4E4FBA11FECDB7009A95B7 /* 滚轮数字加.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B4E4FB711FECDB7009A95B7 /* 滚轮数字加.png */; };
+		6B4E4FBB11FECDB7009A95B7 /* 滚轮数字减.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B4E4FB811FECDB7009A95B7 /* 滚轮数字减.png */; };
+		6B4E4FBC11FECDB7009A95B7 /* 滚轮数字轮盘.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B4E4FB911FECDB7009A95B7 /* 滚轮数字轮盘.png */; };
 		6BA03F9B11E486C300D0E667 /* BG_buy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA03F9611E486C300D0E667 /* BG_buy.png */; };
 		6BA03F9C11E486C300D0E667 /* 加减器_右.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA03F9711E486C300D0E667 /* 加减器_右.png */; };
 		6BA03F9D11E486C300D0E667 /* 加减器_左.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA03F9811E486C300D0E667 /* 加减器_左.png */; };
@@ -1717,6 +1721,11 @@
 		6B03D7F811DC74D0000F2201 /* rightOrg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightOrg.png; sourceTree = "<group>"; };
 		6B03D7F911DC74D0000F2201 /* rightOrg2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rightOrg2.png; sourceTree = "<group>"; };
 		6B03D7FA11DC74D0000F2201 /* Tooltip_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tooltip_BG.png; sourceTree = "<group>"; };
+		6B46CE7711FE6AA800681656 /* NumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberField.h; sourceTree = "<group>"; };
+		6B46CE7811FE6AA800681656 /* NumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberField.m; sourceTree = "<group>"; };
+		6B4E4FB711FECDB7009A95B7 /* 滚轮数字加.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字加.png"; sourceTree = "<group>"; };
+		6B4E4FB811FECDB7009A95B7 /* 滚轮数字减.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字减.png"; sourceTree = "<group>"; };
+		6B4E4FB911FECDB7009A95B7 /* 滚轮数字轮盘.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字轮盘.png"; sourceTree = "<group>"; };
 		6BA03F9611E486C300D0E667 /* BG_buy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BG_buy.png; path = "动物园切图/按钮/BG_buy.png"; sourceTree = "<group>"; };
 		6BA03F9711E486C300D0E667 /* 加减器_右.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "加减器_右.png"; path = "动物园切图/按钮/加减器_右.png"; sourceTree = "<group>"; };
 		6BA03F9811E486C300D0E667 /* 加减器_左.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "加减器_左.png"; path = "动物园切图/按钮/加减器_左.png"; sourceTree = "<group>"; };
@@ -3484,6 +3493,9 @@
 		6BD28DCF11D3000D00BE2859 /* 动物园切图 */ = {
 			isa = PBXGroup;
 			children = (
+				6B4E4FB711FECDB7009A95B7 /* 滚轮数字加.png */,
+				6B4E4FB811FECDB7009A95B7 /* 滚轮数字减.png */,
+				6B4E4FB911FECDB7009A95B7 /* 滚轮数字轮盘.png */,
 				6BD28EEB11D3001D00BE2859 /* Common */,
 				6B03D7EC11DC74D0000F2201 /* ToolTip */,
 				6BBC378B11D83E3F0081CB4D /* 好友列表搜索 */,
@@ -3781,6 +3793,8 @@
 		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				6B46CE7711FE6AA800681656 /* NumberField.h */,
+				6B46CE7811FE6AA800681656 /* NumberField.m */,
 				6BA03FAA11E489A200D0E667 /* search */,
 				6092141311BF33DB00D50ABE /* AnimalFeedButtonContainer.h */,
 				6092141411BF33DB00D50ABE /* AnimalFeedButtonContainer.m */,
@@ -4695,6 +4709,9 @@
 				3E3E4EEB11FD598D00AD964F /* swan_nest.png in Resources */,
 				3E3E4EEC11FD598D00AD964F /* turkey_nest.png in Resources */,
 				3E3E4EED11FD598D00AD964F /* wildgoose_nest.png in Resources */,
+				6B4E4FBA11FECDB7009A95B7 /* 滚轮数字加.png in Resources */,
+				6B4E4FBB11FECDB7009A95B7 /* 滚轮数字减.png in Resources */,
+				6B4E4FBC11FECDB7009A95B7 /* 滚轮数字轮盘.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4910,6 +4927,7 @@
 				3EBBB64B11ECB0EC00011299 /* AnimalBehaviorUtil.m in Sources */,
 				3E7E61AE11ED87FE00601836 /* ImageResources.m in Sources */,
 				60EEE3D311F9802000D26ABD /* RegistorWebView.m in Sources */,
+				6B46CE7911FE6AA800681656 /* NumberField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

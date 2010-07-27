@@ -70,10 +70,10 @@ storageAuctionAnimals;
 
 //		playerUid = @"248951837"; //renyingying
 		
-		playerUid = @"221110752";
+//		playerUid = @"221110752";
 		// New test UID
 //		playerUid = @"221110752";//任盈盈
-//		playerUid = @"248951866";//傅红雪
+		playerUid = @"248951866";//傅红雪
 		
 		// Friend UID
 		friendUid = @"327535525";
