@@ -183,17 +183,20 @@
 
 -(void) clearPage: (NSString *)tabName setTarget:(id)target
 {
-	NSDictionary *itemDic;
-	NSArray *itemArray;
-	if (tabFlag == @"动物") {
-		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
-		itemArray = [itemDic allKeys];
+	for (int i = 0; i< currentNum; i ++) {
+		[self removeChildByTag:i cleanup:YES];
 	}
-	else if(tabFlag == @"拍来动物")
-	{
-		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
-		itemArray = [itemDic allKeys];
-	}
+//	NSDictionary *itemDic;
+//	NSArray *itemArray;
+//	if (tabFlag == @"动物") {
+//		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
+//		itemArray = [itemDic allKeys];
+//	}
+//	else if(tabFlag == @"拍来动物")
+//	{
+//		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
+//		itemArray = [itemDic allKeys];
+//	}
 	
 //	for (int j=0; j<itemArray.count; j++) {
 		
@@ -284,6 +287,21 @@
 //			[self addChild:kuang z:7];
 		}
 
+	}
+}
+
+-(void)updatePage
+{
+	for (int i = 0; i< currentNum; i ++) {
+		[self removeChildByTag:i cleanup:YES];
+	}
+	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
+	if (tabFlag == @"动物") {
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+	}
+	else if(tabFlag == @"拍来动物"){
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 	}
 }
 

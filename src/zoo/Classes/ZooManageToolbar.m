@@ -408,6 +408,7 @@
 		[self addChild:animalManagerContainer];
 	}
 	else {
+		[animalManagerContainer updateStorage];
 		animalManagerContainer.position = ccp(240,160);
 	}
 }

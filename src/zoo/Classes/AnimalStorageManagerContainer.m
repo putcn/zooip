@@ -60,10 +60,10 @@
 			else {
 				buttonContainer.position = ccp(2000, self.contentSize.height/2 - 50);
 			}
-			
 			[self addChild:buttonContainer z:7];
 			[tabContentDic setObject:buttonContainer forKey:[NSString stringWithFormat:@"tabContent_%d",i]];
 		}
+		itemInfoPane = [tabContentDic objectForKey:@"tabContent_0"];
 		[buttonContainer release];
 		
 		//Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
@@ -140,7 +140,7 @@
 			[disableButton setTexture:tabDisable];
 		}
 	}
-	
+	itemInfoPane = buttonContainer;
 
 }
 
@@ -159,11 +159,11 @@
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",auctionBirdStorageId,@"auctionBirdStorageId",nil];
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAuctionAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		
-		BaseServerController *getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
-		[getAllBirdFarmAnimalInfoController execute:nil];
-		[[AnimalController sharedAnimalController] clearAnimal];
-		[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
-		
+	//	BaseServerController *getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
+//		[getAllBirdFarmAnimalInfoController execute:nil];
+//		[[AnimalController sharedAnimalController] clearAnimal];
+//		[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
+//		
 		
 	}
 	else if (itemButton.itemType == @"动物")
@@ -204,9 +204,6 @@
  	NSInteger code = [[dic objectForKey:@"code"] intValue];
 	BaseServerController *getAllBirdFarmAnimalInfoController;
 	
-	
-
-	
 	if(currentTagFlag == @"拍来动物")
 	{
 		switch (code) {
@@ -224,8 +221,9 @@
 				[getAllBirdFarmAnimalInfoController execute:params];
 				[self updateFarmInfoPutAnimal:params];
 				
-				AnimalStorageManagerPanel *buttonContainer = [[AnimalStorageManagerPanel alloc] initWithTab:currentTagFlag setTarget:self setNumber:1];
-				
+			//	AnimalStorageManagerPanel *buttonContainer = [[AnimalStorageManagerPanel alloc] initWithTab:currentTagFlag setTarget:self setNumber:1];
+				[DataEnvironment sharedDataEnvironment].storageAnimals = nil;
+				[itemInfoPane updatePage];
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"添加动物到饲养场成功"];
 			}
 				break;
@@ -254,8 +252,9 @@
 				[getAllBirdFarmAnimalInfoController execute:params];
 				[self updateFarmInfoPutAnimal:params];
 				
-				AnimalStorageManagerPanel *buttonContainer = [[AnimalStorageManagerPanel alloc] initWithTab:currentTagFlag setTarget:self setNumber:1];
-
+//				AnimalStorageManagerPanel *buttonContainer = [[AnimalStorageManagerPanel alloc] initWithTab:currentTagFlag setTarget:self setNumber:1];
+				[DataEnvironment sharedDataEnvironment].storageAnimals = nil;
+				[itemInfoPane updatePage];
 				
 				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"添加动物到饲养场成功"];
 			}
@@ -277,6 +276,11 @@
 -(void) faultCallback:(NSObject *)value
 {
 	NSLog(@"Server Connection Fail");
+}
+
+-(void) updateStorage
+{
+	[itemInfoPane updatePage];
 }
 
 -(void)dealloc
