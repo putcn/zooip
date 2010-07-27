@@ -72,7 +72,7 @@ storageAuctionAnimals;
 		
 //		playerUid = @"221110752";
 		// New test UID
-//		playerUid = @"221110752";//任盈盈
+		playerUid = @"248951866";//actual
 		playerUid = @"248951866";//傅红雪
 		
 		// Friend UID

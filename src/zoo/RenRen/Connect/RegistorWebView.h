@@ -11,20 +11,20 @@
 #define kTweenMargin 0
 #define kTextFieldHeight 40
 
-@interface RegistorWebView :  UIViewController
+@interface RegistorWebView :  UIViewController<UIWebViewDelegate>
 {
 	UIView *instructionsView;	
 	UIBarButtonItem *doneButton;
-	UIBarButtonItem *flipButton;
 	UIWebView *myWebView;
 	UINavigationController *navigationController;
+	UIActivityIndicatorView *activityIndicator;
 }
 
 @property (nonatomic, retain) UINavigationController *navigationController;
 @property (nonatomic, retain) IBOutlet UIView *instructionsView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
-@property (nonatomic, retain) UIBarButtonItem *flipButton;
 @property (nonatomic, retain) UIWebView *myWebView;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
 
 @end
 
