@@ -4,7 +4,7 @@
 <dict>
 	<key>dog</key>
 	<dict>
-		<key>maxItems</key><string>20</string>
+		<key>maxItems</key><string>12</string>
 		<key>walk_left</key>
 		<dict>
 			<key>originX</key>
