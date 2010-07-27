@@ -208,6 +208,7 @@
 
 -(void) generatePage
 {	
+	NSLog(@"************* generatePage ***********************");
 	if (tabFlag == @"动物") {
 		NSDictionary *storageAnimal = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
 		DataModelStorageAnimal *stoAnimals;

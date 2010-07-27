@@ -14,6 +14,7 @@
 #import "DataModelGood.h"
 #import "Button.h"
 
+#import "NumberField.h"
 @interface ItemInfoPane : CCSprite {
 	NSString *title;
 	NSString *itemId;
@@ -23,6 +24,19 @@
 	NSInteger count;
 	CCLabel *priceLbl;
 	
+	
+	CCSprite *wheel;
+	NumberField *numberField;
+	float startValue;
+	int maxCount;
+	BOOL isOpen;
+	
+	int totalAnt;
+	int totalGold;
+	
+	NSString * m_itId;
+	NSString * m_itType; 
+	id m_target;
 }
 
 @property (nonatomic, retain) NSString *title;

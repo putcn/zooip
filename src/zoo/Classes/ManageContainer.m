@@ -157,7 +157,7 @@
 		[itemInfoPane updateInfo:curr_itemId type:curr_itemType setTarget:self];
 		itemInfoPane.position = ccp(self.contentSize.width/2, itemInfoPane.contentSize.height/2);
 	}
-
+//	[itemInfoPane setbuttonCount];
 }
 
 

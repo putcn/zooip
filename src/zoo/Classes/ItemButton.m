@@ -101,7 +101,8 @@
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
+	if ( ![self containsTouchLocation:touch] || !self.visible ) 
+		return NO;
 	return YES;
 }
 
