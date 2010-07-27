@@ -35,4 +35,5 @@
 
 -(void)addTitle;
 -(void)addTab:(NSArray *)tabArray;
+-(void)updateStorage;
 @end

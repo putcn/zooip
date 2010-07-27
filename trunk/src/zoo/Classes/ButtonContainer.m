@@ -133,7 +133,7 @@
 	if (tabFlag == @"动物") {
 		NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 		
-		NSLog(@"originAnimalDic = %@\n",originAnimalDic);
+	//	NSLog(@"originAnimalDic = %@\n",originAnimalDic);
 		
 		DataModelOriginalAnimal *originAnimal;
 		NSArray *animalArrayTemp = [originAnimalDic allKeys];

@@ -35,5 +35,6 @@
 -(void) faultCallback:(NSObject *)value;
 -(void) nextPage:(Button *)button;
 -(void) forwardPage:(Button *)button;
+-(void) updatePage;
 -(void) generatePage;
 @end
