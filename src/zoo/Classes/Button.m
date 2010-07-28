@@ -80,7 +80,8 @@
 
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
-	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
+	if ( ![self containsTouchLocation:touch] || !self.visible ) 
+		return NO;
 	NSLog(@"touch began");
 	self.scale = defaultScale * 1.3;
 	
@@ -90,6 +91,14 @@
 	
 	return YES;
 }
+
+//-(void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+//{
+//	if ( ![self containsTouchLocation:touch] || !self.visible )
+//	{
+//		[text setString:@"HHHHHHHHHHHHHHH"];
+//	}
+//}
 
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {

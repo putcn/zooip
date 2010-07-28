@@ -8,8 +8,8 @@
 
 #import "SellinfoPane.h"
 #import "TransBackground.h"
-#import "ScalerPane.h"
-
+//#import "ScalerPane.h"
+#define degreesToRadian(x) (M_PI * (x) / 180.0)
 @implementation SellinfoPane
 @synthesize title,itemId,itemType,itemBuyType,count,eggTotalNum;
 
@@ -35,7 +35,7 @@
 		 */
 		self.title = @"出 售";
 		priceLbl = [[CCLabel alloc] retain];
-		
+				
 		[self addTitle];
 		
 		[self updateInfo:itId type:itType setTarget:target];
@@ -65,6 +65,32 @@
 	itemPrice = 0;
 	NSDictionary *dic;
 	if (itemType == @"普通蛋") {
+		
+		CCSprite *gunlunDown = [CCSprite spriteWithFile:@"滚轮下.png"];
+		gunlunDown.position = ccp( self.contentSize.width/2, 11 );
+		[self addChild:gunlunDown z:10];
+		
+		wheel = [CCSprite spriteWithFile:@"滚轮数字轮盘.png"];
+		wheel.position = ccp( self.contentSize.width/2-5, self.contentSize.height/2-65 );
+		[self addChild:wheel z:10];
+		
+		CCSprite *gunlunUp = [CCSprite spriteWithFile:@"滚轮上.png"];
+		gunlunUp.position = ccp( self.contentSize.width/2, self.contentSize.height/2+10 );
+		[self addChild:gunlunUp z:10];
+		
+		
+		numberField = [[NumberField alloc] initWithCounter:0 target:target z:10 Priority:30 ];
+		numberField.position = ccp( self.contentSize.width/2-5, self.contentSize.height/2-63 );
+		[self addChild:numberField z:10];
+		
+		CCSprite *left = [CCSprite spriteWithFile:@"滚轮数字减.png"];
+		left.position = ccp( self.contentSize.width/2-55, self.contentSize.height/2-75 );
+		[self addChild:left z:10];
+		
+		CCSprite *right = [CCSprite spriteWithFile:@"滚轮数字加.png"];
+		right.position = ccp( self.contentSize.width/2+50, self.contentSize.height/2-75 );
+		[self addChild:right z:10];
+		
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs retain];
 		DataModelStorageEgg *storageEggs = [dic objectForKey:itemId];
 		itemPrice = storageEggs.eggPrice;
@@ -83,36 +109,36 @@
 		
 		
 		NSString *signPrice = [NSString stringWithFormat:@"单个售价 : %d  金蛋",itemPrice];
-		CCLabel *signPriceLbl = [CCLabel labelWithString:signPrice fontName:@"Arial" fontSize:18];
+		CCLabel *signPriceLbl = [CCLabel labelWithString:signPrice fontName:@"Arial" fontSize:17];
 		[signPriceLbl setColor:ccc3(0, 0, 0)];
 		signPriceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 50);
 		[self addChild:signPriceLbl z:10];
 		
 		eggTotalNum  = storageEggs.numOfProduct + storageEggs.numOfStolen;
-		NSString *eggTotalNumStr = [NSString stringWithFormat:@" 总  数 :  %d",eggTotalNum];
+		NSString *eggTotalNumStr = [NSString stringWithFormat:@" 总  数 :  %d  个",eggTotalNum];
 		
-		CCLabel *toalEggNumLbl = [CCLabel labelWithString:eggTotalNumStr fontName:@"Arial" fontSize:18];
+		CCLabel *toalEggNumLbl = [CCLabel labelWithString:eggTotalNumStr fontName:@"Arial" fontSize:17];
 		[toalEggNumLbl setColor:ccc3(0, 0, 0)];
 		toalEggNumLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 75);
 		[self addChild:toalEggNumLbl z:10];
-		
+		maxCount = eggTotalNum;
 		
 //		NSString *sumPrice = [NSString stringWithFormat:@"总计收入 : %d  金蛋",itemPrice * eggTotalNum];
 //		CCLabel *sumPriceLbl = [CCLabel labelWithString:sumPrice fontName:@"Arial" fontSize:20];
 //		[sumPriceLbl setColor:ccc3(0, 0, 0)];
 //		sumPriceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 120);
 //		[self addChild:sumPriceLbl z:10];
+//		
+//		CCLabel *ChooseNumLbl = [CCLabel labelWithString:@"选择个数 : " fontName:@"Arial" fontSize:18];
+//		[ChooseNumLbl setColor:ccc3(0, 0, 0)];
+//		ChooseNumLbl.position = ccp(self.contentSize.width/2-40, self.contentSize.height - 100);
+//		[self addChild:ChooseNumLbl z:10];
+//		
 		
-		CCLabel *ChooseNumLbl = [CCLabel labelWithString:@"选择个数 : " fontName:@"Arial" fontSize:18];
-		[ChooseNumLbl setColor:ccc3(0, 0, 0)];
-		ChooseNumLbl.position = ccp(self.contentSize.width/2-40, self.contentSize.height - 100);
-		[self addChild:ChooseNumLbl z:10];
-		
-		
-		NSString *ToTalprice = [NSString stringWithFormat:@"总计收入 : %d  金蛋",itemPrice ];
-		priceLbl = [CCLabel labelWithString:ToTalprice fontName:@"Arial" fontSize:18];
+		NSString *ToTalprice = [NSString stringWithFormat:@"总计收入 : %d  金蛋",itemPrice*maxCount ];
+		priceLbl = [CCLabel labelWithString:ToTalprice fontName:@"Arial" fontSize:17];
 		[priceLbl setColor:ccc3(0, 0, 0)];	
-		priceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 125);
+		priceLbl.position = ccp(self.contentSize.width/2, self.contentSize.height - 110);
 		[self addChild:priceLbl z:10];
 		
 		Button *confirmBtn = [[Button alloc] initWithLabel:@"出售" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"确定.png" setTarget:target setSelector:@selector(sellEggItem:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
@@ -120,18 +146,18 @@
 		
 		//为Button添加绑定的参数列表
 		confirmBtn.target = self;
-		confirmBtn.position = ccp(self.contentSize.width/2 - 60, 35);
-		cancelBtn.position = ccp(self.contentSize.height/2 + 120, 35);
+		confirmBtn.position = ccp(self.contentSize.width/2 - 110, 35);
+		cancelBtn.position = ccp(self.contentSize.height/2 + 170, 35);
 		[self addChild:confirmBtn z:10];
 		[self addChild:cancelBtn z:10];
 		
 //		[confirmBtn release];
 //		[cancelBtn release];
 		
-		//数目选择孔件
-		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0 setPathname:@"加减显示器.png" setlength:0];
-		scalerPane.position = ccp(self.contentSize.width/2-20, self.contentSize.height - 150);
-		[self addChild:scalerPane z:5];
+//		//数目选择孔件
+//		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:eggTotalNum delta:1 target:self price:itemPrice z:7 Priority:0 setPathname:@"加减显示器.png" setlength:0];
+//		scalerPane.position = ccp(self.contentSize.width/2-20, self.contentSize.height - 150);
+//		[self addChild:scalerPane z:5];
 
 		
 	}
@@ -210,7 +236,8 @@
 		
 	}
 	[dic release];
-	
+	[numberField setCount:maxCount];
+	count = maxCount; 
 
 	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:35];
 	transBackground.scale = 5.0f;
@@ -261,6 +288,59 @@
 	[itemType    release];
 	[itemBuyType release];
 	[super dealloc];
+}
+
+
+- (void)onEnter
+{
+	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:1 swallowsTouches:YES];
+	[super onEnter];
+}
+
+- (void)onExit
+{
+	[[CCTouchDispatcher sharedDispatcher] removeDelegate:self];
+	[super onExit];
+}	
+- (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	CGPoint location = [touch locationInView: [touch window]];
+	NSLog(@"location.y :%d",location.y);
+	NSLog(@"self.position.x:%d",self.position.x);
+	if ( (location.y > 175&&location.y < 300) &&self.position.x < 500)
+	{
+		//		CGPoint location = [touch locationInView: [touch window]];
+		startValue = location.y;
+		return YES;
+	}
+	return NO;
+}
+
+-(void) ccTouchMoved:(UITouch *)touch withEvent:(UIEvent *)event
+{
+	CGPoint location = [touch locationInView: [touch window]];
+	
+	//NSLog(@"%f += %f - %f", wheel.rotation, location.x, startValue);
+	NSLog(@"numberField getCount:%d",[numberField getCount]);
+	float increment = (location.y - startValue);
+	
+	[numberField addCount:round(increment)];
+	
+	startValue = location.y;
+	
+	if ([numberField getCount] >= 0 && [numberField getCount] <= maxCount)
+	{
+		wheel.rotation +=  degreesToRadian(increment) * -50;
+	}
+	NSLog(@"numberField getCount:%d",[numberField getCount]);
+	
+	if ([numberField getCount] < 1) 
+		[numberField setCount:1];
+	if ([numberField getCount] > maxCount)
+		[numberField setCount:maxCount];
+	count = [numberField getCount];
+	NSString *price = [NSString stringWithFormat:@"总计收入 : %d  金蛋",itemPrice * [numberField getCount]];
+	[priceLbl setString:price];
 }
 
 @end

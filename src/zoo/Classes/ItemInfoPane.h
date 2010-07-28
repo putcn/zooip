@@ -30,11 +30,9 @@
 	NumberField *numberField;
 	float startValue;
 	int maxCount;
-	BOOL isOpen;
 	
 	int totalAnt;
 	int totalGold;
-
 }
 
 @property (nonatomic, retain) NSString *title;
