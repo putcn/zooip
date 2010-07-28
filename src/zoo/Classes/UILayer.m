@@ -37,6 +37,11 @@
 //		
 //		shopPopupList = [[MessageDialog alloc] initDialog:@"store_info.png" setTarget:nil setSelector:nil];
 //		[self addChild:shopPopupList];
+		
+		//Lancy
+		purchaseToolbar = [[PurchaseToolbar alloc] init];
+		purchaseToolbar.position = ccp(318, 282);
+		[self addChild:purchaseToolbar];
 	}
 	
 	return self;

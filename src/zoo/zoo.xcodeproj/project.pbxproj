@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1F3B9A2D0EF2145700286867 /* zooAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F3B9A2B0EF2145700286867 /* zooAppDelegate.m */; };
+		248D8B0511FFE35700DDE242 /* HttpPurchase.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D8AFB11FFE35700DDE242 /* HttpPurchase.m */; };
+		248D8B0611FFE35700DDE242 /* ListTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D8AFD11FFE35700DDE242 /* ListTableCell.m */; };
+		248D8B0711FFE35700DDE242 /* PurchaseInterface.mm in Sources */ = {isa = PBXBuildFile; fileRef = 248D8AFF11FFE35700DDE242 /* PurchaseInterface.mm */; };
+		248D8B0811FFE35700DDE242 /* PurchaseToolbar.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D8B0111FFE35700DDE242 /* PurchaseToolbar.m */; };
+		248D8B0911FFE35700DDE242 /* tableListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D8B0311FFE35700DDE242 /* tableListViewController.m */; };
+		248D8B0A11FFE35700DDE242 /* tableListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248D8B0411FFE35700DDE242 /* tableListViewController.xib */; };
+		248D8B3011FFE3D800DDE242 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248D8B2F11FFE3D800DDE242 /* StoreKit.framework */; };
 		3E022E9B118E847D00D2A6E6 /* AnimalInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E022E9A118E847D00D2A6E6 /* AnimalInfo.png */; };
 		3E0CE36D11BF302A002FCB22 /* StealEggsFromFarmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE36611BF302A002FCB22 /* StealEggsFromFarmController.m */; };
 		3E0CE36E11BF302A002FCB22 /* ToReleaseAntsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE36811BF302A002FCB22 /* ToReleaseAntsController.m */; };
@@ -799,6 +806,18 @@
 		1F3B9A2B0EF2145700286867 /* zooAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = zooAppDelegate.m; path = Classes/zooAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		1F3B9A2C0EF2145700286867 /* zooAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = zooAppDelegate.h; path = Classes/zooAppDelegate.h; sourceTree = SOURCE_ROOT; };
 		1F3B9A820EF2151B00286867 /* zoo_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = zoo_Prefix.pch; sourceTree = SOURCE_ROOT; };
+		248D8AFA11FFE35700DDE242 /* HttpPurchase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpPurchase.h; sourceTree = "<group>"; };
+		248D8AFB11FFE35700DDE242 /* HttpPurchase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpPurchase.m; sourceTree = "<group>"; };
+		248D8AFC11FFE35700DDE242 /* ListTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ListTableCell.h; sourceTree = "<group>"; };
+		248D8AFD11FFE35700DDE242 /* ListTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableCell.m; sourceTree = "<group>"; };
+		248D8AFE11FFE35700DDE242 /* PurchaseInterface.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseInterface.h; sourceTree = "<group>"; };
+		248D8AFF11FFE35700DDE242 /* PurchaseInterface.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = PurchaseInterface.mm; sourceTree = "<group>"; };
+		248D8B0011FFE35700DDE242 /* PurchaseToolbar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseToolbar.h; sourceTree = "<group>"; };
+		248D8B0111FFE35700DDE242 /* PurchaseToolbar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseToolbar.m; sourceTree = "<group>"; };
+		248D8B0211FFE35700DDE242 /* tableListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tableListViewController.h; sourceTree = "<group>"; };
+		248D8B0311FFE35700DDE242 /* tableListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tableListViewController.m; sourceTree = "<group>"; };
+		248D8B0411FFE35700DDE242 /* tableListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tableListViewController.xib; sourceTree = "<group>"; };
+		248D8B2F11FFE3D800DDE242 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E022E9A118E847D00D2A6E6 /* AnimalInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnimalInfo.png; sourceTree = "<group>"; };
 		3E0CE36511BF302A002FCB22 /* StealEggsFromFarmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StealEggsFromFarmController.h; sourceTree = "<group>"; };
@@ -2114,6 +2133,7 @@
 				506EE1A91030508200A389B3 /* libcocos2d libraries.a in Frameworks */,
 				C73A78F81163219600A820DC /* CFNetwork.framework in Frameworks */,
 				C73A7900116321FA00A820DC /* SystemConfiguration.framework in Frameworks */,
+				248D8B3011FFE3D800DDE242 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2143,6 +2163,24 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		248D8AF911FFE35700DDE242 /* inPurchase */ = {
+			isa = PBXGroup;
+			children = (
+				248D8AFA11FFE35700DDE242 /* HttpPurchase.h */,
+				248D8AFB11FFE35700DDE242 /* HttpPurchase.m */,
+				248D8AFC11FFE35700DDE242 /* ListTableCell.h */,
+				248D8AFD11FFE35700DDE242 /* ListTableCell.m */,
+				248D8AFE11FFE35700DDE242 /* PurchaseInterface.h */,
+				248D8AFF11FFE35700DDE242 /* PurchaseInterface.mm */,
+				248D8B0011FFE35700DDE242 /* PurchaseToolbar.h */,
+				248D8B0111FFE35700DDE242 /* PurchaseToolbar.m */,
+				248D8B0211FFE35700DDE242 /* tableListViewController.h */,
+				248D8B0311FFE35700DDE242 /* tableListViewController.m */,
+				248D8B0411FFE35700DDE242 /* tableListViewController.xib */,
+			);
+			path = inPurchase;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -2156,6 +2194,7 @@
 				19C28FACFE9D520D11CA2CBB /* Products */,
 				C73A78F71163219600A820DC /* CFNetwork.framework */,
 				C73A78FF116321FA00A820DC /* SystemConfiguration.framework */,
+				248D8B2F11FFE3D800DDE242 /* StoreKit.framework */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -2188,6 +2227,7 @@
 		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				248D8AF911FFE35700DDE242 /* inPurchase */,
 				C39CFBF911BFC68F0063B01E /* RenRen */,
 				BF0074801159E8740003B411 /* Models */,
 				C3C528CB117EA2D000343D7F /* Controllers */,
@@ -4712,6 +4752,7 @@
 				6B4E4FBA11FECDB7009A95B7 /* 滚轮数字加.png in Resources */,
 				6B4E4FBB11FECDB7009A95B7 /* 滚轮数字减.png in Resources */,
 				6B4E4FBC11FECDB7009A95B7 /* 滚轮数字轮盘.png in Resources */,
+				248D8B0A11FFE35700DDE242 /* tableListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4928,6 +4969,11 @@
 				3E7E61AE11ED87FE00601836 /* ImageResources.m in Sources */,
 				60EEE3D311F9802000D26ABD /* RegistorWebView.m in Sources */,
 				6B46CE7911FE6AA800681656 /* NumberField.m in Sources */,
+				248D8B0511FFE35700DDE242 /* HttpPurchase.m in Sources */,
+				248D8B0611FFE35700DDE242 /* ListTableCell.m in Sources */,
+				248D8B0711FFE35700DDE242 /* PurchaseInterface.mm in Sources */,
+				248D8B0811FFE35700DDE242 /* PurchaseToolbar.m in Sources */,
+				248D8B0911FFE35700DDE242 /* tableListViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5038,7 +5084,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5057,7 +5103,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "B1730B87-131D-4720-88AC-6C6D20AF188A";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "14E08E4E-62D7-4201-ADCB-AE3F694D9F7C";
 				SDKROOT = iphoneos4.0;
 				WARNING_CFLAGS = "-Wall";
 			};

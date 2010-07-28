@@ -12,6 +12,7 @@
 #import "ZooManageToolbar.h"
 #import "StorageManageToolbar.h"
 #import "FriendsToolbar.h"
+#import "PurchaseToolbar.h"
 
 @interface UILayer : CCLayer
 {	
@@ -20,7 +21,8 @@
 	ZooManageToolbar *zooManageToolbar;
 	FriendsToolbar *friendsToolbar;
 	
-	
+	//Lancy
+	PurchaseToolbar *purchaseToolbar;
 }
 
 -(void) updateUserInfo;
