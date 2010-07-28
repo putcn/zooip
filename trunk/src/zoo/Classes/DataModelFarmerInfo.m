@@ -33,7 +33,7 @@ haveTurtle;
 	[farmerId release];
 	[userName release];
 	[userImg release];
-	
+		
 	[super dealloc];
 }
 
