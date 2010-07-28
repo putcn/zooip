@@ -14,7 +14,7 @@
 #import "DataModelStorageZygoteEgg.h"
 #import "Button.h"
 
-
+#import "NumberField.h"
 @interface SellinfoPane : CCSprite {
 	NSString *title;
 	NSString *itemId;
@@ -24,6 +24,11 @@
 	NSInteger count;
 	NSInteger eggTotalNum;
 	CCLabel *priceLbl;
+	
+	CCSprite *wheel;
+	NumberField *numberField;
+	float startValue;
+	int maxCount;
 }
 
 @property (nonatomic, retain) NSString *title;

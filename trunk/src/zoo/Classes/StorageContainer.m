@@ -192,12 +192,8 @@
 
 -(void) sellEggItem:(Button *)button
 {
-	
 	SellinfoPane *itemInfo = (SellinfoPane *)button.target; 
-	
 	if (itemInfo.itemType == @"普通蛋") {
-		
-		
 			NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 			
 			DataModelStorageEgg *storageEgg = (DataModelStorageEgg *)[[DataEnvironment sharedDataEnvironment].storageEggs objectForKey:itemInfo.itemId];
@@ -211,11 +207,7 @@
 				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellProduct WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 				
 			}
-			
-		
 	}//end if
-	
-	
 	if(itemInfo.itemType == @"受精蛋"){
 		
 		NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
@@ -225,15 +217,9 @@
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",storageZyEggModel.zygoteStorageId,@"zygoteStorageId",nil];
 		
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-				
-					
 	}
-		
-	
 	itemInfoPane.position = ccp(10000, itemInfoPane.contentSize.height/2);
 	[itemInfo release];
-	
-	
 }
 
 
