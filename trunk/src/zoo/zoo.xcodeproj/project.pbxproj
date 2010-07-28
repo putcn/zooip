@@ -626,6 +626,8 @@
 		6BD28ED111D3000E00BE2859 /* 进度条_橙_进度_右圆角.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E4A11D3000E00BE2859 /* 进度条_橙_进度_右圆角.png */; };
 		6BD28ED211D3000E00BE2859 /* 进度条_橙_进度_左圆角.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E4B11D3000E00BE2859 /* 进度条_橙_进度_左圆角.png */; };
 		6BD28EE011D3000E00BE2859 /* 加减显示框_2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BD28E5B11D3000E00BE2859 /* 加减显示框_2.png */; };
+		6BF1409012000CF700FF9BFE /* tibentanmastiff_rest_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF1408F12000CF700FF9BFE /* tibentanmastiff_rest_01.png */; };
+		6BF1409412000D3100FF9BFE /* chinemy_walk_left_01.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BF1409312000D3100FF9BFE /* chinemy_walk_left_01.png */; };
 		8408914511B49FBC001C29CA /* SellitemButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8408914411B49FBC001C29CA /* SellitemButton.m */; };
 		8432CD8111B346CF0093DA32 /* StoButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8011B346CF0093DA32 /* StoButtonContainer.m */; };
 		8432CD8611B3471F0093DA32 /* SellinfoPane.m in Sources */ = {isa = PBXBuildFile; fileRef = 8432CD8511B3471F0093DA32 /* SellinfoPane.m */; };
@@ -1279,7 +1281,6 @@
 		3EED474311967DAB0093FF6E /* chinemy_walk_down_27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinemy_walk_down_27.png; sourceTree = "<group>"; };
 		3EED474411967DAB0093FF6E /* chinemy_walk_down_28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinemy_walk_down_28.png; sourceTree = "<group>"; };
 		3EED474511967DAB0093FF6E /* chinemy_walk_down_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinemy_walk_down_29.png; sourceTree = "<group>"; };
-		3EED474711967DAB0093FF6E /* chinemy_walk_left_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinemy_walk_left_01.png; sourceTree = "<group>"; };
 		3EED474811967DAB0093FF6E /* chinemy_walk_left_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinemy_walk_left_02.png; sourceTree = "<group>"; };
 		3EED474911967DAB0093FF6E /* chinemy_walk_left_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinemy_walk_left_03.png; sourceTree = "<group>"; };
 		3EED474A11967DAB0093FF6E /* chinemy_walk_left_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinemy_walk_left_04.png; sourceTree = "<group>"; };
@@ -1308,7 +1309,6 @@
 		3EED476111967DAB0093FF6E /* chinemy_walk_left_27.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinemy_walk_left_27.png; sourceTree = "<group>"; };
 		3EED476211967DAB0093FF6E /* chinemy_walk_left_28.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinemy_walk_left_28.png; sourceTree = "<group>"; };
 		3EED476311967DAB0093FF6E /* chinemy_walk_left_29.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinemy_walk_left_29.png; sourceTree = "<group>"; };
-		3EED476611967DAB0093FF6E /* tibentanmastiff_rest_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tibentanmastiff_rest_01.png; sourceTree = "<group>"; };
 		3EED476711967DAB0093FF6E /* tibentanmastiff_rest_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tibentanmastiff_rest_02.png; sourceTree = "<group>"; };
 		3EED476811967DAB0093FF6E /* tibentanmastiff_rest_03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tibentanmastiff_rest_03.png; sourceTree = "<group>"; };
 		3EED476911967DAB0093FF6E /* tibentanmastiff_rest_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tibentanmastiff_rest_04.png; sourceTree = "<group>"; };
@@ -1830,6 +1830,8 @@
 		6BD28E4A11D3000E00BE2859 /* 进度条_橙_进度_右圆角.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度条_橙_进度_右圆角.png"; sourceTree = "<group>"; };
 		6BD28E4B11D3000E00BE2859 /* 进度条_橙_进度_左圆角.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "进度条_橙_进度_左圆角.png"; sourceTree = "<group>"; };
 		6BD28E5B11D3000E00BE2859 /* 加减显示框_2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "加减显示框_2.png"; sourceTree = "<group>"; };
+		6BF1408F12000CF700FF9BFE /* tibentanmastiff_rest_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tibentanmastiff_rest_01.png; sourceTree = "<group>"; };
+		6BF1409312000D3100FF9BFE /* chinemy_walk_left_01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chinemy_walk_left_01.png; sourceTree = "<group>"; };
 		8408914311B49FBC001C29CA /* SellitemButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SellitemButton.h; sourceTree = "<group>"; };
 		8408914411B49FBC001C29CA /* SellitemButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SellitemButton.m; sourceTree = "<group>"; };
 		8432CD7F11B346CF0093DA32 /* StoButtonContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StoButtonContainer.h; sourceTree = "<group>"; };
@@ -2844,7 +2846,7 @@
 		3EED474611967DAB0093FF6E /* left */ = {
 			isa = PBXGroup;
 			children = (
-				3EED474711967DAB0093FF6E /* chinemy_walk_left_01.png */,
+				6BF1409312000D3100FF9BFE /* chinemy_walk_left_01.png */,
 				3EED474811967DAB0093FF6E /* chinemy_walk_left_02.png */,
 				3EED474911967DAB0093FF6E /* chinemy_walk_left_03.png */,
 				3EED474A11967DAB0093FF6E /* chinemy_walk_left_04.png */,
@@ -2891,7 +2893,7 @@
 		3EED476511967DAB0093FF6E /* rest */ = {
 			isa = PBXGroup;
 			children = (
-				3EED476611967DAB0093FF6E /* tibentanmastiff_rest_01.png */,
+				6BF1408F12000CF700FF9BFE /* tibentanmastiff_rest_01.png */,
 				3EED476711967DAB0093FF6E /* tibentanmastiff_rest_02.png */,
 				3EED476811967DAB0093FF6E /* tibentanmastiff_rest_03.png */,
 				3EED476911967DAB0093FF6E /* tibentanmastiff_rest_04.png */,
@@ -4757,6 +4759,8 @@
 				6B4E4FBC11FECDB7009A95B7 /* 滚轮数字轮盘.png in Resources */,
 				248D8B0A11FFE35700DDE242 /* tableListViewController.xib in Resources */,
 				60B4040A11FFEECE0087F16F /* buyant.png in Resources */,
+				6BF1409012000CF700FF9BFE /* tibentanmastiff_rest_01.png in Resources */,
+				6BF1409412000D3100FF9BFE /* chinemy_walk_left_01.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
