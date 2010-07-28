@@ -31,9 +31,7 @@ count;
 		
 		self.title = @"购买动物";
 		priceLbl = [[CCLabel alloc] retain];
-		NSString * m_itId = itId;
-		NSString * m_itType = itType; 
-		id m_target = target;
+
 		[self updateInfo:itId type:itType setTarget:target];
 //		self.scale = 300.0f/1024.0f;
 	}
@@ -51,6 +49,18 @@ count;
 -(void)updateInfo:(NSString *) itId type: (NSString *) itType setTarget:(id)target
 {
 	[self removeAllChildrenWithCleanup:YES];
+	CCSprite *gunlunDown = [CCSprite spriteWithFile:@"滚轮下.png"];
+	gunlunDown.position = ccp( self.contentSize.width/2, 11 );
+	[self addChild:gunlunDown z:10];
+	
+	wheel = [CCSprite spriteWithFile:@"滚轮数字轮盘.png"];
+	wheel.position = ccp( self.contentSize.width/2-5, self.contentSize.height/2-65 );
+	[self addChild:wheel z:10];
+	
+	CCSprite *gunlunUp = [CCSprite spriteWithFile:@"滚轮上.png"];
+	gunlunUp.position = ccp( self.contentSize.width/2, self.contentSize.height/2+10 );
+	[self addChild:gunlunUp z:10];
+	
 	[self addTitle];
 	
 	totalAnt = ((DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].playerFarmerInfo).antsCurrency;
@@ -58,19 +68,17 @@ count;
 	
 	
 	numberField = [[NumberField alloc] initWithCounter:0 target:target z:10 Priority:30 ];
-	numberField.position = ccp( self.contentSize.width/2, self.contentSize.height/2+30 );
+	numberField.position = ccp( self.contentSize.width/2-5, self.contentSize.height/2-63 );
 	[self addChild:numberField z:10];
 	
-	wheel = [CCSprite spriteWithFile:@"滚轮数字轮盘.png"];
-	wheel.position = ccp( self.contentSize.width/2, self.contentSize.height/2-10 );
-	[self addChild:wheel z:10];
+	
 	
 	CCSprite *left = [CCSprite spriteWithFile:@"滚轮数字减.png"];
-	left.position = ccp( self.contentSize.width/2-70, self.contentSize.height/2-10 );
+	left.position = ccp( self.contentSize.width/2-55, self.contentSize.height/2-75 );
 	[self addChild:left z:10];
 	
 	CCSprite *right = [CCSprite spriteWithFile:@"滚轮数字加.png"];
-	right.position = ccp( self.contentSize.width/2+70, self.contentSize.height/2-10 );
+	right.position = ccp( self.contentSize.width/2+50, self.contentSize.height/2-75 );
 	[self addChild:right z:10];
 	
 	itemId = itId;
@@ -83,38 +91,102 @@ count;
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals retain];
 		DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemId];
 		itemPrice = originalAnimal.basePrice;
+		
+		//动物性别
+		CCLabel *sexLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:16];
+		[sexLbl setColor:ccc3(0, 0, 0)];
+		sexLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 80);
+		[self addChild:sexLbl z:10];
+
 		if(itemPrice > 0)
+		{
 			maxCount = totalGold/itemPrice;
+			[sexLbl setString:@"性别：母"];
+		}
 		if (originalAnimal.antsPrice > 0) {
 			itemBuyType = @"ant";
 			itemPrice = originalAnimal.antsPrice;
 			maxCount = totalAnt/itemPrice;
+			[sexLbl setString:@"性别：公"];
 		}
 		
 		NSString *price = [NSString stringWithFormat:@"%d",itemPrice*maxCount]; 
 		NSString *picFileName = [NSString stringWithFormat:@"%@.png",originalAnimal.picturePrefix];
 		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
 		
-		CCLabel *nameLbl = [CCLabel labelWithString:originalAnimal.scientificNameCN fontName:@"Arial" fontSize:30];
+		//名称
+		CCLabel *nameLbl = [CCLabel labelWithString:originalAnimal.scientificNameCN fontName:@"Arial" fontSize:25];
 		[nameLbl setColor:ccc3(0, 0, 0)];
 		nameLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 50);
-		[self addChild:nameLbl z:10];
+		[self addChild:nameLbl z:10];		
+				
+		//产蛋次数
+		CCLabel *eggCountLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"产蛋次数：%d次",originalAnimal.baseCycle] fontName:@"Arial" fontSize:16];
+		[eggCountLbl setColor:ccc3(0, 0, 0)];
+		eggCountLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 100);
+		[self addChild:eggCountLbl z:10];
+		
+		//基本产量
+		CCLabel *baseCountLbl = [CCLabel labelWithString:[NSString stringWithFormat:@"基本产量：%d个",originalAnimal.baseYield] fontName:@"Arial" fontSize:16];
+		[baseCountLbl setColor:ccc3(0, 0, 0)];
+		baseCountLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 120);
+		[self addChild:baseCountLbl z:10];
 	}
 	if (itemType == @"饲料") {
 		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].foods retain];
 		DataModelFood *food = [dic objectForKey:itemId];
 		itemPrice = food.foodPrice;
+		
+		//单价
+		CCLabel *foodpriceLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:16];
+		[foodpriceLbl setColor:ccc3(0, 0, 0)];
+		foodpriceLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 120);
+		[self addChild:foodpriceLbl z:10];
+		
 		if(itemPrice > 0)
+		{
 			maxCount = totalGold/itemPrice;
+			[foodpriceLbl setString:[NSString stringWithFormat:@"单价：%d／千克",itemPrice]];
+		}
 		if (food.antsRequired > 0) {
 			itemBuyType = @"ant";
 			itemPrice = food.antsRequired;
 			maxCount = totalAnt/itemPrice;
+			[foodpriceLbl setString:[NSString stringWithFormat:@"单价：%d／份",itemPrice]];
 		}
+		
+		//效果
+		CCLabel *effectLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:16];
+		[effectLbl setColor:ccc3(0, 0, 0)];
+		effectLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 100);
+		[self addChild:effectLbl z:10];
+		if([food.foodPower intValue] == 255)
+		{
+			[effectLbl setString:@"效果：动物基本饲料"];
+		}
+		else if([food.foodPower intValue] == 1)
+		{
+			[effectLbl setString:@"效果：产蛋时间缩短1小时"];
+		}
+		else if([food.foodPower intValue] == 2)
+		{
+			[effectLbl setString:@"效果：产蛋时间缩短2小时"];
+		}
+		else if([food.foodPower intValue] == 5)
+		{
+			[effectLbl setString:@"效果：产蛋时间缩短5小时"];
+		}
+		else if([food.foodPower intValue] == 30)
+		{
+			[effectLbl setString:@"效果：提高30%产蛋量"];
+		}
+		
+		
+		
 		NSString *price = [NSString stringWithFormat:@"%d",itemPrice*maxCount]; 
 		NSString *picFileName = [NSString stringWithFormat:@"food_%@.png",food.foodImg];
 		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
-		CCLabel *nameLbl = [CCLabel labelWithString:food.foodName fontName:@"Arial" fontSize:30];
+		CCLabel *nameLbl = [CCLabel labelWithString:food.foodName fontName:@"Arial" fontSize:25];
 		[nameLbl setColor:ccc3(0, 0, 0)];
 		nameLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 50);
 		[self addChild:nameLbl z:10];
@@ -141,10 +213,12 @@ count;
 			picFileName = @"chinemy_walk_left_01.png";
 		}
 		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
+		
 		CCLabel *nameLbl = [CCLabel labelWithString:goods.goodsName	fontName:@"Arial" fontSize:30];
 		[nameLbl setColor:ccc3(0, 0, 0)];
 		nameLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 50);
 		[self addChild:nameLbl z:10];
+		
 	}
 	[dic release];
 	[numberField setCount:maxCount];
@@ -155,13 +229,12 @@ count;
 //	[self addChild:nameLbl z:10];
 	
 	//添加确认和取消按钮,回调函数分别为[ManageContainer buyItem] 和[ManageContainer Cancel]
-	Button *confirmBtn = [[Button alloc] initWithLabel:@"确定" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:20 setBackground:@"确定.png" setTarget:target setSelector:@selector(buyItem:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
-	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:20 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancel:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
-	
+	Button *confirmBtn = [[Button alloc] initWithLabel:@"确定" setColor:ccc3(0, 0, 0) setFont:@"Arial" setSize:18 setBackground:@"确定.png" setTarget:target setSelector:@selector(buyItem:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];
+	Button *cancelBtn = [[Button alloc] initWithLabel:@"取消" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:18 setBackground:@"取消.png" setTarget:target setSelector:@selector(cancel:) setPriority:30 offsetX:0 offsetY:0 scale:1.0f];	
 	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
 	confirmBtn.target = self;
-	confirmBtn.position = ccp(self.contentSize.width/2 - 110, 35);
-	cancelBtn.position = ccp(self.contentSize.height/2 + 170, 35);
+	confirmBtn.position = ccp(self.contentSize.width/2 - 110, 30);
+	cancelBtn.position = ccp(self.contentSize.height/2 + 170, 30);
 	[self addChild:confirmBtn z:10];
 	[self addChild:cancelBtn z:10];
 	
@@ -189,11 +262,6 @@ count;
 	[transBackground release];
 }
 
-//-(void) setbuttonCount
-//{
-////	[numberField setCount:maxCount];
-//}
-
 -(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price
 {
 	CCSprite *item = [CCSprite node];
@@ -211,18 +279,18 @@ count;
 	else {
 		buyImg = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
 	}
-	priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:20];
-	[priceLbl setColor:ccc3(255, 0, 255)];
+	priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:18];
+	[priceLbl setColor:ccc3(0, 0, 0)];
 	
 	item.position = ccp(item.contentSize.width/2 +40, self.contentSize.height  - item.contentSize.height /2-40);
-	buyImg.position = ccp(item.position.x - 40, self.contentSize.height  - item.contentSize.height /2-80);
-	priceLbl.position = ccp(item.position.x + 20 , self.contentSize.height  - item.contentSize.height /2-80);
+	buyImg.position = ccp(item.position.x - 35, self.contentSize.height  - item.contentSize.height /2-95);
+	priceLbl.position = ccp(item.position.x + 15 , self.contentSize.height  - item.contentSize.height /2-95);
 //	buyImg.scale = 1.5f;
 //	priceLbl.scale = 1.5f;
 	
-	[self addChild:item z:7];
-	[self addChild:buyImg z:7];
-	[self addChild:priceLbl z:7];
+	[self addChild:item z:10];
+	[self addChild:buyImg z:10];
+	[self addChild:priceLbl z:10];
 }							  
 
 
@@ -246,53 +314,6 @@ count;
 	[super dealloc];
 }
 
-//-(void) popUp:(MarketItem*) dataValue
-//{
-//	if ( dataValue != nil)
-//	{
-//		//TODO: update UI ..
-//		[data release];
-//		data = [dataValue retain];
-//		[self removeChild:iconImage cleanup:YES];
-//		[iconImage release];
-//		NSLog(@"%@", data);
-//		iconImage = [[Sprite spriteWithFile:[NSString stringWithFormat:@"%@_B.png", [data getName]]] retain];
-//		iconImage.position = ccp( -90, 23 );
-//		[self addChild:iconImage];
-//		
-//		maxCount = [ModelLocator sharedModelLocator].player.storage.maxCount - [ModelLocator sharedModelLocator].player.storage.count;
-//		if (maxCount > floor( [[ModelLocator sharedModelLocator].player getMoney] / data.price ))
-//			maxCount = floor( [[ModelLocator sharedModelLocator].player getMoney] / data.price );
-//		[numberField setCount:maxCount];
-//		
-//		[lblName setString: [data getName]];
-//		[lblPrice setString: [NSString stringWithFormat:@"市场价: %d", [data getPrice]]];
-//	}
-//	CGSize size = [[Director sharedDirector] winSize];
-//	if (isOpen)
-//	{
-//		self.position = ccp( -500 , -500 );
-//	}
-//	else
-//	{
-//		self.position = ccp( size.width / 2 , size.height / 2 + 20 );
-//	}
-//	isOpen = !isOpen;
-//}
-
-//-(void) closeDialogHandler
-//{
-//	if (isOpen) 
-//		[self popUp:nil];
-//}
-//
-//-(void) btnOkTouchBeganHandler
-//{
-//	// Call MainScene buyItem methord ..
-////	[[MainScene sharedMainScene] buyItem:data setCount:[numberField getCount]];
-////	// Close dialog ..
-////	[[MainScene sharedMainScene] closeMessageBox: self];
-//}
 - (void)onEnter
 {
 	[[CCTouchDispatcher sharedDispatcher] addTargetedDelegate:self priority:1 swallowsTouches:YES];
@@ -307,9 +328,9 @@ count;
 - (BOOL)ccTouchBegan:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	CGPoint location = [touch locationInView: [touch window]];
-	NSLog(@"location.x :%d",location.x);
+	NSLog(@"location.y :%d",location.y);
 	NSLog(@"self.position.x:%d",self.position.x);
-	if ( location.x > 100 &&self.position.x < 500)
+	if ( (location.y > 175&&location.y < 300) &&self.position.x < 500)
 	{
 //		CGPoint location = [touch locationInView: [touch window]];
 		startValue = location.y;
@@ -336,13 +357,12 @@ count;
 	}
 	NSLog(@"numberField getCount:%d",[numberField getCount]);
 	
-	if ([numberField getCount] < 0) 
-		[numberField setCount:0];
+	if ([numberField getCount] < 1) 
+		[numberField setCount:1];
 	if ([numberField getCount] > maxCount)
 		[numberField setCount:maxCount];
 	count = [numberField getCount];
 	NSString *price = [NSString stringWithFormat:@"%d",itemPrice * [numberField getCount]];
 	[priceLbl setString:price];
-//	[self updateInfo:m_itId type:m_itType setTarget:m_target];
 }
 @end

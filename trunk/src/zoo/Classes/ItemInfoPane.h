@@ -10,6 +10,7 @@
 #import "cocos2d.h"
 #import "DataEnvironment.h"
 #import "DataModelOriginalAnimal.h"
+#import "DataModelStorageEgg.h"
 #import "DataModelFood.h"
 #import "DataModelGood.h"
 #import "Button.h"
@@ -33,10 +34,7 @@
 	
 	int totalAnt;
 	int totalGold;
-	
-	NSString * m_itId;
-	NSString * m_itType; 
-	id m_target;
+
 }
 
 @property (nonatomic, retain) NSString *title;

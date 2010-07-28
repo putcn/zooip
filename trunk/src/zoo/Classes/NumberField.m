@@ -24,7 +24,7 @@
 		CGSize s = [self.texture contentSize];
 		
 		lblText = [CCLabel labelWithString:@"0" fontName:@"Arial" fontSize:12];
-		lblText.position = ccp( s.width / 2 , (s.height / 2) + 2 );
+		lblText.position = ccp( s.width / 2 , (s.height / 2) );
 		lblText.color = ccc3(102, 0, 0);
 		[self addChild:lblText];
 	}
