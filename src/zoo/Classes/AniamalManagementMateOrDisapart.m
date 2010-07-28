@@ -158,12 +158,28 @@ infoMessagePanelTest;
 -(void) MateAnimals:(Button *)button
 {
 	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
+	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId;
 	NSString *action = @"mate";
-	
-	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
-	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackMateAfterMarry:" AndFailedSel:@"faultCallback:"];
+	NSInteger ants = 1;
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",rightAnimalID,@"animalId",ants, "ants",nil];
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoFeedFemaleAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackMateAfterMarry:" AndFailedSel:@"faultCallback:"];
 
 }
+
+//toFeedFemaleAnimal    动物婚后配种   
+//farmerId                 饲养员ID
+//animalId                 母动物ID
+//ants                     花费蚂蚁的数量
+//
+//code:1 喂蚂蚁成功
+//code:2 没到喂食时间
+//code:3 蚂蚁余额不足
+//code:4 同时操作了两次，蚂蚁支付不成功
+//code:5 动物没有结婚
+//code:6 操作不成功 无原始动物信息
+//code:7 已喂过
+//code:8 公动物不能喂食
+//code:0 母动物不存在"
 
 -(void) toMate:(Button *)button
 {

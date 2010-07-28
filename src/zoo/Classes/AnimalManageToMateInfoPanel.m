@@ -259,9 +259,21 @@ buttonsOfList;
 	AnimalManageToMateAntsChoose *antChoose = (AnimalManageToMateAntsChoose *)button.target;
 	
 	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId;
-	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",antChoose.femaledIdBeforeMarry,@"animalId",[NSString stringWithFormat:@"%d",antChoose.count],@"ants",nil];
+	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
+	NSString *action = @"marry";
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",antChoose.femaledIdBeforeMarry,@"femaleId",[NSString stringWithFormat:@"%d",antChoose.count],@"ants",action,@"action",nil];
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackMateBeforeMarry:" AndFailedSel:@"faultCallback:"];
 }
+
+//toMateAnimal------action=marry
+//toMateAnimal------action=mate 	动物结婚
+//动物结婚前的交配 	farmId                    动物园ID
+//maleId                    公动物ID
+//femaleId                 母动物ID
+//
+//ants
+//蚂蚁数量
+//action                    操作行为（marry or mate）
 
 //Mate cancle button.
 -(void)cancleMate:(Button *)button
