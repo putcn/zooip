@@ -175,14 +175,14 @@ static NSString *STEP_GET_ALL_FRIENDS_INFO = @"10";
 		return;
 		
 	}
+//	else if (curStep == STEP_GET_DOG)
+//	{
+//		curStep = STEP_GET_ALL_ORIGINAL_ANIMAL;
+//		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
+//		[tempController execute:nil];
+//		return;
+//	}
 	else if (curStep == STEP_GET_DOG)
-	{
-		curStep = STEP_GET_ALL_ORIGINAL_ANIMAL;
-		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
-		[tempController execute:nil];
-		return;
-	}
-	else if (curStep == STEP_GET_ALL_ORIGINAL_ANIMAL)
 	{
 		curStep = STEP_GET_ALL_FRIENDS_INFO;
 		BaseServerController *tempController = (BaseServerController *)[stepControllers objectForKey:curStep];
