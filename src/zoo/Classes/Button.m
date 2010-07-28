@@ -83,6 +83,11 @@
 	if ( ![self containsTouchLocation:touch] || !self.visible ) return NO;
 	NSLog(@"touch began");
 	self.scale = defaultScale * 1.3;
+	
+//	CCLabel* labelFeedBtnName = [CCLabel labelWithString:@"喂食" fontName:@"Marker Felt" fontSize:40];
+//	labelFeedBtnName.position = ccp(200, 100);
+//	[self addChild:labelFeedBtnName z:1000 tag:1000];
+	
 	return YES;
 }
 

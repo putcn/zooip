@@ -14,7 +14,7 @@
 #import "AnimalExpansionPanel.h"
 #import "AnimalFeedButtonContainer.h"
 
-@interface ZooManageToolbar : CCSprite
+@interface ZooManageToolbar : CCSprite<CCTargetedTouchDelegate>
 {
 	AnimalMangementButtonContainer *aniManagementBtnCtrl;
 	AnimalStorageManagerContainer *animalManagerContainer;

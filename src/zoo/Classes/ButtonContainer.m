@@ -130,33 +130,57 @@
 //生成商品页面
 -(void) generatePage
 {
-	if (tabFlag == @"动物") {
+	if (tabFlag == @"动物") 
+	{
 		NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 		
-	//	NSLog(@"originAnimalDic = %@\n",originAnimalDic);
+		DataModelOriginalAnimal *originAnimal; //levelRequired
+		NSArray *animalArrayTemp1 = [originAnimalDic allKeys];
+		NSMutableArray* animalArrayTemp = [[NSMutableArray alloc] init];
+		[animalArrayTemp addObjectsFromArray:animalArrayTemp1];
 		
-		DataModelOriginalAnimal *originAnimal;
-		NSArray *animalArrayTemp = [originAnimalDic allKeys];
+		NSMutableArray* arrOfLevel = [[NSMutableArray alloc]init];
 		
 		for(int i = 0; i < [animalArrayTemp count]; i++)
 		{
-			NSLog(@"%@", [animalArrayTemp objectAtIndex:i]);
+			originAnimal = [originAnimalDic objectForKey:[animalArrayTemp objectAtIndex:i]];
+			
+			[arrOfLevel addObject:[NSNumber numberWithInt:originAnimal.levelRequired]];
 		}
 		
-		NSArray* animalArray = [NSArray arrayWithObjects:
-								@"1", @"2", @"3", @"4", 
-								@"51", @"52", @"5", @"53",
-								@"6", @"54", @"7", @"55",
-								@"8", @"56", @"9", @"57",
-								@"10", @"58", @"11", @"59",
-								@"12", @"60", @"61", @"13",
-								@"62", @"14", @"63", @"64",
-								nil];
-		for(int i = 0; i < [animalArray count]; i++)
+		// 冒泡排序
+		int nTemp;
+		NSString* strTemp;
+		for(int j = 0; j <= [arrOfLevel count] - 1 ; j++)
 		{
-			NSLog(@"%@", [animalArray objectAtIndex:i]);
+			for(int i = 0; i < [arrOfLevel count] - 1- j; i++)
+			{
+				if([[arrOfLevel objectAtIndex:i] intValue] >= [[arrOfLevel objectAtIndex:i+1] intValue])
+				{
+					nTemp = [[arrOfLevel objectAtIndex:i] intValue];
+					strTemp = [animalArrayTemp objectAtIndex:i];
+					
+					int nRight = [[arrOfLevel objectAtIndex:i+1] intValue];
+					NSString* strRight = [animalArrayTemp objectAtIndex:i + 1];
+					
+					[arrOfLevel replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:nRight]];
+					[animalArrayTemp replaceObjectAtIndex:i withObject:strRight];
+					
+					[arrOfLevel replaceObjectAtIndex:i+1 withObject:[NSNumber numberWithInt:nTemp]];
+					[animalArrayTemp replaceObjectAtIndex:i + 1 withObject:strTemp];
+					
+				}
+			}
 		}
 		
+		
+		//		for(int i = 0; i < [animalArrayTemp count]; i++)
+		//			NSLog(@"%@\n", [animalArrayTemp objectAtIndex:i]);
+		
+		
+		
+		
+		NSArray* animalArray = [NSArray arrayWithArray:animalArrayTemp];
 		
 		int endNumber = currentPageNum * 8;
 		if (endNumber >= animalArray.count) 
