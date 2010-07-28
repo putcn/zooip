@@ -45,18 +45,18 @@
 		//名字
 		userNameLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:18];//retain];
 		[userNameLbl setColor:ccc3(0, 0, 0)];
-		userNameLbl.position = ccp(85,40);
+		userNameLbl.position = ccp(80,40); // 85
 		//金蛋、数目
 		CCSprite *eggIcon = [CCSprite spriteWithFile:@"金蛋ico.png"];
 		[eggIcon setContentSize:CGSizeMake(10, 10)];
-		eggIcon.position = ccp(120,36);
+		eggIcon.position = ccp(110,36); // 120
 		goldenEggNumLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:15];// retain];
 		[goldenEggNumLbl setColor:ccc3(0, 0, 0)];
-		goldenEggNumLbl.position = ccp(150,40);
+		goldenEggNumLbl.position = ccp(145,40);
 		//蚂蚁、数目
 		CCSprite *antIcon = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
 		[antIcon setContentSize:CGSizeMake(10, 10)];
-		antIcon.position = ccp(185,36);
+		antIcon.position = ccp(180,36);
 		antsNumLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:15];// retain];
 		[antsNumLbl setColor:ccc3(0, 0, 0)];
 		antsNumLbl.position = ccp(210,40);
@@ -111,8 +111,70 @@
 		level = [[NSString stringWithFormat:@"%d", farmInfo.farm_level] retain];
 		maxNumOfBirds = [[NSString stringWithFormat:@"%d", farmInfo.farm_maxNumOfBirds] retain];
 		topMaxNumOfBirds = [[NSString stringWithFormat:@"%d", farmInfo.farm_topMaxNumOfBirds] retain];
+		
+		//NSLog(@"%d\n", farmerInfo.antsCurrency);
+		
+		//antsNumLbl
 		antsNum = [[NSString stringWithFormat:@"%d", farmerInfo.antsCurrency] retain];
+		// Add by Hunk on 2010-07-28
+		int nAntsNumLength = [antsNum length];
+		switch (nAntsNumLength)
+		{
+			case 1:
+			case 2:
+			{
+				antsNumLbl.position = ccp(215, 40);
+			}
+				break;
+			case 3:
+			case 4:
+			{
+				antsNumLbl.position = ccp(215, 40);
+			}
+				break;
+			case 5:
+			case 6:
+			{
+				antsNumLbl.position = ccp(212,40);
+			}
+				break;
+			default:
+			{
+				antsNumLbl.position = ccp(212,40);
+			}
+				break;
+		}
+		
 		goldenEggNum = [[NSString stringWithFormat:@"%d", farmerInfo.goldenEgg] retain];
+		// Add by Hunk on 2010-07-28
+		int nGoldenEggNumLength = [goldenEggNum length];
+		switch (nGoldenEggNumLength)
+		{
+			case 1:
+			case 2:
+			{
+				goldenEggNumLbl.position = ccp(155, 40);
+			}
+				break;
+			case 3:
+			case 4:
+			{
+				goldenEggNumLbl.position = ccp(150, 40);
+			}
+				break;
+			case 5:
+			case 6:
+			{
+				goldenEggNumLbl.position = ccp(145,40);
+			}
+				break;
+			default:
+			{
+				goldenEggNumLbl.position = ccp(145,40);
+			}
+				break;
+		}
+		
 		
 		float nNowExperience = currentExperience.floatValue;
 		float nAllExperience = nextLevelExperience.floatValue;
