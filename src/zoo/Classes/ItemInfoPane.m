@@ -214,7 +214,7 @@ count;
 		}
 		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
 		
-		CCLabel *nameLbl = [CCLabel labelWithString:goods.goodsName	fontName:@"Arial" fontSize:30];
+		CCLabel *nameLbl = [CCLabel labelWithString:goods.goodsName	fontName:@"Arial" fontSize:25];
 		[nameLbl setColor:ccc3(0, 0, 0)];
 		nameLbl.position = ccp(self.contentSize.width/2 + 50, self.contentSize.height - 50);
 		[self addChild:nameLbl z:10];
