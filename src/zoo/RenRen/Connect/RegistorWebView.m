@@ -94,7 +94,7 @@
 //	self.navigationItem.leftBarButtonItem = callModalViewButton;
 //	[callModalViewButton release];
 	
-	activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 32.0f, 32.0f)]; 
+	activityIndicator = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 2.0f, 2.0f)]; 
 	[activityIndicator setCenter:instructionsView.center]; 
 	[activityIndicator setActivityIndicatorViewStyle:UIActivityIndicatorViewStyleWhite]; 
 	[instructionsView addSubview:activityIndicator]; 
@@ -106,17 +106,38 @@
 -(void)flipAction:(id)sender
 {}
 	
-//开始加载数据 
-- (void)webViewDidStartLoad:(UIWebView *)webView {     
-	[activityIndicator startAnimating];          
+
+//加载网页动画 
+- (void)webViewDidStartLoad:(UIWebView *)webView{ 
+	if (myAlert==nil){        
+		myAlert = [[UIAlertView alloc] initWithTitle:nil 
+											 message: @"正在读取网络资料" 
+											delegate: self 
+								   cancelButtonTitle: nil 
+								   otherButtonTitles: nil]; 
+		UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite]; 
+		activityView.frame = CGRectMake(120.f, 48.0f, 37.0f, 37.0f); 
+		[myAlert addSubview:activityView]; 
+		[activityView startAnimating]; 
+		[myAlert show]; 
+	} 
 } 
+- (void)webViewDidFinishLoad:(UIWebView *)webView{ 
+	[myAlert dismissWithClickedButtonIndex:0 animated:YES];
+	if(myAlert != nil)
+		myAlert =nil;
+}
+//开始加载数据 
+//- (void)webViewDidStartLoad:(UIWebView *)webView {     
+//	[activityIndicator startAnimating];          
+//} 
 
 //数据加载完 
-- (void)webViewDidFinishLoad:(UIWebView *)webView { 
-	[activityIndicator stopAnimating];     
-	UIView *view = (UIView *)[self.view viewWithTag:103]; 
-	[view removeFromSuperview]; 
-} 
+//- (void)webViewDidFinishLoad:(UIWebView *)webView { 
+//	[activityIndicator stopAnimating];     
+	//UIView *view = (UIView *)[self.view viewWithTag:103]; 
+//	[view removeFromSuperview]; 
+//} 
 
 
 - (void)dealloc
@@ -125,6 +146,7 @@
 	[myWebView release];
 	
 	[activityIndicator release];
+	[myAlert release];
 	
 	[navigationController release];
 	[instructionsView release];

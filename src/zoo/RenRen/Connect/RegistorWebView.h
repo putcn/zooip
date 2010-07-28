@@ -18,6 +18,7 @@
 	UIWebView *myWebView;
 	UINavigationController *navigationController;
 	UIActivityIndicatorView *activityIndicator;
+	UIAlertView *myAlert;
 }
 
 @property (nonatomic, retain) UINavigationController *navigationController;
