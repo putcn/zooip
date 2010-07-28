@@ -66,7 +66,6 @@ storageAuctionAnimals;
 //		playerUid = @"248725655";
 //		playerUid = @"46565162";// Hunk
 		playerUid = @"160412891";//蒋紫薇
-//		playerUid = @"221815086";//马天才
 
 //		playerUid = @"248951837"; //renyingying
 		
@@ -76,7 +75,7 @@ storageAuctionAnimals;
 //		playerUid = @"248951866";//傅红雪
 		
 		// Friend UID
-		friendUid = @"327535525";
+//		friendUid = @"327535525";
 		
 
 		

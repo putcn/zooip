@@ -14,8 +14,8 @@
 
 
 // Add by Hunk on 2010-07-27
-#define SIZE_BUTTON (16)
-#define FONT_BUTTON @"Marker Felt"
+#define SIZE_BUTTON (18)
+#define FONT_BUTTON @"Arial"//"Marker Felt"
 #define OFF_X_BUTTON (3)
 #define OFF_Y_BUTTON (-30)
 
@@ -103,7 +103,7 @@
 	[playerOperationButtons addObject:button];
 	
 	//动物管理
-	button = [[Button alloc] initWithLabel:@"管理" setColor:ccc3(0, 0, 0) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"动物管理.png" setTarget:self
+	button = [[Button alloc] initWithLabel:@"管理" setColor:ccc3(255, 255, 255) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"动物管理.png" setTarget:self
 							   setSelector:@selector(btnManagementButtonHandler:) setPriority:51 offsetX:OFF_X_BUTTON offsetY:OFF_Y_BUTTON scale:0.75];
 	button.position = ccp(160, 20);
 	//button.tag = 4;
@@ -111,7 +111,7 @@
 	[playerOperationButtons addObject:button];
 	
 	//扩容
-	button = [[Button alloc] initWithLabel:@"扩容" setColor:ccc3(0, 0, 0) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"扩容.png" setTarget:self
+	button = [[Button alloc] initWithLabel:@"扩容" setColor:ccc3(255, 255, 255) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"扩容.png" setTarget:self
 							   setSelector:@selector(btnFarmExpansionButtionHandler:) setPriority:51 offsetX:OFF_X_BUTTON offsetY:OFF_Y_BUTTON scale:0.75];
 	button.position = ccp(195, 20);
 	//button.tag = 5;
@@ -119,7 +119,7 @@
 	[playerOperationButtons addObject:button];
 	
 	//治疗
-	button = [[Button alloc] initWithLabel:@"治疗" setColor:ccc3(0, 0, 0) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"医疗.png" setTarget:self
+	button = [[Button alloc] initWithLabel:@"治疗" setColor:ccc3(255, 255, 255) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"医疗.png" setTarget:self
 							   setSelector:@selector(btnPlayerOperationButtonHandler:) setPriority:51 offsetX:OFF_X_BUTTON offsetY:OFF_Y_BUTTON scale:0.75];
 	button.position = ccp(230, 20);
 	button.tag = OPERATION_CURE_ANIMAL;
