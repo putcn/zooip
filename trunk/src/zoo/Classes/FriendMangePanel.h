@@ -26,7 +26,7 @@
 	ItemInfoPane *itemInfoPane;
 	NSString *scaleFlag;
 	
-	
+	UIView *_xxxView;
 
 }
 @property (nonatomic,retain) NSString *title;

@@ -62,14 +62,16 @@
 {
 	_view = [[UIView alloc] initWithFrame:CGRectMake(8,  111, 119, 25)];
 	[_view setBackgroundColor: [UIColor clearColor]];
-	_view.transform = CGAffineTransformMakeRotation(M_PI * (90.0 / 180.0));
+	
 	_view.tag = 9900;
 
 	levelEntryTextField = [[UITextField alloc] initWithFrame:
 						   CGRectMake(0,  0, 119, 25)];
+//	[levelEntryTextField setBackgroundColor: [UIColor blackColor]];
 	[levelEntryTextField setDelegate:self];
 
     [_view addSubview:levelEntryTextField];
+	_view.transform = CGAffineTransformMakeRotation(M_PI * (90.0 / 180.0));
 	[[[CCDirector sharedDirector] openGLView] addSubview:_view];
 }
 
