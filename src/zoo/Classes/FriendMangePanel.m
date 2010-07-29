@@ -57,72 +57,45 @@
 		[self addChild:transBackground z:-1];
 		[transBackground release];
 		
+		_xxxView = [[[CCDirector sharedDirector] openGLView] viewWithTag:9900];
 	}
 	return self;
 }
 
-
-
-
--(void) gotoFriendHandler:(FriendInfoBut *) friendButton
-{
-	
+-(void) gotoFriendHandler:(FriendInfoBut *) friendButton//去朋友家
+{	
 	[[GameMainScene sharedGameMainScene] switchZoo:friendButton.uId];
 	
-	self.position = ccp(-2000,100);
-	
+	self.position = ccp(-2000,100);	
+
+	_xxxView.hidden = YES;
 }
 
-
-
-
--(void) exitHandler:(Button *)button
+-(void) exitHandler:(Button *)button//叉叉按钮
 {
 	
 	[self disableFriendView];
 	
-	UIView *_xxxView = [[[CCDirector sharedDirector] openGLView] viewWithTag:9900];
-// 	NSLog(@"xxxView=%@",_xxxView);
-	[_xxxView removeFromSuperview];
-	
+	_xxxView.hidden = YES;
 }
 
 
--(void) disableFriendView
+-(void) disableFriendView//叉叉按钮
 {
 	self.position = ccp(-2000,100);
 }
 
-
-
-
-
-/*
-
--(void)popUpHandler
+-(void) resetPostion//好友图标
 {
-	friendView.scale = 0.1f;
-	id actionScaling = [CCScaleTo actionWithDuration:0.6  scale:300.0f/1024.0f];
-	
-	id ease = [CCEaseBackOut actionWithAction: actionScaling];
-	[ease setDuration:0.3];
-	
-	[friendView runAction:ease];
-}
-
-
-*/
-
-
-
-
--(void) resetPostion
-{
-	if (self.position.x == -180) {
+	if (self.position.x == -180) 
+	{
 		self.position = ccp(-2000,100);
-	}else {
-		
+		_xxxView.hidden = YES;		
+	}
+	else 
+	{
 		self.position = ccp(-180,100);
+		_xxxView.hidden = NO;
 	}
 }
 
@@ -134,7 +107,6 @@
 	[title           release];
 	[friendContainer release];
 	[scaleFlag       release];
-
 
 	[super dealloc];
 }

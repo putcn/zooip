@@ -35,7 +35,8 @@
 -(void) btnButtonHandler
 {
 	
-	if (friendView == nil) {
+	if (friendView == nil) 
+	{
 		friendView = [[FriendMangePanel alloc] init];
 		//friendView.position = ccp(-200,100);
 		[self addChild:friendView];
@@ -44,7 +45,6 @@
 	else 
 	{
 		[friendView resetPostion];
-	
 	}
 		 
 }
