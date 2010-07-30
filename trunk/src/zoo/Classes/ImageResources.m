@@ -233,8 +233,8 @@ static ImageResources *_resource = nil;
 		return turkeycockImg;
 	}else {
 		
+		return nil;
 	}
-	return nil;
 }
 
 -(void)restore
