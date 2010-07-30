@@ -1102,7 +1102,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 	
 	NSString *methodName = @"toKillAnts";
 	
-/*	switch (methodType) {
+	switch (methodType) {
 		case ZooNetworkRequestgetFarmerInfo:
 			methodName = @"getFarmerInfo";
 			break;
@@ -1343,7 +1343,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 			
 		default:
 			break;
-	}	*/
+	}	
 	
 	[request setPostValue:methodName forKey:@"method"];
 	
