@@ -9,16 +9,35 @@
 #import "HttpPurchase.h"
 #import "CJSONDeserializer.h"
 
-
-@interface HttpPurchase(SubviewFrames)
-- (void) RequestParams:(NSDictionary*)params RequestURL:(NSString*) RequestURL;
-@end
+static HttpPurchase *sharedPur = nil;
+static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaonei/php/remoteServiceiPhone.php";
 
 @implementation HttpPurchase
 
-@synthesize clientProtocol;
+@synthesize clientProtocol, connectOver, callBacks;
 
-- (void) RequestParams:(NSDictionary*)params RequestURL:(NSString*) RequestURL{
++ (id)sharedPurchase{
+    @synchronized( self ) {
+        if ( sharedPur == nil ) {
+            /* sharedInst set up in init */
+            [[self alloc] init];
+        }
+    }
+	
+    return sharedPur;
+}
+
+- (id)init{
+    if ( sharedPur != nil ) {
+		
+	} else if ( (self = [super init]) ) {
+		callBacks = [[NSMutableDictionary alloc] init];
+		sharedPur = self;		
+	}
+	return sharedPur;
+}
+
+- (void) RequestParams:(NSDictionary*)params{
 	
 	NSDictionary* postParams = params;		
 	NSLog(@"%@",postParams);
@@ -39,9 +58,9 @@
 	
 	//发送
 	NSMutableURLRequest *connectionRequest = [NSMutableURLRequest 
-											  requestWithURL:[NSURL URLWithString:RequestURL]];
+											  requestWithURL:[NSURL URLWithString:ServiceBaseURL]];
 	[connectionRequest setHTTPMethod:@"POST"];
-	[connectionRequest setTimeoutInterval:100.0];
+	[connectionRequest setTimeoutInterval:10.0];
 	[connectionRequest setCachePolicy:NSURLRequestUseProtocolCachePolicy];
 	[connectionRequest setHTTPBody:body];
 	
@@ -65,6 +84,15 @@
 
 - (void) storeChk{
 	
+}
+
+- (void) dealloc{
+	
+	[connection release];
+	[receivedData release];
+	[callBacks release];
+	
+	[super dealloc];
 }
 
 #pragma mark -
@@ -94,7 +122,7 @@
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data
 {
 	[receivedData appendData:data];
-	NSString *stringFromUnichar = [NSString stringWithCharacters:(unichar*)[data bytes] length:[data length] / sizeof(unichar)];
+	//  NSString *stringFromUnichar = [NSString stringWithCharacters:(unichar*)[data bytes] length:[data length] / sizeof(unichar)];
 	//	NSLog(stringFromUnichar);
 	return;
 }
@@ -117,30 +145,24 @@
 	
 	NSLog(@"%@",dictionary);
 	
-	NSString* resp = [dictionary objectForKey:@"resp"];
-	//报错处理
-	if([resp compare:@"fail"] == NSOrderedSame){
-		
-	}
-	else {
-				
-		switch (clientProtocol) {
-				
-			case MJBank_Store_Protocol:{
-	//			pInstance->SetHttpBack(dictionary,MJBank_Store_Protocol);
-			}
-				break;
-				
-		
-			case Server_Chk:{				
-	//			pInstance->SetHttpBack(dictionary,MJBank_Consumer_store);				
-			}
-				break;
-				
-			default:
-				break;
+	switch (clientProtocol) {
+			
+		case MJBank_Store_Protocol:{
+			[callBacks setDictionary:dictionary];
+			
 		}
-	}	
+			break;
+			
+		case Server_Chk:{				
+			[callBacks setDictionary:dictionary];
+		}
+			break;
+			
+		default:
+			break;
+	}
+	
+	connectOver = YES;
 }
 
 @end

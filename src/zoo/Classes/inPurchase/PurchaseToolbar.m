@@ -9,6 +9,7 @@
 #import "PurchaseToolbar.h"
 #import "ModelLocator.h"
 #import "GameMainScene.h"
+#import "DataEnvironment.h"
 
 
 @implementation PurchaseToolbar
@@ -39,6 +40,20 @@
 		purchaseTable = [[tableListViewController alloc] initWithNibName:@"tableListViewController" bundle:nil];		
 	}
 	
+	NSString *uid = [DataEnvironment sharedDataEnvironment].playerUid;
+	NSString *pid = [DataEnvironment sharedDataEnvironment].pid;
+	
+	HttpPurchase* myPurchase = [HttpPurchase sharedPurchase];
+	NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
+							uid,				@"uid",
+							@"getIphoneGoods",	@"method",
+							pid,				@"pid",
+							nil];
+	[myPurchase RequestParams:params];
+	[myPurchase setConnectOver:NO];
+	[myPurchase setClientProtocol:MJBank_Store_Protocol];
+	
+	[purchaseTable openConnect];
 	[[[UIApplication sharedApplication]keyWindow] addSubview:purchaseTable.view];
 }
 

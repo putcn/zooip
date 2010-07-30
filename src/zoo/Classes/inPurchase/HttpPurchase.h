@@ -20,10 +20,17 @@ enum ClientProtocol{
 	NSURLConnection*	connection;
 	NSMutableData*		receivedData;
 	int					clientProtocol;
+	BOOL				connectOver;
+	NSMutableDictionary*callBacks;
 }
 
 @property(nonatomic, readwrite)int clientProtocol;
+@property(nonatomic, readwrite)BOOL connectOver;
+@property(nonatomic, retain) NSDictionary* callBacks;
 
++ (HttpPurchase *)sharedPurchase;
+
+- (void) RequestParams:(NSDictionary*)params;
 - (void) getStoreList;
 - (void) storeChk;
 

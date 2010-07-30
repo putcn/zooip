@@ -8,6 +8,7 @@
 
 #import "tableListViewController.h"
 #import "PurchaseInterface.h"
+#import "DataEnvironment.h"
 
 @implementation tableListViewController
 
@@ -35,12 +36,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
-	[self.view setFrame:CGRectMake(0.f, 0.f, 480.f, 320.f)];
+//	[self.view setFrame:CGRectMake(0.f, 0.f, 480.f, 320.f)];
+	httpPurchaseIn = [HttpPurchase sharedPurchase];
 	
-	purchaseId = [[NSArray alloc] initWithObjects:
-				   @"com.abc.lingeo.123",
-				   @"com.abc.lingeo.1234",
-				   @"com.abc.lingeo.12345",
+/*	purchaseId = [[NSArray alloc] initWithObjects:
+				   @"mj13_online_igb_01",
+				   @"mj13_online_igb_02",
+				   @"mj13_online_igb_03",
 				   nil];
 	
 	purchaseMsg = [[NSArray alloc] initWithObjects:
@@ -48,10 +50,12 @@
 				   @"价格1.99$ 蚂蚁120",
 				   @"价格2.99$ 蚂蚁180",
 				   nil];
+*/
 	
-	disableView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, 480.f, 320.f)];
-	disableView.backgroundColor = [UIColor blackColor];
-	disableView.alpha = 0.7;
+//	disableView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, 480.f, 320.f)];
+//	disableView.backgroundColor = [UIColor blackColor];
+	disableView.hidden = YES;
+	myActivity.hidden = YES;
 }
 
 
@@ -82,6 +86,7 @@
 	[purchaseId release];
 	[purchaseTableView release];
 	[disableView release];
+	[myActivity release];
 	
 	[super dealloc];
 }
@@ -102,9 +107,12 @@
 
 	[purchaseIn requestProductData];
 	
-	storeTimer = [CCTimer timerWithTarget:self selector:@selector(isPurchaseOver) interval:0.2];
+//	storeTimer = [CCTimer timerWithTarget:self selector:@selector(isPurchaseOver:) interval:0.2];
+	storeTimer = [[NSTimer timerWithTimeInterval:0.2 target:self selector:@selector(isPurchaseOver:) userInfo:nil repeats:NO] retain];
+	[[NSRunLoop currentRunLoop] addTimer:storeTimer forMode:NSDefaultRunLoopMode];
 
-	[self.view addSubview:disableView];
+	disableView.hidden = NO;
+	myActivity.hidden = NO;
 	[self.view setUserInteractionEnabled:NO];
 }
 
@@ -145,7 +153,7 @@
 	[self.view removeFromSuperview];
 }
 
-- (void)isPurchaseOver{
+- (void)isPurchaseOver:(id)sender{
 	
 	Purchase* purchaseIn = [Purchase sharedManager];
 
@@ -154,15 +162,78 @@
 		if ([purchaseIn getResult]) {
 	
 			//http协议
+			NSString *uid = [DataEnvironment sharedDataEnvironment].playerUid;
+			NSString *pid = [DataEnvironment sharedDataEnvironment].pid;
+			
+			NSString *receipt = [purchaseIn BackInformation];
+			
+			HttpPurchase* myPurchase = [HttpPurchase sharedPurchase];
+			NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
+									uid,				@"uid",
+									@"completeTransction",@"method",
+									pid,				@"pid",
+									receipt,			@"receipt",
+									nil];
+			[myPurchase RequestParams:params];
+			[myPurchase setConnectOver:NO];
+			[myPurchase setClientProtocol:Server_Chk];
 		}else {
 			[purchaseIn removePurchase];
 		}
-		[disableView removeFromSuperview];
+		disableView.hidden = YES;
+		myActivity.hidden = YES;
 		[self.view setUserInteractionEnabled:YES];
 	}else {
-		storeTimer = [CCTimer timerWithTarget:self selector:@selector(isPurchaseOver) interval:0.2];
+//		storeTimer = [CCTimer timerWithTarget:self selector:@selector(isPurchaseOver:) interval:0.2];
+		if(storeTimer){
+			[storeTimer invalidate];
+			[storeTimer release];
+			storeTimer = nil;
+		}
+		storeTimer = [[NSTimer timerWithTimeInterval:0.2 target:self selector:@selector(isPurchaseOver:) userInfo:nil repeats:NO] retain];
+		[[NSRunLoop currentRunLoop] addTimer:storeTimer forMode:NSDefaultRunLoopMode];
+	}
+}
+
+- (void)isConnectOver:(id)sender{
+	
+	if ([httpPurchaseIn connectOver]) {
+		
+		switch ([httpPurchaseIn clientProtocol]) {
+			case MJBank_Store_Protocol:{
+				
+				NSDictionary* dic = [httpPurchaseIn callBacks];
+				purchaseId = [dic objectForKey:@"iphoneGoodsId"];
+				purchaseMsg = [dic objectForKey:@"description"];
+				[purchaseTableView reloadData];
+			}
+				break;
+			
+			case Server_Chk:
+				
+				break;
+				
+			default:
+				break;
+		}
+	}
+	else {
+		if(listTimer){
+			[listTimer invalidate];
+			[listTimer release];
+			listTimer = nil;
+		}
+		listTimer = [[NSTimer timerWithTimeInterval:0.2 target:self selector:@selector(isConnectOver:) userInfo:nil repeats:NO] retain];
+		[[NSRunLoop currentRunLoop] addTimer:listTimer forMode:NSDefaultRunLoopMode];
 	}
 
+}
+
+- (void)openConnect{
+
+	listTimer = [[NSTimer timerWithTimeInterval:0.2 target:self selector:@selector(isConnectOver:) userInfo:nil repeats:NO] retain];
+	[[NSRunLoop currentRunLoop] addTimer:listTimer forMode:NSDefaultRunLoopMode];
+	
 }
 
 @end

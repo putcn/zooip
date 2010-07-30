@@ -11,6 +11,7 @@
 #import "Button.h"
 #import "MessageDialog.h"
 #import "tableListViewController.h"
+#import "HttpPurchase.h"
 
 @interface PurchaseToolbar : CCSprite{
 	

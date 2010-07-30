@@ -10,6 +10,7 @@
 
 #import "cocos2d.h" 
 #import "ListTableCell.h"
+#import "HttpPurchase.h"
 
 @interface tableListViewController : UIViewController
 <UITableViewDelegate, UITableViewDataSource> {
@@ -18,9 +19,13 @@
 	NSMutableArray*				purchaseMsg;
 	IBOutlet UITableView*		purchaseTableView;
 	IBOutlet UIButton*			closeButton;
+	IBOutlet UIView*			disableView;
+	IBOutlet UIActivityIndicatorView* myActivity;
 	
-	CCTimer*					storeTimer;
-	UIView*						disableView;
+	NSTimer*					storeTimer;
+	NSTimer*					listTimer;
+	
+	HttpPurchase*				httpPurchaseIn;
 }
 
 @property(nonatomic, retain) NSMutableArray* purchaseId;
@@ -29,7 +34,10 @@
 - (void)configureCell:(ListTableCell *)cell atIndexPath:(NSIndexPath *)indexPath;
 - (IBAction)closePurchase:(id)sender;
 
-- (void)isPurchaseOver;
+- (void)isPurchaseOver:(id)sender;
+- (void)isConnectOver:(id)sender;
+
+- (void)openConnect;
 
 @end
 
