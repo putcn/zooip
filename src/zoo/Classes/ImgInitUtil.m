@@ -14,7 +14,7 @@
 static ImgInitUtil *_sharedImgInitUtil;
 
 +(ImgInitUtil *)sharedImgInitUtil{
-	@synchronized([ImgInitUtil class])
+	@synchronized(self)
 	{
 		if(!_sharedImgInitUtil)
 		{

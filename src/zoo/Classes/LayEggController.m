@@ -13,6 +13,7 @@
 
 @implementation LayEggController
 
+static int _index = 0;
 //-(LayEggController *) initWithAllEggController:(AllLayEggController *)controller
 //{
 //	if ((self = [super init]))
@@ -26,15 +27,14 @@
 
 -(void) execute:(NSObject *)value
 {
-	acount = 0;
+	acount = [[DataEnvironment sharedDataEnvironment].animalIDs count];
 	if ([[DataEnvironment sharedDataEnvironment].animalIDs count] == 0) {
 		[super resultCallback:nil];
 	}
 	else {
-		for (NSString *aniId in [DataEnvironment sharedDataEnvironment].animalIDs) {
-			NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:aniId, @"animalId" , nil];
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetLayEggsRemain WithParameters:param AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-		}		
+		NSString *aniId = [[DataEnvironment sharedDataEnvironment].animalIDs objectAtIndex:0];
+		NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:aniId, @"animalId" , nil];
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetLayEggsRemain WithParameters:param AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 	}
 }
 
@@ -119,12 +119,15 @@
 //		default:
 //			break;
 //	}
-	acount++;
-	if (acount == [[DataEnvironment sharedDataEnvironment].animalIDs count]) {
-		acount = 0;
+	if (_index + 1 == acount) {
 		[super resultCallback:value];
 	}
-
+	else {
+		_index ++;
+		NSString *aniId = [[DataEnvironment sharedDataEnvironment].animalIDs objectAtIndex:_index];
+		NSDictionary *param = [NSDictionary dictionaryWithObjectsAndKeys:aniId, @"animalId" , nil];
+		[self execute:param];
+	}
 }
 
 -(void) faultCallback:(NSObject *)value

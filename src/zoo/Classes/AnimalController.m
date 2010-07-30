@@ -91,6 +91,7 @@ static AnimalController *_sharedAnimalController = nil;
 			[self addBornAnimal:serverAnimalData.originalAnimalId];
 		}
 		else if(serverAnimalData.status == 0 || serverAnimalData.status == 1){
+//			[NSThread detachNewThreadSelector:@selector(addAnimalThread:) toTarget:self withObject:serverAnimalData];
 			newAnimal = [[Animal alloc] initWithAnimalData:serverAnimalData];
 			[animals setObject:newAnimal forKey:serverAnimalID];
 		}
@@ -124,6 +125,15 @@ static AnimalController *_sharedAnimalController = nil;
 //			[localAnimal dealloc];
 //		}
 //	}
+}
+
+-(void) addAnimalThread:(DataModelAnimal *)animalData
+{
+	NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+	Animal *newAnimal = nil;
+	newAnimal = [[Animal alloc] initWithAnimalData:animalData];
+	[animals setObject:newAnimal forKey:animalData.animalId];
+	[pool release];
 }
 
 -(void) removeAnimal:(NSString *)animalId
