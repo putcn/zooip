@@ -514,25 +514,30 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 			//"code:1 + message + farmer + farmerId + snsUserId + platformId + userName + userImg + farmPref + fighter + expirationDate + newUser + antsCurrency + goldenEgg
 			//code:0 无动态信息
 			//code:2 该用户不存在"
-//			switch (code) {
-//				case 0:
-//					// TODO 无动态信息
-//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无动态信息"];
-//					break;
-//				case 1:
-//					// TODO
-//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取信息"];
-//					break;
-//				case 2:
-//					// TODO 该用户不存在
-//					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"该用户不存在"];
-//					break;
-//				default:
-//					// TODO
-//					break;
-//			}
-//
-//			break;
+			switch (code) {
+				case 0:
+					// TODO 无动态信息
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无动态信息"];
+					break;
+				case 1:
+				{
+	//				NSLog(@"%@\n", result);
+//					NSArray* dogsArray = [result objectForKey:@"chinemy"];
+					
+					
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功获取信息"];
+				}
+					break;
+				case 2:
+					// TODO 该用户不存在
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"该用户不存在"];
+					break;
+				default:
+					// TODO
+					break;
+			}
+
+			break;
 		case ZooNetworkRequestgetFriendsInfo:
 		{
 			if (response == nil)

@@ -21,7 +21,7 @@
 
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
 	
-	if (self = [super initWithStyle:style reuseIdentifier:reuseIdentifier]) {
+	if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
 		backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
 		backgroundImageView.contentMode = UIViewContentModeLeft;
 		[self.contentView addSubview:backgroundImageView];

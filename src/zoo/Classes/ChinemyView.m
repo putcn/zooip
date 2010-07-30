@@ -8,8 +8,11 @@
 
 #import "ChinemyView.h"
 #import "AnimalImageProperty.h"
+#import "ZooRecordTableViewController.h"
+#import "MyTableView.h"
 
 @implementation ChinemyView
+@synthesize m_pZooRecordTable;
 
 -(id) init
 {
@@ -87,6 +90,7 @@
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	[self optAnimationPlay];
+	[self callServerController];
 }
 
 -(CGPoint)countCoordinate: (CGPoint)clickPoint
@@ -102,23 +106,74 @@
 	}
 	else 
 		if(type == OPERATION_CURE_ANIMAL){
-			CGPoint location = ccp(self.position.x, self.position.y);
-			[[OperationViewController sharedOperationViewController] play:@"infusion" setPosition:location];
+		//	CGPoint location = ccp(self.position.x, self.position.y);
+//			[[OperationViewController sharedOperationViewController] play:@"infusion" setPosition:location];
 		}
 		else {
 			return;
 		}
-	
 }
 
 -(void)callServerController
 {
+	// Add by Hunk on 2010-07-29
+	NSDictionary *param = [NSDictionary dictionaryWithObject:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId forKey:@"farmerId"];
 	
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerMessage WithParameters:param AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+}
+
+-(void)resultCallback:(NSObject *)value
+{
+	NSDictionary *result = (NSDictionary *)value;
+	
+	NSLog(@"%@\n", result);
+	
+	NSInteger code = [[result objectForKey:@"code"] intValue];
+	switch (code)
+	{
+		case 0:
+		{}
+			break;
+		case 1:
+		{
+			NSArray* array = [result objectForKey:@"message"];
+			
+		//	NSArray* arrZooRecord;
+//			if(0 == [array count])
+//			{
+//				arrZooRecord = [NSArray arrayWithObject:@"暂无消息记录!"];
+//			}
+//			else
+//			{
+//				arrZooRecord = [NSArray arrayWithArray:array];
+//			}
+//			
+//			if(nil == m_pZooRecordTable)
+//			{
+//				m_pZooRecordTable = [[ZooRecordTableViewController alloc]initWithNibName:@"ZooRecordTableViewController" bundle:nil];
+//			}
+//			[(ZooRecordTableViewController*)m_pZooRecordTable setM_arrayZooRecord:arrZooRecord];
+//			
+//			[[[UIApplication sharedApplication]keyWindow] addSubview:((ZooRecordTableViewController*)m_pZooRecordTable).view];
+			
+			[[MyTableView sharedMyTableView]awakeZooRecordTable:array bgImgName:@"BG_buy.png"];
+		}
+			break;
+		default:
+			break;
+	}
+}
+
+-(void)faultCallback:(NSObject *)value
+{
+
+
 }
 
 -(void)dealloc
 {
 	[animationTable release];
+	[(ZooRecordTableViewController*)m_pZooRecordTable release];
 	
 	[self removeAllChildrenWithCleanup:YES];
 	[super dealloc];
