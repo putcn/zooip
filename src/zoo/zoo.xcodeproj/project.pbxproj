@@ -526,6 +526,9 @@
 		6098BB0811BDD38B00F0DB3B /* AnimalExpansionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098BB0711BDD38B00F0DB3B /* AnimalExpansionPanel.m */; };
 		60A0CDBE11B78066001AF9BD /* AnimalManageToMateAntsChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */; };
 		60B4040A11FFEECE0087F16F /* buyant.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B4040911FFEECE0087F16F /* buyant.png */; };
+		60B409AE1202B0360087F16F /* 滚轮上.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B409AB1202B0360087F16F /* 滚轮上.png */; };
+		60B409B01202B0360087F16F /* 滚轮数字文本框.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B409AD1202B0360087F16F /* 滚轮数字文本框.png */; };
+		60B409C61202B13A0087F16F /* 滚轮下.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B409C51202B13A0087F16F /* 滚轮下.png */; };
 		60C18BA511E1A6D800248E87 /* bgimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18BA411E1A6D800248E87 /* bgimg.png */; };
 		60EEE3D311F9802000D26ABD /* RegistorWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EEE3D211F9802000D26ABD /* RegistorWebView.m */; };
 		6B03D7FB11DC74D0000F2201 /* blueBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7ED11DC74D0000F2201 /* blueBg.png */; };
@@ -1725,6 +1728,9 @@
 		60A0CDBC11B78066001AF9BD /* AnimalManageToMateAntsChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageToMateAntsChoose.h; sourceTree = "<group>"; };
 		60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageToMateAntsChoose.m; sourceTree = "<group>"; };
 		60B4040911FFEECE0087F16F /* buyant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyant.png; sourceTree = "<group>"; };
+		60B409AB1202B0360087F16F /* 滚轮上.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮上.png"; sourceTree = "<group>"; };
+		60B409AD1202B0360087F16F /* 滚轮数字文本框.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字文本框.png"; sourceTree = "<group>"; };
+		60B409C51202B13A0087F16F /* 滚轮下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮下.png"; sourceTree = "<group>"; };
 		60C18BA411E1A6D800248E87 /* bgimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgimg.png; sourceTree = "<group>"; };
 		60EEE3D111F9802000D26ABD /* RegistorWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistorWebView.h; sourceTree = "<group>"; };
 		60EEE3D211F9802000D26ABD /* RegistorWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistorWebView.m; sourceTree = "<group>"; };
@@ -3538,6 +3544,9 @@
 		6BD28DCF11D3000D00BE2859 /* 动物园切图 */ = {
 			isa = PBXGroup;
 			children = (
+				60B409C51202B13A0087F16F /* 滚轮下.png */,
+				60B409AB1202B0360087F16F /* 滚轮上.png */,
+				60B409AD1202B0360087F16F /* 滚轮数字文本框.png */,
 				6B4E4FB711FECDB7009A95B7 /* 滚轮数字加.png */,
 				6B4E4FB811FECDB7009A95B7 /* 滚轮数字减.png */,
 				6B4E4FB911FECDB7009A95B7 /* 滚轮数字轮盘.png */,
@@ -4761,6 +4770,9 @@
 				60B4040A11FFEECE0087F16F /* buyant.png in Resources */,
 				6BF1409012000CF700FF9BFE /* tibentanmastiff_rest_01.png in Resources */,
 				6BF1409412000D3100FF9BFE /* chinemy_walk_left_01.png in Resources */,
+				60B409AE1202B0360087F16F /* 滚轮上.png in Resources */,
+				60B409B01202B0360087F16F /* 滚轮数字文本框.png in Resources */,
+				60B409C61202B13A0087F16F /* 滚轮下.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
