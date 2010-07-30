@@ -16,7 +16,7 @@
 #import "Button.h"
 
 #import "NumberField.h"
-@interface ItemInfoPane : CCSprite {
+@interface ItemInfoPane : CCSprite <CCTargetedTouchDelegate>{
 	NSString *title;
 	NSString *itemId;
 	NSString *itemType;
