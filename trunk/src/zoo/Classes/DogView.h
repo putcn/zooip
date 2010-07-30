@@ -13,9 +13,12 @@
 
 @interface DogView : FarmAnimalView {
 	NSString *dogId;
+	
+	void* m_pZooRecordTable;
 }
 
 @property (nonatomic, retain)NSString *dogId;
+@property(nonatomic)void* m_pZooRecordTable;
 
 -(void) update:(int)currDirectionValue status:(int)currStatusValue;
 -(CGPoint)countCoordinate: (CGPoint)clickPoint;

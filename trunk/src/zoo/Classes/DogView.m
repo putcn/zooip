@@ -8,9 +8,12 @@
 
 #import "DogView.h"
 #import "AnimalImageProperty.h"
+#import "ZooRecordTableViewController.h"
 
 @implementation DogView
 @synthesize dogId;
+@synthesize m_pZooRecordTable;
+
 -(id) init
 {
 	if((self = [super init]))
@@ -99,6 +102,7 @@
 -(void) ccTouchEnded:(UITouch *)touch withEvent:(UIEvent *)event
 {
 	[self optAnimationPlay];
+	[self callServerController];
 }
 
 -(CGPoint)countCoordinate: (CGPoint)clickPoint
@@ -121,8 +125,49 @@
 
 -(void)callServerController
 {
+	// Add by Hunk on 2010-07-29
+	NSDictionary *param = [NSDictionary dictionaryWithObject:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId forKey:@"farmerId"];
+	
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerDog WithParameters:param AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+}
+
+-(void)resultCallback:(NSObject *)value
+{
+	/*
+	NSDictionary *result = (NSDictionary *)value;
+	
+	NSLog(@"%@\n", result);
+	
+	NSDictionary* dogDic = [[result objectForKey:@"dogs"] objectAtIndex:0];
+
+	NSString* str = [dogDic objectForKey:@"goodsDescription"];
+
+	NSArray* arrZooRecord = [NSArray arrayWithObject:str];
+//	if(0 == [array count])
+//	{
+//		arrZooRecord = [NSArray arrayWithObject:@"暂无消息记录!"];
+//	}
+//	else
+//	{
+//		arrZooRecord = [NSArray arrayWithArray:array];
+//	}
+	
+	if(nil == m_pZooRecordTable)
+	{
+		m_pZooRecordTable = [[ZooRecordTableViewController alloc]initWithNibName:@"ZooRecordTableViewController" bundle:nil];
+	}
+	[(ZooRecordTableViewController*)m_pZooRecordTable setM_arrayZooRecord:arrZooRecord];
+	
+	[[[UIApplication sharedApplication]keyWindow] addSubview:((ZooRecordTableViewController*)m_pZooRecordTable).view];
+	 */
+}
+
+-(void)faultCallback:(NSObject *)value
+{
+	
 	
 }
+
 								   
 -(void) dealloc
 {
