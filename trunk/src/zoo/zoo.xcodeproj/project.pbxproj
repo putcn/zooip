@@ -655,6 +655,10 @@
 		84BE160211C75ED50065A080 /* FriendList.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE15FF11C75ED50065A080 /* FriendList.m */; };
 		84BE160311C75ED50065A080 /* FriendMangePanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BE160111C75ED50065A080 /* FriendMangePanel.m */; };
 		84DB49B811AF5656005E5E71 /* StorageContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 84DB49B711AF5656005E5E71 /* StorageContainer.m */; };
+		B4AB4A421202C66700747F90 /* MyTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AB4A3C1202C66700747F90 /* MyTableView.m */; };
+		B4AB4A431202C66700747F90 /* ZooRecordTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AB4A3E1202C66700747F90 /* ZooRecordTableCell.m */; };
+		B4AB4A441202C66700747F90 /* ZooRecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AB4A401202C66700747F90 /* ZooRecordTableViewController.m */; };
+		B4AB4A451202C66700747F90 /* ZooRecordTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4AB4A411202C66700747F90 /* ZooRecordTableViewController.xib */; };
 		BF00748B1159E9B90003B411 /* GameMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748A1159E9B90003B411 /* GameMainScene.m */; };
 		BF00748E1159EA530003B411 /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748D1159EA530003B411 /* ModelLocator.m */; };
 		C3013EB7118A7656000C80B3 /* AnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3013E7E118A7656000C80B3 /* AnimalView.m */; };
@@ -1874,6 +1878,13 @@
 		84BE160111C75ED50065A080 /* FriendMangePanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendMangePanel.m; sourceTree = "<group>"; };
 		84DB49B611AF5656005E5E71 /* StorageContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StorageContainer.h; sourceTree = "<group>"; };
 		84DB49B711AF5656005E5E71 /* StorageContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StorageContainer.m; sourceTree = "<group>"; };
+		B4AB4A3B1202C66700747F90 /* MyTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyTableView.h; sourceTree = "<group>"; };
+		B4AB4A3C1202C66700747F90 /* MyTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyTableView.m; sourceTree = "<group>"; };
+		B4AB4A3D1202C66700747F90 /* ZooRecordTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZooRecordTableCell.h; sourceTree = "<group>"; };
+		B4AB4A3E1202C66700747F90 /* ZooRecordTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZooRecordTableCell.m; sourceTree = "<group>"; };
+		B4AB4A3F1202C66700747F90 /* ZooRecordTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZooRecordTableViewController.h; sourceTree = "<group>"; };
+		B4AB4A401202C66700747F90 /* ZooRecordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZooRecordTableViewController.m; sourceTree = "<group>"; };
+		B4AB4A411202C66700747F90 /* ZooRecordTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZooRecordTableViewController.xib; sourceTree = "<group>"; };
 		BF0074891159E9B90003B411 /* GameMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMainScene.h; sourceTree = "<group>"; };
 		BF00748A1159E9B90003B411 /* GameMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMainScene.m; sourceTree = "<group>"; };
 		BF00748C1159EA530003B411 /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
@@ -2237,6 +2248,7 @@
 		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B4AB4A3A1202C66700747F90 /* ZooRecord */,
 				248D8AF911FFE35700DDE242 /* inPurchase */,
 				C39CFBF911BFC68F0063B01E /* RenRen */,
 				BF0074801159E8740003B411 /* Models */,
@@ -3795,6 +3807,20 @@
 			path = friendImage;
 			sourceTree = "<group>";
 		};
+		B4AB4A3A1202C66700747F90 /* ZooRecord */ = {
+			isa = PBXGroup;
+			children = (
+				B4AB4A3B1202C66700747F90 /* MyTableView.h */,
+				B4AB4A3C1202C66700747F90 /* MyTableView.m */,
+				B4AB4A3D1202C66700747F90 /* ZooRecordTableCell.h */,
+				B4AB4A3E1202C66700747F90 /* ZooRecordTableCell.m */,
+				B4AB4A3F1202C66700747F90 /* ZooRecordTableViewController.h */,
+				B4AB4A401202C66700747F90 /* ZooRecordTableViewController.m */,
+				B4AB4A411202C66700747F90 /* ZooRecordTableViewController.xib */,
+			);
+			path = ZooRecord;
+			sourceTree = "<group>";
+		};
 		BF00747F1159E86A0003B411 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -4773,6 +4799,7 @@
 				60B409AE1202B0360087F16F /* 滚轮上.png in Resources */,
 				60B409B01202B0360087F16F /* 滚轮数字文本框.png in Resources */,
 				60B409C61202B13A0087F16F /* 滚轮下.png in Resources */,
+				B4AB4A451202C66700747F90 /* ZooRecordTableViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4994,6 +5021,9 @@
 				248D8B0711FFE35700DDE242 /* PurchaseInterface.mm in Sources */,
 				248D8B0811FFE35700DDE242 /* PurchaseToolbar.m in Sources */,
 				248D8B0911FFE35700DDE242 /* tableListViewController.m in Sources */,
+				B4AB4A421202C66700747F90 /* MyTableView.m in Sources */,
+				B4AB4A431202C66700747F90 /* ZooRecordTableCell.m in Sources */,
+				B4AB4A441202C66700747F90 /* ZooRecordTableViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
