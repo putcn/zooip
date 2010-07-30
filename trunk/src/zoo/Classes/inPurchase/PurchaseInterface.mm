@@ -170,6 +170,7 @@ static Purchase * p_shareSelf = nil;//指向自己的指针
 -(void)initPurchase{
 
 	[self OpenStore];
+	b_result_open_store = true;
 }
 
 -(void)removePurchase{
