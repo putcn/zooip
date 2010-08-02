@@ -254,6 +254,11 @@ static CGFloat kBorderWidth = 10;
     selector:@selector(keyboardWillShow:) name:@"UIKeyboardWillShowNotification" object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self
     selector:@selector(keyboardWillHide:) name:@"UIKeyboardWillHideNotification" object:nil];
+	
+	//new add by alex
+	
+	[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(HideTheNavigationController:) name:@"POP" object:nil];
+	
 }
 
 - (void)removeObservers {
@@ -263,6 +268,15 @@ static CGFloat kBorderWidth = 10;
     name:@"UIKeyboardWillShowNotification" object:nil];
   [[NSNotificationCenter defaultCenter] removeObserver:self
     name:@"UIKeyboardWillHideNotification" object:nil];
+	
+	//new add by alex
+	//remove the observer of hide navigationController.
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:@"POP" object:nil];
+}
+
+- (void)HideTheNavigationController:(NSNotification*)notification 
+{
+	[self.navigationController.view removeFromSuperview];
 }
 
 - (void)postDismissCleanup {
@@ -301,6 +315,8 @@ static CGFloat kBorderWidth = 10;
 
 - (id)initWithSession:(Session*)session {
   if (self = [super initWithFrame:CGRectZero]) {
+	  
+	  //init notification
 	  
 	navigationController = [[UINavigationController alloc] initWithRootViewController:nil];
 	  
@@ -436,6 +452,7 @@ static CGFloat kBorderWidth = 10;
 		
 		
 		[[[UIApplication sharedApplication] keyWindow] addSubview:navigationController.view];
+		
 		[navigationController pushViewController:reg animated:YES];
 		[reg release];
 		
@@ -472,6 +489,11 @@ static CGFloat kBorderWidth = 10;
     [self sizeToFitOrientation:YES];
     [UIView commitAnimations];
   }
+}
+
+-(BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	// Return YES for supported orientations
+	return (interfaceOrientation == UIInterfaceOrientationLandscapeRight);
 }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////

@@ -78,13 +78,26 @@
 	[instructionsView setAlpha:0.8]; 
 	[self.view addSubview:instructionsView]; 
 	
-	UIButton *info = [UIButton buttonWithType:UIButtonTypeInfoLight];
-	[info addTarget:self 
-			 action:@selector(flipAction:) 
-   forControlEvents:UIControlEventTouchUpInside];
+	NSArray *buttonNames = [NSArray arrayWithObjects:[UIImage imageNamed:@"return.png"],nil];
+	UISegmentedControl *segmentdeControl = [[UISegmentedControl alloc] initWithItems:buttonNames];
 	
-	UIBarButtonItem *infoBarButton = [[UIBarButtonItem alloc] initWithCustomView:info];
-	self.navigationItem.rightBarButtonItem = infoBarButton;
+	segmentdeControl.momentary = YES;
+	//Customize the Segmented Control
+	segmentdeControl.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+	segmentdeControl.segmentedControlStyle = UISegmentedControlStyleBar;
+	segmentdeControl.backgroundColor = [UIColor clearColor];
+	segmentdeControl.frame = CGRectMake(0, 0, 30, 30);
+	[segmentdeControl addTarget:self action:@selector(segmentAction:) forControlEvents:UIControlEventValueChanged];
+	//Add
+	self.navigationItem.titleView = segmentdeControl;
+	
+//	UIButton *info = [UIButton buttonWithType:UIButtonTypeInfoLight];
+//	[info addTarget:self 
+//			 action:@selector(flipAction:) 
+//   forControlEvents:UIControlEventTouchUpInside];
+//	
+//	UIBarButtonItem *infoBarButton = [[UIBarButtonItem alloc] initWithCustomView:info];
+//	self.navigationItem.rightBarButtonItem = infoBarButton;
 	
 //	UIBarButtonItem *callModalViewButton = [[UIBarButtonItem alloc]
 //											initWithTitle:@"经文"
@@ -102,6 +115,26 @@
 	[instructionsView release]; 
 	[myWebView release];
 }
+
+-(void)segmentAction:(id)sender
+{
+	[[NSNotificationCenter defaultCenter] postNotificationName:@"POP" object:nil];
+	[self.view removeFromSuperview];
+	//[self.navigationController.view removeFromSuperview];
+	//self.navigationController.navigationBarHidden = YES;
+}
+
+//- (void) viewWillAppear:(BOOL)animated
+//{
+//    [self.navigationController setNavigationBarHidden:NO animated:animated];
+//    [super viewWillAppear:animated];
+//}
+//
+//- (void) viewWillDisappear:(BOOL)animated
+//{
+//    [self.navigationController setNavigationBarHidden:YES animated:animated];
+//    [super viewWillDisappear:animated];
+//}
 
 -(void)flipAction:(id)sender
 {}
