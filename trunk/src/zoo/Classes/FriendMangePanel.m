@@ -73,10 +73,13 @@
 
 -(void) exitHandler:(Button *)button//叉叉按钮
 {
+	if([friendContainer getStatus] == 2)
+	{
+		[self disableFriendView];
+		
+		_xxxView.hidden = YES;
+	}
 	
-	[self disableFriendView];
-	
-	_xxxView.hidden = YES;
 }
 
 

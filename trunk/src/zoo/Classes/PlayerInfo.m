@@ -26,10 +26,13 @@
 		nColorBar = 0;
 		
 		self.scale = 0.8f;
-//		[self setContentSize:CGSizeMake(300, 40)];
+		[self setContentSize:CGSizeMake(300, 40)];
 		CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif" ofType:nil] ] ];
+		CGRect rect_1 = CGRectZero;
+		rect_1.size = useImgTexture.contentSize;
 		userImgSprite = [CCSprite node];/// retain];
 		[userImgSprite setTexture:useImgTexture];
+		[userImgSprite setTextureRect: rect_1];
 		[useImgTexture release];
 		
 		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"用户_bg.png" ofType:nil] ] ];
@@ -38,6 +41,13 @@
 		[self setTexture:bg];		
 		[self setTextureRect: rect];
 		[bg release];
+		
+//		imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10,10,100,100)];
+//		imgView.backgroundColor = [UIColor blackColor];
+//		[[[CCDirector sharedDirector] openGLView] addSubview:imgView];
+////		[self addSubview:imgView];
+//		[imgView release];
+//		
 		
 		//头像
 		[userImgSprite setContentSize:CGSizeMake(40, 40)];
@@ -81,7 +91,7 @@
 		[levelLbl setColor:ccc3(0, 0, 0)];
 		levelLbl.position = ccp(210,16);
 		
-		[self addChild:userImgSprite z:3];
+		[self addChild:userImgSprite z:4];
 		[self addChild:userNameLbl z:1];
 		[self addChild:experienceBar z:2];
 		[self addChild:levelLbl z:1];
@@ -229,13 +239,53 @@
 	nextPageBtn.position = ccp(332,30);
 	[self addChild:nextPageBtn z:3];
 	
-	if (userImgNow == nil) {
+	
+	if (userImgNow == nil)
+	{
 		userImgNow = @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif";
 	}
+	/*
+	 imgView = [[UIWebView alloc] initWithFrame:displayRect];
+	 [imgView setScalesPageToFit:NO];    
+	 [imgView setBackgroundColor:[UIColor clearColor]];
+	 [imgView setOpaque:NO];
+	 
+	 if (nil != pUserData.head) {
+	 
+	 NSURL* url = [NSURL URLWithString:pUserData.head];
+	 NSURLRequest* req = [NSURLRequest requestWithURL:url];
+	 [imgView loadRequest:req];
+	 }
+
+	 */
+	
+
+	
+//	imgView = [[UIWebView alloc] initWithFrame:CGRectMake(0,0,50,50)];
+////	[imgView setScalesPageToFit:YES];    
+//	[imgView setBackgroundColor:[UIColor yellowColor]];
+//	[imgView setOpaque:NO];
+//	
+//	
+//	NSURL* url = [NSURL URLWithString:userImgNow];
+//	NSURLRequest* req = [NSURLRequest requestWithURL:url];
+//	[imgView loadRequest:req];
+//	imgView.transform = CGAffineTransformMakeRotation(M_PI * (90.0 / 180.0));
+//	//[self addChild:imgView];
+//	[[[UIApplication sharedApplication]keyWindow]addSubview:imgView];
+	
+	
+	
 	NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: userImgNow]];
 	
-	if (imageData == nil) {
-		imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif"]];		
+	if (imageData == nil)
+	{
+		imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif"]];
+//
+////		NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://hd16.xiaonei.com/photos/hd16/20080722/11/08/head_1030i150.jpg"]];
+////NSLog(@"%@",imageData);
+////	NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://hdn.xnimg.cn/photos/hdn521/20100715/1700/h_large_g7Bf_420a00001b2f2f76.jpg"]];
+//	
 	}	
 	CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithData:imageData] ];
 	CGRect rect = CGRectZero;

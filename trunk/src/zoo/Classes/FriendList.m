@@ -9,7 +9,7 @@
 #import "FriendList.h"
 #import "zooAppDelegate.h"
 #import "GetFriendsInfoController.h"
-
+#import "FriendMangePanel.h"
 @implementation FriendList
 
 -(id) initWithTab:(id)target
@@ -53,6 +53,7 @@
 		[pageLabel setColor:ccc3(0, 0, 0)];
 		pageLabel.position = ccp(250,-160);
 		[self addChild:pageLabel z:7];
+		nStatus = 2;
 		
 	}
 	return self;
@@ -67,7 +68,7 @@
 
 	levelEntryTextField = [[UITextField alloc] initWithFrame:
 						   CGRectMake(0,  0, 119, 25)];
-//	[levelEntryTextField setBackgroundColor: [UIColor blackColor]];
+//	[levelEntryTextField setBackgroundColor: [UIColor yellowColor]];
 	[levelEntryTextField setDelegate:self];
 
     [_view addSubview:levelEntryTextField];
@@ -75,21 +76,34 @@
 	[[[CCDirector sharedDirector] openGLView] addSubview:_view];
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField
+{
+	[(FriendMangePanel*)parentTarget setPosition: ccp(-200,220)];	
+	_view.frame=CGRectMake(175,  45, 25, 119);
+	nStatus = 1;
+
+}
 
 - (BOOL)textFieldShouldReturn:(UITextField*)textField {
 	[textField resignFirstResponder];
+	
+	[(FriendMangePanel*)parentTarget setPosition: ccp(-180,100)];
+	_view.frame=CGRectMake(55,  65, 25, 119);
+	nStatus = 2;
 	return YES;
 }
 
 - (void)textFieldDidEndEditing:(UITextField*)textField {
     if (textField==levelEntryTextField) {
         [levelEntryTextField endEditing:YES];
-//        
-        
 		result = levelEntryTextField.text;
     }
 }
 
+-(int ) getStatus
+{
+	return nStatus;
+}
 
 -(void) searchDown:(Button *)button
 {

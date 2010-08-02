@@ -33,6 +33,7 @@
 	BOOL searchDown;
 	
 	CCLabel *pageLabel;
+	int nStatus;
 }
 -(id) initWithTab:(id)target;
 
@@ -41,6 +42,7 @@
 -(void) nextPage:(Button *)button;
 -(void) forwardPage:(Button *)button;
 -(void) generatePage;
+-(int ) getStatus;
 
 NSInteger compareFriendArrayExpSelector(id f1, id f2, void *context);
 @end

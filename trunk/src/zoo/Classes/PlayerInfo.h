@@ -35,6 +35,8 @@
 	NSString *pFile;
 	Button *nextPageBtn;
 	
+	UIImageView *imgView;
+	
 }
 
 -(void) updateUserInfo;
