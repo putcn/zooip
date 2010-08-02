@@ -34,7 +34,10 @@
 	BOOL _showingKeyboard;
 	
 	UINavigationController *navigationController;
+	
+	//extern NSString *Pop_Images;
 }
+
 
 /**
  * 用来处理推出一个注册页面
