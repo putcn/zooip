@@ -549,7 +549,6 @@
 		6BA03F9D11E486C300D0E667 /* 加减器_左.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA03F9811E486C300D0E667 /* 加减器_左.png */; };
 		6BA03F9E11E486C300D0E667 /* 确定_按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA03F9911E486C300D0E667 /* 确定_按下.png */; };
 		6BA03F9F11E486C300D0E667 /* 确定.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA03F9A11E486C300D0E667 /* 确定.png */; };
-		6BA03FD411E48A0800D0E667 /* TextFieldController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BA03FD311E48A0800D0E667 /* TextFieldController.m */; };
 		6BBC379711D83E3F0081CB4D /* 搜索_bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC378C11D83E3F0081CB4D /* 搜索_bg.png */; };
 		6BBC379811D83E3F0081CB4D /* 搜索_弹起.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC378D11D83E3F0081CB4D /* 搜索_弹起.png */; };
 		6BBC379911D83E3F0081CB4D /* 搜索_按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC378E11D83E3F0081CB4D /* 搜索_按下.png */; };
@@ -560,6 +559,7 @@
 		6BBC379E11D83E3F0081CB4D /* 翻页_左_弹起.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC379411D83E3F0081CB4D /* 翻页_左_弹起.png */; };
 		6BBC379F11D83E3F0081CB4D /* 翻页_左_按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC379511D83E3F0081CB4D /* 翻页_左_按下.png */; };
 		6BC5C16E11DB3DE700644D52 /* LoadingBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC5C16D11DB3DE700644D52 /* LoadingBar.m */; };
+		6BCC526212069D4C00E6106A /* PictureAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC526112069D4C00E6106A /* PictureAdd.m */; };
 		6BCE3CEA11D059320006A430 /* LoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE3CE911D059320006A430 /* LoadView.m */; };
 		6BCEBE1B11E5664800503629 /* loading_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BCEBE1A11E5664800503629 /* loading_BG.png */; };
 		6BCEC0BB11E5B52A00503629 /* fontType.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BCEC0BA11E5B52A00503629 /* fontType.ttf */; };
@@ -1760,8 +1760,6 @@
 		6BA03F9811E486C300D0E667 /* 加减器_左.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "加减器_左.png"; path = "动物园切图/按钮/加减器_左.png"; sourceTree = "<group>"; };
 		6BA03F9911E486C300D0E667 /* 确定_按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "确定_按下.png"; path = "动物园切图/按钮/确定_按下.png"; sourceTree = "<group>"; };
 		6BA03F9A11E486C300D0E667 /* 确定.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "确定.png"; path = "动物园切图/按钮/确定.png"; sourceTree = "<group>"; };
-		6BA03FD211E48A0800D0E667 /* TextFieldController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TextFieldController.h; sourceTree = "<group>"; };
-		6BA03FD311E48A0800D0E667 /* TextFieldController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TextFieldController.m; sourceTree = "<group>"; };
 		6BBC378C11D83E3F0081CB4D /* 搜索_bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索_bg.png"; sourceTree = "<group>"; };
 		6BBC378D11D83E3F0081CB4D /* 搜索_弹起.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索_弹起.png"; sourceTree = "<group>"; };
 		6BBC378E11D83E3F0081CB4D /* 搜索_按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "搜索_按下.png"; sourceTree = "<group>"; };
@@ -1773,6 +1771,8 @@
 		6BBC379511D83E3F0081CB4D /* 翻页_左_按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "翻页_左_按下.png"; sourceTree = "<group>"; };
 		6BC5C16C11DB3DE700644D52 /* LoadingBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingBar.h; sourceTree = "<group>"; };
 		6BC5C16D11DB3DE700644D52 /* LoadingBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingBar.m; sourceTree = "<group>"; };
+		6BCC526012069D4C00E6106A /* PictureAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureAdd.h; sourceTree = "<group>"; };
+		6BCC526112069D4C00E6106A /* PictureAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureAdd.m; sourceTree = "<group>"; };
 		6BCE3CE811D059320006A430 /* LoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadView.h; sourceTree = "<group>"; };
 		6BCE3CE911D059320006A430 /* LoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadView.m; sourceTree = "<group>"; };
 		6BCEBE1A11E5664800503629 /* loading_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_BG.png; sourceTree = "<group>"; };
@@ -3529,15 +3529,6 @@
 			path = ToolTip;
 			sourceTree = "<group>";
 		};
-		6BA03FAA11E489A200D0E667 /* search */ = {
-			isa = PBXGroup;
-			children = (
-				6BA03FD211E48A0800D0E667 /* TextFieldController.h */,
-				6BA03FD311E48A0800D0E667 /* TextFieldController.m */,
-			);
-			name = search;
-			sourceTree = "<group>";
-		};
 		6BBC378B11D83E3F0081CB4D /* 好友列表搜索 */ = {
 			isa = PBXGroup;
 			children = (
@@ -3884,7 +3875,6 @@
 			children = (
 				6B46CE7711FE6AA800681656 /* NumberField.h */,
 				6B46CE7811FE6AA800681656 /* NumberField.m */,
-				6BA03FAA11E489A200D0E667 /* search */,
 				6092141311BF33DB00D50ABE /* AnimalFeedButtonContainer.h */,
 				6092141411BF33DB00D50ABE /* AnimalFeedButtonContainer.m */,
 				6098BB0611BDD38B00F0DB3B /* AnimalExpansionPanel.h */,
@@ -3959,6 +3949,8 @@
 				C3C525F6117C33C700343D7F /* ZooManageToolbar.m */,
 				C3C525F0117C333000343D7F /* PlayerInfo.h */,
 				C3C525F1117C333000343D7F /* PlayerInfo.m */,
+				6BCC526012069D4C00E6106A /* PictureAdd.h */,
+				6BCC526112069D4C00E6106A /* PictureAdd.m */,
 				C3C525E3117C321800343D7F /* Button.h */,
 				C3C525E4117C321800343D7F /* Button.m */,
 				3EAD8AFE11AEC76D00CE397E /* TransBackground.h */,
@@ -5023,7 +5015,6 @@
 				3EE9C8D211DCA1BB00376116 /* AnimalImageProperty.m in Sources */,
 				3ED4F0ED11E1657C00652FBD /* FarmAnimal.m in Sources */,
 				3ED4F15111E1698300652FBD /* FarmAnimalView.m in Sources */,
-				6BA03FD411E48A0800D0E667 /* TextFieldController.m in Sources */,
 				3EBBB64B11ECB0EC00011299 /* AnimalBehaviorUtil.m in Sources */,
 				3E7E61AE11ED87FE00601836 /* ImageResources.m in Sources */,
 				60EEE3D311F9802000D26ABD /* RegistorWebView.m in Sources */,
@@ -5036,6 +5027,7 @@
 				B4AB4A421202C66700747F90 /* MyTableView.m in Sources */,
 				B4AB4A431202C66700747F90 /* ZooRecordTableCell.m in Sources */,
 				B4AB4A441202C66700747F90 /* ZooRecordTableViewController.m in Sources */,
+				6BCC526212069D4C00E6106A /* PictureAdd.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
