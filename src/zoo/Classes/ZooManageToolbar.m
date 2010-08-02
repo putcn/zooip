@@ -78,6 +78,24 @@
 	[playerButtonContainer addChild: button];
 	[playerOperationButtons addObject:button];
 	
+	// Bg
+	button = [[Button alloc]initWithLabel:@"" 
+								 setColor:ccc3(0, 0, 0) 
+								  setFont:FONT_BUTTON 
+								  setSize:SIZE_BUTTON 
+							setBackground:@"manageToolBarBg.png" 
+								setTarget:self 
+							  setSelector:nil 
+							  setPriority:50
+								  offsetX:0 
+								  offsetY:0 
+									scale:1.f];
+	button.position = ccp(213, 0);
+	[playerButtonContainer addChild: button];
+	[playerOperationButtons addObject:button];
+	
+	
+	
 	//喂食
 	button = [[Button alloc] initWithLabel:@"喂食" setColor:ccc3(0, 0, 0) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"饲料.png" setTarget:self
 							   setSelector:@selector(btnFeedButtonHandler:) setPriority:51 offsetX:-OFF_X_BUTTON offsetY:OFF_Y_BUTTON scale:0.75];
@@ -103,7 +121,7 @@
 	[playerOperationButtons addObject:button];
 	
 	//动物管理
-	button = [[Button alloc] initWithLabel:@"管理" setColor:ccc3(255, 255, 255) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"动物管理.png" setTarget:self
+	button = [[Button alloc] initWithLabel:@"管理" setColor:ccc3(0, 0, 0) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"动物管理.png" setTarget:self
 							   setSelector:@selector(btnManagementButtonHandler:) setPriority:51 offsetX:OFF_X_BUTTON offsetY:OFF_Y_BUTTON scale:0.75];
 	button.position = ccp(160, 20);
 	//button.tag = 4;
@@ -111,7 +129,7 @@
 	[playerOperationButtons addObject:button];
 	
 	//扩容
-	button = [[Button alloc] initWithLabel:@"扩容" setColor:ccc3(255, 255, 255) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"扩容.png" setTarget:self
+	button = [[Button alloc] initWithLabel:@"扩容" setColor:ccc3(0, 0, 0) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"扩容.png" setTarget:self
 							   setSelector:@selector(btnFarmExpansionButtionHandler:) setPriority:51 offsetX:OFF_X_BUTTON offsetY:OFF_Y_BUTTON scale:0.75];
 	button.position = ccp(195, 20);
 	//button.tag = 5;
@@ -119,7 +137,7 @@
 	[playerOperationButtons addObject:button];
 	
 	//治疗
-	button = [[Button alloc] initWithLabel:@"治疗" setColor:ccc3(255, 255, 255) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"医疗.png" setTarget:self
+	button = [[Button alloc] initWithLabel:@"治疗" setColor:ccc3(0, 0, 0) setFont:FONT_BUTTON setSize:SIZE_BUTTON setBackground:@"医疗.png" setTarget:self
 							   setSelector:@selector(btnPlayerOperationButtonHandler:) setPriority:51 offsetX:OFF_X_BUTTON offsetY:OFF_Y_BUTTON scale:0.75];
 	button.position = ccp(230, 20);
 	button.tag = OPERATION_CURE_ANIMAL;
