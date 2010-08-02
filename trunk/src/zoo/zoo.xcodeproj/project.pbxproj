@@ -526,9 +526,6 @@
 		6098BB0811BDD38B00F0DB3B /* AnimalExpansionPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6098BB0711BDD38B00F0DB3B /* AnimalExpansionPanel.m */; };
 		60A0CDBE11B78066001AF9BD /* AnimalManageToMateAntsChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */; };
 		60B4040A11FFEECE0087F16F /* buyant.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B4040911FFEECE0087F16F /* buyant.png */; };
-		60B409AE1202B0360087F16F /* 滚轮上.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B409AB1202B0360087F16F /* 滚轮上.png */; };
-		60B409B01202B0360087F16F /* 滚轮数字文本框.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B409AD1202B0360087F16F /* 滚轮数字文本框.png */; };
-		60B409C61202B13A0087F16F /* 滚轮下.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B409C51202B13A0087F16F /* 滚轮下.png */; };
 		60C18BA511E1A6D800248E87 /* bgimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18BA411E1A6D800248E87 /* bgimg.png */; };
 		60EEE3D311F9802000D26ABD /* RegistorWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EEE3D211F9802000D26ABD /* RegistorWebView.m */; };
 		6B03D7FB11DC74D0000F2201 /* blueBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7ED11DC74D0000F2201 /* blueBg.png */; };
@@ -546,9 +543,6 @@
 		6B03D80711DC74D0000F2201 /* rightOrg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7F911DC74D0000F2201 /* rightOrg2.png */; };
 		6B03D80811DC74D0000F2201 /* Tooltip_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7FA11DC74D0000F2201 /* Tooltip_BG.png */; };
 		6B46CE7911FE6AA800681656 /* NumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46CE7811FE6AA800681656 /* NumberField.m */; };
-		6B4E4FBA11FECDB7009A95B7 /* 滚轮数字加.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B4E4FB711FECDB7009A95B7 /* 滚轮数字加.png */; };
-		6B4E4FBB11FECDB7009A95B7 /* 滚轮数字减.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B4E4FB811FECDB7009A95B7 /* 滚轮数字减.png */; };
-		6B4E4FBC11FECDB7009A95B7 /* 滚轮数字轮盘.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B4E4FB911FECDB7009A95B7 /* 滚轮数字轮盘.png */; };
 		6BA03F9B11E486C300D0E667 /* BG_buy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA03F9611E486C300D0E667 /* BG_buy.png */; };
 		6BA03F9C11E486C300D0E667 /* 加减器_右.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA03F9711E486C300D0E667 /* 加减器_右.png */; };
 		6BA03F9D11E486C300D0E667 /* 加减器_左.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA03F9811E486C300D0E667 /* 加减器_左.png */; };
@@ -659,6 +653,14 @@
 		B4AB4A431202C66700747F90 /* ZooRecordTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AB4A3E1202C66700747F90 /* ZooRecordTableCell.m */; };
 		B4AB4A441202C66700747F90 /* ZooRecordTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B4AB4A401202C66700747F90 /* ZooRecordTableViewController.m */; };
 		B4AB4A451202C66700747F90 /* ZooRecordTableViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4AB4A411202C66700747F90 /* ZooRecordTableViewController.xib */; };
+		B4AB4A871202C99F00747F90 /* 滚轮上.png in Resources */ = {isa = PBXBuildFile; fileRef = B4AB4A811202C99F00747F90 /* 滚轮上.png */; };
+		B4AB4A881202C99F00747F90 /* 滚轮数字加.png in Resources */ = {isa = PBXBuildFile; fileRef = B4AB4A821202C99F00747F90 /* 滚轮数字加.png */; };
+		B4AB4A891202C99F00747F90 /* 滚轮数字减.png in Resources */ = {isa = PBXBuildFile; fileRef = B4AB4A831202C99F00747F90 /* 滚轮数字减.png */; };
+		B4AB4A8A1202C99F00747F90 /* 滚轮数字轮盘.png in Resources */ = {isa = PBXBuildFile; fileRef = B4AB4A841202C99F00747F90 /* 滚轮数字轮盘.png */; };
+		B4AB4A8B1202C99F00747F90 /* 滚轮数字文本框.png in Resources */ = {isa = PBXBuildFile; fileRef = B4AB4A851202C99F00747F90 /* 滚轮数字文本框.png */; };
+		B4AB4A8C1202C99F00747F90 /* 滚轮下.png in Resources */ = {isa = PBXBuildFile; fileRef = B4AB4A861202C99F00747F90 /* 滚轮下.png */; };
+		B4BC4904120659A2007BB43B /* manageToolBarBg.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BC4903120659A2007BB43B /* manageToolBarBg.png */; };
+		B4BC49AD12067330007BB43B /* X_big.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BC49AC12067330007BB43B /* X_big.png */; };
 		BF00748B1159E9B90003B411 /* GameMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748A1159E9B90003B411 /* GameMainScene.m */; };
 		BF00748E1159EA530003B411 /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748D1159EA530003B411 /* ModelLocator.m */; };
 		C3013EB7118A7656000C80B3 /* AnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3013E7E118A7656000C80B3 /* AnimalView.m */; };
@@ -1732,9 +1734,6 @@
 		60A0CDBC11B78066001AF9BD /* AnimalManageToMateAntsChoose.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnimalManageToMateAntsChoose.h; sourceTree = "<group>"; };
 		60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageToMateAntsChoose.m; sourceTree = "<group>"; };
 		60B4040911FFEECE0087F16F /* buyant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyant.png; sourceTree = "<group>"; };
-		60B409AB1202B0360087F16F /* 滚轮上.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮上.png"; sourceTree = "<group>"; };
-		60B409AD1202B0360087F16F /* 滚轮数字文本框.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字文本框.png"; sourceTree = "<group>"; };
-		60B409C51202B13A0087F16F /* 滚轮下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮下.png"; sourceTree = "<group>"; };
 		60C18BA411E1A6D800248E87 /* bgimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgimg.png; sourceTree = "<group>"; };
 		60EEE3D111F9802000D26ABD /* RegistorWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistorWebView.h; sourceTree = "<group>"; };
 		60EEE3D211F9802000D26ABD /* RegistorWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistorWebView.m; sourceTree = "<group>"; };
@@ -1754,9 +1753,6 @@
 		6B03D7FA11DC74D0000F2201 /* Tooltip_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tooltip_BG.png; sourceTree = "<group>"; };
 		6B46CE7711FE6AA800681656 /* NumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberField.h; sourceTree = "<group>"; };
 		6B46CE7811FE6AA800681656 /* NumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberField.m; sourceTree = "<group>"; };
-		6B4E4FB711FECDB7009A95B7 /* 滚轮数字加.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字加.png"; sourceTree = "<group>"; };
-		6B4E4FB811FECDB7009A95B7 /* 滚轮数字减.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字减.png"; sourceTree = "<group>"; };
-		6B4E4FB911FECDB7009A95B7 /* 滚轮数字轮盘.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字轮盘.png"; sourceTree = "<group>"; };
 		6BA03F9611E486C300D0E667 /* BG_buy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BG_buy.png; path = "动物园切图/按钮/BG_buy.png"; sourceTree = "<group>"; };
 		6BA03F9711E486C300D0E667 /* 加减器_右.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "加减器_右.png"; path = "动物园切图/按钮/加减器_右.png"; sourceTree = "<group>"; };
 		6BA03F9811E486C300D0E667 /* 加减器_左.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "加减器_左.png"; path = "动物园切图/按钮/加减器_左.png"; sourceTree = "<group>"; };
@@ -1885,6 +1881,14 @@
 		B4AB4A3F1202C66700747F90 /* ZooRecordTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ZooRecordTableViewController.h; sourceTree = "<group>"; };
 		B4AB4A401202C66700747F90 /* ZooRecordTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZooRecordTableViewController.m; sourceTree = "<group>"; };
 		B4AB4A411202C66700747F90 /* ZooRecordTableViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ZooRecordTableViewController.xib; sourceTree = "<group>"; };
+		B4AB4A811202C99F00747F90 /* 滚轮上.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮上.png"; sourceTree = "<group>"; };
+		B4AB4A821202C99F00747F90 /* 滚轮数字加.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字加.png"; sourceTree = "<group>"; };
+		B4AB4A831202C99F00747F90 /* 滚轮数字减.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字减.png"; sourceTree = "<group>"; };
+		B4AB4A841202C99F00747F90 /* 滚轮数字轮盘.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字轮盘.png"; sourceTree = "<group>"; };
+		B4AB4A851202C99F00747F90 /* 滚轮数字文本框.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字文本框.png"; sourceTree = "<group>"; };
+		B4AB4A861202C99F00747F90 /* 滚轮下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮下.png"; sourceTree = "<group>"; };
+		B4BC4903120659A2007BB43B /* manageToolBarBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manageToolBarBg.png; sourceTree = "<group>"; };
+		B4BC49AC12067330007BB43B /* X_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = X_big.png; sourceTree = "<group>"; };
 		BF0074891159E9B90003B411 /* GameMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMainScene.h; sourceTree = "<group>"; };
 		BF00748A1159E9B90003B411 /* GameMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMainScene.m; sourceTree = "<group>"; };
 		BF00748C1159EA530003B411 /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
@@ -3432,6 +3436,7 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B4BC4903120659A2007BB43B /* manageToolBarBg.png */,
 				60B4040911FFEECE0087F16F /* buyant.png */,
 				3E3E4ED111FD598D00AD964F /* nest */,
 				3E1A79E811F6DD7E00159A14 /* 20100721NewImage */,
@@ -3556,12 +3561,12 @@
 		6BD28DCF11D3000D00BE2859 /* 动物园切图 */ = {
 			isa = PBXGroup;
 			children = (
-				60B409C51202B13A0087F16F /* 滚轮下.png */,
-				60B409AB1202B0360087F16F /* 滚轮上.png */,
-				60B409AD1202B0360087F16F /* 滚轮数字文本框.png */,
-				6B4E4FB711FECDB7009A95B7 /* 滚轮数字加.png */,
-				6B4E4FB811FECDB7009A95B7 /* 滚轮数字减.png */,
-				6B4E4FB911FECDB7009A95B7 /* 滚轮数字轮盘.png */,
+				B4AB4A811202C99F00747F90 /* 滚轮上.png */,
+				B4AB4A821202C99F00747F90 /* 滚轮数字加.png */,
+				B4AB4A831202C99F00747F90 /* 滚轮数字减.png */,
+				B4AB4A841202C99F00747F90 /* 滚轮数字轮盘.png */,
+				B4AB4A851202C99F00747F90 /* 滚轮数字文本框.png */,
+				B4AB4A861202C99F00747F90 /* 滚轮下.png */,
 				6BD28EEB11D3001D00BE2859 /* Common */,
 				6B03D7EC11DC74D0000F2201 /* ToolTip */,
 				6BBC378B11D83E3F0081CB4D /* 好友列表搜索 */,
@@ -3600,6 +3605,7 @@
 		6BD28DD811D3000D00BE2859 /* 仓库 */ = {
 			isa = PBXGroup;
 			children = (
+				B4BC49AC12067330007BB43B /* X_big.png */,
 				6BD28DDB11D3000D00BE2859 /* depot_logo.png */,
 			);
 			path = "仓库";
@@ -4789,17 +4795,19 @@
 				3E3E4EEB11FD598D00AD964F /* swan_nest.png in Resources */,
 				3E3E4EEC11FD598D00AD964F /* turkey_nest.png in Resources */,
 				3E3E4EED11FD598D00AD964F /* wildgoose_nest.png in Resources */,
-				6B4E4FBA11FECDB7009A95B7 /* 滚轮数字加.png in Resources */,
-				6B4E4FBB11FECDB7009A95B7 /* 滚轮数字减.png in Resources */,
-				6B4E4FBC11FECDB7009A95B7 /* 滚轮数字轮盘.png in Resources */,
 				248D8B0A11FFE35700DDE242 /* tableListViewController.xib in Resources */,
 				60B4040A11FFEECE0087F16F /* buyant.png in Resources */,
 				6BF1409012000CF700FF9BFE /* tibentanmastiff_rest_01.png in Resources */,
 				6BF1409412000D3100FF9BFE /* chinemy_walk_left_01.png in Resources */,
-				60B409AE1202B0360087F16F /* 滚轮上.png in Resources */,
-				60B409B01202B0360087F16F /* 滚轮数字文本框.png in Resources */,
-				60B409C61202B13A0087F16F /* 滚轮下.png in Resources */,
 				B4AB4A451202C66700747F90 /* ZooRecordTableViewController.xib in Resources */,
+				B4AB4A871202C99F00747F90 /* 滚轮上.png in Resources */,
+				B4AB4A881202C99F00747F90 /* 滚轮数字加.png in Resources */,
+				B4AB4A891202C99F00747F90 /* 滚轮数字减.png in Resources */,
+				B4AB4A8A1202C99F00747F90 /* 滚轮数字轮盘.png in Resources */,
+				B4AB4A8B1202C99F00747F90 /* 滚轮数字文本框.png in Resources */,
+				B4AB4A8C1202C99F00747F90 /* 滚轮下.png in Resources */,
+				B4BC4904120659A2007BB43B /* manageToolBarBg.png in Resources */,
+				B4BC49AD12067330007BB43B /* X_big.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

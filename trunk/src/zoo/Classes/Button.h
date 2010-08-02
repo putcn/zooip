@@ -22,6 +22,8 @@
 	float defaultScale;
 	
 	id target; 
+	
+	NSString* m_strImagePath;
 }
 
 -(id) initWithLabel:(NSString*) labelText setColor:(ccColor3B) labelColor setFont:(NSString*) labelFont 
