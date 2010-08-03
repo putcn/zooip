@@ -543,6 +543,7 @@
 		6B03D80711DC74D0000F2201 /* rightOrg2.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7F911DC74D0000F2201 /* rightOrg2.png */; };
 		6B03D80811DC74D0000F2201 /* Tooltip_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7FA11DC74D0000F2201 /* Tooltip_BG.png */; };
 		6B46CE7911FE6AA800681656 /* NumberField.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B46CE7811FE6AA800681656 /* NumberField.m */; };
+		6B7FDCF71207DBC7005DEB56 /* PictureAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B7FDCF61207DBC7005DEB56 /* PictureAdd.m */; };
 		6BA03F9B11E486C300D0E667 /* BG_buy.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA03F9611E486C300D0E667 /* BG_buy.png */; };
 		6BA03F9C11E486C300D0E667 /* 加减器_右.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA03F9711E486C300D0E667 /* 加减器_右.png */; };
 		6BA03F9D11E486C300D0E667 /* 加减器_左.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BA03F9811E486C300D0E667 /* 加减器_左.png */; };
@@ -558,7 +559,6 @@
 		6BBC379E11D83E3F0081CB4D /* 翻页_左_弹起.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC379411D83E3F0081CB4D /* 翻页_左_弹起.png */; };
 		6BBC379F11D83E3F0081CB4D /* 翻页_左_按下.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BBC379511D83E3F0081CB4D /* 翻页_左_按下.png */; };
 		6BC5C16E11DB3DE700644D52 /* LoadingBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC5C16D11DB3DE700644D52 /* LoadingBar.m */; };
-		6BCC526212069D4C00E6106A /* PictureAdd.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCC526112069D4C00E6106A /* PictureAdd.m */; };
 		6BCE3CEA11D059320006A430 /* LoadView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BCE3CE911D059320006A430 /* LoadView.m */; };
 		6BCEBE1B11E5664800503629 /* loading_BG.png in Resources */ = {isa = PBXBuildFile; fileRef = 6BCEBE1A11E5664800503629 /* loading_BG.png */; };
 		6BCEC0BB11E5B52A00503629 /* fontType.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6BCEC0BA11E5B52A00503629 /* fontType.ttf */; };
@@ -1755,6 +1755,9 @@
 		6B03D7FA11DC74D0000F2201 /* Tooltip_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Tooltip_BG.png; sourceTree = "<group>"; };
 		6B46CE7711FE6AA800681656 /* NumberField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NumberField.h; sourceTree = "<group>"; };
 		6B46CE7811FE6AA800681656 /* NumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberField.m; sourceTree = "<group>"; };
+		6B7FDCF51207DBC7005DEB56 /* PictureAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureAdd.h; sourceTree = "<group>"; };
+		6B7FDCF61207DBC7005DEB56 /* PictureAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureAdd.m; sourceTree = "<group>"; };
+		6B7FDD2C1207DC61005DEB56 /* CommonDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonDigest.h; path = ../../../Desktop/TianCai/trunk/toproofshping/Classes/CommonDigest.h; sourceTree = SOURCE_ROOT; };
 		6BA03F9611E486C300D0E667 /* BG_buy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BG_buy.png; path = "动物园切图/按钮/BG_buy.png"; sourceTree = "<group>"; };
 		6BA03F9711E486C300D0E667 /* 加减器_右.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "加减器_右.png"; path = "动物园切图/按钮/加减器_右.png"; sourceTree = "<group>"; };
 		6BA03F9811E486C300D0E667 /* 加减器_左.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "加减器_左.png"; path = "动物园切图/按钮/加减器_左.png"; sourceTree = "<group>"; };
@@ -1771,9 +1774,6 @@
 		6BBC379511D83E3F0081CB4D /* 翻页_左_按下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "翻页_左_按下.png"; sourceTree = "<group>"; };
 		6BC5C16C11DB3DE700644D52 /* LoadingBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingBar.h; sourceTree = "<group>"; };
 		6BC5C16D11DB3DE700644D52 /* LoadingBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingBar.m; sourceTree = "<group>"; };
-		6BCC526012069D4C00E6106A /* PictureAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureAdd.h; sourceTree = "<group>"; };
-		6BCC526112069D4C00E6106A /* PictureAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureAdd.m; sourceTree = "<group>"; };
-		6BCC54D71207226800E6106A /* CommonDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDigest.h; sourceTree = "<group>"; };
 		6BCE3CE811D059320006A430 /* LoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadView.h; sourceTree = "<group>"; };
 		6BCE3CE911D059320006A430 /* LoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadView.m; sourceTree = "<group>"; };
 		6BCEBE1A11E5664800503629 /* loading_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_BG.png; sourceTree = "<group>"; };
@@ -3961,11 +3961,11 @@
 				C3C52604117C38F000343D7F /* MessageDialog.m */,
 				C3C525F5117C33C700343D7F /* ZooManageToolbar.h */,
 				C3C525F6117C33C700343D7F /* ZooManageToolbar.m */,
+				6B7FDD2C1207DC61005DEB56 /* CommonDigest.h */,
+				6B7FDCF51207DBC7005DEB56 /* PictureAdd.h */,
+				6B7FDCF61207DBC7005DEB56 /* PictureAdd.m */,
 				C3C525F0117C333000343D7F /* PlayerInfo.h */,
-				6BCC54D71207226800E6106A /* CommonDigest.h */,
 				C3C525F1117C333000343D7F /* PlayerInfo.m */,
-				6BCC526012069D4C00E6106A /* PictureAdd.h */,
-				6BCC526112069D4C00E6106A /* PictureAdd.m */,
 				C3C525E3117C321800343D7F /* Button.h */,
 				C3C525E4117C321800343D7F /* Button.m */,
 				3EAD8AFE11AEC76D00CE397E /* TransBackground.h */,
@@ -5042,7 +5042,7 @@
 				B4AB4A421202C66700747F90 /* MyTableView.m in Sources */,
 				B4AB4A431202C66700747F90 /* ZooRecordTableCell.m in Sources */,
 				B4AB4A441202C66700747F90 /* ZooRecordTableViewController.m in Sources */,
-				6BCC526212069D4C00E6106A /* PictureAdd.m in Sources */,
+				6B7FDCF71207DBC7005DEB56 /* PictureAdd.m in Sources */,
 				B4FEE5B21207A9C900EFE793 /* ExpandView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -5183,7 +5183,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Joymaster Corporation";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: ZHIHAO HUANG (G9L7MAZX5M)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
@@ -5199,7 +5199,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "744CED63-A2DD-4D84-BD7F-1E3B63C7D2FF";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "14E08E4E-62D7-4201-ADCB-AE3F694D9F7C";
 				SDKROOT = iphoneos4.0;
 				WARNING_CFLAGS = "-Wall";
 			};
