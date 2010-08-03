@@ -10,14 +10,16 @@
 
 
 @implementation PictureAdd
-- (id)initWithPicUrl:(NSString *)aImageURL
+- (id)initWithPicUrl:(NSString *)aImageURL setPointX:(int )x setPointY:(int )y 
 {
-	//imageURL = aImageURL;
+	imageURL = aImageURL;
 	
-	imageURL = @"http://fmn.xnimg.cn/fmn031/pic001/20090404/03/00/large_HxuW_3017i206109.jpg";
+//	imageURL = @"http://fmn.xnimg.cn/fmn031/pic001/20090404/03/00/large_HxuW_3017i206109.jpg";
 	
-	imgView = [[UIImageView alloc] initWithFrame:CGRectMake(10,10,100,100)];
+	imgView = [[UIImageView alloc] initWithFrame:CGRectMake(x,y,40,40)];
+	imgView.transform = CGAffineTransformMakeRotation(M_PI * (90.0 / 180.0));
 	[[[UIApplication sharedApplication]keyWindow]addSubview:imgView];
+	imgView.tag = 999;
 	[imgView release];
 	
 	NSString *original = [self cachedUrlImage:imageURL];
@@ -39,6 +41,13 @@
 		imgView.image = tempImage;//[UIImage imageWithContentsOfFile:@"/Users/magenius/Library/Application Support/iPhone Simulator/4.0/Applications/77152432-7523-4A8F-B178-E6DD11091346/Library/Caches/7b05b345a006f4a3e259c112e6a39313.jpg"];//[UIImage imageNamed:@"1.jpg"];//tempImage;
 		[tempImage release];
 	}
+	return self;
+}
+
+- (void)setImagePoint:(int )x setPointY:(int )y
+{
+	imgView.frame = CGRectMake(x,  y, 40, 40);
+//	imgView.image = nil;
 }
 
 - (void)setImage:(UIImage *)img{
@@ -69,8 +78,6 @@
 - (void) cacheUrlImage:(NSString *)url image:(UIImage*)image{
 	if(!url)return;
 	
-	
-	
 	NSString * name = [NSString stringWithFormat:@"%@.jpg", md5Encode(url)];
 	
 	//[[appDelegate.setupData objectForKey:@"imageBuffer"] setObject:url forKey:url];
@@ -86,10 +93,13 @@
 }
 
 - (NSString *)getImageUrl{
-	return imageURL;
-	
+	return imageURL;	
 }
 
+- (void)dealloc {
+
+	[super dealloc];
+}
 @end
 
 

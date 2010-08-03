@@ -14,7 +14,6 @@
 #import "DataModelFriendInfo.h"
 #import "ModelLocator.h"
 #import "LoadingBar.h"
-#import "PictureAdd.h"
 
 @implementation PlayerInfo
 
@@ -27,14 +26,26 @@
 		nColorBar = 0;
 		
 		self.scale = 0.8f;
-		[self setContentSize:CGSizeMake(300, 40)];
-		CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif" ofType:nil] ] ];
-		CGRect rect_1 = CGRectZero;
-		rect_1.size = useImgTexture.contentSize;
-		userImgSprite = [CCSprite node];/// retain];
-		[userImgSprite setTexture:useImgTexture];
-		[userImgSprite setTextureRect: rect_1];
-		[useImgTexture release];
+//		DataModelFarmerInfo *farmerInfo = (DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].playerFarmerInfo;
+//		DataModelFarmerInfo *friendInfo = (DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].friendFarmerInfo;
+//		if ([[ModelLocator sharedModelLocator] getIsSelfZoo]) {
+//			userName = [farmerInfo.userName retain];
+//			userImgNow = [farmerInfo.userImg retain];
+//		}
+//		else {
+//			userName = [friendInfo.userName retain];
+//			userImgNow = [friendInfo.userImg retain];
+//		}
+		
+		
+//		[self setContentSize:CGSizeMake(300, 40)];
+//		CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif" ofType:nil] ] ];
+//		CGRect rect_1 = CGRectZero;
+//		rect_1.size = useImgTexture.contentSize;
+//		userImgSprite = [CCSprite node];/// retain];
+//		[userImgSprite setTexture:useImgTexture];
+//		[userImgSprite setTextureRect: rect_1];
+//		[useImgTexture release];
 		
 		CCTexture2D *bg = [[CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"用户_bg.png" ofType:nil] ] ];
 		CGRect rect = CGRectZero;
@@ -51,8 +62,8 @@
 //		
 		
 		//头像
-		[userImgSprite setContentSize:CGSizeMake(40, 40)];
-		userImgSprite.position = ccp(30,30);
+//		[userImgSprite setContentSize:CGSizeMake(40, 40)];
+//		userImgSprite.position = ccp(30,30);
 		//名字
 		userNameLbl = [CCLabel labelWithString:@"" fontName:@"Arial" fontSize:18];//retain];
 		[userNameLbl setColor:ccc3(0, 0, 0)];
@@ -92,7 +103,7 @@
 		[levelLbl setColor:ccc3(0, 0, 0)];
 		levelLbl.position = ccp(210,16);
 		
-		[self addChild:userImgSprite z:4];
+//		[self addChild:userImgSprite z:4];
 		[self addChild:userNameLbl z:1];
 		[self addChild:experienceBar z:2];
 		[self addChild:levelLbl z:1];
@@ -245,23 +256,15 @@
 	{
 		userImgNow = @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif";
 	}
-	/*
-	 imgView = [[UIWebView alloc] initWithFrame:displayRect];
-	 [imgView setScalesPageToFit:NO];    
-	 [imgView setBackgroundColor:[UIColor clearColor]];
-	 [imgView setOpaque:NO];
-	 
-	 if (nil != pUserData.head) {
-	 
-	 NSURL* url = [NSURL URLWithString:pUserData.head];
-	 NSURLRequest* req = [NSURLRequest requestWithURL:url];
-	 [imgView loadRequest:req];
-	 }
 
-	 */
-//	PictureAdd *pic = [[PictureAdd alloc] initWithPicUrl:userImgNow];
-
+	// add by ziwei 
+	if(pic == nil)
+		pic = [[PictureAdd alloc] initWithPicUrl:userImgNow setPointX:275 setPointY:5];
 	
+//  兰溪版本
+//	[pic setImagePoint:280 setPointY:70];
+//	UIImageView *_xxxView = [[[CCDirector sharedDirector] openGLView] viewWithTag:999];
+//	_xxxView.hidden = YES;
 //	imgView = [[UIWebView alloc] initWithFrame:CGRectMake(0,0,50,50)];
 ////	[imgView setScalesPageToFit:YES];    
 //	[imgView setBackgroundColor:[UIColor yellowColor]];
@@ -276,26 +279,21 @@
 //	[[[UIApplication sharedApplication]keyWindow]addSubview:imgView];
 	
 	
-	
-	NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: userImgNow]];
-	
-	if (imageData == nil)
-	{
-		imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif"]];
-//
-////		NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://hd16.xiaonei.com/photos/hd16/20080722/11/08/head_1030i150.jpg"]];
-////NSLog(@"%@",imageData);
-////	NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://hdn.xnimg.cn/photos/hdn521/20100715/1700/h_large_g7Bf_420a00001b2f2f76.jpg"]];
+//天虹版本
+//	NSData * imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: userImgNow]];
 //	
-	}	
-	CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithData:imageData] ];
-	CGRect rect = CGRectZero;
-	rect.size = useImgTexture.contentSize;
-	[userImgSprite setTexture: useImgTexture];
-	[userImgSprite setTextureRect: rect];
-	userImgSprite.scale = 40.0f/useImgTexture.contentSize.height;
-	[useImgTexture release];
-	[imageData release];
+//	if (imageData == nil)
+//	{
+//		imageData = [[NSData alloc] initWithContentsOfURL: [NSURL URLWithString: @"http://www.cocoqq.com/upimg/090128/12331420cO3Z555Z1.gif"]];
+//	}	
+//	CCTexture2D *useImgTexture = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithData:imageData] ];
+//	CGRect rect = CGRectZero;
+//	rect.size = useImgTexture.contentSize;
+//	[userImgSprite setTexture: useImgTexture];
+//	[userImgSprite setTextureRect: rect];
+//	userImgSprite.scale = 40.0f/useImgTexture.contentSize.height;
+//	[useImgTexture release];
+//	[imageData release];
 	
 	
 	[userNameLbl setString:userName];
@@ -319,7 +317,7 @@
 		[ease setDuration:0.3];
 		
 		[self runAction:[CCSequence actions:ease, actionMoveDone, nil]];
-
+		
 	}
 	else 
 	{
@@ -345,6 +343,7 @@
 									setPriority:50 offsetX:0 offsetY:0 scale:1.0f];
 	nextPageBtn.position = ccp(332,30);
 	[self addChild:nextPageBtn z:3];
+	[pic setImagePoint:-275 setPointY:5];
 }
 
 -(void)spriteMoveInFinished
@@ -358,6 +357,7 @@
 									setPriority:50 offsetX:0 offsetY:0 scale:1.0f];
 	nextPageBtn.position = ccp(332,30);
 	[self addChild:nextPageBtn z:3];
+	[pic setImagePoint:275 setPointY:5];
 }
 
 
@@ -365,6 +365,8 @@
 // Add by Hunk on 2010-06-29
 -(void)dealloc
 {
+	[pic release];
+	
 	[userName release];
 	[userImgNow release];
 	[currentExperience release];
@@ -377,7 +379,7 @@
 	[goldenEggNum release];
 	[experienceBar release];
 	[capacity release];
-	[userImgSprite release];
+//	[userImgSprite release];
 	
 	// For retain
 	[experienceBar release];

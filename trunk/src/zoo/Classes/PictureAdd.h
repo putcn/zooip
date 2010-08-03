@@ -25,9 +25,10 @@ static inline NSString *md5Encode( NSString *str ) {
 	NSString *imageURL;
 	NSOperationQueue *requestDataQueue;
 }
-- (id)initWithPicUrl:(NSString *)aImageURL;
+- (id)initWithPicUrl:(NSString *)aImageURL setPointX:(int )x setPointY:(int )y;
 - (NSString *) cachedUrlImage:(NSString*)url;
 - (void)setImage:(UIImage *)img;
+- (void)setImagePoint:(int )x setPointY:(int )y;
 - (void) cacheUrlImage:(NSString *)url image:(UIImage*)image;
 @end
 

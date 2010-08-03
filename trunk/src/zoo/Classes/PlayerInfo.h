@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "cocos2d.h"
 #import "Button.h"
+#import "PictureAdd.h"
 @interface PlayerInfo : CCSprite
 {
 	NSString *userName;
@@ -29,14 +30,14 @@
 	CCLabel *antsNumLbl;
 	CCLabel *goldenEggNumLbl;
 	CCLabel *animalNumLbl;
-	CCSprite *userImgSprite;
+//	CCSprite *userImgSprite;
 	
 	float  nColorBar;
 	NSString *pFile;
 	Button *nextPageBtn;
 	
 	UIImageView *imgView;
-	
+	PictureAdd *pic;
 }
 
 -(void) updateUserInfo;
