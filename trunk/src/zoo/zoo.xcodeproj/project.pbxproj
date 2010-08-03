@@ -661,6 +661,8 @@
 		B4AB4A8C1202C99F00747F90 /* 滚轮下.png in Resources */ = {isa = PBXBuildFile; fileRef = B4AB4A861202C99F00747F90 /* 滚轮下.png */; };
 		B4BC4904120659A2007BB43B /* manageToolBarBg.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BC4903120659A2007BB43B /* manageToolBarBg.png */; };
 		B4BC49AD12067330007BB43B /* X_big.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BC49AC12067330007BB43B /* X_big.png */; };
+		B4FEE5B21207A9C900EFE793 /* ExpandView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4FEE5B01207A9C900EFE793 /* ExpandView.m */; };
+		B4FEE5B31207A9C900EFE793 /* ExpandView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4FEE5B11207A9C900EFE793 /* ExpandView.xib */; };
 		BF00748B1159E9B90003B411 /* GameMainScene.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748A1159E9B90003B411 /* GameMainScene.m */; };
 		BF00748E1159EA530003B411 /* ModelLocator.m in Sources */ = {isa = PBXBuildFile; fileRef = BF00748D1159EA530003B411 /* ModelLocator.m */; };
 		C3013EB7118A7656000C80B3 /* AnimalView.m in Sources */ = {isa = PBXBuildFile; fileRef = C3013E7E118A7656000C80B3 /* AnimalView.m */; };
@@ -1890,6 +1892,9 @@
 		B4AB4A861202C99F00747F90 /* 滚轮下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮下.png"; sourceTree = "<group>"; };
 		B4BC4903120659A2007BB43B /* manageToolBarBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manageToolBarBg.png; sourceTree = "<group>"; };
 		B4BC49AC12067330007BB43B /* X_big.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = X_big.png; sourceTree = "<group>"; };
+		B4FEE5AF1207A9C900EFE793 /* ExpandView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExpandView.h; sourceTree = "<group>"; };
+		B4FEE5B01207A9C900EFE793 /* ExpandView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExpandView.m; sourceTree = "<group>"; };
+		B4FEE5B11207A9C900EFE793 /* ExpandView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ExpandView.xib; sourceTree = "<group>"; };
 		BF0074891159E9B90003B411 /* GameMainScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GameMainScene.h; sourceTree = "<group>"; };
 		BF00748A1159E9B90003B411 /* GameMainScene.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GameMainScene.m; sourceTree = "<group>"; };
 		BF00748C1159EA530003B411 /* ModelLocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModelLocator.h; sourceTree = "<group>"; };
@@ -2253,6 +2258,7 @@
 		2D500B1D0D5A766B00DBA0E3 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B4FEE5AE1207A9C900EFE793 /* ExpandCapicity */,
 				B4AB4A3A1202C66700747F90 /* ZooRecord */,
 				248D8AF911FFE35700DDE242 /* inPurchase */,
 				C39CFBF911BFC68F0063B01E /* RenRen */,
@@ -3819,6 +3825,16 @@
 			path = ZooRecord;
 			sourceTree = "<group>";
 		};
+		B4FEE5AE1207A9C900EFE793 /* ExpandCapicity */ = {
+			isa = PBXGroup;
+			children = (
+				B4FEE5AF1207A9C900EFE793 /* ExpandView.h */,
+				B4FEE5B01207A9C900EFE793 /* ExpandView.m */,
+				B4FEE5B11207A9C900EFE793 /* ExpandView.xib */,
+			);
+			path = ExpandCapicity;
+			sourceTree = "<group>";
+		};
 		BF00747F1159E86A0003B411 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -4802,6 +4818,7 @@
 				B4AB4A8C1202C99F00747F90 /* 滚轮下.png in Resources */,
 				B4BC4904120659A2007BB43B /* manageToolBarBg.png in Resources */,
 				B4BC49AD12067330007BB43B /* X_big.png in Resources */,
+				B4FEE5B31207A9C900EFE793 /* ExpandView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5026,6 +5043,7 @@
 				B4AB4A431202C66700747F90 /* ZooRecordTableCell.m in Sources */,
 				B4AB4A441202C66700747F90 /* ZooRecordTableViewController.m in Sources */,
 				6BCC526212069D4C00E6106A /* PictureAdd.m in Sources */,
+				B4FEE5B21207A9C900EFE793 /* ExpandView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

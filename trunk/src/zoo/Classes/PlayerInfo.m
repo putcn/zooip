@@ -259,7 +259,7 @@
 	 }
 
 	 */
-	PictureAdd *pic = [[PictureAdd alloc] initWithPicUrl:userImgNow];
+//	PictureAdd *pic = [[PictureAdd alloc] initWithPicUrl:userImgNow];
 
 	
 //	imgView = [[UIWebView alloc] initWithFrame:CGRectMake(0,0,50,50)];
