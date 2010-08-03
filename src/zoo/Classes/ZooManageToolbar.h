@@ -14,6 +14,8 @@
 #import "AnimalExpansionPanel.h"
 #import "AnimalFeedButtonContainer.h"
 
+#import "ExpandView.h"
+
 @interface ZooManageToolbar : CCSprite<CCTargetedTouchDelegate>
 {
 	AnimalMangementButtonContainer *aniManagementBtnCtrl;
@@ -33,6 +35,10 @@
 	BOOL secondTouchFarmExpansion; 
 	BOOL secondTouchFarmStorage;
 	BOOL secondTouchFeedButton;
+	
+	
+	ExpandView* m_ExpandView;
+	UIAlertView* myAlert;
 }
 
 -(void) addButton;
