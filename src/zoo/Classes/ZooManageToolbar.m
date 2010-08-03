@@ -366,34 +366,33 @@
 		animalExpansionPanel.position = ccp(240,160);
 	}
 	 */
+//	if (myAlert==nil)
+//	{        
+//		myAlert = [[UIAlertView alloc] initWithTitle:nil 
+//											 message: @"正在读取网络资料" 
+//											delegate: self 
+//								   cancelButtonTitle: nil 
+//								   otherButtonTitles: nil]; 
+//		UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite]; 
+//		activityView.frame = CGRectMake(120.f, 48.0f, 37.0f, 37.0f); 
+//		[myAlert addSubview:activityView]; 
+//		[activityView startAnimating]; 
+//		[myAlert show]; 
+//	}
 	
 	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",nil];
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestexpansionInfo WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackInfo:" AndFailedSel:@"faultCallback:"];
-
-	if (myAlert==nil)
-	{        
-		myAlert = [[UIAlertView alloc] initWithTitle:nil 
-											 message: @"正在读取网络资料" 
-											delegate: self 
-								   cancelButtonTitle: nil 
-								   otherButtonTitles: nil]; 
-		UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite]; 
-		activityView.frame = CGRectMake(120.f, 48.0f, 37.0f, 37.0f); 
-		[myAlert addSubview:activityView]; 
-		[activityView startAnimating]; 
-		[myAlert show]; 
-	}
 }
 
 -(void)resultCallbackInfo:(NSObject *)value
 {
-	[myAlert dismissWithClickedButtonIndex:0 animated:YES];
-	if(myAlert != nil)
-	{
-		myAlert =nil;
-		[myAlert release];
-	}
+//	[myAlert dismissWithClickedButtonIndex:0 animated:YES];
+//	if(myAlert != nil)
+//	{
+//		myAlert =nil;
+//		[myAlert release];
+//	}
 	
 	
 	if(nil == m_ExpandView)
