@@ -14,6 +14,7 @@
 #import "DataModelFriendInfo.h"
 #import "ModelLocator.h"
 #import "LoadingBar.h"
+#import "PictureAdd.h"
 
 @implementation PlayerInfo
 
@@ -258,7 +259,7 @@
 	 }
 
 	 */
-	
+	PictureAdd *pic = [[PictureAdd alloc] initWithPicUrl:userImgNow];
 
 	
 //	imgView = [[UIWebView alloc] initWithFrame:CGRectMake(0,0,50,50)];

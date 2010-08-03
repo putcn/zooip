@@ -527,7 +527,6 @@
 		60A0CDBE11B78066001AF9BD /* AnimalManageToMateAntsChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */; };
 		60B4040A11FFEECE0087F16F /* buyant.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B4040911FFEECE0087F16F /* buyant.png */; };
 		60C18BA511E1A6D800248E87 /* bgimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18BA411E1A6D800248E87 /* bgimg.png */; };
-		60E54F371206B14A00EC046F /* return.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E54F361206B14A00EC046F /* return.png */; };
 		60EEE3D311F9802000D26ABD /* RegistorWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EEE3D211F9802000D26ABD /* RegistorWebView.m */; };
 		6B03D7FB11DC74D0000F2201 /* blueBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7ED11DC74D0000F2201 /* blueBg.png */; };
 		6B03D7FC11DC74D0000F2201 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7EE11DC74D0000F2201 /* demo.png */; };
@@ -1736,7 +1735,6 @@
 		60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageToMateAntsChoose.m; sourceTree = "<group>"; };
 		60B4040911FFEECE0087F16F /* buyant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyant.png; sourceTree = "<group>"; };
 		60C18BA411E1A6D800248E87 /* bgimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgimg.png; sourceTree = "<group>"; };
-		60E54F361206B14A00EC046F /* return.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = return.png; sourceTree = "<group>"; };
 		60EEE3D111F9802000D26ABD /* RegistorWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistorWebView.h; sourceTree = "<group>"; };
 		60EEE3D211F9802000D26ABD /* RegistorWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistorWebView.m; sourceTree = "<group>"; };
 		6B03D7ED11DC74D0000F2201 /* blueBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBg.png; sourceTree = "<group>"; };
@@ -1773,6 +1771,7 @@
 		6BC5C16D11DB3DE700644D52 /* LoadingBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingBar.m; sourceTree = "<group>"; };
 		6BCC526012069D4C00E6106A /* PictureAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureAdd.h; sourceTree = "<group>"; };
 		6BCC526112069D4C00E6106A /* PictureAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureAdd.m; sourceTree = "<group>"; };
+		6BCC54D71207226800E6106A /* CommonDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDigest.h; sourceTree = "<group>"; };
 		6BCE3CE811D059320006A430 /* LoadView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadView.h; sourceTree = "<group>"; };
 		6BCE3CE911D059320006A430 /* LoadView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadView.m; sourceTree = "<group>"; };
 		6BCEBE1A11E5664800503629 /* loading_BG.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = loading_BG.png; sourceTree = "<group>"; };
@@ -3438,7 +3437,6 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				60E54F361206B14A00EC046F /* return.png */,
 				B4BC4903120659A2007BB43B /* manageToolBarBg.png */,
 				60B4040911FFEECE0087F16F /* buyant.png */,
 				3E3E4ED111FD598D00AD964F /* nest */,
@@ -3948,6 +3946,7 @@
 				C3C525F5117C33C700343D7F /* ZooManageToolbar.h */,
 				C3C525F6117C33C700343D7F /* ZooManageToolbar.m */,
 				C3C525F0117C333000343D7F /* PlayerInfo.h */,
+				6BCC54D71207226800E6106A /* CommonDigest.h */,
 				C3C525F1117C333000343D7F /* PlayerInfo.m */,
 				6BCC526012069D4C00E6106A /* PictureAdd.h */,
 				6BCC526112069D4C00E6106A /* PictureAdd.m */,
@@ -4803,7 +4802,6 @@
 				B4AB4A8C1202C99F00747F90 /* 滚轮下.png in Resources */,
 				B4BC4904120659A2007BB43B /* manageToolBarBg.png in Resources */,
 				B4BC49AD12067330007BB43B /* X_big.png in Resources */,
-				60E54F371206B14A00EC046F /* return.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

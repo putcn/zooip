@@ -27,6 +27,25 @@
 	[window setUserInteractionEnabled:YES];	
 	[window setMultipleTouchEnabled:YES];
 	
+	
+	
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+	NSString *cachesDirectory = [paths objectAtIndex:0];
+	
+	NSString *ImageCache = [cachesDirectory stringByAppendingString:@"/ImageCache"];
+	if (![fileManager fileExistsAtPath:ImageCache])
+	{
+		[fileManager createDirectoryAtPath:ImageCache withIntermediateDirectories:YES attributes:nil error:nil];
+	}
+//	if([fileManager removeItemAtPath:ImageCache error:nil])
+//	{
+//		NSLog(@"remove OK----------------------------------%@",ImageCache);
+//	}
+	
+	
+	
+	
 	// Try to use CADisplayLink director
 	// if it fails (SDK < 3.1) use the default director
 	if( ! [CCDirector setDirectorType:CCDirectorTypeDisplayLink] )
@@ -56,9 +75,9 @@
 
 	
 //	[[CCDirector sharedDirector] runWithScene: [HelloWorld scene]];
-//	[[CCDirector sharedDirector] runWithScene: [GameMainScene scene]];
+	[[CCDirector sharedDirector] runWithScene: [GameMainScene scene]];
 
-	[[CCDirector sharedDirector] runWithScene: [LoginScence scene]];
+//	[[CCDirector sharedDirector] runWithScene: [LoginScence scene]];
 	
 	
 }
