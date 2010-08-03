@@ -38,7 +38,7 @@
 		
 		pri = priorityValue;
 		
-		m_strImagePath = imagePath;
+		m_strImagePath = [[NSString alloc]initWithString:imagePath];
 	}
 	
 	defaultScale = scaleValue;
@@ -86,12 +86,21 @@
 		return NO;
 	NSLog(@"touch began");
 	
-	if([m_strImagePath compare:@"manageToolBarBg.png"] == NSOrderedSame)
-	{}
-	else
+	if(nil != m_strImagePath)
 	{
-		self.scale = defaultScale * 1.3;
+	//	NSLog(@"m_strImagePath =============== %@\n", m_strImagePath);
+		
+		if([m_strImagePath compare:@"manageToolBarBg.png"] == NSOrderedSame)
+		{
+			
+		}
+		else
+		{
+			self.scale = defaultScale * 1.3;
+		}
 	}
+	
+	[m_strImagePath release];
 	
 //	CCLabel* labelFeedBtnName = [CCLabel labelWithString:@"喂食" fontName:@"Marker Felt" fontSize:40];
 //	labelFeedBtnName.position = ccp(200, 100);
