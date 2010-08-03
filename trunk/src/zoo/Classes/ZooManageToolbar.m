@@ -13,6 +13,7 @@
 #import "FeedbackDialog.h"
 
 
+
 // Add by Hunk on 2010-07-27
 #define SIZE_BUTTON (18)
 #define FONT_BUTTON @"Arial"//"Marker Felt"
@@ -355,6 +356,7 @@
 }
 -(void)btnFarmExpansionButtionHandler:(Button *)button
 {	
+	/*
 	if(animalExpansionPanel == nil)
 	{
 		animalExpansionPanel = [[AnimalExpansionPanel alloc] initWithParam:nil setTarget:self];
@@ -363,7 +365,59 @@
 	else {
 		animalExpansionPanel.position = ccp(240,160);
 	}
+	 */
+	
+	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",nil];
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestexpansionInfo WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackInfo:" AndFailedSel:@"faultCallback:"];
 
+	if (myAlert==nil)
+	{        
+		myAlert = [[UIAlertView alloc] initWithTitle:nil 
+											 message: @"正在读取网络资料" 
+											delegate: self 
+								   cancelButtonTitle: nil 
+								   otherButtonTitles: nil]; 
+		UIActivityIndicatorView *activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite]; 
+		activityView.frame = CGRectMake(120.f, 48.0f, 37.0f, 37.0f); 
+		[myAlert addSubview:activityView]; 
+		[activityView startAnimating]; 
+		[myAlert show]; 
+	}
+}
+
+-(void)resultCallbackInfo:(NSObject *)value
+{
+	[myAlert dismissWithClickedButtonIndex:0 animated:YES];
+	if(myAlert != nil)
+	{
+		myAlert =nil;
+		[myAlert release];
+	}
+	
+	
+	if(nil == m_ExpandView)
+	{
+		m_ExpandView = [[ExpandView alloc]initWithNibName:@"ExpandView" bundle:nil];
+	}
+	
+	// Get Expand Data
+	DataModelFarmInfo *farmInfo = (DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo;
+	DataModelFarmerInfo *farmerInfo = (DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].playerFarmerInfo;
+	
+	[m_ExpandView m_labelCurLevel].text = [NSString stringWithFormat:@"%d", farmInfo.farm_level];
+	[m_ExpandView m_labelCurGoldenEggs].text = [NSString stringWithFormat:@"%d", farmerInfo.goldenEgg];
+	
+	NSString* maxNumberOfBirds = [NSString stringWithFormat:@"%d", farmInfo.farm_maxNumOfBirds];
+	[m_ExpandView m_labelCurCapacity].text = maxNumberOfBirds;
+	
+	
+	NSDictionary* dic = (NSDictionary*)value;	
+	[m_ExpandView m_labelExpandNeedGoldenEggs].text = [NSString stringWithFormat:@"%d", [[dic objectForKey:@"goldenEgg"] intValue]];
+	[m_ExpandView m_labelExpandNeedLevel].text = [NSString stringWithFormat:@"%d", [[dic objectForKey:@"levelRequire"] intValue]];
+	
+	
+	[[[UIApplication sharedApplication] keyWindow] addSubview:m_ExpandView.view];
 }
 
 -(void) btnPlayerOperationButtonHandler:(Button *)button

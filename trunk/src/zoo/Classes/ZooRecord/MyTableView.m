@@ -27,10 +27,6 @@ static MyTableView* _sharedMyTableView = nil;
 
 -(void)awakeZooRecordTable:(NSArray*)tableMsgArray bgImgName:(NSString*)bgImgName
 {
-	//[(ZooRecordTableViewController*)myTableView setM_strBgImageName:bgImgName];
-	
-	
-	
 	NSArray* arrZooRecord;
 	if(0 == [tableMsgArray count])
 	{
