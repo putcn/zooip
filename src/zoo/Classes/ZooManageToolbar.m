@@ -68,17 +68,6 @@
 	
 	Button *button;
 	
-	//////////////////////////////////////////////////////////////////////////
-	//Player
-	//////////////////////////////////////////////////////////////////////////
-	//拖拽
-	button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"箭头.png" setTarget:self
-							   setSelector:@selector(btnPlayerOperationButtonHandler:) setPriority:51 offsetX:-1 offsetY:2 scale:0.75];
-	button.position = ccp(20, 20);
-	button.tag = OPERATION_DEFAULT;
-	[playerButtonContainer addChild: button];
-	[playerOperationButtons addObject:button];
-	
 	// Bg
 	button = [[Button alloc]initWithLabel:@"" 
 								 setColor:ccc3(0, 0, 0) 
@@ -92,9 +81,37 @@
 								  offsetY:0 
 									scale:1.f];
 	button.position = ccp(213, 0);
+//	button.tag = -1;
 	[playerButtonContainer addChild: button];
 	[playerOperationButtons addObject:button];
 	
+	//////////////////////////////////////////////////////////////////////////
+	//Player
+	//////////////////////////////////////////////////////////////////////////
+	//拖拽
+	button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"箭头.png" setTarget:self
+							   setSelector:@selector(btnPlayerOperationButtonHandler:) setPriority:51 offsetX:-1 offsetY:2 scale:0.75];
+	button.position = ccp(20, 20);
+	button.tag = OPERATION_DEFAULT;
+	[playerButtonContainer addChild: button];
+	[playerOperationButtons addObject:button];
+	
+	// Bg
+//	button = [[Button alloc]initWithLabel:@"" 
+//								 setColor:ccc3(0, 0, 0) 
+//								  setFont:FONT_BUTTON 
+//								  setSize:SIZE_BUTTON 
+//							setBackground:@"manageToolBarBg.png" 
+//								setTarget:self 
+//							  setSelector:nil 
+//							  setPriority:50
+//								  offsetX:0 
+//								  offsetY:0 
+//									scale:1.f];
+//	button.position = ccp(213, 0);
+//	button.tag = -1;
+//	[playerButtonContainer addChild: button];
+//	[playerOperationButtons addObject:button];
 	
 	
 	//喂食
@@ -260,6 +277,7 @@
 	button.tag = OPERATION_CALL;
 	[friendButtonContainer addChild: button];
 	[friendOperationButtons addObject:button];
+	
 }
 
 -(void) addStatusIconTexture
@@ -267,6 +285,9 @@
 	playerStatusIconTextures = [[NSMutableArray alloc] initWithCapacity:0];
 	
 	CCTexture2D *bg;
+	
+	bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"箭头.png" ofType:nil] ] ];
+	[playerStatusIconTextures addObject:bg];
 	
 	bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"箭头.png" ofType:nil] ] ];
 	[playerStatusIconTextures addObject:bg];

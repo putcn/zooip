@@ -88,8 +88,6 @@
 	
 	if(nil != m_strImagePath)
 	{
-	//	NSLog(@"m_strImagePath =============== %@\n", m_strImagePath);
-		
 		if([m_strImagePath compare:@"manageToolBarBg.png"] == NSOrderedSame)
 		{
 			
