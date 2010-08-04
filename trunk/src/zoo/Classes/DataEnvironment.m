@@ -67,9 +67,9 @@ storageAuctionAnimals;
 //		playerUid = @"46565162";// Hunk
 //		playerUid = @"160412891";//蒋紫薇
 
-		playerUid = @"248951837"; //renyingying
+//		playerUid = @"248951837"; //renyingying
 		
-//		playerUid = @"221110752";
+		playerUid = @"221110752";
 		// New test UID
 //		playerUid = @"248951866";//actual
 //		playerUid = @"248951866";//傅红雪

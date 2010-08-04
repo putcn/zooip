@@ -1100,7 +1100,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 	
 	[request setUseCookiePersistance:NO];
 	
-	NSString *methodName = @"toKillAnts";
+	NSString *methodName;// = @"toKillAnts";
 	
 	switch (methodType) {
 		case ZooNetworkRequestgetFarmerInfo:

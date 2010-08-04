@@ -16,6 +16,10 @@
 		248D8B0911FFE35700DDE242 /* tableListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 248D8B0311FFE35700DDE242 /* tableListViewController.m */; };
 		248D8B0A11FFE35700DDE242 /* tableListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 248D8B0411FFE35700DDE242 /* tableListViewController.xib */; };
 		248D8B3011FFE3D800DDE242 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 248D8B2F11FFE3D800DDE242 /* StoreKit.framework */; };
+		24A38D4A12090945006334B1 /* popViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A38D4412090945006334B1 /* popViewManager.m */; };
+		24A38D4B12090945006334B1 /* SecPopViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A38D4612090945006334B1 /* SecPopViewController.m */; };
+		24A38D4C12090945006334B1 /* SecPopViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 24A38D4712090945006334B1 /* SecPopViewController.xib */; };
+		24A38D4D12090945006334B1 /* ShopPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 24A38D4912090945006334B1 /* ShopPopView.m */; };
 		3E022E9B118E847D00D2A6E6 /* AnimalInfo.png in Resources */ = {isa = PBXBuildFile; fileRef = 3E022E9A118E847D00D2A6E6 /* AnimalInfo.png */; };
 		3E0CE36D11BF302A002FCB22 /* StealEggsFromFarmController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE36611BF302A002FCB22 /* StealEggsFromFarmController.m */; };
 		3E0CE36E11BF302A002FCB22 /* ToReleaseAntsController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3E0CE36811BF302A002FCB22 /* ToReleaseAntsController.m */; };
@@ -832,6 +836,14 @@
 		248D8B0311FFE35700DDE242 /* tableListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tableListViewController.m; sourceTree = "<group>"; };
 		248D8B0411FFE35700DDE242 /* tableListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = tableListViewController.xib; sourceTree = "<group>"; };
 		248D8B2F11FFE3D800DDE242 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		24A38D4212090945006334B1 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		24A38D4312090945006334B1 /* popViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = popViewManager.h; sourceTree = "<group>"; };
+		24A38D4412090945006334B1 /* popViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = popViewManager.m; sourceTree = "<group>"; };
+		24A38D4512090945006334B1 /* SecPopViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecPopViewController.h; sourceTree = "<group>"; };
+		24A38D4612090945006334B1 /* SecPopViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecPopViewController.m; sourceTree = "<group>"; };
+		24A38D4712090945006334B1 /* SecPopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecPopViewController.xib; sourceTree = "<group>"; };
+		24A38D4812090945006334B1 /* ShopPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopPopView.h; sourceTree = "<group>"; };
+		24A38D4912090945006334B1 /* ShopPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopPopView.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E022E9A118E847D00D2A6E6 /* AnimalInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnimalInfo.png; sourceTree = "<group>"; };
 		3E0CE36511BF302A002FCB22 /* StealEggsFromFarmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StealEggsFromFarmController.h; sourceTree = "<group>"; };
@@ -2212,6 +2224,21 @@
 			path = inPurchase;
 			sourceTree = "<group>";
 		};
+		24A38D4112090945006334B1 /* PopViewManager */ = {
+			isa = PBXGroup;
+			children = (
+				24A38D4212090945006334B1 /* Common.h */,
+				24A38D4312090945006334B1 /* popViewManager.h */,
+				24A38D4412090945006334B1 /* popViewManager.m */,
+				24A38D4512090945006334B1 /* SecPopViewController.h */,
+				24A38D4612090945006334B1 /* SecPopViewController.m */,
+				24A38D4712090945006334B1 /* SecPopViewController.xib */,
+				24A38D4812090945006334B1 /* ShopPopView.h */,
+				24A38D4912090945006334B1 /* ShopPopView.m */,
+			);
+			path = PopViewManager;
+			sourceTree = "<group>";
+		};
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
@@ -2260,6 +2287,7 @@
 			children = (
 				B4FEE5AE1207A9C900EFE793 /* ExpandCapicity */,
 				B4AB4A3A1202C66700747F90 /* ZooRecord */,
+				24A38D4112090945006334B1 /* PopViewManager */,
 				248D8AF911FFE35700DDE242 /* inPurchase */,
 				C39CFBF911BFC68F0063B01E /* RenRen */,
 				BF0074801159E8740003B411 /* Models */,
@@ -4819,6 +4847,7 @@
 				B4BC4904120659A2007BB43B /* manageToolBarBg.png in Resources */,
 				B4BC49AD12067330007BB43B /* X_big.png in Resources */,
 				B4FEE5B31207A9C900EFE793 /* ExpandView.xib in Resources */,
+				24A38D4C12090945006334B1 /* SecPopViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5044,6 +5073,9 @@
 				B4AB4A441202C66700747F90 /* ZooRecordTableViewController.m in Sources */,
 				6B7FDCF71207DBC7005DEB56 /* PictureAdd.m in Sources */,
 				B4FEE5B21207A9C900EFE793 /* ExpandView.m in Sources */,
+				24A38D4A12090945006334B1 /* popViewManager.m in Sources */,
+				24A38D4B12090945006334B1 /* SecPopViewController.m in Sources */,
+				24A38D4D12090945006334B1 /* ShopPopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
