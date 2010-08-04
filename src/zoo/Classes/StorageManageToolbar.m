@@ -8,6 +8,7 @@
 
 #import "StorageManageToolbar.h"
 #import "GameMainScene.h"
+#import "popViewManager.h"
 
 @implementation StorageManageToolbar
 
@@ -39,6 +40,8 @@
 	button.position = ccp(62, 22);
 	[self addChild: button z:50];
 	
+	shopPopView = [[ShopPopView alloc] init];
+	
 	//产品仓库
 	button = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"我的蛋窝.png" setTarget:self
 							   setSelector:@selector(btnStorageButtonHandler) setPriority:50 offsetX:-1 offsetY:2 scale:0.75];
@@ -52,22 +55,8 @@
 }
 
 -(void) btnShopButtonHandler
-{
-	if (manageContainer == nil) {
-		manageContainer = [[ManageContainer alloc] init];
-		manageContainer.position = ccp(240,160);
-		[[GameMainScene sharedGameMainScene] addDialogToScreen:manageContainer z:10];
-	}
-	else {
-		if (manageContainer.position.x == 240) {
-			manageContainer.position = ccp(1000,0);
-		}
-		else {
-			manageContainer.position = ccp(240,160);
-		}
-
-	}
-
+{	
+	[shopPopView btnShopButtonHandler];
 }
 
 -(void) btnStorageButtonHandler
@@ -98,7 +87,5 @@
 {	
 	[super dealloc];
 }
-
-
 
 @end

@@ -22,9 +22,9 @@
 - (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier {
 	
 	if ((self = [super initWithStyle:style reuseIdentifier:reuseIdentifier])) {
-		backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
-		backgroundImageView.contentMode = UIViewContentModeLeft;
-		[self.contentView addSubview:backgroundImageView];
+//		backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+//		backgroundImageView.contentMode = UIViewContentModeLeft;
+//		[self.contentView addSubview:backgroundImageView];
 		
         showImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
 		showImageView.contentMode = UIViewContentModeScaleAspectFit;
@@ -50,7 +50,7 @@
 - (void)layoutSubviews {
     [super layoutSubviews];
 	
-	[backgroundImageView setFrame:[self _backgroundViewFrame]];
+//	[backgroundImageView setFrame:[self _backgroundViewFrame]];
     [showImageView setFrame:[self _imageViewFrame]];
     [purchaseLabel setFrame:[self _purchaseLabelFrame]];
 }
@@ -65,9 +65,9 @@
 /*
  Return the frame of the various subviews -- these are dependent on the editing state of the cell.
  */
-- (CGRect)_backgroundViewFrame {
-	return CGRectMake(10.0, 5.0, 460, 50);
-}
+//- (CGRect)_backgroundViewFrame {
+//	return CGRectMake(10.0, 5.0, 460, 50);
+//}
 
 - (CGRect)_imageViewFrame {
     return CGRectMake(10.0, 5.0, IMAGE_SIZE, IMAGE_SIZE);
@@ -89,7 +89,7 @@
 - (void)creatList:(NSString*)showString{
 	
 	//购买图像显示
-	[backgroundImageView setImage:[UIImage imageNamed:@"bg.png"]];
+//	[backgroundImageView setImage:[UIImage imageNamed:@"bg.png"]];
 	[showImageView setImage:[UIImage imageNamed:@"goldant.png"]];
 	
 	//购买咨询显示
@@ -97,7 +97,7 @@
 }
 
 - (void)dealloc {
-	[backgroundImageView release];
+//	[backgroundImageView release];
 	[showImageView release];
 	[purchaseLabel release];
 	

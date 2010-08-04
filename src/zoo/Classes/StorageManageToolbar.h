@@ -12,12 +12,19 @@
 #import "ManageContainer.h"
 #import "StorageContainer.h"
 
+#import "ShopPopView.h"
+
 @interface StorageManageToolbar : CCSprite
 {
 	ManageContainer *manageContainer;
 	StorageContainer *storageContainer;
+	
+	ShopPopView*		shopPopView;
 }
 
 -(void) addButton;
+-(void) generatePage;
+-(void) resultCallback:(NSObject *)value;
+-(void) faultCallback:(NSObject *)value;
 
 @end

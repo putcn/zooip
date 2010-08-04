@@ -12,7 +12,7 @@
 @interface ListTableCell : UITableViewCell {
 
 	//显示
-	UIImageView *backgroundImageView;
+//	UIImageView *backgroundImageView;
     UIImageView *showImageView;
     UILabel *purchaseLabel;
 }
