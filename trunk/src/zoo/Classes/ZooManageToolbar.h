@@ -38,7 +38,9 @@
 	
 	
 	ExpandView* m_ExpandView;
-	UIAlertView* myAlert;
+//	UIAlertView* myAlert;
+	
+	UIActivityIndicatorView *activityView;
 }
 
 -(void) addButton;

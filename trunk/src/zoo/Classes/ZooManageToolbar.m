@@ -404,22 +404,25 @@
 	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",nil];
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestexpansionInfo WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackInfo:" AndFailedSel:@"faultCallback:"];
-}
 
--(void)resultCallbackInfo:(NSObject *)value
-{
-//	[myAlert dismissWithClickedButtonIndex:0 animated:YES];
-//	if(myAlert != nil)
-//	{
-//		myAlert =nil;
-//		[myAlert release];
-//	}
-	
 	
 	if(nil == m_ExpandView)
 	{
 		m_ExpandView = [[ExpandView alloc]initWithNibName:@"ExpandView" bundle:nil];
+		activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite]; 
+		
+		activityView.frame = CGRectMake(220.f, 180.0f, 37.0f, 37.0f);
+		
+		[m_ExpandView.view addSubview:activityView];
+		
+		[activityView startAnimating];
 	}
+	
+}
+
+-(void)resultCallbackInfo:(NSObject *)value
+{
+//	[activityView stopAnimating];
 	
 	// Get Expand Data
 	DataModelFarmInfo *farmInfo = (DataModelFarmInfo *)[DataEnvironment sharedDataEnvironment].playerFarmInfo;
@@ -714,6 +717,8 @@
 	[playerButtonContainer release];
 	[friendButtonContainer release];
 	[statusIcon release];
+	
+	[activityView release];
 	
 	[super dealloc];
 }
