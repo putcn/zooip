@@ -42,9 +42,6 @@
 		[self addChild:bg_3 z:5 ];
 		
 		self.position = ccp(240,160);
-//		self.scale = 300.0f/1024.0f;
-//		self.title = @"仓库";
-//		[self addTitle];
 		
 		//根据Tab的名称加载仓库信息
 		NSArray *tabArray = [[NSArray alloc] initWithObjects:@"动物",@"拍来动物",nil];
@@ -65,14 +62,7 @@
 		}
 		itemInfoPane = [tabContentDic objectForKey:@"tabContent_0"];
 		[buttonContainer release];
-		
-		//Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
-//		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:40 offsetX:0 offsetY:0 scale:1.0f];
-//		//		forwardPageBtn.flipX = YES;
-//		nextPageBtn.position = ccp(self.contentSize.width/2 + 100, 25);
-//		forwardPageBtn.position = ccp(self.contentSize.width/2 - 100, 25);
-//		[self addChild:nextPageBtn z:7];
-//		[self addChild:forwardPageBtn z:7];
+
 		
 		Button *statusIcon = [[Button alloc] initWithLabel:@"" setColor:ccc3(0, 0, 0) setFont:@"" setSize:12 setBackground:@"X.png" setTarget:self
 											   setSelector:@selector(OverIconHandler) setPriority:0 offsetX:-1 offsetY:2 scale:1];
@@ -158,12 +148,7 @@
 		
 		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",auctionBirdStorageId,@"auctionBirdStorageId",nil];
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAuctionAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-		
-	//	BaseServerController *getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
-//		[getAllBirdFarmAnimalInfoController execute:nil];
-//		[[AnimalController sharedAnimalController] clearAnimal];
-//		[[AnimalController sharedAnimalController] addAnimal:[DataEnvironment sharedDataEnvironment].animalIDs];
-//		
+
 		
 	}
 	else if (itemButton.itemType == @"动物")
