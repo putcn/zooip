@@ -531,6 +531,7 @@
 		60A0CDBE11B78066001AF9BD /* AnimalManageToMateAntsChoose.m in Sources */ = {isa = PBXBuildFile; fileRef = 60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */; };
 		60B4040A11FFEECE0087F16F /* buyant.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B4040911FFEECE0087F16F /* buyant.png */; };
 		60C18BA511E1A6D800248E87 /* bgimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18BA411E1A6D800248E87 /* bgimg.png */; };
+		60E55B18120A578200EC046F /* return.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E55B17120A578200EC046F /* return.png */; };
 		60EEE3D311F9802000D26ABD /* RegistorWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EEE3D211F9802000D26ABD /* RegistorWebView.m */; };
 		6B03D7FB11DC74D0000F2201 /* blueBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7ED11DC74D0000F2201 /* blueBg.png */; };
 		6B03D7FC11DC74D0000F2201 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7EE11DC74D0000F2201 /* demo.png */; };
@@ -1749,6 +1750,8 @@
 		60A0CDBD11B78066001AF9BD /* AnimalManageToMateAntsChoose.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnimalManageToMateAntsChoose.m; sourceTree = "<group>"; };
 		60B4040911FFEECE0087F16F /* buyant.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = buyant.png; sourceTree = "<group>"; };
 		60C18BA411E1A6D800248E87 /* bgimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgimg.png; sourceTree = "<group>"; };
+		60E55B16120A575100EC046F /* CommonDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDigest.h; sourceTree = "<group>"; };
+		60E55B17120A578200EC046F /* return.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = return.png; sourceTree = "<group>"; };
 		60EEE3D111F9802000D26ABD /* RegistorWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistorWebView.h; sourceTree = "<group>"; };
 		60EEE3D211F9802000D26ABD /* RegistorWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistorWebView.m; sourceTree = "<group>"; };
 		6B03D7ED11DC74D0000F2201 /* blueBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBg.png; sourceTree = "<group>"; };
@@ -1769,7 +1772,6 @@
 		6B46CE7811FE6AA800681656 /* NumberField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NumberField.m; sourceTree = "<group>"; };
 		6B7FDCF51207DBC7005DEB56 /* PictureAdd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PictureAdd.h; sourceTree = "<group>"; };
 		6B7FDCF61207DBC7005DEB56 /* PictureAdd.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PictureAdd.m; sourceTree = "<group>"; };
-		6B7FDD2C1207DC61005DEB56 /* CommonDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CommonDigest.h; path = ../../../Desktop/TianCai/trunk/toproofshping/Classes/CommonDigest.h; sourceTree = SOURCE_ROOT; };
 		6BA03F9611E486C300D0E667 /* BG_buy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = BG_buy.png; path = "动物园切图/按钮/BG_buy.png"; sourceTree = "<group>"; };
 		6BA03F9711E486C300D0E667 /* 加减器_右.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "加减器_右.png"; path = "动物园切图/按钮/加减器_右.png"; sourceTree = "<group>"; };
 		6BA03F9811E486C300D0E667 /* 加减器_左.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "加减器_左.png"; path = "动物园切图/按钮/加减器_左.png"; sourceTree = "<group>"; };
@@ -3471,6 +3473,7 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				60E55B17120A578200EC046F /* return.png */,
 				B4BC4903120659A2007BB43B /* manageToolBarBg.png */,
 				60B4040911FFEECE0087F16F /* buyant.png */,
 				3E3E4ED111FD598D00AD964F /* nest */,
@@ -3915,6 +3918,7 @@
 		BF0074851159E89A0003B411 /* UIControls */ = {
 			isa = PBXGroup;
 			children = (
+				60E55B16120A575100EC046F /* CommonDigest.h */,
 				6B46CE7711FE6AA800681656 /* NumberField.h */,
 				6B46CE7811FE6AA800681656 /* NumberField.m */,
 				6092141311BF33DB00D50ABE /* AnimalFeedButtonContainer.h */,
@@ -3989,7 +3993,6 @@
 				C3C52604117C38F000343D7F /* MessageDialog.m */,
 				C3C525F5117C33C700343D7F /* ZooManageToolbar.h */,
 				C3C525F6117C33C700343D7F /* ZooManageToolbar.m */,
-				6B7FDD2C1207DC61005DEB56 /* CommonDigest.h */,
 				6B7FDCF51207DBC7005DEB56 /* PictureAdd.h */,
 				6B7FDCF61207DBC7005DEB56 /* PictureAdd.m */,
 				C3C525F0117C333000343D7F /* PlayerInfo.h */,
@@ -4848,6 +4851,7 @@
 				B4BC49AD12067330007BB43B /* X_big.png in Resources */,
 				B4FEE5B31207A9C900EFE793 /* ExpandView.xib in Resources */,
 				24A38D4C12090945006334B1 /* SecPopViewController.xib in Resources */,
+				60E55B18120A578200EC046F /* return.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
