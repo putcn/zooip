@@ -15,3 +15,8 @@ enum popViewType{
 	ANIMAL_WARWHOUSE_POPVIEW
 };
 
+enum secPopView{
+	
+	BUY_ANIMAL = 0,
+	SALE_ANIMAL
+};

@@ -15,7 +15,6 @@
 @protocol ScrollBarViewDelegate;
 @interface popViewManager : UIViewController {
 
-//	id					delegate;
 	ServiceHelper*		serviceInstance;
 	UIScrollView*		m_ppopView;
 	int					m_npopViewType;
@@ -29,13 +28,17 @@
 	NSMutableArray*		picFileNameArray;
 	NSMutableArray*		topBtnArray;
 	SecPopViewController*secPopView;
+	
+	NSMutableArray*		buyTypeArray;
+	NSMutableArray*		priceArray;
+	NSMutableArray*		sexArray;
 }
 
-//@property(nonatomic, assign) id <ScrollBarViewDelegate> delegate;
 @property(nonatomic, readwrite)int m_npopViewType;
 @property(nonatomic, readwrite)int m_nlistCount;
-
-//+ (id) sharedPopView;
+@property(nonatomic, retain)NSMutableArray* buyTypeArray;
+@property(nonatomic, retain)NSMutableArray* priceArray;
+@property(nonatomic, retain)NSMutableArray* sexArray;
 
 - (id) init;
 
@@ -50,12 +53,5 @@
 
 
 @end
-
-
-//@protocol ScrollBarViewDelegate
-//
-//- (void) tapDownCell:(int)index;
-//
-//@end
 
 

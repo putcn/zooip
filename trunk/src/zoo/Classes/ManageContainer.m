@@ -231,6 +231,14 @@
 {
 	NSDictionary* dic = (NSDictionary*)value;
  	NSInteger code = [[dic objectForKey:@"code"] intValue];
+	
+//	switch (<#expression#>) {
+//		case <#constant#>:
+//			<#statements#>
+//			break;
+//		default:
+//			break;
+//	}
 	switch (code) {
 		case 0:
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"无道具信息!"];

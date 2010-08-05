@@ -9,6 +9,7 @@
 #import "ShopPopView.h"
 #import "ServiceHelper.h"
 #import "StorageManageToolbar.h"
+#import "Common.h"
 
 
 @implementation ShopPopView
@@ -17,17 +18,19 @@
 - (id) init{
 	
 	if ( (self = [super init]) ){
-	myPopView = [[popViewManager alloc] init];
-	[myPopView setPopViewFrame:CGRectMake(100, 80, 280, 160)];
-	[myPopView setSubSize:CGSizeMake(50, 50)];
-	[myPopView setM_nlistCount:2];
 	
-	CGRect rect = CGRectMake(0, 20, 75.f, 75.f);
-	NSMutableArray *foo = [[NSMutableArray alloc] init];
-	[foo addObject:[NSValue valueWithCGRect:rect]];
-	[myPopView initWithBtn:foo];
-	[foo release];
-	foo = nil;
+		myPopView = [[popViewManager alloc] init];
+		[myPopView setPopViewFrame:CGRectMake(100, 120, 280, 160)];
+		[myPopView setSubSize:CGSizeMake(40, 40)];
+		[myPopView setM_nlistCount:2];
+		[myPopView setM_npopViewType:SHOP_POPVIEW];
+		
+		CGRect rect = CGRectMake(0, 20, 75.f, 75.f);
+		NSMutableArray *foo = [[NSMutableArray alloc] init];
+		[foo addObject:[NSValue valueWithCGRect:rect]];
+		[myPopView initWithBtn:foo];
+		[foo release];
+		foo = nil;
 	}
 	
 	return self;
@@ -91,6 +94,8 @@
 			
 			NSArray* animalArray = [NSArray arrayWithArray:animalArrayTemp];
 			NSMutableArray* picFileNameArray = [[NSMutableArray alloc] init];
+			NSMutableArray* buyTypeArray = [[NSMutableArray alloc] init];
+			NSMutableArray* priceArray = [[NSMutableArray alloc] init];
 			
 			for (int i = 0; i < [animalArray count]; i ++) 
 			{
@@ -105,13 +110,21 @@
 				
 				//根据动物的originalAnimalId生成ItemButton
 				NSString *picFileName = [NSString stringWithFormat:@"%@.png",originAnimal.picturePrefix];				
-				
+
 				[picFileNameArray addObject:picFileName];
+				[buyTypeArray addObject:[NSNumber numberWithInt:buyType]];
+				[priceArray addObject:price];
 			}
+			[myPopView setBuyTypeArray:buyTypeArray];
+			[myPopView setPriceArray:priceArray];
 			[myPopView initWithItem:picFileNameArray];
 			
-			//			[picFileNameArray release];
-			//			picFileNameArray = nil;
+			[picFileNameArray release];
+			picFileNameArray = nil;
+			[buyTypeArray release];
+			buyTypeArray = nil;
+			[priceArray release];
+			priceArray = nil;
 		}		
 			
 			break;
