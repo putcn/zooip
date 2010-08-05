@@ -13,6 +13,17 @@
 
 @interface AddAnimalsPopView : NSObject {
 
+	popViewManager*		myPopView;
+	int					tabFlag;
+	NSString            *currentTagFlag;
+	
 }
+
+
+- (id) init;
+
+- (void) btnShopButtonHandler;
+- (void) resultCallback:(NSObject *)value;
+- (void) faultCallback:(NSObject *)value;
 
 @end

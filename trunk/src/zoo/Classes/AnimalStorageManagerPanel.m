@@ -20,12 +20,6 @@
 {
 	if ((self = [super init])) {
 		parentTarget = target;
-//		CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_1.png" ofType:nil] ] ];
-//		CGRect rect = CGRectZero;
-//		rect.size = bg.contentSize;
-//		[self setTexture: bg];
-//		[self setTextureRect: rect];
-//		[bg release];
 		tabFlag = tabName;
 		currentPageNum = 1;
 		
@@ -72,41 +66,6 @@
 }
 
 
-//
-//-(void) resultCallback_End:(NSObject *)value
-//{
-//	//NSLog(@"%@",value);
-//	NSDictionary *itemDic;
-//	NSArray *itemArray;
-//	if (tabFlag == @"动物") {
-//		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
-//		itemArray = [itemDic allKeys];
-//	}
-//	else if(tabFlag == @"拍来动物")
-//	{
-//		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
-//		itemArray = [itemDic allKeys];
-//	}
-//	
-//	if(itemArray.count == 0)
-//	{
-//		totalPage = 1;
-//	}
-//	else 
-//	{
-//		totalPage = (itemArray.count-1)/8 + 1;
-//	}
-//
-//	currentPageNum = 1;
-//	
-//	[self generatePage];
-//	
-//	NSString* title = [NSString stringWithFormat:@"%d/%d",currentPageNum,totalPage];
-//	pageLabel = [CCLabel labelWithString:title fontName:@"Arial" fontSize:50];
-//	[pageLabel setColor:ccc3(0, 0, 0)];
-//	pageLabel.position = ccp(500,-480);
-//	[self addChild:pageLabel z:7];
-//}
 
 
 -(void) resultCallback:(NSObject *)value
@@ -186,26 +145,6 @@
 	for (int i = 0; i< currentNum; i ++) {
 		[self removeChildByTag:i cleanup:YES];
 	}
-//	NSDictionary *itemDic;
-//	NSArray *itemArray;
-//	if (tabFlag == @"动物") {
-//		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
-//		itemArray = [itemDic allKeys];
-//	}
-//	else if(tabFlag == @"拍来动物")
-//	{
-//		itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
-//		itemArray = [itemDic allKeys];
-//	}
-	
-//	for (int j=0; j<itemArray.count; j++) {
-		
-		//[self removeChildByTag:j%8 cleanup:YES];
-//		[self removeAllChildrenWithCleanup:YES];
-//	}
-		
-//	[self initWithTab:tabName setTarget:target];
-//	[self generatePage];
 }
 
 
@@ -240,11 +179,6 @@
 			itemButton = [[AnimalStorageManagerButtonItem alloc] initWithItems:stoAnimals.adultBirdStorageId setitType:tabFlag setAmount:stoAnimals.amount setGender:gender setAnimalID:stoAnimals.originalAnimalId setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:0 offsetX:1 offsetY:1];
 			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 80);
 			[self addChild:itemButton z:7 tag:i%8];
-			
-//			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-//			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
-//			kuang.scale = 1024.0/370.0f;
-//			[self addChild:kuang z:7];
 		}
 
 	}
@@ -281,10 +215,6 @@
 			itemButton.position = ccp(250 * (i%4) + 110, self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 80);
 			[self addChild:itemButton z:7 tag:i%8];
 			
-//			CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-//			kuang.position = ccp(250 * (i%4) + 110,  self.contentSize.height - 220 * ((i-8*(currentPageNum-1))/4) - 100);
-//			kuang.scale = 1024.0/370.0f;
-//			[self addChild:kuang z:7];
 		}
 
 	}
