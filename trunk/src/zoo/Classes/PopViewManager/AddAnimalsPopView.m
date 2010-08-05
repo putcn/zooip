@@ -202,7 +202,6 @@
 	switch (tabFlag) {
 		case ANIMAL_WAREHOUSE_POPVIEW:
 		{
-			
 			NSLog(@"************* generatePage ***********************");
 			if (currentTagFlag == @"动物") {
 				NSDictionary *storageAnimal = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
@@ -227,14 +226,15 @@
 					[picFileNameArray addObject:picFileName];
 					[sexNameArray addObject:gender];
 				}
-				
-				
+				[myPopView initWithItem:picFileNameArray];
+				[myPopView setSexArray:sexNameArray];
+			
 			}
 			if (currentTagFlag == @"拍来动物") {
 				NSDictionary *auctionAnimals = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
 				DataModelStorageAuctionAnimal *stoauAnimals;
 				NSArray *animalArray = [auctionAnimals allKeys];
-				
+				NSString *gender;
 				DataModelOriginalAnimal *serverAnimalShow;
 				CCSprite *localGender;
 				for (int i = 0; i < [animalArray count]; i ++) {
@@ -251,7 +251,11 @@
 					NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalShow.scientificNameCN];
 					NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalShow.picturePrefix];
 					
+					[picFileNameArray addObject:picFileName];
+					[sexNameArray addObject:gender];
 				}
+				[myPopView initWithItem:picFileNameArray];
+				[myPopView setSexArray:sexNameArray];
 			}
 			break;
 		default:
