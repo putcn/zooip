@@ -532,6 +532,7 @@
 		60B4040A11FFEECE0087F16F /* buyant.png in Resources */ = {isa = PBXBuildFile; fileRef = 60B4040911FFEECE0087F16F /* buyant.png */; };
 		60C18BA511E1A6D800248E87 /* bgimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18BA411E1A6D800248E87 /* bgimg.png */; };
 		60E55B18120A578200EC046F /* return.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E55B17120A578200EC046F /* return.png */; };
+		60E55B35120A5C4500EC046F /* AddAnimalsPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E55B34120A5C4500EC046F /* AddAnimalsPopView.m */; };
 		60EEE3D311F9802000D26ABD /* RegistorWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EEE3D211F9802000D26ABD /* RegistorWebView.m */; };
 		6B03D7FB11DC74D0000F2201 /* blueBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7ED11DC74D0000F2201 /* blueBg.png */; };
 		6B03D7FC11DC74D0000F2201 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7EE11DC74D0000F2201 /* demo.png */; };
@@ -1752,6 +1753,8 @@
 		60C18BA411E1A6D800248E87 /* bgimg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = bgimg.png; sourceTree = "<group>"; };
 		60E55B16120A575100EC046F /* CommonDigest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonDigest.h; sourceTree = "<group>"; };
 		60E55B17120A578200EC046F /* return.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = return.png; sourceTree = "<group>"; };
+		60E55B33120A5C4500EC046F /* AddAnimalsPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AddAnimalsPopView.h; sourceTree = "<group>"; };
+		60E55B34120A5C4500EC046F /* AddAnimalsPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AddAnimalsPopView.m; sourceTree = "<group>"; };
 		60EEE3D111F9802000D26ABD /* RegistorWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegistorWebView.h; sourceTree = "<group>"; };
 		60EEE3D211F9802000D26ABD /* RegistorWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegistorWebView.m; sourceTree = "<group>"; };
 		6B03D7ED11DC74D0000F2201 /* blueBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = blueBg.png; sourceTree = "<group>"; };
@@ -2237,6 +2240,8 @@
 				24A38D4712090945006334B1 /* SecPopViewController.xib */,
 				24A38D4812090945006334B1 /* ShopPopView.h */,
 				24A38D4912090945006334B1 /* ShopPopView.m */,
+				60E55B33120A5C4500EC046F /* AddAnimalsPopView.h */,
+				60E55B34120A5C4500EC046F /* AddAnimalsPopView.m */,
 			);
 			path = PopViewManager;
 			sourceTree = "<group>";
@@ -5080,6 +5085,7 @@
 				24A38D4A12090945006334B1 /* popViewManager.m in Sources */,
 				24A38D4B12090945006334B1 /* SecPopViewController.m in Sources */,
 				24A38D4D12090945006334B1 /* ShopPopView.m in Sources */,
+				60E55B35120A5C4500EC046F /* AddAnimalsPopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
