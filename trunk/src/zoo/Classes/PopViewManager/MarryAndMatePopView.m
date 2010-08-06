@@ -22,6 +22,7 @@
 - (id) init{
 	
 	if ( (self = [super init]) ){
+		tabFlagType = @"animalMarry";
 		
 		myPopView = [[popViewManager alloc] init];
 		[myPopView setPopViewFrame:CGRectMake(100, 120, 280, 160)];
@@ -106,9 +107,9 @@
 	NSMutableArray* priceArray = [[NSMutableArray alloc] init];
 	
 	switch (tabFlag) {
-		case SHOP_POPVIEW:{
+		case ANIMAL_MATEORMARRY_POPVIEW:{
 	//动物结婚
-	if (tabFlagType == @"animal") {
+	if (tabFlagType == @"animalMarry") {
 		NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
 		DataModelOriginalAnimal *originAnimal;
 		NSString *aniID;
@@ -126,7 +127,7 @@
 		[myPopView initWithItem:picFileNameArray];
 	}
 	//动物离婚
-	if (tabFlagType == @"animal") {
+	if (tabFlagType == @"animalMate") {
 		NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
 		DataModelOriginalAnimal *originAnimal;
 		NSString *aniID;
@@ -158,102 +159,15 @@
 }
 
 
+//按着tab的类型，请求数据
+//动物结婚和婚姻管理。
 - (void) btnShopButtonHandler{
 	
-	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-	tabFlag = SHOP_POPVIEW;
+//	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+	tabFlag = ANIMAL_MATEORMARRY_POPVIEW;
 	[myPopView addView2Window];
+	[self generatePage];
 }
-
-//生成商品页面
-//- (void) generatePage
-//{
-//
-//			
-//			
-//			NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
-//			
-//			DataModelOriginalAnimal *originAnimal; //levelRequired
-//			NSArray *animalArrayTemp1 = [originAnimalDic allKeys];
-//			NSMutableArray* animalArrayTemp = [[NSMutableArray alloc] init];
-//			[animalArrayTemp addObjectsFromArray:animalArrayTemp1];
-//			
-//			NSMutableArray* arrOfLevel = [[NSMutableArray alloc]init];
-//			
-//			for(int i = 0; i < [animalArrayTemp count]; i++)
-//			{
-//				originAnimal = [originAnimalDic objectForKey:[animalArrayTemp objectAtIndex:i]];
-//				
-//				[arrOfLevel addObject:[NSNumber numberWithInt:originAnimal.levelRequired]];
-//			}
-//			
-//			// 冒泡排序
-//			int nTemp;
-//			NSString* strTemp;
-//			for(int j = 0; j <= [arrOfLevel count] - 1 ; j++)
-//			{
-//				for(int i = 0; i < [arrOfLevel count] - 1- j; i++)
-//				{
-//					if([[arrOfLevel objectAtIndex:i] intValue] >= [[arrOfLevel objectAtIndex:i+1] intValue])
-//					{
-//						nTemp = [[arrOfLevel objectAtIndex:i] intValue];
-//						strTemp = [animalArrayTemp objectAtIndex:i];
-//						
-//						int nRight = [[arrOfLevel objectAtIndex:i+1] intValue];
-//						NSString* strRight = [animalArrayTemp objectAtIndex:i + 1];
-//						
-//						[arrOfLevel replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:nRight]];
-//						[animalArrayTemp replaceObjectAtIndex:i withObject:strRight];
-//						
-//						[arrOfLevel replaceObjectAtIndex:i+1 withObject:[NSNumber numberWithInt:nTemp]];
-//						[animalArrayTemp replaceObjectAtIndex:i + 1 withObject:strTemp];
-//						
-//					}
-//				}
-//			}
-//			
-//			
-//			NSArray* animalArray = [NSArray arrayWithArray:animalArrayTemp];
-//			NSMutableArray* picFileNameArray = [[NSMutableArray alloc] init];
-//			NSMutableArray* buyTypeArray = [[NSMutableArray alloc] init];
-//			NSMutableArray* priceArray = [[NSMutableArray alloc] init];
-//			
-//			for (int i = 0; i < [animalArray count]; i ++) 
-//			{
-//				originAnimal = [originAnimalDic objectForKey:[animalArray objectAtIndex:i]];
-//				
-//				int buyType = 0;
-//				NSString *price = [NSString stringWithFormat:@"%d",originAnimal.basePrice];
-//				if (originAnimal.antsPrice > 0) {
-//					buyType = 1;
-//					price = [NSString stringWithFormat:@"%d",originAnimal.antsPrice];
-//				}
-//				
-//				//根据动物的originalAnimalId生成ItemButton
-//				NSString *picFileName = [NSString stringWithFormat:@"%@.png",originAnimal.picturePrefix];				
-//				
-//				
-//				[buyTypeArray addObject:[NSNumber numberWithInt:buyType]];
-//				[priceArray addObject:price];
-//			}
-//			[myPopView setBuyTypeArray:buyTypeArray];
-//			[myPopView setPriceArray:priceArray];
-//			
-//			
-//			[picFileNameArray release];
-//			picFileNameArray = nil;
-//			[buyTypeArray release];
-//			buyTypeArray = nil;
-//			[priceArray release];
-//			priceArray = nil;
-//		}		
-//			
-//			break;
-//		default:
-//			break;
-//	}
-//	
-//}
 
 
 - (void) resultCallback:(NSObject *)value
