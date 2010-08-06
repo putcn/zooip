@@ -10,7 +10,7 @@
 
 //static popViewManager *sharedPopView = nil;
 
-@interface popViewManager (SubviewFrames)
+@interface popViewManager (OtherFunctions)
 - (void) addTitleButtons:(NSArray *)arrayPic;
 - (void) selectButtonAtIndex:(NSUInteger)index;
 - (void) backBtnSelected:(id)sender;
@@ -255,7 +255,8 @@
 		[self selectButtonAtIndex:index];
 	}
 
-	[secPopView setM_npopViewType:tabFlag];
+	[secPopView setM_npopViewType:SHOP_POPVIEW];
+	[secPopView setM_ntabFlag:tabFlag];
 	
 	switch (tabFlag) {
 		case BUY_ANIMAL:{
@@ -288,6 +289,9 @@
 
 - (void) backBtnSelected:(id)sender{
 	
+	for (UIView *subview in m_ppopView.subviews) {
+		[subview removeFromSuperview];
+	}
 	[self.view removeFromSuperview];
 }
 

@@ -17,6 +17,12 @@
 #import "DataModelOriginalAnimal.h"
 #import "DataModelAnimal.h"
 
+@interface SecPopViewController(OtherFunctions)
+- (void) buyAnimals;
+- (void) buyFoods;
+- (void) buyGoods;
+@end 
+
 
 @implementation SecPopViewController
 
@@ -129,11 +135,34 @@
 										buyAniId,									@"originalAnimalId",
 										[NSString stringWithFormat:@"%d",tempCount],@"amount",
 										nil];
-				NSLog(@"%@",params);
 				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];		
 			}
 		}
 			break;
+			
+		case BUY_FOODS:{
+			
+			//用蚂蚁购买
+			if (tempPrice > 0) {
+				
+				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+										farmerId,									@"farmerId",
+										buyAniId,									@"foodId",
+										[NSString stringWithFormat:@"%d",tempCount],@"amount",
+										nil];
+				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyFoodByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			}
+			//用金币购买
+			else {
+				
+				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+										farmerId,									@"farmerId",
+										buyAniId,									@"foodId",
+										[NSString stringWithFormat:@"%d",tempCount],@"amount",
+										nil];
+				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyFoodByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			}
+		}
 			
 		case SALE_ANIMAL:{
 			
@@ -158,70 +187,22 @@
 	
 	[showImage setImage:[UIImage imageNamed:fileName]];
 	
-	myAntsCurrency = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.antsCurrency;
-	myGoldenEgg = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.goldenEgg;
-	
-	//get data
-	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-	NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
-	DataModelOriginalAnimal *originAnimal; 
-	NSArray *animalArrayTemp = [originAnimalDic allKeys];
-	originAnimal = [originAnimalDic objectForKey:[animalArrayTemp objectAtIndex:itemId]];
-	
-	buyAniId = originAnimal.originalAnimalId;
-	tempCount = 1;
-	tempPrice = originAnimal.antsPrice;
-	
-	NSString* describeString = @"   性别：";
-	mixCount = 0;
-	int income = 0;
-	
-	//show
-	if (tempPrice == 0) {
-		[iconImage setImage:[UIImage imageNamed:@"金蛋.png"]];
-		int basePrice = originAnimal.basePrice;
-		priceLabel.text = [NSString stringWithFormat:@"%d", basePrice];
-		describeString = [describeString stringByAppendingString:@"母\n   价格："];
-		describeString = [describeString stringByAppendingString:priceLabel.text];
-		describeString = [describeString stringByAppendingString:@"个金蛋"];
-		describeString = [describeString stringByAppendingString:@"\n总收益："];
-		
-		if (basePrice > myGoldenEgg) {
-			wrongLabel.hidden = NO;
-			OKButton.enabled = NO;
-		}
-		else {
-			mixCount = myGoldenEgg/basePrice;
-			wrongLabel.hidden = YES;
-			OKButton.enabled = YES;
-		}
-
+	switch (m_ntabFlag) {
+		case BUY_ANIMAL:
+			[self buyAnimals];
+			break;
+			
+		case BUY_FOODS:
+			[self buyFoods];
+			break;
+			
+		case BUY_GOODS:
+			[self buyGoods];
+			break;
+			
+		default:
+			break;
 	}
-	else {
-		[iconImage setImage:[UIImage imageNamed:@"金蚂蚁.png"]];
-		priceLabel.text = [NSString stringWithFormat:@"%d", tempPrice];
-		describeString = [describeString stringByAppendingString:@"公\n   价格："];
-		describeString = [describeString stringByAppendingString:priceLabel.text];
-		describeString = [describeString stringByAppendingString:@"个蚂蚁币"];
-		describeString = [describeString stringByAppendingString:@"\n总收益："];
-		if (tempPrice > myAntsCurrency) {
-			wrongLabel.hidden = NO;
-			OKButton.enabled = NO;
-		}
-		else {
-			mixCount = myAntsCurrency/tempPrice;
-			wrongLabel.hidden = YES;
-			OKButton.enabled = YES;
-		}
-	}
-	
-	nameLabel.text = originAnimal.scientificNameCN;
-	
-	describeString = [describeString stringByAppendingString:[NSString stringWithFormat:@"%d", income]];
-	describeString = [describeString stringByAppendingString:@"个金蛋"];
-	describeLabel.numberOfLines = 3;
-	describeLabel.text = describeString;
-	countLabel.text = @"选择了0个动物";
 	
 }
 
@@ -280,6 +261,165 @@
 -(void) faultCallback:(NSObject *)value
 {
 	NSLog(@"Server Connection Fail");
+}
+
+#pragma mark -
+#pragma mark OtherFunctions
+- (void) buyAnimals{
+	
+	myAntsCurrency = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.antsCurrency;
+	myGoldenEgg = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.goldenEgg;
+	
+	//get data
+	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+	DataModelOriginalAnimal *originAnimal; 
+	NSArray *animalArrayTemp = [originAnimalDic allKeys];
+	originAnimal = [originAnimalDic objectForKey:[animalArrayTemp objectAtIndex:itemId]];
+	
+	buyAniId = originAnimal.originalAnimalId;
+	tempCount = 1;
+	tempPrice = originAnimal.antsPrice;
+	
+	NSString* describeString = @"   性别：";
+	mixCount = 0;
+	int income = 0;
+	
+	//show
+	if (tempPrice == 0) {
+		[iconImage setImage:[UIImage imageNamed:@"金蛋.png"]];
+		int basePrice = originAnimal.basePrice;
+		priceLabel.text = [NSString stringWithFormat:@"%d", basePrice];
+		describeString = [describeString stringByAppendingString:@"母\n   价格："];
+		describeString = [describeString stringByAppendingString:priceLabel.text];
+		describeString = [describeString stringByAppendingString:@"个金蛋"];
+		describeString = [describeString stringByAppendingString:@"\n总收益："];
+		
+		if (basePrice > myGoldenEgg) {
+			wrongLabel.hidden = NO;
+			OKButton.enabled = NO;
+		}
+		else {
+			mixCount = myGoldenEgg/basePrice;
+			wrongLabel.hidden = YES;
+			OKButton.enabled = YES;
+		}
+		
+	}
+	else {
+		[iconImage setImage:[UIImage imageNamed:@"金蚂蚁.png"]];
+		priceLabel.text = [NSString stringWithFormat:@"%d", tempPrice];
+		describeString = [describeString stringByAppendingString:@"公\n   价格："];
+		describeString = [describeString stringByAppendingString:priceLabel.text];
+		describeString = [describeString stringByAppendingString:@"个蚂蚁币"];
+		describeString = [describeString stringByAppendingString:@"\n总收益："];
+		if (tempPrice > myAntsCurrency) {
+			wrongLabel.hidden = NO;
+			OKButton.enabled = NO;
+		}
+		else {
+			mixCount = myAntsCurrency/tempPrice;
+			wrongLabel.hidden = YES;
+			OKButton.enabled = YES;
+		}
+	}
+	
+	nameLabel.text = originAnimal.scientificNameCN;
+	
+	describeString = [describeString stringByAppendingString:[NSString stringWithFormat:@"%d", income]];
+	describeString = [describeString stringByAppendingString:@"个金蛋"];
+	describeLabel.numberOfLines = 3;
+	describeLabel.text = describeString;
+	countLabel.text = @"选择了0个动物";
+}
+
+- (void) buyFoods{
+	
+	myAntsCurrency = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.antsCurrency;
+	myGoldenEgg = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.goldenEgg;
+	
+	//get data
+	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *foodsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].foods;
+	DataModelFood *foods; 
+	NSArray *foodArrayTemp = [foodsDic allKeys];
+	foods = [foodsDic objectForKey:[foodArrayTemp objectAtIndex:itemId]];
+	
+	buyAniId = foods.foodId;
+	tempCount = 1;
+	tempPrice = foods.antsRequired;
+	
+	int  power = [foods.foodPower intValue];
+	NSString* describeString;
+	if(power == 255)
+	{
+		describeString = @"效果：动物基本饲料";
+	}
+	else if(power == 1)
+	{
+		describeString = @"效果：产蛋时间缩短1小时";
+	}
+	else if(power == 2)
+	{
+		describeString = @"效果：产蛋时间缩短2小时";
+	}
+	else if(power == 5)
+	{
+		describeString = @"效果：产蛋时间缩短5小时";
+	}
+	else if(power == 30)
+	{
+		describeString = @"效果：提高30%产蛋量";
+	}
+	
+	mixCount = 0;
+	
+	//show
+	if (tempPrice == 0) {
+		[iconImage setImage:[UIImage imageNamed:@"金蛋.png"]];
+		int basePrice = foods.foodPrice;
+		priceLabel.text = [NSString stringWithFormat:@"%d", basePrice];
+		describeString = [describeString stringByAppendingString:[NSString stringWithFormat:@"\n单价：%@／千克",priceLabel.text]];
+		
+		if (basePrice > myGoldenEgg) {
+			wrongLabel.hidden = NO;
+			OKButton.enabled = NO;
+		}
+		else {
+			mixCount = myGoldenEgg/basePrice;
+			wrongLabel.hidden = YES;
+			OKButton.enabled = YES;
+		}
+		
+	}
+	else {
+		[iconImage setImage:[UIImage imageNamed:@"金蚂蚁.png"]];
+		priceLabel.text = [NSString stringWithFormat:@"%d", tempPrice];
+		describeString = [describeString stringByAppendingString:[NSString stringWithFormat:@"\n单价：%@／份",priceLabel.text]];
+		if (tempPrice > myAntsCurrency) {
+			wrongLabel.hidden = NO;
+			OKButton.enabled = NO;
+		}
+		else {
+			mixCount = myAntsCurrency/tempPrice;
+			wrongLabel.hidden = YES;
+			OKButton.enabled = YES;
+		}
+	}
+	
+	nameLabel.text = foods.foodName;
+	
+	describeLabel.numberOfLines = 3;
+	describeLabel.text = describeString;
+	countLabel.text = @"选择了0个商品";
+	
+	if (mixCount > 500) {
+		mixCount = 500;
+	}
+}
+
+- (void) buyGoods{
+	
 }
 
 @end
