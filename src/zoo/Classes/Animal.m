@@ -357,7 +357,7 @@
 			isReach = YES;
 		}
 		
-		return isReach;
+		return YES;//isReach;
 	}
 	else
 	{

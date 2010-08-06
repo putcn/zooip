@@ -213,9 +213,9 @@
 -(void) dealloc
 {
 	// Add by Hunk on 2010-06-29
-	[toolTip release];
-	[animalId release];	
-	[self removeAllChildrenWithCleanup:YES];
+//	[toolTip release];
+//	[animalId release];	
+//	[self removeAllChildrenWithCleanup:YES];
 
 	[super dealloc];
 }
