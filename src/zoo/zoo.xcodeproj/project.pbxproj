@@ -488,6 +488,7 @@
 		50F414F01069373D002A0D5E /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EC1069373D002A0D5E /* Default.png */; };
 		50F414F11069373D002A0D5E /* fps_images.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414ED1069373D002A0D5E /* fps_images.png */; };
 		50F414F21069373D002A0D5E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 50F414EE1069373D002A0D5E /* Icon.png */; };
+		600E24F4120BA3360096B716 /* MarryAndMatePopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 600E24F3120BA3360096B716 /* MarryAndMatePopView.m */; };
 		6069590611E309F6007AE16E /* babyDuck.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958EA11E309F6007AE16E /* babyDuck.png */; };
 		6069590711E309F6007AE16E /* babyHen.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958EB11E309F6007AE16E /* babyHen.png */; };
 		6069590811E309F6007AE16E /* babyMagpie.png in Resources */ = {isa = PBXBuildFile; fileRef = 606958EC11E309F6007AE16E /* babyMagpie.png */; };
@@ -1697,6 +1698,8 @@
 		50F414ED1069373D002A0D5E /* fps_images.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fps_images.png; sourceTree = "<group>"; };
 		50F414EE1069373D002A0D5E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		50F414EF1069373D002A0D5E /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		600E24F2120BA3360096B716 /* MarryAndMatePopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarryAndMatePopView.h; sourceTree = "<group>"; };
+		600E24F3120BA3360096B716 /* MarryAndMatePopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarryAndMatePopView.m; sourceTree = "<group>"; };
 		606958EA11E309F6007AE16E /* babyDuck.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babyDuck.png; path = AnimalPost/babyDuck.png; sourceTree = "<group>"; };
 		606958EB11E309F6007AE16E /* babyHen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babyHen.png; path = AnimalPost/babyHen.png; sourceTree = "<group>"; };
 		606958EC11E309F6007AE16E /* babyMagpie.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = babyMagpie.png; path = AnimalPost/babyMagpie.png; sourceTree = "<group>"; };
@@ -2242,6 +2245,8 @@
 				24A38D4912090945006334B1 /* ShopPopView.m */,
 				60E55B33120A5C4500EC046F /* AddAnimalsPopView.h */,
 				60E55B34120A5C4500EC046F /* AddAnimalsPopView.m */,
+				600E24F2120BA3360096B716 /* MarryAndMatePopView.h */,
+				600E24F3120BA3360096B716 /* MarryAndMatePopView.m */,
 			);
 			path = PopViewManager;
 			sourceTree = "<group>";
@@ -5086,6 +5091,7 @@
 				24A38D4B12090945006334B1 /* SecPopViewController.m in Sources */,
 				24A38D4D12090945006334B1 /* ShopPopView.m in Sources */,
 				60E55B35120A5C4500EC046F /* AddAnimalsPopView.m in Sources */,
+				600E24F4120BA3360096B716 /* MarryAndMatePopView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
