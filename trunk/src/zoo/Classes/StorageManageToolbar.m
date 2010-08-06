@@ -10,6 +10,7 @@
 #import "GameMainScene.h"
 #import "popViewManager.h"
 
+
 @implementation StorageManageToolbar
 
 -(id) init
@@ -47,6 +48,8 @@
 							   setSelector:@selector(btnStorageButtonHandler) setPriority:50 offsetX:-1 offsetY:2 scale:0.75];
 	button.position = ccp(100, 20);
 	[self addChild: button z:50];
+	
+	saleEggsView = [[SaleEggsView alloc]init];
 }
 
 -(void) switchPlayerZoo
@@ -61,7 +64,8 @@
 
 -(void) btnStorageButtonHandler
 {
-	
+	[saleEggsView saleEggsButtonHandler];
+	/*
 	if (storageContainer == nil) {
 		storageContainer = [[StorageContainer alloc] init];
 		storageContainer.position = ccp(240,160);
@@ -77,9 +81,9 @@
 			[storageContainer updadaPane];
 			storageContainer.position = ccp(240,160);
 			
-		}
-				
+		}			
 	}
+	 */
 }
 
 // Add by Hunk on 2010-06-29

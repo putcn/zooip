@@ -13,6 +13,7 @@
 #import "StorageContainer.h"
 
 #import "ShopPopView.h"
+#import "SaleEggsView.h"
 
 @interface StorageManageToolbar : CCSprite
 {
@@ -20,6 +21,8 @@
 	StorageContainer *storageContainer;
 	
 	ShopPopView*		shopPopView;
+	
+	SaleEggsView* saleEggsView;
 }
 
 -(void) addButton;

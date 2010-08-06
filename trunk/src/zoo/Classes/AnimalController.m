@@ -147,11 +147,16 @@ static AnimalController *_sharedAnimalController = nil;
 
 -(void) clearAnimal
 {
+	NSLog(@"%@\n", animals);
+	
 	for (NSString *clearAnimal in [animals allKeys] )
 	{
+		
+		NSLog(@"%@\n", clearAnimal);
+		
 		Animal *animal = [animals objectForKey:clearAnimal];
 		[animal removeAnimalView];
-		[animal release];
+	//	[animal release];
 		[animals removeObjectForKey:clearAnimal];
 	}
 	[[ImageResources sharedImageResources] restore];
