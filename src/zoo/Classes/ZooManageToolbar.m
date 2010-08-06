@@ -503,16 +503,19 @@
 }
 
 -(void) btnPlayerOperationAddAnimalsButtonHandler:(Button *)button
-{	
-	if(animalManagerContainer == nil)
-	{
-		animalManagerContainer = [[AnimalStorageManagerContainer alloc] init];
-		[self addChild:animalManagerContainer];
-	}
-	else {
-		[animalManagerContainer updateStorage];
-		animalManagerContainer.position = ccp(240,160);
-	}
+{
+	
+	addAnimals = [[AddAnimalsPopView alloc] init];
+	[addAnimals btnShopButtonHandler];
+//	if(animalManagerContainer == nil)
+//	{
+//		animalManagerContainer = [[AnimalStorageManagerContainer alloc] init];
+//		[self addChild:animalManagerContainer];
+//	}
+//	else {
+//		[animalManagerContainer updateStorage];
+//		animalManagerContainer.position = ccp(240,160);
+//	}
 }
 
 -(void)storageCancle
@@ -558,18 +561,23 @@
 
 -(void)btnManagementButtonHandler:(Button *)button
 {
-	if(!secondTouchAniManagement)
-	{
-		aniManagementBtnCtrl = [[AnimalMangementButtonContainer alloc] init];
-		//aniManagementBtnCtrl .position = ccp(160,40);
-		[self addChild:aniManagementBtnCtrl];
-
-	}
-	else {
-		[self removeChild:aniManagementBtnCtrl cleanup:YES];
-	}
-
-	secondTouchAniManagement = !secondTouchAniManagement;
+	//Scroll View 新的管理弹出方式
+	marryMatePopView = [[MarryAndMatePopView alloc] init];
+	[marryMatePopView btnShopButtonHandler];
+	
+//以下是旧的动物管理弹出方式
+//	if(!secondTouchAniManagement)
+//	{
+//		aniManagementBtnCtrl = [[AnimalMangementButtonContainer alloc] init];
+//		//aniManagementBtnCtrl .position = ccp(160,40);
+//		[self addChild:aniManagementBtnCtrl];
+//
+//	}
+//	else {
+//		[self removeChild:aniManagementBtnCtrl cleanup:YES];
+//	}
+//
+//	secondTouchAniManagement = !secondTouchAniManagement;
 }
 
 

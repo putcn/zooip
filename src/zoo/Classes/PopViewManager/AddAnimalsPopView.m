@@ -46,15 +46,17 @@
 	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
 	if (currentTagFlag == @"动物") {
-		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
 	}
 	else if(currentTagFlag == @"拍来动物"){
-		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
 	}
 	//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 	tabFlag = ANIMAL_WAREHOUSE_POPVIEW;
 	[myPopView addView2Window];
 }
+
+
 
 
 //点击不同的动物，放入到动物园
@@ -95,6 +97,34 @@
 -(void)updateFarmInfoResultCallback:(NSObject*)value
 {
 	[[GameMainScene sharedGameMainScene] updateUserInfo];
+}
+
+-(void)resultCallbackGetAllAnimals:(NSObject *)value
+{
+	[self generatePage];
+	if (currentTagFlag == @"动物") {
+		
+		
+	}
+	else {
+		
+	}
+	
+//	NSDictionary *itemDic;
+//	NSArray *itemArray;
+//	switch (tabFlag) {
+//		case SHOP_POPVIEW:{
+//			
+//			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+//			itemArray = [itemDic allKeys];
+//		}
+//			break;
+//		default:
+//			break;
+//	}
+//	
+//	[self generatePage];
+
 }
 
 //点击一个动物放入农场之后的回调函数
@@ -214,10 +244,11 @@
 					DataModelOriginalAnimal *serverAnimalToshow = (DataModelOriginalAnimal *)[[DataEnvironment sharedDataEnvironment].originalAnimals objectForKey:stoAnimals.originalAnimalId];			
 					
 					if ([serverAnimalToshow.originalAnimalId intValue] > 50) {
-						
+						gender = @"公";
 						//male
 					}
 					else {
+						gender = @"母";
 						//female
 					}
 					
@@ -265,87 +296,6 @@
 	}
 }
 
-
-//生成商品页面
-//- (void) generatePage
-//{
-//	switch (tabFlag) {
-//		case SHOP_POPVIEW:{
-//			
-//			
-//			NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
-//			
-//			DataModelOriginalAnimal *originAnimal; //levelRequired
-//			NSArray *animalArrayTemp1 = [originAnimalDic allKeys];
-//			NSMutableArray* animalArrayTemp = [[NSMutableArray alloc] init];
-//			[animalArrayTemp addObjectsFromArray:animalArrayTemp1];
-//			
-//			NSMutableArray* arrOfLevel = [[NSMutableArray alloc]init];
-//			
-//			for(int i = 0; i < [animalArrayTemp count]; i++)
-//			{
-//				originAnimal = [originAnimalDic objectForKey:[animalArrayTemp objectAtIndex:i]];
-//				
-//				[arrOfLevel addObject:[NSNumber numberWithInt:originAnimal.levelRequired]];
-//			}
-//			
-//			// 冒泡排序
-//			int nTemp;
-//			NSString* strTemp;
-//			for(int j = 0; j <= [arrOfLevel count] - 1 ; j++)
-//			{
-//				for(int i = 0; i < [arrOfLevel count] - 1- j; i++)
-//				{
-//					if([[arrOfLevel objectAtIndex:i] intValue] >= [[arrOfLevel objectAtIndex:i+1] intValue])
-//					{
-//						nTemp = [[arrOfLevel objectAtIndex:i] intValue];
-//						strTemp = [animalArrayTemp objectAtIndex:i];
-//						
-//						int nRight = [[arrOfLevel objectAtIndex:i+1] intValue];
-//						NSString* strRight = [animalArrayTemp objectAtIndex:i + 1];
-//						
-//						[arrOfLevel replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:nRight]];
-//						[animalArrayTemp replaceObjectAtIndex:i withObject:strRight];
-//						
-//						[arrOfLevel replaceObjectAtIndex:i+1 withObject:[NSNumber numberWithInt:nTemp]];
-//						[animalArrayTemp replaceObjectAtIndex:i + 1 withObject:strTemp];
-//						
-//					}
-//				}
-//			}
-//			
-//			
-//			NSArray* animalArray = [NSArray arrayWithArray:animalArrayTemp];
-//			NSMutableArray* picFileNameArray = [[NSMutableArray alloc] init];
-//			
-//			for (int i = 0; i < [animalArray count]; i ++) 
-//			{
-//				originAnimal = [originAnimalDic objectForKey:[animalArray objectAtIndex:i]];
-//				
-//				int buyType = 0;
-//				NSString *price = [NSString stringWithFormat:@"%d",originAnimal.basePrice];
-//				if (originAnimal.antsPrice > 0) {
-//					buyType = 1;
-//					price = [NSString stringWithFormat:@"%d",originAnimal.antsPrice];
-//				}
-//				
-//				//根据动物的originalAnimalId生成ItemButton
-//				NSString *picFileName = [NSString stringWithFormat:@"%@.png",originAnimal.picturePrefix];				
-//				
-//				[picFileNameArray addObject:picFileName];
-//			}
-//			[myPopView initWithItem:picFileNameArray];
-//			
-//			//			[picFileNameArray release];
-//			//			picFileNameArray = nil;
-//		}		
-//			
-//			break;
-//		default:
-//			break;
-//	}
-//	
-//}
 
 - (void) dealloc{
 	

@@ -13,8 +13,9 @@
 #import "AnimalStorageManagerContainer.h"
 #import "AnimalExpansionPanel.h"
 #import "AnimalFeedButtonContainer.h"
-
+#import "AddAnimalsPopView.h"
 #import "ExpandView.h"
+#import "MarryAndMatePopView.h"
 
 @interface ZooManageToolbar : CCSprite<CCTargetedTouchDelegate>
 {
@@ -36,6 +37,9 @@
 	BOOL secondTouchFarmStorage;
 	BOOL secondTouchFeedButton;
 	
+	
+	MarryAndMatePopView *marryMatePopView; //婚姻管理
+	AddAnimalsPopView *addAnimals; //添加动物
 	
 	ExpandView* m_ExpandView;
 //	UIAlertView* myAlert;
