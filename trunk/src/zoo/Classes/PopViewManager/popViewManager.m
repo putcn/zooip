@@ -13,14 +13,13 @@
 @interface popViewManager (SubviewFrames)
 - (void) addTitleButtons:(NSArray *)arrayPic;
 - (void) selectButtonAtIndex:(NSUInteger)index;
-- (void) topBtnSelected:(id)sender;
 - (void) backBtnSelected:(id)sender;
 @end
 
 @implementation popViewManager
 
-//@synthesize delegate;
-@synthesize m_npopViewType, m_nlistCount;
+@synthesize m_ppopView;
+@synthesize m_npopViewType, m_nlistCount, tabFlag;
 @synthesize buyTypeArray, priceArray, sexArray;
 
 - (id)init{
@@ -107,6 +106,7 @@
 	
 	
 	m_nprevButtonIndex = -1;
+	[picFileNameArray removeAllObjects];
 	[picFileNameArray addObjectsFromArray:arrayPic];
 	
 	m_ppopView.userInteractionEnabled = YES;
@@ -255,10 +255,10 @@
 		[self selectButtonAtIndex:index];
 	}
 
-	[secPopView setM_npopViewType:m_npopViewType];
+	[secPopView setM_npopViewType:tabFlag];
 	
-	switch (m_npopViewType) {
-		case SHOP_POPVIEW:{
+	switch (tabFlag) {
+		case BUY_ANIMAL:{
 		
 			NSString* fileName = [picFileNameArray objectAtIndex:index];
 			[secPopView setItemId:index];
@@ -266,29 +266,24 @@
 			[secPopView setShowImageName:fileName];
 		}
 			break;
+			
+		case BUY_FOODS:{
+			
+			NSString* fileName = [picFileNameArray objectAtIndex:index];
+			[secPopView setItemId:index];
+			[self.view addSubview:secPopView.view];
+			[secPopView setShowImageName:fileName];
+		}
+			break;
+			
+		case BUY_GOODS:{
+			
+		}
+			break;
+			
 		default:
 			break;
 	}
-}
-
-
-- (void)initWithBtn:(NSArray *)arrayBtn{
-	
-	for (int i = 0; i < [arrayBtn count]; i++) {
-		
-		//show position
-		UIButton* topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
- 		[topBtn setImage:[UIImage imageNamed: @"婚姻管理.png"] forState:UIControlStateNormal];
-		CGRect btnFrame = [[arrayBtn objectAtIndex:i] CGRectValue];
-		topBtn.frame = btnFrame;
-		[topBtn addTarget:self action:@selector(topBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
-		topBtn.tag = i;
-		[self.view addSubview:topBtn];
-	}
-}
-
-- (void) topBtnSelected:(id)sender{
-	
 }
 
 - (void) backBtnSelected:(id)sender{

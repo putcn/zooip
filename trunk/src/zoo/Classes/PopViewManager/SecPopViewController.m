@@ -1,5 +1,5 @@
 //
-//  SecPopViewController.m
+//  GController.m
 //  zoo
 //
 //  Created by shen lancy on 10-8-2.
@@ -38,6 +38,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	farmerId = [[NSString alloc] init];
+	buyAniId = [[NSString alloc] init];
 }
 
 
@@ -69,6 +71,8 @@
 	labelString = nil;
 	[farmerId release];
 	farmerId = nil;
+	[buyAniId release];
+	buyAniId = nil;
 	
 	[showImage release];
 	showImage = nil;
@@ -84,6 +88,10 @@
 	buySlider =nil;
 	[countLabel release];
 	countLabel = nil;
+	[wrongLabel release];
+	wrongLabel = nil;
+	[OKButton release];
+	OKButton = nil;
 	
     [super dealloc];
 }
@@ -92,9 +100,10 @@
 - (IBAction)sliderAction:(id)sender
 {
 	UISlider* durationSlider = sender;
-//	self.imageView.animationDuration = [durationSlider value];
-//	if (!self.imageView.isAnimating)
-//		[self.imageView startAnimating];
+	NSString* showStr = @"选择了";
+	tempCount  = mixCount * [durationSlider value];
+	showStr = [showStr stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@"个动物"]];
+	countLabel.text = showStr;
 }
 
 - (IBAction) OKSelected:(id)sender{
@@ -107,7 +116,7 @@
 				
 				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
 										farmerId,									@"farmerId",
-										[NSString stringWithFormat:@"%d",buyAniId], @"originalAnimalId",
+										buyAniId,									@"originalAnimalId",
 										[NSString stringWithFormat:@"%d",tempCount],@"amount",
 										nil];
 				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
@@ -117,9 +126,10 @@
 				
 				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
 										farmerId,									@"farmerId",
-										[NSString stringWithFormat:@"%d",buyAniId], @"originalAnimalId",
+										buyAniId,									@"originalAnimalId",
 										[NSString stringWithFormat:@"%d",tempCount],@"amount",
 										nil];
+				NSLog(@"%@",params);
 				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyAnimalByGoldenEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];		
 			}
 		}
@@ -148,10 +158,11 @@
 	
 	[showImage setImage:[UIImage imageNamed:fileName]];
 	
-	[DataEnvironment sharedDataEnvironment].playerFarmerInfo.antsCurrency;
+	myAntsCurrency = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.antsCurrency;
+	myGoldenEgg = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.goldenEgg;
 	
 	//get data
-	farmerId = [[NSString alloc] initWithString: [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId];
+	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 	NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 	DataModelOriginalAnimal *originAnimal; 
 	NSArray *animalArrayTemp = [originAnimalDic allKeys];
@@ -162,6 +173,7 @@
 	tempPrice = originAnimal.antsPrice;
 	
 	NSString* describeString = @"   性别：";
+	mixCount = 0;
 	int income = 0;
 	
 	//show
@@ -173,13 +185,34 @@
 		describeString = [describeString stringByAppendingString:priceLabel.text];
 		describeString = [describeString stringByAppendingString:@"个金蛋"];
 		describeString = [describeString stringByAppendingString:@"\n总收益："];
-	}else {
+		
+		if (basePrice > myGoldenEgg) {
+			wrongLabel.hidden = NO;
+			OKButton.enabled = NO;
+		}
+		else {
+			mixCount = myGoldenEgg/basePrice;
+			wrongLabel.hidden = YES;
+			OKButton.enabled = YES;
+		}
+
+	}
+	else {
 		[iconImage setImage:[UIImage imageNamed:@"金蚂蚁.png"]];
 		priceLabel.text = [NSString stringWithFormat:@"%d", tempPrice];
 		describeString = [describeString stringByAppendingString:@"公\n   价格："];
 		describeString = [describeString stringByAppendingString:priceLabel.text];
 		describeString = [describeString stringByAppendingString:@"个蚂蚁币"];
 		describeString = [describeString stringByAppendingString:@"\n总收益："];
+		if (tempPrice > myAntsCurrency) {
+			wrongLabel.hidden = NO;
+			OKButton.enabled = NO;
+		}
+		else {
+			mixCount = myAntsCurrency/tempPrice;
+			wrongLabel.hidden = YES;
+			OKButton.enabled = YES;
+		}
 	}
 	
 	nameLabel.text = originAnimal.scientificNameCN;
@@ -188,6 +221,7 @@
 	describeString = [describeString stringByAppendingString:@"个金蛋"];
 	describeLabel.numberOfLines = 3;
 	describeLabel.text = describeString;
+	countLabel.text = @"选择了0个动物";
 	
 }
 

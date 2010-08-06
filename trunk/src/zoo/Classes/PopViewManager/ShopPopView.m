@@ -25,10 +25,21 @@
 		[myPopView setM_nlistCount:2];
 		[myPopView setM_npopViewType:SHOP_POPVIEW];
 		
-		CGRect rect = CGRectMake(0, 20, 75.f, 75.f);
-		NSMutableArray *foo = [[NSMutableArray alloc] init];
-		[foo addObject:[NSValue valueWithCGRect:rect]];
-		[myPopView initWithBtn:foo];
+		CGRect rect1 = CGRectMake(160, 75, 65.f, 28.f);
+		CGRect rect2 = CGRectMake(225, 75, 65.f, 28.f);
+		CGRect rect3 = CGRectMake(290, 75, 65.f, 28.f);
+		
+		NSMutableArray* foo = [[NSMutableArray alloc] init];
+		[foo addObject:[NSValue valueWithCGRect:rect1]];
+		[foo addObject:[NSValue valueWithCGRect:rect2]];
+		[foo addObject:[NSValue valueWithCGRect:rect3]];
+
+		NSArray* title = [NSArray arrayWithObjects: 
+						  @"动物",
+						  @"饲料",
+						  @"道具",
+						  nil];
+		[self initWithBtn:foo Title:title];
 		[foo release];
 		foo = nil;
 	}
@@ -39,7 +50,7 @@
 - (void) btnShopButtonHandler{
 	
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-	tabFlag = SHOP_POPVIEW;
+	tabFlag = 0;
 	[myPopView addView2Window];
 }
 
@@ -47,9 +58,8 @@
 - (void) generatePage
 {
 	switch (tabFlag) {
-		case SHOP_POPVIEW:{
-			
-			
+		case 0:{
+	
 			NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 			
 			DataModelOriginalAnimal *originAnimal; //levelRequired
@@ -67,7 +77,7 @@
 			}
 			
 			// 冒泡排序
-			int nTemp;
+/*			int nTemp;
 			NSString* strTemp;
 			for(int j = 0; j <= [arrOfLevel count] - 1 ; j++)
 			{
@@ -90,7 +100,7 @@
 					}
 				}
 			}
-			
+*/			
 			
 			NSArray* animalArray = [NSArray arrayWithArray:animalArrayTemp];
 			NSMutableArray* picFileNameArray = [[NSMutableArray alloc] init];
@@ -126,12 +136,95 @@
 			[priceArray release];
 			priceArray = nil;
 		}		
-			
 			break;
+			
+		case 1:{
+			
+			NSDictionary *foodDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].foods;
+			DataModelFood *dataModelFood;
+			NSArray *foodArray = [foodDic allKeys];
+			
+			NSMutableArray* picFileNameArray = [[NSMutableArray alloc] init];
+			NSMutableArray* buyTypeArray = [[NSMutableArray alloc] init];
+			NSMutableArray* priceArray = [[NSMutableArray alloc] init];
+			
+			for (int i = 0; i < [foodArray count]; i ++) {
+				dataModelFood = [foodDic objectForKey:[foodArray objectAtIndex:i]];
+				
+				int buyType = 0;
+				NSString *price = [NSString stringWithFormat:@"%d",dataModelFood.foodPrice];
+				if (dataModelFood.antsRequired > 0) {
+					buyType = 1;
+					price = [NSString stringWithFormat:@"%d",dataModelFood.antsRequired];
+				}
+				NSString *picFileName = [NSString stringWithFormat:@"food_%@.png",dataModelFood.foodImg];
+				
+				[picFileNameArray addObject:picFileName];
+				[buyTypeArray addObject:[NSNumber numberWithInt:buyType]];
+				[priceArray addObject:price];
+			}
+			
+			[myPopView setBuyTypeArray:buyTypeArray];
+			[myPopView setPriceArray:priceArray];
+			[myPopView initWithItem:picFileNameArray];
+			
+			[picFileNameArray release];
+			picFileNameArray = nil;
+			[buyTypeArray release];
+			buyTypeArray = nil;
+			[priceArray release];
+			priceArray = nil;
+		}
+			break;
+			
+		case 2:{
+			
+			NSDictionary *goodsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].goods;
+			DataModelGood *dataModelGood;
+			NSArray *goodsArray = [goodsDic allKeys];
+			
+			NSMutableArray* picFileNameArray = [[NSMutableArray alloc] init];
+			NSMutableArray* buyTypeArray = [[NSMutableArray alloc] init];
+			NSMutableArray* priceArray = [[NSMutableArray alloc] init];
+			
+			for (int i = 0; i < [goodsArray count]; i ++) {
+				dataModelGood = [goodsDic objectForKey:[goodsArray objectAtIndex:i]];
+				int buyType = 0;
+				NSString *price = [NSString stringWithFormat:@"%d",dataModelGood.goodsGoldenPrice];
+				if (dataModelGood.goodsAntsPrice > 0) {
+					buyType = 1;
+					price = [NSString stringWithFormat:@"%d",dataModelGood.goodsAntsPrice];
+				}
+				NSString *picFileName;
+				if ([dataModelGood.goodsPicture intValue]== 1) {
+					picFileName = @"tibentanmastiff_rest_01.png";
+				}
+				else if([dataModelGood.goodsPicture intValue]== 2)
+				{	
+					picFileName = @"chinemy_walk_left_01.png";
+				}
+				
+				[picFileNameArray addObject:picFileName];
+				[buyTypeArray addObject:[NSNumber numberWithInt:buyType]];
+				[priceArray addObject:price];
+			}
+			[myPopView setBuyTypeArray:buyTypeArray];
+			[myPopView setPriceArray:priceArray];
+			[myPopView initWithItem:picFileNameArray];
+			
+			[picFileNameArray release];
+			picFileNameArray = nil;
+			[buyTypeArray release];
+			buyTypeArray = nil;
+			[priceArray release];
+			priceArray = nil;		
+		}
+			break;
+			
 		default:
 			break;
 	}
-	
+	[myPopView setTabFlag:tabFlag];
 }
 
 
@@ -140,12 +233,27 @@
 	NSDictionary *itemDic;
 	NSArray *itemArray;
 	switch (tabFlag) {
-		case SHOP_POPVIEW:{
+		case 0:{
 			
 			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 			itemArray = [itemDic allKeys];
 		}
 			break;
+			
+		case 1:{
+			
+			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].foods;
+			itemArray = [itemDic allKeys];
+		}
+			break;
+			
+		case 2:{
+			
+			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].goods;
+			itemArray = [itemDic allKeys];
+		}
+			break;
+			
 		default:
 			break;
 	}
@@ -156,6 +264,51 @@
 - (void) faultCallback:(NSObject *)value
 {
 	NSLog(@"Server Connection Fail");
+}
+
+
+- (void)initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle{
+	
+	for (int i = 0; i < [arrayBtn count]; i++) {
+		
+		//show position
+		UIButton* topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+ 		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
+		[topBtn setTitle:[arrayTitle objectAtIndex:i] forState:UIControlStateNormal];
+		[topBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+		CGRect btnFrame = [[arrayBtn objectAtIndex:i] CGRectValue];
+		topBtn.frame = btnFrame;
+		[topBtn addTarget:self action:@selector(topBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
+		topBtn.tag = i;
+		[myPopView.view addSubview:topBtn];
+	}
+}
+
+- (void) topBtnSelected:(id)sender{
+	
+	UIButton *selectedBtn = (UIButton *)sender;
+	tabFlag = selectedBtn.tag;
+	
+	for (UIView *subview in [myPopView m_ppopView].subviews) {
+		[subview removeFromSuperview];
+	}
+	
+	switch (tabFlag) {
+		case 0:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			break;
+			
+		case 1:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllFoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			break;
+			
+		case 2:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllGoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			break;
+			
+		default:
+			break;
+	}
 }
 
 - (void) dealloc{

@@ -34,8 +34,11 @@
 	NSMutableArray*		sexArray;
 }
 
+@property(nonatomic, retain) UIScrollView* m_ppopView;
+
 @property(nonatomic, readwrite)int m_npopViewType;
 @property(nonatomic, readwrite)int m_nlistCount;
+@property(nonatomic, readwrite)int tabFlag;
 @property(nonatomic, retain)NSMutableArray* buyTypeArray;
 @property(nonatomic, retain)NSMutableArray* priceArray;
 @property(nonatomic, retain)NSMutableArray* sexArray;
@@ -48,7 +51,7 @@
 - (void) setSubSize:(CGSize)size;
 
 //add data
-- (void) initWithBtn:(NSArray*)arrayBtn;
+//- (void) initWithBtn:(NSArray*)arrayBtn Title:(NSArray*)arrayTitle;
 - (void) initWithItem:(NSArray*)arrayPic;
 
 
