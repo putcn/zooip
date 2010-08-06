@@ -18,5 +18,7 @@ enum popViewType{
 enum secPopView{
 	
 	BUY_ANIMAL = 0,
+	BUY_FOODS,
+	BUY_GOODS,
 	SALE_ANIMAL
 };

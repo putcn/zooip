@@ -14,12 +14,15 @@
 	int					m_npopViewType;
 	int					m_ntabFlag;
 	
-	int					buyAniId;
+	NSString*			buyAniId;
 	int					itemId;
 	int					tempPrice;
 	int					tempCount;
 	int					curr_itemType;
 	int					mixCount;
+	
+	int					myAntsCurrency;
+	int					myGoldenEgg;
 	
 	NSString*			labelString;
 	NSString*			farmerId;
@@ -32,6 +35,7 @@
 	IBOutlet UISlider*		buySlider;
 	IBOutlet UILabel*		countLabel;
 	IBOutlet UILabel*		wrongLabel;
+	IBOutlet UIButton*		OKButton;
 }
 
 @property(nonatomic, readwrite) int m_npopViewType;
