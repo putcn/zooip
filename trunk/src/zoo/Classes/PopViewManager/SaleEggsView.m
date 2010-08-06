@@ -23,10 +23,19 @@
 		[myPopView setM_nlistCount:1];
 		[myPopView setM_npopViewType:SHOP_POPVIEW];
 		
-		CGRect rect = CGRectMake(0, 20, 75.f, 75.f);
-		NSMutableArray *foo = [[NSMutableArray alloc] init];
-		[foo addObject:[NSValue valueWithCGRect:rect]];
-		[myPopView initWithBtn:foo];
+		CGRect rect1 = CGRectMake(150, 75, 65.f, 28.f);
+		CGRect rect2 = CGRectMake(215, 75, 65.f, 28.f);
+		
+		NSMutableArray* foo = [[NSMutableArray alloc] init];
+		[foo addObject:[NSValue valueWithCGRect:rect1]];
+		[foo addObject:[NSValue valueWithCGRect:rect2]];
+		
+		NSArray* title = [NSArray arrayWithObjects: 
+						  @"普通蛋",
+						  @"受精蛋",
+						  nil];
+		[self initWithBtn:foo Title:title];
+		
 		[foo release];
 		foo = nil;
 		
@@ -53,7 +62,7 @@
 	
 	
 //	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-	tabFlag = SHOP_POPVIEW;
+	m_nViewTabFlag = SHOP_POPVIEW;
 	[myPopView addView2Window];
 }
 
@@ -84,11 +93,56 @@
 	NSLog(@"Server Connection Fail");
 }
 
+- (void)initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle
+{
+	for (int i = 0; i < [arrayBtn count]; i++) 
+	{
+		//show position
+		UIButton* topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+ 		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
+		[topBtn setTitle:[arrayTitle objectAtIndex:i] forState:UIControlStateNormal];
+		[topBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+		CGRect btnFrame = [[arrayBtn objectAtIndex:i] CGRectValue];
+		topBtn.frame = btnFrame;
+		[topBtn addTarget:self action:@selector(topBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
+		topBtn.tag = i;
+		[myPopView.view addSubview:topBtn];
+	}
+}
+
+- (void) topBtnSelected:(id)sender
+{
+	UIButton *selectedBtn = (UIButton *)sender;
+	tabFlag = selectedBtn.tag;
+	
+	for (UIView *subview in [myPopView m_ppopView].subviews) 
+	{
+		[subview removeFromSuperview];
+	}
+	
+	NSString *par = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:par,@"farmerId",nil];	
+	
+	switch (tabFlag) 
+	{
+		case 0:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageProducts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			break;
+		case 1:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			break;
+		default:
+			break;
+	}
+}
+
 
 //m_nEggsType
 
 -(void)dealloc
 {
+	[myPopView release];
+	
 	[super dealloc];
 }
 

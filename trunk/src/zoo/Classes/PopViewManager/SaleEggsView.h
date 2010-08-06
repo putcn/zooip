@@ -21,6 +21,8 @@
 	NSString* m_strZygoteEggs;
 	
 	NSArray* eggEnNameArray;
+	
+	int m_nViewTabFlag;
 }
 
 - (id) init;
@@ -30,5 +32,7 @@
 - (void) resultCallback:(NSObject *)value;
 
 - (void) faultCallback:(NSObject *)value;
+
+- (void)initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle;
 
 @end
