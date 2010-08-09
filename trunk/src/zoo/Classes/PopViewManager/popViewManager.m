@@ -258,8 +258,8 @@
 	[secPopView setM_npopViewType:SHOP_POPVIEW];
 	[secPopView setM_ntabFlag:tabFlag];
 	
-	switch (tabFlag) {
-		case BUY_ANIMAL:{
+	switch (m_npopViewType) {
+		case SHOP_POPVIEW:{
 		
 			NSString* fileName = [picFileNameArray objectAtIndex:index];
 			[secPopView setItemId:index];
@@ -268,7 +268,7 @@
 		}
 			break;
 			
-		case BUY_FOODS:{
+		case EGG_WAREHOUSE_POPVIEW:{
 			
 			NSString* fileName = [picFileNameArray objectAtIndex:index];
 			[secPopView setItemId:index];
@@ -277,7 +277,13 @@
 		}
 			break;
 			
-		case BUY_GOODS:{
+		case ANIMAL_WAREHOUSE_POPVIEW:{
+			
+			
+		}
+			break;
+			
+		case ANIMAL_MATEORMARRY_POPVIEW:{
 			
 		}
 			break;
@@ -285,6 +291,7 @@
 		default:
 			break;
 	}
+
 }
 
 - (void) backBtnSelected:(id)sender{
