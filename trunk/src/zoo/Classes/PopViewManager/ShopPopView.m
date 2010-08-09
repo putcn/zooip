@@ -196,10 +196,10 @@
 					price = [NSString stringWithFormat:@"%d",dataModelGood.goodsAntsPrice];
 				}
 				NSString *picFileName;
-				if ([dataModelGood.goodsPicture intValue]== 1) {
+				if ([dataModelGood.goodsPicture intValue]== 2) {
 					picFileName = @"tibentanmastiff_rest_01.png";
 				}
-				else if([dataModelGood.goodsPicture intValue]== 2)
+				else if([dataModelGood.goodsPicture intValue]== 1)
 				{	
 					picFileName = @"chinemy_walk_left_01.png";
 				}

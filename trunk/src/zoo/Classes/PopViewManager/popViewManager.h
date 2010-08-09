@@ -32,6 +32,7 @@
 	NSMutableArray*		buyTypeArray;
 	NSMutableArray*		priceArray;
 	NSMutableArray*		sexArray;
+	NSMutableArray*		storageEggArray;
 }
 
 @property(nonatomic, retain) UIScrollView* m_ppopView;
@@ -42,6 +43,7 @@
 @property(nonatomic, retain)NSMutableArray* buyTypeArray;
 @property(nonatomic, retain)NSMutableArray* priceArray;
 @property(nonatomic, retain)NSMutableArray* sexArray;
+@property(nonatomic, retain)NSMutableArray* storageEggArray;
 
 - (id) init;
 
