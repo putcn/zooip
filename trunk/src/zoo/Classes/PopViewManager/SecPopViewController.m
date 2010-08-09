@@ -17,10 +17,15 @@
 #import "DataModelOriginalAnimal.h"
 #import "DataModelAnimal.h"
 
+#import "SaleEggsView.h"
+
 @interface SecPopViewController(OtherFunctions)
 - (void) buyAnimals;
 - (void) buyFoods;
 - (void) buyGoods;
+
+-(void)saleCommonEggs;
+-(void)saleZogyteEggs;
 @end 
 
 
@@ -164,10 +169,10 @@
 			}
 		}
 			
-		case SALE_ANIMAL:{
-			
-		}
-				break;
+//		case SALE_EGGS:{
+//			
+//		}
+//				break;
 
 		default:
 			break;
@@ -199,7 +204,18 @@
 		case BUY_GOODS:
 			[self buyGoods];
 			break;
-			
+		// Add By Hunk
+		case SALE_COMMONEGGS:
+		{
+			[self saleCommonEggs];
+		}
+			break;
+		case SALE_ZYGOTEEGGS:
+		{
+			[self saleZogyteEggs];
+		}
+			break;
+
 		default:
 			break;
 	}
@@ -247,10 +263,11 @@
 		}
 			break;
 			
-		case SALE_ANIMAL:{
-				
-		}
-				break;
+//		case SALE_EGGS:
+//		{
+//				
+//		}
+//				break;
 			
 		default:
 			break;
@@ -420,6 +437,56 @@
 
 - (void) buyGoods{
 	
+}
+
+#pragma mark -
+#pragma mark saleCommonEggs
+-(void)saleCommonEggs
+{
+	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *storageEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
+	DataModelStorageEgg *storageEgg; 
+	NSArray *storageEggArrayTemp = [storageEggDic allKeys];
+	storageEgg = [storageEggDic objectForKey:[storageEggArrayTemp objectAtIndex:itemId]];
+	
+	nameLabel.text = storageEgg.eggName;
+	priceLabel.text = [NSString stringWithFormat:@"%d", storageEgg.eggPrice];
+	
+	NSString* describeStr;
+	describeStr = @"单个售价:";
+	describeStr = [describeStr stringByAppendingString:[NSString stringWithFormat:@"%d金蛋\n", storageEgg.eggPrice]];
+	describeStr = [describeStr stringByAppendingString:[NSString stringWithFormat:@"总计收入:%d金蛋", storageEgg.numOfProduct*storageEgg.eggPrice]];
+	describeLabel.numberOfLines = 2;
+	describeLabel.text = describeStr;
+	
+	countLabel.text = [NSString stringWithFormat:@"%d", storageEgg.numOfProduct];
+}
+-(void)saleZogyteEggs
+{
+	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *storageZygoteEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs;
+	DataModelStorageZygoteEgg *storageZygoteEgg; 
+	NSArray *storageZygoteEggArrayTemp = [storageZygoteEggDic allKeys];
+	storageZygoteEgg = [storageZygoteEggDic objectForKey:[storageZygoteEggArrayTemp objectAtIndex:itemId]];
+	
+	nameLabel.text = storageZygoteEgg.eggName;
+	priceLabel.text = [NSString stringWithFormat:@"%d", storageZygoteEgg.eggPrice];
+	
+	NSString* describeStr;
+	describeStr = @"受精蛋售价:";
+	describeStr = [describeStr stringByAppendingString:[NSString stringWithFormat:@"%d金蛋\n", storageZygoteEgg.eggPrice]];
+	describeStr = [describeStr stringByAppendingString:[NSString stringWithFormat:@"受精蛋预计产量:%d个\n", storageZygoteEgg.baseYield]];
+	
+	if(0 == storageZygoteEgg.zygoteGender)
+	{
+		describeStr = [describeStr stringByAppendingString:@"性别:母"];
+	}
+	else if(1 == storageZygoteEgg.zygoteGender)
+	{
+		describeStr = [describeStr stringByAppendingString:@"性别:公"];
+	}
+	describeLabel.numberOfLines = 3;
+	describeLabel.text = describeStr;
 }
 
 @end

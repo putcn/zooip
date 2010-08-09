@@ -25,6 +25,8 @@
 	int m_nViewTabFlag;
 }
 
+@property(nonatomic, assign)int tabFlag;
+
 - (id) init;
 
 - (void) saleEggsButtonHandler;

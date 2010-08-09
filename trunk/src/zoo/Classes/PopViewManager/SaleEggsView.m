@@ -9,10 +9,11 @@
 #import "SaleEggsView.h"
 #import "DataEnvironment.h"
 #import "DataModelStorageEgg.h"
+#import "DataModelStorageZygoteEgg.h"
 
 
 @implementation SaleEggsView
-
+@synthesize tabFlag;
 - (id) init
 {
 	if ( (self = [super init]) )
@@ -21,7 +22,7 @@
 		[myPopView setPopViewFrame:CGRectMake(100, 150, 280, 100)];
 		[myPopView setSubSize:CGSizeMake(40, 40)];
 		[myPopView setM_nlistCount:1];
-		[myPopView setM_npopViewType:SHOP_POPVIEW];
+		[myPopView setM_npopViewType:EGG_WAREHOUSE_POPVIEW];
 		
 		CGRect rect1 = CGRectMake(150, 75, 65.f, 28.f);
 		CGRect rect2 = CGRectMake(215, 75, 65.f, 28.f);
@@ -49,20 +50,10 @@
 {
 	NSString *par = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:par,@"farmerId",nil];
-//	if (tabFlag == @"普通蛋") 
-//	{
-		
+
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageProducts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-//	}
-//	else if(tabFlag == @"受精蛋")
-//	{
-//		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultZygCallback:" AndFailedSel:@"faultCallback:"];
-//	}
 	
-	
-	
-//	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-	m_nViewTabFlag = SHOP_POPVIEW;
+	[myPopView setTabFlag:SALE_COMMONEGGS];
 	[myPopView addView2Window];
 }
 
@@ -105,7 +96,7 @@
 		CGRect btnFrame = [[arrayBtn objectAtIndex:i] CGRectValue];
 		topBtn.frame = btnFrame;
 		[topBtn addTarget:self action:@selector(topBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
-		topBtn.tag = i;
+		topBtn.tag = 3 + i;
 		[myPopView.view addSubview:topBtn];
 	}
 }
@@ -125,19 +116,41 @@
 	
 	switch (tabFlag) 
 	{
-		case 0:
+		case 3:
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageProducts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 			break;
-		case 1:
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		case 4:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultOfZygoteEggCallback:" AndFailedSel:@"faultOfZygoteEggCallback:"];
 			break;
 		default:
 			break;
 	}
+	
+	[myPopView setTabFlag:tabFlag];
 }
 
 
-//m_nEggsType
+-(void)resultOfZygoteEggCallback:(id)sender
+{
+	NSDictionary* storageZygoteEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs;
+	
+	DataModelStorageZygoteEgg* storageZygoteEgg;
+	NSArray* eggsArray = [storageZygoteEggDic allKeys];
+	
+	NSMutableArray* arrTemp = [[NSMutableArray alloc]init];
+	for(int i = 0; i < [eggsArray count]; i++)
+	{
+		storageZygoteEgg = [storageZygoteEggDic objectForKey:[eggsArray objectAtIndex:i]];
+		
+		NSString *picName = [NSString stringWithFormat:@"%@",storageZygoteEgg.eggId];
+
+		NSString *picFileName = [NSString stringWithFormat:@"zygote%@.png",picName];
+				
+		[arrTemp addObject:picFileName];
+	}
+	
+	[myPopView initWithItem:arrTemp];
+}
 
 -(void)dealloc
 {
