@@ -240,6 +240,11 @@
 					default:
 						break;
 				}
+				
+				[sexImage setFrame:CGRectMake(rowinterval+subSize.width-10, listinterval, 10, 15)];
+				[m_ppopView addSubview:sexImage];
+				[sexImage release];
+				sexImage = nil;
 			}
 				break;
 				
