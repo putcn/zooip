@@ -9,13 +9,22 @@
 #import "popViewManager.h"
 #import "DataModelStorageEgg.h"
 #import "DataModelStorageZygoteEgg.h"
+#import "FeedbackDialog.h"
+#import "GameMainScene.h"
 
 //static popViewManager *sharedPopView = nil;
 
 @interface popViewManager (OtherFunctions)
 - (void) addTitleButtons:(NSArray *)arrayPic;
 - (void) selectButtonAtIndex:(NSUInteger)index;
+
 - (void) backBtnSelected:(id)sender;
+- (void) sellAllBtnSelected:(id)sender;
+
+- (void) resultAllEggCallback:(NSObject *)value;
+- (void) faultCallback:(NSObject *)value;
+- (void)updateFarmInfoExeCute:(NSDictionary *)value;
+- (void)updateFarmInfoResultCallback:(NSObject*)value;
 @end
 
 @implementation popViewManager
@@ -221,6 +230,14 @@
 						break;
 				}
 				
+				saleAllBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+				[saleAllBtn setBackgroundImage:[UIImage imageNamed: @"确定.png"] forState:UIControlStateNormal];
+				[saleAllBtn setTitle:@"全部售出" forState:UIControlStateNormal];
+				saleAllBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:12];
+				[saleAllBtn setFrame:CGRectMake(300, 250, 60, 30)];
+				[saleAllBtn addTarget:self action:@selector(sellAllBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
+				
+				[self.view addSubview:saleAllBtn];
 			}
 				break;
 				
@@ -379,8 +396,73 @@
 		[subview removeFromSuperview];
 	}
 	[topBtnArray removeAllObjects];
+	[saleAllBtn removeFromSuperview];
 	[self.view removeFromSuperview];
 }
 
+- (void) sellAllBtnSelected:(id)sender{
 
+	NSString *frameId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	
+	switch (tabFlag) {
+		case SALE_COMMONEGGS:{
+			
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+									frameId,	@"farmerId",
+									nil];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellAllProducts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultAllEggCallback:" AndFailedSel:@"faultCallback:"];
+		}
+			break;
+			
+		case SALE_ZYGOTEEGGS:{
+			
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+									frameId,	@"farmerId",
+									nil];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellAllZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultAllEggCallback:" AndFailedSel:@"faultCallback:"];
+		}
+			break;
+			
+		default:
+			break;
+	}
+}
+
+- (void) resultAllEggCallback:(NSObject *)value{
+	
+	NSDictionary *result = (NSDictionary *)value;
+	NSInteger code = [[result objectForKey:@"code"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"code"] intValue];
+	
+	if (code == 0) {
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有可卖的蛋!"];
+	}
+	
+	if (code == 1) {
+		
+		for (UIView *subview in m_ppopView.subviews) {
+			[subview removeFromSuperview];
+		}
+		
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功卖出所有蛋!"];
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+		[self updateFarmInfoExeCute:params];
+		
+	}
+}
+
+- (void) faultCallback:(NSObject *)value{
+	NSLog(@"Server Connection Fail");
+}
+
+-(void)updateFarmInfoExeCute:(NSDictionary *)value{
+	
+	NSDictionary *param = (NSDictionary *)value;
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmInfo WithParameters:param AndCallBackScope:self AndSuccessSel:@"updateFarmInfoResultCallback:" AndFailedSel:@"faultCallback:"];
+}
+
+-(void)updateFarmInfoResultCallback:(NSObject*)value{
+	
+	[[GameMainScene sharedGameMainScene] updateUserInfo];
+}
 @end

@@ -275,6 +275,7 @@
 		UIButton* topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
  		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
 		[topBtn setTitle:[arrayTitle objectAtIndex:i] forState:UIControlStateNormal];
+		topBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:16];
 		[topBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 		CGRect btnFrame = [[arrayBtn objectAtIndex:i] CGRectValue];
 		topBtn.frame = btnFrame;
