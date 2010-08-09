@@ -8,6 +8,7 @@
 
 #import "popViewManager.h"
 #import "DataModelStorageEgg.h"
+#import "DataModelStorageZygoteEgg.h"
 
 //static popViewManager *sharedPopView = nil;
 
@@ -179,24 +180,66 @@
 				
 			case EGG_WAREHOUSE_POPVIEW:{
 				
-				DataModelStorageEgg* storageEgg;
+				switch (tabFlag) {
+					case SALE_COMMONEGGS:{
+						
+						DataModelStorageEgg* storageEgg;
+						
+						storageEgg = [storageEggArray objectAtIndex:i];
+						
+						//label
+						UILabel* showLabel = [[UILabel alloc] init];
+						showLabel.text = [storageEgg.eggName stringByAppendingString:[NSString stringWithFormat:@"%d", storageEgg.numOfProduct]];
+						showLabel.frame = CGRectMake(rowinterval - 5, listinterval+45, 70, 15);
+						showLabel.backgroundColor = [UIColor clearColor];
+						showLabel.font = [UIFont fontWithName:@"Arial" size:11];
+						[m_ppopView addSubview:showLabel];
+						[showLabel release];
+						showLabel = nil;
+					}
+						break;
+						
+					case SALE_ZYGOTEEGGS:{
+						
+						DataModelStorageZygoteEgg* storageZygoteEgg;
+						
+						storageZygoteEgg = [storageEggArray objectAtIndex:i];
+						
+						//label
+						UILabel* showLabel = [[UILabel alloc] init];
+						showLabel.text = [storageZygoteEgg.eggName stringByAppendingString:[NSString stringWithFormat:@"%d", storageZygoteEgg.zygotePrice]];
+						showLabel.frame = CGRectMake(rowinterval - 5, listinterval+45, 70, 15);
+						showLabel.backgroundColor = [UIColor clearColor];
+						showLabel.font = [UIFont fontWithName:@"Arial" size:11];
+						[m_ppopView addSubview:showLabel];
+						[showLabel release];
+						showLabel = nil;
+					}
+						break;
+						
+					default:
+						break;
+				}
 				
-				storageEgg = [storageEggArray objectAtIndex:i];
-				
-				//label
-				UILabel* showLabel = [[UILabel alloc] init];
-				showLabel.text = [storageEgg.eggName stringByAppendingString:[NSString stringWithFormat:@"%d", storageEgg.numOfProduct]];
-				showLabel.frame = CGRectMake(rowinterval - 5, listinterval+30, 50, 15);
-				showLabel.backgroundColor = [UIColor clearColor];
-				showLabel.font = [UIFont fontWithName:@"Arial" size:11];
-				[m_ppopView addSubview:showLabel];
-				[showLabel release];
-				showLabel = nil;
 			}
 				break;
 				
 			case ANIMAL_WAREHOUSE_POPVIEW:{
 				
+				int sex = [[sexArray objectAtIndex:i] intValue];
+				UIImageView *sexImage = [[UIImageView alloc] init];
+				switch (sex) {
+					case 0:
+						[sexImage setImage:[UIImage imageNamed:@"母.png"]];
+						break;
+						
+					case 1:
+						[sexImage setImage:[UIImage imageNamed:@"公.png"]];
+						 break;
+						 
+					default:
+						break;
+				}
 			}
 				break;
 				
@@ -330,6 +373,7 @@
 	for (UIView *subview in m_ppopView.subviews) {
 		[subview removeFromSuperview];
 	}
+	[topBtnArray removeAllObjects];
 	[self.view removeFromSuperview];
 }
 

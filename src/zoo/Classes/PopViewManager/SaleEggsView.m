@@ -20,7 +20,7 @@
 	{
 		myPopView = [[popViewManager alloc] init];
 		[myPopView setPopViewFrame:CGRectMake(100, 150, 280, 100)];
-		[myPopView setSubSize:CGSizeMake(30, 30)];
+		[myPopView setSubSize:CGSizeMake(50, 50)];
 		[myPopView setM_nlistCount:1];
 		[myPopView setM_npopViewType:EGG_WAREHOUSE_POPVIEW];
 		
@@ -65,6 +65,7 @@
 	[StorageEggArray removeAllObjects];
 	DataModelStorageEgg* storageEgg;
 	NSArray* eggsArray = [storageEggDic allKeys];
+	[StorageEggArray removeAllObjects];
 	
 	NSMutableArray* arrTemp = [[NSMutableArray alloc]init];
 	for(int i = 0; i < [eggsArray count]; i++)
@@ -140,6 +141,7 @@
 	
 	DataModelStorageZygoteEgg* storageZygoteEgg;
 	NSArray* eggsArray = [storageZygoteEggDic allKeys];
+	[StorageEggArray removeAllObjects];
 	
 	NSMutableArray* arrTemp = [[NSMutableArray alloc]init];
 	for(int i = 0; i < [eggsArray count]; i++)
@@ -151,8 +153,10 @@
 		NSString *picFileName = [NSString stringWithFormat:@"zygote%@.png",picName];
 				
 		[arrTemp addObject:picFileName];
+		[StorageEggArray addObject:storageZygoteEgg];
 	}
 	
+	[myPopView setStorageEggArray:StorageEggArray];	
 	[myPopView initWithItem:arrTemp];
 }
 
