@@ -25,5 +25,7 @@
 - (void) btnShopButtonHandler;
 - (void) resultCallback:(NSObject *)value;
 - (void) faultCallback:(NSObject *)value;
+- (void)initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle;
+- (void) topBtnSelected:(id)sender;
 
 @end
