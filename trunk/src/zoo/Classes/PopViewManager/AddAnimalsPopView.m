@@ -29,12 +29,25 @@
 		[myPopView setSubSize:CGSizeMake(50, 50)];
 		[myPopView setM_nlistCount:2];
 		
-		CGRect rect = CGRectMake(0, 20, 75.f, 75.f);
-		NSMutableArray *foo = [[NSMutableArray alloc] init];
-		[foo addObject:[NSValue valueWithCGRect:rect]];
-		[myPopView initWithBtn:foo];
+		
+		CGRect rect1 = CGRectMake(160, 75, 65.f, 28.f);
+		CGRect rect2 = CGRectMake(225, 75, 65.f, 28.f);
+		CGRect rect3 = CGRectMake(290, 75, 65.f, 28.f);
+		
+		NSMutableArray* foo = [[NSMutableArray alloc] init];
+		[foo addObject:[NSValue valueWithCGRect:rect1]];
+		[foo addObject:[NSValue valueWithCGRect:rect2]];
+		[foo addObject:[NSValue valueWithCGRect:rect3]];
+		
+		NSArray* title = [NSArray arrayWithObjects: 
+						  @"动物",
+						  @"饲料",
+						  @"道具",
+						  nil];
+		[self initWithBtn:foo Title:title];
 		[foo release];
 		foo = nil;
+		
 		currentTagFlag = @"动物";
 	}
 	
@@ -293,6 +306,50 @@
 			break;
 		}
 			
+	}
+}
+
+- (void)initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle{
+	
+	for (int i = 0; i < [arrayBtn count]; i++) {
+		
+		//show position
+		UIButton* topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+ 		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
+		[topBtn setTitle:[arrayTitle objectAtIndex:i] forState:UIControlStateNormal];
+		[topBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+		CGRect btnFrame = [[arrayBtn objectAtIndex:i] CGRectValue];
+		topBtn.frame = btnFrame;
+		[topBtn addTarget:self action:@selector(topBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
+		topBtn.tag = i;
+		[myPopView.view addSubview:topBtn];
+	}
+}
+
+- (void) topBtnSelected:(id)sender{
+	
+	UIButton *selectedBtn = (UIButton *)sender;
+	tabFlag = selectedBtn.tag;
+	
+	for (UIView *subview in [myPopView m_ppopView].subviews) {
+		[subview removeFromSuperview];
+	}
+	
+	switch (tabFlag) {
+		case 0:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			break;
+			
+		case 1:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllFoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			break;
+			
+		case 2:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllGoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			break;
+			
+		default:
+			break;
 	}
 }
 
