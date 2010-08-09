@@ -135,6 +135,13 @@
 				[picFileNameArray addObject:picFileName];
 			}
 			[myPopView initWithItem:picFileNameArray];
+			
+			[picFileNameArray release];
+			picFileNameArray = nil;
+			[buyTypeArray release];
+			buyTypeArray = nil;
+			[priceArray release];
+			priceArray = nil;
 		}
 			break;
 			//动物离婚
@@ -160,13 +167,16 @@
 					kTemp++;
 					[picFileNameArray addObject:picFileName];
 				}
-				[myPopView initWithItem:picFileNameArray];
+				
 			}
+			[myPopView initWithItem:picFileNameArray];
+			
 		}
 			break;
 		default:
 			break;
 	}
+	[myPopView setTabFlag:tabFlag];
 }
 
 
@@ -230,16 +240,21 @@
 		[subview removeFromSuperview];
 	}
 	
-	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
-	
 	switch (tabFlag) {
 		case 0:
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
+			//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
+		{
+			tabFlag = 0;
+			[self generatePage];
+		}
 			break;
 			
 		case 1:
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
+		{
+			tabFlag = 1;
+			[self generatePage];
+		}
+			//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
 			break;
 			
 		default:
