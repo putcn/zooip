@@ -255,7 +255,7 @@
 		[self selectButtonAtIndex:index];
 	}
 
-	[secPopView setM_npopViewType:SHOP_POPVIEW];
+	[secPopView setM_npopViewType:m_npopViewType];
 	[secPopView setM_ntabFlag:tabFlag];
 	
 	switch (m_npopViewType) {
@@ -282,7 +282,6 @@
 			
 		}
 			break;
-			
 		case ANIMAL_MATEORMARRY_POPVIEW:{
 			
 		}
