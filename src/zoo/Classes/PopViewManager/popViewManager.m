@@ -7,6 +7,7 @@
 //
 
 #import "popViewManager.h"
+#import "DataModelStorageEgg.h"
 
 //static popViewManager *sharedPopView = nil;
 
@@ -20,7 +21,7 @@
 
 @synthesize m_ppopView;
 @synthesize m_npopViewType, m_nlistCount, tabFlag;
-@synthesize buyTypeArray, priceArray, sexArray;
+@synthesize buyTypeArray, priceArray, sexArray, storageEggArray;
 
 - (id)init{
 
@@ -72,6 +73,8 @@
 	priceArray = nil;
 	[sexArray release];
 	sexArray = nil;
+	[storageEggArray release];
+	storageEggArray = nil;
 	
 	[super dealloc];
 }
@@ -173,6 +176,35 @@
 				
 			}
 				break;
+				
+			case EGG_WAREHOUSE_POPVIEW:{
+				
+				DataModelStorageEgg* storageEgg;
+				
+				storageEgg = [storageEggArray objectAtIndex:i];
+				
+				//label
+				UILabel* showLabel = [[UILabel alloc] init];
+				showLabel.text = [storageEgg.eggName stringByAppendingString:[NSString stringWithFormat:@"%d", storageEgg.numOfProduct]];
+				showLabel.frame = CGRectMake(rowinterval - 5, listinterval+30, 50, 15);
+				showLabel.backgroundColor = [UIColor clearColor];
+				showLabel.font = [UIFont fontWithName:@"Arial" size:11];
+				[m_ppopView addSubview:showLabel];
+				[showLabel release];
+				showLabel = nil;
+			}
+				break;
+				
+			case ANIMAL_WAREHOUSE_POPVIEW:{
+				
+			}
+				break;
+				
+			case ANIMAL_MATEORMARRY_POPVIEW:{
+				
+			}
+				break;
+				
 			default:
 				break;
 		}

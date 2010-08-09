@@ -20,7 +20,7 @@
 	{
 		myPopView = [[popViewManager alloc] init];
 		[myPopView setPopViewFrame:CGRectMake(100, 150, 280, 100)];
-		[myPopView setSubSize:CGSizeMake(40, 40)];
+		[myPopView setSubSize:CGSizeMake(30, 30)];
 		[myPopView setM_nlistCount:1];
 		[myPopView setM_npopViewType:EGG_WAREHOUSE_POPVIEW];
 		
@@ -41,6 +41,7 @@
 		foo = nil;
 		
 		eggEnNameArray = [[NSArray alloc] initWithObjects:@"craneEgg.png",@"duckEgg.png",@"gooseEgg.png",@"henEgg.png",@"magpieEgg.png",@"mallardEgg.png",@"mandarinduckEgg.png",@"parrotEgg.png",@"peahenEgg.png",@"pheasantEgg.png",@"pigeonEgg.png",@"swanEgg.png",@"turkeyEgg.png",@"wildgooseEgg.png",@"mallardEgg.png",@"pigeonEgg.png",nil];
+		StorageEggArray = [[NSMutableArray alloc] init];
 	}
 	
 	return self;	
@@ -61,6 +62,7 @@
 {
 	NSDictionary* storageEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
 	
+	[StorageEggArray removeAllObjects];
 	DataModelStorageEgg* storageEgg;
 	NSArray* eggsArray = [storageEggDic allKeys];
 	
@@ -74,8 +76,10 @@
 		NSString *picName = [NSString stringWithFormat:@"%@", [eggEnNameArray objectAtIndex:eggImgId]];
 	
 		[arrTemp addObject:picName];
+		[StorageEggArray addObject:storageEgg];
 	}
 	
+	[myPopView setStorageEggArray:StorageEggArray];
 	[myPopView initWithItem:arrTemp];
 }
 
@@ -155,6 +159,8 @@
 -(void)dealloc
 {
 	[myPopView release];
+	[StorageEggArray release];
+	[eggEnNameArray release];
 	
 	[super dealloc];
 }

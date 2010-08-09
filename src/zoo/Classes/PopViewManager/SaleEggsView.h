@@ -23,6 +23,8 @@
 	NSArray* eggEnNameArray;
 	
 	int m_nViewTabFlag;
+	
+	NSMutableArray* StorageEggArray;
 }
 
 @property(nonatomic, assign)int tabFlag;

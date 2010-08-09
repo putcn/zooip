@@ -17,8 +17,6 @@
 #import "DataModelOriginalAnimal.h"
 #import "DataModelAnimal.h"
 
-#import "SaleEggsView.h"
-
 @interface SecPopViewController(OtherFunctions)
 - (void) buyAnimals;
 - (void) buyFoods;
@@ -113,7 +111,22 @@
 	UISlider* durationSlider = sender;
 	NSString* showStr = @"选择了";
 	tempCount  = mixCount * [durationSlider value];
-	showStr = [showStr stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@"个动物"]];
+	switch (m_ntabFlag) {
+		case BUY_ANIMAL:
+			showStr = [showStr stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@"个动物"]];
+			break;
+			
+		case BUY_FOODS:
+			showStr = [showStr stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@"件商品"]];
+			break;
+			
+		case BUY_GOODS:
+			showStr = [showStr stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@"件商品"]];
+			break;
+			
+		default:
+			break;
+	}
 	countLabel.text = showStr;
 }
 
@@ -169,7 +182,26 @@
 			}
 		}
 			
-//		case SALE_EGGS:{
+		case BUY_GOODS:{
+			
+			if ([buyAniId compare:@"1"] == NSOrderedSame) {
+				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+										farmerId,@"farmerId",
+										buyAniId,@"goodsId",
+										nil];
+				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyTurtleByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			}
+			if ([buyAniId compare:@"2"] == NSOrderedSame){
+				NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+										farmerId,@"farmerId",
+										buyAniId,@"goodsId",
+										nil];
+				[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestbuyDogByAnts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];			
+			}
+		}
+			break;
+			
+//		case SALE_ANIMAL:{
 //			
 //		}
 //				break;
@@ -191,6 +223,8 @@
 - (void) setShowImageName:(NSString*)fileName{
 	
 	[showImage setImage:[UIImage imageNamed:fileName]];
+	buySlider.value = 0.0;
+	describeLabel.frame = CGRectMake(200, 165, 160, 60);
 	
 	switch (m_ntabFlag) {
 		case BUY_ANIMAL:
@@ -204,7 +238,8 @@
 		case BUY_GOODS:
 			[self buyGoods];
 			break;
-		// Add By Hunk
+			
+			// Add By Hunk
 		case SALE_COMMONEGGS:
 		{
 			[self saleCommonEggs];
@@ -215,7 +250,7 @@
 			[self saleZogyteEggs];
 		}
 			break;
-
+			
 		default:
 			break;
 	}
@@ -226,8 +261,8 @@
 -(void) resultCallback:(NSObject *)value
 {
 	
-	switch (m_ntabFlag) {
-		case BUY_ANIMAL:{
+	switch (m_npopViewType) {
+		case SHOP_POPVIEW:{
 			
 			NSDictionary* dic = (NSDictionary*)value;
 			NSInteger code = [[dic objectForKey:@"code"] intValue];
@@ -263,11 +298,10 @@
 		}
 			break;
 			
-//		case SALE_EGGS:
-//		{
-//				
-//		}
-//				break;
+		case EGG_WAREHOUSE_POPVIEW:{
+				
+		}
+				break;
 			
 		default:
 			break;
@@ -283,6 +317,9 @@
 #pragma mark -
 #pragma mark OtherFunctions
 - (void) buyAnimals{
+	
+	buySlider.hidden = NO;
+	countLabel.hidden = NO;
 	
 	myAntsCurrency = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.antsCurrency;
 	myGoldenEgg = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.goldenEgg;
@@ -351,6 +388,9 @@
 }
 
 - (void) buyFoods{
+	
+	buySlider.hidden = NO;
+	countLabel.hidden = NO;
 	
 	myAntsCurrency = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.antsCurrency;
 	myGoldenEgg = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.goldenEgg;
@@ -437,6 +477,42 @@
 
 - (void) buyGoods{
 	
+	buySlider.hidden = YES;
+	countLabel.hidden = YES;
+	
+	//data
+	myAntsCurrency = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.antsCurrency;
+	myGoldenEgg = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.goldenEgg;
+	
+	//get data
+	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *goodsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].goods;
+	DataModelGood *goods; 
+	NSArray *goodArrayTemp = [goodsDic allKeys];
+	goods = [goodsDic objectForKey:[goodArrayTemp objectAtIndex:itemId]];
+	
+	buyAniId = goods.goodsId;
+	tempCount = 1;
+	tempPrice = goods.goodsAntsPrice;
+	
+	[iconImage setImage:[UIImage imageNamed:@"金蚂蚁.png"]];
+	priceLabel.text = [NSString stringWithFormat:@"%d", tempPrice];
+	nameLabel.text = goods.goodsName;
+	describeLabel.numberOfLines = 5;
+	describeLabel.text = goods.goodsDescription;
+	
+	if ([buyAniId compare:@"2"] == NSOrderedSame){
+		describeLabel.frame = CGRectMake(200, 165, 160, 100);
+	}
+	
+	if (tempPrice > myAntsCurrency) {
+		wrongLabel.hidden = NO;
+		OKButton.enabled = NO;
+	}
+	else {
+		wrongLabel.hidden = YES;
+		OKButton.enabled = YES;
+	}
 }
 
 #pragma mark -
