@@ -33,6 +33,8 @@
 	NSMutableArray*		priceArray;
 	NSMutableArray*		sexArray;
 	NSMutableArray*		storageEggArray;
+	
+	UIButton*			saleAllBtn;
 }
 
 @property(nonatomic, retain) UIScrollView* m_ppopView;
