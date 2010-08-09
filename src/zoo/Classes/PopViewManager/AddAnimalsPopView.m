@@ -25,24 +25,22 @@
 	
 	if ( (self = [super init]) ){
 		myPopView = [[popViewManager alloc] init];
-		[myPopView setPopViewFrame:CGRectMake(100, 80, 280, 160)];
+		[myPopView setPopViewFrame:CGRectMake(100, 120, 280, 160)];
 		[myPopView setSubSize:CGSizeMake(50, 50)];
 		[myPopView setM_nlistCount:2];
+		[myPopView setM_npopViewType:ANIMAL_WAREHOUSE_POPVIEW];
 		
 		
 		CGRect rect1 = CGRectMake(160, 75, 65.f, 28.f);
 		CGRect rect2 = CGRectMake(225, 75, 65.f, 28.f);
-		CGRect rect3 = CGRectMake(290, 75, 65.f, 28.f);
 		
 		NSMutableArray* foo = [[NSMutableArray alloc] init];
 		[foo addObject:[NSValue valueWithCGRect:rect1]];
 		[foo addObject:[NSValue valueWithCGRect:rect2]];
-		[foo addObject:[NSValue valueWithCGRect:rect3]];
 		
 		NSArray* title = [NSArray arrayWithObjects: 
 						  @"动物",
-						  @"饲料",
-						  @"道具",
+						  @"拍卖来动物",
 						  nil];
 		[self initWithBtn:foo Title:title];
 		[foo release];
@@ -56,6 +54,7 @@
 
 //点击动物仓库按钮，弹出来仓库里面的动物。
 - (void) btnShopButtonHandler{
+	tabFlag = 0;
 	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
 	if (currentTagFlag == @"动物") {
@@ -65,7 +64,6 @@
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
 	}
 	//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-	tabFlag = ANIMAL_WAREHOUSE_POPVIEW;
 	[myPopView addView2Window];
 }
 
@@ -243,7 +241,7 @@
 	NSMutableArray* picFileNameArray = [[NSMutableArray alloc] init];
 	NSMutableArray* sexNameArray = [[NSMutableArray alloc] init];
 	switch (tabFlag) {
-		case ANIMAL_WAREHOUSE_POPVIEW:
+		case 0:
 		{
 			NSLog(@"************* generatePage ***********************");
 			if (currentTagFlag == @"动物") {
@@ -274,7 +272,10 @@
 				[myPopView setSexArray:sexNameArray];
 			
 			}
-			if (currentTagFlag == @"拍来动物") {
+		}
+			break;
+		case 1:
+		{
 				NSDictionary *auctionAnimals = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
 				DataModelStorageAuctionAnimal *stoauAnimals;
 				NSArray *animalArray = [auctionAnimals allKeys];
@@ -298,15 +299,23 @@
 					[picFileNameArray addObject:picFileName];
 					[sexNameArray addObject:gender];
 				}
-				[myPopView initWithItem:picFileNameArray];
-				[myPopView setSexArray:sexNameArray];
-			}
+			//[myPopView setBuyTypeArray:buyTypeArray];
+//			[myPopView setPriceArray:priceArray];
+			[myPopView initWithItem:picFileNameArray];
+			[myPopView setSexArray:sexNameArray];
+			
+			[picFileNameArray release];
+			picFileNameArray = nil;
+			[sexNameArray release];
+			sexNameArray = nil;
+		}
 			break;
+			
 		default:
 			break;
-		}
-			
 	}
+	[myPopView setTabFlag:tabFlag];
+
 }
 
 - (void)initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle{
@@ -335,24 +344,22 @@
 		[subview removeFromSuperview];
 	}
 	
+	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
+	
 	switch (tabFlag) {
 		case 0:
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
 			break;
 			
 		case 1:
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllFoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-			break;
-			
-		case 2:
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllGoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
 			break;
 			
 		default:
 			break;
 	}
 }
-
 
 - (void) dealloc{
 	

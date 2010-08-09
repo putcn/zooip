@@ -28,14 +28,25 @@
 		[myPopView setPopViewFrame:CGRectMake(100, 120, 280, 160)];
 		[myPopView setSubSize:CGSizeMake(40, 40)];
 		[myPopView setM_nlistCount:2];
-		[myPopView setM_npopViewType:SHOP_POPVIEW];
+		[myPopView setM_npopViewType:ANIMAL_MATEORMARRY_POPVIEW];
 		
-		CGRect rect = CGRectMake(0, 20, 75.f, 75.f);
-		NSMutableArray *foo = [[NSMutableArray alloc] init];
-		[foo addObject:[NSValue valueWithCGRect:rect]];
-		[myPopView initWithBtn:foo];
+		
+		CGRect rect1 = CGRectMake(160, 75, 65.f, 28.f);
+		CGRect rect2 = CGRectMake(225, 75, 65.f, 28.f);
+		
+		NSMutableArray* foo = [[NSMutableArray alloc] init];
+		[foo addObject:[NSValue valueWithCGRect:rect1]];
+		[foo addObject:[NSValue valueWithCGRect:rect2]];
+		
+		NSArray* title = [NSArray arrayWithObjects: 
+						  @"结婚",
+						  @"婚姻管理",
+						  nil];
+		[self initWithBtn:foo Title:title];
 		[foo release];
 		foo = nil;
+		
+		currentTagFlag = @"动物";
 	}
 	
 	return self;
@@ -107,55 +118,55 @@
 	NSMutableArray* priceArray = [[NSMutableArray alloc] init];
 	
 	switch (tabFlag) {
-		case ANIMAL_MATEORMARRY_POPVIEW:{
-	//动物结婚
-	if (tabFlagType == @"animalMarry") {
-		NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
-		DataModelOriginalAnimal *originAnimal;
-		NSString *aniID;
-
-		DataModelAnimal *serverAnimalData2;
-		for (int i =0; i< [[DataEnvironment sharedDataEnvironment].animalIDs count]; i ++) {
-			originAnimal = [animalIDs objectAtIndex:i];
-			aniID = [animalIDs objectAtIndex:i];
-			serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
-			NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
-			NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
-			NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
-			[picFileNameArray addObject:picFileName];
-		}
-		[myPopView initWithItem:picFileNameArray];
-	}
-	//动物离婚
-	if (tabFlagType == @"animalMate") {
-		NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
-		DataModelOriginalAnimal *originAnimal;
-		NSString *aniID;
-		
-		int kTemp = 0;
-		for(int i = 0 ;i <[[DataEnvironment sharedDataEnvironment].animalIDs count];i++)
-		{
-			originAnimal = [animalIDs objectAtIndex:i];
-			aniID = [animalIDs objectAtIndex:i];
-			DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
-			if(serverAnimalData2.coupleAnimalId != nil)
-			{
+		case 0:{
+			//动物结婚
+			NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
+			DataModelOriginalAnimal *originAnimal;
+			NSString *aniID;
+			
+			DataModelAnimal *serverAnimalData2;
+			for (int i =0; i< [[DataEnvironment sharedDataEnvironment].animalIDs count]; i ++) {
+				originAnimal = [animalIDs objectAtIndex:i];
+				aniID = [animalIDs objectAtIndex:i];
+				serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
 				NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
 				NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
 				NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
-
-				kTemp++;
 				[picFileNameArray addObject:picFileName];
 			}
 			[myPopView initWithItem:picFileNameArray];
 		}
-	}
+			break;
+			//动物离婚
+		case 1:
+		{
+			
+			NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
+			DataModelOriginalAnimal *originAnimal;
+			NSString *aniID;
+			
+			int kTemp = 0;
+			for(int i = 0 ;i <[[DataEnvironment sharedDataEnvironment].animalIDs count];i++)
+			{
+				originAnimal = [animalIDs objectAtIndex:i];
+				aniID = [animalIDs objectAtIndex:i];
+				DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
+				if(serverAnimalData2.coupleAnimalId != nil)
+				{
+					NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
+					NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
+					NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
+					
+					kTemp++;
+					[picFileNameArray addObject:picFileName];
+				}
+				[myPopView initWithItem:picFileNameArray];
+			}
 		}
 			break;
-		default :
+		default:
 			break;
 	}
-	
 }
 
 
@@ -164,7 +175,7 @@
 - (void) btnShopButtonHandler{
 	
 //	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-	tabFlag = ANIMAL_MATEORMARRY_POPVIEW;
+	tabFlag = 0;
 	[myPopView addView2Window];
 	[self generatePage];
 }
@@ -191,6 +202,49 @@
 - (void) faultCallback:(NSObject *)value
 {
 	NSLog(@"Server Connection Fail");
+}
+
+- (void)initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle{
+	
+	for (int i = 0; i < [arrayBtn count]; i++) {
+		
+		//show position
+		UIButton* topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+ 		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
+		[topBtn setTitle:[arrayTitle objectAtIndex:i] forState:UIControlStateNormal];
+		[topBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+		CGRect btnFrame = [[arrayBtn objectAtIndex:i] CGRectValue];
+		topBtn.frame = btnFrame;
+		[topBtn addTarget:self action:@selector(topBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
+		topBtn.tag = i;
+		[myPopView.view addSubview:topBtn];
+	}
+}
+
+- (void) topBtnSelected:(id)sender{
+	
+	UIButton *selectedBtn = (UIButton *)sender;
+	tabFlag = selectedBtn.tag;
+	
+	for (UIView *subview in [myPopView m_ppopView].subviews) {
+		[subview removeFromSuperview];
+	}
+	
+	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
+	
+	switch (tabFlag) {
+		case 0:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
+			break;
+			
+		case 1:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
+			break;
+			
+		default:
+			break;
+	}
 }
 
 - (void) dealloc{
