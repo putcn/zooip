@@ -505,6 +505,7 @@
 	NSDictionary *param = (NSDictionary *)value;
 	
 	NSLog(@"%@\n", param);
+	
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:param AndCallBackScope:self AndSuccessSel:@"updateFarmInfoResultCallback:" AndFailedSel:@"faultCallback:"];
 }
 
