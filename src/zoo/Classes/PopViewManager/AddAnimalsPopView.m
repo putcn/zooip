@@ -27,12 +27,12 @@
 		myPopView = [[popViewManager alloc] init];
 		[myPopView setPopViewFrame:CGRectMake(100, 120, 280, 160)];
 		[myPopView setSubSize:CGSizeMake(50, 50)];
-		[myPopView setM_nlistCount:2];
+		[myPopView setM_nlistCount:1];
 		[myPopView setM_npopViewType:ANIMAL_WAREHOUSE_POPVIEW];
 		
 		
 		CGRect rect1 = CGRectMake(160, 75, 65.f, 28.f);
-		CGRect rect2 = CGRectMake(225, 75, 65.f, 28.f);
+		CGRect rect2 = CGRectMake(225, 75, 85.f, 28.f);
 		
 		NSMutableArray* foo = [[NSMutableArray alloc] init];
 		[foo addObject:[NSValue valueWithCGRect:rect1]];
@@ -40,7 +40,7 @@
 		
 		NSArray* title = [NSArray arrayWithObjects: 
 						  @"动物",
-						  @"拍卖来动物",
+						  @"拍来动物",
 						  nil];
 		[self initWithBtn:foo Title:title];
 		[foo release];

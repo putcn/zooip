@@ -29,6 +29,7 @@
 
 @implementation SecPopViewController
 
+
 @synthesize m_npopViewType, m_ntabFlag, itemId, curr_itemType, tempCount,labelString;
 
 
@@ -387,13 +388,8 @@
 						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作异常!"];
 						break;
 				}
-//				
-//				NSLog(@"操作已成功!");
-//			}
-//			else if(m_ntabFlag == SALE_ZYGOTEEGGS)
-//			{
-//				
-//			}
+
+			[[NSNotificationCenter defaultCenter] postNotificationName:SaleEggs object:nil];
 		}
 				break;
 			

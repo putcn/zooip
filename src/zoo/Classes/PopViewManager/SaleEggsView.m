@@ -11,9 +11,10 @@
 #import "DataModelStorageEgg.h"
 #import "DataModelStorageZygoteEgg.h"
 
+NSString *SaleEggs = @"SALE_EGGS";
 
 @implementation SaleEggsView
-@synthesize tabFlag;
+
 - (id) init
 {
 	if ( (self = [super init]) )
@@ -42,6 +43,9 @@
 		
 		eggEnNameArray = [[NSArray alloc] initWithObjects:@"craneEgg.png",@"duckEgg.png",@"gooseEgg.png",@"henEgg.png",@"magpieEgg.png",@"mallardEgg.png",@"mandarinduckEgg.png",@"parrotEgg.png",@"peahenEgg.png",@"pheasantEgg.png",@"pigeonEgg.png",@"swanEgg.png",@"turkeyEgg.png",@"wildgooseEgg.png",@"mallardEgg.png",@"pigeonEgg.png",nil];
 		StorageEggArray = [[NSMutableArray alloc] init];
+		tabFlag = SALE_COMMONEGGS;
+		
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData:) name:SaleEggs object:nil];
 	}
 	
 	return self;	
@@ -95,7 +99,6 @@
 	{
 		//show position
 		UIButton* topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-		topBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:16];
  		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
 		[topBtn setTitle:[arrayTitle objectAtIndex:i] forState:UIControlStateNormal];
 		[topBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -167,7 +170,35 @@
 	[StorageEggArray release];
 	[eggEnNameArray release];
 	
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:SaleEggs object:nil];
+	
 	[super dealloc];
+}
+
+//add by lancy
+- (void) reloadData:(NSNotification *)aNotification{
+	
+	for (UIView *subview in [myPopView m_ppopView].subviews) 
+	{
+		[subview removeFromSuperview];
+	}
+	
+	NSString *par = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:par,@"farmerId",nil];	
+	
+	switch (tabFlag) 
+	{
+		case 3:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageProducts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			break;
+		case 4:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultOfZygoteEggCallback:" AndFailedSel:@"faultOfZygoteEggCallback:"];
+			break;
+		default:
+			break;
+	}
+	
+//	[myPopView setTabFlag:tabFlag];
 }
 
 @end

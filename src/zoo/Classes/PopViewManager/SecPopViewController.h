@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
+
 @interface SecPopViewController : UIViewController {
 
 	int					m_npopViewType;
