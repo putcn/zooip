@@ -95,6 +95,7 @@
 	{
 		//show position
 		UIButton* topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+		topBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:16];
  		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
 		[topBtn setTitle:[arrayTitle objectAtIndex:i] forState:UIControlStateNormal];
 		[topBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];

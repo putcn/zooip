@@ -53,4 +53,7 @@
 - (void) resultCallback:(NSObject *)value;
 - (void) faultCallback:(NSObject *)value;
 
+-(void)updateFarmInfoExeCute:(NSDictionary *)value;
+-(void)updateFarmInfoResultCallback:(NSObject*)value;
+
 @end
