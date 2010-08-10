@@ -458,6 +458,8 @@
 		[self updateFarmInfoExeCute:params];
 		
 	}
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:SaleEggs object:nil];
 }
 
 - (void) faultCallback:(NSObject *)value{
