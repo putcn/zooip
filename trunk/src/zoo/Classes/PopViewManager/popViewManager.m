@@ -198,13 +198,14 @@
 						
 						//label
 						UILabel* showLabel = [[UILabel alloc] init];
-						showLabel.text = [storageEgg.eggName stringByAppendingString:[NSString stringWithFormat:@"%d", storageEgg.numOfProduct]];
+						showLabel.text = [storageEgg.eggName stringByAppendingString:[NSString stringWithFormat:@"%@%d", @":", storageEgg.numOfProduct]];
 						showLabel.frame = CGRectMake(rowinterval - 5, listinterval+45, 70, 15);
 						showLabel.backgroundColor = [UIColor clearColor];
 						showLabel.font = [UIFont fontWithName:@"Arial" size:11];
 						[m_ppopView addSubview:showLabel];
 						[showLabel release];
 						showLabel = nil;
+					
 					}
 						break;
 						
@@ -216,7 +217,7 @@
 						
 						//label
 						UILabel* showLabel = [[UILabel alloc] init];
-						showLabel.text = [storageZygoteEgg.eggName stringByAppendingString:[NSString stringWithFormat:@"%d", storageZygoteEgg.zygotePrice]];
+						showLabel.text = [storageZygoteEgg.eggName stringByAppendingString:[NSString stringWithFormat:@"%@%d", @":", storageZygoteEgg.zygotePrice]];
 						showLabel.frame = CGRectMake(rowinterval - 5, listinterval+45, 70, 15);
 						showLabel.backgroundColor = [UIColor clearColor];
 						showLabel.font = [UIFont fontWithName:@"Arial" size:11];
@@ -258,7 +259,7 @@
 						break;
 				}
 				
-				[sexImage setFrame:CGRectMake(rowinterval+subSize.width-10, listinterval, 10, 15)];
+				[sexImage setFrame:CGRectMake(rowinterval+subSize.width-10, listinterval, 10, 12)];
 				[m_ppopView addSubview:sexImage];
 				[sexImage release];
 				sexImage = nil;
@@ -267,6 +268,25 @@
 				
 			case ANIMAL_MATEORMARRY_POPVIEW:{
 				
+				int sex = [[sexArray objectAtIndex:i] intValue];
+				UIImageView *sexImage = [[UIImageView alloc] init];
+				switch (sex) {
+					case 0:
+						[sexImage setImage:[UIImage imageNamed:@"母.png"]];
+						break;
+						
+					case 1:
+						[sexImage setImage:[UIImage imageNamed:@"公.png"]];
+						break;
+						
+					default:
+						break;
+				}
+				
+				[sexImage setFrame:CGRectMake(rowinterval+subSize.width-10, listinterval, 10, 12)];
+				[m_ppopView addSubview:sexImage];
+				[sexImage release];
+				sexImage = nil;
 			}
 				break;
 				
@@ -323,22 +343,11 @@
 
 - (void)selectButtonAtIndex:(NSUInteger)index{
 	
-//	UIButton *selectedBtn = [[m_ppopView subviews] objectAtIndex:index];
-	
-//	UIImage* btnImg = [UIImage imageNamed:@"动物结婚.png"];//TOP_SELECT];
-//	UIImage* btnStretchImg = [btnImg stretchableImageWithLeftCapWidth:12 topCapHeight:0];
-	
-//	[selectedBtn setBackgroundImage:btnStretchImg forState:UIControlStateNormal];
-//	[selectedBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];s
-
 	prevButtonIndex = index;
 }
 
 - (void)deselectButtonAtIndex:(NSUInteger)prevIndex{
 	
-//	UIButton *deselectedBtn = [[m_ppopView subviews] objectAtIndex:prevIndex];
-//	[deselectedBtn setBackgroundImage:nil forState:UIControlStateNormal];
-//	[deselectedBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
 	m_nprevButtonIndex = -1;
 }
 

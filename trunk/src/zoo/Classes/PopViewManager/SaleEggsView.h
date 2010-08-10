@@ -10,6 +10,7 @@
 #import "popViewManager.h"
 #import "Common.h"
 
+extern NSString *SaleEggs;
 
 @interface SaleEggsView : NSObject 
 {
@@ -27,8 +28,6 @@
 	NSMutableArray* StorageEggArray;
 }
 
-@property(nonatomic, assign)int tabFlag;
-
 - (id) init;
 
 - (void) saleEggsButtonHandler;
@@ -37,6 +36,9 @@
 
 - (void) faultCallback:(NSObject *)value;
 
-- (void)initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle;
+- (void) initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle;
+
+//add by lancy
+- (void) reloadData:(NSNotification *)aNotification;
 
 @end
