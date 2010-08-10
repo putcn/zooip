@@ -58,6 +58,9 @@
 //- (void) initWithBtn:(NSArray*)arrayBtn Title:(NSArray*)arrayTitle;
 - (void) initWithItem:(NSArray*)arrayPic;
 
+-(void)updateFarmInfoZogyteExeCute:(NSDictionary *)value;
+-(void)updateFarmInfoResultZogyteCallback:(NSObject*)value;
+
 
 @end
 
