@@ -253,7 +253,7 @@
 			
 			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
 									farmerId,@"farmerId",
-									storageZygoteEgg.eggId,@"eggId",
+									storageZygoteEgg.zygoteStorageId,@"zygoteStorageId",
 									[NSString stringWithFormat:@"%d",1],@"amount",
 									nil];
 			
@@ -356,38 +356,36 @@
 			
 		case EGG_WAREHOUSE_POPVIEW:
 		{
-//			if(m_ntabFlag == SALE_COMMONEGGS)
-//			{
-				NSDictionary *result = (NSDictionary *)value;
-				NSInteger code = [[result objectForKey:@"code"] intValue];
-				switch (code) {
-					case 0:
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有蛋可卖"];
-						break;
-					case 1:
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你出售成功!"];
-						
-						NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-												[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
-												[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
-						
-						NSLog(@"%@\n", params);
-						[self updateFarmInfoExeCute:params];
-						
-						break;
-					case 2:
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"卖蛋不成功!"];
-						break;
-					case 3:
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蛋已经拍卖!"];
-						break;
-					case 4:
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蛋已经孵化!"];
-						break;
-					default:
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作异常!"];
-						break;
-				}
+			NSDictionary *result = (NSDictionary *)value;
+			NSInteger code = [[result objectForKey:@"code"] intValue];
+			switch (code) {
+				case 0:
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有蛋可卖"];
+					break;
+				case 1:
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你出售成功!"];
+					
+					NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+											[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+											[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+					
+					NSLog(@"%@\n", params);
+					[self updateFarmInfoExeCute:params];
+					
+					break;
+				case 2:
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"卖蛋不成功!"];
+					break;
+				case 3:
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蛋已经拍卖!"];
+					break;
+				case 4:
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蛋已经孵化!"];
+					break;
+				default:
+					[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作异常!"];
+					break;
+			}
 
 			[[NSNotificationCenter defaultCenter] postNotificationName:SaleEggs object:nil];
 		}
