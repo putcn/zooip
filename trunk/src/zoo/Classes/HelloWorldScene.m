@@ -42,7 +42,7 @@
 	if( (self=[super init] )) {
 
 		// ask director the the window size
-		CGSize size = [[CCDirector sharedDirector] winSize];
+//		CGSize size = [[CCDirector sharedDirector] winSize];
 		
 //		CCSprite *scaleContainer = [CCSprite node];
 //		scaleContainer.position = ccp( size.width / 2, size.height / 2);

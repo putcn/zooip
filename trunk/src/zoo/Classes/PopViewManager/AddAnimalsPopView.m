@@ -16,6 +16,7 @@
 #import "DataModelStorageAnimal.h"
 #import "DataModelStorageAuctionAnimal.h"
 
+NSString *AddAnimals = @"ADD_ANIMALS";
 
 @implementation AddAnimalsPopView
 
@@ -46,7 +47,8 @@
 		[foo release];
 		foo = nil;
 		
-		currentTagFlag = @"动物";
+		tabFlag = ANIMAL_WAREHOUSE;
+		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadData:) name:SaleEggs object:nil];
 	}
 	
 	return self;
@@ -54,179 +56,24 @@
 
 //点击动物仓库按钮，弹出来仓库里面的动物。
 - (void) btnShopButtonHandler{
-	tabFlag = 0;
+	tabFlag = ANIMAL_WAREHOUSE;
 	NSString *farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
-	if (currentTagFlag == @"动物") {
-		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
-	}
-	else if(currentTagFlag == @"拍来动物"){
-		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
-	}
-	//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-	[myPopView addView2Window];
-}
-
-
-
-
-//点击不同的动物，放入到动物园
--(void) itemInfoHandler:(AnimalStorageManagerButtonItem *) itemButton
-{
-	
-	//AnimalStorageManagerPanel *itemInfo = (AnimalStorageManagerPanel *)itemButton.target; 
-	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-	
-	if(itemButton.itemType ==@"拍来动物")
-	{
-		currentTagFlag = @"拍来动物";
-		NSString *auctionBirdStorageId = itemButton.itemId;
-		
-		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",auctionBirdStorageId,@"auctionBirdStorageId",nil];
-		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAuctionAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-		
-		
-	}
-	else if (itemButton.itemType == @"动物")
-	{
-		currentTagFlag = @"动物";
-		NSString *adultBirdStorageId = itemButton.itemId;
-		
-		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",adultBirdStorageId,@"adultBirdStorageId",nil];
-		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestaddAnimalToFarm WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-		
-	}
-}
-
-
--(void)updateFarmInfoPutAnimal:(NSDictionary *)value
-{
-	NSDictionary *param = (NSDictionary *)value;
-	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmInfo WithParameters:param AndCallBackScope:self AndSuccessSel:@"updateFarmInfoResultCallback:" AndFailedSel:@"faultCallback:"];
-}
-
--(void)updateFarmInfoResultCallback:(NSObject*)value
-{
-	[[GameMainScene sharedGameMainScene] updateUserInfo];
-}
-
--(void)resultCallbackGetAllAnimals:(NSObject *)value
-{
-	[self generatePage];
-	if (currentTagFlag == @"动物") {
-		
-		
-	}
-	else {
-		
-	}
-	
-//	NSDictionary *itemDic;
-//	NSArray *itemArray;
-//	switch (tabFlag) {
-//		case SHOP_POPVIEW:{
-//			
-//			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
-//			itemArray = [itemDic allKeys];
-//		}
-//			break;
-//		default:
-//			break;
-//	}
-//	
-//	[self generatePage];
-
-}
-
-//点击一个动物放入农场之后的回调函数
--(void) resultCallback:(NSObject *)value
-{
-	NSDictionary* dic = (NSDictionary*)value;
- 	NSInteger code = [[dic objectForKey:@"code"] intValue];
-	BaseServerController *getAllBirdFarmAnimalInfoController;
-	
-	NSDictionary *itemDic;
-	NSArray *itemArray;
 	
 	switch (tabFlag) {
-		case SHOP_POPVIEW:{
-			
-			if(currentTagFlag == @"拍来动物")
-			{
-				switch (code) {
-					case 0:
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"找不到拍卖所得动物"];
-						break;
-					case 1:
-					{
-						[[AnimalController sharedAnimalController] clearAnimal];
-						[[DataEnvironment sharedDataEnvironment].animals removeAllObjects];
-						[[DataEnvironment sharedDataEnvironment].animalIDs removeAllObjects];
-						getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
-						NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
-												[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
-						[getAllBirdFarmAnimalInfoController execute:params];
-						[self updateFarmInfoPutAnimal:params];
-						[DataEnvironment sharedDataEnvironment].storageAnimals = nil;
-						
-						
-						//**********[itemInfoPane updatePage];
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"添加动物到饲养场成功"];
-					}
-						break;
-					case 2:
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"仓库中没有该动物!"];
-						break;
-					case 3:
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"饲养场动物数量超标!"];
-						break;
-					default:
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作出现异常"];
-						break;
-				}
-			}
-			else if(currentTagFlag == @"动物")
-			{
-				switch (code) {
-					case 1:
-					{
-						[[AnimalController sharedAnimalController] clearAnimal];
-						[[DataEnvironment sharedDataEnvironment].animals removeAllObjects];
-						[[DataEnvironment sharedDataEnvironment].animalIDs removeAllObjects];
-						getAllBirdFarmAnimalInfoController = [[GetAllBirdFarmAnimalInfoController alloc] initWithWorkFlowController:nil];
-						NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
-												[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
-						[getAllBirdFarmAnimalInfoController execute:params];
-						[self updateFarmInfoPutAnimal:params];
-						
-						[DataEnvironment sharedDataEnvironment].storageAnimals = nil;
-						
-						//*****[itemInfoPane updatePage];
-						
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"添加动物到饲养场成功"];
-					}
-						break;
-					case 2:
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"仓库动物数量不足!"];
-						break;
-					case 3:
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"饲养场动物数量超标!"];
-						break;
-					default :
-						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作出现异常"];
-						break;
-				}
-			}
-			
-	
-			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
-			itemArray = [itemDic allKeys];
-		}
+		case ANIMAL_WAREHOUSE:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
 			break;
+			
+		case BUY_ANIMAL_WAREHOUSE:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
+			break;
+			
 		default:
 			break;
 	}
-	NSLog(@"操作已成功!");
+	
+	[myPopView addView2Window];
 }
 
 //失败响应
@@ -241,68 +88,62 @@
 	NSMutableArray* picFileNameArray = [[NSMutableArray alloc] init];
 	NSMutableArray* sexNameArray = [[NSMutableArray alloc] init];
 	switch (tabFlag) {
-		case 0:
+		case ANIMAL_WAREHOUSE:
 		{
-			NSLog(@"************* generatePage ***********************");
-			if (currentTagFlag == @"动物") {
-				NSDictionary *storageAnimal = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
-				DataModelStorageAnimal *stoAnimals;
-				NSArray *animalArray = [storageAnimal allKeys];
-				NSString *gender;
-				
-				for (int i = 0; i < [animalArray count]; i ++) {
-					stoAnimals = [storageAnimal objectForKey:[animalArray objectAtIndex:i]];
-					DataModelOriginalAnimal *serverAnimalToshow = (DataModelOriginalAnimal *)[[DataEnvironment sharedDataEnvironment].originalAnimals objectForKey:stoAnimals.originalAnimalId];			
-					
-					if ([serverAnimalToshow.originalAnimalId intValue] > 50) {
-						gender = @"公";
-						//male
-					}
-					else {
-						gender = @"母";
-						//female
-					}
-					
-					NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalToshow.scientificNameCN];
-					NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalToshow.picturePrefix];
-					[picFileNameArray addObject:picFileName];
-					[sexNameArray addObject:gender];
-				}
-				[myPopView initWithItem:picFileNameArray];
-				[myPopView setSexArray:sexNameArray];
+			NSDictionary *storageAnimal = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAnimals;
+			DataModelStorageAnimal *stoAnimals;
+			NSArray *animalArray = [storageAnimal allKeys];
+			NSNumber *gender;
 			
+			for (int i = 0; i < [animalArray count]; i ++) {
+				stoAnimals = [storageAnimal objectForKey:[animalArray objectAtIndex:i]];
+				DataModelOriginalAnimal *serverAnimalToshow = (DataModelOriginalAnimal *)[[DataEnvironment sharedDataEnvironment].originalAnimals objectForKey:stoAnimals.originalAnimalId];			
+				
+				if ([serverAnimalToshow.originalAnimalId intValue] > 50) {
+					gender = [NSNumber numberWithInt:1];
+				}
+				else {
+					gender = [NSNumber numberWithInt:0];
+				}
+				
+				NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalToshow.picturePrefix];
+				[picFileNameArray addObject:picFileName];
+				[sexNameArray addObject:gender];
 			}
+			[myPopView setSexArray:sexNameArray];
+			[myPopView initWithItem:picFileNameArray];
+			
+			[picFileNameArray release];
+			picFileNameArray = nil;
+			[sexNameArray release];
+			sexNameArray = nil; 
 		}
 			break;
-		case 1:
+		case BUY_ANIMAL_WAREHOUSE:
 		{
 				NSDictionary *auctionAnimals = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageAuctionAnimals;
 				DataModelStorageAuctionAnimal *stoauAnimals;
 				NSArray *animalArray = [auctionAnimals allKeys];
-				NSString *gender;
+				NSNumber *gender;
 				DataModelOriginalAnimal *serverAnimalShow;
-				CCSprite *localGender;
 				for (int i = 0; i < [animalArray count]; i ++) {
 					stoauAnimals = [auctionAnimals objectForKey:[animalArray objectAtIndex:i]];
 					serverAnimalShow = (DataModelOriginalAnimal *)[[DataEnvironment sharedDataEnvironment].originalAnimals objectForKey:stoauAnimals.originalAnimalId];
 					
 					if ([serverAnimalShow.originalAnimalId intValue] > 50) {
-						localGender = [CCSprite spriteWithFile:@"公.png"];
+						gender = [NSNumber numberWithInt:1];
 					}
 					else {
-						localGender = [CCSprite spriteWithFile:@"母.png"];
+						gender = [NSNumber numberWithInt:0];
 					}
 					
-					NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalShow.scientificNameCN];
 					NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalShow.picturePrefix];
 					
 					[picFileNameArray addObject:picFileName];
 					[sexNameArray addObject:gender];
 				}
-			//[myPopView setBuyTypeArray:buyTypeArray];
-//			[myPopView setPriceArray:priceArray];
-			[myPopView initWithItem:picFileNameArray];
 			[myPopView setSexArray:sexNameArray];
+			[myPopView initWithItem:picFileNameArray];
 			
 			[picFileNameArray release];
 			picFileNameArray = nil;
@@ -326,13 +167,20 @@
 		UIButton* topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
  		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
 		[topBtn setTitle:[arrayTitle objectAtIndex:i] forState:UIControlStateNormal];
+		topBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:16];
 		[topBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 		CGRect btnFrame = [[arrayBtn objectAtIndex:i] CGRectValue];
 		topBtn.frame = btnFrame;
 		[topBtn addTarget:self action:@selector(topBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
-		topBtn.tag = i;
+		topBtn.tag = ANIMAL_WAREHOUSE+i;
 		[myPopView.view addSubview:topBtn];
 	}
+}
+
+-(void)resultCallbackGetAllAnimals:(NSObject *)value
+{
+	[self generatePage];
+	
 }
 
 - (void) topBtnSelected:(id)sender{
@@ -348,11 +196,11 @@
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
 	
 	switch (tabFlag) {
-		case 0:
+		case ANIMAL_WAREHOUSE:
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
 			break;
 			
-		case 1:
+		case BUY_ANIMAL_WAREHOUSE:
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
 			break;
 			
@@ -364,8 +212,34 @@
 - (void) dealloc{
 	
 	[myPopView release];
+	[[NSNotificationCenter defaultCenter] removeObserver:self name:SaleEggs object:nil];
 	
 	[super dealloc];
+}
+
+//add by lancy
+- (void) reloadData:(NSNotification *)aNotification{
+	
+	for (UIView *subview in [myPopView m_ppopView].subviews) 
+	{
+		[subview removeFromSuperview];
+	}
+	
+	NSString *par = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:par,@"farmerId",nil];	
+	
+	switch (tabFlag) {
+		case ANIMAL_WAREHOUSE:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
+			break;
+			
+		case BUY_ANIMAL_WAREHOUSE:
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
+			break;
+			
+		default:
+			break;
+	}
 }
 
 @end

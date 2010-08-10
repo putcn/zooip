@@ -50,7 +50,7 @@
 - (void) btnShopButtonHandler{
 	
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
-	tabFlag = 0;
+	tabFlag = BUY_ANIMAL;
 	[myPopView addView2Window];
 }
 
@@ -58,7 +58,7 @@
 - (void) generatePage
 {
 	switch (tabFlag) {
-		case 0:{
+		case BUY_ANIMAL:{
 	
 			NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 			
@@ -138,7 +138,7 @@
 		}		
 			break;
 			
-		case 1:{
+		case BUY_FOODS:{
 			
 			NSDictionary *foodDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].foods;
 			DataModelFood *dataModelFood;
@@ -177,7 +177,7 @@
 		}
 			break;
 			
-		case 2:{
+		case BUY_GOODS:{
 			
 			NSDictionary *goodsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].goods;
 			DataModelGood *dataModelGood;
@@ -233,21 +233,21 @@
 	NSDictionary *itemDic;
 	NSArray *itemArray;
 	switch (tabFlag) {
-		case 0:{
+		case BUY_ANIMAL:{
 			
 			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 			itemArray = [itemDic allKeys];
 		}
 			break;
 			
-		case 1:{
+		case BUY_FOODS:{
 			
 			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].foods;
 			itemArray = [itemDic allKeys];
 		}
 			break;
 			
-		case 2:{
+		case BUY_GOODS:{
 			
 			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].goods;
 			itemArray = [itemDic allKeys];
@@ -295,15 +295,15 @@
 	}
 	
 	switch (tabFlag) {
-		case 0:
+		case BUY_ANIMAL:
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 			break;
 			
-		case 1:
+		case BUY_FOODS:
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllFoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 			break;
 			
-		case 2:
+		case BUY_GOODS:
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllGoods WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 			break;
 			
