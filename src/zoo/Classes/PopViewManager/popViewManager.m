@@ -428,7 +428,7 @@
 			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
 									frameId,	@"farmerId",
 									nil];
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellAllZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultAllEggCallback:" AndFailedSel:@"faultCallback:"];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellAllZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultAllZygoteEggCallback:" AndFailedSel:@"faultCallback:"];
 		}
 			break;
 			
@@ -453,8 +453,14 @@
 		}
 		
 		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功卖出所有蛋!"];
-		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
-								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+		
+		
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+								[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",
+								nil];
+		
+		NSLog(@"%@\n", params);
 		[self updateFarmInfoExeCute:params];
 		
 	}
@@ -466,14 +472,56 @@
 	NSLog(@"Server Connection Fail");
 }
 
+- (void)resultAllZygoteEggCallback:(NSObject *)value
+{
+	
+	NSDictionary *result = (NSDictionary *)value;
+	NSInteger code = [[result objectForKey:@"code"] isKindOfClass:[NSNull class]]  ? 0 : [(NSNumber *)[result objectForKey:@"code"] intValue];
+	
+	if (code == 0) {
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有可卖的蛋!"];
+	}
+	
+	if (code == 1) {
+		
+		for (UIView *subview in m_ppopView.subviews) {
+			[subview removeFromSuperview];
+		}
+		
+		[[FeedbackDialog sharedFeedbackDialog] addMessage:@"成功卖出所有蛋!"];
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+								[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+								[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",
+								nil];
+		[self updateFarmInfoZogyteExeCute:params];
+		
+	}
+	
+	[[NSNotificationCenter defaultCenter] postNotificationName:SaleEggs object:nil];
+}
+
 -(void)updateFarmInfoExeCute:(NSDictionary *)value{
 	
 	NSDictionary *param = (NSDictionary *)value;
-	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmInfo WithParameters:param AndCallBackScope:self AndSuccessSel:@"updateFarmInfoResultCallback:" AndFailedSel:@"faultCallback:"];
+	
+	NSLog(@"%@\n", param);
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:param AndCallBackScope:self AndSuccessSel:@"updateFarmInfoResultCallback:" AndFailedSel:@"faultCallback:"];
 }
 
 -(void)updateFarmInfoResultCallback:(NSObject*)value{
 	
 	[[GameMainScene sharedGameMainScene] updateUserInfo];
 }
+
+-(void)updateFarmInfoZogyteExeCute:(NSDictionary *)value{
+	
+	NSDictionary *param = (NSDictionary *)value;
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:param AndCallBackScope:self AndSuccessSel:@"updateFarmInfoResultZogyteCallback:" AndFailedSel:@"faultCallback:"];
+}
+
+-(void)updateFarmInfoResultZogyteCallback:(NSObject*)value{
+	
+	[[GameMainScene sharedGameMainScene] updateUserInfo];
+}
+
 @end
