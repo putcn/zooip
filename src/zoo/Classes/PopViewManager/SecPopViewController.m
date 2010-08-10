@@ -123,7 +123,28 @@
 		case BUY_GOODS:
 			showStr = [showStr stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@"件商品"]];
 			break;
+		case SALE_COMMONEGGS:
+		{
+			showStr = [showStr stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@"个普通蛋"]];
 			
+			farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+			NSDictionary *storageEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
+			DataModelStorageEgg *storageEgg; 
+			NSArray *storageEggArrayTemp = [storageEggDic allKeys];
+			storageEgg = [storageEggDic objectForKey:[storageEggArrayTemp objectAtIndex:itemId]];
+			NSString* describeStr;
+			describeStr = @"单个售价:";
+			describeStr = [describeStr stringByAppendingString:[NSString stringWithFormat:@"%d金蛋\n", storageEgg.eggPrice]];
+			describeStr = [describeStr stringByAppendingString:[NSString stringWithFormat:@"总计收入:%d金蛋", tempCount*storageEgg.eggPrice]];
+			describeLabel.numberOfLines = 2;
+			describeLabel.text = describeStr;
+			
+			countLabel.text = [NSString stringWithFormat:@"%d", storageEgg.numOfProduct];
+		}
+			break;
+		case SALE_ZYGOTEEGGS:
+		//	showStr = [showStr stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@"个受精蛋"]];
+			break;
 		default:
 			break;
 	}
@@ -201,10 +222,45 @@
 		}
 			break;
 			
-//		case SALE_ANIMAL:{
-//			
-//		}
-//				break;
+		case SALE_COMMONEGGS:
+		{
+			farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+			NSDictionary *storageEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
+			DataModelStorageEgg *storageEgg; 
+			NSArray *storageEggArrayTemp = [storageEggDic allKeys];
+			storageEgg = [storageEggDic objectForKey:[storageEggArrayTemp objectAtIndex:itemId]];
+			
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+									farmerId,@"farmerId",
+									storageEgg.eggId,@"eggId",
+									[NSString stringWithFormat:@"%d",tempCount],@"amount",
+									nil];
+			
+			NSLog(@"%@\n", params);
+			
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellProduct WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			
+		}
+				break;
+		case SALE_ZYGOTEEGGS:
+		{
+			farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+			NSDictionary *storageZygoteEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs;
+			DataModelStorageZygoteEgg *storageZygoteEgg; 
+			NSArray *storageZygoteEggArrayTemp = [storageZygoteEggDic allKeys];
+			storageZygoteEgg = [storageZygoteEggDic objectForKey:[storageZygoteEggArrayTemp objectAtIndex:itemId]];
+			
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+									farmerId,@"farmerId",
+									storageZygoteEgg.eggId,@"eggId",
+									[NSString stringWithFormat:@"%d",1],@"amount",
+									nil];
+			
+			NSLog(@"%@\n", params);
+			
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];			
+		}
+			break;
 
 		default:
 			break;
@@ -260,7 +316,6 @@
 
 -(void) resultCallback:(NSObject *)value
 {
-	
 	switch (m_npopViewType) {
 		case SHOP_POPVIEW:{
 			
@@ -298,8 +353,47 @@
 		}
 			break;
 			
-		case EGG_WAREHOUSE_POPVIEW:{
-				
+		case EGG_WAREHOUSE_POPVIEW:
+		{
+//			if(m_ntabFlag == SALE_COMMONEGGS)
+//			{
+				NSDictionary *result = (NSDictionary *)value;
+				NSInteger code = [[result objectForKey:@"code"] intValue];
+				switch (code) {
+					case 0:
+						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有蛋可卖"];
+						break;
+					case 1:
+						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"恭喜你出售成功!"];
+						
+						NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+												[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+												[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+						
+						NSLog(@"%@\n", params);
+						[self updateFarmInfoExeCute:params];
+						
+						break;
+					case 2:
+						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"卖蛋不成功!"];
+						break;
+					case 3:
+						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蛋已经拍卖!"];
+						break;
+					case 4:
+						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"蛋已经孵化!"];
+						break;
+					default:
+						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作异常!"];
+						break;
+				}
+//				
+//				NSLog(@"操作已成功!");
+//			}
+//			else if(m_ntabFlag == SALE_ZYGOTEEGGS)
+//			{
+//				
+//			}
 		}
 				break;
 			
@@ -519,6 +613,10 @@
 #pragma mark saleCommonEggs
 -(void)saleCommonEggs
 {
+	buySlider.hidden = NO;
+	countLabel.hidden = NO;
+	buySlider.value = 1.0f;
+	
 	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 	NSDictionary *storageEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageEggs;
 	DataModelStorageEgg *storageEgg; 
@@ -536,9 +634,14 @@
 	describeLabel.text = describeStr;
 	
 	countLabel.text = [NSString stringWithFormat:@"%d", storageEgg.numOfProduct];
+	
+	mixCount = storageEgg.numOfProduct;
 }
 -(void)saleZogyteEggs
 {
+	buySlider.hidden = YES;
+	countLabel.hidden = YES;
+	
 	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 	NSDictionary *storageZygoteEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs;
 	DataModelStorageZygoteEgg *storageZygoteEgg; 
@@ -550,7 +653,7 @@
 	
 	NSString* describeStr;
 	describeStr = @"受精蛋售价:";
-	describeStr = [describeStr stringByAppendingString:[NSString stringWithFormat:@"%d金蛋\n", storageZygoteEgg.eggPrice]];
+	describeStr = [describeStr stringByAppendingString:[NSString stringWithFormat:@"%d金蛋\n", storageZygoteEgg.zygotePrice]];
 	describeStr = [describeStr stringByAppendingString:[NSString stringWithFormat:@"受精蛋预计产量:%d个\n", storageZygoteEgg.baseYield]];
 	
 	if(0 == storageZygoteEgg.zygoteGender)
@@ -564,5 +667,19 @@
 	describeLabel.numberOfLines = 3;
 	describeLabel.text = describeStr;
 }
+-(void)updateFarmInfoExeCute:(NSDictionary *)value
+{
+	NSDictionary *param = (NSDictionary *)value;
+	NSLog(@"%@\n", param);
+	
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:param AndCallBackScope:self AndSuccessSel:@"updateFarmInfoResultCallback:" AndFailedSel:@"faultCallback:"];
+}
+
+
+-(void)updateFarmInfoResultCallback:(NSObject*)value
+{
+	[[GameMainScene sharedGameMainScene] updateUserInfo];
+}
+
 
 @end
