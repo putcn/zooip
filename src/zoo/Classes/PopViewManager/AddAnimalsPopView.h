@@ -10,22 +10,23 @@
 #import "popViewManager.h"
 #import "Common.h"
 
+extern NSString *AddAnimals;
 
 @interface AddAnimalsPopView : NSObject {
 
 	popViewManager*		myPopView;
-	int					tabFlag;
-	NSString            *currentTagFlag;
-	
+	int					tabFlag;	
 }
 
 
 - (id) init;
 
+- (void) generatePage;
 - (void) btnShopButtonHandler;
-- (void) resultCallback:(NSObject *)value;
 - (void) faultCallback:(NSObject *)value;
-- (void)initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle;
+- (void) initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle;
 - (void) topBtnSelected:(id)sender;
 
+//add by lancy
+- (void) reloadData:(NSNotification *)aNotification;
 @end
