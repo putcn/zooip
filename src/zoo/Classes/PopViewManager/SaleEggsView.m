@@ -188,17 +188,15 @@ NSString *SaleEggs = @"SALE_EGGS";
 	
 	switch (tabFlag) 
 	{
-		case 3:
+		case SALE_COMMONEGGS:
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageProducts WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 			break;
-		case 4:
+		case SALE_ZYGOTEEGGS:
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultOfZygoteEggCallback:" AndFailedSel:@"faultOfZygoteEggCallback:"];
 			break;
 		default:
 			break;
 	}
-	
-//	[myPopView setTabFlag:tabFlag];
 }
 
 @end
