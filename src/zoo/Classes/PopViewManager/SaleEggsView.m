@@ -25,8 +25,14 @@ NSString *SaleEggs = @"SALE_EGGS";
 		[myPopView setM_nlistCount:1];
 		[myPopView setM_npopViewType:EGG_WAREHOUSE_POPVIEW];
 		
-		CGRect rect1 = CGRectMake(150, 75, 65.f, 28.f);
-		CGRect rect2 = CGRectMake(215, 75, 65.f, 28.f);
+		UIImageView* logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"仓库LOGO.png"]];
+		logoImage.frame = CGRectMake(90, 68, 80, 35);
+		[myPopView.view addSubview:logoImage];
+		[logoImage release];
+		logoImage = nil;
+		
+		CGRect rect1 = CGRectMake(175, 80, 65.f, 23.f);
+		CGRect rect2 = CGRectMake(240, 80, 65.f, 23.f);
 		
 		NSMutableArray* foo = [[NSMutableArray alloc] init];
 		[foo addObject:[NSValue valueWithCGRect:rect1]];
@@ -101,6 +107,7 @@ NSString *SaleEggs = @"SALE_EGGS";
 		UIButton* topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
  		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
 		[topBtn setTitle:[arrayTitle objectAtIndex:i] forState:UIControlStateNormal];
+		topBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:16];
 		[topBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 		CGRect btnFrame = [[arrayBtn objectAtIndex:i] CGRectValue];
 		topBtn.frame = btnFrame;
