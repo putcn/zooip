@@ -15,7 +15,8 @@ extern NSString *AddAnimals;
 @interface AddAnimalsPopView : NSObject {
 
 	popViewManager*		myPopView;
-	int					tabFlag;	
+	int					tabFlag;
+	NSMutableArray*		stoAnimalsArray;
 }
 
 
@@ -26,7 +27,8 @@ extern NSString *AddAnimals;
 - (void) faultCallback:(NSObject *)value;
 - (void) initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle;
 - (void) topBtnSelected:(id)sender;
+- (void) resultCallback:(NSObject *)value;
 
 //add by lancy
-- (void) reloadData:(NSNotification *)aNotification;
+- (void) addAimalToFrame:(NSNotification *)aNotification;
 @end

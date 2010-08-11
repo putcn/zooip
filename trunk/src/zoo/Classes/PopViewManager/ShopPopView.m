@@ -18,16 +18,22 @@
 - (id) init{
 	
 	if ( (self = [super init]) ){
-	
+		
 		myPopView = [[popViewManager alloc] init];
 		[myPopView setPopViewFrame:CGRectMake(100, 120, 280, 160)];
 		[myPopView setSubSize:CGSizeMake(40, 40)];
 		[myPopView setM_nlistCount:2];
 		[myPopView setM_npopViewType:SHOP_POPVIEW];
 		
-		CGRect rect1 = CGRectMake(160, 75, 65.f, 28.f);
-		CGRect rect2 = CGRectMake(225, 75, 65.f, 28.f);
-		CGRect rect3 = CGRectMake(290, 75, 65.f, 28.f);
+		UIImageView* logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"store_logo.png"]];
+		logoImage.frame = CGRectMake(90, 68, 80, 35);
+		[myPopView.view addSubview:logoImage];
+		[logoImage release];
+		logoImage = nil;
+		
+		CGRect rect1 = CGRectMake(165, 80, 65.f, 23.f);
+		CGRect rect2 = CGRectMake(230, 80, 65.f, 23.f);
+		CGRect rect3 = CGRectMake(295, 80, 65.f, 23.f);
 		
 		NSMutableArray* foo = [[NSMutableArray alloc] init];
 		[foo addObject:[NSValue valueWithCGRect:rect1]];

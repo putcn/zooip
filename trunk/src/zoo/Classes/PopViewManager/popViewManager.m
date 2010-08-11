@@ -31,7 +31,9 @@
 
 @synthesize m_ppopView;
 @synthesize m_npopViewType, m_nlistCount, tabFlag;
-@synthesize buyTypeArray, priceArray, sexArray, storageEggArray;
+@synthesize buyTypeArray, priceArray, sexArray, storageEggArray, storageAniArray;
+
+@synthesize touchIndex;
 
 - (id)init{
 
@@ -119,6 +121,7 @@
 	
 	
 	m_nprevButtonIndex = -1;
+	touchIndex = 0;
 	[picFileNameArray removeAllObjects];
 	[picFileNameArray addObjectsFromArray:arrayPic];
 	
@@ -263,6 +266,12 @@
 				[m_ppopView addSubview:sexImage];
 				[sexImage release];
 				sexImage = nil;
+				
+				UILabel* countLabel = [[UILabel alloc] initWithFrame:CGRectMake(rowinterval, listinterval+subSize.height-10, 50, 15)];
+				countLabel.text = [[storageAniArray objectAtIndex:i] stringValue];
+				[m_ppopView addSubview:countLabel];
+				[countLabel release];
+				countLabel = nil;
 			}
 				break;
 				
@@ -287,6 +296,12 @@
 				[m_ppopView addSubview:sexImage];
 				[sexImage release];
 				sexImage = nil;
+				
+				UILabel* countLabel = [[UILabel alloc] initWithFrame:CGRectMake(rowinterval, listinterval+subSize.height-10, 50, 15)];
+				countLabel.text = [[storageAniArray objectAtIndex:i] stringValue];
+				[m_ppopView addSubview:countLabel];
+				[countLabel release];
+				countLabel = nil;
 			}
 				break;
 				
@@ -385,7 +400,8 @@
 			
 		case ANIMAL_WAREHOUSE_POPVIEW:{
 			
-			
+			touchIndex = index;
+			[[NSNotificationCenter defaultCenter] postNotificationName:AddAnimals object:nil];
 		}
 			break;
 		case ANIMAL_MATEORMARRY_POPVIEW:{
