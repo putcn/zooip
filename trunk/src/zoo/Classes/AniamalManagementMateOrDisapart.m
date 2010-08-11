@@ -324,105 +324,11 @@ infoMessagePanelTest;
 	
 	itemId = buttonItem.itemId;
 	animalID = buttonItem.animalID;
-//	[self addTitle];
-//	
-//	DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:buttonItem.animalID];
-//	if(serverAnimalList.gender == 1)
-//	{
-//		leftAnimalID = buttonItem.animalID;
-//		rightAnimalID = animalID;
-//	}
-//	else {
-//		leftAnimalID = animalID;
-//		rightAnimalID = buttonItem.animalID;
-//	}
-//	
+
 	[self generateOne];
 //	[self generateButtons];
 }
-
-//-(void)updateInfo:(NSString *) itId type: (NSString *) itType setTarget:(id)target
-//{
-//	[self removeAllChildrenWithCleanup:YES];
-//	[self addTitle];
-//	itemId = itId;
-//	itemType = itType;
-//	itemBuyType = @"goldEgg";
-//	itemPrice = 0;
-//	NSDictionary *dic;	
-//	//判断商品的类型,显示不同的物品信息到不同的信息框中
-//	if (itemType == @"animal") {
-//		dic = [(NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals retain];
-//		DataModelOriginalAnimal *originalAnimal = [dic objectForKey:itemId];
-//		itemPrice = originalAnimal.basePrice;
-//		if (originalAnimal.antsPrice > 0) {
-//			itemBuyType = @"ant";
-//			itemPrice = originalAnimal.antsPrice;
-//		}
-//		NSString *price = [NSString stringWithFormat:@"%d",itemPrice]; 
-//		NSString *picFileName = [NSString stringWithFormat:@"%@.png",originalAnimal.picturePrefix];
-//		[self setImg:picFileName setBuyType:itemBuyType setPrice:price];
-//		
-//		CCLabel *nameLbl = [CCLabel labelWithString:originalAnimal.scientificNameCN fontName:@"Arial" fontSize:30];
-//		[nameLbl setColor:ccc3(0, 0, 0)];
-//		nameLbl.position = ccp(self.contentSize.width/2 + 100, self.contentSize.height - 100);
-//		[self addChild:nameLbl z:10];
-//		[originalAnimal release];
-//	}
-//	[dic release];
-//	
-//	//添加确认和取消按钮,回调函数分别为[ManageContainer buyItem] 和[ManageContainer Cancel]
-//	Button *confirmBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Confirm.png" setTarget:target setSelector:@selector(buyItem:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
-//	Button *cancelBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"Cancel.png" setTarget:target setSelector:@selector(cancel:) setPriority:39 offsetX:0 offsetY:0 scale:1.0f];
-//	
-//	//为Button绑定购买的对象,最终传入到[ManageContainer buyItem]中作为参数发送到服务端
-//	confirmBtn.target = self;
-//	confirmBtn.position = ccp(self.contentSize.width/2 - 100, 50);
-//	cancelBtn.position = ccp(self.contentSize.height/2 + 100, 50);
-//	[self addChild:confirmBtn z:10];
-//	[self addChild:cancelBtn z:10];
-//	if(itemType != @"goods")
-//	{
-//		ScalerPane *scalerPane = [[ScalerPane alloc] initWithCounter:1 max:8 delta:1 target:self price:itemPrice z:39 Priority:0 setPathname:@"加减显示器.png" setlength:0];
-//		scalerPane.position = ccp(200,200);
-//		[self addChild:scalerPane z:5];
-//	}
-////	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:45];
-////	transBackground.scale = 17.0f;
-////	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-////	[self addChild:transBackground z:5];
-//}
-//
-//-(void) setImg: (NSString *) imagePath setBuyType: (NSString *) buyType setPrice:(NSString *) price
-//{
-//	CCSprite *item = [CCSprite node];
-//	CCTexture2D *itemImg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:imagePath ofType:nil] ] ];
-//	CGRect rect = CGRectZero;
-//	rect.size = itemImg.contentSize;
-//	[item setTexture: itemImg];
-//	[item setTextureRect: rect];
-//	item.scale = 2.0f;
-//	[itemImg release];
-//	CCSprite *buyImg;
-//	if (buyType == @"goldEgg") {
-//		buyImg = [CCSprite spriteWithFile:@"金蛋ico.png"];
-//	}
-//	else {
-//		buyImg = [CCSprite spriteWithFile:@"蚂蚁ICO.png"];
-//	}
-//	priceLbl = [CCLabel labelWithString:price fontName:@"Arial" fontSize:20];
-//	[priceLbl setColor:ccc3(255, 0, 255)];
-//	
-//	item.position = ccp(item.contentSize.width/2 + 150, self.contentSize.height  - item.contentSize.height /2 - 150);
-//	buyImg.position = ccp(item.position.x - 60, 30);
-//	priceLbl.position = ccp(item.position.x + 20 , 30);
-//	buyImg.scale = 1.5f;
-//	priceLbl.scale = 1.5f;
-//	
-//	[self addChild:item z:10];
-//	[self addChild:buyImg z:10];
-//	[self addChild:priceLbl z:10];
-//}							  
+					  
 
 
 -(void) dealloc

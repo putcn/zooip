@@ -40,8 +40,6 @@
 		btnClose.position = ccp( s.width - 5, 5 );
 		[self addChild:btnClose];
 		
-		//self.position = ccp( -500 , -500 );
-		//self.position = ccp( 100 , 100 );
 		isOpen = NO;
 		
 		targetCallBack = [target retain];
