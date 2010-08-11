@@ -17,12 +17,7 @@
 {
 	if ((self = [super init])) {
 		parentTarget = target;
-//		CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_ButtonContainer.png" ofType:nil] ] ];
-//		CGRect rect = CGRectZero;
-//		rect.size = bg.contentSize;
-//		[self setTexture: bg];
-//		[self setTextureRect: rect];
-//		[bg release];
+
 		tabFlag = tabName;
 		if (tabFlag == @"animal") {
 			NSDictionary *itemDic;

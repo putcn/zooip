@@ -160,12 +160,6 @@ antsCount;
 	load_1.position = ccp(self.contentSize.width/2-70 , 50);
 	[self addChild:load_1 z:10];
 	
-	
-//	TransBackground *transBackground = [[TransBackground alloc] initWithPriority:25];
-//	transBackground.scale = 5.0f;
-//	transBackground.position = ccp(self.contentSize.width/2, self.contentSize.height/2);
-//	[self addChild:transBackground z:-1];
-	
 	[self setImg:@"" setBuyType:@"" setPrice:@"1"];
 }
 

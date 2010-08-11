@@ -18,12 +18,6 @@
 {
 	if ((self = [super init])) {
 		parentTarget = target;
-//		CCTexture2D *bg = [ [CCTexture2D alloc] initWithImage: [UIImage imageWithContentsOfFile: [[NSBundle mainBundle] pathForResource:@"BG_ButtonContainer.png" ofType:nil] ] ];
-//		CGRect rect = CGRectZero;
-//		rect.size = bg.contentSize;
-//		[self setTexture: bg];
-//		[self setTextureRect: rect];
-//		[bg release];
 		tabFlag = tabName;
 		if (tabFlag == @"animal") {
 			NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
@@ -59,14 +53,6 @@
 			pageLabel.position = ccp(450,-450);
 			[self addChild:pageLabel z:7];
 		}
-		
-//		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(nextPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
-//		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"nextpage.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:1 offsetX:0 offsetY:0 scale:1.0f];
-//		forwardPageBtn.flipX = YES;
-//		nextPageBtn.position = ccp(self.contentSize.width/2 + 100, 0);
-//		forwardPageBtn.position = ccp(self.contentSize.width/2 - 100, 0);
-//		[self addChild:nextPageBtn z:7];
-//		[self addChild:forwardPageBtn z:7];
 		
 		Button *nextPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_右.png" setTarget:self setSelector:@selector(nextPage:) setPriority:30 offsetX:0 offsetY:0 scale:3.0f];
 		Button *forwardPageBtn = [[Button alloc] initWithLabel:@"" setColor:ccc3(255, 255, 255) setFont:@"Arial" setSize:12 setBackground:@"加减器_左.png" setTarget:self setSelector:@selector(forwardPage:) setPriority:30 offsetX:0 offsetY:0 scale:3.0f];
@@ -159,11 +145,7 @@
 				AnimalManagementButtonItem *itemButton = [[AnimalManagementButtonItem alloc] initWithItem:orgid setitType:tabFlag setAnimalID:aniID setImagePath:picFileName setAnimalName:animalName setTarget:parentTarget setSelector:@selector(itemInfoHandler:) setPriority:30 offsetX:1 offsetY:1 setPictureScale:2.5];
 				itemButton.position = ccp(230 * (kTemp%4) + 120, self.contentSize.height - 220 * ((kTemp-8*(currentPageNum-1))/4) - 105);
 				[self addChild:itemButton z:7 tag:kTemp%8];
-				
-//				CCSprite* kuang = [CCSprite spriteWithFile:@"物品边框.png"];
-//				kuang.position = ccp(230 * (kTemp%4) + 110,  self.contentSize.height - 215 * ((kTemp-8*(currentPageNum-1))/4) - 100);
-//				kuang.scale = 1024.0/400.0f;
-//				[self addChild:kuang z:6];
+
 				
 				kTemp++;
 			}
