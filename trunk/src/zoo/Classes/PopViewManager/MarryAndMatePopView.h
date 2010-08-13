@@ -11,6 +11,7 @@
 #import "Common.h"
 
 
+
 @interface MarryAndMatePopView : NSObject {
 	
 	popViewManager*		myPopView;
@@ -19,13 +20,16 @@
 	NSString            *tabFlagType;
 	NSString            *managementType;
 	
+	
 }
 
 
 - (id) init;
 
-- (void) btnShopButtonHandler;
+- (void) marryAndMateButtonHandler;
 - (void) resultCallback:(NSObject *)value;
 - (void) faultCallback:(NSObject *)value;
+
+- (void)initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle;
 
 @end

@@ -11,6 +11,8 @@
 #import "Common.h"
 
 #import "SecPopViewController.h"
+#import "MarryView.h"
+
 
 @protocol ScrollBarViewDelegate;
 @interface popViewManager : UIViewController {
@@ -38,6 +40,12 @@
 	UIButton*			saleAllBtn;
 	
 	int					touchIndex;
+	
+	NSMutableArray*		stoAnimalsArray;
+	
+	
+	// Marray view
+	MarryView* m_pMarryView;
 }
 
 @property(nonatomic, retain) UIScrollView* m_ppopView;
@@ -52,6 +60,8 @@
 @property(nonatomic, retain)NSMutableArray* storageAniArray;
 
 @property(nonatomic, readonly)int touchIndex;
+
+@property(nonatomic, retain)NSMutableArray*	stoAnimalsArray;
 
 - (id) init;
 

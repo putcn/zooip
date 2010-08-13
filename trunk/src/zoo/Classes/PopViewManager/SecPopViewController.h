@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "hatchView.h"
 
 @interface SecPopViewController : UIViewController {
 
@@ -36,6 +36,8 @@
 	IBOutlet UILabel*		countLabel;
 	IBOutlet UILabel*		wrongLabel;
 	IBOutlet UIButton*		OKButton;
+	
+	hatchView* m_hatchView;
 }
 
 @property(nonatomic, readwrite) int m_npopViewType;
