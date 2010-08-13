@@ -660,7 +660,53 @@
 	}
 	describeLabel.numberOfLines = 3;
 	describeLabel.text = describeStr;
+	
+	// 孵化
+	UIButton* hatchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+	[hatchBtn setBackgroundImage:[UIImage imageNamed: @"黄色按钮.png"] forState:UIControlStateNormal];
+	[hatchBtn setTitle:@"孵化" forState:UIControlStateNormal];
+	hatchBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:16];
+	[hatchBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+	CGRect btnFrame = CGRectMake(210, 250, 60, 30);
+	hatchBtn.frame = btnFrame;
+	[hatchBtn addTarget:self action:@selector(hatchBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
+	
+	[self.view addSubview:hatchBtn];
 }
+
+-(void)hatchBtnSelected:(id)sender
+{
+	if(nil == m_hatchView)
+	{
+		m_hatchView = [[hatchView alloc]initWithNibName:@"hatchView" bundle:nil];
+	}
+	
+	
+	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *storageZygoteEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs;
+	DataModelStorageZygoteEgg *storageZygoteEgg; 
+	NSArray *storageZygoteEggArrayTemp = [storageZygoteEggDic allKeys];
+	storageZygoteEgg = [storageZygoteEggDic objectForKey:[storageZygoteEggArrayTemp objectAtIndex:itemId]];
+	
+	if(storageZygoteEgg.zygoteGender < 50)
+	{
+		[m_hatchView setM_nGoldenEggs: (3 * storageZygoteEgg.zygotePrice)];
+		[m_hatchView setM_nAnts:((3 * storageZygoteEgg.zygotePrice) / 500)];
+	}
+	else
+	{
+		[m_hatchView setM_nGoldenEggs: (6 * storageZygoteEgg.zygotePrice)];
+		[m_hatchView setM_nAnts:((6 * storageZygoteEgg.zygotePrice) / 500)];		
+	}
+
+	[m_hatchView setM_strFarmerID:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId];
+	[m_hatchView setM_strFarmID:[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId];
+	[m_hatchView setM_strStorageZyID:storageZygoteEgg.zygoteStorageId];
+	
+	
+	[self.view addSubview:m_hatchView.view];
+}
+
 -(void)updateFarmInfoExeCute:(NSDictionary *)value
 {
 	NSDictionary *param = (NSDictionary *)value;
