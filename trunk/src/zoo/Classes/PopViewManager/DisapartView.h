@@ -1,18 +1,16 @@
 //
-//  MarryView.h
+//  DisapartView.h
 //  zoo
 //
-//  Created by Hunk on 10-8-12.
-//  Copyright 2010 Vanceinfo. All rights reserved.
+//  Created by AlexLiu on 8/16/10.
+//  Copyright 2010 Alex Dev. All rights reserved.
 //
 
-//#import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 #import "SecPopViewController.h"
 
-@protocol ScrollBarViewDelegate;
-@interface MarryView : UIViewController 
-{
+
+@interface DisapartView : UIViewController {
 	UIScrollView* animalScrollView;
 	UIImageView* rightUpImageView;
 	
@@ -22,18 +20,20 @@
 	int	m_nprevButtonIndex;	
 	
 	NSMutableArray* m_arrPic;
-		
+	
 	int m_nSelectedAniIndex;
 	
 	int m_nSexIndex;
 	
 	NSString* leftAnimalID;
 	NSString* rightAnimalID;
+	NSString* tempLeft;
+	NSString* tempRight;
 	
 	NSMutableArray* m_arrANIMALID;
 	SecPopViewController *secPopView;
-	NSString *tempLeft;
 }
+
 @property(nonatomic, retain) NSString* leftAnimalID;
 @property(nonatomic, retain) NSString* rightAnimalID;
 @property(nonatomic, retain) NSMutableArray* m_arrANIMALID;
@@ -42,6 +42,5 @@
 
 -(void)addUpAnimal:(NSString*)upAnimalName sex:(int)sexIndex;
 
--(void)initScrollViewItems:(NSMutableArray*)picArray aniID:(NSMutableArray*)idArray;
 
 @end

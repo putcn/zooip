@@ -13,6 +13,8 @@ enum popViewType{
 	EGG_WAREHOUSE_POPVIEW,  // 卖蛋操作
 	ANIMAL_WAREHOUSE_POPVIEW, // 动物仓库，拍卖放入动物
 	ANIMAL_MATEORMARRY_POPVIEW, // 动物婚姻管理
+	ANIMAL_DISAPAERT_POPVIEW, //动物离婚弹出窗口
+	ANIMAL_ANTSCHOOSE_POPVIEW,
 };
 
 enum secPopView{
@@ -24,5 +26,10 @@ enum secPopView{
 	SALE_ZYGOTEEGGS,
 	
 	ANIMAL_WAREHOUSE,
-	BUY_ANIMAL_WAREHOUSE
+	BUY_ANIMAL_WAREHOUSE,
+	
+	ANIMAL_MARRY, //
+	ANIMAL_DISAPART, //
+	Mate_Before_Marry, //
+	Mate_After_Marry,
 };

@@ -37,6 +37,7 @@
 @synthesize touchIndex;
 
 @synthesize stoAnimalsArray;
+@synthesize stoMarriedArray;
 
 - (id)init{
 
@@ -44,6 +45,7 @@
 		
 		// Marray view
 		m_pMarryView = [[MarryView alloc]init];
+		m_pDisapartView = [[DisapartView alloc] init];
 		
 		
 		
@@ -74,7 +76,10 @@
 		[backBtn addTarget:self action:@selector(backBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
 		[self.view addSubview:backBtn];
 		
+		//Init the storage and married array list.
+		
 		stoAnimalsArray = [[NSMutableArray alloc]init];
+		stoMarriedArray = [[NSMutableArray alloc]init];
 	}
 	return self;
 }
@@ -101,6 +106,7 @@
 	
 	
 	[m_pMarryView release];
+	[m_pDisapartView release];
 	
 	[super dealloc];
 }
@@ -291,35 +297,66 @@
 				
 			case ANIMAL_MATEORMARRY_POPVIEW:
 			{
-				int sex = [[sexArray objectAtIndex:i] intValue];
-				UIImageView *sexImage = [[UIImageView alloc] init];
-				switch (sex) 
-				{
-					case 0:
-						[sexImage setImage:[UIImage imageNamed:@"母.png"]];
+				switch (tabFlag) {
+					case ANIMAL_MARRY:
+					{
+						int sex = [[sexArray objectAtIndex:i] intValue];
+						UIImageView *sexImage = [[UIImageView alloc] init];
+						switch (sex) 
+						{
+							case 0:
+								[sexImage setImage:[UIImage imageNamed:@"母.png"]];
+								break;
+								
+							case 1:
+								[sexImage setImage:[UIImage imageNamed:@"公.png"]];
+								break;
+								
+							default:
+								break;
+						}
+						
+						[sexImage setFrame:CGRectMake(rowinterval+subSize.width-10, listinterval, 10, 12)];
+						[m_ppopView addSubview:sexImage];
+						[sexImage release];
+						sexImage = nil;
+						
+						UILabel* countLabel = [[UILabel alloc] initWithFrame:CGRectMake(rowinterval, listinterval+subSize.height-10, 50, 15)];
+						countLabel.text = [[storageAniArray objectAtIndex:i] stringValue];
+						[m_ppopView addSubview:countLabel];
+						[countLabel release];
+						countLabel = nil;
+					}
+						break;
+					case ANIMAL_DISAPART:
+					{
+						int sex = [[sexArray objectAtIndex:i] intValue];
+						UIImageView *sexImage = [[UIImageView alloc] init];
+						switch (sex) 
+						{
+							case 0:
+								[sexImage setImage:[UIImage imageNamed:@"母.png"]];
+								break;
+								
+							case 1:
+								[sexImage setImage:[UIImage imageNamed:@"公.png"]];
+								break;
+								
+							default:
+								break;
+						}
+						
+						[sexImage setFrame:CGRectMake(rowinterval+subSize.width-10, listinterval, 10, 12)];
+						[m_ppopView addSubview:sexImage];
+						[sexImage release];
+						sexImage = nil;
+					}
 						break;
 						
-					case 1:
-						[sexImage setImage:[UIImage imageNamed:@"公.png"]];
-						break;
-						
-					default:
-						break;
 				}
-				
-				[sexImage setFrame:CGRectMake(rowinterval+subSize.width-10, listinterval, 10, 12)];
-				[m_ppopView addSubview:sexImage];
-				[sexImage release];
-				sexImage = nil;
-				
-				UILabel* countLabel = [[UILabel alloc] initWithFrame:CGRectMake(rowinterval, listinterval+subSize.height-10, 50, 15)];
-				countLabel.text = [[storageAniArray objectAtIndex:i] stringValue];
-				[m_ppopView addSubview:countLabel];
-				[countLabel release];
-				countLabel = nil;
 			}
 				break;
-				
+
 			default:
 				break;
 		}
@@ -419,74 +456,120 @@
 			[[NSNotificationCenter defaultCenter] postNotificationName:AddAnimals object:nil];
 		}
 			break;
+			
+
 		case ANIMAL_MATEORMARRY_POPVIEW:
 		{
-			// Show marry view
-			//[self.view addSubview:m_pMarryView.view];
-			
-			// 判断是否有动物可以结婚
-			BOOL ret = NO;
-			NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
-			NSString *aniID;
-			DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:[stoAnimalsArray objectAtIndex:index]];
-			
-			
-			NSMutableArray* picArray = [[NSMutableArray alloc]init];
-			NSMutableArray* animalIDArray = [[NSMutableArray alloc]init];
-			
-			for (int i = 0; i < [[DataEnvironment sharedDataEnvironment].animalIDs count]; i ++) 
-			{
-				aniID = [animalIDs objectAtIndex:i];
+			switch (tabFlag) {
+				case ANIMAL_MARRY:
+				{
+					// Show marry view
+					//[self.view addSubview:m_pMarryView.view];
+					
+					// 判断是否有动物可以结婚
+					BOOL ret = NO;
+					NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
+					NSString *aniID;
+					DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:[stoAnimalsArray objectAtIndex:index]];
+					
+					
+					NSMutableArray* picArray = [[NSMutableArray alloc]init];
+					NSMutableArray* animalIDArray = [[NSMutableArray alloc]init];
+					
+					for (int i = 0; i < [[DataEnvironment sharedDataEnvironment].animalIDs count]; i ++) 
+					{
+						aniID = [animalIDs objectAtIndex:i];
 						
-				DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
-			
-				if(serverAnimalDataOne.animalType == serverAnimalList.animalType && serverAnimalList.gender != serverAnimalDataOne.gender)
-				{
-					// animal list
-					[picArray addObject:[NSString stringWithFormat:@"%@.png",serverAnimalList.picturePrefix]];
-
-					[animalIDArray addObject:serverAnimalList.animalId];
+						DataModelAnimal *serverAnimalList = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
+						
+						if(serverAnimalDataOne.animalType == serverAnimalList.animalType && serverAnimalList.gender != serverAnimalDataOne.gender)
+						{
+							// animal list
+							[picArray addObject:[NSString stringWithFormat:@"%@.png",serverAnimalList.picturePrefix]];
+							
+							[animalIDArray addObject:serverAnimalList.animalId];
+							
+							
+							ret = YES;
+							//break;
+						}
+					}
+					if(!ret) //没有可以结婚的,弹出窗口
+					{
+						[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有可以结婚的动物!"];
+					}
 					
 					
-					ret = YES;
-					//break;
+					if(ret)
+					{
+						if(serverAnimalDataOne.gender <= 50) // 雌性 - 0
+						{
+							[m_pMarryView addUpAnimal:[NSString stringWithFormat:@"%@.png",serverAnimalDataOne.picturePrefix] sex:0];
+							[m_pMarryView setRightAnimalID:serverAnimalDataOne.animalId];
+							[m_pMarryView setLeftAnimalID:@""];
+						}
+						else
+						{
+							[m_pMarryView addUpAnimal:[NSString stringWithFormat:@"%@.png",serverAnimalDataOne.picturePrefix] sex:1];
+							[m_pMarryView setLeftAnimalID:serverAnimalDataOne.animalId];
+							[m_pMarryView setRightAnimalID:@""];
+						}
+						
+						[m_pMarryView initScrollViewItems:picArray aniID:animalIDArray];
+						
+						[self.view addSubview:m_pMarryView.view];
+					}
 				}
-			}
-			if(!ret) //没有可以结婚的,弹出窗口
-			{
-				[[FeedbackDialog sharedFeedbackDialog] addMessage:@"没有可以结婚的动物!"];
-			}
-			
-			
-			if(ret)
-			{
-				if(serverAnimalDataOne.gender <= 50) // 雌性 - 0
+					break;
+				case ANIMAL_DISAPART:
 				{
-					[m_pMarryView addUpAnimal:[NSString stringWithFormat:@"%@.png",serverAnimalDataOne.picturePrefix] sex:0];
-				
+					//Gen the one clicked at the right postion.
 					
-				}
-				else
-				{
-					[m_pMarryView addUpAnimal:[NSString stringWithFormat:@"%@.png",serverAnimalDataOne.picturePrefix] sex:1];
-				
+					DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:((DataModelAnimal *)[stoMarriedArray objectAtIndex:index]).animalId];
+					//			if(serverAnimalData2.gender ==1)
+					//			{
+					//				leftAnimalID = animalID;
+					//			}
+					//			else {
+					//				rightAnimalID = animalID;
+					//			}
 					
+					NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
+					NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
+					NSString *orgid = [NSString stringWithFormat:@"%d",serverAnimalData2.originalAnimalId];
+					
+					
+					DataModelAnimal *serverAnimalDataAnother = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:serverAnimalData2.coupleAnimalId];
+					
+					NSString *animalNameAnother = [NSString stringWithFormat:@"%d",serverAnimalDataAnother.scientificNameCN];
+					NSString *picFileNameAnother = [NSString stringWithFormat:@"%@.png",serverAnimalDataAnother.picturePrefix];
+					NSString *orgidAnother = [NSString stringWithFormat:@"%d",serverAnimalDataAnother.originalAnimalId];
+					
+					if(serverAnimalData2.gender <= 50) // 雌性 - 0
+					{
+						[m_pDisapartView addUpAnimal:[NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix] sex:0];
+						[m_pDisapartView addUpAnimal:[NSString stringWithFormat:@"%@.png",serverAnimalDataAnother.picturePrefix] sex:1];
+						[m_pDisapartView setLeftAnimalID:serverAnimalData2.animalId];
+						[m_pDisapartView setRightAnimalID:serverAnimalDataAnother.animalId];
+					}
+					else
+					{
+						[m_pDisapartView addUpAnimal:[NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix] sex:1];
+						[m_pDisapartView addUpAnimal:[NSString stringWithFormat:@"%@.png",serverAnimalDataAnother.picturePrefix] sex:0];
+						[m_pDisapartView setRightAnimalID:serverAnimalData2.animalId];
+						[m_pDisapartView setLeftAnimalID:serverAnimalDataAnother.animalId];
+					}
+					
+					[self.view addSubview:m_pDisapartView.view];
 				}
-				
-				[m_pMarryView setLeftAnimalID:serverAnimalDataOne.animalId];
-				[m_pMarryView initScrollViewItems:picArray aniID:animalIDArray];
-								
-				
-				[self.view addSubview:m_pMarryView.view];
-			}
-
+					break;
 		}
 			break;
 			
 		default:
 			break;
+		}
 	}
-
 }
 
 - (void) backBtnSelected:(id)sender{

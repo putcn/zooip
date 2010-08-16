@@ -38,6 +38,7 @@
 	IBOutlet UIButton*		OKButton;
 	
 	hatchView* m_hatchView;
+	NSMutableArray*        animalIDArray; //first femaleID,second maleID
 }
 
 @property(nonatomic, readwrite) int m_npopViewType;
@@ -47,6 +48,7 @@
 @property(nonatomic, readwrite) int curr_itemType;
 
 @property(nonatomic, retain) NSString* labelString;
+@property(nonatomic, retain) NSMutableArray *animalIDArray;
 
 - (IBAction) OKSelected:(id)sender;
 - (IBAction) CancelSelected:(id)sender;
