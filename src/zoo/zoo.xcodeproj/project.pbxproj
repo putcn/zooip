@@ -667,6 +667,11 @@
 		B4AB4A8A1202C99F00747F90 /* 滚轮数字轮盘.png in Resources */ = {isa = PBXBuildFile; fileRef = B4AB4A841202C99F00747F90 /* 滚轮数字轮盘.png */; };
 		B4AB4A8B1202C99F00747F90 /* 滚轮数字文本框.png in Resources */ = {isa = PBXBuildFile; fileRef = B4AB4A851202C99F00747F90 /* 滚轮数字文本框.png */; };
 		B4AB4A8C1202C99F00747F90 /* 滚轮下.png in Resources */ = {isa = PBXBuildFile; fileRef = B4AB4A861202C99F00747F90 /* 滚轮下.png */; };
+		B4ACEAA01214DD5000DA4272 /* MarryView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4ACEA9D1214DD5000DA4272 /* MarryView.m */; };
+		B4ACEAD21214DE7500DA4272 /* collosion.txt in Resources */ = {isa = PBXBuildFile; fileRef = B4ACEAD11214DE7500DA4272 /* collosion.txt */; };
+		B4ACECD61215315000DA4272 /* Hybridization.m in Sources */ = {isa = PBXBuildFile; fileRef = B4ACECD51215315000DA4272 /* Hybridization.m */; };
+		B4B278E91218CB7800268950 /* hatchView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B278E71218CB7800268950 /* hatchView.m */; };
+		B4B278EA1218CB7800268950 /* hatchView.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4B278E81218CB7800268950 /* hatchView.xib */; };
 		B4B58CAC120BEAB50033ED0D /* SaleEggsView.m in Sources */ = {isa = PBXBuildFile; fileRef = B4B58CAB120BEAB50033ED0D /* SaleEggsView.m */; };
 		B4BC4904120659A2007BB43B /* manageToolBarBg.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BC4903120659A2007BB43B /* manageToolBarBg.png */; };
 		B4BC49AD12067330007BB43B /* X_big.png in Resources */ = {isa = PBXBuildFile; fileRef = B4BC49AC12067330007BB43B /* X_big.png */; };
@@ -1912,6 +1917,14 @@
 		B4AB4A841202C99F00747F90 /* 滚轮数字轮盘.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字轮盘.png"; sourceTree = "<group>"; };
 		B4AB4A851202C99F00747F90 /* 滚轮数字文本框.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮数字文本框.png"; sourceTree = "<group>"; };
 		B4AB4A861202C99F00747F90 /* 滚轮下.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "滚轮下.png"; sourceTree = "<group>"; };
+		B4ACEA9C1214DD5000DA4272 /* MarryView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MarryView.h; sourceTree = "<group>"; };
+		B4ACEA9D1214DD5000DA4272 /* MarryView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MarryView.m; sourceTree = "<group>"; };
+		B4ACEAD11214DE7500DA4272 /* collosion.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = collosion.txt; sourceTree = "<group>"; };
+		B4ACECD41215315000DA4272 /* Hybridization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Hybridization.h; sourceTree = "<group>"; };
+		B4ACECD51215315000DA4272 /* Hybridization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Hybridization.m; sourceTree = "<group>"; };
+		B4B278E61218CB7800268950 /* hatchView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = hatchView.h; sourceTree = "<group>"; };
+		B4B278E71218CB7800268950 /* hatchView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = hatchView.m; sourceTree = "<group>"; };
+		B4B278E81218CB7800268950 /* hatchView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = hatchView.xib; sourceTree = "<group>"; };
 		B4B58CAA120BEAB50033ED0D /* SaleEggsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SaleEggsView.h; sourceTree = "<group>"; };
 		B4B58CAB120BEAB50033ED0D /* SaleEggsView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SaleEggsView.m; sourceTree = "<group>"; };
 		B4BC4903120659A2007BB43B /* manageToolBarBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = manageToolBarBg.png; sourceTree = "<group>"; };
@@ -2238,6 +2251,13 @@
 		24A38D4112090945006334B1 /* PopViewManager */ = {
 			isa = PBXGroup;
 			children = (
+				B4B278E61218CB7800268950 /* hatchView.h */,
+				B4B278E71218CB7800268950 /* hatchView.m */,
+				B4B278E81218CB7800268950 /* hatchView.xib */,
+				B4ACEA9C1214DD5000DA4272 /* MarryView.h */,
+				B4ACEA9D1214DD5000DA4272 /* MarryView.m */,
+				B4ACECD41215315000DA4272 /* Hybridization.h */,
+				B4ACECD51215315000DA4272 /* Hybridization.m */,
 				B4B58CAA120BEAB50033ED0D /* SaleEggsView.h */,
 				B4B58CAB120BEAB50033ED0D /* SaleEggsView.m */,
 				24A38D4212090945006334B1 /* Common.h */,
@@ -3488,6 +3508,7 @@
 		50F414EB1069373D002A0D5E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B4ACEAD11214DE7500DA4272 /* collosion.txt */,
 				60E55B17120A578200EC046F /* return.png */,
 				B4BC4903120659A2007BB43B /* manageToolBarBg.png */,
 				60B4040911FFEECE0087F16F /* buyant.png */,
@@ -4867,6 +4888,8 @@
 				B4FEE5B31207A9C900EFE793 /* ExpandView.xib in Resources */,
 				24A38D4C12090945006334B1 /* SecPopViewController.xib in Resources */,
 				60E55B18120A578200EC046F /* return.png in Resources */,
+				B4ACEAD21214DE7500DA4272 /* collosion.txt in Resources */,
+				B4B278EA1218CB7800268950 /* hatchView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -5098,6 +5121,9 @@
 				600E24F4120BA3360096B716 /* MarryAndMatePopView.m in Sources */,
 				B4B58CAC120BEAB50033ED0D /* SaleEggsView.m in Sources */,
 				24A040D01211470300B1D171 /* DataEnvironment.m in Sources */,
+				B4ACEAA01214DD5000DA4272 /* MarryView.m in Sources */,
+				B4ACECD61215315000DA4272 /* Hybridization.m in Sources */,
+				B4B278E91218CB7800268950 /* hatchView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
