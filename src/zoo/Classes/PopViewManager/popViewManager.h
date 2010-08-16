@@ -12,6 +12,7 @@
 
 #import "SecPopViewController.h"
 #import "MarryView.h"
+#import "DisapartView.h"
 
 
 @protocol ScrollBarViewDelegate;
@@ -42,10 +43,13 @@
 	int					touchIndex;
 	
 	NSMutableArray*		stoAnimalsArray;
+	NSMutableArray*     stoMarriedArray;
 	
 	
 	// Marray view
 	MarryView* m_pMarryView;
+	// Disapart view
+	DisapartView *m_pDisapartView;
 }
 
 @property(nonatomic, retain) UIScrollView* m_ppopView;
@@ -62,6 +66,7 @@
 @property(nonatomic, readonly)int touchIndex;
 
 @property(nonatomic, retain)NSMutableArray*	stoAnimalsArray;
+@property(nonatomic, retain)NSMutableArray* stoMarriedArray;
 
 - (id) init;
 

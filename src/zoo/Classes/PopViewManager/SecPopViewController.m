@@ -24,12 +24,14 @@
 
 -(void)saleCommonEggs;
 -(void)saleZogyteEggs;
+-(void)antsChoose;
 @end 
 
 
 @implementation SecPopViewController
 
 
+@synthesize animalIDArray;
 @synthesize m_npopViewType, m_ntabFlag, itemId, curr_itemType, tempCount,labelString;
 
 
@@ -50,6 +52,7 @@
 	
 	farmerId = [[NSString alloc] init];
 	buyAniId = [[NSString alloc] init];
+	animalIDArray = [[NSMutableArray alloc] init];
 }
 
 
@@ -111,6 +114,7 @@
 {
 	UISlider* durationSlider = sender;
 	NSString* showStr = @"选择了";
+	NSString* finalRate = @"下公蛋的概率：";
 	tempCount  = mixCount * [durationSlider value];
 	switch (m_ntabFlag) {
 		case BUY_ANIMAL:
@@ -143,6 +147,18 @@
 			countLabel.text = [NSString stringWithFormat:@"%d", storageEgg.numOfProduct];
 		}
 			break;
+		case Mate_Before_Marry:
+		{
+			showStr = [finalRate stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@""]];
+		}
+			break;
+			
+		case Mate_After_Marry:
+		{
+			showStr = [finalRate stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@""]];
+		}
+			break;
+
 		case SALE_ZYGOTEEGGS:
 		//	showStr = [showStr stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@"个受精蛋"]];
 			break;
@@ -262,6 +278,42 @@
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoSellZygoteEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];			
 		}
 			break;
+			
+			//动物婚前交配
+		case Mate_Before_Marry:
+		{
+			//组参数并发送service
+			
+			
+			//toMateAnimal------action=marry
+			//toMateAnimal------action=mate 	动物结婚
+			//动物结婚前的交配 	farmId                    动物园ID
+			//maleId                    公动物ID
+			//femaleId                 母动物ID
+			//
+			//ants
+			//蚂蚁数量
+			
+			//action                    操作行为（marry or mate）
+			NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
+			NSString *action = @"marry";
+			int ants = 1;
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",[animalIDArray objectAtIndex:0],@"maleId",[animalIDArray objectAtIndex:1],@"femaleId",@"1",@"ants",action,@"action",nil];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+		}
+			break;
+			//动物婚后交配
+		case Mate_After_Marry:
+		{
+			//组参数并发送service
+			
+			//**** 蚂蚁的数量需要传入
+			NSInteger ants = 1;
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId,@"farmerId",[animalIDArray objectAtIndex:1],@"animalId",ants, "ants",nil];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoFeedFemaleAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			
+		}
+			break;
 
 		default:
 			break;
@@ -307,11 +359,69 @@
 			[self saleZogyteEggs];
 		}
 			break;
-			
+		case Mate_Before_Marry:
+			[self antsChoose];
+			break;
+		case Mate_After_Marry:
+			[self antsChoose];
+			break;
 		default:
 			break;
 	}
 	
+}
+
+-(void)antsChoose
+{
+	//选择蚂蚁面板的初始化
+	buySlider.hidden = NO;
+	countLabel.hidden = NO;
+	
+	myAntsCurrency = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.antsCurrency;
+	myGoldenEgg = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.goldenEgg;
+	
+	//get data
+	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
+	NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+	DataModelOriginalAnimal *originAnimal; 
+	NSArray *animalArrayTemp = [originAnimalDic allKeys];
+	//originAnimal = [originAnimalDic objectForKey:[animalArrayTemp objectAtIndex:itemId]];
+//	
+//	buyAniId = originAnimal.originalAnimalId;
+//	tempCount = 1;
+//	tempPrice = originAnimal.antsPrice;
+	
+	NSString* describeString = @"   性别：";
+	mixCount = 0;
+	int income = 0;
+	
+
+		[iconImage setImage:[UIImage imageNamed:@"金蚂蚁.png"]];
+//		priceLabel.text = [NSString stringWithFormat:@"%d", tempPrice];
+//		describeString = [describeString stringByAppendingString:@"公\n   价格："];
+//		describeString = [describeString stringByAppendingString:priceLabel.text];
+//		describeString = [describeString stringByAppendingString:@"个蚂蚁币"];
+//		describeString = [describeString stringByAppendingString:@"\n总收益："];
+	tempPrice=1;
+		if (tempPrice > myAntsCurrency) {
+			wrongLabel.hidden = NO;
+			OKButton.enabled = NO;
+		}
+		else {
+			mixCount = myAntsCurrency/tempPrice;
+			wrongLabel.hidden = YES;
+			OKButton.enabled = YES;
+		}
+	
+	//上面名字的显示
+	nameLabel.text = @"";
+	//价格的显示
+	priceLabel.text = @"";
+	
+	describeString = @"选择当前产蛋周期下公蛋的概率";
+	describeLabel.numberOfLines = 3;
+	describeLabel.text = describeString;
+	countLabel.text = @"下公蛋的概率：";
 }
 
 
@@ -390,11 +500,82 @@
 			[[NSNotificationCenter defaultCenter] postNotificationName:SaleEggs object:nil];
 		}
 				break;
+		case ANIMAL_ANTSCHOOSE_POPVIEW:
+		{
+			switch (m_ntabFlag) {
+			//婚前交配的回调
+		case Mate_Before_Marry:
+				{
+					NSDictionary *dic = (NSDictionary *)value;
+					NSInteger code = [[dic objectForKey:@"code"] intValue];
+					switch (code) {
+						case 0:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物已经配对"];
+							break;
+						case 7:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"配对失败"];
+							break;
+						case 8:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"近亲不能结婚"];
+							break;
+						case 9:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配成功，产生一个受精蛋"];
+							break;
+						case 10:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配成功，没能产生受精蛋"];
+							break;
+						case 11:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物交配时间未到"];
+							break;
+						case 12:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配失败"];
+							break;
+						default:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作异常"];
+							break;
+					}
+				}
+					break;
+					//婚后交配的回调
+				case Mate_After_Marry:
+				{
+					NSDictionary *dic = (NSDictionary *)value;
+					NSInteger code = [[dic objectForKey:@"code"] intValue];
+					switch (code) {
+						case 0:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物已经配对"];
+							break;
+						case 7:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"配对失败"];
+							break;
+						case 8:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"近亲不能结婚"];
+							break;
+						case 9:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配成功，产生一个受精蛋"];
+							break;
+						case 10:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配成功，没能产生受精蛋"];
+							break;
+						case 11:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物交配时间未到"];
+							break;
+						case 12:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配失败"];
+							break;
+						default:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"操作异常"];
+							break;
+					}			
+				}
+					break;
+			}
+			break;
 			
 		default:
 			break;
+		}
 	}
-	
 }
 
 -(void) faultCallback:(NSObject *)value

@@ -49,6 +49,7 @@
 		foo = nil;
 		
 		currentTagFlag = @"动物";
+		tabFlag = ANIMAL_MARRY;
 	}
 	
 	return self;
@@ -62,7 +63,7 @@
 	
 	switch (tabFlag)
 	{
-		case 0:
+		case ANIMAL_MARRY:
 		{
 			NSDictionary* originalAnimalsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 			DataModelOriginalAnimal* originalAnimals;
@@ -117,7 +118,7 @@
 		}
 			break;
 			//动物离婚
-		case 1:
+		case ANIMAL_DISAPART:
 		{
 			
 			NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
@@ -132,15 +133,19 @@
 				DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
 				if(serverAnimalData2.coupleAnimalId != nil)
 				{
+					
 					NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
 					
 					kTemp++;
 					[picFileNameArray addObject:picFileName];
+					[myPopView.stoMarriedArray addObject:serverAnimalData2];
 				}
 				
 			}
 			[myPopView initWithItem:picFileNameArray];
 			
+			[picFileNameArray release];
+			picFileNameArray = nil;
 		}
 			break;
 		default:
@@ -156,7 +161,7 @@
 	
 //	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 	
-	tabFlag = 0;
+	[myPopView setTabFlag:ANIMAL_MARRY];
 	[myPopView addView2Window];
 	[self generatePage];
 }
@@ -167,8 +172,13 @@
 	NSDictionary *itemDic;
 	NSArray *itemArray;
 	switch (tabFlag) {
-		case SHOP_POPVIEW:{
+		case ANIMAL_MARRY:{
 			
+			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+			itemArray = [itemDic allKeys];
+		}
+		case ANIMAL_DISAPART:
+		{
 			itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 			itemArray = [itemDic allKeys];
 		}
@@ -205,24 +215,33 @@
 - (void) topBtnSelected:(id)sender{
 	
 	UIButton *selectedBtn = (UIButton *)sender;
-	tabFlag = selectedBtn.tag;
+	switch (selectedBtn.tag) {
+		case 0:
+			tabFlag = ANIMAL_MARRY;
+			break;
+		case 1:
+			tabFlag = ANIMAL_DISAPART;
+			break;
+		default:
+			break;
+	}
 	
 	for (UIView *subview in [myPopView m_ppopView].subviews) {
 		[subview removeFromSuperview];
 	}
 	
 	switch (tabFlag) {
-		case 0:
+		case ANIMAL_MARRY:
 			//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
 		{
-			tabFlag = 0;
+			
 			[self generatePage];
 		}
 			break;
 			
-		case 1:
+		case ANIMAL_DISAPART:
 		{
-			tabFlag = 1;
+			
 			[self generatePage];
 		}
 			//[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAuctionAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
