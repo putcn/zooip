@@ -16,6 +16,7 @@
 #import "DataModelStorageAnimal.h"
 #import "DataModelStorageAuctionAnimal.h"
 
+
 #define SAFE_RELEASE(p) {if(p != nil) [p release]; p = nil;}
 
 
@@ -100,8 +101,6 @@
 	
 	m_nSelectedAniIndex = -1;
 	m_nSexIndex = -1;
-	
-
 }
 
 -(void)marryBtnSelected:(id)sender
@@ -124,6 +123,10 @@
 		DataModelAnimal *serverAnimalDataRight = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:rightAnimalID];
 		serverAnimalDataRight.coupleAnimalId = leftAnimalID;
 	}
+	
+//	DisapartView* disapartView = [[DisapartView alloc]init];
+//	
+//	[disapartView.m_arrANIMALID addObjectsFromArray:m_arrANIMALID];
 }
 
 //动物交配
@@ -132,12 +135,18 @@
 	[secPopView.animalIDArray removeAllObjects];
 	[secPopView setM_npopViewType:ANIMAL_ANTSCHOOSE_POPVIEW];
 	[secPopView setM_ntabFlag:Mate_After_Marry];
+	
+	NSLog(@"leftAnimalID = %@\n", leftAnimalID);
+	NSLog(@"rightAnimalID = %@\n", rightAnimalID);
+	
 	[secPopView.animalIDArray addObject:leftAnimalID];
 	[secPopView.animalIDArray addObject:rightAnimalID];
-	[secPopView.animalIDArray addObject:tempLeft];
-	//	
-	//	NSString* fileName = [picFileNameArray objectAtIndex:index];
-	[secPopView setItemId:index];
+	
+	NSLog(@"animalIDArray count = %d\n", [secPopView.animalIDArray count]);
+		
+	
+	//[secPopView setItemId:index];
+	[secPopView setItemId:0];
 	[self.view addSubview:secPopView.view];
 	[secPopView setShowImageName:@""];
 }
@@ -182,10 +191,14 @@
 	
 	if([leftAnimalID isEqualToString:@""])
 	{
-	leftAnimalID = [m_arrANIMALID objectAtIndex:index];
+		leftAnimalID = [m_arrANIMALID objectAtIndex:index];
+		
+		NSLog(@"leftAnimalID = %@", leftAnimalID);
 	}
 	else {
 		rightAnimalID = [m_arrANIMALID objectAtIndex:index];
+		
+		NSLog(@"leftAnimalID = %@", leftAnimalID);
 	}
 	
 	if(index != m_nSelectedAniIndex)
@@ -240,6 +253,12 @@
 
 -(void)initScrollViewItems:(NSMutableArray*)picArray aniID:(NSMutableArray*)idArray
 {
+	for(int i = 0; i < [idArray count]; i++)
+	{
+		NSLog(@"idArray:%@\n", [idArray objectAtIndex:i]);
+	}
+	
+	
 	m_arrANIMALID = [[NSMutableArray alloc]init];
 	[m_arrANIMALID removeAllObjects];
 	[m_arrANIMALID addObjectsFromArray:idArray];
