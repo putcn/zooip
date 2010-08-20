@@ -14,7 +14,7 @@
 #import "DataEnvironment.h"
 #import "DataModelStorageAnimal.h"
 #import "DataModelStorageAuctionAnimal.h"
-#import "DisapartView.h"
+#import "popViewManager.h"
 
 #define SAFE_RELEASE(p) {if(p != nil) [p release]; p = nil;}
 
@@ -97,23 +97,21 @@
 	
 	m_nSelectedAniIndex = -1;
 	m_nSexIndex = -1;
-	
-	
+
+	m_arrANIMALID = [[NSMutableArray alloc]init];
 }
 
 //动物离婚
 -(void)marryBtnSelected:(id)sender
 {
-	//NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-//	
-//	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",nil];
-//	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoDisbandMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackDis:" AndFailedSel:@"faultCallback:"];
-
-	
 	NSString *action = @"marry";
 	NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
 	
 	DataModelAnimal *serverAnimalDataOne = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID];
+
+
+	NSLog(@"%@\n",leftAnimalID);
+	NSLog(@"%@\n",rightAnimalID);
 	
 	if(leftAnimalID == nil || rightAnimalID == nil)
 	{
@@ -121,7 +119,10 @@
 	}
 	else
 	{
-		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+								farmId,@"farmId",
+								leftAnimalID,@"maleId",
+								rightAnimalID,@"femaleId",nil];
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackMarry:" AndFailedSel:@"faultCallback:"];
 		
 		serverAnimalDataOne.coupleAnimalId = rightAnimalID;
@@ -138,7 +139,7 @@
 	[secPopView setM_ntabFlag:Mate_After_Marry];
 	[secPopView.animalIDArray addObject:leftAnimalID];
 	[secPopView.animalIDArray addObject:rightAnimalID];
-	[secPopView.animalIDArray addObject:tempLeft];
+	//[secPopView.animalIDArray addObject:tempLeft];
 //	
 //	NSString* fileName = [picFileNameArray objectAtIndex:index];
 	[secPopView setItemId:index];
@@ -201,14 +202,14 @@
  	NSInteger code = [[dic objectForKey:@"code"] intValue];
 	
 	switch (code) {
-		case 1:
+		case 0:
 		{
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"离婚成功"];
 			((DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID]).coupleAnimalId = nil;
 			((DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:rightAnimalID]).coupleAnimalId = nil;
 		}
 			break;
-		case 0:
+		case 1:
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不是自己的公动物，不能离婚"];
 			break;
 		case 2:

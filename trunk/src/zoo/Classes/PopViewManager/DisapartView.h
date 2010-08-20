@@ -32,11 +32,14 @@
 	
 	NSMutableArray* m_arrANIMALID;
 	SecPopViewController *secPopView;
+	
 }
 
 @property(nonatomic, retain) NSString* leftAnimalID;
 @property(nonatomic, retain) NSString* rightAnimalID;
 @property(nonatomic, retain) NSMutableArray* m_arrANIMALID;
+
+@property(nonatomic, retain) NSMutableArray* m_arrayDiapartAnimalID;
 
 -(void)selectButtonAtIndex:(NSUInteger)index;
 

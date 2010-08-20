@@ -567,20 +567,20 @@
 	
 //以下是旧的动物管理弹出方式
 	
-	//if(!secondTouchAniManagement)
-//	{
-//		aniManagementBtnCtrl = [[AnimalMangementButtonContainer alloc] init];
-//		//aniManagementBtnCtrl .position = ccp(160,40);
-//		[self addChild:aniManagementBtnCtrl];
-//
-//	}
-//	else {
-//		[self removeChild:aniManagementBtnCtrl cleanup:YES];
-//	}
-//
-//	secondTouchAniManagement = !secondTouchAniManagement;
-	
-	
+	/*
+	if(!secondTouchAniManagement)
+	{
+		aniManagementBtnCtrl = [[AnimalMangementButtonContainer alloc] init];
+		//aniManagementBtnCtrl .position = ccp(160,40);
+		[self addChild:aniManagementBtnCtrl];
+
+	}
+	else {
+		[self removeChild:aniManagementBtnCtrl cleanup:YES];
+	}
+
+	secondTouchAniManagement = !secondTouchAniManagement;
+	*/
 }
 
 

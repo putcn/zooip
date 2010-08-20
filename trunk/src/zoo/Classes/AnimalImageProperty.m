@@ -15,6 +15,8 @@
 // Get animation table
 -(NSMutableDictionary*)animationTable:(NSString*)imageName plistName:(NSString*)plistName
 {
+	NSLog(@"------------------------Image Name:%@\n", plistName);
+	
 	// Init animation table
 	aniTable = [[NSMutableDictionary alloc]init];
 	

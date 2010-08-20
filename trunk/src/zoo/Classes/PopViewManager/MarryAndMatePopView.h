@@ -11,7 +11,6 @@
 #import "Common.h"
 
 
-
 @interface MarryAndMatePopView : NSObject {
 	
 	popViewManager*		myPopView;
@@ -19,10 +18,7 @@
 	NSString            *currentTagFlag;
 	NSString            *tabFlagType;
 	NSString            *managementType;
-	
-	
 }
-
 
 - (id) init;
 

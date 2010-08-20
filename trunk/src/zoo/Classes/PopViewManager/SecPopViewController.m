@@ -29,17 +29,16 @@
 
 
 @implementation SecPopViewController
-
-
 @synthesize animalIDArray;
 @synthesize m_npopViewType, m_ntabFlag, itemId, curr_itemType, tempCount,labelString;
-
 
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if ((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
         // Custom initialization
 		showImage = [UIImageView alloc];
+		
+		animalIDArray = [[NSMutableArray alloc] init];
     }
     return self;
 }
@@ -52,7 +51,7 @@
 	
 	farmerId = [[NSString alloc] init];
 	buyAniId = [[NSString alloc] init];
-	animalIDArray = [[NSMutableArray alloc] init];
+	
 }
 
 
@@ -106,6 +105,9 @@
 	[OKButton release];
 	OKButton = nil;
 	
+	[priceLabel release];
+	priceLabel = nil;
+	
     [super dealloc];
 }
 
@@ -114,7 +116,7 @@
 {
 	UISlider* durationSlider = sender;
 	NSString* showStr = @"选择了";
-	NSString* finalRate = @"下公蛋的概率：";
+	NSString* finalRate = @"下公蛋的概率:";
 	tempCount  = mixCount * [durationSlider value];
 	switch (m_ntabFlag) {
 		case BUY_ANIMAL:
@@ -149,13 +151,38 @@
 			break;
 		case Mate_Before_Marry:
 		{
-			showStr = [finalRate stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@""]];
+			NSString* _showStr = [finalRate stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@""]];
+			
+			showStr = [_showStr stringByAppendingString:@"%"];
+			CGFloat price = tempCount / 2;
+			
+			int nPrice = price;
+			
+			if(nPrice < 1)
+			{
+				nPrice = 1;
+			}
+			NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice-2];
+			priceLabel.text = strPrice;
+			
 		}
 			break;
 			
 		case Mate_After_Marry:
 		{
-			showStr = [finalRate stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@""]];
+			NSString* _showStr = [finalRate stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@""]];
+			showStr = [_showStr stringByAppendingString:@"%"];
+			
+			CGFloat price = tempCount / 2;
+			
+			int nPrice = price;
+			
+			if(nPrice < 1)
+			{
+				nPrice = 1;
+			}
+			NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice+1];
+			priceLabel.text = strPrice;
 		}
 			break;
 
@@ -285,6 +312,7 @@
 			//组参数并发送service
 			
 			
+			
 			//toMateAnimal------action=marry
 			//toMateAnimal------action=mate 	动物结婚
 			//动物结婚前的交配 	farmId                    动物园ID
@@ -295,10 +323,14 @@
 			//蚂蚁数量
 			
 			//action                    操作行为（marry or mate）
-			NSString *farmId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
-			NSString *action = @"marry";
-			int ants = 1;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",[animalIDArray objectAtIndex:0],@"maleId",[animalIDArray objectAtIndex:1],@"femaleId",@"1",@"ants",action,@"action",nil];
+			//int ants = 1;
+			NSInteger ants = [priceLabel.text integerValue];
+			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+									[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId,@"farmerId",
+									[animalIDArray objectAtIndex:1],@"animalId",
+									ants, @"ants",nil];
+
+		//	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",[animalIDArray objectAtIndex:0],@"maleId",[animalIDArray objectAtIndex:1],@"femaleId",@"1",@"ants",action,@"action",nil];
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 		}
 			break;
@@ -308,8 +340,26 @@
 			//组参数并发送service
 			
 			//**** 蚂蚁的数量需要传入
-			NSInteger ants = 1;
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId,@"farmerId",[animalIDArray objectAtIndex:1],@"animalId",ants, "ants",nil];
+			
+		//	NSInteger nAnts = [priceLabel.text integerValue];
+			
+			NSString *strfFarmerId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId;
+						
+			
+			for(int i = 0;i < [animalIDArray count]; i++)
+				NSLog(@"%@\n", [animalIDArray objectAtIndex:i]);
+			
+			NSString* strLeftAnimalID = [animalIDArray objectAtIndex:1];
+			NSString* strRightAnimalID = [animalIDArray objectAtIndex:0];
+			
+			NSString *action = @"mate";
+			
+			NSDictionary *params = [[NSDictionary alloc]initWithObjectsAndKeys:
+									strfFarmerId,@"farmerId",
+									strLeftAnimalID, @"male",
+									strRightAnimalID,@"female",
+									action,@"mate",
+									nil];
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoFeedFemaleAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 			
 		}
@@ -392,11 +442,12 @@
 //	tempPrice = originAnimal.antsPrice;
 	
 	NSString* describeString = @"   性别：";
-	mixCount = 0;
+	mixCount = 50;
 	int income = 0;
 	
 
 		[iconImage setImage:[UIImage imageNamed:@"金蚂蚁.png"]];
+	
 //		priceLabel.text = [NSString stringWithFormat:@"%d", tempPrice];
 //		describeString = [describeString stringByAppendingString:@"公\n   价格："];
 //		describeString = [describeString stringByAppendingString:priceLabel.text];
@@ -408,7 +459,7 @@
 			OKButton.enabled = NO;
 		}
 		else {
-			mixCount = myAntsCurrency/tempPrice;
+		//	mixCount = myAntsCurrency/tempPrice;
 			wrongLabel.hidden = YES;
 			OKButton.enabled = YES;
 		}
@@ -416,7 +467,7 @@
 	//上面名字的显示
 	nameLabel.text = @"";
 	//价格的显示
-	priceLabel.text = @"";
+	priceLabel.text = @"0";
 	
 	describeString = @"选择当前产蛋周期下公蛋的概率";
 	describeLabel.numberOfLines = 3;

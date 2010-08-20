@@ -15,7 +15,7 @@
 #import "DataEnvironment.h"
 #import "DataModelStorageAnimal.h"
 #import "DataModelStorageAuctionAnimal.h"
-
+#import "DisapartView.h"
 
 @implementation MarryAndMatePopView
 
@@ -50,6 +50,8 @@
 		
 		currentTagFlag = @"动物";
 		tabFlag = ANIMAL_MARRY;
+		
+		
 	}
 	
 	return self;
@@ -76,6 +78,8 @@
 				originalAnimals = [originalAnimalsDic objectForKey:[animalArray objectAtIndex:i]];
 				DataModelOriginalAnimal* dataModelOriginalAnimalToshow = (DataModelOriginalAnimal *)[[DataEnvironment sharedDataEnvironment].originalAnimals objectForKey:originalAnimals.originalAnimalId];			
 				
+				NSLog(@"Animal NameCN:%@\n", originalAnimals.scientificNameCN);
+				
 				if ([dataModelOriginalAnimalToshow.originalAnimalId intValue] > 50) 
 				{
 					gender = [NSNumber numberWithInt:1];
@@ -84,10 +88,10 @@
 				{
 					gender = [NSNumber numberWithInt:0];
 				}
-				[sexNameArray addObject:gender];
+			//	[sexNameArray addObject:gender];
 				
 			}
-			[myPopView setSexArray:sexNameArray];
+			//[myPopView setSexArray:sexNameArray];
 			
 			
 			//动物结婚
@@ -102,11 +106,28 @@
 				aniID = [animalIDs objectAtIndex:i];
 				serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
 				NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
+				
+				NSLog(@"%d\n", serverAnimalData2.gender);
 				[picFileNameArray addObject:picFileName];
 			
 				
 				[myPopView.stoAnimalsArray addObject:originAnimal];
+				
+				
+				if (serverAnimalData2.gender == 1) 
+				{
+					gender = [NSNumber numberWithInt:1];
+				}
+				else 
+				{
+					gender = [NSNumber numberWithInt:0];
+				}
+				
+				
+				[sexNameArray addObject:gender];
+				
 			}
+			[myPopView setSexArray:sexNameArray];
 			[myPopView initWithItem:picFileNameArray];
 			
 			[picFileNameArray release];
@@ -120,8 +141,13 @@
 			//动物离婚
 		case ANIMAL_DISAPART:
 		{
+			NSDictionary* originalAnimalsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+			NSNumber* gender;
+			NSMutableArray* sexNameArray = [[NSMutableArray alloc] init];
 			
 			NSMutableArray *animalIDs = (NSMutableArray *)[DataEnvironment sharedDataEnvironment].animalIDs;
+			
+			
 			DataModelOriginalAnimal *originAnimal;
 			NSString *aniID;
 			
@@ -136,12 +162,25 @@
 					
 					NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
 					
+					if (serverAnimalData2.gender == 1) 
+					{
+						gender = [NSNumber numberWithInt:1];
+					}
+					else 
+					{
+						gender = [NSNumber numberWithInt:0];
+					}
+					[sexNameArray addObject:gender];
+					
+					
+					
 					kTemp++;
 					[picFileNameArray addObject:picFileName];
 					[myPopView.stoMarriedArray addObject:serverAnimalData2];
 				}
 				
 			}
+			[myPopView setSexArray:sexNameArray];
 			[myPopView initWithItem:picFileNameArray];
 			
 			[picFileNameArray release];

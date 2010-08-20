@@ -321,11 +321,11 @@
 						[sexImage release];
 						sexImage = nil;
 						
-						UILabel* countLabel = [[UILabel alloc] initWithFrame:CGRectMake(rowinterval, listinterval+subSize.height-10, 50, 15)];
-						countLabel.text = [[storageAniArray objectAtIndex:i] stringValue];
-						[m_ppopView addSubview:countLabel];
-						[countLabel release];
-						countLabel = nil;
+//						UILabel* countLabel = [[UILabel alloc] initWithFrame:CGRectMake(rowinterval, listinterval+subSize.height-10, 50, 15)];
+//						countLabel.text = [[storageAniArray objectAtIndex:i] stringValue];
+//						[m_ppopView addSubview:countLabel];
+//						[countLabel release];
+//						countLabel = nil;
 					}
 						break;
 					case ANIMAL_DISAPART:
@@ -551,6 +551,10 @@
 						[m_pDisapartView addUpAnimal:[NSString stringWithFormat:@"%@.png",serverAnimalDataAnother.picturePrefix] sex:1];
 						[m_pDisapartView setLeftAnimalID:serverAnimalData2.animalId];
 						[m_pDisapartView setRightAnimalID:serverAnimalDataAnother.animalId];
+						
+						
+						NSLog(@"%@\n", m_pDisapartView.leftAnimalID);
+						NSLog(@"%@\n", m_pDisapartView.rightAnimalID);
 					}
 					else
 					{
