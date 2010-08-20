@@ -42,6 +42,13 @@
 		purchaseToolbar = [[PurchaseToolbar alloc] init];
 		purchaseToolbar.position = ccp(318, 282);
 		[self addChild:purchaseToolbar];
+		
+		
+		// Ad by Hunk
+		m_SendMailBtn = [[SendMailButton alloc]init];
+		m_SendMailBtn.position = ccp(400, 225);
+		[self addChild:m_SendMailBtn];
+		
 	}
 	
 	return self;
@@ -81,6 +88,9 @@
 	[storageManageToolbar release];
 	[zooManageToolbar release];
 	[friendsToolbar release];
+	
+	
+	[m_SendMailBtn release];
 	
 	[super dealloc];
 }
