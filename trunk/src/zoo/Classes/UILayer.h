@@ -14,6 +14,9 @@
 #import "FriendsToolbar.h"
 #import "PurchaseToolbar.h"
 
+
+#import "SendMailButton.h"
+
 @interface UILayer : CCLayer
 {	
 	PlayerInfo *playerInfo;
@@ -23,6 +26,9 @@
 	
 	//Lancy
 	PurchaseToolbar *purchaseToolbar;
+	
+	// Add by Hunk
+	SendMailButton* m_SendMailBtn;
 }
 
 -(void) updateUserInfo;
