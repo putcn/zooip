@@ -15,6 +15,8 @@
 {
     [super viewDidLoad];
 	
+	[self.view setBackgroundColor:[UIColor clearColor]];
+	
 	Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
 	if(nil != mailClass)
 	{
