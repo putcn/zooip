@@ -16,37 +16,52 @@ static int height;
 
 +(void)initCollisionMap
 {
-//	UIImage *collisionImage = [UIImage imageNamed:@"collision_map.png"];
+	UIImage *collisionImage = [UIImage imageNamed:@"collision_map.png"];
 	
-//	width = (int)collisionImage.size.width;
-//	height = (int)collisionImage.size.height;
-	width = 1024;
-	height = 768;
+	width = (int)collisionImage.size.width;
+	height = (int)collisionImage.size.height;
+	//	width = 1024;
+	//	height = 768;
 	//	
 	//unsigned char *collisionMap = (unsigned char *)malloc(width * height);
-	//memset( collisionMap, 0, width * height );
+	//	memset( collisionMap, 0, width * height );
 	
-	//CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(collisionImage.CGImage));
+	CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(collisionImage.CGImage));
+	collisionMap = (const UInt32*)CFDataGetBytePtr(imageData);	
+	
 	//NSData *data = [NSData dataWithData:(NSData *)imageData];
-	NSFileHandle *file;// = [NSFileHandle fileHandleForUpdatingAtPath:@"/Users/Rainbow/Desktop/data.txt"];
-	//	[file writeData:data];
-	//	[file closeFile];	
-	NSString *fileName = @"collosion.txt";
-	NSString *strPath = [[NSBundle mainBundle] pathForResource:[fileName lowercaseString] ofType:nil];
-	file = [NSFileHandle fileHandleForReadingAtPath:strPath];
-	NSData *newData = [file readDataToEndOfFile];
-	[file closeFile];
-	collisionMap = (const UInt32 *)CFDataGetBytePtr((CFDataRef)newData);
-
+	//	NSFileHandle *file;// = [NSFileHandle fileHandleForUpdatingAtPath:@"/Users/Rainbow/Desktop/data.txt"];
+	//	NSString *fileName = @"collosion.txt";
+	//	NSString *strPath = [[NSBundle mainBundle] pathForResource:[fileName lowercaseString] ofType:nil];
+	//	file = [NSFileHandle fileHandleForReadingAtPath:strPath];
+	//	NSData *newData = [file readDataToEndOfFile];
+	//	[file closeFile];
+	//collisionMap = (const UInt32 *)CFDataGetBytePtr((CFDataRef)newData);
+	
+	//collisionMap = (const UInt32*)CFDataGetBytePtr(imageData);
+	
+	//collisionMap = (unsigned char *)malloc( width * height );
+	//	memset( collisionMap, 0, width * height );
+	//	
+	//	CFDataRef imageData =
+	//	CGDataProviderCopyData( CGImageGetDataProvider ( collisionImage.CGImage ) );
+	//	
+	//	UInt32 * pixels = (UInt32*)CFDataGetBytePtr( imageData );
+	//	for(int j = 0; j < (width * height); j++ ){
+	//		NSLog(@"%.X", pixels[j]); //trace hexes
+	//		if ( pixels[j] & 0xff000000 ) collisionMap[j] = 1;
+	//	}
+	//	CFRelease( imageData );
+	
 }
 
-+(int)getMapType:(CGPoint)point isByte:(BOOL)isByte
++(int)getMapType:(CGPoint)point isByte:(BOOL)isByte	
 {
  	int x = (int)point.x;
 	int y = height - (int)point.y;
 	UInt32 pixel =collisionMap[(y*width)+x];
 	
-
+	
 	if (isByte == YES)
 	{
 		if ((pixel & 0xff000000) == 0) return 0x0000; // Limited ..
@@ -70,8 +85,6 @@ static int height;
 // Add by Hunk on 2010-06-29
 -(void)dealloc
 {
-	
-	
 	[super dealloc];
 }
 

@@ -227,7 +227,6 @@
 		3EC7E483119AA2E200791BAD /* summon_04.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7E43F119AA2E200791BAD /* summon_04.png */; };
 		3EC7E484119AA2E200791BAD /* summon_05.png in Resources */ = {isa = PBXBuildFile; fileRef = 3EC7E440119AA2E200791BAD /* summon_05.png */; };
 		3EC7E48A119AA32D00791BAD /* CleaningView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3EC7E489119AA32D00791BAD /* CleaningView.m */; };
-		3ECBBB2F11AFB63B00A7ADFA /* collision_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBBB2E11AFB63B00A7ADFA /* collision_map.png */; };
 		3ECDFA7F119AD7BA008FBE22 /* OperationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDFA7E119AD7BA008FBE22 /* OperationViewController.m */; };
 		3ECDFA84119AE72E008FBE22 /* EfficientFoodView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDFA83119AE72E008FBE22 /* EfficientFoodView.m */; };
 		3ECDFA8C119AE766008FBE22 /* InfusionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3ECDFA8B119AE766008FBE22 /* InfusionView.m */; };
@@ -536,6 +535,7 @@
 		60C18BA511E1A6D800248E87 /* bgimg.png in Resources */ = {isa = PBXBuildFile; fileRef = 60C18BA411E1A6D800248E87 /* bgimg.png */; };
 		60E55B18120A578200EC046F /* return.png in Resources */ = {isa = PBXBuildFile; fileRef = 60E55B17120A578200EC046F /* return.png */; };
 		60E55B35120A5C4500EC046F /* AddAnimalsPopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60E55B34120A5C4500EC046F /* AddAnimalsPopView.m */; };
+		60E8D922124709A500FCC0C6 /* collision_map.png in Resources */ = {isa = PBXBuildFile; fileRef = 3ECBBB2E11AFB63B00A7ADFA /* collision_map.png */; };
 		60EEE3D311F9802000D26ABD /* RegistorWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 60EEE3D211F9802000D26ABD /* RegistorWebView.m */; };
 		6B03D7FB11DC74D0000F2201 /* blueBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7ED11DC74D0000F2201 /* blueBg.png */; };
 		6B03D7FC11DC74D0000F2201 /* demo.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B03D7EE11DC74D0000F2201 /* demo.png */; };
@@ -4681,7 +4681,6 @@
 				3E4B1FC211AE7E840044D43E /* TabButton1.png in Resources */,
 				3E4B1FC311AE7E840044D43E /* TabButton2.png in Resources */,
 				3EAD8A9F11AEC0F700CE397E /* transimg.png in Resources */,
-				3ECBBB2F11AFB63B00A7ADFA /* collision_map.png in Resources */,
 				8432CF3811B3BC8A0093DA32 /* zygote1.png in Resources */,
 				8432CF3911B3BC8A0093DA32 /* zygote10.png in Resources */,
 				8432CF3A11B3BC8A0093DA32 /* zygote12.png in Resources */,
@@ -4921,6 +4920,7 @@
 				B4ACEAD21214DE7500DA4272 /* collosion.txt in Resources */,
 				B4B278EA1218CB7800268950 /* hatchView.xib in Resources */,
 				B49A00CD121EB78600BD5808 /* SendMailViewController.xib in Resources */,
+				60E8D922124709A500FCC0C6 /* collision_map.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
