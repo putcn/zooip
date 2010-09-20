@@ -9,6 +9,7 @@
 #import "CollisionHelper.h"
 
 static const UInt32* collisionMap;
+//unsigned char  *collisionMap;
 static int width;
 static int height;
 
@@ -16,6 +17,67 @@ static int height;
 
 +(void)initCollisionMap
 {
+	UIImage        *collisionImage;
+	CGImageRef      imageRef;
+	CGContextRef    context = NULL;
+	CGColorSpaceRef colorSpace;
+	void *          bitmapData;
+	int             bitmapByteCount;
+	int             bitmapBytesPerRow;
+	
+	collisionImage = [UIImage imageNamed:@"collision_map.png"];
+	
+	if (collisionImage == NULL)
+	{
+		NSLog(@"ERROR: couldn't create new UIMage from %@\n", "foo");
+	}
+	
+	imageRef = collisionImage.CGImage;		
+	
+	width = CGImageGetWidth (imageRef);
+	height = CGImageGetHeight (imageRef);
+	
+	bitmapBytesPerRow = (width * 4);
+	bitmapByteCount   = (bitmapBytesPerRow * height);
+	
+	if ((colorSpace = CGColorSpaceCreateDeviceRGB()) == NULL)
+	{
+		NSLog(@"ERROR: CGColorSpaceCreateDeviceRGB() failed\n");
+	}
+	
+	NSLog(@"Allocating %d bytes of data\n", bitmapByteCount);
+	if ((bitmapData = malloc (bitmapByteCount)) == NULL)
+	{
+		NSLog(@"ERROR: couldn't malloc (%d) bytes of bitmapData\n");
+		CGColorSpaceRelease (colorSpace);
+	}
+	
+	memset((void *)bitmapData, 0, bitmapByteCount);
+	
+	context =
+	CGBitmapContextCreate (
+						   bitmapData,
+						   width,
+						   height,
+						   8,
+						   bitmapBytesPerRow,
+						   colorSpace,
+						   kCGImageAlphaPremultipliedLast
+						   );
+	
+	if (context == NULL)
+	{
+		free (bitmapData);
+		CGColorSpaceRelease(colorSpace);
+		NSLog(@"ERROR: error creating bitmapContext\n");
+	}
+	
+	CGRect rect = CGRectMake(0, 0, width, height);
+	
+	CGContextDrawImage (context, rect, imageRef);
+	
+	collisionMap = (const UInt32 *) CGBitmapContextGetData (context);
+/*
 	UIImage *collisionImage = [UIImage imageNamed:@"collision_map.png"];
 	
 	width = (int)collisionImage.size.width;
@@ -28,7 +90,7 @@ static int height;
 	
 	CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(collisionImage.CGImage));
 	collisionMap = (const UInt32*)CFDataGetBytePtr(imageData);	
-	
+*/	
 	//NSData *data = [NSData dataWithData:(NSData *)imageData];
 	//	NSFileHandle *file;// = [NSFileHandle fileHandleForUpdatingAtPath:@"/Users/Rainbow/Desktop/data.txt"];
 	//	NSString *fileName = @"collosion.txt";
@@ -52,6 +114,8 @@ static int height;
 	//		if ( pixels[j] & 0xff000000 ) collisionMap[j] = 1;
 	//	}
 	//	CFRelease( imageData );
+	
+
 	
 }
 
