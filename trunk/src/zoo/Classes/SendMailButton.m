@@ -16,7 +16,8 @@
 {
 	if((self = [super init]))
 	{
-		Button* sendMailBtn = [[Button alloc]initWithLabel:@"邮件反馈"
+		Button* sendMailBtn; 
+		sendMailBtn = [[Button alloc]initWithLabel:@"邮件反馈"
 												  setColor:ccc3(255, 0, 0)
 												   setFont:@"Arial"
 												   setSize:16

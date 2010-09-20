@@ -15,26 +15,27 @@
 {
     [super viewDidLoad];
 	
-	[self.view setBackgroundColor:[UIColor clearColor]];
+//	[self.view setBackgroundColor:[UIColor blueColor]];
 	
 	Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
-	if(nil != mailClass)
-	{
-		// Check whether the current device is configured for sending emails
-		if([mailClass canSendMail])
-		{
-			[self displayComposerSheet];
-		}
-		else
-		{
-			// Configure the device for sending mail
-			[self configureDeviceForSendingMail];
-		}
-	}
-	else
-	{
-		[self configureDeviceForSendingMail];
-	}
+//	if(nil != mailClass)
+//	{
+//		// Check whether the current device is configured for sending emails
+//		if([mailClass canSendMail])
+//		{
+//			[self displayComposerSheet];
+//		}
+//		else
+//		{
+//			// Configure the device for sending mail
+//			[self configureDeviceForSendingMail];
+//		}
+//	}
+//	else
+//	{
+//		[self configureDeviceForSendingMail];
+//	}
+	[self configureDeviceForSendingMail];
 }
 
 // Override to allow orientations other than the default portrait orientation.
