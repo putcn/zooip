@@ -13,7 +13,7 @@
 
 @synthesize instructionsView,doneButton;
 @synthesize myWebView;
-@synthesize navigationController;
+//@synthesize navigationController;
 @synthesize  activityIndicator;
 
 
@@ -120,7 +120,6 @@
 {
 	[[NSNotificationCenter defaultCenter] postNotificationName:@"POP" object:nil];
 	[self.view removeFromSuperview];
-	//[self.navigationController.view removeFromSuperview];
 	//self.navigationController.navigationBarHidden = YES;
 }
 
@@ -181,7 +180,7 @@
 	[activityIndicator release];
 	[myAlert release];
 	
-	[navigationController release];
+//	[navigationController release];
 	[instructionsView release];
 	[doneButton release];
 	[super dealloc];

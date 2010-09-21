@@ -318,7 +318,7 @@ static CGFloat kBorderWidth = 10;
 	  
 	  //init notification
 	  
-	navigationController = [[UINavigationController alloc] initWithRootViewController:nil];
+	  navigationController = [[UINavigationController alloc] initWithRootViewController:nil];
 	  
 	  
     _delegate = nil;
@@ -447,13 +447,16 @@ static CGFloat kBorderWidth = 10;
 		//[[[UIApplication sharedApplication] keyWindow] addSubview:navigationController.view];
 		
 //		RegistorWebView *reg =[[[RegistorWebView alloc] initWithURL:url] autorelease];
+
+
+		
 		RegistorWebView *reg =[[RegistorWebView alloc] initWithURL:url];
-		
-		
+		reg.view.frame = CGRectMake(0, 30, 480, 290);
 		
 		[[[UIApplication sharedApplication] keyWindow] addSubview:navigationController.view];
 		
-		[navigationController pushViewController:reg animated:YES];
+		[navigationController initWithRootViewController:reg];
+//		[navigationController pushViewController:reg animated:YES];
 		[reg release];
 		
 		return NO;

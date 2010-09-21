@@ -16,12 +16,12 @@
 	UIView *instructionsView;	
 	UIBarButtonItem *doneButton;
 	UIWebView *myWebView;
-	UINavigationController *navigationController;
+//	UINavigationController *navigationController;
 	UIActivityIndicatorView *activityIndicator;
 	UIAlertView *myAlert;
 }
 
-@property (nonatomic, retain) UINavigationController *navigationController;
+//@property (nonatomic, retain) UINavigationController *navigationController;
 @property (nonatomic, retain) IBOutlet UIView *instructionsView;
 @property (nonatomic, retain) IBOutlet UIBarButtonItem *doneButton;
 @property (nonatomic, retain) UIWebView *myWebView;

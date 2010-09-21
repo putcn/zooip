@@ -77,6 +77,7 @@ static int height;
 	CGContextDrawImage (context, rect, imageRef);
 	
 	collisionMap = (const UInt32 *) CGBitmapContextGetData (context);
+
 /*
 	UIImage *collisionImage = [UIImage imageNamed:@"collision_map.png"];
 	
@@ -90,7 +91,7 @@ static int height;
 	
 	CFDataRef imageData = CGDataProviderCopyData(CGImageGetDataProvider(collisionImage.CGImage));
 	collisionMap = (const UInt32*)CFDataGetBytePtr(imageData);	
-*/	
+*/
 	//NSData *data = [NSData dataWithData:(NSData *)imageData];
 	//	NSFileHandle *file;// = [NSFileHandle fileHandleForUpdatingAtPath:@"/Users/Rainbow/Desktop/data.txt"];
 	//	NSString *fileName = @"collosion.txt";
