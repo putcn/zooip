@@ -46,7 +46,6 @@
 		NSInteger type = data.originalAnimalId;
 		NSInteger stage = data.birdStage;
 		view = [AnimalViewFactory createAnimalView:type birdStage:stage];
-		
 		//TODO: Need to set the animal data...
 		speed = data.speed / 60.0f;
 		currSpeed = ccp(0 ,0);
@@ -293,7 +292,6 @@
 			{
 				isFound = [self isCanReach:targetPosition];
 			}
-			//NSLog(@"===Loop Find===");
 		}
 	}
 	else if (currStatus == 6)
@@ -337,6 +335,12 @@
 	{
 		moveArea = 0x0111;
 	}
+	NSLog(@"+++++++++++++++++++++++++++move Area:%d", 0x0100);
+	NSLog(@"+++++++++++++++++++++++++++move Area:%d", 0x0010);
+	NSLog(@"+++++++++++++++++++++++++++move Area:%d", 0x110);
+	NSLog(@"+++++++++++++++++++++++++++move Area:%d", 0x0101);
+	NSLog(@"+++++++++++++++++++++++++++move Area:%d", 0x0011);
+	NSLog(@"+++++++++++++++++++++++++++move Area:%d", 0x0111);
 }
 
 -(BOOL) isCanReach:(CGPoint)targetPoint
@@ -344,7 +348,7 @@
 	if (currStatus != 6 && currStatus != 10 && currStatus != 11)
 	{
 		int mapTypeByte = [CollisionHelper getMapType:targetPoint isByte:YES];
-		
+
 		BOOL isReach = NO;
 		
 		if (mapTypeByte == 0x0000)
@@ -357,7 +361,7 @@
 			isReach = YES;
 		}
 		
-		return YES;//isReach;
+		return isReach;//isReach;
 	}
 	else
 	{
@@ -627,7 +631,6 @@
 	[animalData release];
 	
 	//TODO: Remove view from the stage
-	[view dealloc];
 	[view release];
 	[super dealloc];
 }
