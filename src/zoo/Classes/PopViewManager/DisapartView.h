@@ -41,6 +41,11 @@
 
 @property(nonatomic, retain) NSMutableArray* m_arrayDiapartAnimalID;
 
+@property(nonatomic, retain) UIImageView* rightUpImageView;
+
+@property(nonatomic, retain) UIImageView* leftUpImageView;
+
+
 -(void)selectButtonAtIndex:(NSUInteger)index;
 
 -(void)addUpAnimal:(NSString*)upAnimalName sex:(int)sexIndex;

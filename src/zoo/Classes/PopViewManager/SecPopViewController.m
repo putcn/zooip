@@ -164,7 +164,6 @@
 			}
 			NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice-2];
 			priceLabel.text = strPrice;
-			
 		}
 			break;
 			
@@ -323,15 +322,27 @@
 			//蚂蚁数量
 			
 			//action                    操作行为（marry or mate）
-			//int ants = 1;
-			NSInteger ants = [priceLabel.text integerValue];
-			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
-									[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId,@"farmerId",
-									[animalIDArray objectAtIndex:1],@"animalId",
-									ants, @"ants",nil];
+			NSInteger nAnts = [priceLabel.text integerValue];
+			NSString* str1 = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId;
+			NSString* str2 = [animalIDArray objectAtIndex:1];
+			NSString* str3 = [animalIDArray objectAtIndex:0];
+			
+			NSString* str4 = [NSString stringWithFormat:@"%d", nAnts];
+			NSString* str5 = @"mate";
+			
+			NSDictionary *params = [[NSDictionary alloc]initWithObjectsAndKeys:
+									str1, @"farmerId",
+									str2, @"maleId",
+									str3, @"femaleId",
+									str4, @"ants",
+									str5, @"mate",
+									nil];
 
-		//	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",[animalIDArray objectAtIndex:0],@"maleId",[animalIDArray objectAtIndex:1],@"femaleId",@"1",@"ants",action,@"action",nil];
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal 
+												   WithParameters:params 
+												 AndCallBackScope:self 
+													AndSuccessSel:@"resultCallback:" 
+													 AndFailedSel:@"faultCallback:"];
 		}
 			break;
 			//动物婚后交配
@@ -341,7 +352,7 @@
 			
 			//**** 蚂蚁的数量需要传入
 			
-		//	NSInteger nAnts = [priceLabel.text integerValue];
+			NSInteger nAnts = [priceLabel.text integerValue];
 			
 			NSString *strfFarmerId = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId;
 						
@@ -349,18 +360,19 @@
 			for(int i = 0;i < [animalIDArray count]; i++)
 				NSLog(@"%@\n", [animalIDArray objectAtIndex:i]);
 			
-			NSString* strLeftAnimalID = [animalIDArray objectAtIndex:1];
-			NSString* strRightAnimalID = [animalIDArray objectAtIndex:0];
+			NSString* strLeftAnimalID = [animalIDArray objectAtIndex:0];
+			NSString* strRightAnimalID = [animalIDArray objectAtIndex:1];
 			
 			NSString *action = @"mate";
 			
+			NSString* strAnts = [NSString stringWithFormat:@"%d", nAnts];
+			
 			NSDictionary *params = [[NSDictionary alloc]initWithObjectsAndKeys:
 									strfFarmerId,@"farmerId",
-									strLeftAnimalID, @"male",
-									strRightAnimalID,@"female",
-									action,@"mate",
+									strLeftAnimalID, @"animalId",
+									strAnts,@"ants",
 									nil];
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoFeedFemaleAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 			
 		}
 			break;
@@ -563,17 +575,36 @@
 						case 0:
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物已经配对"];
 							break;
+						case 2:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物已经配对"];
+							break;
+						case 4:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不是自己的公动物,不能配对"];
+							break;
+						case 5:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不是自己的公动物,不能配对"];
+							break;
 						case 7:
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"配对失败"];
 							break;
-						case 8:
-							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"近亲不能结婚"];
-							break;
 						case 9:
+						{
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配成功，产生一个受精蛋"];
+							
+							// Add by Hunk on 2010-09-27 for updating farm information
+							NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+													[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+							[self updateFarmInfoExeCute:params];
+						}
 							break;
 						case 10:
+						{
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配成功，没能产生受精蛋"];
+							// Add by Hunk on 2010-09-27 for updating farm information
+							NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+													[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+							[self updateFarmInfoExeCute:params];
+						}
 							break;
 						case 11:
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物交配时间未到"];
@@ -603,10 +634,24 @@
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"近亲不能结婚"];
 							break;
 						case 9:
+						{
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配成功，产生一个受精蛋"];
+							
+							// Add by Hunk on 2010-09-27 for updating farm information
+							NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+													[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+							[self updateFarmInfoExeCute:params];
+						}
 							break;
 						case 10:
+						{
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"交配成功，没能产生受精蛋"];
+							
+							// Add by Hunk on 2010-09-27 for updating farm information
+							NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+													[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+							[self updateFarmInfoExeCute:params];
+						}
 							break;
 						case 11:
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物交配时间未到"];

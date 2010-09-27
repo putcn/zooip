@@ -19,7 +19,8 @@
 - (void) addTitleButtons:(NSArray *)arrayPic;
 - (void) selectButtonAtIndex:(NSUInteger)index;
 
-- (void) backBtnSelected:(id)sender;
+//- (void) backBtnSelected:(id)sender;
+-(void) removePopView;
 - (void) sellAllBtnSelected:(id)sender;
 
 - (void) resultAllEggCallback:(NSObject *)value;
@@ -526,13 +527,6 @@
 					//Gen the one clicked at the right postion.
 					
 					DataModelAnimal *serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:((DataModelAnimal *)[stoMarriedArray objectAtIndex:index]).animalId];
-					//			if(serverAnimalData2.gender ==1)
-					//			{
-					//				leftAnimalID = animalID;
-					//			}
-					//			else {
-					//				rightAnimalID = animalID;
-					//			}
 					
 					NSString *animalName = [NSString stringWithFormat:@"%d",serverAnimalData2.scientificNameCN];
 					NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
@@ -545,6 +539,9 @@
 					NSString *picFileNameAnother = [NSString stringWithFormat:@"%@.png",serverAnimalDataAnother.picturePrefix];
 					NSString *orgidAnother = [NSString stringWithFormat:@"%d",serverAnimalDataAnother.originalAnimalId];
 					
+					
+//					[m_pDisapartView.rightUpImageView removeFromSuperview];
+//					[m_pDisapartView.leftUpImageView removeFromSuperview];
 					if(serverAnimalData2.gender <= 50) // 雌性 - 0
 					{
 						[m_pDisapartView addUpAnimal:[NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix] sex:0];
@@ -564,7 +561,11 @@
 						[m_pDisapartView setLeftAnimalID:serverAnimalDataAnother.animalId];
 					}
 					
-					[self.view addSubview:m_pDisapartView.view];
+					// Add by Hunk on 2010-09-26
+					[[[UIApplication sharedApplication]keyWindow] addSubview:m_pDisapartView.view];
+					
+					[self removePopView];
+					//[self.view addSubview:m_pDisapartView.view];
 				}
 					break;
 		}
@@ -574,6 +575,17 @@
 			break;
 		}
 	}
+}
+
+// Add by Hunk on 2010-09-26
+-(void) removePopView
+{
+	for (UIView *subview in m_ppopView.subviews) {
+		[subview removeFromSuperview];
+	}
+	[topBtnArray removeAllObjects];
+	[saleAllBtn removeFromSuperview];
+	[self.view removeFromSuperview];
 }
 
 - (void) backBtnSelected:(id)sender{

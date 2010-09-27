@@ -17,7 +17,7 @@
 	
 //	[self.view setBackgroundColor:[UIColor blueColor]];
 	
-	Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
+//	Class mailClass = (NSClassFromString(@"MFMailComposeViewController"));
 //	if(nil != mailClass)
 //	{
 //		// Check whether the current device is configured for sending emails
@@ -50,7 +50,7 @@
 -(void)configureDeviceForSendingMail
 {
 	// Recipient(s)
-	NSString* strRecipient = @"mailto:li_xuwen@vanceinfo.com?cc=nil,nil&subject=Happy zoo's feedback";
+	NSString* strRecipient = @"mailto:HappyZooFeedback@gmail.com?cc=nil,nil&subject=Happy zoo's feedback";
 
 	// Mail body
 	NSString* strBody = @"&body=感谢您对欢乐动物园提出宝贵意见和建议.";
@@ -72,7 +72,7 @@
 	[picker setSubject:@"Happy zoo's feedback"];
 	
 	// Recipient(s)
-	NSArray* arrToRecipients = [NSArray arrayWithObject:@"li_xuwen@vanceinfo.com"];
+	NSArray* arrToRecipients = [NSArray arrayWithObject:@"HappyZooFeedback@gmail"];
 	[picker setToRecipients:arrToRecipients];
 	
 	// Fill out the email body text
