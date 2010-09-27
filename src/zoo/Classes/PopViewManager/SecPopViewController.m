@@ -335,7 +335,7 @@
 									str2, @"maleId",
 									str3, @"femaleId",
 									str4, @"ants",
-									str5, @"mate",
+									str5, @"action",
 									nil];
 
 			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal 
@@ -362,8 +362,6 @@
 			
 			NSString* strLeftAnimalID = [animalIDArray objectAtIndex:0];
 			NSString* strRightAnimalID = [animalIDArray objectAtIndex:1];
-			
-			NSString *action = @"mate";
 			
 			NSString* strAnts = [NSString stringWithFormat:@"%d", nAnts];
 			
