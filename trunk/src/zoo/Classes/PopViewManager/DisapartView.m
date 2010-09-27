@@ -20,8 +20,9 @@
 
 
 @implementation DisapartView
-@synthesize leftAnimalID, rightAnimalID, m_arrANIMALID;
+@synthesize leftAnimalID, rightAnimalID, m_arrANIMALID, m_arrayDiapartAnimalID;
 
+@synthesize rightUpImageView, leftUpImageView;
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad 
@@ -123,7 +124,7 @@
 								farmId,@"farmId",
 								leftAnimalID,@"maleId",
 								rightAnimalID,@"femaleId",nil];
-		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackMarry:" AndFailedSel:@"faultCallback:"];
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoDisbandMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackMarry:" AndFailedSel:@"faultCallback:"];
 		
 		serverAnimalDataOne.coupleAnimalId = rightAnimalID;
 		DataModelAnimal *serverAnimalDataRight = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:rightAnimalID];
@@ -166,18 +167,19 @@
 	[self.view addSubview:rightUpImageView];
 }
 
-//退出
+//离婚界面退出
 -(void)exitBtnSelected:(id)sender
 {
 	m_nSelectedAniIndex = -1;
 	m_nSexIndex = -1;
 	
+	[rightUpImageView removeFromSuperview];
+	[leftUpImageView removeFromSuperview];
+	
 	for (UIView *subview in animalScrollView.subviews) 
 	{
 		[subview removeFromSuperview];
 	}
-	[rightUpImageView removeFromSuperview];
-	[leftUpImageView removeFromSuperview];
 	
 	[self.view removeFromSuperview];
 }
@@ -202,14 +204,14 @@
  	NSInteger code = [[dic objectForKey:@"code"] intValue];
 	
 	switch (code) {
-		case 0:
+		case 1:
 		{
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"离婚成功"];
 			((DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID]).coupleAnimalId = nil;
 			((DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:rightAnimalID]).coupleAnimalId = nil;
 		}
 			break;
-		case 1:
+		case 0:
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不是自己的公动物，不能离婚"];
 			break;
 		case 2:

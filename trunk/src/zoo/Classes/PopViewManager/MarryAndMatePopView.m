@@ -141,7 +141,7 @@
 			//动物离婚
 		case ANIMAL_DISAPART:
 		{
-			NSDictionary* originalAnimalsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+	//		NSDictionary* originalAnimalsDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 			NSNumber* gender;
 			NSMutableArray* sexNameArray = [[NSMutableArray alloc] init];
 			
@@ -152,7 +152,8 @@
 			NSString *aniID;
 			
 			int kTemp = 0;
-			for(int i = 0 ;i <[[DataEnvironment sharedDataEnvironment].animalIDs count];i++)
+			int nCount = [[DataEnvironment sharedDataEnvironment].animalIDs count];
+			for(int i = 0 ;i < nCount;i++)
 			{
 				originAnimal = [animalIDs objectAtIndex:i];
 				aniID = [animalIDs objectAtIndex:i];

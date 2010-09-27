@@ -134,7 +134,7 @@
 {
 	[secPopView.animalIDArray removeAllObjects];
 	[secPopView setM_npopViewType:ANIMAL_ANTSCHOOSE_POPVIEW];
-	[secPopView setM_ntabFlag:Mate_After_Marry];
+	[secPopView setM_ntabFlag:Mate_Before_Marry];
 	
 	NSLog(@"leftAnimalID = %@\n", leftAnimalID);
 	NSLog(@"rightAnimalID = %@\n", rightAnimalID);
