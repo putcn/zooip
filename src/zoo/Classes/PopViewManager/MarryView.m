@@ -116,7 +116,12 @@
 	}
 	else
 	{
-		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmId,@"farmId",leftAnimalID,@"maleId",rightAnimalID,@"femaleId",action,@"action",nil];
+		NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+								farmId,@"farmId",
+								rightAnimalID,@"maleId",
+								leftAnimalID,@"femaleId",
+								action,@"action",
+								nil];
 		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackMarry:" AndFailedSel:@"faultCallback:"];
 
 		serverAnimalDataOne.coupleAnimalId = rightAnimalID;
@@ -189,17 +194,17 @@
 //		[self selectButtonAtIndex:index];
 //	}
 	
-	if([leftAnimalID isEqualToString:@""])
-	{
+//	if([leftAnimalID isEqualToString:@""])
+//	{
 		leftAnimalID = [m_arrANIMALID objectAtIndex:index];
 		
-		NSLog(@"leftAnimalID = %@", leftAnimalID);
-	}
-	else {
-		rightAnimalID = [m_arrANIMALID objectAtIndex:index];
-		
-		NSLog(@"leftAnimalID = %@", leftAnimalID);
-	}
+//		NSLog(@"leftAnimalID = %@", leftAnimalID);
+//	}
+//	else {
+//		rightAnimalID = [m_arrANIMALID objectAtIndex:index];
+//		
+//		NSLog(@"leftAnimalID = %@", leftAnimalID);
+//	}
 	
 	if(index != m_nSelectedAniIndex)
 	{
@@ -216,7 +221,7 @@
 		//需要按着leftAnimalID，rightAnimalID，放到左侧和右侧。
 		// left up animal
 		//leftUpImageView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:[m_arrPic objectAtIndex:index]]];
-//		
+		
 //		if(m_nSexIndex == 0)
 //		{
 //			leftUpImageView.frame = CGRectMake(110, 140, 60, 60);
@@ -305,14 +310,13 @@
 	
 	switch (code) {
 		case 1:
+		case 2:
+		case 3:
 		{
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"结婚成功"];
 			((DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:leftAnimalID]).coupleAnimalId = rightAnimalID;
-			((DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:rightAnimalID]).coupleAnimalId = leftAnimalID;
+			((DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:rightAnimalID]).coupleAnimalId = leftAnimalID;			
 		}
-			break;
-		case 2:
-			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"结婚成功"];
 			break;
 		case 4:
 			[[FeedbackDialog sharedFeedbackDialog] addMessage:@"不是自己的公动物，不能配对"];

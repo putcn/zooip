@@ -151,32 +151,63 @@
 			break;
 		case Mate_Before_Marry:
 		{
-			NSString* _showStr = [finalRate stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@""]];
+			int nRate = 0;
+			
+			if(tempCount > 0 && tempCount <= 1)
+			{
+				nRate = 6;
+			}
+			else if(tempCount > 1 && tempCount < 9)
+			{
+				if(tempCount % 2 == 0)
+				{
+					nRate = (tempCount / 2) * (6 + 5);
+				}
+				else
+				{
+					nRate = (tempCount / 2) * 6 + ((tempCount / 2) - 1 ) * 5;
+				}
+			}
+			else if(tempCount == 9)
+			{
+				nRate = 50;
+			}
+			
+		
+			NSString* _showStr = [finalRate stringByAppendingString:[NSString stringWithFormat:@"%d%@",nRate,@""]];
 			
 			showStr = [_showStr stringByAppendingString:@"%"];
-			CGFloat price = tempCount / 2;
+			CGFloat price = tempCount;
 			
 			int nPrice = price;
 			
-			if(nPrice < 2)
-			{
-				nPrice = 0;
+//			if(nPrice < 2)
+//			{
+//				nPrice = 0;
 				NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice];
 				priceLabel.text = strPrice;
-			}
-			else
-			{
-				NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice-2];
-				priceLabel.text = strPrice;
-			}
+			//}
+//			else
+//			{
+//				NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice-2];
+//				priceLabel.text = strPrice;
+//			}
 		}
 			break;
 			
 		case Mate_After_Marry:
 		{
-			NSString* _showStr = [finalRate stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@""]];
-			showStr = [_showStr stringByAppendingString:@"%"];
-			
+			if(tempCount <= 1)
+			{
+				NSString* _showStr = [finalRate stringByAppendingString:[NSString stringWithFormat:@"%d%@",2,@""]];
+				showStr = [_showStr stringByAppendingString:@"%"];
+			}
+			else
+			{
+				NSString* _showStr = [finalRate stringByAppendingString:[NSString stringWithFormat:@"%d%@",tempCount,@""]];
+				showStr = [_showStr stringByAppendingString:@"%"];
+			}
+						
 			CGFloat price = tempCount / 2;
 			
 			int nPrice = price;
@@ -184,9 +215,19 @@
 			if(nPrice < 1)
 			{
 				nPrice = 1;
+				NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice];
+				priceLabel.text = strPrice;
 			}
-			NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice+1];
-			priceLabel.text = strPrice;
+			else if(nPrice >= 1 && nPrice < 25)
+			{
+				NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice];
+				priceLabel.text = strPrice;
+			}
+			else 
+			{
+				NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice + 1];
+				priceLabel.text = strPrice;
+			}
 		}
 			break;
 
@@ -459,37 +500,41 @@
 //	tempPrice = originAnimal.antsPrice;
 	
 	NSString* describeString = @"   性别：";
-	mixCount = 50;
-	int income = 0;
 	
-
-		[iconImage setImage:[UIImage imageNamed:@"金蚂蚁.png"]];
+	if(m_ntabFlag == Mate_Before_Marry)
+		mixCount = 9;
+	else
+		mixCount = 50;
 	
-//		priceLabel.text = [NSString stringWithFormat:@"%d", tempPrice];
-//		describeString = [describeString stringByAppendingString:@"公\n   价格："];
-//		describeString = [describeString stringByAppendingString:priceLabel.text];
-//		describeString = [describeString stringByAppendingString:@"个蚂蚁币"];
-//		describeString = [describeString stringByAppendingString:@"\n总收益："];
-	tempPrice=1;
-		if (tempPrice > myAntsCurrency) {
-			wrongLabel.hidden = NO;
-			OKButton.enabled = NO;
-		}
-		else {
-		//	mixCount = myAntsCurrency/tempPrice;
-			wrongLabel.hidden = YES;
-			OKButton.enabled = YES;
-		}
+	[iconImage setImage:[UIImage imageNamed:@"金蚂蚁.png"]];
+	tempPrice = 1;
+	if (tempPrice > myAntsCurrency) 
+	{
+		wrongLabel.hidden = NO;
+		OKButton.enabled = NO;
+	}
+	else 
+	{
+		wrongLabel.hidden = YES;
+		OKButton.enabled = YES;
+	}
 	
 	//上面名字的显示
 	nameLabel.text = @"";
+	
 	//价格的显示
-	priceLabel.text = @"0";
+	if(m_ntabFlag == Mate_Before_Marry)
+		priceLabel.text = @"0";
+	else
+		priceLabel.text = @"1";
 	
 	describeString = @"选择当前产蛋周期下公蛋的概率";
 	describeLabel.numberOfLines = 3;
 	describeLabel.text = describeString;
-	countLabel.text = @"下公蛋的概率：";
+	if(m_ntabFlag == Mate_Before_Marry)
+		countLabel.text = @"下公蛋的概率:0%";
+	else
+		countLabel.text = @"下公蛋的概率:2%";
 }
 
 
@@ -631,6 +676,9 @@
 					switch (code) {
 						case 0:
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物已经配对"];
+							break;
+						case 5:
+							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"动物没有结婚"];
 							break;
 						case 7:
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"配对失败"];
