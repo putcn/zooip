@@ -28,9 +28,7 @@
 		storageManageToolbar.position = ccp(356, 280);
 		[self addChild:storageManageToolbar];
 		
-		friendsToolbar = [[FriendsToolbar alloc] init];
-		friendsToolbar.position = ccp(436, 6);
-		[self addChild:friendsToolbar];
+
 		
 //		friendsPopupList = [[MessageDialog alloc] initDialog:@"FriendList.png" setTarget:self setSelector:@selector(switchFriendZoo)];
 //		[self addChild:friendsPopupList];
@@ -48,6 +46,10 @@
 		m_SendMailBtn = [[SendMailButton alloc]init];
 		m_SendMailBtn.position = ccp(400, 225);
 		[self addChild:m_SendMailBtn];
+		
+		friendsToolbar = [[FriendsToolbar alloc] init];
+		friendsToolbar.position = ccp(436, 6);
+		[self addChild:friendsToolbar];
 		
 	}
 	

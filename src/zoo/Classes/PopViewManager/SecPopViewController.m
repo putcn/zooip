@@ -158,12 +158,17 @@
 			
 			int nPrice = price;
 			
-			if(nPrice < 1)
+			if(nPrice < 2)
 			{
-				nPrice = 1;
+				nPrice = 0;
+				NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice];
+				priceLabel.text = strPrice;
 			}
-			NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice-2];
-			priceLabel.text = strPrice;
+			else
+			{
+				NSString* strPrice = [NSString stringWithFormat:@"%d", nPrice-2];
+				priceLabel.text = strPrice;
+			}
 		}
 			break;
 			
@@ -323,15 +328,15 @@
 			
 			//action                    操作行为（marry or mate）
 			NSInteger nAnts = [priceLabel.text integerValue];
-			NSString* str1 = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmerId;
-			NSString* str2 = [animalIDArray objectAtIndex:1];
-			NSString* str3 = [animalIDArray objectAtIndex:0];
+			NSString* str1 = [DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId;
+			NSString* str2 = [animalIDArray objectAtIndex:0];
+			NSString* str3 = [animalIDArray objectAtIndex:1];
 			
 			NSString* str4 = [NSString stringWithFormat:@"%d", nAnts];
 			NSString* str5 = @"mate";
 			
 			NSDictionary *params = [[NSDictionary alloc]initWithObjectsAndKeys:
-									str1, @"farmerId",
+									str1, @"farmId",
 									str2, @"maleId",
 									str3, @"femaleId",
 									str4, @"ants",
@@ -360,7 +365,9 @@
 			for(int i = 0;i < [animalIDArray count]; i++)
 				NSLog(@"%@\n", [animalIDArray objectAtIndex:i]);
 			
+			// female
 			NSString* strLeftAnimalID = [animalIDArray objectAtIndex:0];
+			// male
 			NSString* strRightAnimalID = [animalIDArray objectAtIndex:1];
 			
 			NSString* strAnts = [NSString stringWithFormat:@"%d", nAnts];
@@ -370,7 +377,7 @@
 									strLeftAnimalID, @"animalId",
 									strAnts,@"ants",
 									nil];
-			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoMateAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
+			[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoFeedFemaleAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallback:" AndFailedSel:@"faultCallback:"];
 			
 		}
 			break;
