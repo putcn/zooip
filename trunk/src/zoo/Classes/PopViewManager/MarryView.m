@@ -269,7 +269,7 @@
 	
 	animalScrollView.userInteractionEnabled = YES;
 	animalScrollView.scrollEnabled = YES;
-	[animalScrollView setContentSize:CGSizeMake(60, animalScrollView.frame.size.height)];
+	[animalScrollView setContentSize:CGSizeMake(60*[idArray count]+5, animalScrollView.frame.size.height)];
 	[animalScrollView setBackgroundColor:[UIColor clearColor]];
 	animalScrollView.alpha = 1;
 	[animalScrollView setShowsHorizontalScrollIndicator:NO];
