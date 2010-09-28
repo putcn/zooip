@@ -50,7 +50,7 @@
 -(void)configureDeviceForSendingMail
 {
 	// Recipient(s)
-	NSString* strRecipient = @"mailto:HappyZooFeedback@gmail.com?cc=nil,nil&subject=Happy zoo's feedback";
+	NSString* strRecipient = @"mailto:HappyZooFeedback@gmail.com?subject=Happy zoo's feedback";
 
 	// Mail body
 	NSString* strBody = @"&body=感谢您对欢乐动物园提出宝贵意见和建议.";

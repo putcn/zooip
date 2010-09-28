@@ -75,9 +75,9 @@
 
 	
 //	[[CCDirector sharedDirector] runWithScene: [HelloWorld scene]];
-//	[[CCDirector sharedDirector] runWithScene: [GameMainScene scene]];
+	[[CCDirector sharedDirector] runWithScene: [GameMainScene scene]];
 
-	[[CCDirector sharedDirector] runWithScene: [LoginScence scene]];
+//	[[CCDirector sharedDirector] runWithScene: [LoginScence scene]];
 	
 	
 }
