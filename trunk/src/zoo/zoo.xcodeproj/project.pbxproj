@@ -859,7 +859,6 @@
 		24A38D4712090945006334B1 /* SecPopViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecPopViewController.xib; sourceTree = "<group>"; };
 		24A38D4812090945006334B1 /* ShopPopView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShopPopView.h; sourceTree = "<group>"; };
 		24A38D4912090945006334B1 /* ShopPopView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShopPopView.m; sourceTree = "<group>"; };
-		24B86C8D1247407100A41C1C /* Entitlements.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Entitlements.plist; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		3E022E9A118E847D00D2A6E6 /* AnimalInfo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AnimalInfo.png; sourceTree = "<group>"; };
 		3E0CE36511BF302A002FCB22 /* StealEggsFromFarmController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StealEggsFromFarmController.h; sourceTree = "<group>"; };
@@ -3559,7 +3558,6 @@
 				50F414ED1069373D002A0D5E /* fps_images.png */,
 				50F414EE1069373D002A0D5E /* Icon.png */,
 				50F414EF1069373D002A0D5E /* Info.plist */,
-				24B86C8D1247407100A41C1C /* Entitlements.plist */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -5270,7 +5268,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				CODE_SIGN_ENTITLEMENTS = "~/zooip/src/zoo/Resources/Entitlements.plist";
+				CODE_SIGN_ENTITLEMENTS = "";
 				CODE_SIGN_IDENTITY = "Don't Code Sign";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alan Liu (4PPX64PLPZ)";
 				COPY_PHASE_STRIP = NO;
@@ -5292,7 +5290,7 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
 				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7B3CBA62-3BF2-4D42-9309-9F9A14DF9C7F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4712206E-247C-438B-8457-9806521C4142";
 				SDKROOT = iphoneos4.0;
 				WARNING_CFLAGS = "-Wall";
 			};
