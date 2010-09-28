@@ -62,7 +62,7 @@ storageAuctionAnimals;
 		[self restore];
 		
 		// Player UID
-		playerUid = @"248726533";//黄老邪
+//		playerUid = @"248726533";//黄老邪
 //		playerUid = @"248725655";
 //		playerUid = @"46565162";// Hunk
 //		playerUid = @"160412891";//蒋紫薇
@@ -72,7 +72,7 @@ storageAuctionAnimals;
 //		playerUid = @"221110752"; //谷磊
 		// New test UID
 //		playerUid = @"248951866";//actual
-	//	playerUid = @"248951866";//傅红雪
+		playerUid = @"248951866";//傅红雪
 //		playerUid = @"73388409"; //lancy
 		
 		// Friend UID
