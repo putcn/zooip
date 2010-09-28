@@ -729,6 +729,10 @@
 						case 0:
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"公动物已经配对"];
 							break;
+						case 1:
+								[[FeedbackDialog sharedFeedbackDialog] addMessage:@"配种成功"];
+								break;
+
 						case 5:
 							[[FeedbackDialog sharedFeedbackDialog] addMessage:@"动物没有结婚"];
 							break;
