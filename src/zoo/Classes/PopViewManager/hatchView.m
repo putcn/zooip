@@ -56,7 +56,11 @@
 {
 	NSString *pay = [NSString stringWithFormat:@"ant"];
 	m_strPayType = @"ant";
-	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:m_strFarmerID,@"farmerId",m_strFarmID,@"farmId",m_strStorageZyID,@"zygoteStorageId",pay,@"payment",nil];
+	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:
+							m_strFarmerID,@"farmerId",
+							m_strFarmID,@"farmId",
+							m_strStorageZyID,@"zygoteStorageId",
+							pay,@"payment",nil];
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequesttoIncubatingEgg WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultAntHatchCallback:" AndFailedSel:@"faultCallback:"];	
 }
 
@@ -107,7 +111,7 @@
 			break;
 			
 		case 5:
-			m_strInfoStr = [NSString stringWithFormat:@"没有可以用来孵化的母鸡"];
+			m_strInfoStr = [NSString stringWithFormat:@"没有可以用来孵化的雌性动物"];
 			break;
 			
 		case 6:

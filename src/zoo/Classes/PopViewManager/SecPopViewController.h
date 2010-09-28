@@ -40,6 +40,8 @@
 	hatchView* m_hatchView;
 	NSMutableArray*			animalIDArray; //first femaleID,second maleID	
 	NSMutableArray*			animalArrayTemp;
+	
+	UIButton* hatchBtn;
 }
 
 @property(nonatomic, readwrite) int m_npopViewType;
