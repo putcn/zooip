@@ -994,6 +994,7 @@
 {
 	buySlider.hidden = NO;
 	countLabel.hidden = NO;
+	hatchBtn.hidden = YES;
 	buySlider.value = 1.0f;
 	
 	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
@@ -1020,6 +1021,7 @@
 {
 	buySlider.hidden = YES;
 	countLabel.hidden = YES;
+	hatchBtn.hidden = NO;
 	
 	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 	NSDictionary *storageZygoteEggDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].storageZygoteEggs;
@@ -1047,7 +1049,7 @@
 	describeLabel.text = describeStr;
 	
 	// 孵化
-	UIButton* hatchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+	hatchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
 	[hatchBtn setBackgroundImage:[UIImage imageNamed: @"黄色按钮.png"] forState:UIControlStateNormal];
 	[hatchBtn setTitle:@"孵化" forState:UIControlStateNormal];
 	hatchBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:16];
