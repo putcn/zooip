@@ -480,10 +480,17 @@
 }
 
 -(void)antsChoose
-{
+{	
 	//选择蚂蚁面板的初始化
 	buySlider.hidden = NO;
 	countLabel.hidden = NO;
+	// Title
+	UILabel* titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(230, 100, 80, 40)];
+	[titleLabel setBackgroundColor:[UIColor clearColor]];
+	titleLabel.text = @"配种";
+	[self.view addSubview:titleLabel];
+	[titleLabel release];
+	titleLabel = nil;
 	
 	myAntsCurrency = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.antsCurrency;
 	myGoldenEgg = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.goldenEgg;
