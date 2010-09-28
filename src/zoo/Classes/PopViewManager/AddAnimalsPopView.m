@@ -52,7 +52,7 @@ NSString *AddAnimals = @"ADD_ANIMALS";
 		[self initWithBtn:foo Title:title];
 		[foo release];
 		foo = nil;
-		
+				
 		tabFlag = ANIMAL_WAREHOUSE;
 		stoAnimalsArray = [[NSMutableArray alloc] init];
 		[[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(addAimalToFrame:) name:AddAnimals object:nil];
@@ -69,7 +69,7 @@ NSString *AddAnimals = @"ADD_ANIMALS";
 	NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:farmerId,@"farmerId",nil];
 	
 	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllStorageAnimal WithParameters:params AndCallBackScope:self AndSuccessSel:@"resultCallbackGetAllAnimals:" AndFailedSel:@"faultCallback:"];
-	
+
 	[myPopView addView2Window];
 }
 
@@ -98,6 +98,8 @@ NSString *AddAnimals = @"ADD_ANIMALS";
 			
 			for (int i = 0; i < [animalArray count]; i ++) {
 				stoAnimals = [storageAnimal objectForKey:[animalArray objectAtIndex:i]];
+				NSMutableDictionary* b = [DataEnvironment sharedDataEnvironment].originalAnimals;
+				
 				DataModelOriginalAnimal *serverAnimalToshow = (DataModelOriginalAnimal *)[[DataEnvironment sharedDataEnvironment].originalAnimals objectForKey:stoAnimals.originalAnimalId];			
 				
 				if ([serverAnimalToshow.originalAnimalId intValue] > 50) {
@@ -275,6 +277,7 @@ NSString *AddAnimals = @"ADD_ANIMALS";
 {
 	[[GameMainScene sharedGameMainScene] updateUserInfo];
 }
+
 
 //点击一个动物放入农场之后的回调函数
 -(void) resultCallback:(NSObject *)value

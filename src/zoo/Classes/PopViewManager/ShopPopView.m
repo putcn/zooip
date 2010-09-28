@@ -48,6 +48,8 @@
 		[self initWithBtn:foo Title:title];
 		[foo release];
 		foo = nil;
+		
+		[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetAllOriginalAnimal WithParameters:nil AndCallBackScope:self AndSuccessSel:@"resultCallback2:" AndFailedSel:@"faultCallback:"];
 	}
 	
 	return self;
@@ -323,5 +325,14 @@
 	[myPopView release];
 	
 	[super dealloc];
+}
+
+- (void) resultCallback2:(NSObject *)value
+{
+	NSDictionary *itemDic;
+	NSArray *itemArray;
+	
+	itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+	itemArray = [itemDic allKeys];
 }
 @end
