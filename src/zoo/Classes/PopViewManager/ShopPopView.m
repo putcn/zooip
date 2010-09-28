@@ -25,6 +25,8 @@
 		[myPopView setM_nlistCount:2];
 		[myPopView setM_npopViewType:SHOP_POPVIEW];
 		
+		btnArray = [[NSMutableArray alloc] init];
+		
 		UIImageView* logoImage = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"store_logo.png"]];
 		logoImage.frame = CGRectMake(90, 68, 80, 35);
 		[myPopView.view addSubview:logoImage];
@@ -280,6 +282,7 @@
 		//show position
 		UIButton* topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
  		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
+		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab_press.png"] forState:UIControlStateHighlighted];
 		[topBtn setTitle:[arrayTitle objectAtIndex:i] forState:UIControlStateNormal];
 		topBtn.titleLabel.font = [UIFont fontWithName:@"Arial" size:16];
 		[topBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
@@ -288,6 +291,8 @@
 		[topBtn addTarget:self action:@selector(topBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
 		topBtn.tag = i;
 		[myPopView.view addSubview:topBtn];
+		
+		[btnArray addObject:topBtn];
 	}
 }
 
@@ -296,6 +301,12 @@
 	UIButton *selectedBtn = (UIButton *)sender;
 	tabFlag = selectedBtn.tag;
 	
+	for (int i = 0; i < [btnArray count]; i++) {
+		UIButton* btn = [btnArray objectAtIndex:i];
+		[btn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
+	}
+	[selectedBtn setBackgroundImage:[UIImage imageNamed: @"tab_press.png"] forState:UIControlStateNormal];
+		
 	for (UIView *subview in [myPopView m_ppopView].subviews) {
 		[subview removeFromSuperview];
 	}
@@ -321,6 +332,7 @@
 - (void) dealloc{
 	
 	[myPopView release];
+	[btnArray release];
 	
 	[super dealloc];
 }

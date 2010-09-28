@@ -17,6 +17,7 @@ extern NSString *AddAnimals;
 	popViewManager*		myPopView;
 	int					tabFlag;
 	NSMutableArray*		stoAnimalsArray;
+	NSMutableArray*		btnArray;
 }
 
 
