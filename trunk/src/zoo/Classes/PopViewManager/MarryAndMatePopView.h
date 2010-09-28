@@ -18,6 +18,7 @@
 	NSString            *currentTagFlag;
 	NSString            *tabFlagType;
 	NSString            *managementType;
+	NSMutableArray		*btnArray;
 }
 
 - (id) init;

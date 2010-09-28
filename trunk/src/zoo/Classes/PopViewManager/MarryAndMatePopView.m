@@ -32,6 +32,8 @@
 		[myPopView setM_nlistCount:2];
 		[myPopView setM_npopViewType:ANIMAL_MATEORMARRY_POPVIEW];
 		
+		btnArray = [[NSMutableArray alloc] init];
+		
 		
 		CGRect rect1 = CGRectMake(160, 75, 65.f, 28.f);
 		CGRect rect2 = CGRectMake(225, 75, 80.f, 28.f);
@@ -242,11 +244,13 @@
 
 - (void)initWithBtn:(NSArray *)arrayBtn Title:(NSArray*)arrayTitle{
 	
+	[btnArray removeAllObjects];
 	for (int i = 0; i < [arrayBtn count]; i++) {
 		
 		//show position
 		UIButton* topBtn = [UIButton buttonWithType:UIButtonTypeCustom];
  		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
+		[topBtn setBackgroundImage:[UIImage imageNamed: @"tab_press.png"] forState:UIControlStateHighlighted];
 		[topBtn setTitle:[arrayTitle objectAtIndex:i] forState:UIControlStateNormal];
 		[topBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
 		CGRect btnFrame = [[arrayBtn objectAtIndex:i] CGRectValue];
@@ -254,6 +258,7 @@
 		[topBtn addTarget:self action:@selector(topBtnSelected:) forControlEvents:UIControlEventTouchUpInside];
 		topBtn.tag = i;
 		[myPopView.view addSubview:topBtn];
+		[btnArray addObject:topBtn];
 	}
 }
 
@@ -270,6 +275,12 @@
 		default:
 			break;
 	}
+	
+	for (int i = 0; i < [btnArray count]; i++) {
+		UIButton* btn = [btnArray objectAtIndex:i];
+		[btn setBackgroundImage:[UIImage imageNamed: @"tab.png"] forState:UIControlStateNormal];
+	}
+	[selectedBtn setBackgroundImage:[UIImage imageNamed: @"tab_press.png"] forState:UIControlStateNormal];
 	
 	for (UIView *subview in [myPopView m_ppopView].subviews) {
 		[subview removeFromSuperview];
@@ -300,8 +311,8 @@
 - (void) dealloc{
 	
 	[myPopView release];
-	
-	
+	[btnArray release];
+	btnArray = nil;	
 	
 	[super dealloc];
 }

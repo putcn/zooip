@@ -14,6 +14,8 @@
 
 	popViewManager*		myPopView;
 	int					tabFlag;
+	
+	NSMutableArray*		btnArray;
 }
 
 - (id) init;
