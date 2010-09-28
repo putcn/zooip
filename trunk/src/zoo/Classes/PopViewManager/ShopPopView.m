@@ -84,8 +84,7 @@
 				[arrOfLevel addObject:[NSNumber numberWithInt:originAnimal.levelRequired]];
 			}
 			
-			// 冒泡排序
-/*			int nTemp;
+			int nTemp;
 			NSString* strTemp;
 			for(int j = 0; j <= [arrOfLevel count] - 1 ; j++)
 			{
@@ -108,7 +107,6 @@
 					}
 				}
 			}
-*/			
 			
 			NSArray* animalArray = [NSArray arrayWithArray:animalArrayTemp];
 			NSMutableArray* picFileNameArray = [[NSMutableArray alloc] init];
@@ -334,5 +332,53 @@
 	
 	itemDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 	itemArray = [itemDic allKeys];
+	
+/*	NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+	
+	DataModelOriginalAnimal *originAnimal; //levelRequired
+	NSArray *animalArrayTemp1 = [originAnimalDic allKeys];
+	NSMutableArray* animalArrayTemp = [[NSMutableArray alloc] init];
+	[animalArrayTemp addObjectsFromArray:animalArrayTemp1];
+	
+	NSMutableArray* arrOfLevel = [[NSMutableArray alloc]init];
+	
+	for(int i = 0; i < [animalArrayTemp count]; i++)
+	{
+		originAnimal = [originAnimalDic objectForKey:[animalArrayTemp objectAtIndex:i]];
+		
+		[arrOfLevel addObject:[NSNumber numberWithInt:originAnimal.levelRequired]];
+	}
+	
+	// 冒泡排序
+	int nTemp;
+	NSString* strTemp;
+	for(int j = 0; j <= [arrOfLevel count] - 1 ; j++)
+	{
+		for(int i = 0; i < [arrOfLevel count] - 1- j; i++)
+		{
+			if([[arrOfLevel objectAtIndex:i] intValue] >= [[arrOfLevel objectAtIndex:i+1] intValue])
+			{
+				nTemp = [[arrOfLevel objectAtIndex:i] intValue];
+				strTemp = [animalArrayTemp objectAtIndex:i];
+				
+				int nRight = [[arrOfLevel objectAtIndex:i+1] intValue];
+				NSString* strRight = [animalArrayTemp objectAtIndex:i + 1];
+				
+				[arrOfLevel replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:nRight]];
+				[animalArrayTemp replaceObjectAtIndex:i withObject:strRight];
+				
+				[arrOfLevel replaceObjectAtIndex:i+1 withObject:[NSNumber numberWithInt:nTemp]];
+				[animalArrayTemp replaceObjectAtIndex:i + 1 withObject:strTemp];
+				
+			}
+		}
+	}
+	
+	[animalArrayTemp release];
+	animalArrayTemp = nil;
+*/
 }
+
+
+
 @end

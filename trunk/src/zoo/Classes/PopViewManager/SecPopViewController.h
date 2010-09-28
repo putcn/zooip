@@ -38,7 +38,8 @@
 	IBOutlet UIButton*		OKButton;
 	
 	hatchView* m_hatchView;
-	NSMutableArray*        animalIDArray; //first femaleID,second maleID	
+	NSMutableArray*			animalIDArray; //first femaleID,second maleID	
+	NSMutableArray*			animalArrayTemp;
 }
 
 @property(nonatomic, readwrite) int m_npopViewType;

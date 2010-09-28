@@ -39,6 +39,7 @@
 		showImage = [UIImageView alloc];
 		
 		animalIDArray = [[NSMutableArray alloc] init];
+		
     }
     return self;
 }
@@ -52,6 +53,47 @@
 	farmerId = [[NSString alloc] init];
 	buyAniId = [[NSString alloc] init];
 	
+	
+	//
+	NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+	DataModelOriginalAnimal *originAnimal; //levelRequired
+	NSArray *animalArrayTemp1 = [originAnimalDic allKeys];
+	animalArrayTemp = [[NSMutableArray alloc] init];
+	[animalArrayTemp addObjectsFromArray:animalArrayTemp1];
+	
+	NSMutableArray* arrOfLevel = [[NSMutableArray alloc]init];
+	
+	for(int i = 0; i < [animalArrayTemp count]; i++)
+	{
+		originAnimal = [originAnimalDic objectForKey:[animalArrayTemp objectAtIndex:i]];
+		
+		[arrOfLevel addObject:[NSNumber numberWithInt:originAnimal.levelRequired]];
+	}
+	
+	// 冒泡排序
+	int nTemp;
+	NSString* strTemp;
+	for(int j = 0; j <= [arrOfLevel count] - 1 ; j++)
+	{
+		for(int i = 0; i < [arrOfLevel count] - 1- j; i++)
+		{
+			if([[arrOfLevel objectAtIndex:i] intValue] >= [[arrOfLevel objectAtIndex:i+1] intValue])
+			{
+				nTemp = [[arrOfLevel objectAtIndex:i] intValue];
+				strTemp = [animalArrayTemp objectAtIndex:i];
+				
+				int nRight = [[arrOfLevel objectAtIndex:i+1] intValue];
+				NSString* strRight = [animalArrayTemp objectAtIndex:i + 1];
+				
+				[arrOfLevel replaceObjectAtIndex:i withObject:[NSNumber numberWithInt:nRight]];
+				[animalArrayTemp replaceObjectAtIndex:i withObject:strRight];
+				
+				[arrOfLevel replaceObjectAtIndex:i+1 withObject:[NSNumber numberWithInt:nTemp]];
+				[animalArrayTemp replaceObjectAtIndex:i + 1 withObject:strTemp];
+				
+			}
+		}
+	}
 }
 
 
@@ -107,6 +149,9 @@
 	
 	[priceLabel release];
 	priceLabel = nil;
+	
+	[animalArrayTemp release];
+	animalArrayTemp = nil;
 	
     [super dealloc];
 }
@@ -497,10 +542,10 @@
 	
 	//get data
 	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
-	NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
-	DataModelOriginalAnimal *originAnimal; 
-	NSArray *animalArrayTemp = [originAnimalDic allKeys];
-	//originAnimal = [originAnimalDic objectForKey:[animalArrayTemp objectAtIndex:itemId]];
+	//NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
+	//DataModelOriginalAnimal *originAnimal; 
+	//NSArray *_animalArrayTemp = [originAnimalDic allKeys];
+	//originAnimal = [originAnimalDic objectForKey:[_animalArrayTemp objectAtIndex:itemId]];
 //	
 //	buyAniId = originAnimal.originalAnimalId;
 //	tempCount = 1;
@@ -753,7 +798,6 @@
 	farmerId = [DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId;
 	NSDictionary *originAnimalDic = (NSDictionary *)[DataEnvironment sharedDataEnvironment].originalAnimals;
 	DataModelOriginalAnimal *originAnimal; 
-	NSArray *animalArrayTemp = [originAnimalDic allKeys];
 	originAnimal = [originAnimalDic objectForKey:[animalArrayTemp objectAtIndex:itemId]];
 	
 	buyAniId = originAnimal.originalAnimalId;
