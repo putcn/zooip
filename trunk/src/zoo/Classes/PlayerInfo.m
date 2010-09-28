@@ -204,6 +204,9 @@
 	}else {
 		userName = [friendInfo.userName retain];
 		userImgNow = [friendInfo.userImg retain];
+		
+		NSLog(@"%@\n", userImgNow);
+		
 		currentExperience = [[NSString stringWithFormat:@"%d", friendFarmInfo.farm_currentExp] retain];
 		nextLevelExperience = [[NSString stringWithFormat:@"%d", friendFarmInfo.farm_nextLevelExp] retain];
 		level = [[NSString stringWithFormat:@"%d", friendFarmInfo.farm_level] retain];
@@ -258,8 +261,9 @@
 	}
 
 	// add by ziwei 
-	if(pic == nil)
-		pic = [[PictureAdd alloc] initWithPicUrl:userImgNow setPointX:275 setPointY:5];
+//	if(pic == nil)
+	// Modified by Hunk on 2010-09-28
+	pic = [[PictureAdd alloc] initWithPicUrl:userImgNow setPointX:275 setPointY:5];
 	
 //  兰溪版本
 //	[pic setImagePoint:280 setPointY:70];

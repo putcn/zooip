@@ -206,9 +206,6 @@ static GameMainScene *_sharedGameMainScene = nil;
 		[friendInitFlowController startStep];
 		
 		[uiLayer switchFriendZoo];
-		
-		// Add by Hunk on 2010-06-30
-		//[friendInitFlowController release];
 	}
 }
 
