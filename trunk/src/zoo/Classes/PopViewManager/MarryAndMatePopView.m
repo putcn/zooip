@@ -105,26 +105,32 @@
 				originAnimal = [animalIDs objectAtIndex:i];
 				aniID = [animalIDs objectAtIndex:i];
 				serverAnimalData2 = (DataModelAnimal *)[[DataEnvironment sharedDataEnvironment].animals objectForKey:aniID];
-				NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
 				
-				NSLog(@"%d\n", serverAnimalData2.gender);
-				[picFileNameArray addObject:picFileName];
-			
-				
-				[myPopView.stoAnimalsArray addObject:originAnimal];
-				
-				
-				if (serverAnimalData2.gender == 1) 
+				if(serverAnimalData2.coupleAnimalId == nil)
 				{
-					gender = [NSNumber numberWithInt:1];
-				}
-				else 
-				{
-					gender = [NSNumber numberWithInt:0];
-				}
+					NSString *picFileName = [NSString stringWithFormat:@"%@.png",serverAnimalData2.picturePrefix];
+					
+					NSLog(@"%d\n", serverAnimalData2.gender);
+					[picFileNameArray addObject:picFileName];
+					
+					
 				
-				
-				[sexNameArray addObject:gender];
+					
+					[myPopView.stoAnimalsArray addObject:originAnimal];
+					
+					
+					if (serverAnimalData2.gender == 1) 
+					{
+						gender = [NSNumber numberWithInt:1];
+					}
+					else 
+					{
+						gender = [NSNumber numberWithInt:0];
+					}
+					
+					
+					[sexNameArray addObject:gender];
+				}
 				
 			}
 			[myPopView setSexArray:sexNameArray];
