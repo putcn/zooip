@@ -113,9 +113,6 @@
 					NSLog(@"%d\n", serverAnimalData2.gender);
 					[picFileNameArray addObject:picFileName];
 					
-					
-				
-					
 					[myPopView.stoAnimalsArray addObject:originAnimal];
 					
 					
@@ -134,6 +131,7 @@
 				
 			}
 			[myPopView setSexArray:sexNameArray];
+			[myPopView setBuyTypeArray:sexNameArray];
 			[myPopView initWithItem:picFileNameArray];
 			
 			[picFileNameArray release];
@@ -188,6 +186,7 @@
 				
 			}
 			[myPopView setSexArray:sexNameArray];
+			[myPopView setBuyTypeArray:sexNameArray];
 			[myPopView initWithItem:picFileNameArray];
 			
 			[picFileNameArray release];

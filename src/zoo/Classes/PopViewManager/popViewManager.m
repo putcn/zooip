@@ -317,7 +317,7 @@
 								break;
 						}
 						
-						[sexImage setFrame:CGRectMake(rowinterval+subSize.width-10, listinterval, 10, 12)];
+						[sexImage setFrame:CGRectMake(rowinterval+subSize.width-2, listinterval, 10, 12)];
 						[m_ppopView addSubview:sexImage];
 						[sexImage release];
 						sexImage = nil;
@@ -347,7 +347,7 @@
 								break;
 						}
 						
-						[sexImage setFrame:CGRectMake(rowinterval+subSize.width-10, listinterval, 10, 12)];
+						[sexImage setFrame:CGRectMake(rowinterval+subSize.width-2, listinterval, 10, 12)];
 						[m_ppopView addSubview:sexImage];
 						[sexImage release];
 						sexImage = nil;
@@ -371,11 +371,13 @@
 		
 		btn.frame = CGRectMake(rowinterval, listinterval, _width, _height);
 		
-		if ([[buyTypeArray objectAtIndex:i] intValue] == 0) {
+		if ([[buyTypeArray objectAtIndex:i] intValue] == 0) 
+		{
 			[btn setImage:showImage forState:UIControlStateNormal];
 		}
 		//图片翻转
-		else {
+		else 
+		{
 			
 			CGAffineTransform transform = CGAffineTransformIdentity;
 			CGRect bounds = CGRectMake(0, 0, _width, _height);
