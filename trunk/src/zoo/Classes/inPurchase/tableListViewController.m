@@ -52,8 +52,8 @@
 				   nil];
 */
 	
-	purchaseId = [[NSMutableArray alloc] init];
-	purchaseMsg = [[NSMutableArray alloc] init];
+	purchaseId = nil;
+	purchaseMsg = nil;
 	
 //	disableView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, 480.f, 320.f)];
 //	disableView.backgroundColor = [UIColor blackColor];
@@ -208,8 +208,28 @@
 			case MJBank_Store_Protocol:{
 				
 				NSDictionary* dic = [httpPurchaseIn callBacks];
-				purchaseId = [dic objectForKey:@"iphoneGoodsId"];
-				purchaseMsg = [dic objectForKey:@"description"];
+				if(purchaseId == nil)
+				{
+					purchaseId = [[NSMutableArray alloc] init];
+					NSArray * dic1 = [dic objectForKey:@"iphoneGoodsId"];
+					for(unsigned int i =0;i<[dic1 count];i++)
+					{
+						[purchaseId addObject:[dic1 objectAtIndex:i]];
+					}
+					
+				}
+				
+				if(purchaseMsg == nil)
+				{
+					purchaseMsg = [[NSMutableArray alloc] init];
+					
+					NSArray * dic2 = [dic objectForKey:@"description"];
+					for(unsigned int i =0;i<[dic2 count];i++)
+					{
+						[purchaseMsg addObject:[dic2 objectAtIndex:i]];
+					}
+				}
+				
 				[purchaseTableView reloadData];
 			}
 				break;

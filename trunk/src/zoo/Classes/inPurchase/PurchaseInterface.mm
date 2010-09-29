@@ -17,7 +17,7 @@
 
 @implementation MyStoreObserver
 
-@synthesize m_bObserverResult, m_bfail;
+@synthesize m_bObserverResult, m_bfail,m_bIsOver;
 
 //购买提交是否完成
 - (void) paymentQueue:(SKPaymentQueue *)queue updatedTransactions:(NSArray *)transactions{
@@ -60,6 +60,8 @@
 	[[SKPaymentQueue defaultQueue] finishTransaction: transaction];
 	
 	m_bObserverResult = true;
+	
+	m_bIsOver = true;
 }
 
 //交易失败
@@ -68,6 +70,9 @@
 	if (transaction.error.code != SKErrorPaymentCancelled)
 		[self showAlertView];
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+	
+	m_bObserverResult = false;
+	m_bIsOver = true;
 }
 
 //存储交易
@@ -76,6 +81,8 @@
 	[self VerifyPay:transaction];
     [self provideContent: transaction.originalTransaction.payment.productIdentifier];
     [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+	m_bObserverResult = true;
+	m_bIsOver = true;
 }
 
 //批量购买成功
@@ -368,7 +375,7 @@ static Purchase * p_shareSelf = nil;//指向自己的指针
 
 -(BOOL)checkIsOver
 {
-	b_Purchase_over = [observer m_bObserverResult];
+	b_Purchase_over = [observer m_bIsOver];
 	
 	if(b_result_open_store == false)
 	{
