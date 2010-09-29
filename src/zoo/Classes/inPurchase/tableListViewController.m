@@ -52,6 +52,9 @@
 				   nil];
 */
 	
+	purchaseId = [[NSMutableArray alloc] init];
+	purchaseMsg = [[NSMutableArray alloc] init];
+	
 //	disableView = [[UIView alloc] initWithFrame:CGRectMake(0.f, 0.f, 480.f, 320.f)];
 //	disableView.backgroundColor = [UIColor blackColor];
 	disableView.hidden = YES;
@@ -177,6 +180,8 @@
 			[myPurchase RequestParams:params];
 			[myPurchase setConnectOver:NO];
 			[myPurchase setClientProtocol:Server_Chk];
+			
+			[self.view removeFromSuperview];
 		}else {
 			[purchaseIn removePurchase];
 		}
