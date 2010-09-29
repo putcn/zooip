@@ -26,6 +26,7 @@
 	NSTimer*					listTimer;
 	
 	HttpPurchase*				httpPurchaseIn;
+//	NSDictionary*				dic;
 }
 
 @property(nonatomic, retain) NSMutableArray* purchaseId;
