@@ -138,6 +138,7 @@
 		
 		//antsNumLbl
 		antsNum = [[NSString stringWithFormat:@"%d", farmerInfo.antsCurrency] retain];
+		
 		// Add by Hunk on 2010-07-28
 		int nAntsNumLength = [antsNum length];
 		switch (nAntsNumLength)
