@@ -610,7 +610,13 @@
 					else
 						((DataModelFarmerInfo *)[DataEnvironment sharedDataEnvironment].playerFarmerInfo).antsCurrency -= tempPrice * tempCount;
 	
-					[[GameMainScene sharedGameMainScene] updateUserInfo];
+				
+					// Add by Hunk on 2010-07-14 for updating farm information
+					NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
+											[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
+					[self updateFarmInfoExeCute:params];
+					
+					//	[[GameMainScene sharedGameMainScene] updateUserInfo];
 				}
 					break;
 				case 2:

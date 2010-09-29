@@ -160,12 +160,12 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 		case Server_Chk:{				
 			[callBacks setDictionary:dictionary];
 			
-			// Add by Hunk on 2010-09-29
 			// Add by Hunk on 2010-07-14 for updating farm information
 			NSDictionary *params = [NSDictionary dictionaryWithObjectsAndKeys:[DataEnvironment sharedDataEnvironment].playerFarmerInfo.farmerId,@"farmerId",
 									[DataEnvironment sharedDataEnvironment].playerFarmInfo.farmId,@"farmId",nil];
 			[self updateFarmInfoExeCute:params];
-		}
+			
+			}
 			break;
 			
 		default:
@@ -177,14 +177,14 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 
 // Add by Hunk on 2010-07-14 for updating farm information
 -(void)updateFarmInfoExeCute:(NSDictionary *)value
-{
+{	
 	NSDictionary *param = (NSDictionary *)value;
-	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmInfo WithParameters:param AndCallBackScope:self AndSuccessSel:@"updateFarmInfoResultCallback:" AndFailedSel:@"faultCallback:"];
+	[[ServiceHelper sharedService] requestServerForMethod:ZooNetworkRequestgetFarmerInfo WithParameters:param AndCallBackScope:self AndSuccessSel:@"updateFarmInfoResultCallback:" AndFailedSel:@"faultCallback:"];
 }
 
 // Add by Hunk on 2010-07-14 for updating farm information
 -(void)updateFarmInfoResultCallback:(NSObject*)value
-{
+{	
 	[[GameMainScene sharedGameMainScene] updateUserInfo];
 }
 
