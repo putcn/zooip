@@ -34,4 +34,7 @@ enum ClientProtocol{
 - (void) getStoreList;
 - (void) storeChk;
 
+-(void)updateFarmInfoExeCute:(NSDictionary *)value;
+-(void)updateFarmInfoResultCallback:(NSObject*)value;
+
 @end
