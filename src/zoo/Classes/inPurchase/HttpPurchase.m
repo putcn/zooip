@@ -134,7 +134,7 @@ static NSString *ServiceBaseURL = @"http://211.166.9.250/fplatform/farmv4/xiaone
 	//取到字符串
     NSLog(@"Succeeded! Received %d bytes of data",[receivedData length]);
 	NSString *stringFromUnichar = [NSString stringWithCString:(char*)[receivedData bytes] length:[receivedData length] / sizeof(char)];
-	//	NSLog(stringFromUnichar);
+	NSLog(@"%@",stringFromUnichar);
 	
 	[receivedData release];
 	receivedData = nil;
