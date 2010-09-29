@@ -58,6 +58,8 @@
 	[self VerifyPay:transaction];
 	[self provideContent: transaction.originalTransaction.payment.productIdentifier];
 	[[SKPaymentQueue defaultQueue] finishTransaction: transaction];
+	
+	m_bObserverResult = true;
 }
 
 //交易失败

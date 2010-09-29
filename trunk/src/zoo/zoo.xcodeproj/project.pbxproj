@@ -5269,8 +5269,8 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "";
-				CODE_SIGN_IDENTITY = "Don't Code Sign";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alan Liu (4PPX64PLPZ)";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5289,8 +5289,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
-				PROVISIONING_PROFILE = "";
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "4712206E-247C-438B-8457-9806521C4142";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D06F741A-13A5-4F92-B6F5-9ABF94B3EDE7";
 				SDKROOT = iphoneos4.0;
 				WARNING_CFLAGS = "-Wall";
 			};
@@ -5345,7 +5344,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CODE_SIGN_ENTITLEMENTS = "~/zooip/src/zoo/Resources/Entitlements.plist";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Alan Liu (4PPX64PLPZ)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Xu Liu (DG659Y77JH)";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -5364,7 +5363,7 @@
 				);
 				PREBINDING = NO;
 				PRODUCT_NAME = zoo;
-				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "7B3CBA62-3BF2-4D42-9309-9F9A14DF9C7F";
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "D06F741A-13A5-4F92-B6F5-9ABF94B3EDE7";
 				SDKROOT = iphoneos4.0;
 				WARNING_CFLAGS = "-Wall";
 			};

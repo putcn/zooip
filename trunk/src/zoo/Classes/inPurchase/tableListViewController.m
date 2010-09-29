@@ -170,7 +170,7 @@
 			HttpPurchase* myPurchase = [HttpPurchase sharedPurchase];
 			NSDictionary* params = [NSDictionary dictionaryWithObjectsAndKeys:
 									uid,				@"uid",
-									@"completeTransction",@"method",
+									@"completeTransaction",@"method",
 									pid,				@"pid",
 									receipt,			@"receipt",
 									nil];
