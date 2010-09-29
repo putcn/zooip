@@ -22,10 +22,13 @@
 	BOOL			m_bfail;
 	
 	NSString*		m_NSPurchse;
+	
+	BOOL			m_bIsOver;
 }
 
 @property(nonatomic, readwrite)BOOL m_bObserverResult;
 @property(nonatomic, readwrite)BOOL m_bfail;
+@property(nonatomic, readwrite)BOOL m_bIsOver;
 
 //购买接到信息
 - (NSString*) PurchasedTransaction;
